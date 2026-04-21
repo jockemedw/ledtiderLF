@@ -127,13 +127,6 @@
   opacity: 0.8;
 }
 
-/* Highlight på ankarelement */
-:global([data-comment-anchor].comment-highlighted) {
-  outline: 2px solid var(--gold, #B5822A);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
 /* Formulär */
 .form {
   background: #fff;

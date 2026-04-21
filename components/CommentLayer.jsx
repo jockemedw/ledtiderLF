@@ -202,12 +202,22 @@ export default function CommentLayer() {
     return { anchor, el, items, top };
   }) : [];
 
-  // Hover-highlight på ankare
+  // Hover-highlight på ankare (via inline style för att undvika CSS module pure-selector krav)
   useEffect(() => {
-    document.querySelectorAll('.comment-highlighted').forEach((el) => el.classList.remove('comment-highlighted'));
+    document.querySelectorAll('[data-comment-highlighted]').forEach((el) => {
+      el.style.outline = '';
+      el.style.outlineOffset = '';
+      el.style.borderRadius = '';
+      el.removeAttribute('data-comment-highlighted');
+    });
     if (hovered?.anchor) {
       const el = document.querySelector(`[data-comment-anchor="${CSS.escape(hovered.anchor)}"]`);
-      el?.classList.add('comment-highlighted');
+      if (el) {
+        el.style.outline = '2px solid #B5822A';
+        el.style.outlineOffset = '3px';
+        el.style.borderRadius = '4px';
+        el.setAttribute('data-comment-highlighted', 'true');
+      }
     }
   }, [hovered]);
 
