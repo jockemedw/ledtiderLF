@@ -466,15 +466,15 @@ section { padding: 5rem 2rem; }
 /* ─── GANTT-DIAGRAM ─────────────────────────── */
 #jamforelse { background: var(--parchment); }
 .gantt-wrap { margin-top: 2.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
-.gantt-inner { min-width: 720px; }
+.gantt-inner { min-width: 860px; }
 
 /* Axel ligger ovanpå bar-området; börjar efter labelns bredd */
 .gantt-axis {
   position: relative;
   margin-left: 200px;
   margin-right: 60px;
-  height: 22px;
-  margin-bottom: 0.4rem;
+  height: 32px;
+  margin-bottom: 0.6rem;
 }
 .gantt-axis-year {
   font-size: 0.72rem; font-weight: 600; color: var(--muted);
@@ -504,6 +504,42 @@ section { padding: 5rem 2rem; }
   position: absolute; top: 0; bottom: 0; width: 1px;
   background: rgba(0,0,0,0.12);
   z-index: 1;
+}
+
+/* Tydlig vertikal linje vid nollpunkten = "Lejons uppdrag startar" */
+.gantt-noll-line {
+  position: absolute; top: -4px; bottom: -4px;
+  width: 2px;
+  background: var(--navy);
+  z-index: 4;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.6);
+}
+
+/* Förskede-bar (verksamhetens egen tid före Lejons scope) */
+.gantt-forskede {
+  position: absolute; top: 4px; bottom: 4px;
+  background: repeating-linear-gradient(
+    45deg,
+    #94A3B8 0px,
+    #94A3B8 4px,
+    #B8C5D6 4px,
+    #B8C5D6 8px
+  );
+  border-radius: 4px;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.gantt-axis-zero {
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  font-size: 0.68rem !important;
+  line-height: 1.1;
+  background: var(--navy);
+  color: #fff !important;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-align: center;
 }
 
 /* Hela stapeln är en positioned container över bar-wrap */
@@ -1019,7 +1055,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Tidsjämförelse</span>
     <h2>Så här fördelar sig tiden</h2>
-    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario. Byggnationsskedet är markerat i rött — lägg märke till hur liten andel det utgör av den totala ledtiden.</p>
+    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario. Den vertikala linjen markerar när Lejonfastigheter får uppdraget. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
     <div class="gantt-wrap">
       <div class="gantt-inner">
         <div class="gantt-axis" id="gantt-axis"></div>
@@ -1027,7 +1063,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       </div>
     </div>
     <div class="gantt-legend" id="gantt-legend"></div>
-    <p class="gantt-note">Tiderna avser normalfall från det att Lejonfastigheter erhåller uppdraget. Tid från identifierat verksamhetsbehov till formellt uppdrag tillkommer och kan uppgå till ytterligare 1–2 år. Överklaganden av detaljplan (+14 mån i snitt) eller upphandling (+2–12 mån) är inte inräknade i normfallets staplar.</p>
+    <p class="gantt-note">De färgade staplarna avser normalfall från det att Lejonfastigheter erhåller uppdraget. Det streckade området till vänster om nollpunkten visar verksamhetens egen tid före (identifiering av behov, intern beredning) — som varierar mycket mellan projekt men typiskt är 6–24 månader. Överklaganden av detaljplan (+14 mån i snitt) eller upphandling (+2–12 mån) är inte inräknade.</p>
   </div>
 </section>
 
@@ -1172,6 +1208,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 const DATA = {
 
   fasFarger: {
+    forskede:       { farg: "#94A3B8", label: "Verksamhetens förskede (behovsanalys, beredning)" },
     plan:           { farg: "#2563EB", label: "Detaljplan / planprocess" },
     beslut:         { farg: "#7C3AED", label: "Politiska beslut & förstudie" },
     upphandling:    { farg: "#D97706", label: "Upphandling" },
@@ -1396,6 +1433,7 @@ const DATA = {
     {
       label: "A1. Hyra in",
       sublabel: "Befintlig lokal",
+      forskedeMan: 6,
       totalManader: 6,
       segment: [
         { fas: "beslut",      andel: 0.40 },
@@ -1405,6 +1443,7 @@ const DATA = {
     {
       label: "A2. Hyresvärdsupphandling",
       sublabel: "Rätt DP finns — annars +1–4 år",
+      forskedeMan: 12,
       totalManader: 30,
       segment: [
         { fas: "beslut",      andel: 0.22 },
@@ -1416,6 +1455,7 @@ const DATA = {
     {
       label: "B. Bygga om",
       sublabel: "Utan ny detaljplan",
+      forskedeMan: 12,
       totalManader: 36,
       segment: [
         { fas: "beslut",      andel: 0.22 },
@@ -1428,6 +1468,7 @@ const DATA = {
     {
       label: "C. Tillbyggnad",
       sublabel: "Inom befintlig detaljplan",
+      forskedeMan: 12,
       totalManader: 30,
       segment: [
         { fas: "beslut",      andel: 0.20 },
@@ -1439,6 +1480,7 @@ const DATA = {
     {
       label: "D. Nybyggnad",
       sublabel: "Befintlig DP medger byggnation",
+      forskedeMan: 18,
       totalManader: 40,
       segment: [
         { fas: "beslut",      andel: 0.15 },
@@ -1451,6 +1493,7 @@ const DATA = {
     {
       label: "D. Nybyggnad",
       sublabel: "Med ny detaljplan (normalfall)",
+      forskedeMan: 24,
       totalManader: 72,
       segment: [
         { fas: "plan",        andel: 0.55 },
@@ -1800,25 +1843,44 @@ function renderSparGrid() {
 
 // ── Gantt-diagram
 function renderGantt() {
-  const MAX_MAN = 84; // 7 år, ger god marginal för 72 mån staplarna
+  const FORE = 24;  // 24 mån (2 år) före nollpunkt = verksamhetens scope
+  const EFTER = 84; // 84 mån (7 år) efter = Lejons scope
+  const TOTAL = FORE + EFTER; // 108 mån = 9 år
+  const NOLL_PCT = (FORE / TOTAL) * 100; // procent där 0 ligger
 
-  // Axel
+  // Axel — negativa år + 0 + positiva år
   const axelEl = document.getElementById("gantt-axis");
   if (!axelEl) return;
   axelEl.innerHTML = "";
-  for (let yr = 0; yr <= 7; yr++) {
-    const pct = (yr * 12 / MAX_MAN) * 100;
-    const label = yr === 0 ? "Start" : yr + " år";
-    axelEl.innerHTML += `<span class="gantt-axis-year" style="left:${pct}%">${label}</span>`;
+  // Negativa år (−2, −1)
+  for (let yr = -2; yr <= 7; yr++) {
+    const pct = ((yr * 12 + FORE) / TOTAL) * 100;
+    let label;
+    if (yr === 0) label = "Lejons<br>uppdrag";
+    else if (yr < 0) label = yr + " år";
+    else label = yr + " år";
+    const cls = yr === 0 ? "gantt-axis-year gantt-axis-zero" : "gantt-axis-year";
+    axelEl.innerHTML += `<span class="${cls}" style="left:${pct}%">${label}</span>`;
   }
 
   // Rader
   const rowsEl = document.getElementById("gantt-rows");
   if (!rowsEl) return;
   rowsEl.innerHTML = DATA.gantt.map(rad => {
-    const barPct = (rad.totalManader / MAX_MAN) * 100;
+    const forskedeMan = rad.forskedeMan || 0;
+    const forskedePct = (forskedeMan / TOTAL) * 100;
+    const forskedeLeft = NOLL_PCT - forskedePct; // start av förskede-bar
+    const barLeftPct = NOLL_PCT; // Lejons scope börjar vid noll
+    const barWidthPct = (rad.totalManader / TOTAL) * 100;
 
-    // Segmenten fyller ut barens bredd — inte procentuellt av hela bar-wrap
+    // Förskede-segment (om finns)
+    const forskedeBar = forskedeMan > 0
+      ? `<div class="gantt-forskede"
+          title="Verksamhetens förskede: ca ${forskedeMan} mån (intern beredning, behovsanalys)"
+          style="left:${forskedeLeft}%;width:${forskedePct}%"></div>`
+      : "";
+
+    // Lejons segment fyller barens bredd
     const segments = rad.segment.map(s => {
       const fasData = DATA.fasFarger[s.fas];
       const label = fasData?.label || s.fas;
@@ -1828,11 +1890,14 @@ function renderGantt() {
         style="width:${s.andel * 100}%;background:${fasFarg(s.fas)}"></div>`;
     }).join("");
 
-    // Gridlinjer (vertikala år-markörer)
-    const gridLines = [1,2,3,4,5,6,7].map(yr => {
-      const p = (yr * 12 / MAX_MAN) * 100;
+    // Gridlinjer (vertikala år-markörer för -2 till 7)
+    const gridLines = [-2,-1,1,2,3,4,5,6,7].map(yr => {
+      const p = ((yr * 12 + FORE) / TOTAL) * 100;
       return `<div class="gantt-grid-line" style="left:${p}%"></div>`;
     }).join("");
+
+    // Tydlig nollpunkt-linje
+    const nollLine = `<div class="gantt-noll-line" style="left:${NOLL_PCT}%"></div>`;
 
     const manText = rad.totalManader >= 12
       ? `${Math.round(rad.totalManader / 12 * 10) / 10} år`
@@ -1843,8 +1908,10 @@ function renderGantt() {
         <div class="gantt-label">${rad.label}<small>${rad.sublabel}</small></div>
         <div class="gantt-bar-wrap">
           ${gridLines}
-          <div class="gantt-bar" style="width:${barPct}%">${segments}</div>
-          <span class="gantt-range-label" style="left:${barPct}%">${manText}</span>
+          ${nollLine}
+          ${forskedeBar}
+          <div class="gantt-bar" style="left:${barLeftPct}%;width:${barWidthPct}%">${segments}</div>
+          <span class="gantt-range-label" style="left:${barLeftPct + barWidthPct}%">${manText}</span>
         </div>
       </div>`;
   }).join("");
