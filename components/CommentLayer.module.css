@@ -1,0 +1,285 @@
+/* Wrapper */
+.root {
+  position: relative;
+}
+
+/* Marginal — syns bara på desktop */
+.margin {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 240px;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+}
+
+.margin > * { pointer-events: auto; }
+
+@media (max-width: 899px) {
+  .margin { display: none; }
+}
+
+/* Pillar */
+.pillar {
+  background: #fff;
+  border: 1px solid var(--border, #DDD8CC);
+  border-left: 3px solid var(--gold, #B5822A);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: box-shadow 120ms, transform 120ms;
+  position: relative;
+}
+
+.pillar:hover,
+.pillarHighlighted {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.pillar .head {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.time {
+  color: var(--muted, #6B7280);
+  font-size: 0.7rem;
+}
+
+.body {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.bodyCollapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.actions button {
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border: 1px solid var(--border, #DDD8CC);
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* "+" knapp när man hovrar kommenterbart element */
+.addButton {
+  position: absolute;
+  right: 8px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--gold, #B5822A);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 120ms;
+  z-index: 150;
+}
+
+.addButton.visible { opacity: 1; }
+
+/* SVG overlay för kopplingslinjer */
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.overlay path {
+  fill: none;
+  stroke: var(--gold, #B5822A);
+  stroke-width: 1.5;
+  opacity: 0.8;
+}
+
+/* Highlight på ankarelement */
+:global([data-comment-anchor].comment-highlighted) {
+  outline: 2px solid var(--gold, #B5822A);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Formulär */
+.form {
+  background: #fff;
+  border: 1px solid var(--border, #DDD8CC);
+  border-radius: 6px;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid var(--border, #DDD8CC);
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.form textarea { min-height: 70px; resize: vertical; }
+
+.form .row { display: flex; gap: 0.4rem; justify-content: flex-end; }
+
+.row { display: flex; gap: 0.4rem; justify-content: flex-end; }
+
+.form button {
+  padding: 4px 10px;
+  border: 1px solid var(--border, #DDD8CC);
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.primary {
+  background: var(--navy, #1A2744);
+  color: #fff;
+  border-color: var(--navy, #1A2744);
+}
+
+/* Låsikon */
+.lock {
+  position: fixed;
+  top: 70px;
+  right: 12px;
+  z-index: 200;
+  background: #fff;
+  border: 1px solid var(--border, #DDD8CC);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 16px;
+}
+
+.unlocked { background: var(--gold, #B5822A); color: #fff; border-color: var(--gold, #B5822A); }
+
+/* Login-modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 300;
+}
+
+.modalCard {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  width: min(320px, 90vw);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.modalCard h3 { margin-bottom: 0.6rem; }
+
+/* Orphans-panel */
+.orphans {
+  background: #fff9e6;
+  border: 1px solid #e8c97a;
+  border-radius: 6px;
+  padding: 0.6rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.orphans h4 { font-size: 0.85rem; margin-bottom: 0.4rem; }
+
+/* Mobil: bubbla i elementet */
+.mobileBubble {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .mobileBubble {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 6px;
+    padding: 2px 6px;
+    background: var(--gold-light, #E8C97A);
+    color: var(--navy, #1A2744);
+    font-size: 0.75rem;
+    border-radius: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: none;
+  }
+
+  .drawer {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: #fff;
+    border-top: 1px solid var(--border, #DDD8CC);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 250;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+
+  .drawerClose {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+}
+
+/* Felbanner */
+.errorBanner {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #dc2626;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  z-index: 400;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
