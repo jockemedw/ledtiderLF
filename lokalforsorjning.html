@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lokalförsörjning — Från behov till inflyttning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ─── VARIABLER ─────────────────────────────── */
+:root {
+  --navy:      #1A2744;
+  --navy-mid:  #2C3E62;
+  --gold:      #B5822A;
+  --gold-light:#E8C97A;
+  --parchment: #F4F1EB;
+  --white:     #FFFFFF;
+  --muted:     #6B7280;
+  --border:    #DDD8CC;
+  --fas-plan:  #2563EB;
+  --fas-beslut:#7C3AED;
+  --fas-upphandling: #D97706;
+  --fas-projektering: #059669;
+  --fas-byggnation:  #DC2626;
+  --fas-anpassning:  #0891B2;
+  --fas-evakuering:  #DB2777;
+  --r: 6px;
+}
+
+/* ─── RESET & BASE ─────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--parchment);
+  color: var(--navy);
+  line-height: 1.65;
+}
+h1, h2, h3 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+p { max-width: 68ch; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ─── NAVIGATION ───────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--navy);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: #fff; white-space: nowrap;
+}
+.nav-brand span { color: var(--gold-light); }
+.nav-links {
+  display: flex; gap: 0.2rem; list-style: none;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0.4rem 0.7rem;
+  border-radius: var(--r); transition: all .2s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); text-decoration: none; }
+
+/* ─── SECTIONS ─────────────────────────────── */
+section { padding: 5rem 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.6rem; display: block;
+}
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+/* ─── HERO ─────────────────────────────────── */
+#intro {
+  background: var(--navy);
+  color: #fff;
+  padding: 7rem 2rem 6rem;
+  position: relative; overflow: hidden;
+}
+#intro::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent, transparent 40px,
+    rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px
+  );
+}
+.hero-inner { max-width: 820px; position: relative; }
+.hero-eyebrow {
+  font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold-light); margin-bottom: 1.2rem;
+  font-weight: 500; font-family: 'Jost', sans-serif;
+}
+.hero-title {
+  font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+  font-weight: 700; color: #fff;
+  margin-bottom: 1.4rem; line-height: 1.08;
+}
+.hero-title em { color: var(--gold-light); font-style: italic; }
+.hero-ingress {
+  font-size: 1.1rem; line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+  max-width: 58ch; margin-bottom: 2.5rem;
+}
+.hero-tagline {
+  display: inline-block;
+  border: 1px solid rgba(181,130,42,0.5);
+  border-radius: 40px; padding: 0.55rem 1.4rem;
+  font-size: 0.88rem; color: var(--gold-light); font-weight: 500;
+}
+
+/* ─── NATIONELL KONTEXT ─────────────────────── */
+#kontext { background: var(--white); }
+.kontext-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+.kontext-kort {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.6rem 1.4rem;
+  position: relative;
+}
+.kontext-kort .siffra {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem; font-weight: 700;
+  line-height: 1; color: var(--navy);
+  margin-bottom: 0.3rem;
+  /* Långa textsiffror (t.ex. "var fjärde") krymper auto */
+  word-break: break-word;
+}
+.kontext-kort .siffra.lang {
+  font-size: 1.8rem;
+  letter-spacing: -0.01em;
+}
+.kontext-kort .enhet {
+  font-size: 0.82rem; color: var(--muted);
+  margin-bottom: 0.9rem; font-weight: 500;
+}
+.kontext-kort .beskrivning {
+  font-size: 0.88rem; color: var(--navy);
+  line-height: 1.5; margin-bottom: 0.7rem;
+}
+.kontext-kort .kalla {
+  font-size: 0.72rem; color: var(--gold);
+  font-weight: 500; letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.kontext-citat {
+  margin-top: 3rem;
+  padding: 2rem 2.4rem;
+  background: var(--navy); color: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+.kontext-citat blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-style: italic;
+  line-height: 1.4; color: #fff;
+  margin-bottom: 1rem;
+}
+.kontext-citat cite {
+  font-style: normal; font-size: 0.85rem;
+  color: var(--gold-light); letter-spacing: 0.03em;
+}
+
+/* ─── PER LOKALTYP ─────────────────── */
+#per-typ { background: var(--parchment); }
+.typ-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+.typ-kort {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1.8rem 1.6rem;
+  position: relative;
+  transition: transform .15s, box-shadow .15s;
+}
+.typ-kort:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(26, 35, 69, 0.08);
+}
+.typ-kort .typ-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+}
+.typ-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin: 0;
+}
+.typ-kort .typ-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  font-weight: 600;
+}
+.typ-rad {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed rgba(0,0,0,0.08);
+  font-size: 0.9rem;
+}
+.typ-rad:last-of-type { border-bottom: none; }
+.typ-etikett { color: var(--muted); }
+.typ-varde {
+  color: var(--navy);
+  font-weight: 600;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.typ-insikt {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1rem;
+  background: var(--parchment);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--navy);
+}
+.typ-kalla {
+  margin-top: 0.9rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── EXEMPEL (Linköping ↔ extern spegling) ─── */
+#exempel { background: var(--white); }
+.exempel-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.exempel-par {
+  background: var(--parchment);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+}
+.exempel-titel {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin: 0 0 1rem 0;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.exempel-jamf {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+}
+@media (max-width: 700px) {
+  .exempel-jamf { grid-template-columns: 1fr; }
+}
+.exempel-kort {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.2rem 1.3rem;
+  border-left: 4px solid var(--gold);
+}
+.exempel-kort.lejon { border-left-color: var(--navy); }
+.exempel-kort .exempel-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+.exempel-kort.lejon .exempel-eyebrow { color: var(--navy); }
+.exempel-kort h4 {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  color: var(--navy);
+  margin: 0 0 0.8rem 0;
+  font-weight: 600;
+}
+.exempel-rad {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px dashed rgba(0,0,0,0.06);
+}
+.exempel-rad:last-of-type { border-bottom: none; }
+.exempel-rad .e-label { color: var(--muted); }
+.exempel-rad .e-val { color: var(--navy); font-weight: 600; text-align: right; }
+.exempel-poang {
+  margin-top: 1.1rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88rem;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.exempel-poang strong { color: var(--gold); }
+
+/* ─── SPAR-KORT (OVERVIEW) ─────────────────── */
+#oversikt { background: var(--white); }
+.spar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem; margin-top: 2.5rem;
+}
+.spar-kort {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1.6rem 1.4rem;
+  background: var(--parchment);
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none; color: inherit;
+  display: block;
+}
+.spar-kort:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-decoration: none; }
+.spar-bokstav {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 700; color: #fff;
+  margin-bottom: 1rem;
+}
+.spar-kort h3 { font-size: 1.15rem; margin-bottom: 0.3rem; }
+.spar-kort .subtitle { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+.spar-tid {
+  font-size: 1.6rem; font-family: 'Cormorant Garamond', serif; font-weight: 700;
+}
+.spar-tid-enhet { font-size: 0.8rem; color: var(--muted); font-family: 'Jost', sans-serif; font-weight: 400; }
+.spar-varning {
+  font-size: 0.75rem; margin-top: 0.6rem; color: var(--muted);
+  padding: 0.4rem 0.7rem;
+  background: rgba(181,130,42,0.1);
+  border-radius: 4px; border-left: 2px solid var(--gold);
+}
+
+/* ─── GANTT-DIAGRAM ─────────────────────────── */
+#jamforelse { background: var(--parchment); }
+.gantt-wrap { margin-top: 2.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+.gantt-inner { min-width: 720px; }
+
+/* Axel ligger ovanpå bar-området; börjar efter labelns bredd */
+.gantt-axis {
+  position: relative;
+  margin-left: 200px;
+  margin-right: 60px;
+  height: 22px;
+  margin-bottom: 0.4rem;
+}
+.gantt-axis-year {
+  font-size: 0.72rem; font-weight: 600; color: var(--muted);
+  position: absolute; top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.gantt-row {
+  display: flex; align-items: center;
+  margin-bottom: 0.8rem;
+}
+.gantt-label {
+  width: 200px; min-width: 200px;
+  font-size: 0.82rem; font-weight: 500; padding-right: 1rem;
+  line-height: 1.3;
+}
+.gantt-label small { display: block; font-weight: 400; color: var(--muted); font-size: 0.72rem; }
+
+.gantt-bar-wrap {
+  flex: 1; height: 28px;
+  background: rgba(0,0,0,0.05); border-radius: 4px;
+  position: relative; overflow: hidden;
+  margin-right: 60px;
+}
+.gantt-grid-line {
+  position: absolute; top: 0; bottom: 0; width: 1px;
+  background: rgba(0,0,0,0.12);
+  z-index: 1;
+}
+
+/* Hela stapeln är en positioned container över bar-wrap */
+.gantt-bar {
+  position: absolute; top: 0; bottom: 0; left: 0;
+  display: flex;
+  z-index: 2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.gantt-segment {
+  height: 100%;
+  opacity: 0.92;
+  transition: opacity .2s;
+}
+.gantt-segment:hover { opacity: 1; }
+
+.gantt-range-label {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  font-size: 0.75rem; font-weight: 600; color: var(--navy);
+  white-space: nowrap;
+  z-index: 3;
+  padding-left: 8px;
+}
+
+.gantt-legend {
+  display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.legend-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.78rem; color: var(--navy);
+}
+.legend-dot {
+  width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;
+}
+.gantt-note {
+  font-size: 0.8rem; color: var(--muted); margin-top: 1.2rem;
+  padding: 0.8rem 1rem; background: rgba(0,0,0,0.04); border-radius: var(--r);
+}
+
+/* ─── SPÅRDETALJER ─────────────────────────── */
+.spar-section { background: var(--white); }
+.spar-section:nth-of-type(even) { background: var(--parchment); }
+.spar-header {
+  display: flex; align-items: flex-start; gap: 1.4rem;
+  margin-bottom: 2.5rem;
+}
+.spar-badge {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.spar-header-text h2 { margin-bottom: 0.3rem; }
+.spar-header-text p { color: var(--muted); font-size: 0.92rem; }
+
+.scenario-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; margin-bottom: 2.5rem;
+}
+.scenario-card {
+  border: 1px solid var(--border); border-radius: var(--r);
+  overflow: hidden;
+}
+.scenario-head {
+  padding: 0.8rem 1.1rem;
+  font-size: 0.82rem; font-weight: 600;
+  color: #fff; display: flex; justify-content: space-between; align-items: center;
+}
+.scenario-tid {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 700; color: #fff;
+}
+.scenario-body { padding: 1rem 1.1rem; }
+
+.fas-liste { list-style: none; }
+.fas-item {
+  display: flex; gap: 0.8rem; align-items: flex-start;
+  padding: 0.55rem 0; border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.fas-item:last-child { border-bottom: none; }
+.fas-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 4px;
+}
+.fas-tid { font-weight: 600; min-width: 90px; font-size: 0.8rem; }
+.fas-namn { flex: 1; }
+.fas-kommentar { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+.spar-meta {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1.5rem; margin-top: 1.5rem;
+}
+@media (max-width: 600px) { .spar-meta { grid-template-columns: 1fr; } }
+.meta-box {
+  background: var(--parchment);
+  border-radius: var(--r); padding: 1.2rem;
+  border: 1px solid var(--border);
+}
+.spar-section:nth-of-type(even) .meta-box { background: var(--white); }
+.meta-box h4 { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+.meta-box ul { list-style: none; }
+.meta-box li { font-size: 0.82rem; padding: 0.3rem 0; padding-left: 1rem; position: relative; }
+.meta-box li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+.risk-box { border-left: 3px solid #DC2626; }
+.risk-box h4 { color: #DC2626; }
+
+/* ─── MODULER ──────────────────────────────── */
+#moduler { background: var(--navy); color: #fff; }
+#moduler .section-label { color: var(--gold-light); }
+#moduler h2 { color: #fff; }
+#moduler p { color: rgba(255,255,255,0.78); }
+.modul-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem; margin-top: 2rem;
+}
+.modul-kort {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--r); padding: 1.4rem;
+}
+.modul-kort h3 { color: #fff; font-size: 1rem; margin-bottom: 1rem; }
+.modul-rad {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.modul-rad:last-child { border: none; }
+.modul-rad .rad-label { color: rgba(255,255,255,0.6); }
+.modul-rad .rad-val { font-weight: 600; color: #fff; }
+.modul-varning {
+  margin-top: 2rem; padding: 1rem 1.4rem;
+  background: rgba(181,130,42,0.15);
+  border: 1px solid rgba(181,130,42,0.3);
+  border-radius: var(--r); font-size: 0.88rem;
+  color: rgba(255,255,255,0.85);
+}
+.modul-varning strong { color: var(--gold-light); }
+
+/* ─── BESLUTSSTÖD ──────────────────────────── */
+#beslut { background: var(--parchment); }
+.beslut-matris {
+  margin-top: 2.5rem;
+  border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden;
+}
+.matris-header {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  background: var(--navy); color: #fff;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em;
+}
+.matris-cell {
+  padding: 0.8rem 1rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+.matris-header .matris-cell:last-child { border-right: none; }
+.matris-row {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+}
+.matris-row:hover { background: rgba(0,0,0,0.025); }
+.matris-row .matris-cell:first-child { font-weight: 500; }
+.check { color: #059669; font-weight: 700; }
+.cross { color: #DC2626; }
+.maybe { color: #D97706; }
+.matris-note { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+
+/* Diplomatisk markering om behovsbild */
+.behov-pika {
+  margin-top: 2rem;
+  padding: 1.5rem 1.8rem;
+  background: linear-gradient(135deg, var(--navy) 0%, #2a3a6a 100%);
+  color: #fff;
+  border-radius: 10px;
+  border-left: 6px solid var(--gold);
+}
+.behov-pika-header {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+}
+.behov-pika p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.92);
+}
+.behov-pika strong { color: #fff; }
+
+.tid-guide {
+  margin-top: 2.5rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 8px; overflow: hidden;
+}
+.tid-steg {
+  background: var(--white); padding: 1.4rem 1.2rem;
+}
+.tid-steg h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.tid-steg .tid-rekommendation { font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; font-weight: 700; margin-bottom: 0.4rem; }
+.tid-steg p { font-size: 0.8rem; color: var(--muted); max-width: none; }
+
+/* ─── KALLOR ────────────────────────────────── */
+#kallor { background: var(--white); }
+.kallor-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; margin-top: 2.5rem;
+}
+.kalla-grupp h3 { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.kalla-item { margin-bottom: 0.9rem; }
+.kalla-titel { font-size: 0.85rem; font-weight: 500; }
+.kalla-meta { font-size: 0.75rem; color: var(--muted); }
+.kalla-url { font-size: 0.73rem; color: var(--gold); word-break: break-all; }
+
+footer {
+  background: var(--navy); color: rgba(255,255,255,0.5);
+  padding: 2rem; text-align: center; font-size: 0.78rem;
+}
+footer strong { color: rgba(255,255,255,0.8); }
+
+/* ─── UTSKRIFT ──────────────────────────────── */
+@media print {
+  @page {
+    size: A4;
+    margin: 1.5cm;
+  }
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+  nav, footer { display: none !important; }
+  section {
+    padding: 1rem 0 !important;
+    page-break-inside: avoid;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  section h2, section p { color: #000 !important; }
+  #intro {
+    background: #fff !important;
+    padding: 0.5cm 0 !important;
+    border-bottom: 2pt solid #000;
+    margin-bottom: 1rem;
+    page-break-after: avoid;
+  }
+  #intro::before { display: none !important; }
+  .hero-title, .hero-ingress, .hero-eyebrow, .hero-tagline {
+    color: #000 !important;
+  }
+  .hero-title { font-size: 24pt !important; }
+  .hero-title em { color: #555 !important; }
+  .hero-ingress { font-size: 11pt !important; max-width: none; }
+  .hero-tagline { border-color: #000 !important; color: #000 !important; }
+
+  h2 { font-size: 16pt !important; page-break-after: avoid; margin-top: 0.5cm; }
+  h3 { font-size: 12pt !important; page-break-after: avoid; }
+  .section-label { color: #555 !important; }
+
+  /* Spårkort: få alla på en sida */
+  .spar-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 0.5rem !important; }
+  .spar-kort {
+    border: 1pt solid #000 !important; background: #fff !important;
+    padding: 0.6rem !important; page-break-inside: avoid;
+  }
+  .spar-bokstav {
+    width: 28px !important; height: 28px !important;
+    font-size: 14pt !important; color: #fff !important;
+  }
+  .spar-kort h3 { font-size: 10pt !important; }
+  .spar-kort .subtitle { font-size: 8pt !important; }
+  .spar-tid { font-size: 13pt !important; }
+  .spar-varning { font-size: 8pt !important; background: #eee !important; }
+
+  /* Gantt: försök behålla visuellt */
+  .gantt-wrap { overflow: visible !important; page-break-inside: avoid; }
+  .gantt-inner { min-width: 0 !important; }
+  .gantt-label { width: 130px !important; min-width: 130px !important; font-size: 8pt !important; }
+  .gantt-label small { font-size: 7pt !important; }
+  .gantt-range-label { font-size: 7pt !important; right: auto !important; position: static !important; margin-left: 8pt; }
+  .gantt-bar-wrap { background: #f0f0f0 !important; }
+  .gantt-segment { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .gantt-note { font-size: 8pt !important; background: #f5f5f5 !important; }
+  .gantt-legend { font-size: 8pt !important; }
+
+  /* Kontextkort */
+  .kontext-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 0.4rem !important; }
+  .kontext-kort {
+    padding: 0.6rem !important; background: #fff !important;
+    border: 1pt solid #000 !important; page-break-inside: avoid;
+  }
+  .kontext-kort .siffra { font-size: 18pt !important; color: #000 !important; }
+  .kontext-kort .enhet { font-size: 8pt !important; }
+  .kontext-kort .beskrivning { font-size: 8.5pt !important; }
+  .kontext-kort .kalla { color: #555 !important; font-size: 7pt !important; }
+  
+  /* Per lokaltyp (print) */
+  .typ-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.5rem !important; }
+  .typ-kort {
+    padding: 0.7rem !important; background: #fff !important;
+    border: 1pt solid #000 !important; page-break-inside: avoid;
+  }
+  .typ-kort h3 { font-size: 12pt !important; }
+  .typ-kort .typ-eyebrow { font-size: 7pt !important; color: #000 !important; }
+  .typ-rad { font-size: 8pt !important; padding: 0.25rem 0 !important; }
+  .typ-insikt { font-size: 8pt !important; background: #f5f5f5 !important; padding: 0.5rem !important; margin-top: 0.7rem !important; }
+  .typ-kalla { font-size: 7pt !important; }
+  
+  /* Exempel (print) */
+  .exempel-par { padding: 0.7rem !important; background: #fff !important; border: 1pt solid #000 !important; page-break-inside: avoid; margin-bottom: 0.5rem !important; }
+  .exempel-titel { font-size: 12pt !important; }
+  .exempel-jamf { grid-template-columns: 1fr 1fr !important; gap: 0.5rem !important; }
+  .exempel-kort { padding: 0.5rem !important; border-left: 2pt solid #000 !important; }
+  .exempel-kort h4 { font-size: 9pt !important; }
+  .exempel-rad { font-size: 7.5pt !important; padding: 0.2rem 0 !important; }
+  .exempel-poang { font-size: 8pt !important; padding: 0.5rem !important; background: #f5f5f5 !important; }
+  
+  .kontext-citat {
+    background: #fff !important;
+    border: 2pt solid #000 !important;
+    padding: 1rem !important;
+    page-break-inside: avoid;
+  }
+  .kontext-citat blockquote { color: #000 !important; font-size: 12pt !important; }
+  .kontext-citat cite { color: #000 !important; }
+
+  /* Spårsektioner: en per sida */
+  .spar-section { page-break-before: page; }
+  .scenario-grid { grid-template-columns: 1fr 1fr !important; gap: 0.5rem !important; }
+  .scenario-card { border: 1pt solid #000 !important; page-break-inside: avoid; }
+  .scenario-head { color: #fff !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .scenario-tid { color: #fff !important; }
+  .fas-item { font-size: 8.5pt !important; }
+  .fas-tid { min-width: 70px !important; font-size: 8pt !important; }
+  .fas-kommentar { font-size: 7.5pt !important; }
+
+  .meta-box { background: #f5f5f5 !important; page-break-inside: avoid; }
+  .meta-box li { font-size: 8.5pt !important; }
+
+  /* Moduler */
+  #moduler { background: #fff !important; }
+  #moduler h2, #moduler p, #moduler .section-label { color: #000 !important; }
+  .modul-kort { background: #fff !important; border: 1pt solid #000 !important; page-break-inside: avoid; }
+  .modul-kort h3, .modul-rad .rad-label, .modul-rad .rad-val { color: #000 !important; }
+  .modul-rad { border-color: #ccc !important; }
+  .modul-varning { background: #f5f5f5 !important; border: 1pt solid #000 !important; color: #000 !important; }
+  .modul-varning strong { color: #000 !important; }
+
+  /* Beslutsstöd */
+  .matris-header { color: #fff !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .matris-row, .tid-guide { page-break-inside: avoid; font-size: 8.5pt !important; }
+  .tid-steg { background: #fff !important; border: 1pt solid #ccc !important; }
+
+  /* Källor */
+  .kallor-grid { gap: 1rem !important; }
+  .kalla-item { font-size: 9pt !important; page-break-inside: avoid; }
+  .kalla-url { color: #000 !important; }
+  a { color: #000 !important; text-decoration: underline !important; }
+}
+
+/* ─── UTILITIES ─────────────────────────────── */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 2rem; }
+@media (max-width: 700px) {
+  nav { padding: 0 1rem; }
+  .nav-brand { font-size: 0.95rem; }
+  section { padding: 3.5rem 1.2rem; }
+  .matris-header, .matris-row { grid-template-columns: 1.5fr 1fr 1fr; }
+  .matris-cell:nth-child(n+4) { display: none; }
+  .gantt-label { width: 140px; min-width: 140px; font-size: 0.75rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></div>
+  <ul class="nav-links">
+    <li><a href="#oversikt">Spåren</a></li>
+    <li><a href="#jamforelse">Tidsjämförelse</a></li>
+    <li><a href="#kontext">Nationell kontext</a></li>
+    <li><a href="#per-typ">Per lokaltyp</a></li>
+    <li><a href="#exempel">Exempel</a></li>
+    <li><a href="#spar-a">A. Hyra in</a></li>
+    <li><a href="#spar-b">B. Bygga om</a></li>
+    <li><a href="#spar-c">C. Tillbyggnad</a></li>
+    <li><a href="#spar-d">D. Nybyggnad</a></li>
+    <li><a href="#moduler">Moduler</a></li>
+    <li><a href="#beslut">Beslutsstöd</a></li>
+    <li><a href="#kallor">Källor</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="intro">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Lejonfastigheter AB — Beslutsfattarguide</p>
+    <h1 class="hero-title">Från behov<br>till <em>inflyttning</em></h1>
+    <p class="hero-ingress">
+      Att tillgodose ett lokalbehov tar allt från tre månader till åtta år — beroende på vilket väg som väljs och hur tidigt planeringen startar. Det här materialet förklarar varför, och vad som faktiskt tar tid.
+    </p>
+    <span class="hero-tagline">Fyra spår · Faktiska ledtider · Svenska referensdata</span>
+  </div>
+</section>
+
+<!-- ÖVERSIKT: DE FYRA SPÅREN -->
+<section id="oversikt">
+  <div class="container">
+    <span class="section-label">De fyra spåren</span>
+    <h2>Hur lokaler kan tillgodoses</h2>
+    <p class="mt-2" style="color:var(--muted)">Varje spår har fundamentalt olika förutsättningar, ledtider och ekonomiska konsekvenser. Klicka på ett spår för fördjupning.</p>
+    <div class="spar-grid" id="spar-grid-container"></div>
+  </div>
+</section>
+
+<!-- TIDSJÄMFÖRELSE / GANTT -->
+<section id="jamforelse">
+  <div class="container">
+    <span class="section-label">Tidsjämförelse</span>
+    <h2>Så här fördelar sig tiden</h2>
+    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario. Byggnationsskedet är markerat i rött — lägg märke till hur liten andel det utgör av den totala ledtiden.</p>
+    <div class="gantt-wrap">
+      <div class="gantt-inner">
+        <div class="gantt-axis" id="gantt-axis"></div>
+        <div id="gantt-rows"></div>
+      </div>
+    </div>
+    <div class="gantt-legend" id="gantt-legend"></div>
+    <p class="gantt-note">Tiderna avser normalfall från det att Lejonfastigheter erhåller uppdraget. Tid från identifierat verksamhetsbehov till formellt uppdrag tillkommer och kan uppgå till ytterligare 1–2 år. Överklaganden av detaljplan (+14 mån i snitt) eller upphandling (+2–12 mån) är inte inräknade i normfallets staplar.</p>
+  </div>
+</section>
+
+<!-- NATIONELL KONTEXT -->
+<section id="kontext">
+  <div class="container">
+    <span class="section-label">Nationell kontext</span>
+    <h2>Ledtiderna är en strukturell verklighet</h2>
+    <p class="mt-2" style="color:var(--muted)">Långa ledtider i kommunala byggprojekt är inte unikt för Linköping eller Lejonfastigheter — det är ett nationellt mönster som bekräftas av Sveriges Kommuner och Regioner, Boverket och oberoende branschstudier.</p>
+
+    <div class="kontext-grid" id="kontext-grid"></div>
+
+    <div class="kontext-citat">
+      <blockquote>
+        "Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt."
+      </blockquote>
+      <cite>— Lunds kommun, officiell projektinformation (lund.se)</cite>
+    </div>
+
+    <p class="gantt-note mt-3">Primärkällor: SKR (<em>Jämförelser inom detaljplaneområdet 2024</em>), Boverket (rapport 2025:11), Initiativet Bygg i Tid/Byggföretagen/Fastighetsägarna (<em>Nationellt Ledtidsindex 2025</em>), Evidens (<em>Överklagande av detaljplaner 2023</em>, uppdrag SKR/Byggföretagen/Fastighetsägarna), Lunds kommun, Uppsala Skolfastigheter, Linköpings kommun. Se fullständig källförteckning.</p>
+  </div>
+</section>
+
+<!-- PER LOKALTYP -->
+<section id="per-typ">
+  <div class="container">
+    <span class="section-label">Per lokaltyp</span>
+    <h2>Typiska ledtider och kostnader</h2>
+    <p class="mt-2" style="color:var(--muted)">Data sammanställd från SISAB (Stockholm), Micasa (Stockholm), Uppsala Skolfastigheter och branschdata (ByggfaktaDOCU). Siffrorna avser <em>byggfasen</em> (genomförandebeslut till inflyttning) om inte annat anges — <strong>total processtid inkl. detaljplan och programskede är ofta 3–7 år längre</strong>.</p>
+    <div class="typ-grid" id="typ-grid"></div>
+    <p class="gantt-note mt-4">
+      <strong>Metodnot:</strong> Tider avser tid från <em>genomförandebeslut</em> (GB) till <em>inflyttning</em> enligt publicerade slutrapporter — detaljplane- och programskede är inte inräknade. Avvikelser mot budget är medianvärden från respektive urval. Urval baseras på 15 SISAB-projekt 2019–2023, Micasas egen lägesrapport 2025 om de fem senaste VoB-projekten, samt 8 dokumenterade LSS- och idrottshallsprojekt 2019–2025. Lejonfastigheters egna projekt kan variera betydligt beroende på detaljplaneläge, markförutsättningar och omfattning.
+    </p>
+  </div>
+</section>
+
+<!-- EXEMPEL: LINKÖPING ↔ EXTERN SPEGLING -->
+<section id="exempel">
+  <div class="container">
+    <span class="section-label">Konkreta exempel</span>
+    <h2>Lejonfastigheter och en spegling</h2>
+    <p class="mt-2" style="color:var(--muted)">Tre aktuella Lejonfastigheter-projekt jämfört med likartade projekt från andra svenska kommunala fastighetsbolag. Syftet är att förankra siffrorna i konkret verklighet.</p>
+    <div class="exempel-grid" id="exempel-grid"></div>
+    <p class="gantt-note mt-3">
+      <strong>Källa:</strong> Lejonfastigheters projektkommunikation och pressmeddelanden, RO-Gruppens pressmeddelande oktober 2024 (Lägerbålet), ByggPartners projektreferens (Hemlingborg), ByggfaktaDOCU (LSS-projekt), Krokoms kommun och Nyköpings kommun (förskolor), Corren och Fastighetssverige.
+    </p>
+  </div>
+</section>
+
+<!-- SPÅR A -->
+<section id="spar-a" class="spar-section">
+  <div class="container">
+    <div class="spar-header" id="header-a"></div>
+    <div id="detalj-a"></div>
+  </div>
+</section>
+
+<!-- SPÅR B -->
+<section id="spar-b" class="spar-section">
+  <div class="container">
+    <div class="spar-header" id="header-b"></div>
+    <div id="detalj-b"></div>
+  </div>
+</section>
+
+<!-- SPÅR C -->
+<section id="spar-c" class="spar-section">
+  <div class="container">
+    <div class="spar-header" id="header-c"></div>
+    <div id="detalj-c"></div>
+  </div>
+</section>
+
+<!-- SPÅR D -->
+<section id="spar-d" class="spar-section">
+  <div class="container">
+    <div class="spar-header" id="header-d"></div>
+    <div id="detalj-d"></div>
+  </div>
+</section>
+
+<!-- MODULER -->
+<section id="moduler">
+  <div class="container">
+    <span class="section-label">Interimslösningen</span>
+    <h2>Modulbyggnader</h2>
+    <p class="mt-2">Moduler är inte ett femte spår — de är ett verktyg som köper tid medan ett permanent spår planeras. <strong>De ”korta” tiderna som ofta nämns (veckor) gäller endast vid akuta händelser som brand eller vattenskada</strong>, där bygglov kan hanteras snabbspår och tomten redan har rätt planändamål. För ordinarie temporära behov (6 månader–5 år) krävs samma bygglovsprocess som för all annan byggnation, plus tidsbegränsat bygglov (max 10 år, förlängningsbart till 15) och rätt planändamål.</p>
+    <div class="modul-grid" id="modul-grid"></div>
+    <div class="modul-varning">
+      <strong>Varning:</strong> Temporära lösningar tenderar att bli permanenta. Uppsala rapporterar att ~20 % av kommunens förskolor drivs i modulbyggnader. SVT (2021): <em>"Förskolemodulerna är här för att stanna."</em> Använd moduler med en explicit plan och datum för avveckling.
+    </div>
+  </div>
+</section>
+
+<!-- BESLUTSSTÖD -->
+<section id="beslut">
+  <div class="container">
+    <span class="section-label">Beslutsstöd</span>
+    <h2>Vilket spår passar ditt behov?</h2>
+    <p class="mt-2" style="color:var(--muted)">Utgå från när lokalen behövs och vilket behov som ska mötas.</p>
+
+    <div class="tid-guide" id="tid-guide"></div>
+
+    <div class="beslut-matris mt-3">
+      <div class="matris-header">
+        <div class="matris-cell">Kriterium</div>
+        <div class="matris-cell">A. Hyra in</div>
+        <div class="matris-cell">B. Bygga om</div>
+        <div class="matris-cell">C. Tillbyggnad</div>
+        <div class="matris-cell">D. Nybyggnad</div>
+      </div>
+      <div id="matris-rows"></div>
+    </div>
+    <p class="matris-note">* LOU-undantag (3 kap. 19 § LOU) gäller för vanliga hyresavtal men inte om fastighetsägaren bygger lokalen för kommunens räkning.</p>
+
+    <div class="behov-pika">
+      <div class="behov-pika-header">En förutsättning för att tidsplanen ska hålla</div>
+      <p>De ledtider som redovisas i detta material förutsätter att <strong>behovsbilden är tydlig och stabil</strong> när projektet startar. Sena förändringar — i programmets omfattning, antalet brukare, lokalens funktion eller projektets inriktning — innebär i praktiken en omstart av tidigare skeden. Tidiga skeden låser också den största delen av investeringskostnaden. Den enskilt viktigaste tidsbesparingen ligger därför i att verksamhet och fastighetsägare når en gemensam, beslutad behovsbild innan projektering påbörjas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KÄLLOR -->
+<section id="kallor">
+  <div class="container">
+    <span class="section-label">Fördjupning & källförteckning</span>
+    <h2>Källor och referensmaterial</h2>
+    <p class="mt-2" style="color:var(--muted)">Alla ledtider och statistiska uppgifter i detta material baseras på nedanstående svenska källor. Siffror avser det senast tillgängliga underlaget per angiven källa.</p>
+    <div class="kallor-grid" id="kallor-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Uppdaterad 2026 · Internt beslutsunderlag · Arbetsmaterial
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   REDIGERA TIDER OCH TEXTER HÄR
+   Alla siffror är i månader om inget annat anges.
+   ═══════════════════════════════════════════════════════════════════ */
+const DATA = {
+
+  fasFarger: {
+    plan:           { farg: "#2563EB", label: "Detaljplan / planprocess" },
+    beslut:         { farg: "#7C3AED", label: "Politiska beslut & förstudie" },
+    upphandling:    { farg: "#D97706", label: "Upphandling" },
+    projektering:   { farg: "#059669", label: "Projektering" },
+    byggnation:     { farg: "#C0392B", label: "Byggnation" },
+    anpassning:     { farg: "#0891B2", label: "Anpassning / hyresgästanpassning" },
+    evakuering:     { farg: "#DB2777", label: "Evakuering & bygglov" },
+  },
+
+  spar: [
+    {
+      id: "a",
+      bokstav: "A",
+      namn: "Hyra in",
+      subtitle: "Befintlig lokal eller ny lokal uppförd av extern part",
+      farg: "#0891B2",
+      minManader: 3,
+      maxManader: 48,
+      passar: "Akuta eller tillfälliga behov — samt när mark saknas",
+      varning: "Strukturellt dyrare långsiktigt",
+
+      scenarios: [
+        {
+          namn: "A1. Hyra in befintlig lokal",
+          totalText: "3–12 månader",
+          huvudfarg: "#0891B2",
+          faser: [
+            { namn: "Söka och identifiera lokal",      fas: "beslut",      tid: "1–4 veckor",   kommentar: "Beror på marknad och verksamhetskrav" },
+            { namn: "Politiskt beslut",                fas: "beslut",      tid: "4–8 veckor",   kommentar: "Nämnd- och/eller KS-beslut" },
+            { namn: "Avtalsförhandling",               fas: "upphandling", tid: "2–6 veckor",   kommentar: "Hyresundantag gäller (3 kap. 19 § LOU)" },
+            { namn: "Ev. bygglov (verksamhetsändring)",fas: "anpassning",  tid: "6–10 veckor",  kommentar: "Om lokal byter användning" },
+            { namn: "Hyresgästanpassning",             fas: "anpassning",  tid: "2–6 månader",  kommentar: "VVS, el, ventilation, tillgänglighet" },
+          ]
+        },
+        {
+          namn: "A2. Hyresvärdsupphandling",
+          totalText: "2–4 år",
+          huvudfarg: "#0e6b85",
+          faser: [
+            { namn: "Kravställning och marknadsanalys",fas: "beslut",      tid: "3–6 mån",  kommentar: "Definiera lokalbehov, tekniska krav, läge" },
+            { namn: "Politiska beslut",                fas: "beslut",      tid: "2–4 mån",  kommentar: "Inriktnings- och investeringsbeslut" },
+            { namn: "LOU-upphandling",                 fas: "upphandling", tid: "6–12 mån", kommentar: "Byggentreprenadsupphandling — ej hyresundantag" },
+            { namn: "Ev. detaljplan på hyresvärdens mark",fas: "plan",     tid: "+1–4 år",  kommentar: "Om ny DP krävs tillkommer hela planprocessen" },
+            { namn: "Projektering & bygglov",          fas: "projektering",tid: "6–12 mån", kommentar: "Hyresvärden ansvarar men kommunen ställer krav" },
+            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–24 mån",kommentar: "Lokaltyp styr byggtid (jfr spår D)" },
+            { namn: "Inflyttning",                     fas: "anpassning",  tid: "1–2 mån",  kommentar: "" },
+          ]
+        }
+      ],
+      begransningar: [
+        "Skola/förskola: kräver pedagogisk yta, utomhusyta, ventilation ≥ 7 l/s/person — utesluter de flesta kontorslokaler",
+        "Vård och omsorg: verksamhetsklass 5A (begränsad utrymningsförmåga) — höga brandskyddskrav",
+        "Kommunen mister långsiktig rådighet och anpassningsflexibilitet",
+        "Strukturellt dyrare: 135–500 MSEK mer än ägande över 33 år (Kommuninvest 2021)",
+        "Hyresvärdsupphandling (A2): när hyresvärden bygger för kommunens räkning blir det byggentreprenad enligt LOU — inte ett hyresundantag. Avtalets utformning avgör"
+      ],
+      narPassar: [
+        "A1: Behov som inte kan vänta — enda realistiska alternativet vid < 6 månaders ledtid",
+        "A1: Tillfälliga behov — demografiska toppar, evakuering under om- eller nybyggnad",
+        "A1: Icke-kärnverksamhet där rådighet inte är avgörande",
+        "A2: När Lejonfastigheter saknar mark i område där behov finns",
+        "A2: När kommunens investeringsutrymme är begränsat men behovet är permanent",
+        "A2: Tidsvinst mot spår D förutsätter att hyresvärden redan har rätt detaljplan"
+      ]
+    },
+    {
+      id: "b",
+      bokstav: "B",
+      namn: "Bygga om",
+      subtitle: "Ombyggnad av befintlig byggnad i beståndet",
+      farg: "#059669",
+      minManader: 24,
+      maxManader: 60,
+      passar: "Anpassning av befintlig byggnad",
+      varning: "Dolda skador kan fördubbla tid och kostnad",
+
+      scenarios: [
+        {
+          namn: "Utan ny detaljplan",
+          totalText: "2–5 år",
+          huvudfarg: "#059669",
+          faser: [
+            { namn: "Förstudie inkl. miljöinventering",fas: "beslut",      tid: "2–4 mån",  kommentar: "Asbest- och PCB-inventering obligatorisk" },
+            { namn: "Programhandling",                 fas: "beslut",      tid: "2–4 mån",  kommentar: "" },
+            { namn: "Politiska beslut",                fas: "beslut",      tid: "2–4 mån",  kommentar: "Nämnd → KS → ev. KF, investeringsbeslut" },
+            { namn: "Upphandling projektering",        fas: "upphandling", tid: "2–3 mån",  kommentar: "Med ramavtal: dagar–veckor" },
+            { namn: "Projektering",                    fas: "projektering",tid: "6–12 mån", kommentar: "" },
+            { namn: "Evakuering + bygglov",            fas: "evakuering",  tid: "3–12 mån", kommentar: "Politiskt känsligt; kan överklagas" },
+            { namn: "Upphandling entreprenad",         fas: "upphandling", tid: "3–5 mån",  kommentar: "" },
+            { namn: "Byggnation",                      fas: "byggnation",  tid: "10–24 mån",kommentar: "" },
+            { namn: "Slutbesked + inflyttning",        fas: "byggnation",  tid: "1–3 mån",  kommentar: "" },
+          ]
+        },
+        {
+          namn: "Med ny detaljplan",
+          totalText: "4–8 år",
+          huvudfarg: "#1e7a55",
+          faser: [
+            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "+1–4 år",  kommentar: "Standardförfarande 1–2 år; utökat 2–4+ år" },
+            { namn: "Resterande steg",                 fas: "byggnation",  tid: "Som ovan", kommentar: "Samtliga skeden i B (utan DP) tillkommer" },
+          ]
+        }
+      ],
+      begransningar: [
+        "Dolda skador (fukt, konstruktion) kan sticka: S:t Jörgens skola Helsingborg 17 → 60 MSEK (+350 %)",
+        "Futurum skola i Håbo: ~12 år totalt; kommunledningen: 'Vi ville bygga nytt men oppositionen stoppade det'",
+        "Evakueringsplan kan underkännas i förvaltningsrätten (Järfällaexemplet)",
+        "Byggnader 1940–1982: trolig förekomst av asbest. Byggnader 1956–1973: trolig PCB i fogar",
+        "K-märkta byggnader/byggnadsminnen: kräver antikvarisk konsult och Länsstyrelsens tillstånd"
+      ],
+      narPassar: [
+        "Befintlig byggnad i beståndet behöver anpassas för ändrad eller utökad verksamhet",
+        "Ingen ny detaljplan krävs och byggnaden är strukturellt intakt",
+        "Renovering av tekniska system (tak, fasad, VS, el) i kombination med ombyggnad",
+        "Behovet kan tillgodoses på 2–5 år"
+      ]
+    },
+    {
+      id: "c",
+      bokstav: "C",
+      namn: "Tillbyggnad",
+      subtitle: "Utökning av befintlig byggnad på samma fastighet",
+      farg: "#D97706",
+      minManader: 24,
+      maxManader: 42,
+      passar: "Kapacitetsökning på befintlig plats",
+      varning: "Kräver ofta detaljplaneändring — lika lång tid som nybyggnad",
+
+      scenarios: [
+        {
+          namn: "Inom befintlig detaljplan",
+          totalText: "2–3,5 år",
+          huvudfarg: "#D97706",
+          faser: [
+            { namn: "Förstudie + politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kontrollera e-tal, höjd, BTA i gällande DP" },
+            { namn: "Upphandling projektering",        fas: "upphandling", tid: "2–3 mån",  kommentar: "" },
+            { namn: "Projektering",                    fas: "projektering",tid: "6–10 mån", kommentar: "" },
+            { namn: "Bygglov",                         fas: "evakuering",  tid: "2–5 mån",  kommentar: "" },
+            { namn: "Upphandling + byggnation",        fas: "byggnation",  tid: "12–24 mån",kommentar: "" },
+          ]
+        },
+        {
+          namn: "Kräver ny/ändrad detaljplan",
+          totalText: "4–7 år",
+          huvudfarg: "#b8650f",
+          faser: [
+            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "+1–4 år",  kommentar: "Krävs om tillbyggnaden bryter mot e-tal, höjd eller planändamål" },
+            { namn: "Resterande steg",                 fas: "byggnation",  tid: "Som ovan", kommentar: "Samtliga skeden i C (inom DP) tillkommer" },
+          ]
+        }
+      ],
+      begransningar: [
+        "Vanligare än vad som uppfattas att ny DP krävs — kontrollera e-tal, byggrätt och höjdbestämmelse tidigt",
+        "BTA-frågan: om atrium/void redan räknats i befintlig BTA ger ny våning däröver noll ny BTA — verifiera med stadsbyggnadskontoret",
+        "Befintlig verksamhet kan behöva evakueras delvis under byggnation",
+        "Samordning med drift av befintlig byggnad kan försvåra och förlänga byggnation"
+      ],
+      narPassar: [
+        "Befintlig byggnad håller god standard men kapaciteten räcker inte",
+        "Tillräcklig byggrätt finns i detaljplanen",
+        "Marken på fastigheten medger utökning",
+        "Verksamheten kan delvis evakueras under byggnationstiden"
+      ]
+    },
+    {
+      id: "d",
+      bokstav: "D",
+      namn: "Nybyggnad",
+      subtitle: "Ny byggnad på befintlig eller ny mark",
+      farg: "#C0392B",
+      minManader: 30,
+      maxManader: 96,
+      passar: "Permanent nytt lokalbehovet",
+      varning: "5–8 år med ny detaljplan — planering måste starta omedelbart",
+
+      scenarios: [
+        {
+          namn: "Befintlig DP medger byggnation",
+          totalText: "2,5–4 år",
+          huvudfarg: "#C0392B",
+          faser: [
+            { namn: "Förstudie & program",             fas: "beslut",      tid: "2–6 mån",  kommentar: "" },
+            { namn: "Politiska beslut",                fas: "beslut",      tid: "2–4 mån",  kommentar: "Nämnd → KS → KF, investeringsbeslut" },
+            { namn: "Upphandling projektering",        fas: "upphandling", tid: "2–5 mån",  kommentar: "Ramavtal: dagar–veckor" },
+            { namn: "Projektering",                    fas: "projektering",tid: "6–18 mån", kommentar: "" },
+            { namn: "Bygglov + startbesked",           fas: "evakuering",  tid: "3–7 mån",  kommentar: "Max 20 v lagstadgat + tekniskt samråd" },
+            { namn: "Upphandling entreprenad",         fas: "upphandling", tid: "3–6 mån",  kommentar: "Totalentreprenad sparar 6–12 mån vs. utförandeentreprenad" },
+            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–30 mån",kommentar: "Förskola 12–24 mån · Skola 18–36 mån · Äldreboende 12–24 mån" },
+          ]
+        },
+        {
+          namn: "Ny detaljplan krävs (normalfall)",
+          totalText: "5–8 år",
+          huvudfarg: "#922b21",
+          faser: [
+            { namn: "Planbesked",                      fas: "plan",        tid: "4 mån",    kommentar: "Lagstadgat; faktisk tid kan vara längre" },
+            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "12–48 mån",kommentar: "Snitt Sverige 2022–2023: 44 mån · 25 % överklagas (+14 mån)" },
+            { namn: "Laga kraft (om ej överklagad)",   fas: "plan",        tid: "3 veckor", kommentar: "" },
+            { namn: "Förstudie & politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kan delvis parallelliseras med planprocessen" },
+            { namn: "Projektering + upphandling",      fas: "projektering",tid: "8–18 mån", kommentar: "" },
+            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–30 mån",kommentar: "" },
+          ]
+        }
+      ],
+      begransningar: [
+        "Mediantiden detaljplan → laga kraft: 44 månader (SKR jämförelser 2024). Andel kommuner under 1 år: 13 % (2022–23)",
+        "25 % av alla detaljplaner överklagas; 12 % av överklagandena ändrar planen — resten orsakar fördröjning utan utbyte",
+        "Budget och plats i lokalförsörjningsplanen måste säkras 3–5 år före byggstart",
+        "Sena beslutsändringar — t.ex. ändrad inriktning, omfattning eller demografiska omprövningar — kan kasta tillbaka tidsplanen flera år och i praktiken tvinga fram en omstart av tidigare skeden",
+        "I vissa fall går det att korta ledtiden genom parallellisering — exempelvis att påbörja projektering och upphandlingsförberedelser redan under detaljplanens granskningsskede. Förutsätter tydligt politiskt mandat och att detaljplanens inriktning är stabil"
+      ],
+      narPassar: [
+        "Strukturellt långsiktigt behov som kvarstår oavsett demografiska variationer",
+        "Ingen befintlig byggnad i beståndet kan möta behovet",
+        "Planeringshorisonten är 5 år eller längre",
+        "Projektet finns eller kan föras in i flerårsplan och budget"
+      ]
+    }
+  ],
+
+  gantt: [
+    {
+      label: "A1. Hyra in",
+      sublabel: "Befintlig lokal",
+      totalManader: 6,
+      segment: [
+        { fas: "beslut",      andel: 0.40 },
+        { fas: "anpassning",  andel: 0.60 },
+      ]
+    },
+    {
+      label: "A2. Hyresvärdsupphandling",
+      sublabel: "Rätt DP finns — annars +1–4 år",
+      totalManader: 30,
+      segment: [
+        { fas: "beslut",      andel: 0.22 },
+        { fas: "upphandling", andel: 0.28 },
+        { fas: "projektering",andel: 0.22 },
+        { fas: "byggnation",  andel: 0.28 },
+      ]
+    },
+    {
+      label: "B. Bygga om",
+      sublabel: "Utan ny detaljplan",
+      totalManader: 36,
+      segment: [
+        { fas: "beslut",      andel: 0.22 },
+        { fas: "projektering",andel: 0.28 },
+        { fas: "evakuering",  andel: 0.12 },
+        { fas: "upphandling", andel: 0.10 },
+        { fas: "byggnation",  andel: 0.28 },
+      ]
+    },
+    {
+      label: "C. Tillbyggnad",
+      sublabel: "Inom befintlig detaljplan",
+      totalManader: 30,
+      segment: [
+        { fas: "beslut",      andel: 0.20 },
+        { fas: "projektering",andel: 0.27 },
+        { fas: "evakuering",  andel: 0.10 },
+        { fas: "byggnation",  andel: 0.43 },
+      ]
+    },
+    {
+      label: "D. Nybyggnad",
+      sublabel: "Befintlig DP medger byggnation",
+      totalManader: 40,
+      segment: [
+        { fas: "beslut",      andel: 0.15 },
+        { fas: "projektering",andel: 0.28 },
+        { fas: "upphandling", andel: 0.12 },
+        { fas: "evakuering",  andel: 0.10 },
+        { fas: "byggnation",  andel: 0.35 },
+      ]
+    },
+    {
+      label: "D. Nybyggnad",
+      sublabel: "Med ny detaljplan (normalfall)",
+      totalManader: 72,
+      segment: [
+        { fas: "plan",        andel: 0.55 },
+        { fas: "beslut",      andel: 0.10 },
+        { fas: "projektering",andel: 0.15 },
+        { fas: "upphandling", andel: 0.05 },
+        { fas: "byggnation",  andel: 0.15 },
+      ]
+    },
+  ],
+
+  matris: [
+    { kriterium: "Kräver detaljplan",           a: "Nej",      b: "Sällan",   c: "Ibland",    d: "Nästan alltid" },
+    { kriterium: "Kräver LOU-upphandling",       a: "Sällan*",  b: "Ja",       c: "Ja",        d: "Ja" },
+    { kriterium: "Kommunal rådighet",            a: "Låg",      b: "Hög",      c: "Hög",       d: "Hög" },
+    { kriterium: "Ekonomi lång sikt",            a: "Sämst",    b: "God",      c: "God",       d: "Bäst" },
+    { kriterium: "Risk för fördyrning",          a: "Låg",      b: "Hög",      c: "Medium",    d: "Medium" },
+    { kriterium: "Evakuering kan behövas",       a: "Nej",      b: "Ja",       c: "Delvis",    d: "Nej" },
+  ],
+
+  tidGuide: [
+    { tid: "< 6 månader",  rek: "A. Hyra in (eller modul)", text: "Inget annat spår är realistiskt. Acceptera begränsningarna — planera permanent lösning parallellt." },
+    { tid: "1–3 år",       rek: "B. Bygga om",              text: "Om lämplig byggnad finns i beståndet och ingen ny detaljplan krävs. Annars modul som interimslösning." },
+    { tid: "3–5 år",       rek: "C eller D (no DP)",        text: "Tillbyggnad om befintlig byggnad finns. Nybyggnad om mark och plan redan är på plats." },
+    { tid: "5 år eller mer", rek: "D. Nybyggnad",           text: "Starta detaljplaneprocess och säkra budget nu. Behovet finns 2030 — besluten måste fattas 2025." },
+  ],
+
+  moduler: [
+    {
+      titel: "Moduluthyrning",
+      rader: [
+        { label: "Tid till inflyttning",  val: "6–18 mån (med bygglov)" },
+        { label: "Akut undantag",         val: "Veckor — vid t.ex. brand/vattenskada" },
+        { label: "Tidsbegränsat bygglov", val: "Max 10 år (+5 år)" },
+        { label: "Kostnad",               val: "391–941 kr/m²/år" },
+        { label: "Kapital binds",         val: "Nej" },
+        { label: "Kräver planändamål",    val: "Ja" },
+      ]
+    },
+    {
+      titel: "Modulköp (permanent)",
+      rader: [
+        { label: "Tid till inflyttning",  val: "12–24 mån" },
+        { label: "Teknisk livslängd",     val: "25–40 år" },
+        { label: "Kostnad",               val: "Lägre per år" },
+        { label: "Kapital binds",         val: "Ja" },
+        { label: "Kräver planändamål",    val: "Ja" },
+      ]
+    },
+    {
+      titel: "Konceptbyggnad (t.ex. SISAB UPP)",
+      rader: [
+        { label: "Tid till inflyttning",  val: "18–24 mån (GB→inflytt)" },
+        { label: "Typ",                   val: "Permanent prefab" },
+        { label: "Material",              val: "Trä" },
+        { label: "Kräver planändamål",    val: "Ja" },
+        { label: "Lämpar sig för",        val: "Förskola (ersättning av uttjänt enhet)" },
+      ]
+    }
+  ],
+
+  kontext: [
+    {
+      siffra: "4,8",
+      enhet: "år i snitt",
+      beskrivning: "Genomsnittlig ledtid från beslut om planuppdrag till startbesked i 52 kommuner som representerar ~80 % av Sveriges lägenhetsproduktion. Ökning från 4,5 år (2023) och 4,7 år (2024). Avser flerbostadshus — illustrerar generella plan- och lovprocesser som även skolfastigheter berörs av.",
+      kalla: "Nationellt Ledtidsindex 2025 (Initiativet Bygg i Tid, Byggföretagen, Fastighetsägarna)"
+    },
+    {
+      siffra: "var fjärde",
+      enhet: "detaljplan överklagas",
+      beskrivning: "SKR konstaterar att ”omkring var fjärde antagen detaljplan” överklagas — en stabil nivå över flera mätperioder. Endast 12 % av överklagandena leder till att planen helt eller delvis ändras i mark- och miljödomstolen. Genomsnittlig domstolstid: 8,4 månader.",
+      kalla: "SKR, Jämförelser inom detaljplaneområdet 2024 + Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)"
+    },
+    {
+      siffra: "~7",
+      enhet: "år i Lund",
+      beskrivning: "Lunds kommun anger på sin officiella webbplats: ”Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt.” Bilden bekräftas av Uppsala Skolfastigheter och flera kommuners lokalförsörjningsplaner.",
+      kalla: "Lunds kommun (lund.se, hämtad 2026)"
+    },
+    {
+      siffra: "3 av 10",
+      enhet: "år byggnation",
+      beskrivning: "Kvarngärdesskolan i Uppsala (F–9, kapacitet 990 elever) byggdes på 3 år — spadtag aug 2022, invigning sep 2025 — och tilldelades PQi-utmärkelsen för byggåret 2024 (7 av 150 projekt). De 3 åren avser dock enbart byggfasen. Detaljplanen startade 2015 och vann laga kraft 2020. Hela processen tog cirka 10 år.",
+      kalla: "Uppsala Skolfastigheter, Uppsala kommun"
+    },
+    {
+      siffra: "18–24",
+      enhet: "mån — målbilden",
+      beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar dock att kommunerna i genomsnitt inte når upp till denna målsättning. Gapet mellan ambition och utfall är en strukturell utmaning som påverkar alla kommunala lokalförsörjningsprojekt.",
+      kalla: "Nationellt Ledtidsindex 2025"
+    },
+    {
+      siffra: "18–24",
+      enhet: "mån — kommunens egen målbild",
+      beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar att kommunerna i genomsnitt inte når upp till denna målsättning. För kommunala byggherrar med prioriterade samhällsprojekt är förhållandena ofta bättre än för bostadsmarknaden, men gapet mellan målbild och utfall kvarstår även för aktiva planprocesser.",
+      kalla: "Nationellt Ledtidsindex 2025"
+    }
+  ],
+
+  // ═══════ PER LOKALTYP — DATA PER FASTIGHETSTYP ═══════
+  // Källa: SISAB slutrapporter okt 2024 (15 projekt), Micasa lägesrapport juni 2025,
+  // Uppsala Skolfastigheter, ByggfaktaDOCU (publikt data 2019-2025), Boverket
+  lokaltyper: [
+    {
+      namn: "Förskolor",
+      eyebrow: "Nybyggnad · 3–8 avd",
+      rader: [
+        { etikett: "Byggtid (GB→inflytt)", varde: "21–37 mån" },
+        { etikett: "Modulförskola UPP", varde: "21 mån" },
+        { etikett: "Traditionell nybyggnad", varde: "30–36 mån" },
+        { etikett: "Budget (mkr)", varde: "25–115" },
+        { etikett: "Avvikelse mot budget", varde: "+22–27 %" }
+      ],
+      insikt: "SISAB:s modulkoncept (UPP) för 3–4 avdelningar kan färdigställas på knappt två år efter beslut. Traditionell nybyggnad för 6–12 avdelningar tar snittvis 30+ månader — och notera: utan detaljplan, programskede och upphandling tillkommer ytterligare 2–4 år.",
+      kalla: "SISAB slutrapporter 2019–2023 (8 projekt)"
+    },
+    {
+      namn: "Grundskolor F–9",
+      eyebrow: "Ombyggnad / Nybyggnad",
+      rader: [
+        { etikett: "Ombyggnad (median)", varde: "18 mån" },
+        { etikett: "Större nybyggnad (bygg)", varde: "3 år" },
+        { etikett: "Hela processen inkl. DP", varde: "8–10 år" },
+        { etikett: "Budget ombyggnad", varde: "10–150 mkr" },
+        { etikett: "Avvikelse ombyggnad", varde: "+4 % (median)" }
+      ],
+      insikt: "Ombyggnadsprojekt är förvånansvärt förutsägbara — SISAB:s åtta dokumenterade ombyggnader 2019–2023 höll sig inom +4 % mot budget i median. Utmaningen ligger istället i planerings- och beslutsfasen. Uppsala Kvarngärdesskolan (F–9, 990 elever) exemplifierar: 3 års byggfas — men detaljplanen startade 2015 och hela processen tog 10 år.",
+      kalla: "SISAB slutrapporter, Uppsala Skolfastigheter"
+    },
+    {
+      namn: "Vård- och omsorgsboenden",
+      eyebrow: "SÄBO · 60–100 lgh",
+      rader: [
+        { etikett: "Markanvisning→inflytt", varde: "11–13 år" },
+        { etikett: "Från inriktningsbeslut", varde: "5–9 år" },
+        { etikett: "Endast byggfas", varde: "2–3 år" },
+        { etikett: "Budget nybyggnad", varde: "380–500 mkr" },
+        { etikett: "Boverkets stöd 2025", varde: "492 mkr/år" }
+      ],
+      insikt: "Micasa konstaterar själva i sin lägesrapport 2025: ”Erfarenhet från bolagets fem senaste projekt visar att processen från markanvisning till inflyttning är 11–13 år.” Det är den längsta ledtiden bland Lejonfastigheters lokaltyper. Boverkets investeringsstöd kräver dock att själva byggfasen hålls inom 2 år.",
+      kalla: "Micasa Fastigheter, Boverket"
+    },
+    {
+      namn: "LSS-gruppbostäder",
+      eyebrow: "6 lgh · 500–700 kvm",
+      rader: [
+        { etikett: "Byggtid produktion", varde: "10–15 mån" },
+        { etikett: "Antal lägenheter", varde: "5–6 st (Socialstyrelsen)" },
+        { etikett: "Budget typisk", varde: "20–50 mkr" },
+        { etikett: "Typisk bruttoarea", varde: "500–700 m²" },
+        { etikett: "Kommunal brist", varde: ">50 % av kommuner" }
+      ],
+      insikt: "LSS-gruppbostäder är den snabbaste lokaltypen i byggfas — typiskt knappt ett år. Socialstyrelsen rekommenderar 3–5 personer per gruppbostad (max 5–6). Mer än hälften av Sveriges kommuner uppger i Boverkets bostadsmarknadsenkät att de har underskott — behovet är ackumulerat.",
+      kalla: "ByggfaktaDOCU 2020–2024, Socialstyrelsen, Boverket"
+    },
+    {
+      namn: "Idrottshallar",
+      eyebrow: "Fullstor · 1 500–4 000 kvm",
+      rader: [
+        { etikett: "Byggtid fullstor", varde: "12–18 mån" },
+        { etikett: "Större arenor", varde: "24–33 mån" },
+        { etikett: "Budget fullstor", varde: "40–130 mkr" },
+        { etikett: "Budget arena (6 000+ m²)", varde: "120–330 mkr" },
+        { etikett: "SISAB avvikelse", varde: "+4 % (1 projekt)" }
+      ],
+      insikt: "Själva byggfasen för en fullstor idrottshall är typiskt 12–18 månader. Större flerfunktionella anläggningar (evenemangsarenor med läktare, flera hallar) tar 2–3 år. Detaljplaneläget och markförutsättningar avgör oftast den totala tiden.",
+      kalla: "ByggfaktaDOCU 2019–2025, SISAB, Göteborgs stad, Malmö stad"
+    }
+  ],
+  // ══════════════════════════════════════════════════
+
+  // ═══════ EXEMPEL: LINKÖPING ↔ EXTERN SPEGLING ═══════
+  exempel: [
+    {
+      titel: "Vårdboende + förskola i samma byggnad",
+      lejon: {
+        namn: "Lägerbålet 1, Linköping (Berga)",
+        rader: [
+          { e: "Omfattning", v: "90 vårdplatser + 100 förskolebarn" },
+          { e: "Storlek", v: "10 800 m² BTA · 4 vån" },
+          { e: "Budget (entreprenad)", v: "225 mkr" },
+          { e: "Bygg", v: "Början 2025 → dec 2026" },
+          { e: "Byggtid", v: "≈ 24 mån" },
+          { e: "Övrigt", v: "Gemensamt storkök · RO-Gruppen totalentreprenör" }
+        ]
+      },
+      spegling: {
+        namn: "Hemlingborg, Gävle (Gavlefastigheter)",
+        rader: [
+          { e: "Omfattning", v: "80 vårdplatser + 120 förskolebarn + skola F-6 + idrottshall" },
+          { e: "Konstruktion", v: "Trästomme · partnering" },
+          { e: "Bygg", v: "Hösten 2020 → 2023" },
+          { e: "Byggtid", v: "≈ 36 mån" },
+          { e: "Förskede", v: "Projektering 2019–2020 (~1 år)" }
+        ]
+      },
+      poang: "Båda projekten kombinerar omsorg och pedagogik under ett tak — en allt vanligare modell. Hemlingborg är något större och mer komplex, vilket också syns i byggtiden. Lejonfastigheters Lägerbålet ligger inom det förväntade spannet för denna typkategori."
+    },
+    {
+      titel: "LSS-gruppbostad",
+      lejon: {
+        namn: "LSS-gruppbostad, Linköping (2024)",
+        rader: [
+          { e: "Omfattning", v: "6 lägenheter" },
+          { e: "Färdigställd", v: "Hösten 2024" },
+          { e: "Byggtid", v: "≈ 12–15 mån" },
+          { e: "Sammanhang", v: "En av flera nybyggda LSS-bostäder i kommunen" }
+        ]
+      },
+      spegling: {
+        namn: "Skogsbo (Avesta) · Ludvika · Gimåt-Högland (Örnsköldsvik)",
+        rader: [
+          { e: "Beställare", v: "Tre olika kommunala bolag" },
+          { e: "Omfattning", v: "6 lägenheter (var och en)" },
+          { e: "Storlek", v: "≈ 600 m² BTA" },
+          { e: "Budget", v: "20–30 mkr" },
+          { e: "Byggtid", v: "10–15 mån" },
+          { e: "Mönster", v: "Konsekvent storlek (Socialstyrelsens rekommendation 5–6 lgh)" }
+        ]
+      },
+      poang: "LSS-gruppbostäder följer ett standardiserat mönster nationellt — sex lägenheter, ~600 m², byggtid kring ett år, budget 20–30 mkr. Lejonfastigheters projekt 2024 ligger på samma nivå som motsvarande projekt i andra svenska kommuner."
+    },
+    {
+      titel: "Förskola",
+      lejon: {
+        namn: "Vallastadens förskola, Linköping",
+        rader: [
+          { e: "Omfattning", v: "72 barn · utomhuspedagogik" },
+          { e: "Bygg", v: "v.9 2015 → januari 2016" },
+          { e: "Byggtid", v: "≈ 10 mån" },
+          { e: "Sammanhang", v: "Bland första byggnader i Vallastaden — detaljplan klar i förväg" }
+        ]
+      },
+      spegling: {
+        namn: "Krokoms konceptförskola",
+        rader: [
+          { e: "Omfattning", v: "170 barn · 10 avdelningar" },
+          { e: "Behovsbeslut", v: "September 2019" },
+          { e: "Planerad invigning", v: "2022" },
+          { e: "Faktisk invigning", v: "September 2024" },
+          { e: "Total processtid", v: "5 år" },
+          { e: "Försening pga", v: "Avropsstopp (entreprenörens konkurs) + detaljplanearbete" }
+        ]
+      },
+      poang: "<strong>Vallastaden = bäst tänkbara förutsättningar:</strong> färdig detaljplan, känd byggherre, tidigt skede av stadsdelsbyggande. <strong>Krokom = vanligaste verkligheten:</strong> 5 år från behovsbeslut till invigning, oavsett att själva produktionen bara tog 12 månader. Skillnaden ligger inte i bygget utan i förskedet."
+    }
+  ],
+  // ══════════════════════════════════════════════════
+
+  kallor: [
+    {
+      grupp: "Lagstiftning och myndigheter",
+      kidor: [
+        { titel: "PBL 5 kap. — Detaljplaneprocessen", meta: "Plan- och bygglagen (2010:900)", url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan--och-bygglag-2010900_sfs-2010-900/" },
+        { titel: "Tidsfrister för handläggning av bygglov", meta: "Boverket, PBL kunskapsbanken", url: "https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/handlaggning/tidsfrister-for-handlaggning/" },
+        { titel: "Val av förfarande, detaljplan", meta: "Boverket, PBL kunskapsbanken", url: "https://www.boverket.se/sv/PBL-kunskapsbanken/detaljplan/detaljplaneprocessen/val-av-forfarande/" },
+        { titel: "Tidsfrister för annonsering (LOU)", meta: "Upphandlingsmyndigheten", url: "https://www.upphandlingsmyndigheten.se/inkopsprocessen/genomfor-upphandlingen/tidsfrister-annonsering/" },
+        { titel: "Nya tröskelvärden 2026", meta: "Upphandlingsmyndigheten", url: "https://www.upphandlingsmyndigheten.se/frageportalen/3188974/nya-troskelvarden/" },
+        { titel: "Hur lång tid tar en lantmäteriförrättning?", meta: "Lantmäteriet", url: "https://www.lantmateriet.se/sv/fastighet-och-mark/forandra-lagg-ihop-eller-dela/hur-lang-tid-tar-det/" },
+      ]
+    },
+    {
+      grupp: "Statistik och jämförelser",
+      kidor: [
+        { titel: "Jämförelser inom detaljplaneområdet 2024", meta: "SKR — primärkälla för svensk planstatistik. ”Omkring var fjärde antagen detaljplan överklagas.”", url: "https://skr.se/skr/samhallsplaneringinfrastruktur/planeringbyggandebostad/fysiskplanering/jamforelserinomdetaljplaneomradet2024.82109.html" },
+        { titel: "Nationellt Ledtidsindex 2025", meta: "Initiativet Bygg i Tid + Byggföretagen + Fastighetsägarna, sept 2025 — viktat snitt 4,8 år för 52 kommuner. 70 % har plankö efter positivt planbesked.", url: "https://byggforetagen.se/app/uploads/2025/09/Nationellt-Ledtidsindex-2025.pdf" },
+        { titel: "Överklagande av detaljplaner — omfattning, effekter och orsaker", meta: "Evidens 2023 på uppdrag av SKR/Byggföretagen/Fastighetsägarna — 24 % överklagas, 12 % ändras", url: "https://skr.se/download/18.3ecbf48018722d6400630e06/1680246439371/%C3%96verklagande-av-detaljplaner.pdf" },
+        { titel: "Samhällseffekter av långa ledtider", meta: "Evidens/Arkwright 2022 på uppdrag av Bygg i Tid — överklagan förlänger med ~14 månader i snitt", url: "https://www.initiativetbyggitid.se/_files/ugd/f0837f_9ef7953c03bf4e4fa64c69a7b75b6a02.pdf" },
+        { titel: "Redovisning av tillämpningen av PBL 2024", meta: "Boverket rapport 2025:11, april 2025 — myndighetsuppföljning av 286 kommuner", url: "https://www.boverket.se/globalassets/publikationer/dokument/2025/redovisning-av-tillampningen-av-plan--och-bygglagstiftningen-ar-2024.pdf" },
+        { titel: "Handläggningstiden för upphandlingsmål minskar 2024", meta: "Upphandlingsmyndigheten — median 2,1 mån i FR 2024", url: "https://www.upphandlingsmyndigheten.se/statistik/rattsfallsstatistik/handlaggningstiden-for-upphandlingsmal-minskar-2024/" },
+      ]
+    },
+    {
+      grupp: "Kommunala referensexempel",
+      kidor: [
+        { titel: "En skola blir till — hela processen", meta: "Uppsala Skolfastigheter", url: "https://skolfastigheter.uppsala.se/projekt-och-upphandling/en-skola-blir-till/" },
+        { titel: "Bygget av en ny förskola eller skola", meta: "Lunds kommun — ”i genomsnitt sju år från tanke till färdig skola”", url: "https://lund.se/stadsutveckling-och-trafik/trafik--och-byggprojekt/bygget-av-en-ny-forskola-eller-skola" },
+        { titel: "Nya Kvarngärdesskolan — projektbeskrivning", meta: "Uppsala Skolfastigheter — byggtid 3 år (2022–2025), PQi-utmärkelse 2024. Detaljplanen startade 2015.", url: "https://skolfastigheter.uppsala.se/projekt-och-upphandling/aktuella-byggprojekt/nya-kvarngardesskolan/" },
+        { titel: "Lokalförsörjningsplan 2025–2045", meta: "Stockholms utbildningsnämnd — modeller och ledtider för skolfastigheter", url: "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/utbildningsnamnden/mote-2024-04-25/agenda/bilaga-4-lokalforsorjningsplan-2025-2045pdf?downloadMode=open" },
+      ]
+    },
+    {
+      grupp: "Data per lokaltyp",
+      kidor: [
+        { titel: "SISAB slutrapporter oktober 2024", meta: "Skolfastigheter i Stockholm AB — 15 förskole-, skol- och idrottsprojekt med GB-datum, budget och utfall", url: "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/skolfastigheter-i-stockholm-ab/mote-2024-10-01/agenda/bilaga-1-slutrapporteroktober2024pdf?downloadMode=open" },
+        { titel: "Slutredovisning Personnevägen 78 förskola", meta: "SISAB feb 2025 — 12 avd / 216 barn, 97 mkr (-15 % mot budget)", url: "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/skolfastigheter-i-stockholm-ab/mote-2025-02-04/agenda/bilaga-2-slutredovisning-personnevagen-78-ny-forskolapdf?downloadMode=open" },
+        { titel: "Slutrapport Bifrostvägen UPP-förskola", meta: "SISAB dec 2024 — modulkoncept SISAB UPP", url: "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/skolfastigheter-i-stockholm-ab/mote-2024-12-17/agenda/bilaga-11-slutrapport-bifrostvagen-2-6-sisab-upppdf?downloadMode=open" },
+        { titel: "Micasa lägesrapport tertial 1 2025", meta: "Micasa Fastigheter — ”markanvisning till inflytt 11–13 år” för VoB", url: "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/micasa-fastigheter-i-stockholm-ab/mote-2025-06-18/agenda/bilaga-1-ils-rapportpdf?downloadMode=open" },
+        { titel: "Stöd till bostäder för äldre", meta: "Boverket — investeringsstöd, krav på max 2 års byggtid, 492 mkr för 2025", url: "https://www.boverket.se/sv/bidrag--garantier/stod-till-bostader-for-aldre/" },
+        { titel: "Bostad med särskild service för vuxna enligt LSS", meta: "Socialstyrelsen — rekommendation om 3–5 boende per gruppbostad", url: "https://www.socialstyrelsen.se/globalassets/sharepoint-dokument/artikelkatalog/ovrigt/2018-6-12.pdf" },
+        { titel: "ByggfaktaDOCU — projektdatabas", meta: "Branschdatabas — byggtider och budgetar för enskilda projekt", url: "https://www.byggfaktadocu.se/" },
+      ]
+    },
+    {
+      grupp: "Reformagenda och granskning",
+      kidor: [
+        { titel: "SFS 2025:974 — nytt regelverk för bygglov", meta: "Trädde i kraft 1 dec 2025; ny PBL 9 kap.", url: "https://svenskforfattningssamling.se/doc/2025974.html" },
+        { titel: "Nytt regelverk för bygglov", meta: "Boverket, PBL kunskapsbanken — sammanfattning av ändringarna", url: "https://www.boverket.se/sv/PBL-kunskapsbanken/nyheter-pa-pbl-kunskapsbanken/nu-galler-nytt-regelverk-for-bygglov/" },
+        { titel: "Nationell plan för transportinfrastrukturen — lovar mer än den kan hålla", meta: "Riksrevisionen RiR 2023:25 — ”kostnadsökningarna inträffar främst under planeringsfasen”", url: "https://www.riksrevisionen.se/" },
+      ]
+    },
+    {
+      grupp: "Ekonomi och strategi",
+      kidor: [
+        { titel: "Samhällsfastigheter — vem hyr vad ifrån vem?", meta: "Kommuninvest, 2021 — äga vs. hyra: 135–500 MSEK skillnad över 33 år", url: "https://kommuninvest.se/download/18.deb161418f3840cef43b04d/1716410962851/Samhallsfastigheter-vem-hyr-vad-ifran-vem.pdf" },
+        { titel: "Ramavtal för förskolebyggnader", meta: "SKR / Adda Inköpscentral", url: "https://skr.se/skr/samhallsplaneringinfrastruktur/fastighetlokalforsorjning/lokalresursplanering/pedagogiskalokaler/ramavtalforforskolebyggnader.31878.html" },
+        { titel: "Totalrenovering av skola — cirkulärt exempel", meta: "Boverket — Maja Beskowskolan, Umeå", url: "https://www.boverket.se/sv/byggande/cirkular-ekonomi/exempel/renoverad_skola/" },
+      ]
+    }
+  ]
+};
+
+/* ═══════════════════════════════════════════════════════════════════
+   RENDERING — ändra inte nedanstående om du inte vet vad du gör
+   ═══════════════════════════════════════════════════════════════════ */
+
+// Färg per fas-id
+function fasFarg(fasId) {
+  return DATA.fasFarger[fasId]?.farg || "#999";
+}
+
+// ── Spår-grid (overview cards)
+function renderSparGrid() {
+  const el = document.getElementById("spar-grid-container");
+  if (!el) return;
+  el.innerHTML = DATA.spar.map(s => {
+    // Visa i år om spannet är brett eller stort
+    const visaIAr = s.maxManader >= 24;
+    const minVis = visaIAr ? Math.round(s.minManader / 12 * 10) / 10 : s.minManader;
+    const maxVis = visaIAr ? Math.round(s.maxManader / 12 * 10) / 10 : s.maxManader;
+    const enhet = visaIAr ? "år" : "månader";
+    return `
+    <a href="#spar-${s.id}" class="spar-kort">
+      <div class="spar-bokstav" style="background:${s.farg}">${s.bokstav}</div>
+      <h3>${s.namn}</h3>
+      <p class="subtitle">${s.subtitle}</p>
+      <div>
+        <span class="spar-tid" style="color:${s.farg}">${minVis}–${maxVis}</span>
+        <span class="spar-tid-enhet"> ${enhet}</span>
+      </div>
+      <p class="spar-varning">${s.varning}</p>
+    </a>
+  `;
+  }).join("");
+}
+
+// ── Gantt-diagram
+function renderGantt() {
+  const MAX_MAN = 84; // 7 år, ger god marginal för 72 mån staplarna
+
+  // Axel
+  const axelEl = document.getElementById("gantt-axis");
+  if (!axelEl) return;
+  axelEl.innerHTML = "";
+  for (let yr = 0; yr <= 7; yr++) {
+    const pct = (yr * 12 / MAX_MAN) * 100;
+    const label = yr === 0 ? "Start" : yr + " år";
+    axelEl.innerHTML += `<span class="gantt-axis-year" style="left:${pct}%">${label}</span>`;
+  }
+
+  // Rader
+  const rowsEl = document.getElementById("gantt-rows");
+  if (!rowsEl) return;
+  rowsEl.innerHTML = DATA.gantt.map(rad => {
+    const barPct = (rad.totalManader / MAX_MAN) * 100;
+
+    // Segmenten fyller ut barens bredd — inte procentuellt av hela bar-wrap
+    const segments = rad.segment.map(s => {
+      const fasData = DATA.fasFarger[s.fas];
+      const label = fasData?.label || s.fas;
+      const manader = Math.round(s.andel * rad.totalManader);
+      return `<div class="gantt-segment"
+        title="${label}: ${manader} mån"
+        style="width:${s.andel * 100}%;background:${fasFarg(s.fas)}"></div>`;
+    }).join("");
+
+    // Gridlinjer (vertikala år-markörer)
+    const gridLines = [1,2,3,4,5,6,7].map(yr => {
+      const p = (yr * 12 / MAX_MAN) * 100;
+      return `<div class="gantt-grid-line" style="left:${p}%"></div>`;
+    }).join("");
+
+    const manText = rad.totalManader >= 12
+      ? `${Math.round(rad.totalManader / 12 * 10) / 10} år`
+      : `${rad.totalManader} mån`;
+
+    return `
+      <div class="gantt-row">
+        <div class="gantt-label">${rad.label}<small>${rad.sublabel}</small></div>
+        <div class="gantt-bar-wrap">
+          ${gridLines}
+          <div class="gantt-bar" style="width:${barPct}%">${segments}</div>
+          <span class="gantt-range-label" style="left:${barPct}%">${manText}</span>
+        </div>
+      </div>`;
+  }).join("");
+
+  // Legend
+  const legendEl = document.getElementById("gantt-legend");
+  if (!legendEl) return;
+  legendEl.innerHTML = Object.entries(DATA.fasFarger).map(([, v]) =>
+    `<div class="legend-item"><div class="legend-dot" style="background:${v.farg}"></div>${v.label}</div>`
+  ).join("");
+}
+
+// ── Per-spår sektioner
+function renderSpar(s) {
+  const headEl = document.getElementById(`header-${s.id}`);
+  const detEl  = document.getElementById(`detalj-${s.id}`);
+  if (!headEl || !detEl) return;
+
+  headEl.innerHTML = `
+    <div class="spar-badge" style="background:${s.farg}">${s.bokstav}</div>
+    <div class="spar-header-text">
+      <h2>Spår ${s.bokstav}: ${s.namn}</h2>
+      <p>${s.subtitle}</p>
+    </div>`;
+
+  const scenHtml = s.scenarios.map(sc => `
+    <div class="scenario-card">
+      <div class="scenario-head" style="background:${sc.huvudfarg}">
+        <span>${sc.namn}</span>
+        <span class="scenario-tid">${sc.totalText}</span>
+      </div>
+      <div class="scenario-body">
+        <ul class="fas-liste">
+          ${sc.faser.map(f => `
+            <li class="fas-item">
+              <span class="fas-dot" style="background:${fasFarg(f.fas)}"></span>
+              <span class="fas-tid">${f.tid}</span>
+              <span class="fas-namn">
+                ${f.namn}
+                ${f.kommentar ? `<div class="fas-kommentar">${f.kommentar}</div>` : ""}
+              </span>
+            </li>`).join("")}
+        </ul>
+      </div>
+    </div>`).join("");
+
+  const begHtml = `
+    <div class="meta-box risk-box">
+      <h4>Risker och begränsningar</h4>
+      <ul>${s.begransningar.map(b => `<li>${b}</li>`).join("")}</ul>
+    </div>`;
+
+  const passerHtml = `
+    <div class="meta-box">
+      <h4>När passar detta spår</h4>
+      <ul>${s.narPassar.map(n => `<li>${n}</li>`).join("")}</ul>
+    </div>`;
+
+  detEl.innerHTML = `
+    <div class="scenario-grid">${scenHtml}</div>
+    <div class="spar-meta">${begHtml}${passerHtml}</div>`;
+}
+
+// ── Moduler
+function renderModuler() {
+  const el = document.getElementById("modul-grid");
+  if (!el) return;
+  el.innerHTML = DATA.moduler.map(m => `
+    <div class="modul-kort">
+      <h3>${m.titel}</h3>
+      ${m.rader.map(r => `
+        <div class="modul-rad">
+          <span class="rad-label">${r.label}</span>
+          <span class="rad-val">${r.val}</span>
+        </div>`).join("")}
+    </div>`).join("");
+}
+
+// ── Beslutsstöd
+function renderBeslut() {
+  const tidEl = document.getElementById("tid-guide");
+  if (tidEl) {
+    tidEl.innerHTML = DATA.tidGuide.map(t => `
+      <div class="tid-steg">
+        <h4>Behov om</h4>
+        <div class="tid-rekommendation">${t.tid}</div>
+        <strong style="font-size:0.82rem;display:block;margin-bottom:0.4rem">→ ${t.rek}</strong>
+        <p>${t.text}</p>
+      </div>`).join("");
+  }
+
+  const matrisEl = document.getElementById("matris-rows");
+  if (matrisEl) {
+    matrisEl.innerHTML = DATA.matris.map(r => `
+      <div class="matris-row">
+        <div class="matris-cell">${r.kriterium}</div>
+        <div class="matris-cell">${r.a}</div>
+        <div class="matris-cell">${r.b}</div>
+        <div class="matris-cell">${r.c}</div>
+        <div class="matris-cell">${r.d}</div>
+      </div>`).join("");
+  }
+}
+
+// ── Källor
+function renderKallor() {
+  const el = document.getElementById("kallor-grid");
+  if (!el) return;
+  el.innerHTML = DATA.kallor.map(g => `
+    <div class="kalla-grupp">
+      <h3>${g.grupp}</h3>
+      ${g.kidor.map(k => `
+        <div class="kalla-item">
+          <div class="kalla-titel">${k.titel}</div>
+          <div class="kalla-meta">${k.meta}</div>
+          ${k.url ? `<a class="kalla-url" href="${k.url}" target="_blank" rel="noopener">${k.url}</a>` : ""}
+        </div>`).join("")}
+    </div>`).join("");
+}
+
+// ── Kontext (nationell jämförelse)
+function renderKontext() {
+  const el = document.getElementById("kontext-grid");
+  if (!el) return;
+  el.innerHTML = DATA.kontext.map(k => {
+    // Långa textsiffror (mer än 4 tecken) får mindre fontstorlek
+    const sifferKlass = k.siffra.length > 4 ? "siffra lang" : "siffra";
+    return `
+    <div class="kontext-kort">
+      <div class="${sifferKlass}">${k.siffra}</div>
+      <div class="enhet">${k.enhet}</div>
+      <div class="beskrivning">${k.beskrivning}</div>
+      <div class="kalla">${k.kalla}</div>
+    </div>`;
+  }).join("");
+}
+
+function renderLokaltyper() {
+  const el = document.getElementById("typ-grid");
+  if (!el || !DATA.lokaltyper) return;
+  el.innerHTML = DATA.lokaltyper.map(t => `
+    <div class="typ-kort">
+      <div class="typ-header">
+        <h3>${t.namn}</h3>
+        <span class="typ-eyebrow">${t.eyebrow}</span>
+      </div>
+      ${t.rader.map(r => `
+        <div class="typ-rad">
+          <span class="typ-etikett">${r.etikett}</span>
+          <span class="typ-varde">${r.varde}</span>
+        </div>`).join("")}
+      <div class="typ-insikt">${t.insikt}</div>
+      <div class="typ-kalla">Källa: ${t.kalla}</div>
+    </div>`).join("");
+}
+
+function renderExempel() {
+  const el = document.getElementById("exempel-grid");
+  if (!el || !DATA.exempel) return;
+  el.innerHTML = DATA.exempel.map(ex => `
+    <div class="exempel-par">
+      <h3 class="exempel-titel">${ex.titel}</h3>
+      <div class="exempel-jamf">
+        <div class="exempel-kort lejon">
+          <div class="exempel-eyebrow">Lejonfastigheter</div>
+          <h4>${ex.lejon.namn}</h4>
+          ${ex.lejon.rader.map(r => `
+            <div class="exempel-rad">
+              <span class="e-label">${r.e}</span>
+              <span class="e-val">${r.v}</span>
+            </div>`).join("")}
+        </div>
+        <div class="exempel-kort">
+          <div class="exempel-eyebrow">Spegling</div>
+          <h4>${ex.spegling.namn}</h4>
+          ${ex.spegling.rader.map(r => `
+            <div class="exempel-rad">
+              <span class="e-label">${r.e}</span>
+              <span class="e-val">${r.v}</span>
+            </div>`).join("")}
+        </div>
+      </div>
+      <div class="exempel-poang">${ex.poang}</div>
+    </div>`).join("");
+}
+
+// ── INIT
+document.addEventListener("DOMContentLoaded", () => {
+  renderSparGrid();
+  renderGantt();
+  renderKontext();
+  renderLokaltyper();
+  renderExempel();
+  DATA.spar.forEach(s => renderSpar(s));
+  renderModuler();
+  renderBeslut();
+  renderKallor();
+});
+</script>
+</body>
+</html>
