@@ -1,25 +1,49 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './CommentLayer.module.css';
-import { assignAnchorsInDocument } from '../lib/anchor.js';
+import { assignAnchorsInDocument, ensureAnchor } from '../lib/anchor.js';
 import CommentPillar from './CommentPillar.jsx';
 import CommentForm from './CommentForm.jsx';
 import AdminLock from './AdminLock.jsx';
 import OrphansPanel from './OrphansPanel.jsx';
 
-const MARGIN_WIDTH = 260;
+function MessageIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  );
+}
+
+function PlusIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="12" y1="5" x2="12" y2="19"></line>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <line x1="18" y1="6" x2="6" y2="18"></line>
+      <line x1="6" y1="6" x2="18" y2="18"></line>
+    </svg>
+  );
+}
 
 export default function CommentLayer() {
   const [comments, setComments] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [hovered, setHovered] = useState(null);
   const [composing, setComposing] = useState(null);
   const [editing, setEditing] = useState(null);
   const [error, setError] = useState(null);
-  const [mobileDrawerAnchor, setMobileDrawerAnchor] = useState(null);
   const [anchorsReady, setAnchorsReady] = useState(false);
+  const [selectionMode, setSelectionMode] = useState(false);
+  const [panelOpen, setPanelOpen] = useState(false);
+  const [focusedAnchor, setFocusedAnchor] = useState(null);
   const [tick, setTick] = useState(0);
-  const addButtonRef = useRef(null);
-  const hoveredAnchorRef = useRef(null);
+  const groupRefs = useRef(new Map());
 
   useEffect(() => {
     assignAnchorsInDocument(document);
@@ -27,58 +51,171 @@ export default function CommentLayer() {
     fetchComments();
     checkAdmin();
 
-    const applyPadding = () => {
-      document.body.style.paddingRight =
-        window.matchMedia('(min-width: 900px)').matches ? `${MARGIN_WIDTH}px` : '';
+    let rescanTimer = null;
+    const rescan = () => {
+      clearTimeout(rescanTimer);
+      rescanTimer = setTimeout(() => {
+        assignAnchorsInDocument(document);
+        setTick((t) => t + 1);
+      }, 100);
     };
-    applyPadding();
 
-    const onResize = () => { applyPadding(); setTick((t) => t + 1); };
-    const onScroll = () => setTick((t) => t + 1);
-    window.addEventListener('resize', onResize);
-    window.addEventListener('scroll', onScroll, { passive: true });
+    const mo = new MutationObserver((muts) => {
+      for (const m of muts) {
+        if (m.type === 'childList' && (m.addedNodes.length > 0 || m.removedNodes.length > 0)) {
+          rescan();
+          return;
+        }
+      }
+    });
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    const t1 = setTimeout(rescan, 500);
+    const t2 = setTimeout(rescan, 1500);
+
     return () => {
-      window.removeEventListener('resize', onResize);
-      window.removeEventListener('scroll', onScroll);
-      document.body.style.paddingRight = '';
+      mo.disconnect();
+      clearTimeout(rescanTimer);
+      clearTimeout(t1);
+      clearTimeout(t2);
     };
   }, []);
 
+  // Panel öppnas automatiskt när man skapar/redigerar eller fokuserar ett ankare
   useEffect(() => {
-    if (!anchorsReady) return;
-    const elements = document.querySelectorAll('[data-comment-anchor]');
-    const handlers = [];
-    elements.forEach((el) => {
-      const enter = () => { hoveredAnchorRef.current = el; positionAddButton(el); };
-      const leave = () => {
-        setTimeout(() => {
-          if (hoveredAnchorRef.current === el) {
-            hoveredAnchorRef.current = null;
-            if (addButtonRef.current) addButtonRef.current.classList.remove(styles.visible);
-          }
-        }, 120);
-      };
-      el.addEventListener('mouseenter', enter);
-      el.addEventListener('mouseleave', leave);
-      handlers.push([el, enter, leave]);
-    });
-    return () => {
-      handlers.forEach(([el, enter, leave]) => {
-        el.removeEventListener('mouseenter', enter);
-        el.removeEventListener('mouseleave', leave);
-      });
-    };
-  }, [anchorsReady]);
+    if (composing || editing || focusedAnchor) setPanelOpen(true);
+  }, [composing, editing, focusedAnchor]);
 
-  function positionAddButton(el) {
-    if (!addButtonRef.current) return;
-    if (!window.matchMedia('(min-width: 900px)').matches) return;
-    const rect = el.getBoundingClientRect();
-    const scrollY = window.scrollY;
-    addButtonRef.current.style.top = `${rect.top + scrollY + 4}px`;
-    addButtonRef.current.style.right = '8px';
-    addButtonRef.current.classList.add(styles.visible);
-  }
+  // Selection mode: highlight vad som helst under musen + klick för att markera
+  useEffect(() => {
+    if (!selectionMode) return;
+
+    function isSkippable(el) {
+      if (!el || el === document.body || el === document.documentElement) return true;
+      if (el.closest?.('[data-comment-ui]')) return true;
+      return false;
+    }
+
+    function applyHighlight(el) {
+      if (!el || el.__selHi) return;
+      el.__selHi = true;
+      el.__prevOutline = el.style.outline;
+      el.__prevOutlineOffset = el.style.outlineOffset;
+      el.__prevCursor = el.style.cursor;
+      el.__prevBorderRadius = el.style.borderRadius;
+      el.style.outline = '2px dashed #B5822A';
+      el.style.outlineOffset = '3px';
+      el.style.cursor = 'crosshair';
+      el.style.borderRadius = el.__prevBorderRadius || '3px';
+    }
+    function removeHighlight(el) {
+      if (!el || !el.__selHi) return;
+      el.style.outline = el.__prevOutline || '';
+      el.style.outlineOffset = el.__prevOutlineOffset || '';
+      el.style.cursor = el.__prevCursor || '';
+      el.style.borderRadius = el.__prevBorderRadius || '';
+      el.__selHi = false;
+    }
+    function clearAll() {
+      document.querySelectorAll('*').forEach((el) => { if (el.__selHi) removeHighlight(el); });
+    }
+
+    let lastHi = null;
+
+    const onMove = (e) => {
+      const el = e.target;
+      if (isSkippable(el)) {
+        if (lastHi) { removeHighlight(lastHi); lastHi = null; }
+        return;
+      }
+      if (el === lastHi) return;
+      if (lastHi) removeHighlight(lastHi);
+      applyHighlight(el);
+      lastHi = el;
+    };
+
+    const onClick = (e) => {
+      const el = e.target;
+      if (isSkippable(el)) {
+        setSelectionMode(false);
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      const anchor = ensureAnchor(el);
+      setComposing({ anchor });
+      setFocusedAnchor(anchor);
+      setSelectionMode(false);
+    };
+
+    const onKey = (e) => {
+      if (e.key === 'Escape') setSelectionMode(false);
+    };
+
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('click', onClick, true);
+    document.addEventListener('keydown', onKey);
+    document.body.style.cursor = 'crosshair';
+
+    return () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('click', onClick, true);
+      document.removeEventListener('keydown', onKey);
+      document.body.style.cursor = '';
+      clearAll();
+    };
+  }, [selectionMode]);
+
+  // Global hover: sätt focusedAnchor när man pekar på ett kommenterat element eller panel-grupp
+  useEffect(() => {
+    if (selectionMode) return;
+    let clearTimer = null;
+    const onOver = (e) => {
+      const t = e.target;
+      const groupEl = t?.closest?.('[data-panel-group]');
+      let id = null;
+      if (groupEl) {
+        id = groupEl.getAttribute('data-panel-group');
+      } else {
+        const anchorEl = t?.closest?.('[data-comment-anchor]');
+        if (anchorEl) {
+          const a = anchorEl.getAttribute('data-comment-anchor');
+          if (comments.some((c) => c.anchor === a)) id = a;
+        }
+      }
+      if (id) {
+        clearTimeout(clearTimer);
+        setFocusedAnchor((prev) => (prev === id ? prev : id));
+      } else {
+        clearTimeout(clearTimer);
+        clearTimer = setTimeout(() => setFocusedAnchor(null), 400);
+      }
+    };
+    document.addEventListener('mouseover', onOver);
+    return () => {
+      document.removeEventListener('mouseover', onOver);
+      clearTimeout(clearTimer);
+    };
+  }, [selectionMode, comments]);
+
+  // Highlight ankaret när en pillar-grupp är fokuserad
+  useEffect(() => {
+    document.querySelectorAll('[data-comment-highlighted]').forEach((el) => {
+      el.style.outline = '';
+      el.style.outlineOffset = '';
+      el.style.borderRadius = '';
+      el.removeAttribute('data-comment-highlighted');
+    });
+    if (focusedAnchor) {
+      const el = document.querySelector(`[data-comment-anchor="${CSS.escape(focusedAnchor)}"]`);
+      if (el) {
+        el.style.outline = '2px solid #B5822A';
+        el.style.outlineOffset = '3px';
+        el.style.borderRadius = '4px';
+        el.setAttribute('data-comment-highlighted', 'true');
+      }
+    }
+  }, [focusedAnchor]);
 
   async function fetchComments() {
     try {
@@ -163,167 +300,208 @@ export default function CommentLayer() {
     setIsAdmin(false);
   }
 
-  // Mobile bubbles
+  function jumpToAnchor(anchor) {
+    const el = document.querySelector(`[data-comment-anchor="${CSS.escape(anchor)}"]`);
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const y = rect.top + window.scrollY - 100;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    setFocusedAnchor(anchor);
+  }
+
+  // Inline count-bubblor intill varje kommenterat element
   useEffect(() => {
     if (!anchorsReady) return;
-    document.querySelectorAll('.comment-mobile-bubble').forEach((b) => b.remove());
-    if (window.matchMedia('(min-width: 900px)').matches) return;
+    document.querySelectorAll('.comment-inline-bubble').forEach((b) => b.remove());
 
     const counts = new Map();
-    for (const c of comments) {
-      counts.set(c.anchor, (counts.get(c.anchor) ?? 0) + 1);
-    }
+    for (const c of comments) counts.set(c.anchor, (counts.get(c.anchor) ?? 0) + 1);
+
     for (const [anchor, n] of counts) {
       const el = document.querySelector(`[data-comment-anchor="${CSS.escape(anchor)}"]`);
       if (!el) continue;
       const btn = document.createElement('button');
-      btn.className = `comment-mobile-bubble ${styles.mobileBubble}`;
+      btn.className = `comment-inline-bubble ${styles.inlineBubble}`;
+      btn.setAttribute('data-comment-ui', 'true');
       btn.textContent = `💬 ${n}`;
-      btn.onclick = (e) => { e.preventDefault(); e.stopPropagation(); setMobileDrawerAnchor(anchor); };
+      btn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setFocusedAnchor(anchor);
+      };
       el.appendChild(btn);
     }
-  }, [comments, anchorsReady]);
+  }, [comments, anchorsReady, tick]);
 
-  // Gruppera per ankare
-  const grouped = new Map();
-  const orphans = [];
-  if (anchorsReady) {
+  // Gruppera per ankare och sortera efter position i dokumentet
+  const groups = useMemo(() => {
+    if (!anchorsReady) return { items: [], orphans: [] };
+    const map = new Map();
+    const orphans = [];
     for (const c of comments) {
       const el = document.querySelector(`[data-comment-anchor="${CSS.escape(c.anchor)}"]`);
       if (!el) { orphans.push(c); continue; }
-      if (!grouped.has(c.anchor)) grouped.set(c.anchor, { el, items: [] });
-      grouped.get(c.anchor).items.push(c);
+      if (!map.has(c.anchor)) map.set(c.anchor, { anchor: c.anchor, el, items: [], top: 0, label: '' });
+      map.get(c.anchor).items.push(c);
     }
-  }
-
-  const pillarGroups = anchorsReady ? Array.from(grouped.entries()).map(([anchor, { el, items }]) => {
-    const rect = el.getBoundingClientRect();
-    const top = rect.top + window.scrollY;
-    return { anchor, el, items, top };
-  }) : [];
-
-  // Hover-highlight på ankare (via inline style för att undvika CSS module pure-selector krav)
-  useEffect(() => {
-    document.querySelectorAll('[data-comment-highlighted]').forEach((el) => {
-      el.style.outline = '';
-      el.style.outlineOffset = '';
-      el.style.borderRadius = '';
-      el.removeAttribute('data-comment-highlighted');
+    const items = Array.from(map.values()).map((g) => {
+      const rect = g.el.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const label = (g.el.textContent || '').trim().slice(0, 60) || g.el.tagName.toLowerCase();
+      return { ...g, top, label };
     });
-    if (hovered?.anchor) {
-      const el = document.querySelector(`[data-comment-anchor="${CSS.escape(hovered.anchor)}"]`);
-      if (el) {
-        el.style.outline = '2px solid #B5822A';
-        el.style.outlineOffset = '3px';
-        el.style.borderRadius = '4px';
-        el.setAttribute('data-comment-highlighted', 'true');
-      }
-    }
-  }, [hovered]);
+    items.sort((a, b) => a.top - b.top);
+    return { items, orphans };
+  }, [comments, anchorsReady, tick]);
 
-  // Composing: hitta ankaret om ingen befintlig grupp finns
-  let composingStandalone = null;
-  if (composing && anchorsReady && !grouped.has(composing.anchor)) {
-    const el = document.querySelector(`[data-comment-anchor="${CSS.escape(composing.anchor)}"]`);
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY;
-      composingStandalone = { anchor: composing.anchor, top };
-    }
-  }
+  const totalCount = comments.length;
+  const showPanel = panelOpen || !!composing || !!editing;
 
   return (
     <>
-      <AdminLock isAdmin={isAdmin} onLogin={handleLogin} onLogout={handleLogout} />
+      <div className={styles.controls} data-comment-ui="true">
+        <AdminLock isAdmin={isAdmin} onLogin={handleLogin} onLogout={handleLogout} />
 
-      <button
-        ref={addButtonRef}
-        className={styles.addButton}
-        onClick={() => {
-          const el = hoveredAnchorRef.current;
-          if (el) setComposing({ anchor: el.getAttribute('data-comment-anchor') });
-        }}
-      >+</button>
+        <button
+          data-comment-ui="true"
+          className={`${styles.iconBtn} ${selectionMode ? styles.iconBtnActive : styles.iconBtnGold}`}
+          onClick={() => {
+            if (selectionMode) {
+              setSelectionMode(false);
+            } else {
+              setComposing(null);
+              setEditing(null);
+              setSelectionMode(true);
+            }
+          }}
+          title={selectionMode ? 'Avbryt (Esc)' : 'Ny kommentar — klicka sedan det du vill kommentera'}
+        >
+          {selectionMode ? <CloseIcon /> : <PlusIcon />}
+        </button>
 
-      <div className={styles.margin}>
-        <OrphansPanel
-          comments={orphans}
-          isAdmin={isAdmin}
-          onEdit={handleEdit}
-          onDelete={handleDelete}
-        />
+        <button
+          data-comment-ui="true"
+          className={`${styles.iconBtn} ${showPanel ? styles.iconBtnActive : ''}`}
+          onClick={() => {
+            if (showPanel) {
+              setPanelOpen(false);
+              setComposing(null);
+              setEditing(null);
+              setFocusedAnchor(null);
+            } else {
+              setPanelOpen(true);
+            }
+          }}
+          title={showPanel ? 'Stäng kommentarer' : 'Visa kommentarer'}
+        >
+          <MessageIcon />
+          {totalCount > 0 && !showPanel && (
+            <span className={styles.iconBtnBadge}>{totalCount}</span>
+          )}
+        </button>
+      </div>
 
-        {pillarGroups.map(({ anchor, items, top }) => (
-          <div key={anchor} style={{ position: 'absolute', top: `${top}px`, right: '12px', width: '220px' }}>
-            {composing?.anchor === anchor && (
+      {selectionMode && (
+        <div data-comment-ui="true" className={styles.selectionHint}>
+          Klicka på det du vill kommentera (Esc för att avbryta)
+        </div>
+      )}
+
+      <aside
+        className={`${styles.panel} ${showPanel ? styles.panelOpen : ''}`}
+        data-comment-ui="true"
+        aria-hidden={!showPanel}
+      >
+        <div className={styles.panelHeader}>
+          <h3 className={styles.panelTitle}>
+            Kommentarer {totalCount > 0 && <span style={{ color: '#6B7280', fontWeight: 400 }}>({totalCount})</span>}
+          </h3>
+          <button
+            className={styles.panelClose}
+            onClick={() => { setPanelOpen(false); setComposing(null); setEditing(null); setFocusedAnchor(null); }}
+            title="Stäng"
+          >
+            <CloseIcon />
+          </button>
+        </div>
+
+        <div className={styles.panelBody}>
+          <OrphansPanel
+            comments={groups.orphans}
+            isAdmin={isAdmin}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+
+          {composing && !groups.items.find((g) => g.anchor === composing.anchor) && (
+            <div className={styles.panelGroup}>
+              <div className={styles.panelGroupLabel}>Nytt ankare</div>
               <CommentForm
                 mode="create"
                 onSubmit={handleCreate}
                 onCancel={() => setComposing(null)}
               />
-            )}
-            {items.map((c) => (
-              editing?.id === c.id ? (
+            </div>
+          )}
+
+          {groups.items.length === 0 && !composing && groups.orphans.length === 0 && (
+            <div className={styles.panelEmpty}>
+              Inga kommentarer än. Klicka <strong>+</strong> och välj det du vill kommentera.
+            </div>
+          )}
+
+          {groups.items.map(({ anchor, items, label }) => (
+            <div
+              key={anchor}
+              className={styles.panelGroup}
+              data-panel-group={anchor}
+              ref={(el) => {
+                if (el) groupRefs.current.set(anchor, el);
+                else groupRefs.current.delete(anchor);
+              }}
+            >
+              <div
+                className={styles.panelGroupLabel}
+                onClick={() => jumpToAnchor(anchor)}
+                title="Hoppa till platsen på sidan"
+              >
+                ↗ {label}
+              </div>
+              {composing?.anchor === anchor && (
                 <CommentForm
-                  key={c.id}
-                  mode="edit"
-                  initialText={c.text}
-                  onSubmit={handleEditSubmit}
-                  onCancel={() => setEditing(null)}
+                  mode="create"
+                  onSubmit={handleCreate}
+                  onCancel={() => setComposing(null)}
                 />
-              ) : (
-                <CommentPillar
-                  key={c.id}
-                  comment={c}
-                  isAdmin={isAdmin}
-                  isHighlighted={hovered?.id === c.id}
-                  onHover={(cm) => setHovered(cm)}
-                  onLeave={() => setHovered(null)}
-                  onEdit={handleEdit}
-                  onDelete={handleDelete}
-                />
-              )
-            ))}
-          </div>
-        ))}
+              )}
+              {items.map((c) =>
+                editing?.id === c.id ? (
+                  <CommentForm
+                    key={c.id}
+                    mode="edit"
+                    initialText={c.text}
+                    onSubmit={handleEditSubmit}
+                    onCancel={() => setEditing(null)}
+                  />
+                ) : (
+                  <CommentPillar
+                    key={c.id}
+                    comment={c}
+                    isAdmin={isAdmin}
+                    onEdit={handleEdit}
+                    onDelete={handleDelete}
+                  />
+                )
+              )}
+            </div>
+          ))}
+        </div>
+      </aside>
 
-        {composingStandalone && (
-          <div style={{ position: 'absolute', top: `${composingStandalone.top}px`, right: '12px', width: '220px' }}>
-            <CommentForm
-              mode="create"
-              onSubmit={handleCreate}
-              onCancel={() => setComposing(null)}
-            />
-          </div>
-        )}
-      </div>
-
-      <ConnectorOverlay hovered={hovered} pillarGroups={pillarGroups} tick={tick} />
-
-      {mobileDrawerAnchor && (() => {
-        const items = comments.filter((c) => c.anchor === mobileDrawerAnchor);
-        return (
-          <div className={styles.drawer}>
-            <button className={styles.drawerClose} onClick={() => setMobileDrawerAnchor(null)}>×</button>
-            <h4 style={{ marginBottom: '0.6rem' }}>Kommentarer</h4>
-            {items.map((c) => (
-              <CommentPillar
-                key={c.id}
-                comment={c}
-                isAdmin={isAdmin}
-                onEdit={handleEdit}
-                onDelete={handleDelete}
-              />
-            ))}
-            <button
-              style={{ marginTop: '0.6rem', padding: '6px 12px' }}
-              onClick={() => { setComposing({ anchor: mobileDrawerAnchor }); setMobileDrawerAnchor(null); }}
-            >+ Ny kommentar</button>
-          </div>
-        );
-      })()}
+      <ConnectorOverlay focusedAnchor={focusedAnchor} groupRefs={groupRefs} panelOpen={showPanel} />
 
       {error && (
-        <div className={styles.errorBanner} onClick={() => setError(null)}>
+        <div className={styles.errorBanner} data-comment-ui="true" onClick={() => setError(null)}>
           {error} (klicka för att stänga)
         </div>
       )}
@@ -331,31 +509,43 @@ export default function CommentLayer() {
   );
 }
 
-function ConnectorOverlay({ hovered, pillarGroups }) {
-  const [path, setPath] = useState(null);
-  const [size, setSize] = useState({ w: 0, h: 0 });
+function ConnectorOverlay({ focusedAnchor, groupRefs, panelOpen }) {
+  const glowRef = useRef(null);
+  const lineRef = useRef(null);
 
   useEffect(() => {
-    if (!hovered?.anchor) { setPath(null); return; }
-    const el = document.querySelector(`[data-comment-anchor="${CSS.escape(hovered.anchor)}"]`);
-    if (!el) { setPath(null); return; }
-    const group = pillarGroups.find((g) => g.anchor === hovered.anchor);
-    if (!group) { setPath(null); return; }
+    const setD = (d) => {
+      if (glowRef.current) glowRef.current.setAttribute('d', d);
+      if (lineRef.current) lineRef.current.setAttribute('d', d);
+    };
+    if (!focusedAnchor || !panelOpen) { setD(''); return; }
 
-    const elRect = el.getBoundingClientRect();
-    const x1 = elRect.right + window.scrollX;
-    const y1 = elRect.top + elRect.height / 2 + window.scrollY;
-    const x2 = window.innerWidth - 260 + window.scrollX;
-    const y2 = group.top + 18;
-    const midX = (x1 + x2) / 2;
-    setPath(`M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`);
-    setSize({ w: document.documentElement.scrollWidth, h: document.documentElement.scrollHeight });
-  }, [hovered, pillarGroups]);
+    let raf;
+    const update = () => {
+      const el = document.querySelector(`[data-comment-anchor="${CSS.escape(focusedAnchor)}"]`);
+      const groupEl = groupRefs.current.get(focusedAnchor);
+      if (el && groupEl) {
+        const a = el.getBoundingClientRect();
+        const b = groupEl.getBoundingClientRect();
+        const x1 = a.right + 2;
+        const y1 = a.top + a.height / 2;
+        const x2 = b.left + 6;
+        const y2 = b.top + 16;
+        const mid = (x1 + x2) / 2;
+        setD(`M ${x1} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2} ${y2}`);
+      } else {
+        setD('');
+      }
+      raf = requestAnimationFrame(update);
+    };
+    raf = requestAnimationFrame(update);
+    return () => { cancelAnimationFrame(raf); setD(''); };
+  }, [focusedAnchor, groupRefs, panelOpen]);
 
-  if (!path) return null;
   return (
-    <svg className={styles.overlay} width={size.w} height={size.h}>
-      <path d={path} />
+    <svg className={styles.connector} aria-hidden="true">
+      <path ref={glowRef} className={styles.connectorGlow} />
+      <path ref={lineRef} className={styles.connectorLine} />
     </svg>
   );
 }

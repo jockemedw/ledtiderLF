@@ -1,23 +1,160 @@
-/* Wrapper */
-.root {
-  position: relative;
+/* Flytande ikoner högst upp höger — svävar över sidan */
+.controls {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 220;
 }
 
-/* Marginal — syns bara på desktop */
-.margin {
+.iconBtn {
+  position: relative;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.08);
+  color: #1A2744;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 120ms ease-out, box-shadow 120ms, background 120ms, color 120ms;
+  padding: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.iconBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.14);
+}
+
+.iconBtnActive {
+  background: #1A2744;
+  color: #fff;
+  border-color: #1A2744;
+}
+
+.iconBtnGold {
+  background: var(--gold, #B5822A);
+  color: #fff;
+  border-color: var(--gold, #B5822A);
+}
+
+.iconBtnBadge {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 240px;
-  padding: 1rem 0.75rem;
+  top: -3px; right: -3px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px; height: 18px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 5px;
+  line-height: 1;
   pointer-events: none;
 }
 
-.margin > * { pointer-events: auto; }
-
-@media (max-width: 899px) {
-  .margin { display: none; }
+/* Banner i markeringsläge */
+.selectionHint {
+  position: fixed;
+  top: 16px;
+  right: 72px;
+  background: #1A2744;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  z-index: 220;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: fadeSlide 180ms ease-out;
 }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide-in panel från höger */
+.panel {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 340px;
+  max-width: 92vw;
+  background: #fff;
+  border-left: 1px solid var(--border, #DDD8CC);
+  box-shadow: -6px 0 28px rgba(0,0,0,0.08);
+  transform: translateX(calc(100% + 40px));
+  transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 190;
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.panelOpen { transform: translateX(0); }
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border, #DDD8CC);
+  flex-shrink: 0;
+}
+
+.panelTitle {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1A2744;
+}
+
+.panelClose {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #6B7280;
+  padding: 0;
+}
+
+.panelClose:hover { background: rgba(0,0,0,0.05); color: #1A2744; }
+
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.panelEmpty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+.panelGroup {
+  margin-bottom: 1rem;
+}
+
+.panelGroupLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6B7280;
+  margin-bottom: 0.35rem;
+  padding: 0 0.1rem;
+  cursor: pointer;
+}
+
+.panelGroupLabel:hover { color: #1A2744; }
 
 /* Pillar */
 .pillar {
@@ -29,7 +166,7 @@
   margin-bottom: 0.5rem;
   font-size: 0.82rem;
   line-height: 1.35;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   cursor: pointer;
   transition: box-shadow 120ms, transform 120ms;
   position: relative;
@@ -91,42 +228,6 @@
   cursor: pointer;
 }
 
-/* "+" knapp när man hovrar kommenterbart element */
-.addButton {
-  position: absolute;
-  right: 8px;
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--gold, #B5822A);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  pointer-events: auto;
-  opacity: 0;
-  transition: opacity 120ms;
-  z-index: 150;
-}
-
-.addButton.visible { opacity: 1; }
-
-/* SVG overlay för kopplingslinjer */
-.overlay {
-  position: absolute;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.overlay path {
-  fill: none;
-  stroke: var(--gold, #B5822A);
-  stroke-width: 1.5;
-  opacity: 0.8;
-}
-
 /* Formulär */
 .form {
   background: #fff;
@@ -151,7 +252,6 @@
 .form textarea { min-height: 70px; resize: vertical; }
 
 .form .row { display: flex; gap: 0.4rem; justify-content: flex-end; }
-
 .row { display: flex; gap: 0.4rem; justify-content: flex-end; }
 
 .form button {
@@ -163,29 +263,48 @@
   font-size: 0.8rem;
 }
 
+.form .primary,
 .primary {
   background: var(--navy, #1A2744);
   color: #fff;
   border-color: var(--navy, #1A2744);
 }
 
-/* Låsikon */
-.lock {
-  position: fixed;
-  top: 70px;
-  right: 12px;
-  z-index: 200;
-  background: #fff;
-  border: 1px solid var(--border, #DDD8CC);
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-size: 16px;
+.form .primary:hover,
+.primary:hover {
+  background: #0f1a30;
+  border-color: #0f1a30;
 }
 
-.unlocked { background: var(--gold, #B5822A); color: #fff; border-color: var(--gold, #B5822A); }
+/* Diffus kopplingslinje mellan ankare och pillar */
+.connector {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 195;
+  overflow: visible;
+}
+
+.connectorGlow {
+  fill: none;
+  stroke: rgba(181, 130, 42, 0.18);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.connectorLine {
+  fill: none;
+  stroke: #B5822A;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+  opacity: 0.75;
+  stroke-linecap: round;
+}
+
+@media (max-width: 899px) {
+  .connector { display: none; }
+}
 
 /* Login-modal */
 .modal {
@@ -206,7 +325,7 @@
 
 .modalCard h3 { margin-bottom: 0.6rem; }
 
-/* Orphans-panel */
+/* Orphans */
 .orphans {
   background: #fff9e6;
   border: 1px solid #e8c97a;
@@ -218,48 +337,43 @@
 
 .orphans h4 { font-size: 0.85rem; margin-bottom: 0.4rem; }
 
-/* Mobil: bubbla i elementet */
-.mobileBubble {
-  display: none;
+/* Liten inline-bubbla intill kommenterat element — count-indikator */
+.inlineBubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 6px;
+  padding: 1px 7px;
+  background: var(--gold-light, #E8C97A);
+  color: var(--navy, #1A2744);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  border: none;
+  line-height: 1.4;
 }
 
+.inlineBubble:hover {
+  background: var(--gold, #B5822A);
+  color: #fff;
+}
+
+/* Mobil: drawer från botten */
 @media (max-width: 899px) {
-  .mobileBubble {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-left: 6px;
-    padding: 2px 6px;
-    background: var(--gold-light, #E8C97A);
-    color: var(--navy, #1A2744);
-    font-size: 0.75rem;
-    border-radius: 10px;
-    cursor: pointer;
-    vertical-align: middle;
-    border: none;
-  }
-
-  .drawer {
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    background: #fff;
+  .panel {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    height: 70vh;
+    border-left: none;
     border-top: 1px solid var(--border, #DDD8CC);
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-    max-height: 70vh;
-    overflow-y: auto;
-    padding: 1rem;
-    z-index: 250;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    transform: translateY(calc(100% + 20px));
   }
-
-  .drawerClose {
-    float: right;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
+  .panelOpen { transform: translateY(0); }
 }
 
 /* Felbanner */
