@@ -116,8 +116,8 @@ section { padding: 5rem 2rem; scroll-margin-top: 72px; }
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
-    transform: translateY(14px);
-    transition: opacity 520ms cubic-bezier(.2,.8,.2,1), transform 520ms cubic-bezier(.2,.8,.2,1);
+    transform: translateY(28px);
+    transition: opacity 720ms cubic-bezier(.2,.8,.2,1), transform 720ms cubic-bezier(.2,.8,.2,1);
     will-change: opacity, transform;
   }
   .reveal.is-visible {
@@ -125,6 +125,98 @@ section { padding: 5rem 2rem; scroll-margin-top: 72px; }
     transform: none;
   }
 }
+
+/* Scroll UI: progress bar + floating section pill + right-edge dots */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  z-index: 500;
+  pointer-events: none;
+  transition: width 60ms linear;
+}
+.floating-title {
+  position: fixed;
+  top: 68px;
+  left: 50%;
+  transform: translate(-50%, -8px);
+  background: rgba(26, 39, 68, 0.95);
+  color: #fff;
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms, transform 280ms;
+  z-index: 90;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  white-space: nowrap;
+  max-width: calc(100vw - 220px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.floating-title.visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.scroll-dots {
+  position: fixed;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 80;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms;
+  padding: 8px 4px;
+}
+.scroll-dots.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.scroll-dot {
+  position: relative;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(26, 39, 68, 0.28);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 200ms, transform 200ms, box-shadow 200ms;
+}
+.scroll-dot:hover { background: rgba(26, 39, 68, 0.65); transform: scale(1.3); }
+.scroll-dot.active {
+  background: var(--gold);
+  transform: scale(1.55);
+  box-shadow: 0 0 0 3px rgba(181, 130, 42, 0.2);
+}
+.scroll-dot-label {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1A2744;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+.scroll-dot:hover .scroll-dot-label { opacity: 1; }
 
 /* ─── SAMMANFATTNING (TL;DR) ─────────────── */
 #sammanfattning {
@@ -825,6 +917,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   nav, footer { display: none !important; }
   .nav-dropdown-menu { display: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
+  .scroll-progress, .floating-title, .scroll-dots { display: none !important; }
   
   /* TL;DR (print) */
   #sammanfattning { background: #fff !important; page-break-after: always; }
@@ -973,12 +1066,15 @@ footer strong { color: rgba(255,255,255,0.8); }
 .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 2rem; }
 @media (max-width: 700px) {
-  nav { padding: 0 1rem; }
+  nav { padding: 6px 1rem; }
   .nav-brand { font-size: 0.95rem; }
-  section { padding: 3.5rem 1.2rem; }
+  .nav-links { display: none; }
+  section { padding: 3.5rem 1.2rem; scroll-margin-top: 64px; }
   .matris-header, .matris-row { grid-template-columns: 1.5fr 1fr 1fr; }
   .matris-cell:nth-child(n+4) { display: none; }
   .gantt-label { width: 140px; min-width: 140px; font-size: 0.75rem; }
+  .scroll-dots { display: none; }
+  .floating-title { top: 62px; font-size: 0.72rem; padding: 6px 14px; max-width: calc(100vw - 180px); }
 }
 </style>
 </head>
@@ -2129,6 +2225,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderBeslut();
   renderKallor();
   setupReveal();
+  setupScrollUI();
 });
 
 function setupReveal() {
@@ -2142,19 +2239,115 @@ function setupReveal() {
         io.unobserve(entry.target);
       }
     });
-  }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0 });
 
-  const vh = window.innerHeight;
   document.querySelectorAll('section').forEach(sec => {
-    const rect = sec.getBoundingClientRect();
-    const alreadyInView = rect.top < vh && rect.bottom > 0;
     sec.classList.add('reveal');
-    if (alreadyInView) {
+    const rect = sec.getBoundingClientRect();
+    // Only pre-mark sections clearly at the top — everything else fades in via IO
+    if (rect.top < 80) {
       sec.classList.add('is-visible');
     } else {
       io.observe(sec);
     }
   });
+}
+
+function setupScrollUI() {
+  const sections = [
+    { id: 'sammanfattning', label: 'Sammanfattning' },
+    { id: 'oversikt',       label: 'Spåren' },
+    { id: 'jamforelse',     label: 'Tidsjämförelse' },
+    { id: 'kontext',        label: 'Kontext' },
+    { id: 'per-typ',        label: 'Per lokaltyp' },
+    { id: 'exempel',        label: 'Exempel' },
+    { id: 'spar-a',         label: 'A. Hyra in' },
+    { id: 'spar-b',         label: 'B. Bygga om' },
+    { id: 'spar-c',         label: 'C. Tillbyggnad' },
+    { id: 'spar-d',         label: 'D. Nybyggnad' },
+    { id: 'moduler',        label: 'Moduler' },
+    { id: 'beslut',         label: 'Beslutsstöd' },
+    { id: 'kallor',         label: 'Källor' },
+  ].filter(s => document.getElementById(s.id));
+
+  const progress = document.createElement('div');
+  progress.className = 'scroll-progress';
+  document.body.appendChild(progress);
+
+  const pill = document.createElement('div');
+  pill.className = 'floating-title';
+  pill.setAttribute('aria-live', 'polite');
+  document.body.appendChild(pill);
+
+  const dotsEl = document.createElement('nav');
+  dotsEl.className = 'scroll-dots';
+  dotsEl.setAttribute('aria-label', 'Sektionsnavigation');
+  const dotMap = new Map();
+  sections.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'scroll-dot';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', `Gå till ${s.label}`);
+    btn.addEventListener('click', () => {
+      const target = document.getElementById(s.id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    const label = document.createElement('span');
+    label.className = 'scroll-dot-label';
+    label.textContent = s.label;
+    btn.appendChild(label);
+    dotsEl.appendChild(btn);
+    dotMap.set(s.id, { btn, label: s.label });
+  });
+  document.body.appendChild(dotsEl);
+
+  let currentId = null;
+  const setCurrent = (id) => {
+    if (currentId === id) return;
+    currentId = id;
+    dotMap.forEach(({ btn }) => btn.classList.remove('active'));
+    if (id && dotMap.has(id)) {
+      const info = dotMap.get(id);
+      info.btn.classList.add('active');
+      pill.textContent = info.label;
+    }
+  };
+
+  const findCurrent = () => {
+    const triggerY = window.innerHeight * 0.32;
+    let found = null;
+    for (const s of sections) {
+      const el = document.getElementById(s.id);
+      if (!el) continue;
+      if (el.getBoundingClientRect().top <= triggerY) found = s.id;
+      else break;
+    }
+    return found;
+  };
+
+  const update = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? Math.min(100, (scrollTop / docHeight) * 100) : 0;
+    progress.style.width = pct + '%';
+
+    setCurrent(findCurrent());
+
+    const showThreshold = 160;
+    const show = scrollTop > showThreshold;
+    pill.classList.toggle('visible', show && currentId !== null);
+    dotsEl.classList.toggle('visible', show);
+  };
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => { update(); ticking = false; });
+      ticking = true;
+    }
+  }, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
 }
 </script>
 </body>
