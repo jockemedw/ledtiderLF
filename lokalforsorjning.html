@@ -109,8 +109,22 @@ nav {
 }
 
 /* ─── SECTIONS ─────────────────────────────── */
-section { padding: 5rem 2rem; }
+section { padding: 5rem 2rem; scroll-margin-top: 72px; }
 .container { max-width: 1100px; margin: 0 auto; }
+
+/* Reveal-on-scroll — JS adds .reveal + .is-visible */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 520ms cubic-bezier(.2,.8,.2,1), transform 520ms cubic-bezier(.2,.8,.2,1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* ─── SAMMANFATTNING (TL;DR) ─────────────── */
 #sammanfattning {
@@ -810,6 +824,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   }
   nav, footer { display: none !important; }
   .nav-dropdown-menu { display: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
   
   /* TL;DR (print) */
   #sammanfattning { background: #fff !important; page-break-after: always; }
@@ -2113,7 +2128,34 @@ document.addEventListener("DOMContentLoaded", () => {
   renderModuler();
   renderBeslut();
   renderKallor();
+  setupReveal();
 });
+
+function setupReveal() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !('IntersectionObserver' in window)) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0 });
+
+  const vh = window.innerHeight;
+  document.querySelectorAll('section').forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    const alreadyInView = rect.top < vh && rect.bottom > 0;
+    sec.classList.add('reveal');
+    if (alreadyInView) {
+      sec.classList.add('is-visible');
+    } else {
+      io.observe(sec);
+    }
+  });
+}
 </script>
 </body>
 </html>
