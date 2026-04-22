@@ -81,10 +81,11 @@ export default function CommentLayer() {
     };
   }, []);
 
-  // Panel öppnas automatiskt när man skapar/redigerar eller fokuserar ett ankare
+  // Panel öppnas automatiskt när man redigerar eller fokuserar ett ankare.
+  // Nya kommentarer får en egen centrerad modal — den öppnar inte panelen.
   useEffect(() => {
-    if (composing || editing || focusedAnchor) setPanelOpen(true);
-  }, [composing, editing, focusedAnchor]);
+    if (editing || focusedAnchor) setPanelOpen(true);
+  }, [editing, focusedAnchor]);
 
   // Selection mode: highlight vad som helst under musen + klick för att markera
   useEffect(() => {
@@ -248,7 +249,9 @@ export default function CommentLayer() {
       const j = await r.json();
       if (!r.ok) throw new Error(j.error);
       setComments((cs) => [...cs, j.comment]);
+      const savedAnchor = composing.anchor;
       setComposing(null);
+      setFocusedAnchor(savedAnchor);
     } catch (e) {
       setError(`Kunde inte spara: ${e.message}`);
     }
@@ -433,18 +436,7 @@ export default function CommentLayer() {
             onDelete={handleDelete}
           />
 
-          {composing && !groups.items.find((g) => g.anchor === composing.anchor) && (
-            <div className={styles.panelGroup}>
-              <div className={styles.panelGroupLabel}>Nytt ankare</div>
-              <CommentForm
-                mode="create"
-                onSubmit={handleCreate}
-                onCancel={() => setComposing(null)}
-              />
-            </div>
-          )}
-
-          {groups.items.length === 0 && !composing && groups.orphans.length === 0 && (
+          {groups.items.length === 0 && groups.orphans.length === 0 && (
             <div className={styles.panelEmpty}>
               Inga kommentarer än. Klicka <strong>+</strong> och välj det du vill kommentera.
             </div>
@@ -467,13 +459,6 @@ export default function CommentLayer() {
               >
                 ↗ {label}
               </div>
-              {composing?.anchor === anchor && (
-                <CommentForm
-                  mode="create"
-                  onSubmit={handleCreate}
-                  onCancel={() => setComposing(null)}
-                />
-              )}
               {items.map((c) =>
                 editing?.id === c.id ? (
                   <CommentForm
@@ -497,6 +482,39 @@ export default function CommentLayer() {
           ))}
         </div>
       </aside>
+
+      {composing && (
+        <div
+          className={styles.composeBackdrop}
+          data-comment-ui="true"
+          onClick={() => setComposing(null)}
+        >
+          <div
+            className={styles.composeModal}
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Ny kommentar"
+          >
+            <div className={styles.composeHeader}>
+              <h3 className={styles.composeTitle}>Ny kommentar</h3>
+              <button
+                className={styles.panelClose}
+                onClick={() => setComposing(null)}
+                aria-label="Stäng"
+                title="Stäng"
+              >
+                <CloseIcon />
+              </button>
+            </div>
+            <CommentForm
+              mode="create"
+              onSubmit={handleCreate}
+              onCancel={() => setComposing(null)}
+            />
+          </div>
+        </div>
+      )}
 
       <ConnectorOverlay focusedAnchor={focusedAnchor} groupRefs={groupRefs} panelOpen={showPanel} />
 
