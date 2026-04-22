@@ -47,9 +47,10 @@ a:hover { text-decoration: underline; }
 nav {
   position: sticky; top: 0; z-index: 100;
   background: var(--navy);
-  padding: 0 2rem;
+  padding: 6px 2rem;
   display: flex; align-items: center; justify-content: space-between;
-  height: 56px;
+  gap: 1rem;
+  min-height: 56px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
 .nav-brand {
@@ -59,8 +60,8 @@ nav {
 }
 .nav-brand span { color: var(--gold-light); }
 .nav-links {
-  display: flex; gap: 0.2rem; list-style: none;
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  display: flex; flex-wrap: wrap; gap: 4px 0.2rem; list-style: none;
+  justify-content: flex-end;
 }
 .nav-links a {
   color: rgba(255,255,255,0.72);
