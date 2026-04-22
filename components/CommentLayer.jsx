@@ -57,15 +57,31 @@ export default function CommentLayer() {
       rescanTimer = setTimeout(() => {
         assignAnchorsInDocument(document);
         setTick((t) => t + 1);
-      }, 100);
+      }, 200);
+    };
+
+    const isCommentUINode = (node) => {
+      if (!node || node.nodeType !== 1) return false;
+      if (node.classList?.contains('comment-inline-bubble')) return true;
+      if (node.hasAttribute?.('data-comment-ui')) return true;
+      if (node.closest?.('[data-comment-ui]')) return true;
+      return false;
     };
 
     const mo = new MutationObserver((muts) => {
       for (const m of muts) {
-        if (m.type === 'childList' && (m.addedNodes.length > 0 || m.removedNodes.length > 0)) {
-          rescan();
-          return;
-        }
+        if (m.type !== 'childList') continue;
+        if (m.addedNodes.length === 0 && m.removedNodes.length === 0) continue;
+        // Ignorera mutationer som orsakats av vårt eget kommentars-UI
+        // (inline-bubblor, panel-element). Annars uppstår en återkoppling där
+        // bubbla läggs till → MO triggar → tick bumpas → bubblorna tas bort
+        // och återskapas → flimmer.
+        const allOurs =
+          Array.from(m.addedNodes).every(isCommentUINode) &&
+          Array.from(m.removedNodes).every(isCommentUINode);
+        if (allOurs) continue;
+        rescan();
+        return;
       }
     });
     mo.observe(document.body, { childList: true, subtree: true });
@@ -312,21 +328,35 @@ export default function CommentLayer() {
     setFocusedAnchor(anchor);
   }
 
-  // Inline count-bubblor intill varje kommenterat element
+  // Inline count-bubblor intill varje kommenterat element.
+  // Upsertar i stället för att ta bort och återskapa — annars flimrar bubblorna
+  // varje gång effekten körs om.
   useEffect(() => {
     if (!anchorsReady) return;
-    document.querySelectorAll('.comment-inline-bubble').forEach((b) => b.remove());
 
     const counts = new Map();
     for (const c of comments) counts.set(c.anchor, (counts.get(c.anchor) ?? 0) + 1);
 
+    // Ta bort bubblor som inte längre hör till något ankare med kommentarer
+    document.querySelectorAll('.comment-inline-bubble').forEach((b) => {
+      const parent = b.parentElement;
+      const anchor = parent?.getAttribute?.('data-comment-anchor');
+      if (!anchor || !counts.has(anchor)) b.remove();
+    });
+
     for (const [anchor, n] of counts) {
       const el = document.querySelector(`[data-comment-anchor="${CSS.escape(anchor)}"]`);
       if (!el) continue;
-      const btn = document.createElement('button');
+      const text = `💬 ${n}`;
+      let btn = el.querySelector(':scope > .comment-inline-bubble');
+      if (btn) {
+        if (btn.textContent !== text) btn.textContent = text;
+        continue;
+      }
+      btn = document.createElement('button');
       btn.className = `comment-inline-bubble ${styles.inlineBubble}`;
       btn.setAttribute('data-comment-ui', 'true');
-      btn.textContent = `💬 ${n}`;
+      btn.textContent = text;
       btn.onclick = (e) => {
         e.preventDefault();
         e.stopPropagation();
