@@ -5,6 +5,7 @@ import path from 'path';
 import dynamic from 'next/dynamic';
 
 const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
+const WakeLockToggle = dynamic(() => import('../components/WakeLockToggle.jsx'), { ssr: false });
 
 export async function getStaticProps() {
   const htmlPath = path.join(process.cwd(), 'lokalforsorjning.html');
@@ -53,6 +54,7 @@ export default function Home({ css, bodyInnehall, scriptInnehall }) {
       />
 
       <CommentLayer />
+      <WakeLockToggle />
     </>
   );
 }
