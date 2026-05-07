@@ -53,6 +53,47 @@ nav {
   min-height: 56px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
+
+/* ─── VERSIONSFLIKAR ───────────────────────── */
+.version-tabs {
+  display: inline-flex;
+  gap: 2px;
+  background: rgba(255,255,255,0.08);
+  padding: 3px;
+  border-radius: var(--r);
+  flex-shrink: 0;
+}
+.version-tab {
+  background: transparent;
+  border: 0;
+  color: rgba(255,255,255,0.72);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: calc(var(--r) - 2px);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .2s, color .2s;
+}
+.version-tab:hover { color: #fff; }
+.version-tab.is-active {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* Kort version: dölj tunga sektioner och deras nav-länkar */
+body.version-kort #exempel,
+body.version-kort #moduler,
+body.version-kort #kallor,
+body.version-kort .nav-only-full { display: none !important; }
+
+/* Kort version: dölj scroll-prickarna för dolda sektioner */
+body.version-kort .scroll-dot[data-section-id="exempel"],
+body.version-kort .scroll-dot[data-section-id="moduler"],
+body.version-kort .scroll-dot[data-section-id="kallor"] { display: none; }
 .nav-brand {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem; font-weight: 600;
@@ -1102,12 +1143,16 @@ footer strong { color: rgba(255,255,255,0.8); }
 <!-- NAVIGATION -->
 <nav>
   <div class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></div>
+  <div class="version-tabs" role="tablist" aria-label="Visningsläge">
+    <button type="button" class="version-tab is-active" data-version="full" role="tab" aria-selected="true">Fullständig</button>
+    <button type="button" class="version-tab" data-version="kort" role="tab" aria-selected="false">Kort</button>
+  </div>
   <ul class="nav-links">
     <li><a href="#sammanfattning">Sammanfattning</a></li>
     <li><a href="#oversikt">Spåren</a></li>
     <li><a href="#jamforelse">Tidsjämförelse</a></li>
     <li><a href="#per-typ">Per lokaltyp</a></li>
-    <li><a href="#exempel">Exempel</a></li>
+    <li class="nav-only-full"><a href="#exempel">Exempel</a></li>
     <li class="nav-dropdown">
       <a href="#spar-a" class="nav-dropdown-trigger">Fördjupning ▾</a>
       <ul class="nav-dropdown-menu">
@@ -1115,11 +1160,11 @@ footer strong { color: rgba(255,255,255,0.8); }
         <li><a href="#spar-b">B. Bygga om</a></li>
         <li><a href="#spar-c">C. Tillbyggnad</a></li>
         <li><a href="#spar-d">D. Nybyggnad</a></li>
-        <li><a href="#moduler">Moduler</a></li>
+        <li class="nav-only-full"><a href="#moduler">Moduler</a></li>
       </ul>
     </li>
     <li><a href="#beslut">Beslutsstöd</a></li>
-    <li><a href="#kallor">Källor</a></li>
+    <li class="nav-only-full"><a href="#kallor">Källor</a></li>
   </ul>
 </nav>
 
@@ -2233,6 +2278,7 @@ function renderExempel() {
 
 // ── INIT
 document.addEventListener("DOMContentLoaded", () => {
+  setupVersionTabs();
   renderSparGrid();
   renderGantt();
   renderKontext();
@@ -2245,6 +2291,46 @@ document.addEventListener("DOMContentLoaded", () => {
   setupReveal();
   setupScrollUI();
 });
+
+function setupVersionTabs() {
+  const tabs = document.querySelectorAll('.version-tab');
+  if (!tabs.length) return;
+
+  function readInitial() {
+    try {
+      const urlVer = new URL(window.location.href).searchParams.get('v');
+      if (urlVer === 'kort') return 'kort';
+      if (urlVer === 'full') return 'full';
+      if (localStorage.getItem('lokal-version') === 'kort') return 'kort';
+    } catch (e) {}
+    return 'full';
+  }
+
+  function apply(version, persist) {
+    document.body.classList.toggle('version-kort', version === 'kort');
+    tabs.forEach(t => {
+      const active = t.dataset.version === version;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+    if (persist) {
+      try { localStorage.setItem('lokal-version', version); } catch (e) {}
+      try {
+        const url = new URL(window.location.href);
+        if (version === 'kort') url.searchParams.set('v', 'kort');
+        else url.searchParams.delete('v');
+        window.history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
+      } catch (e) {}
+    }
+  }
+
+  apply(readInitial(), false);
+
+  tabs.forEach(t => t.addEventListener('click', () => {
+    apply(t.dataset.version, true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+}
 
 function setupReveal() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -2305,6 +2391,7 @@ function setupScrollUI() {
     const btn = document.createElement('button');
     btn.className = 'scroll-dot';
     btn.type = 'button';
+    btn.dataset.sectionId = s.id;
     btn.setAttribute('aria-label', `Gå till ${s.label}`);
     btn.addEventListener('click', () => {
       const target = document.getElementById(s.id);
@@ -2337,6 +2424,7 @@ function setupScrollUI() {
     for (const s of sections) {
       const el = document.getElementById(s.id);
       if (!el) continue;
+      if (el.offsetParent === null) continue; // hoppa över dolda sektioner
       if (el.getBoundingClientRect().top <= triggerY) found = s.id;
       else break;
     }
