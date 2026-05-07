@@ -1,0 +1,870 @@
+<!-- Detaljplaner – nationella ledtider. Innehållet hämtas av pages/detaljplan.js. CSS ärvs från lokalforsorjning.html. -->
+<style>
+/* Sidospecifika stilar (utöver delad CSS från lokalforsorjning.html) */
+.dp-hero {
+  background: linear-gradient(135deg, #1A2744 0%, #2C3E62 60%, #1A2744 100%);
+  color: #fff;
+  padding: 6rem 2rem 4.5rem;
+  text-align: center;
+}
+.dp-hero .hero-eyebrow { color: var(--gold-light); }
+.dp-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0.5rem 0 1.4rem;
+  color: #fff;
+}
+.dp-hero h1 em { color: var(--gold-light); font-style: italic; }
+.dp-hero p {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.82);
+  font-size: 1.05rem;
+}
+.dp-hero .hero-tagline {
+  display: inline-block;
+  margin-top: 1.6rem;
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#dp-tldr { background: linear-gradient(135deg, #FAF8F2 0%, #F2EDE0 100%); }
+.dp-num-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2.2rem;
+}
+.dp-num-kort {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--r);
+  padding: 1.4rem 1.4rem 1.5rem;
+}
+.dp-num-kort .siffra {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--navy);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.dp-num-kort .label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+.dp-num-kort p {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  color: var(--navy-mid);
+}
+.dp-num-kort cite {
+  display: block;
+  margin-top: 0.7rem;
+  font-style: normal;
+  font-size: 0.74rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+#dp-definitioner { background: var(--white); }
+.dp-def-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.dp-def {
+  background: var(--parchment);
+  border-radius: var(--r);
+  padding: 1.2rem 1.3rem;
+  border-top: 3px solid var(--navy);
+}
+.dp-def h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+.dp-def p { font-size: 0.92rem; color: var(--navy-mid); }
+.dp-def .matt {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+#dp-skr { background: var(--parchment); }
+.dp-trend-tabell {
+  margin-top: 1.6rem;
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  font-size: 0.92rem;
+}
+.dp-trend-tabell th,
+.dp-trend-tabell td {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.dp-trend-tabell th {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.dp-trend-tabell tr:last-child td { border-bottom: 0; }
+.dp-trend-tabell td.num {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  font-weight: 500;
+  color: var(--navy);
+}
+.dp-trend-tabell .arrow-down { color: #C0392B; font-weight: 600; }
+.dp-trend-tabell .arrow-up { color: #059669; font-weight: 600; }
+
+#dp-index { background: var(--white); }
+.dp-pall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+@media (max-width: 700px) { .dp-pall { grid-template-columns: 1fr; } }
+.dp-pall-kort {
+  background: var(--parchment);
+  border-radius: var(--r);
+  padding: 1.4rem 1.3rem;
+  position: relative;
+  border-bottom: 4px solid var(--gold);
+}
+.dp-pall-kort.guld { background: linear-gradient(135deg, #FFF5DC 0%, #F4E5B8 100%); }
+.dp-pall-kort .plats {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+}
+.dp-pall-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  margin: 0.3rem 0 0.7rem;
+}
+.dp-pall-kort .siffra {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+.dp-pall-kort .siffra-enhet { font-size: 0.85rem; color: var(--muted); }
+.dp-pall-kort p {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--navy-mid);
+}
+
+#dp-process { background: var(--parchment); }
+.dp-skeden {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.dp-skede {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.2rem;
+  background: var(--white);
+  border-radius: var(--r);
+  border-left: 4px solid var(--navy);
+}
+.dp-skede .nummer {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+.dp-skede h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.dp-skede p {
+  font-size: 0.92rem;
+  color: var(--navy-mid);
+}
+.dp-skede .tid {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--parchment);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+@media (max-width: 700px) {
+  .dp-skede { grid-template-columns: 44px 1fr; }
+  .dp-skede .tid { grid-column: 1 / -1; justify-self: start; }
+}
+
+#dp-forfarande { background: var(--white); }
+.dp-jamfor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+@media (max-width: 700px) { .dp-jamfor { grid-template-columns: 1fr; } }
+.dp-jamfor-kort {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 1.4rem 1.4rem 1.5rem;
+  background: var(--parchment);
+}
+.dp-jamfor-kort.utokat { background: #FFF7E6; border-color: #E8C97A; }
+.dp-jamfor-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.dp-jamfor-kort .pill {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+.dp-jamfor-kort ul {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+.dp-jamfor-kort li {
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.92rem;
+  color: var(--navy-mid);
+}
+.dp-jamfor-kort li:last-child { border-bottom: 0; }
+.dp-jamfor-kort li strong { color: var(--navy); }
+
+#dp-overklagande { background: var(--navy); color: #fff; }
+#dp-overklagande .section-label { color: var(--gold-light); }
+#dp-overklagande h2 { color: #fff; }
+#dp-overklagande p { color: rgba(255,255,255,0.82); }
+#dp-overklagande .gantt-note { color: rgba(255,255,255,0.62); }
+.dp-effekt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.dp-effekt {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 1.2rem 1.3rem;
+}
+.dp-effekt .siffra {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: var(--gold-light);
+  font-weight: 600;
+  line-height: 1;
+}
+.dp-effekt .label {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+}
+.dp-effekt p {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.82);
+}
+.dp-citat {
+  margin-top: 2rem;
+  padding: 1.6rem 1.8rem;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r);
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.12rem;
+  color: rgba(255,255,255,0.92);
+  line-height: 1.45;
+}
+.dp-citat cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-style: normal;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.04em;
+}
+
+#dp-konsekvenser { background: var(--parchment); }
+.dp-konsek-kort {
+  background: var(--white);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem;
+  margin-top: 1.6rem;
+  border-left: 4px solid var(--gold);
+}
+.dp-konsek-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+.dp-konsek-kort p { font-size: 0.96rem; color: var(--navy-mid); }
+.dp-konsek-kort p + p { margin-top: 0.7rem; }
+.dp-konsek-kort strong { color: var(--navy); }
+
+#dp-kallor { background: var(--white); }
+.dp-kallor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.1rem;
+  margin-top: 2rem;
+}
+.dp-kalla {
+  background: var(--parchment);
+  border-radius: var(--r);
+  padding: 1.1rem 1.2rem 1.2rem;
+  border-top: 3px solid var(--gold);
+}
+.dp-kalla .typ {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+}
+.dp-kalla h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0.3rem 0 0.4rem;
+}
+.dp-kalla p { font-size: 0.85rem; color: var(--navy-mid); }
+.dp-kalla a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.dp-back-bar {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 0.6rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.82rem;
+}
+.dp-back-bar a {
+  color: rgba(255,255,255,0.78);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.dp-back-bar a:hover { color: #fff; text-decoration: underline; }
+.dp-back-bar .sep { color: rgba(255,255,255,0.32); }
+.dp-back-bar .crumb { color: var(--gold-light); }
+</style>
+
+<nav>
+  <div class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></div>
+  <ul class="nav-links">
+    <li><a href="/">← Guiden</a></li>
+    <li><a href="#dp-tldr">Sammanfattning</a></li>
+    <li><a href="#dp-skr">SKR-data</a></li>
+    <li><a href="#dp-index">Ledtidsindex</a></li>
+    <li><a href="#dp-process">Processen</a></li>
+    <li><a href="#dp-overklagande">Överklaganden</a></li>
+    <li><a href="#dp-konsekvenser">Konsekvenser</a></li>
+    <li><a href="#dp-kallor">Källor</a></li>
+  </ul>
+</nav>
+
+<div class="dp-back-bar">
+  <a href="/">← Tillbaka till lokalförsörjningsguiden</a>
+  <span class="sep">/</span>
+  <span class="crumb">Fördjupning · Detaljplaners ledtider nationellt</span>
+</div>
+
+<!-- HERO -->
+<section id="dp-hero" class="dp-hero">
+  <p class="hero-eyebrow">Fördjupning</p>
+  <h1>Detaljplanen<br>— ledtidens <em>dolda tyngdpunkt</em></h1>
+  <p>
+    Av de spår som tar år snarare än månader är det nästan alltid detaljplaneprocessen som utgör tidsspjälken. Här finns en sammanställning av vad nationella mätningar säger om hur lång tid en detaljplan faktiskt tar, varför den drar ut, och vad det betyder för kommunala lokalbehov.
+  </p>
+  <span class="hero-tagline">SKR · Boverket · Bygg i Tid · Evidens · Sveriges Domstolar</span>
+</section>
+
+<!-- TLDR -->
+<section id="dp-tldr">
+  <div class="container">
+    <span class="section-label">På 30 sekunder</span>
+    <h2>Det viktigaste först</h2>
+    <p class="mt-2" style="color:var(--muted)">Fyra siffror som sätter ramarna för hur en detaljplan rör sig genom det svenska planeringssystemet.</p>
+
+    <div class="dp-num-grid">
+      <div class="dp-num-kort">
+        <div class="siffra">4,8 år</div>
+        <span class="label">Detaljplanstart → byggstart</span>
+        <p>Nationellt genomsnitt 2017–2024 över 52 deltagande kommuner och drygt 1 450 detaljplaner. Branschens riktmärke är max 2,5 år.</p>
+        <cite>Nationellt Ledtidsindex 2025</cite>
+      </div>
+
+      <div class="dp-num-kort">
+        <div class="siffra">13 %</div>
+        <span class="label">Andel kommuner under ett år</span>
+        <p>Andelen kommuner med medianledtid under ett år från planuppdrag till antagande har sjunkit från 48 % (2014–2015) till 13 % (2022–2023).</p>
+        <cite>SKR Jämförelser inom detaljplaneområdet 2024</cite>
+      </div>
+
+      <div class="dp-num-kort">
+        <div class="siffra">+14 mån</div>
+        <span class="label">Effekt av överklagande</span>
+        <p>Detaljplaner som överklagas men ändå vinner laga kraft får i snitt 14 månader längre total ledtid jämfört med planer som inte överklagas.</p>
+        <cite>Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)</cite>
+      </div>
+
+      <div class="dp-num-kort">
+        <div class="siffra">~25 %</div>
+        <span class="label">Andel överklagade planer</span>
+        <p>Cirka var fjärde antagen detaljplan i Sverige överklagas. I storstadsregionerna är andelen påtagligt högre.</p>
+        <cite>SKR 2024</cite>
+      </div>
+    </div>
+
+    <div class="tldr-key" style="margin-top:2rem;background:var(--white);padding:1.6rem 1.8rem;border-left:4px solid var(--gold);border-radius:var(--r);">
+      <strong>Sammanfattat:</strong> När man läser en kommunal lokalförsörjningsplan och möter sju- eller åttaårsperspektivet är det inte byggandet som tar tiden — det är att få fram en lagakraftvunnen detaljplan med rätt planändamål. Allt annat byggs <em>på</em> detaljplanen.
+    </div>
+  </div>
+</section>
+
+<!-- DEFINITIONER -->
+<section id="dp-definitioner">
+  <div class="container">
+    <span class="section-label">Mätpunkter</span>
+    <h2>Vad menas med "ledtid"?</h2>
+    <p class="mt-2" style="color:var(--muted)">Olika rapporter mäter olika saker. Här är de fyra viktigaste mätpunkterna och hur de förhåller sig till varandra.</p>
+
+    <div class="dp-def-grid">
+      <div class="dp-def">
+        <h3>Planuppdrag → antagande</h3>
+        <p>Tiden från att kommunen formellt beslutar att inleda planarbete till dess kommunfullmäktige (eller delegerad nämnd) antar planen. Detta är SKR:s huvudmått.</p>
+        <span class="matt">SKR · Kolada</span>
+      </div>
+      <div class="dp-def">
+        <h3>Samrådsstart → antagande</h3>
+        <p>Tid från första formella samråd med myndigheter och allmänhet till antagande. Mäter den "synliga" delen av processen — efter att planutkastet är klart.</p>
+        <span class="matt">SKR · Kolada</span>
+      </div>
+      <div class="dp-def">
+        <h3>Detaljplanstart → byggstart</h3>
+        <p>Det vidaste måttet — inkluderar planarbete, antagande, laga kraft, eventuella överklaganden, projektering, bygglov och förberedande arbeten. Det här är det mått som motsvarar "totalt på spaden".</p>
+        <span class="matt">Bygg i Tid / Ledtidsindex</span>
+      </div>
+      <div class="dp-def">
+        <h3>Antagande → laga kraft</h3>
+        <p>Som regel 3 veckor om beslutet inte överklagas. Vid överklagande kan denna fas ensam förlänga med ett år eller mer.</p>
+        <span class="matt">PBL 13 kap.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKR-DATA -->
+<section id="dp-skr">
+  <div class="container">
+    <span class="section-label">Nationell utveckling</span>
+    <h2>Detaljplaner tar längre tid — inte kortare</h2>
+    <p class="mt-2" style="color:var(--muted)">SKR:s återkommande jämförelse, framtagen i samverkan med 200+ kommuner, visar en tydlig riktning: trots regelförändringar tänkta att förenkla har handläggningstiderna förlängts.</p>
+
+    <div style="margin-top:2rem;background:var(--white);padding:1.8rem 2rem;border-radius:var(--r);border:1px solid var(--border);">
+      <h3 style="font-family:'Cormorant Garamond',serif;margin-bottom:0.6rem;">Andel kommuner med median <em>under ett år</em><br>(planuppdrag → antagande)</h3>
+      <table class="dp-trend-tabell">
+        <thead>
+          <tr>
+            <th>Mätperiod</th>
+            <th style="text-align:right">Andel kommuner</th>
+            <th>Förändring</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2014–2015</td><td class="num">48 %</td><td>—</td></tr>
+          <tr><td>2016–2017</td><td class="num">~38 %</td><td><span class="arrow-down">↓</span></td></tr>
+          <tr><td>2018–2019</td><td class="num">~28 %</td><td><span class="arrow-down">↓</span></td></tr>
+          <tr><td>2020–2021</td><td class="num">~20 %</td><td><span class="arrow-down">↓</span></td></tr>
+          <tr><td>2022–2023</td><td class="num">13 %</td><td><span class="arrow-down">↓↓</span></td></tr>
+        </tbody>
+      </table>
+      <p class="gantt-note mt-3">SKR konstaterar att den största förändringen över hela mätperioden är just denna: från att hälften av kommunerna höll detaljplaner under ett år till att det idag är en exklusiv minoritet. Spannet 1–2 år är nu det vanligaste, och andelen kommuner med median över 37 månader (drygt tre år) har vuxit påtagligt.</p>
+    </div>
+
+    <div class="dp-num-grid mt-3">
+      <div class="dp-num-kort">
+        <div class="siffra">≤ 2 år</div>
+        <span class="label">2022–2023</span>
+        <p>Knappt hälften av kommunerna håller en mediantid på två år eller kortare från planuppdrag till antagande. Drygt hälften har alltså längre tid än två år.</p>
+        <cite>SKR 2024</cite>
+      </div>
+      <div class="dp-num-kort">
+        <div class="siffra">< 1 år</div>
+        <span class="label">Samråd → antagande</span>
+        <p>Drygt hälften av kommunerna håller den senare delen av processen under ett år — det är förskedet (utredningar, planhandling, myndighetsdialog) som drar ut tiden.</p>
+        <cite>SKR 2024</cite>
+      </div>
+      <div class="dp-num-kort">
+        <div class="siffra">Storstad</div>
+        <span class="label">Längre tider</span>
+        <p>Kommuner i storstad och storstadsnära områden rapporterar i större utsträckning tider över 2 år, och en växande andel över 3 år. Mindre kommuner och landsbygd är generellt snabbare.</p>
+        <cite>SKR 2024</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEDTIDSINDEX -->
+<section id="dp-index">
+  <div class="container">
+    <span class="section-label">Ledtidsindex 2025</span>
+    <h2>Sveriges snabbaste — och hur långt det är till idealet</h2>
+    <p class="mt-2" style="color:var(--muted)">Initiativet Bygg i Tid (Byggföretagen och Fastighetsägarna) sammanställer årligen ett ledtidsindex för 52 kommuner. Mätningen omfattar enbart detaljplaner för flerbostadshus med fem eller fler lägenheter som vunnit laga kraft 2017–2024.</p>
+
+    <div class="dp-num-grid mt-3">
+      <div class="dp-num-kort">
+        <div class="siffra">60 / 100</div>
+        <span class="label">Genomsnittligt index</span>
+        <p>Sammanvägt index över processeffektivitet, ledtid och servicegrad. Spridningen mellan kommunerna är betydande.</p>
+        <cite>Bygg i Tid 2025</cite>
+      </div>
+      <div class="dp-num-kort">
+        <div class="siffra">2,5 år</div>
+        <span class="label">Branschens riktmärke</span>
+        <p>Det tak som branschorganisationerna anger som lämplig övre gräns för en detaljplan. Det är 2,3 år lägre än det faktiska genomsnittet.</p>
+        <cite>Bygg i Tid 2025</cite>
+      </div>
+      <div class="dp-num-kort">
+        <div class="siffra">7 / 10</div>
+        <span class="label">Kommuner med kö</span>
+        <p>Sju av tio kommuner uppger att de har detaljplaner som inte kan starta på grund av resursbrist på planenheten — en strukturell flaskhals snarare än lagstiftningen.</p>
+        <cite>Bygg i Tid 2025</cite>
+      </div>
+    </div>
+
+    <h3 class="mt-3" style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;">Topp tre 2025 — pallens fördelning</h3>
+    <div class="dp-pall">
+      <div class="dp-pall-kort guld">
+        <span class="plats">Total indexvinnare</span>
+        <h3>Trollhättan</h3>
+        <div class="siffra">2,1 år <span class="siffra-enhet">(median)</span></div>
+        <p>Indexpoäng 80/100 och kortast medianledtid för detaljplaner av samtliga kommuner i mätningen. Vinnare bland medelstora kommuner.</p>
+      </div>
+      <div class="dp-pall-kort">
+        <span class="plats">Stora kommuner</span>
+        <h3>Västerås</h3>
+        <div class="siffra">2,6 år <span class="siffra-enhet">(median)</span></div>
+        <p>Snabbaste medianledtider i sin storleksklass. Indexpoäng 75/100.</p>
+      </div>
+      <div class="dp-pall-kort">
+        <span class="plats">Små kommuner / Servicegrad</span>
+        <h3>Trosa</h3>
+        <div class="siffra">71 <span class="siffra-enhet">indexpoäng</span></div>
+        <p>Vinnare i kategorin små kommuner. Högsta NKI-resultat (Nöjd-Kund-Index) i hela mätningen — en signal om kombinationen tempo och dialog.</p>
+      </div>
+    </div>
+
+    <p class="gantt-note mt-3">
+      <strong>Metod & begränsning:</strong> Ledtidsindex mäter detaljplaner för flerbostadshus med ≥ 5 lägenheter, vilket inte är samma sak som detaljplaner för skola, förskola, LSS eller idrott. Däremot speglar samma planenheter, samma processer och samma flaskhalsar de ledtider som lokalbehoven också möter — siffrorna är därför ett rimligt riktmärke även för kommunala fastighetsbolags planering.
+    </p>
+  </div>
+</section>
+
+<!-- PROCESSENS SKEDEN -->
+<section id="dp-process">
+  <div class="container">
+    <span class="section-label">Skede för skede</span>
+    <h2>Vad som faktiskt händer mellan planuppdrag och inflyttning</h2>
+    <p class="mt-2" style="color:var(--muted)">En detaljplan rör sig genom 6–8 formella skeden enligt PBL. Här är de viktigaste, med typiska tidsspann och vad som händer.</p>
+
+    <div class="dp-skeden">
+      <div class="dp-skede">
+        <div class="nummer">1</div>
+        <div>
+          <h4>Planbesked</h4>
+          <p>Kommunen meddelar om man avser att inleda planarbete. Lagstadgad bortre gräns: <strong>4 månader</strong> från komplett ansökan.</p>
+        </div>
+        <span class="tid">≤ 4 mån</span>
+      </div>
+      <div class="dp-skede">
+        <div class="nummer">2</div>
+        <div>
+          <h4>Planuppdrag</h4>
+          <p>Beslut om att starta planarbete (SKR:s nollpunkt). Avtal om planarbete sluts, projektorganisation sätts, utredningar beställs (geo, dagvatten, buller, trafik, barnkonsekvens m.m.).</p>
+        </div>
+        <span class="tid">2–8 mån</span>
+      </div>
+      <div class="dp-skede">
+        <div class="nummer">3</div>
+        <div>
+          <h4>Plansamråd</h4>
+          <p>Förslaget skickas till länsstyrelse, sakägare, allmänhet. Standardförfarande: vanligen 3–4 veckor. Utökat förfarande: minst 3 veckor men ofta längre. Utredningar ofta kompletteras efter inkomna synpunkter.</p>
+        </div>
+        <span class="tid">3–6 mån</span>
+      </div>
+      <div class="dp-skede">
+        <div class="nummer">4</div>
+        <div>
+          <h4>Granskning</h4>
+          <p>Reviderat förslag ställs ut. Standardförfarande: 2 veckor. Utökat: minst 3 veckor. Sista chansen för synpunkter — det som inte lyfts här riskerar att inte beaktas i ett senare överklagande.</p>
+        </div>
+        <span class="tid">2–4 mån</span>
+      </div>
+      <div class="dp-skede">
+        <div class="nummer">5</div>
+        <div>
+          <h4>Antagande</h4>
+          <p>Beslut i kommunfullmäktige (utökat förfarande) eller delegerat till nämnd (standard). Denna punkt är SKR:s slutpunkt för "planuppdrag → antagande".</p>
+        </div>
+        <span class="tid">1–3 mån</span>
+      </div>
+      <div class="dp-skede">
+        <div class="nummer">6</div>
+        <div>
+          <h4>Laga kraft</h4>
+          <p>3 veckor efter antagandet om beslutet inte överklagas. Först nu kan bygglov beviljas på den nya planen.</p>
+        </div>
+        <span class="tid">3 v</span>
+      </div>
+      <div class="dp-skede" style="border-left-color:#DB2777;">
+        <div class="nummer" style="color:#DB2777;">7</div>
+        <div>
+          <h4>Eventuellt överklagande</h4>
+          <p>Mark- och miljödomstolen (MMD) prövar i första instans, Mark- och miljööverdomstolen (MÖD) i andra. <strong>Genomsnittlig handläggningstid 8,4 månader hos MMD</strong> (2021-nivå). Effekt på total ledtid: +14 månader i snitt enligt Evidens.</p>
+        </div>
+        <span class="tid">+8–18 mån</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARD VS UTÖKAT FÖRFARANDE -->
+<section id="dp-forfarande">
+  <div class="container">
+    <span class="section-label">Två förfaranden</span>
+    <h2>Standard eller utökat — vad styr valet?</h2>
+    <p class="mt-2" style="color:var(--muted)">PBL föreskriver utökat förfarande när detaljplanen är av betydande allmänt intresse, avviker från översiktsplanen eller kan antas medföra betydande miljöpåverkan. För skolor och förskolor i tätbebyggt läge är utökat ofta utgångsläget.</p>
+
+    <div class="dp-jamfor">
+      <div class="dp-jamfor-kort">
+        <span class="pill">Standardförfarande</span>
+        <h3>Snabbare väg</h3>
+        <ul>
+          <li><strong>Förutsättning:</strong> i linje med ÖP, ej betydande allmänt intresse, ej betydande miljöpåverkan.</li>
+          <li><strong>Samråd:</strong> typiskt 3–4 veckor.</li>
+          <li><strong>Granskning:</strong> 2 veckor.</li>
+          <li><strong>Antagande:</strong> kan ske av nämnd via delegation.</li>
+          <li><strong>Total tid (typisk):</strong> 9–18 månader.</li>
+        </ul>
+      </div>
+      <div class="dp-jamfor-kort utokat">
+        <span class="pill">Utökat förfarande</span>
+        <h3>När mer står på spel</h3>
+        <ul>
+          <li><strong>Förutsättning:</strong> avvikelse från ÖP, betydande intresse, betydande miljöpåverkan eller större markanvändningsändring.</li>
+          <li><strong>Samråd:</strong> minst 3 veckor — i praktiken längre.</li>
+          <li><strong>Granskning:</strong> minst 3 veckor, ofta 4–6.</li>
+          <li><strong>Antagande:</strong> kommunfullmäktige.</li>
+          <li><strong>Fler steg:</strong> miljökonsekvensbeskrivning, fler utredningar, fler politiska beslutspunkter.</li>
+          <li><strong>Total tid (typisk):</strong> 18–48 månader, inklusive utredningsskede.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="gantt-note mt-3">
+      Ett begränsat förfarande finns också, men kräver att alla berörda samtycker — i praktiken sällan tillämpbart för planer som rör skol- eller förskoleområden. Boverket: när någon av kriterierna för utökat förfarande är uppfyllda <em>ska</em> det utökade tillämpas; det är inte ett val.
+    </p>
+  </div>
+</section>
+
+<!-- ÖVERKLAGANDEN -->
+<section id="dp-overklagande">
+  <div class="container">
+    <span class="section-label">Överklaganden</span>
+    <h2>Den största enskilda förseningskällan</h2>
+    <p class="mt-2">Överklagande är inte en ovanlig avvikelse — det är en strukturell del av processen. Frågan är inte om utan när det inträffar för planer i tätorter eller med politisk uppmärksamhet.</p>
+
+    <div class="dp-effekt-grid">
+      <div class="dp-effekt">
+        <div class="siffra">+14 mån</div>
+        <span class="label">Genomsnittlig förlängning</span>
+        <p>Detaljplaner som överklagas men ändå vinner laga kraft får i snitt 14 månader längre total ledtid (Evidens 2023).</p>
+      </div>
+      <div class="dp-effekt">
+        <div class="siffra">8,4 mån</div>
+        <span class="label">Mark- och miljödomstolen</span>
+        <p>Genomsnittlig handläggningstid för ett överklagande av detaljplan i första instans (2021-nivå). Tiderna har ökat de senaste åtta åren, särskilt i Mark- och miljööverdomstolen.</p>
+      </div>
+      <div class="dp-effekt">
+        <div class="siffra">3–3,5 mån</div>
+        <span class="label">Avvisade ärenden</span>
+        <p>Kortare handläggningstid när domstolen beslutar att inte pröva ärendet. Men även dessa "snabba" beslut tar månader.</p>
+      </div>
+      <div class="dp-effekt">
+        <div class="siffra">~25 %</div>
+        <span class="label">Andel överklagade</span>
+        <p>Ungefär var fjärde antagen detaljplan i Sverige överklagas — andelen har varit stabil över mätningarna. Storstadsregioner har högre andel.</p>
+      </div>
+    </div>
+
+    <div class="dp-citat">
+      "Den enskilt viktigaste drivaren bakom långa handläggningstider i överklagandeärenden är detaljplanens komplexitet, vilken har ökat i takt med stigande utredningskrav under senare år."
+      <cite>— Sammanfattning av analysen i SKR/Domstolarnas underlag om handläggningstider</cite>
+    </div>
+
+    <p class="gantt-note mt-3">
+      <strong>Vad som typiskt åberopas:</strong> Bristande utredning (buller, trafik, dagvatten, barnkonsekvens), formfel i förfarandet, otillräcklig motivering vid avsteg från ÖP, eller invändningar från enskilda sakägare avseende insyn, skugga, parkering och trafik. En stor majoritet av överklagade planer står sig i högre instans, men förseningen uppstår oavsett utfall — det är själva den juridiska prövningen som tar tid.
+    </p>
+  </div>
+</section>
+
+<!-- KONSEKVENSER -->
+<section id="dp-konsekvenser">
+  <div class="container">
+    <span class="section-label">Konsekvenser för lokalförsörjning</span>
+    <h2>Vad detaljplaneprocessen betyder för skol- och förskolebehov</h2>
+    <p class="mt-2" style="color:var(--muted)">Skollagen ger barn rätt till plats i förskola och grundskola. Den rätten existerar oavsett detaljplanens tempo. Det skapar en strukturell spänning som kommunerna hanterar på flera sätt.</p>
+
+    <div class="dp-konsek-kort">
+      <h3>Sjuårsperspektivet är inte bygget — det är planen</h3>
+      <p>När Lunds kommun, Uppsala Skolfastigheter och flera andra anger ~7 år för en ny skola är det <strong>inte byggfasen</strong> som tar tiden. Bygget tar 2–3 år. Det är detaljplanen, programskedet och förstudierna som driver totalkalkylen.</p>
+      <p>Tre år av detaljplan + ett år av program/förstudier + ett år av projektering + två år av byggnation ger ~7 år. Slipper man planskede (genom bra planberedskap eller befintlig plan) kan totaltiden halveras.</p>
+    </div>
+
+    <div class="dp-konsek-kort">
+      <h3>Planberedskap — den enda hållbara förkortningen</h3>
+      <p>Boverket: kommuner i tätbebyggda områden behöver kontinuerligt ha tillräckligt med <strong>planlagd mark</strong> för skola och förskola. Det innebär att detaljplaner med rätt planändamål måste tas fram <em>innan</em> behovet är akut, inte i samband med behovet.</p>
+      <p>Planberedskap mäts inte i SKR:s ledtidsstatistik men är det enskilt största verktyget för att korta upplevd ledtid: en lagakraftvunnen plan med rätt ändamål gör att ledtiden i praktiken börjar vid program- eller projekteringsskedet.</p>
+    </div>
+
+    <div class="dp-konsek-kort">
+      <h3>Modulers roll — och dess gränser</h3>
+      <p>Tidsbegränsade bygglov enligt <strong>9 kap. 33 § PBL</strong> kan ge moduler i upp till 10 år, förlängningsbart till 15 år. Det har gjort modulen till den facto-ventilen när detaljplaner inte hinner färdigt — Uppsala rapporterar att ungefär en femtedel av kommunens förskolor drivs i modulbyggnader.</p>
+      <p>Men modulen kräver fortfarande rätt planändamål och bygglov; den kortar inte detaljplaneprocessen, den ersätter en permanent lokal i väntan på processen.</p>
+    </div>
+
+    <div class="dp-konsek-kort">
+      <h3>Tidiga skeden låser kostnaden — inte bara tiden</h3>
+      <p>Branschdata visar att 70–80 % av en byggnads totala investeringskostnad <strong>låses upp i programskede och tidig projektering</strong>. Sena programförändringar är därför inte bara dyra i form av nya utredningar — de tvingar tillbaka projekten i tidigare skeden, ofta delar av detaljplaneprocessen.</p>
+      <p>Det är därför stabilt och tidigt förankrat behovsunderlag är den enskilt viktigaste insatsen för att hålla kommunala lokalförsörjningsplaner i tid.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KÄLLOR -->
+<section id="dp-kallor">
+  <div class="container">
+    <span class="section-label">Källor</span>
+    <h2>Primärkällor och fördjupning</h2>
+    <p class="mt-2" style="color:var(--muted)">All statistik och alla siffror i detta material är hämtade från följande svenska källor. Siffrorna avser senast publicerat underlag.</p>
+
+    <div class="dp-kallor-grid">
+      <div class="dp-kalla">
+        <span class="typ">Branschindex · 2025</span>
+        <h4>Nationellt Ledtidsindex 2025</h4>
+        <p>Bygg i Tid (Byggföretagen och Fastighetsägarna). Sammanställning av ledtider i 52 kommuner, ~1 450 detaljplaner och 3 270 bygglov 2017–2024.</p>
+        <a href="https://byggforetagen.se/app/uploads/2025/09/Nationellt-Ledtidsindex-2025.pdf" target="_blank" rel="noopener">PDF →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Branschorganisation · SKR</span>
+        <h4>Jämförelser inom detaljplaneområdet 2024</h4>
+        <p>SKR:s återkommande jämförelse av kommunernas detaljplanearbete. Data 2022–2023, längre tidsserier från 2014.</p>
+        <a href="https://skr.se/skr/samhallsplaneringinfrastruktur/planeringbyggandebostad/fysiskplanering/jamforelserinomdetaljplaneomradet2024.82109.html" target="_blank" rel="noopener">SKR.se →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Forskningsrapport · 2023</span>
+        <h4>Överklagande av detaljplaner — omfattning, effekter och orsaker</h4>
+        <p>Evidens, på uppdrag av SKR, Byggföretagen och Fastighetsägarna. Mäter förseningseffekten av överklaganden och dess underliggande orsaker.</p>
+        <a href="https://evidensgruppen.se/publikationer/overklagandet-av-detaljplaner/" target="_blank" rel="noopener">evidensgruppen.se →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Myndighet · 2025</span>
+        <h4>Boverket rapport 2025:11 — Tillämpningen av PBL</h4>
+        <p>Boverkets årliga uppföljning av plan- och bygglagstiftningens tillämpning. Underlag från 285 av Sveriges 290 kommuner.</p>
+        <a href="https://www.boverket.se/globalassets/publikationer/dokument/2025/redovisning-av-tillampningen-av-plan--och-bygglagstiftningen-ar-2024.pdf" target="_blank" rel="noopener">PDF →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Myndighet · Vägledning</span>
+        <h4>Boverket — PBL kunskapsbanken</h4>
+        <p>Vägledning kring detaljplaneprocessen, val av förfarande, tidsbegränsade bygglov m.m. Levande material.</p>
+        <a href="https://www.boverket.se/sv/PBL-kunskapsbanken/" target="_blank" rel="noopener">boverket.se →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Myndighet · Domstol</span>
+        <h4>Mark- och miljödomstolarnas handläggningstider</h4>
+        <p>Statistik och analyser av handläggningstider för överklaganden av detaljplaner och bygglov hos Mark- och miljödomstolen och Mark- och miljööverdomstolen.</p>
+        <a href="https://www.domstol.se/amnen/mark-och-miljo/plan-och-bygg/overklaga-plan--och-byggbeslut/" target="_blank" rel="noopener">domstol.se →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Lagstiftning</span>
+        <h4>Plan- och bygglag (2010:900) — PBL</h4>
+        <p>Bl.a. 5 kap. (detaljplaner), 9 kap. 33 § (tidsbegränsat bygglov), 13 kap. (överklagande). Den juridiska ramen för hela processen.</p>
+        <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-bygglag-2010900_sfs-2010-900/" target="_blank" rel="noopener">riksdagen.se →</a>
+      </div>
+      <div class="dp-kalla">
+        <span class="typ">Boverket · Vägledning</span>
+        <h4>Strategisk planering för långsiktigt hållbara förskolor och skolor</h4>
+        <p>Vägledning om kommunal planberedskap för skolor och förskolor — markförsörjning, planändamål och tidshorisont.</p>
+        <a href="https://www.boverket.se/sv/samhallsplanering/arkitektur-och-gestaltad-livsmiljo/arbetssatt/skolors-miljo/larmiljoer-samhallsbygget/strategisk-planering/" target="_blank" rel="noopener">boverket.se →</a>
+      </div>
+    </div>
+
+    <p class="gantt-note mt-4">
+      <strong>Notering om mätbegränsningar:</strong> Olika rapporter mäter olika saker över olika urval. Nationellt Ledtidsindex omfattar bara flerbostadshus med ≥ 5 lägenheter; SKR:s jämförelse omfattar alla detaljplanetyper men bygger på enkätsvar; Evidens analys är retrospektiv över överklagade planer. När siffror jämförs har vi försökt vara explicita om vilket mått som avses. Lokala variationer mellan kommuner är dock genomgående större än trenderna mellan mätperioder.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Fördjupning: Detaljplaner nationellt · Internt arbetsmaterial
+</footer>
