@@ -1235,10 +1235,10 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Konkreta exempel</span>
     <h2>Lejonfastigheter och en spegling</h2>
-    <p class="mt-2" style="color:var(--muted)">Tre aktuella Lejonfastigheter-projekt jämfört med likartade projekt från andra svenska kommunala fastighetsbolag. Syftet är att förankra siffrorna i konkret verklighet.</p>
+    <p class="mt-2" style="color:var(--muted)">Fyra aktuella Lejonfastigheter-projekt — en per lokaltyp — speglade mot likartade projekt från andra svenska kommunala fastighetsbolag. Båda sidor redovisas med identiskt rubrikschema från förstudie till inflyttning, så hela tidsåtgången blir jämförbar.</p>
     <div class="exempel-grid" id="exempel-grid"></div>
     <p class="gantt-note mt-3">
-      <strong>Källa:</strong> Lejonfastigheters projektkommunikation och pressmeddelanden, RO-Gruppens pressmeddelande oktober 2024 (Lägerbålet), ByggPartners projektreferens (Hemlingborg), ByggfaktaDOCU (LSS-projekt), Krokoms kommun och Nyköpings kommun (förskolor), Corren och Fastighetssverige.
+      <strong>Källa (spegling):</strong> SISAB slutredovisning Personnevägen 78 (feb 2025), Lokalförvaltningen/Stadsfastighetsförvaltningen Göteborg samt Veidekke (Torslandaskolan F–6), Gavlefastigheter och ByggPartner (Hemlingborg), Uppsala kommun pressmeddelande och inhyrningsbeslut (Norby 31:78). Lejonfastigheter-uppgifter från egen projektkommunikation.
     </p>
   </div>
 </section>
@@ -1797,79 +1797,153 @@ const DATA = {
   // ══════════════════════════════════════════════════
 
   // ═══════ EXEMPEL: LINKÖPING ↔ EXTERN SPEGLING ═══════
+  // Gemensamt rubrikschema (11 rader) för båda sidor i alla fyra kategorier:
+  // Beställare · Omfattning · Storlek (BTA) · Förstudie (start) · Detaljplan ·
+  // Genomförandebeslut · Byggstart · Inflyttning · Total tid · Budget / utfall · Källa / anmärkning
   exempel: [
-    {
-      titel: "Vårdboende + förskola i samma byggnad",
-      lejon: {
-        namn: "Lägerbålet 1, Linköping (Berga)",
-        rader: [
-          { e: "Omfattning", v: "90 vårdplatser + 100 förskolebarn" },
-          { e: "Storlek", v: "10 800 m² BTA · 4 vån" },
-          { e: "Budget (entreprenad)", v: "225 mkr" },
-          { e: "Bygg", v: "Början 2025 → dec 2026" },
-          { e: "Byggtid", v: "≈ 24 mån" },
-          { e: "Övrigt", v: "Gemensamt storkök · RO-Gruppen totalentreprenör" }
-        ]
-      },
-      spegling: {
-        namn: "Hemlingborg, Gävle (Gavlefastigheter)",
-        rader: [
-          { e: "Omfattning", v: "80 vårdplatser + 120 förskolebarn + skola F-6 + idrottshall" },
-          { e: "Konstruktion", v: "Trästomme · partnering" },
-          { e: "Bygg", v: "Hösten 2020 → 2023" },
-          { e: "Byggtid", v: "≈ 36 mån" },
-          { e: "Förskede", v: "Projektering 2019–2020 (~1 år)" }
-        ]
-      },
-      poang: "Båda projekten kombinerar omsorg och pedagogik under ett tak — en allt vanligare modell. Hemlingborg är något större och mer komplex, vilket också syns i byggtiden. Lejonfastigheters Lägerbålet ligger inom det förväntade spannet för denna typkategori."
-    },
-    {
-      titel: "LSS-gruppbostad",
-      lejon: {
-        namn: "LSS-gruppbostad, Linköping (2024)",
-        rader: [
-          { e: "Omfattning", v: "6 lägenheter" },
-          { e: "Färdigställd", v: "Hösten 2024" },
-          { e: "Byggtid", v: "≈ 12–15 mån" },
-          { e: "Sammanhang", v: "En av flera nybyggda LSS-bostäder i kommunen" }
-        ]
-      },
-      spegling: {
-        namn: "Skogsbo (Avesta) · Ludvika · Gimåt-Högland (Örnsköldsvik)",
-        rader: [
-          { e: "Beställare", v: "Tre olika kommunala bolag" },
-          { e: "Omfattning", v: "6 lägenheter (var och en)" },
-          { e: "Storlek", v: "≈ 600 m² BTA" },
-          { e: "Budget", v: "20–30 mkr" },
-          { e: "Byggtid", v: "10–15 mån" },
-          { e: "Mönster", v: "Konsekvent storlek (Socialstyrelsens rekommendation 5–6 lgh)" }
-        ]
-      },
-      poang: "LSS-gruppbostäder följer ett standardiserat mönster nationellt — sex lägenheter, ~600 m², byggtid kring ett år, budget 20–30 mkr. Lejonfastigheters projekt 2024 ligger på samma nivå som motsvarande projekt i andra svenska kommuner."
-    },
     {
       titel: "Förskola",
       lejon: {
-        namn: "Vallastadens förskola, Linköping",
+        namn: "[Lejonfastigheter — fyll i förskoleprojekt]",
         rader: [
-          { e: "Omfattning", v: "72 barn · utomhuspedagogik" },
-          { e: "Bygg", v: "v.9 2015 → januari 2016" },
-          { e: "Byggtid", v: "≈ 10 mån" },
-          { e: "Sammanhang", v: "Bland första byggnader i Vallastaden — detaljplan klar i förväg" }
+          { e: "Beställare",          v: "Lejonfastigheter AB" },
+          { e: "Omfattning",          v: "[antal avdelningar / barn]" },
+          { e: "Storlek (BTA)",       v: "[m²]" },
+          { e: "Förstudie (start)",   v: "[år/månad]" },
+          { e: "Detaljplan",          v: "[befintlig / ny — period]" },
+          { e: "Genomförandebeslut",  v: "[år/månad]" },
+          { e: "Byggstart",           v: "[år/månad]" },
+          { e: "Inflyttning",         v: "[år/månad]" },
+          { e: "Total tid",           v: "[förstudie → inflyttning]" },
+          { e: "Budget / utfall",     v: "[mkr · ev. avvikelse %]" },
+          { e: "Källa / anmärkning",  v: "[internt projektnummer / not]" }
         ]
       },
       spegling: {
-        namn: "Krokoms konceptförskola",
+        namn: "Personnevägen 78, Stockholm (SISAB)",
         rader: [
-          { e: "Omfattning", v: "170 barn · 10 avdelningar" },
-          { e: "Behovsbeslut", v: "September 2019" },
-          { e: "Planerad invigning", v: "2022" },
-          { e: "Faktisk invigning", v: "September 2024" },
-          { e: "Total processtid", v: "5 år" },
-          { e: "Försening pga", v: "Avropsstopp (entreprenörens konkurs) + detaljplanearbete" }
+          { e: "Beställare",          v: "Skolfastigheter i Stockholm AB (SISAB)" },
+          { e: "Omfattning",          v: "12 avdelningar · 216 barn · tillagningskök 250 portioner" },
+          { e: "Storlek (BTA)",       v: "≈ 3 000 m²" },
+          { e: "Förstudie (start)",   v: "2017–2018 (utredningsfas; exakt månad ej publicerad)" },
+          { e: "Detaljplan",          v: "Befintlig — rivning + nybyggnad inom egen fastighet" },
+          { e: "Genomförandebeslut",  v: "23 oktober 2018" },
+          { e: "Byggstart",           v: "2020" },
+          { e: "Inflyttning",         v: "Slutredovisning godkänd feb 2025" },
+          { e: "Total tid",           v: "≈ 6–7 år (GB → projektavslut)" },
+          { e: "Budget / utfall",     v: "114,1 mkr beslutad — genomfört enligt underlag + tilläggsbeställning frikyla" },
+          { e: "Källa / anmärkning",  v: "SISAB slutredovisning, styrelsemöte 4 feb 2025" }
         ]
       },
-      poang: "<strong>Vallastaden = bäst tänkbara förutsättningar:</strong> färdig detaljplan, känd byggherre, tidigt skede av stadsdelsbyggande. <strong>Krokom = vanligaste verkligheten:</strong> 5 år från behovsbeslut till invigning, oavsett att själva produktionen bara tog 12 månader. Skillnaden ligger inte i bygget utan i förskedet."
+      poang: "Förskolor är den lokaltyp där standardiserade koncept (SISAB UPP, Krokoms konceptförskola) börjat korta tiderna — men huvudfallet ligger fortfarande på 5–7 år förstudie → inflyttning även när detaljplanen redan finns."
+    },
+    {
+      titel: "Skola (F–6)",
+      lejon: {
+        namn: "[Lejonfastigheter — fyll i skolprojekt]",
+        rader: [
+          { e: "Beställare",          v: "Lejonfastigheter AB" },
+          { e: "Omfattning",          v: "[stadier / kapacitet]" },
+          { e: "Storlek (BTA)",       v: "[m²]" },
+          { e: "Förstudie (start)",   v: "[år/månad]" },
+          { e: "Detaljplan",          v: "[befintlig / ny — period]" },
+          { e: "Genomförandebeslut",  v: "[år/månad]" },
+          { e: "Byggstart",           v: "[år/månad]" },
+          { e: "Inflyttning",         v: "[år/månad]" },
+          { e: "Total tid",           v: "[förstudie → inflyttning]" },
+          { e: "Budget / utfall",     v: "[mkr · ev. avvikelse %]" },
+          { e: "Källa / anmärkning",  v: "[internt projektnummer / not]" }
+        ]
+      },
+      spegling: {
+        namn: "Torslandaskolan F–6, Göteborg",
+        rader: [
+          { e: "Beställare",          v: "Lokalförvaltningen / Stadsfastighetsförvaltningen Göteborg" },
+          { e: "Omfattning",          v: "F–6 + anpassad grundskola 1–6 · ca 600 elever · 16 klassrum" },
+          { e: "Storlek (BTA)",       v: "≈ 8 700–9 000 m² · 3 vån + källare" },
+          { e: "Förstudie (start)",   v: "2018 (lokalförsörjningsplan; månad ej publicerad)" },
+          { e: "Detaljplan",          v: "Ändring av befintlig DP (för att medge högre hus)" },
+          { e: "Genomförandebeslut",  v: "Entreprenadkontrakt mars 2022 (Veidekke, totalentreprenad i samverkan)" },
+          { e: "Byggstart",           v: "April 2022" },
+          { e: "Inflyttning",         v: "Augusti 2024 (skolstart HT24); invigning okt 2024" },
+          { e: "Total tid",           v: "≈ 6 år (2018 → aug 2024)" },
+          { e: "Budget / utfall",     v: "Kontrakt 216–217 mkr · slututfall ej publicerat" },
+          { e: "Källa / anmärkning",  v: "stadsutveckling.goteborg.se, goteborg.se, veidekke.se, belok.se" }
+        ]
+      },
+      poang: "Även en F–6 av normalstorlek i ett område med befintlig detaljplan landar på cirka sex år. Det är förskedet — behovsanalys, planändring, projektering, upphandling — som dominerar; själva bygget tog 27 månader."
+    },
+    {
+      titel: "Vårdboende (VoB)",
+      lejon: {
+        namn: "[Lejonfastigheter — fyll i vårdboende]",
+        rader: [
+          { e: "Beställare",          v: "Lejonfastigheter AB" },
+          { e: "Omfattning",          v: "[antal vårdplatser]" },
+          { e: "Storlek (BTA)",       v: "[m²]" },
+          { e: "Förstudie (start)",   v: "[år/månad]" },
+          { e: "Detaljplan",          v: "[befintlig / ny — period]" },
+          { e: "Genomförandebeslut",  v: "[år/månad]" },
+          { e: "Byggstart",           v: "[år/månad]" },
+          { e: "Inflyttning",         v: "[år/månad]" },
+          { e: "Total tid",           v: "[förstudie → inflyttning]" },
+          { e: "Budget / utfall",     v: "[mkr · ev. avvikelse %]" },
+          { e: "Källa / anmärkning",  v: "[internt projektnummer / not]" }
+        ]
+      },
+      spegling: {
+        namn: "Hemlingborg, Gävle (VoB-delen)",
+        rader: [
+          { e: "Beställare",          v: "Gavlefastigheter AB (samverkan med Gavlegårdarna; ByggPartner i partnering)" },
+          { e: "Omfattning",          v: "80 VoB-platser (del av multifunktionsbyggnad med F–6, förskola, idrottshall)" },
+          { e: "Storlek (BTA)",       v: "VoB-andel ≈ 7 000 m² (totalt komplex ≈ 22 000 m²)" },
+          { e: "Förstudie (start)",   v: "Dispositionsplan inom Husby 3:3 — 3 februari 2017" },
+          { e: "Detaljplan",          v: "Södra Hemlingby etapp 1 — laga kraft 2018" },
+          { e: "Genomförandebeslut",  v: "Projekteringsfas 2019–2020 (samverkansmodell)" },
+          { e: "Byggstart",           v: "Oktober 2020" },
+          { e: "Inflyttning",         v: "Hösten 2023 (juni–oktober)" },
+          { e: "Total tid",           v: "≈ 6,5 år (feb 2017 → okt 2023)" },
+          { e: "Budget / utfall",     v: "Estimat hela komplexet 480 mkr (ByggfaktaDOCU) — slututfall ej publicerat" },
+          { e: "Källa / anmärkning",  v: "gavlefastigheter.se, byggpartner/trastad.se, byggfaktadocu.se" }
+        ]
+      },
+      poang: "Vårdboenden har den längsta normala ledtiden bland Lejonfastigheters lokaltyper. Hemlingborg är ett snabbt VoB-fall (~6,5 år); Micasa rapporterar själva 11–13 år markanvisning → inflyttning för sina senaste fem projekt i Stockholm."
+    },
+    {
+      titel: "Gruppboende (LSS)",
+      lejon: {
+        namn: "[Lejonfastigheter — fyll i LSS-gruppbostad]",
+        rader: [
+          { e: "Beställare",          v: "Lejonfastigheter AB" },
+          { e: "Omfattning",          v: "[antal lägenheter]" },
+          { e: "Storlek (BTA)",       v: "[m²]" },
+          { e: "Förstudie (start)",   v: "[år/månad]" },
+          { e: "Detaljplan",          v: "[befintlig / ny — period]" },
+          { e: "Genomförandebeslut",  v: "[år/månad]" },
+          { e: "Byggstart",           v: "[år/månad]" },
+          { e: "Inflyttning",         v: "[år/månad]" },
+          { e: "Total tid",           v: "[förstudie → inflyttning]" },
+          { e: "Budget / utfall",     v: "[mkr · ev. avvikelse %]" },
+          { e: "Källa / anmärkning",  v: "[internt projektnummer / not]" }
+        ]
+      },
+      spegling: {
+        namn: "Norby 31:78, Uppsala (LSS-gruppbostad)",
+        rader: [
+          { e: "Beställare",          v: "Uppsala kommun (vård- och omsorgsförv.) · byggherre Hoivatilat (inhyrning)" },
+          { e: "Omfattning",          v: "6 lägenheter enligt LSS 9 § 9 + gemensamhetsutrymmen och trädgård" },
+          { e: "Storlek (BTA)",       v: "≈ 600–700 m² (Hoivatilats standardkoncept)" },
+          { e: "Förstudie (start)",   v: "Boendeplan / behovsutredning ca 2020–2021 (proxy — LSS-förstudier publiceras sällan separat)" },
+          { e: "Detaljplan",          v: "Befintlig" },
+          { e: "Genomförandebeslut",  v: "Godkännande om inhyrning, Norby 31:78" },
+          { e: "Byggstart",           v: "2022–2023" },
+          { e: "Inflyttning",         v: "Invigning 7 juni 2024" },
+          { e: "Total tid",           v: "≈ 3–4 år (proxy från boendeplan → invigning)" },
+          { e: "Budget / utfall",     v: "Inhyrningsmodell — kommunen exponeras inte mot byggbudget; hyresnivå styrande" },
+          { e: "Källa / anmärkning",  v: "uppsala.se pressmeddelande + inhyrningsbeslut Norby 31:78" }
+        ]
+      },
+      poang: "LSS-gruppbostäder är den kortaste typkategorin: standardiserat lokalprogram (6 lägenheter, ~600 m²), ofta befintlig detaljplan och inhyrningsmodeller från specialister som Hoivatilat. Förstudien är dock sällan publicerad som självständigt dokument — den ligger inbäddad i socialnämndens boendeplan."
     }
   ],
   // ══════════════════════════════════════════════════
