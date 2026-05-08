@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "varumarke": "Lejonfastigheter",
+    "undertitel": "Lokalförsörjningsguide — populärversion",
+    "fooFooter": "Internt arbetsmaterial · Hänvisar till fullversionen för fullständig referens",
+    "lank": "Fullversion: lejonfastigheter.se/lokalforsorjning",
+    "datum": "Senast uppdaterat: maj 2026"
+  },
+  "slides": [
+    {
+      "id": "titel",
+      "ordning": 1,
+      "ankare": "intro",
+      "layout": "titel",
+      "titel": "Från behov till inflyttning",
+      "undertitel": "Lejonfastigheters lokalförsörjningsprocess — populärversion",
+      "ingress": "Att tillgodose ett lokalbehov tar allt från tre månader till åtta år. Det här materialet förklarar varför, och vad som faktiskt tar tid.",
+      "tagline": "Fyra spår · Faktiska ledtider · Svenska referensdata"
+    },
+    {
+      "id": "kostnad-80",
+      "ordning": 2,
+      "ankare": "kostnad",
+      "layout": "siffra-stor",
+      "titel": "80 % av kostnaden låses tidigt",
+      "underrubrik": "Tid och pengar är samma fråga",
+      "siffra": "~80 %",
+      "siffra_etikett": "av kostnaden bestäms av beslut i förstudie- och programskede",
+      "punkter": [
+        "Sena programförändringar är inte en justering — det är i praktiken en omstart.",
+        "Den dyraste kortsiktigheten är att hoppa över förskedet för att 'spara tid'.",
+        "Planberedskap är den enskilt största kostnads­besparingen utan kvalitetsförlust."
+      ],
+      "kalla": "Branschdata — preliminär siffra, källa under verifiering"
+    },
+    {
+      "id": "hierarki",
+      "ordning": 3,
+      "ankare": "hierarki",
+      "layout": "trappa",
+      "titel": "Hur behov tillgodoses",
+      "underrubrik": "I ordning från enklast till mest omfattande",
+      "steg": [
+        { "niva": 1, "namn": "Inhyrning", "ledtid": "3–12 mån", "beskrivning": "Snabbast — om rätt lokal finns ledig på rätt plats." },
+        { "niva": 2, "namn": "Övertagande / ombyggnad", "ledtid": "2–5 år", "beskrivning": "Ta över befintlig byggnad. Dolda skador kan fördubbla tid och kostnad." },
+        { "niva": 3, "namn": "Tillbyggnad", "ledtid": "3–6 år", "beskrivning": "Utöka befintlig byggnad. Kräver byggrätt och påverkar verksamheten." },
+        { "niva": 4, "namn": "Nybyggnation", "ledtid": "4–8 år", "beskrivning": "Maximal flexibilitet — men ofta ny detaljplan på 2–5 år." }
+      ],
+      "callout": "Det enkla spåret är att ta över lokaler någon annan lämnar — men det är sällan det någon vill, eftersom verksamheten då ska anpassa sig till en byggnad ritad för något annat."
+    },
+    {
+      "id": "ledtider",
+      "ordning": 4,
+      "ankare": "jamforelse",
+      "layout": "tabell",
+      "titel": "Ledtider per fas",
+      "underrubrik": "Typiska tidsspann i svenska kommunala lokalprojekt",
+      "kolumner": ["Spår", "Total ledtid", "Vad som styr tiden"],
+      "rader": [
+        ["A. Hyra in (befintlig lokal)", "3–12 månader", "Marknadens utbud, hyresgästanpassning"],
+        ["A2. Hyresvärds­upphandling", "2–4 år", "LOU-upphandling, ev. detaljplan på hyresvärdens mark"],
+        ["B. Bygga om", "2–5 år", "Dolda skador, evakuering, omfattning"],
+        ["C. Tillbyggnad", "3–6 år", "Bygglov, byggrätt, verksamhets­påverkan"],
+        ["D. Nybyggnad (befintlig DP)", "4–6 år", "Projektering, byggnation, upphandling"],
+        ["D. Nybyggnad (ny DP)", "6–8+ år", "Detaljplan ensam: 2–5 år (SKR 2024)"]
+      ],
+      "fotnot": "Eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-processer kommer ovanpå. Källor: SISAB, Micasa, Uppsala Skolfastigheter, Bygg i Tid, SKR."
+    },
+    {
+      "id": "provning",
+      "ordning": 5,
+      "ankare": "dp-provning",
+      "layout": "tva-spalter",
+      "titel": "Detaljplanen är en prövning — inte en handläggning",
+      "underrubrik": "Den centrala missuppfattningen",
+      "kolumner": [
+        {
+          "rubrik": "Missuppfattning",
+          "stamp": "Vanlig bild",
+          "innehall": "\"Någon sitter vid en dator och knappar tillräckligt länge så kommer det ut en plan.\"\n\nDen här bilden behandlar detaljplanen som en stängd handläggning där tempo bara styrs av personalstyrka."
+        },
+        {
+          "rubrik": "Vad det är",
+          "stamp": "Verklighet",
+          "innehall": "En lagstadgad prövning av allmänna och enskilda intressen.\n\nUtredningar, samråd med länsstyrelse, sakägare och allmänhet, granskning, antagande och rätt att överklaga. Skedena är processen — inte hinder för den."
+        }
+      ],
+      "fotnot": "Lagrum: PBL 5 kap. (planprocess) och 13 kap. (överklagande). Domstolens prövning ligger helt utanför kommunens kontroll."
+    }
+  ]
+}
