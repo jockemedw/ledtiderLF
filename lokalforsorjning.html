@@ -185,6 +185,59 @@ body.version-kort .scroll-dot[data-section-id="kallor"] { display: none; }
   font-size: 0.85rem;
 }
 
+/* ─── EGEN SIDA-LÄNK (pill) ────────────────── */
+.nav-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.22);
+  align-self: center;
+  list-style: none;
+  margin: 0 0.3rem;
+  flex-shrink: 0;
+}
+.nav-link-page > a {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(232, 201, 122, 0.55);
+  background: rgba(232, 201, 122, 0.06);
+  color: var(--gold-light) !important;
+  padding: 0.35rem 0.8rem !important;
+  border-radius: 999px !important;
+  text-transform: none !important;
+  letter-spacing: 0.01em !important;
+  font-weight: 500 !important;
+  font-size: 0.78rem !important;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.nav-link-page > a:hover {
+  background: var(--gold) !important;
+  border-color: var(--gold);
+  color: #fff !important;
+  text-decoration: none;
+}
+.nav-link-page .nav-page-eyebrow {
+  display: inline-block;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 201, 122, 0.78);
+  font-weight: 600;
+  margin-right: 0.3rem;
+  border-right: 1px solid rgba(232, 201, 122, 0.4);
+  padding-right: 0.4rem;
+}
+.nav-link-page > a:hover .nav-page-eyebrow {
+  color: rgba(255,255,255,0.85);
+  border-right-color: rgba(255,255,255,0.5);
+}
+.nav-page-arrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  margin-left: 0.1rem;
+  transform: translateY(-1px);
+}
+
 /* ─── SECTIONS ─────────────────────────────── */
 section { padding: 5rem 2rem; scroll-margin-top: 72px; }
 .container { max-width: 1100px; margin: 0 auto; }
@@ -1211,6 +1264,35 @@ footer strong { color: rgba(255,255,255,0.8); }
   /* Kompakt versionsfliken på mobil */
   .version-tabs { padding: 2px; }
   .version-tab { padding: 0.3rem 0.55rem; font-size: 0.65rem; letter-spacing: 0.04em; }
+
+  /* Egen sida-länk i drawern: horisontell avgränsare + pill */
+  .nav-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0.5rem 0 0.4rem;
+    background: rgba(255,255,255,0.14);
+  }
+  .nav-divider::before {
+    content: "Egen sida";
+    display: block;
+    margin: -1.1rem 0 0.3rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(232,201,122,0.7);
+    font-weight: 600;
+    background: var(--navy);
+    padding-right: 0.6rem;
+    width: max-content;
+  }
+  .nav-link-page > a {
+    width: 100% !important;
+    justify-content: flex-start;
+    padding: 0.7rem 0.9rem !important;
+    font-size: 0.82rem !important;
+    border-radius: 6px !important;
+  }
+  .nav-link-page .nav-page-eyebrow { display: none; }
 }
 
 @media (max-width: 700px) {
@@ -1249,7 +1331,6 @@ footer strong { color: rgba(255,255,255,0.8); }
     <li><a href="#oversikt">Spåren</a></li>
     <li><a href="#jamforelse">Tidsjämförelse</a></li>
     <li><a href="#per-typ">Per lokaltyp</a></li>
-    <li><a href="/detaljplan">Detaljplan ↗</a></li>
     <li class="nav-only-full"><a href="#exempel">Exempel</a></li>
     <li class="nav-dropdown">
       <a href="#spar-a" class="nav-dropdown-trigger">Fördjupning ▾</a>
@@ -1263,6 +1344,14 @@ footer strong { color: rgba(255,255,255,0.8); }
     </li>
     <li class="nav-only-full"><a href="#beslut">Beslutsstöd</a></li>
     <li class="nav-only-full"><a href="#kallor">Källor</a></li>
+    <li class="nav-divider" aria-hidden="true"></li>
+    <li class="nav-link-page">
+      <a href="/detaljplan" title="Öppna fördjupningssida om detaljplaners ledtider">
+        <span class="nav-page-eyebrow">Egen sida</span>
+        <span>Detaljplaner</span>
+        <span class="nav-page-arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
   </ul>
 </nav>
 
