@@ -44,58 +44,25 @@ a { color: var(--gold); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* ─── NAVIGATION ───────────────────────────── */
-nav {
+.site-nav {
   position: sticky; top: 0; z-index: 100;
   background: var(--navy);
-  padding: 6px 2rem;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 1rem;
-  min-height: 56px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
 }
-
-/* ─── VERSIONSFLIKAR ───────────────────────── */
-.version-tabs {
-  display: inline-flex;
-  gap: 2px;
-  background: rgba(255,255,255,0.08);
-  padding: 3px;
-  border-radius: var(--r);
-  flex-shrink: 0;
+.nav-row-primary {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+  padding: 6px 2rem;
+  min-height: 56px;
 }
-.version-tab {
-  background: transparent;
-  border: 0;
-  color: rgba(255,255,255,0.72);
-  font-family: 'Jost', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.35rem 0.8rem;
-  border-radius: calc(var(--r) - 2px);
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background .2s, color .2s;
+.nav-row-sub {
+  background: rgba(0,0,0,0.22);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  min-height: 36px;
 }
-.version-tab:hover { color: #fff; }
-.version-tab.is-active {
-  background: var(--gold);
-  color: #fff;
-}
-
-/* Kort version: dölj tunga sektioner och deras nav-länkar */
-body.version-kort #exempel,
-body.version-kort #moduler,
-body.version-kort #beslut,
-body.version-kort #kallor,
-body.version-kort .nav-only-full { display: none !important; }
-
-/* Kort version: dölj scroll-prickarna för dolda sektioner */
-body.version-kort .scroll-dot[data-section-id="exempel"],
-body.version-kort .scroll-dot[data-section-id="moduler"],
-body.version-kort .scroll-dot[data-section-id="beslut"],
-body.version-kort .scroll-dot[data-section-id="kallor"] { display: none; }
 
 /* ─── HAMBURGER (mobil) ────────────────────── */
 .nav-menu-toggle {
@@ -134,112 +101,101 @@ body.version-kort .scroll-dot[data-section-id="kallor"] { display: none; }
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem; font-weight: 600;
   color: #fff; white-space: nowrap;
-}
-.nav-brand span { color: var(--gold-light); }
-.nav-links {
-  display: flex; flex-wrap: wrap; gap: 4px 0.2rem; list-style: none;
-  justify-content: flex-end;
-}
-.nav-links a {
-  color: rgba(255,255,255,0.72);
-  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em;
-  text-transform: uppercase; padding: 0.4rem 0.7rem;
-  border-radius: var(--r); transition: all .2s;
-  white-space: nowrap;
-}
-.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); text-decoration: none; }
-
-/* Nav dropdown */
-.nav-dropdown { position: relative; }
-.nav-dropdown-trigger::after { content: ""; }
-.nav-dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: var(--navy);
-  list-style: none;
-  padding: 0.5rem 0;
-  margin: 0;
-  min-width: 200px;
-  border-radius: 6px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  transition: opacity .15s, transform .15s, visibility .15s;
-  z-index: 200;
-}
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.nav-dropdown-menu li { display: block; }
-.nav-dropdown-menu a {
-  display: block;
-  padding: 0.55rem 1rem;
-  border-radius: 0;
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 0.85rem;
-}
-
-/* ─── EGEN SIDA-LÄNK (pill) ────────────────── */
-.nav-divider {
-  width: 1px;
-  height: 22px;
-  background: rgba(255,255,255,0.22);
-  align-self: center;
-  list-style: none;
-  margin: 0 0.3rem;
-  flex-shrink: 0;
-}
-.nav-link-page > a {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 0.35rem;
-  border: 1px solid rgba(232, 201, 122, 0.55);
-  background: rgba(232, 201, 122, 0.06);
-  color: var(--gold-light) !important;
-  padding: 0.35rem 0.8rem !important;
-  border-radius: 999px !important;
-  text-transform: none !important;
-  letter-spacing: 0.01em !important;
-  font-weight: 500 !important;
-  font-size: 0.78rem !important;
-  transition: background .2s, color .2s, border-color .2s;
-}
-.nav-link-page > a:hover {
-  background: var(--gold) !important;
-  border-color: var(--gold);
-  color: #fff !important;
   text-decoration: none;
 }
-.nav-link-page .nav-page-eyebrow {
-  display: inline-block;
-  font-size: 0.6rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(232, 201, 122, 0.78);
-  font-weight: 600;
-  margin-right: 0.3rem;
-  border-right: 1px solid rgba(232, 201, 122, 0.4);
-  padding-right: 0.4rem;
+.nav-brand:hover { text-decoration: none; }
+.nav-brand span { color: var(--gold-light); }
+
+/* Toppflikar (övernivå) */
+.nav-toptabs {
+  display: flex; flex-wrap: wrap; gap: 2px;
+  list-style: none; justify-content: flex-end;
+  margin: 0; padding: 0;
 }
-.nav-link-page > a:hover .nav-page-eyebrow {
-  color: rgba(255,255,255,0.85);
-  border-right-color: rgba(255,255,255,0.5);
-}
-.nav-page-arrow {
+.nav-toptab {
   display: inline-block;
-  font-size: 0.78rem;
+  color: rgba(255,255,255,0.72);
+  font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--r);
+  white-space: nowrap;
+  transition: color .15s, background .15s, box-shadow .15s;
+  position: relative;
+}
+.nav-toptab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  text-decoration: none;
+}
+.nav-toptab.is-external::after {
+  content: " ↗";
+  color: var(--gold-light);
+  font-weight: 400;
+  margin-left: 0.15rem;
+}
+.site-nav[data-active-group="oversikt"] .nav-toptab[data-group="oversikt"],
+.site-nav[data-active-group="behov"]    .nav-toptab[data-group="behov"],
+.site-nav[data-active-group="process"]  .nav-toptab[data-group="process"],
+.site-nav[data-active-group="tid"]      .nav-toptab[data-group="tid"],
+.site-nav[data-active-group="kallor"]   .nav-toptab[data-group="kallor"] {
+  color: #fff;
+  background: rgba(232, 201, 122, 0.14);
+  box-shadow: inset 0 -2px 0 var(--gold);
+}
+
+/* Underflikar (sub-tabs) */
+.nav-subtabs {
+  display: none;
+  list-style: none;
+  gap: 1rem;
+  align-items: center;
+  margin: 0; padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.site-nav[data-active-group="oversikt"] .nav-subtabs[data-group="oversikt"],
+.site-nav[data-active-group="behov"]    .nav-subtabs[data-group="behov"],
+.site-nav[data-active-group="process"]  .nav-subtabs[data-group="process"],
+.site-nav[data-active-group="tid"]      .nav-subtabs[data-group="tid"],
+.site-nav[data-active-group="kallor"]   .nav-subtabs[data-group="kallor"] {
+  display: flex;
+}
+.nav-subtab {
+  color: rgba(255,255,255,0.62);
+  font-size: 0.74rem; font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 0.3rem 0.45rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: color .15s;
+}
+.nav-subtab:hover { color: #fff; text-decoration: none; }
+.nav-subtab.is-external::after {
+  content: " ↗";
+  color: var(--gold-light);
   margin-left: 0.1rem;
+}
+.site-nav[data-active-section] .nav-subtab.is-active {
+  color: var(--gold-light);
+}
+.site-nav[data-active-section] .nav-subtab.is-active::before {
+  content: '';
+  display: inline-block;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-right: 0.4rem;
+  vertical-align: middle;
   transform: translateY(-1px);
 }
 
+/* När en undersida (t.ex. /detaljplan) är aktiv visas dess egen sub-rad
+   även om scrollUI inte hittar matchande lokal sektion */
+.site-nav[data-active-group=""] .nav-subtabs { display: none; }
+
 /* ─── SECTIONS ─────────────────────────────── */
-section { padding: 5rem 2rem; scroll-margin-top: 72px; }
+section { padding: 5rem 2rem; scroll-margin-top: 100px; }
 .container { max-width: 1100px; margin: 0 auto; }
 
 /* Reveal-on-scroll — JS adds .reveal + .is-visible */
@@ -269,7 +225,7 @@ section { padding: 5rem 2rem; scroll-margin-top: 72px; }
 }
 .floating-title {
   position: fixed;
-  top: 68px;
+  top: 104px;
   left: 50%;
   transform: translate(-50%, -8px);
   background: rgba(26, 39, 68, 0.95);
@@ -530,6 +486,413 @@ section { padding: 5rem 2rem; scroll-margin-top: 72px; }
   font-style: normal; font-size: 0.85rem;
   color: var(--gold-light); letter-spacing: 0.03em;
 }
+
+/* ─── VERIFIERINGSSTATUS ─── */
+/* Element kan markeras med data-verifiering="verifierad|preliminar|mos-kravs".
+   Markörerna är dolda by default; toggle i nav slår på body.show-verifiering. */
+.verifiering-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.78);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  transition: background .15s, color .15s, border-color .15s;
+  flex-shrink: 0;
+}
+.verifiering-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+.verifiering-toggle::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+}
+body.show-verifiering .verifiering-toggle {
+  background: rgba(232, 201, 122, 0.14);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+body.show-verifiering .verifiering-toggle::before {
+  background: var(--gold);
+  box-shadow: 0 0 6px var(--gold-light);
+}
+
+/* Markörer på flaggade element (visas bara när toggle är på) */
+[data-verifiering] { position: relative; }
+body.show-verifiering [data-verifiering="preliminar"] {
+  background: rgba(232, 201, 122, 0.12);
+  outline: 1px dashed rgba(181, 130, 42, 0.55);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+body.show-verifiering [data-verifiering="mos-kravs"] {
+  background: rgba(220, 38, 38, 0.1);
+  outline: 1.5px dashed rgba(220, 38, 38, 0.7);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+body.show-verifiering [data-verifiering="verifierad"] {
+  outline: 1px solid rgba(5, 150, 105, 0.35);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+body.show-verifiering [data-verifiering]::after {
+  content: '';
+  position: absolute;
+  top: -6px; right: -6px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  z-index: 5;
+  pointer-events: none;
+}
+body.show-verifiering [data-verifiering="preliminar"]::after { background: #B5822A; }
+body.show-verifiering [data-verifiering="mos-kravs"]::after  { background: #DC2626; }
+body.show-verifiering [data-verifiering="verifierad"]::after { background: #059669; }
+
+/* Verifieringsöversikt-sektionen */
+#verifiering { background: var(--white); border-top: 1px solid var(--border); }
+.verifiering-grupp { margin-top: 1.6rem; }
+.verifiering-grupp h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.verifiering-grupp h3 .dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.verifiering-grupp h3 .count {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.verifiering-grupp.preliminar h3 .dot { background: #B5822A; }
+.verifiering-grupp.mos-kravs h3 .dot  { background: #DC2626; }
+.verifiering-grupp.verifierad h3 .dot { background: #059669; }
+.verifiering-grupp .lead {
+  font-size: 0.92rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.verifiering-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.verifiering-rad {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 0.85rem 1.1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: start;
+}
+.verifiering-grupp.preliminar .verifiering-rad { border-left: 3px solid #B5822A; }
+.verifiering-grupp.mos-kravs  .verifiering-rad { border-left: 3px solid #DC2626; background: #FEF5F5; }
+.verifiering-grupp.verifierad .verifiering-rad { border-left: 3px solid #059669; }
+.verifiering-rad .text {
+  font-size: 0.92rem;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.verifiering-rad .sektion {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+.verifiering-rad .sektion a { color: var(--gold); }
+.verifiering-rad .anteckning {
+  grid-column: 1 / -1;
+  font-size: 0.82rem;
+  color: var(--muted);
+  border-top: 1px dashed rgba(0,0,0,0.08);
+  padding-top: 0.5rem;
+  margin-top: 0.3rem;
+}
+.verifiering-rad .anteckning strong { color: var(--navy); }
+
+@media (max-width: 600px) {
+  .verifiering-rad { grid-template-columns: 1fr; }
+  .verifiering-rad .sektion { order: -1; }
+}
+
+/* ─── KOSTNAD: TID OCH PENGAR ─── */
+#kostnad {
+  background: linear-gradient(135deg, #1A2744 0%, #2C3E62 60%, #1A2744 100%);
+  color: #fff;
+}
+#kostnad .section-label { color: var(--gold-light); }
+#kostnad h2 { color: #fff; }
+#kostnad h2 em { color: var(--gold-light); font-style: italic; }
+#kostnad > .container > p { color: rgba(255,255,255,0.8); }
+
+.kostnad-kurva {
+  margin-top: 2.6rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem 1.8rem;
+}
+.kostnad-kurva-titel {
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.kostnad-kurva-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+}
+.kostnad-kurva-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.78);
+}
+.kostnad-kurva-legend .pill {
+  display: inline-block;
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+.kostnad-kurva-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.56);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.kostnad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+.kostnad-kort {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 1.4rem 1.5rem;
+}
+.kostnad-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+.kostnad-kort .siffra {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.kostnad-kort .label {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+.kostnad-kort p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.55;
+  max-width: none;
+}
+.kostnad-kort cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.7rem;
+}
+
+.kostnad-key {
+  margin-top: 2rem;
+  background: rgba(232, 201, 122, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 1.3rem 1.6rem;
+  border-radius: 0 var(--r) var(--r) 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.92);
+}
+.kostnad-key strong { color: var(--gold-light); }
+.kostnad-key em { font-style: italic; color: #fff; font-weight: 500; }
+
+/* ─── HIERARKI: HUR BEHOV TILLGODOSES ─── */
+#hierarki { background: var(--white); }
+.hierarki-intro { color: var(--muted); margin-top: 1rem; max-width: 70ch; }
+.hierarki-trappa {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.hierarki-steg {
+  display: grid;
+  grid-template-columns: 60px 1fr 130px 200px;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  border-radius: var(--r);
+  position: relative;
+}
+.hierarki-steg .niva {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+.hierarki-steg .body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.hierarki-steg .body p {
+  font-size: 0.92rem;
+  color: var(--navy-mid);
+  line-height: 1.55;
+  margin: 0;
+  max-width: none;
+}
+.hierarki-steg .ledtid {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--navy);
+  font-weight: 600;
+  text-align: right;
+  line-height: 1.1;
+}
+.hierarki-steg .ledtid span {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+.hierarki-steg .ragardighet {
+  font-size: 0.82rem;
+  color: var(--navy-mid);
+  line-height: 1.4;
+  border-left: 2px solid rgba(0,0,0,0.08);
+  padding-left: 0.9rem;
+}
+.hierarki-steg .ragardighet strong {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+.hierarki-steg .indikator {
+  position: absolute;
+  left: -1px; top: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+  opacity: var(--steg-fyll, 0.25);
+  border-radius: var(--r) 0 0 var(--r);
+}
+.hierarki-steg.niva-1 { --steg-fyll: 0.22; }
+.hierarki-steg.niva-2 { --steg-fyll: 0.45; }
+.hierarki-steg.niva-3 { --steg-fyll: 0.68; }
+.hierarki-steg.niva-4 { --steg-fyll: 0.92; }
+
+@media (max-width: 900px) {
+  .hierarki-steg { grid-template-columns: 50px 1fr; }
+  .hierarki-steg .ledtid {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+  }
+  .hierarki-steg .ragardighet {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding: 0.7rem 0 0;
+    margin-top: 0.4rem;
+  }
+}
+
+.hierarki-callout {
+  margin-top: 2.2rem;
+  background: linear-gradient(135deg, #FFF5DC 0%, #F4E5B8 100%);
+  border: 1px solid #E8C97A;
+  border-left: 5px solid var(--gold);
+  border-radius: var(--r);
+  padding: 1.4rem 1.7rem;
+}
+.hierarki-callout .stamp {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8B6914;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.hierarki-callout h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--navy);
+}
+.hierarki-callout p {
+  font-size: 0.95rem;
+  color: var(--navy-mid);
+  line-height: 1.6;
+  max-width: none;
+}
+.hierarki-callout p + p { margin-top: 0.6rem; }
+.hierarki-callout em { color: var(--navy); font-style: italic; font-weight: 500; }
 
 /* ─── PER LOKALTYP ─────────────────── */
 #per-typ { background: var(--parchment); }
@@ -1116,8 +1479,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     font-size: 10.5pt;
     line-height: 1.45;
   }
-  nav, footer { display: none !important; }
-  .nav-dropdown-menu { display: none !important; }
+  .site-nav, nav, footer { display: none !important; }
   .reveal { opacity: 1 !important; transform: none !important; }
   .scroll-progress, .floating-title, .scroll-dots { display: none !important; }
   
@@ -1268,12 +1630,13 @@ footer strong { color: rgba(255,255,255,0.8); }
 .mt-2 { margin-top: 1rem; }
 .mt-3 { margin-top: 2rem; }
 @media (max-width: 820px) {
-  nav { padding: 6px 1rem; gap: 0.5rem; flex-wrap: nowrap; }
+  .nav-row-primary { padding: 6px 1rem; gap: 0.5rem; flex-wrap: nowrap; }
+  .nav-row-sub { display: none; } /* undermenyn vävs in i drawern på mobil */
   .nav-brand { font-size: 0.95rem; flex-shrink: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .nav-menu-toggle { display: flex; }
 
-  /* Hamburger-driven drawer */
-  .nav-links {
+  /* Hamburger-driven drawer: toppflikar staplas, undermeny för aktiv grupp expanderas inline */
+  .nav-toptabs {
     display: none;
     position: absolute;
     top: 100%;
@@ -1287,10 +1650,11 @@ footer strong { color: rgba(255,255,255,0.8); }
     box-shadow: 0 12px 28px rgba(0,0,0,0.35);
     max-height: calc(100vh - 56px);
     overflow-y: auto;
+    list-style: none;
   }
-  .nav-links.is-open { display: flex; }
-  .nav-links li { width: 100%; }
-  .nav-links a {
+  .nav-toptabs.is-open { display: flex; }
+  .nav-toptabs li { width: 100%; }
+  .nav-toptab {
     display: block;
     width: 100%;
     padding: 0.7rem 0.9rem;
@@ -1298,55 +1662,25 @@ footer strong { color: rgba(255,255,255,0.8); }
     border-radius: 4px;
   }
 
-  /* Inline-expand of dropdown in drawer */
-  .nav-dropdown { width: 100%; }
-  .nav-dropdown-trigger { font-weight: 600; color: rgba(255,255,255,0.9); }
-  .nav-dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: rgba(255,255,255,0.04);
-    margin: 4px 0 6px;
-    padding: 0.25rem 0;
-    border-radius: 4px;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    min-width: 0;
+  /* Subnav syns inline i drawern under aktiv grupp */
+  .nav-toptabs .nav-subgroup-mobile {
+    display: none;
+    padding: 0.1rem 0 0.4rem 0.6rem;
+    margin: -0.1rem 0 0.4rem 0.4rem;
+    border-left: 2px solid rgba(232,201,122,0.35);
+    list-style: none;
   }
-  .nav-dropdown-menu a { padding-left: 1.4rem; font-size: 0.78rem; }
-
-  /* Kompakt versionsfliken på mobil */
-  .version-tabs { padding: 2px; }
-  .version-tab { padding: 0.3rem 0.55rem; font-size: 0.65rem; letter-spacing: 0.04em; }
-
-  /* Egen sida-länk i drawern: horisontell avgränsare + pill */
-  .nav-divider {
-    width: 100%;
-    height: 1px;
-    margin: 0.5rem 0 0.4rem;
-    background: rgba(255,255,255,0.14);
-  }
-  .nav-divider::before {
-    content: "Egen sida";
+  .nav-toptabs .nav-subgroup-mobile.is-open { display: block; }
+  .nav-toptabs .nav-subgroup-mobile a {
     display: block;
-    margin: -1.1rem 0 0.3rem;
-    font-size: 0.6rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(232,201,122,0.7);
-    font-weight: 600;
-    background: var(--navy);
-    padding-right: 0.6rem;
-    width: max-content;
+    color: rgba(255,255,255,0.72);
+    font-size: 0.78rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
   }
-  .nav-link-page > a {
-    width: 100% !important;
-    justify-content: flex-start;
-    padding: 0.7rem 0.9rem !important;
-    font-size: 0.82rem !important;
-    border-radius: 6px !important;
-  }
-  .nav-link-page .nav-page-eyebrow { display: none; }
+  .nav-toptabs .nav-subgroup-mobile a:hover { background: rgba(255,255,255,0.08); }
 }
 
 @media (max-width: 700px) {
@@ -1360,7 +1694,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 
 @media (max-width: 480px) {
   .nav-brand span { display: none; }
-  .version-tab { padding: 0.28rem 0.5rem; font-size: 0.62rem; }
+  .verifiering-toggle { display: none; } /* Källstatus-knappen finns kvar i Verifieringsöversikt-sektionen */
   .scroll-dots { display: none !important; }
   section { padding: 3rem 1rem; }
   .floating-title { font-size: 0.68rem; padding: 5px 12px; max-width: calc(100vw - 100px); }
@@ -1371,46 +1705,92 @@ footer strong { color: rgba(255,255,255,0.8); }
 <body>
 
 <!-- NAVIGATION -->
-<nav>
-  <div class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></div>
-  <div class="version-tabs" role="tablist" aria-label="Visningsläge">
-    <button type="button" class="version-tab is-active" data-version="full" role="tab" aria-selected="true">Fullständig</button>
-    <button type="button" class="version-tab" data-version="kort" role="tab" aria-selected="false">Kort</button>
+<nav class="site-nav" data-active-group="oversikt" data-page="lokal">
+  <div class="nav-row nav-row-primary">
+    <a href="/" class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
+    <button type="button" class="verifiering-toggle" aria-pressed="false" title="Visa vilka siffror som är verifierade, preliminära, eller kräver MOS-data">Källstatus</button>
+    <button type="button" class="nav-menu-toggle" aria-label="Meny" aria-expanded="false" aria-controls="primary-nav-toptabs">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-toptabs" id="primary-nav-toptabs" role="tablist">
+      <li>
+        <a href="#sammanfattning" class="nav-toptab" data-group="oversikt">Översikt</a>
+        <ul class="nav-subgroup-mobile" data-group="oversikt">
+          <li><a href="#sammanfattning">Sammanfattning</a></li>
+          <li><a href="#oversikt">De fyra spåren</a></li>
+          <li><a href="#jamforelse">Tidsjämförelse</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#hierarki" class="nav-toptab" data-group="behov">Behov &amp; kund</a>
+        <ul class="nav-subgroup-mobile" data-group="behov">
+          <li><a href="#hierarki">Hur behov tillgodoses</a></li>
+          <li><a href="#per-typ">Per lokaltyp</a></li>
+          <li><a href="#exempel">Exempel</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#spar-a" class="nav-toptab" data-group="process">Process</a>
+        <ul class="nav-subgroup-mobile" data-group="process">
+          <li><a href="/detaljplan">Detaljplan ↗</a></li>
+          <li><a href="#spar-a">A. Hyra in</a></li>
+          <li><a href="#spar-b">B. Bygga om</a></li>
+          <li><a href="#spar-c">C. Tillbyggnad</a></li>
+          <li><a href="#spar-d">D. Nybyggnad</a></li>
+          <li><a href="#moduler">Moduler</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#kontext" class="nav-toptab" data-group="tid">Tid &amp; pengar</a>
+        <ul class="nav-subgroup-mobile" data-group="tid">
+          <li><a href="#kontext">Nationell kontext</a></li>
+          <li><a href="#kostnad">Kostnad</a></li>
+          <li><a href="#beslut">Beslutsstöd</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#kallor" class="nav-toptab" data-group="kallor">Källor</a>
+        <ul class="nav-subgroup-mobile" data-group="kallor">
+          <li><a href="#kallor">Källor</a></li>
+          <li><a href="#verifiering">Verifieringsstatus</a></li>
+        </ul>
+      </li>
+    </ul>
   </div>
-  <button type="button" class="nav-menu-toggle" aria-label="Meny" aria-expanded="false" aria-controls="primary-nav-links">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="primary-nav-links">
-    <li><a href="#sammanfattning">Sammanfattning</a></li>
-    <li><a href="#oversikt">Spåren</a></li>
-    <li><a href="#jamforelse">Tidsjämförelse</a></li>
-    <li><a href="#per-typ">Per lokaltyp</a></li>
-    <li class="nav-only-full"><a href="#exempel">Exempel</a></li>
-    <li class="nav-dropdown">
-      <a href="#spar-a" class="nav-dropdown-trigger">Fördjupning ▾</a>
-      <ul class="nav-dropdown-menu">
-        <li><a href="#spar-a">A. Hyra in</a></li>
-        <li><a href="#spar-b">B. Bygga om</a></li>
-        <li><a href="#spar-c">C. Tillbyggnad</a></li>
-        <li><a href="#spar-d">D. Nybyggnad</a></li>
-        <li class="nav-only-full"><a href="#moduler">Moduler</a></li>
-      </ul>
-    </li>
-    <li class="nav-only-full"><a href="#beslut">Beslutsstöd</a></li>
-    <li class="nav-only-full"><a href="#kallor">Källor</a></li>
-    <li class="nav-divider" aria-hidden="true"></li>
-    <li class="nav-link-page">
-      <a href="/detaljplan" title="Öppna fördjupningssida om detaljplaners ledtider">
-        <span class="nav-page-eyebrow">Egen sida</span>
-        <span>Detaljplaner</span>
-        <span class="nav-page-arrow" aria-hidden="true">↗</span>
-      </a>
-    </li>
-  </ul>
+
+  <div class="nav-row nav-row-sub" aria-label="Underflikar">
+    <ul class="nav-subtabs" data-group="oversikt">
+      <li><a href="#sammanfattning" class="nav-subtab" data-section="sammanfattning">Sammanfattning</a></li>
+      <li><a href="#oversikt"        class="nav-subtab" data-section="oversikt">De fyra spåren</a></li>
+      <li><a href="#jamforelse"      class="nav-subtab" data-section="jamforelse">Tidsjämförelse</a></li>
+    </ul>
+    <ul class="nav-subtabs" data-group="behov">
+      <li><a href="#hierarki" class="nav-subtab" data-section="hierarki">Hur behov tillgodoses</a></li>
+      <li><a href="#per-typ"  class="nav-subtab" data-section="per-typ">Per lokaltyp</a></li>
+      <li><a href="#exempel"  class="nav-subtab" data-section="exempel">Exempel</a></li>
+    </ul>
+    <ul class="nav-subtabs" data-group="process">
+      <li><a href="/detaljplan" class="nav-subtab is-external">Detaljplan</a></li>
+      <li><a href="#spar-a"  class="nav-subtab" data-section="spar-a">A. Hyra in</a></li>
+      <li><a href="#spar-b"  class="nav-subtab" data-section="spar-b">B. Bygga om</a></li>
+      <li><a href="#spar-c"  class="nav-subtab" data-section="spar-c">C. Tillbyggnad</a></li>
+      <li><a href="#spar-d"  class="nav-subtab" data-section="spar-d">D. Nybyggnad</a></li>
+      <li><a href="#moduler" class="nav-subtab" data-section="moduler">Moduler</a></li>
+    </ul>
+    <ul class="nav-subtabs" data-group="tid">
+      <li><a href="#kontext" class="nav-subtab" data-section="kontext">Nationell kontext</a></li>
+      <li><a href="#kostnad" class="nav-subtab" data-section="kostnad">Kostnad</a></li>
+      <li><a href="#beslut"  class="nav-subtab" data-section="beslut">Beslutsstöd</a></li>
+    </ul>
+    <ul class="nav-subtabs" data-group="kallor">
+      <li><a href="#kallor"      class="nav-subtab" data-section="kallor">Källor</a></li>
+      <li><a href="#verifiering" class="nav-subtab" data-section="verifiering">Verifieringsstatus</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section id="intro">
+<section id="intro" data-nav-group="oversikt">
   <div class="hero-inner">
     <p class="hero-eyebrow">Lejonfastigheter AB — Beslutsfattarguide</p>
     <h1 class="hero-title">Från behov<br>till <em>inflyttning</em></h1>
@@ -1422,28 +1802,28 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- SAMMANFATTNING (TL;DR för läsaren med 3 minuter) -->
-<section id="sammanfattning">
+<section id="sammanfattning" data-nav-group="oversikt">
   <div class="container">
     <span class="section-label">På 30 sekunder</span>
     <h2>Det viktigaste först</h2>
 
     <div class="tldr-grid">
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="verifierad">
         <div class="tldr-siffra">4</div>
         <div class="tldr-label">spår</div>
         <p>Hyra in, bygga om, bygga till eller bygga nytt. Valet styr ledtid, kostnad och flexibilitet.</p>
       </div>
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="verifierad">
         <div class="tldr-siffra">3 mån<span class="tldr-tilltecken">–</span>8 år</div>
         <div class="tldr-label">spann i ledtid</div>
         <p>Från snabbaste hyreslösning till ny skola med detaljplaneläggning. Skillnaden ligger främst i förskedet, inte i bygget.</p>
       </div>
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="verifierad">
         <div class="tldr-siffra">~7 år</div>
         <div class="tldr-label">för en ny skola</div>
         <p>Lunds kommun anger detta som genomsnitt — bekräftas av Uppsala, Stockholm och flera andras lokalförsörjningsplaner. Själva byggfasen är endast 2–3 år.</p>
       </div>
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="preliminar" data-verifiering-not="Spannet 70–80 % förekommer ofta i branschstudier men exakt källa behöver fastställas innan den används externt.">
         <div class="tldr-siffra">80 %</div>
         <div class="tldr-label">av kostnaden låses tidigt</div>
         <p>Beslut i förstudie- och programskede binder upp större delen av investeringen. Tidig dialog mellan verksamhet och fastighetsägare är därför den enskilt viktigaste tidsbesparingen.</p>
@@ -1457,7 +1837,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- ÖVERSIKT: DE FYRA SPÅREN -->
-<section id="oversikt">
+<section id="oversikt" data-nav-group="oversikt">
   <div class="container">
     <span class="section-label">De fyra spåren</span>
     <h2>Hur lokaler kan tillgodoses</h2>
@@ -1466,8 +1846,82 @@ footer strong { color: rgba(255,255,255,0.8); }
   </div>
 </section>
 
+<!-- HIERARKI: HUR BEHOV TILLGODOSES (KUNDPERSPEKTIV) -->
+<section id="hierarki" data-nav-group="behov">
+  <div class="container">
+    <span class="section-label">Kundperspektiv</span>
+    <h2>Hur behov tillgodoses — i ordning från enklast till mest omfattande</h2>
+    <p class="hierarki-intro">När en verksamhet behöver lokaler finns en informell hierarki: börja med det enklaste, gå vidare till nästa steg först om det inte räcker. I praktiken är spåren ofta inte utbytbara — varje verksamhet har förutsättningar som styr vilket spår som faktiskt fungerar. Trappan blir därför ett samtal om kompromisser, inte ett mekaniskt val.</p>
+
+    <div class="hierarki-trappa">
+      <div class="hierarki-steg niva-1">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">1</div>
+        <div class="body">
+          <h3>Inhyrning</h3>
+          <p>Hyra in en befintlig lokal som passar verksamheten direkt. Snabbast om marknaden har rätt utbud — men beroende av att rätt lokal faktiskt finns ledig på rätt plats vid rätt tidpunkt.</p>
+        </div>
+        <div class="ledtid">3–12 mån<span>vid befintlig lokal</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Lämplig lokal måste finnas på marknaden. Skola/förskola och vård- och omsorgslokaler har stränga tekniska krav (ventilation, brand, utomhusyta) som utesluter de flesta kontorslokaler.
+        </div>
+      </div>
+
+      <div class="hierarki-steg niva-2">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">2</div>
+        <div class="body">
+          <h3>Övertagande / ombyggnation av befintlig lokal</h3>
+          <p>Ta över en lokal som blir ledig — antingen i det egna beståndet eller efter en annan verksamhet — och bygga om den till det nya behovet. På pappret det "enkla" långsiktiga spåret eftersom ingen ny mark eller detaljplan krävs.</p>
+        </div>
+        <div class="ledtid">2–5 år<span>med ombyggnad</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Befintlig byggnad måste ha rätt geometri, bärighet och planändamål. Dolda skador kan fördubbla tid och kostnad. Förutsätter att en lokal faktiskt blir ledig — något kommunen sällan kan styra över i tid.
+        </div>
+      </div>
+
+      <div class="hierarki-steg niva-3">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">3</div>
+        <div class="body">
+          <h3>Tillbyggnad</h3>
+          <p>Utöka en befintlig byggnad med ny yta. Ger riktad kapacitetsökning där behovet finns, ofta utan ny detaljplan om byggrätten medger.</p>
+        </div>
+        <div class="ledtid">3–6 år<span>tillbyggnad</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Befintlig fastighet måste ha utrymme och byggrätt. Verksamheten påverkas av byggarbete på plats. Begränsar hur stor utökning som ryms.
+        </div>
+      </div>
+
+      <div class="hierarki-steg niva-4">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">4</div>
+        <div class="body">
+          <h3>Nybyggnation</h3>
+          <p>Bygga nytt på lämplig mark. Ger maximal flexibilitet och anpassning till verksamheten — men förutsätter ofta att en ny detaljplan tas fram, vilket ensamt kan ta 2–5 år enligt SKR.</p>
+        </div>
+        <div class="ledtid">4–8 år<span>med ny detaljplan</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Tillgång till lämplig mark, planberedskap (eller acceptans för planprocess), kommunalt investerings&shy;utrymme. Den enda nivån som kan dimensioneras helt efter verksamhetens behov från start.
+        </div>
+      </div>
+    </div>
+
+    <div class="hierarki-callout">
+      <span class="stamp">Den dolda kompromissen</span>
+      <h3>Det enkla spåret är att ta över lokaler någon annan lämnar — men det är sällan det någon vill</h3>
+      <p>Trappan ovan ser ut som ett rationellt val mellan alternativ — men i praktiken är de övre stegen <em>billigare på papperet</em> och samtidigt <em>sämre för verksamheten</em>. Att ta över en lokal någon annan lämnar tar månader, men det betyder att verksamheten ska anpassa sig till en byggnad som ritades för något annat. Det riskerar att inte ge en effektiv verksamhet — inte i pedagogisk yta, inte i logistik, inte i arbetsmiljö.</p>
+      <p>Därför är hierarkin ofta inte en glidskala från bra till sämre — den är ett samtal om kompromisser. Den snabbaste lösningen som passar verksamheten kan ligga på nivå 3 eller 4. Det är skälet till att lokalförsörjningsplaner inte mekaniskt går "uppifrån och ner" i hierarkin, utan utgår från verksamhetens faktiska behov.</p>
+    </div>
+  </div>
+</section>
+
 <!-- TIDSJÄMFÖRELSE / GANTT -->
-<section id="jamforelse">
+<section id="jamforelse" data-nav-group="oversikt">
   <div class="container">
     <span class="section-label">Tidsjämförelse</span>
     <h2>Så fördelar sig tiden i svenska lokalprojekt</h2>
@@ -1481,17 +1935,17 @@ footer strong { color: rgba(255,255,255,0.8); }
     <div class="gantt-legend" id="gantt-legend"></div>
 
     <div class="gantt-bench" aria-label="Nationella referenstal">
-      <div class="gantt-bench-rad">
+      <div class="gantt-bench-rad" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med ≥ 5 lägenheter, inte lokalförsörjning. Siffran är vägledande men direkt jämförelse med skol-/förskoleprojekt behöver kompletteras.">
         <strong>4,8 år</strong>
         <span>Riksgenomsnitt detaljplanstart → byggstart över 52 kommuner och ~1 450 detaljplaner.</span>
         <cite>Nationellt Ledtidsindex 2025 (Bygg i Tid)</cite>
       </div>
-      <div class="gantt-bench-rad">
+      <div class="gantt-bench-rad" data-verifiering="verifierad">
         <strong>~7 år</strong>
         <span>"Från tanke till färdig" förskola eller skola — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner.</span>
         <cite>Lunds kommun, lund.se</cite>
       </div>
-      <div class="gantt-bench-rad">
+      <div class="gantt-bench-rad" data-verifiering="verifierad">
         <strong>+14 månader</strong>
         <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige.</span>
         <cite>Evidens 2023 / SKR 2024</cite>
@@ -1504,7 +1958,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- NATIONELL KONTEXT -->
-<section id="kontext">
+<section id="kontext" data-nav-group="tid">
   <div class="container">
     <span class="section-label">Nationell kontext</span>
     <h2>Ledtiderna är en strukturell verklighet</h2>
@@ -1524,7 +1978,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- PER LOKALTYP -->
-<section id="per-typ">
+<section id="per-typ" data-nav-group="behov">
   <div class="container">
     <span class="section-label">Per lokaltyp</span>
     <h2>Typiska ledtider och kostnader</h2>
@@ -1537,7 +1991,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- EXEMPEL: LINKÖPING ↔ EXTERN SPEGLING -->
-<section id="exempel">
+<section id="exempel" data-nav-group="behov">
   <div class="container">
     <span class="section-label">Konkreta exempel</span>
     <h2>Lejonfastigheter och en spegling</h2>
@@ -1550,7 +2004,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- SPÅR A -->
-<section id="spar-a" class="spar-section">
+<section id="spar-a" class="spar-section" data-nav-group="process">
   <div class="container">
     <div class="spar-header" id="header-a"></div>
     <div id="detalj-a"></div>
@@ -1558,7 +2012,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- SPÅR B -->
-<section id="spar-b" class="spar-section">
+<section id="spar-b" class="spar-section" data-nav-group="process">
   <div class="container">
     <div class="spar-header" id="header-b"></div>
     <div id="detalj-b"></div>
@@ -1566,7 +2020,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- SPÅR C -->
-<section id="spar-c" class="spar-section">
+<section id="spar-c" class="spar-section" data-nav-group="process">
   <div class="container">
     <div class="spar-header" id="header-c"></div>
     <div id="detalj-c"></div>
@@ -1574,7 +2028,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- SPÅR D -->
-<section id="spar-d" class="spar-section">
+<section id="spar-d" class="spar-section" data-nav-group="process">
   <div class="container">
     <div class="spar-header" id="header-d"></div>
     <div id="detalj-d"></div>
@@ -1582,7 +2036,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- MODULER -->
-<section id="moduler">
+<section id="moduler" data-nav-group="process">
   <div class="container">
     <span class="section-label">Interimslösningen</span>
     <h2>Modulbyggnader</h2>
@@ -1594,8 +2048,102 @@ footer strong { color: rgba(255,255,255,0.8); }
   </div>
 </section>
 
+<!-- KOSTNAD: TID OCH PENGAR -->
+<section id="kostnad" data-nav-group="tid">
+  <div class="container">
+    <span class="section-label">Tid &amp; pengar</span>
+    <h2>När pengarna <em>låses</em> — och varför noggrannhet tidigt sparar år</h2>
+    <p class="mt-2">Tid och pengar i lokalprojekt hör ihop. Branschens tumregel är att den allra största delen av en byggnads totala investeringskostnad bestäms <em>innan ett enda spadtag tagits</em>: i förstudie, programskede och tidig projektering. Att gå tillbaka och ändra senare är inte en justering — det är i praktiken en omstart.</p>
+
+    <div class="kostnad-kurva" data-slide-skip>
+      <div class="kostnad-kurva-titel">Kostnaderna binds upp långt innan de betalas</div>
+      <svg class="kostnad-kurva-svg" viewBox="0 0 720 320" role="img" aria-labelledby="kostnad-kurva-titel kostnad-kurva-desc">
+        <title id="kostnad-kurva-titel">Kostnadsbindning över projektets faser</title>
+        <desc id="kostnad-kurva-desc">Två kurvor visar kumulativ andel kostnader (1) bundna genom beslut, och (2) faktiskt utbetalda, från behov till klart.</desc>
+
+        <!-- Bakgrund / gridlinjer -->
+        <g stroke="rgba(255,255,255,0.08)" stroke-width="1">
+          <line x1="60" y1="40"  x2="700" y2="40"/>
+          <line x1="60" y1="100" x2="700" y2="100"/>
+          <line x1="60" y1="160" x2="700" y2="160"/>
+          <line x1="60" y1="220" x2="700" y2="220"/>
+          <line x1="60" y1="280" x2="700" y2="280"/>
+        </g>
+
+        <!-- Y-axel-etiketter -->
+        <g fill="rgba(255,255,255,0.55)" font-family="Jost, sans-serif" font-size="11" text-anchor="end">
+          <text x="52" y="44">100%</text>
+          <text x="52" y="104">75%</text>
+          <text x="52" y="164">50%</text>
+          <text x="52" y="224">25%</text>
+          <text x="52" y="284">0%</text>
+        </g>
+
+        <!-- 80%-pricklinje -->
+        <line x1="60" y1="88" x2="700" y2="88" stroke="#E8C97A" stroke-width="1" stroke-dasharray="3 4" opacity="0.55"/>
+        <text x="700" y="82" fill="#E8C97A" font-family="Jost, sans-serif" font-size="10" text-anchor="end" letter-spacing="0.1em">80% LÅST</text>
+
+        <!-- Markering vid program-fasen (där 80% nås) -->
+        <line x1="280" y1="40" x2="280" y2="280" stroke="rgba(232,201,122,0.4)" stroke-width="1" stroke-dasharray="2 4"/>
+        <circle cx="280" cy="88" r="5" fill="#E8C97A"/>
+        <text x="290" y="78" fill="#E8C97A" font-family="Jost, sans-serif" font-size="11" font-weight="600">~80% av kostnaden bunden</text>
+
+        <!-- Bunden-kurva (S-kurva som når ~80% vid Program) -->
+        <path d="M 60 280 C 100 270, 140 230, 180 180 C 220 130, 260 100, 280 88 C 320 78, 380 58, 460 50 C 540 44, 620 42, 700 40"
+              fill="none" stroke="#E8C97A" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Utbetald-kurva (långsam start, accelererar i byggnation) -->
+        <path d="M 60 280 C 120 278, 200 274, 280 268 C 360 262, 420 240, 520 160 C 580 110, 640 70, 700 40"
+              fill="none" stroke="#0891B2" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- X-axel -->
+        <line x1="60" y1="280" x2="700" y2="280" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+        <!-- X-axel-etiketter -->
+        <g fill="rgba(255,255,255,0.75)" font-family="Jost, sans-serif" font-size="11" text-anchor="middle" letter-spacing="0.04em">
+          <text x="100" y="305">Behov</text>
+          <text x="180" y="305">Förstudie</text>
+          <text x="280" y="305">Program</text>
+          <text x="400" y="305">Projektering</text>
+          <text x="540" y="305">Byggnation</text>
+          <text x="680" y="305">Klart</text>
+        </g>
+      </svg>
+      <div class="kostnad-kurva-legend">
+        <span><span class="pill" style="background:#E8C97A"></span>Kostnader bundna genom beslut</span>
+        <span><span class="pill" style="background:#0891B2"></span>Kostnader faktiskt utbetalda</span>
+      </div>
+      <p class="kostnad-kurva-note">Schematisk illustration. Den exakta kurvan varierar mellan projekt — men formen (snabb bindning tidigt, sen utbetalning) är robust över studier av offentliga byggprojekt. <strong data-verifiering="preliminar" style="color:var(--gold-light)">[Siffror att verifiera]</strong></p>
+    </div>
+
+    <div class="kostnad-grid">
+      <div class="kostnad-kort">
+        <span class="label">Bundet vid program</span>
+        <div class="siffra" data-verifiering="preliminar">~80 %</div>
+        <h3>Kostnaden låses tidigt</h3>
+        <p>Branschdata pekar på att 70–80 % av en byggnads totala investerings&shy;kostnad bestäms av beslut i förstudie- och programskede — långt innan upphandlingen är klar.</p>
+        <cite data-verifiering="preliminar">Branschstudier — preliminär siffra, källa att bekräfta</cite>
+      </div>
+      <div class="kostnad-kort">
+        <h3>Sena programförändringar är omstart, inte justering</h3>
+        <p>När verksamhetens behov ändras efter projekteringsstart krävs nya utredningar, ofta nytt programskede och ibland ny detaljplan. Det adderar inte veckor utan månader till år — och kostnaderna räknas om från grunden.</p>
+        <cite data-verifiering="verifierad">Bekräftat mönster i Lejonfastigheters slutrapporter</cite>
+      </div>
+      <div class="kostnad-kort">
+        <h3>Planberedskap är den enda hävstången</h3>
+        <p>Att korta ledtiden i planskedet kräver att kommunen har planlagt mark <em>i förväg</em>. Det är den enskilt största kostnads&shy;besparing en kommun kan göra — utan att ge avkall på pröv&shy;nings&shy;kvalitet.</p>
+        <cite data-verifiering="verifierad">Boverket — strategisk planering för långsiktigt hållbara skolor</cite>
+      </div>
+    </div>
+
+    <div class="kostnad-key">
+      <strong>Slutsats:</strong> Tid och pengar är samma fråga. Att vara noggrann tidigt — i behovsanalys, programarbete och planberedskap — kostar lite tid och stora pengar i förskedet, men sparar år och tiotals miljoner i de senare faserna. <em>Den dyraste kortsiktigheten är att hoppa över förskedet för att "spara tid".</em>
+    </div>
+  </div>
+</section>
+
 <!-- BESLUTSSTÖD -->
-<section id="beslut">
+<section id="beslut" data-nav-group="tid">
   <div class="container">
     <span class="section-label">Beslutsstöd</span>
     <h2>Vilket spår passar ditt behov?</h2>
@@ -1623,12 +2171,23 @@ footer strong { color: rgba(255,255,255,0.8); }
 </section>
 
 <!-- KÄLLOR -->
-<section id="kallor">
+<section id="kallor" data-nav-group="kallor">
   <div class="container">
     <span class="section-label">Fördjupning & källförteckning</span>
     <h2>Källor och referensmaterial</h2>
     <p class="mt-2" style="color:var(--muted)">Alla ledtider och statistiska uppgifter i detta material baseras på nedanstående svenska källor. Siffror avser det senast tillgängliga underlaget per angiven källa.</p>
     <div class="kallor-grid" id="kallor-grid"></div>
+  </div>
+</section>
+
+<!-- VERIFIERINGSÖVERSIKT -->
+<section id="verifiering" data-nav-group="kallor">
+  <div class="container">
+    <span class="section-label">Verifieringsstatus</span>
+    <h2>Vilka siffror är klara, och vilka behöver verifieras?</h2>
+    <p class="mt-2" style="color:var(--muted)">Tryck på <strong>Källstatus</strong> i headern för att markera flaggade siffror direkt i materialet. Listan nedan genereras automatiskt ur sidans innehåll. Inga MOS-data publiceras innan de är signat av Miljö- och samhällsbyggnadsförvaltningen.</p>
+
+    <div id="verifiering-innehall"></div>
   </div>
 </section>
 
@@ -1996,37 +2555,46 @@ const DATA = {
       siffra: "4,8",
       enhet: "år i snitt",
       beskrivning: "Genomsnittlig ledtid från beslut om planuppdrag till startbesked i 52 kommuner som representerar ~80 % av Sveriges lägenhetsproduktion. Ökning från 4,5 år (2023) och 4,7 år (2024). Avser flerbostadshus — illustrerar generella plan- och lovprocesser som även skolfastigheter berörs av.",
-      kalla: "Nationellt Ledtidsindex 2025 (Initiativet Bygg i Tid, Byggföretagen, Fastighetsägarna)"
+      kalla: "Nationellt Ledtidsindex 2025 (Initiativet Bygg i Tid, Byggföretagen, Fastighetsägarna)",
+      verifiering: "preliminar",
+      verifieringNot: "Ledtidsindex avser flerbostadshus med ≥ 5 lägenheter. Tillämpning på lokalförsörjning (skola/förskola/LSS) är vägledande men inte direkt jämförbar — behöver kompletteras med skolfastighets-specifik data."
     },
     {
       siffra: "var fjärde",
       enhet: "detaljplan överklagas",
       beskrivning: "SKR konstaterar att ”omkring var fjärde antagen detaljplan” överklagas — en stabil nivå över flera mätperioder. Endast 12 % av överklagandena leder till att planen helt eller delvis ändras i mark- och miljödomstolen. Genomsnittlig domstolstid: 8,4 månader.",
-      kalla: "SKR, Jämförelser inom detaljplaneområdet 2024 + Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)"
+      kalla: "SKR, Jämförelser inom detaljplaneområdet 2024 + Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)",
+      verifiering: "verifierad"
     },
     {
       siffra: "~7",
       enhet: "år i Lund",
       beskrivning: "Lunds kommun anger på sin officiella webbplats: ”Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt.” Bilden bekräftas av Uppsala Skolfastigheter och flera kommuners lokalförsörjningsplaner.",
-      kalla: "Lunds kommun (lund.se, hämtad 2026)"
+      kalla: "Lunds kommun (lund.se, hämtad 2026)",
+      verifiering: "verifierad"
     },
     {
       siffra: "3 av 10",
       enhet: "år byggnation",
       beskrivning: "Kvarngärdesskolan i Uppsala (F–9, kapacitet 990 elever) byggdes på 3 år — spadtag aug 2022, invigning sep 2025 — och tilldelades PQi-utmärkelsen för byggåret 2024 (7 av 150 projekt). De 3 åren avser dock enbart byggfasen. Detaljplanen startade 2015 och vann laga kraft 2020. Hela processen tog cirka 10 år.",
-      kalla: "Uppsala Skolfastigheter, Uppsala kommun"
+      kalla: "Uppsala Skolfastigheter, Uppsala kommun",
+      verifiering: "verifierad"
     },
     {
       siffra: "18–24",
       enhet: "mån — målbilden",
       beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar dock att kommunerna i genomsnitt inte når upp till denna målsättning. Gapet mellan ambition och utfall är en strukturell utmaning som påverkar alla kommunala lokalförsörjningsprojekt.",
-      kalla: "Nationellt Ledtidsindex 2025"
+      kalla: "Nationellt Ledtidsindex 2025",
+      verifiering: "preliminar",
+      verifieringNot: "Målbild från flerbostadssidan — överförbarheten till kommunala lokalförsörjningsprojekt behöver bekräftas (samma planenhet men annan typ av plan)."
     },
     {
       siffra: "18–24",
       enhet: "mån — kommunens egen målbild",
       beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar att kommunerna i genomsnitt inte når upp till denna målsättning. För kommunala byggherrar med prioriterade samhällsprojekt är förhållandena ofta bättre än för bostadsmarknaden, men gapet mellan målbild och utfall kvarstår även för aktiva planprocesser.",
-      kalla: "Nationellt Ledtidsindex 2025"
+      kalla: "Nationellt Ledtidsindex 2025",
+      verifiering: "preliminar",
+      verifieringNot: "Två poster i kontext-listan har samma siffra 18–24 men olika nyans. Dubblett bör ses över — välj en av versionerna eller slå ihop dem."
     }
   ],
 
@@ -2476,10 +3044,11 @@ function renderKontext() {
   const el = document.getElementById("kontext-grid");
   if (!el) return;
   el.innerHTML = DATA.kontext.map(k => {
-    // Långa textsiffror (mer än 4 tecken) får mindre fontstorlek
     const sifferKlass = k.siffra.length > 4 ? "siffra lang" : "siffra";
+    const verAttr = k.verifiering ? ` data-verifiering="${k.verifiering}"` : '';
+    const verNot = k.verifieringNot ? ` data-verifiering-not="${k.verifieringNot.replace(/"/g, '&quot;')}"` : '';
     return `
-    <div class="kontext-kort">
+    <div class="kontext-kort"${verAttr}${verNot}>
       <div class="${sifferKlass}">${k.siffra}</div>
       <div class="enhet">${k.enhet}</div>
       <div class="beskrivning">${k.beskrivning}</div>
@@ -2539,7 +3108,6 @@ function renderExempel() {
 
 // ── INIT
 document.addEventListener("DOMContentLoaded", () => {
-  setupVersionTabs();
   setupMobileMenu();
   renderSparGrid();
   renderGantt();
@@ -2550,77 +3118,154 @@ document.addEventListener("DOMContentLoaded", () => {
   renderModuler();
   renderBeslut();
   renderKallor();
+  renderVerifiering();
+  setupVerifieringToggle();
   setupReveal();
   setupScrollUI();
 });
 
+// ── Verifieringsstatus ─────────────────────────────────────────
+function setupVerifieringToggle() {
+  const btn = document.querySelector('.verifiering-toggle');
+  if (!btn) return;
+  function apply(on, persist) {
+    document.body.classList.toggle('show-verifiering', !!on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? 'Källstatus på' : 'Källstatus';
+    if (persist) {
+      try { localStorage.setItem('show-verifiering', on ? '1' : '0'); } catch (e) {}
+    }
+  }
+  let initial = false;
+  try { initial = localStorage.getItem('show-verifiering') === '1'; } catch (e) {}
+  apply(initial, false);
+  btn.addEventListener('click', () => {
+    apply(!document.body.classList.contains('show-verifiering'), true);
+  });
+}
+
+function renderVerifiering() {
+  const wrap = document.getElementById('verifiering-innehall');
+  if (!wrap) return;
+
+  const sektionsLabel = (id) => {
+    const labels = {
+      sammanfattning: 'Sammanfattning', oversikt: 'De fyra spåren',
+      hierarki: 'Hur behov tillgodoses', jamforelse: 'Tidsjämförelse',
+      kontext: 'Nationell kontext', 'per-typ': 'Per lokaltyp',
+      exempel: 'Exempel', 'spar-a': 'Spår A — Hyra in',
+      'spar-b': 'Spår B — Bygga om', 'spar-c': 'Spår C — Tillbyggnad',
+      'spar-d': 'Spår D — Nybyggnad', moduler: 'Moduler',
+      kostnad: 'Kostnad', beslut: 'Beslutsstöd', kallor: 'Källor',
+    };
+    return labels[id] || id;
+  };
+  const findSektion = (el) => {
+    let cur = el;
+    while (cur && cur !== document.body) {
+      if (cur.tagName === 'SECTION' && cur.id) return cur.id;
+      cur = cur.parentElement;
+    }
+    return null;
+  };
+  const summarize = (el) => {
+    // Försök hitta en kort beskrivande text — siffra eller första rubrik
+    const big = el.querySelector('.tldr-siffra, .siffra, strong, h3, h4');
+    let kort = big ? big.textContent.trim() : '';
+    let resten = (el.textContent || '').replace(/\s+/g, ' ').trim();
+    if (kort && resten.startsWith(kort)) resten = resten.slice(kort.length).trim();
+    if (resten.length > 180) resten = resten.slice(0, 177) + '…';
+    return { kort, resten };
+  };
+
+  const grupper = [
+    { status: 'mos-kravs',  rubrik: 'Kräver verifiering av MOS', lead: 'Inga påståenden om MOS ledtider får publiceras utan att vara signat av Miljö- och samhällsbyggnadsförvaltningen.' },
+    { status: 'preliminar', rubrik: 'Preliminära siffror',       lead: 'Vägledande siffror där exakt källa eller relevans för lokalförsörjning behöver bekräftas innan extern publicering.' },
+    { status: 'verifierad', rubrik: 'Verifierat',                lead: 'Siffror med fastställd källa som tål extern referens.' },
+  ];
+
+  const html = grupper.map(g => {
+    const items = Array.from(document.querySelectorAll('[data-verifiering="' + g.status + '"]'))
+      // Skippa själva flaggorna inom andra flaggor (yttre element räknas)
+      .filter(el => !el.parentElement || !el.parentElement.closest('[data-verifiering="' + g.status + '"]'));
+
+    const rader = items.map(el => {
+      const sek = findSektion(el);
+      const sum = summarize(el);
+      const not = el.getAttribute('data-verifiering-not') || '';
+      const sektionLink = sek
+        ? '<a href="#' + sek + '">' + sektionsLabel(sek) + ' →</a>'
+        : '';
+      return [
+        '<div class="verifiering-rad">',
+          '<div class="text">',
+            sum.kort ? '<strong>' + sum.kort + '</strong> ' : '',
+            sum.resten,
+          '</div>',
+          '<div class="sektion">' + sektionLink + '</div>',
+          not ? '<div class="anteckning"><strong>Att verifiera:</strong> ' + not + '</div>' : '',
+        '</div>',
+      ].join('');
+    }).join('');
+
+    return [
+      '<div class="verifiering-grupp ' + g.status + '">',
+        '<h3><span class="dot" aria-hidden="true"></span>' + g.rubrik,
+          ' <span class="count">(' + items.length + ')</span></h3>',
+        '<p class="lead">' + g.lead + '</p>',
+        items.length
+          ? '<div class="verifiering-lista">' + rader + '</div>'
+          : '<p style="color:var(--muted);font-style:italic;">Inga noteringar i den här kategorin.</p>',
+      '</div>',
+    ].join('');
+  }).join('');
+
+  wrap.innerHTML = html;
+}
+
 function setupMobileMenu() {
   const btn = document.querySelector('.nav-menu-toggle');
-  const links = document.querySelector('.nav-links');
-  if (!btn || !links) return;
+  const drawer = document.querySelector('.nav-toptabs');
+  const nav = document.querySelector('.site-nav');
+  if (!btn || !drawer || !nav) return;
 
   function setOpen(open) {
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    links.classList.toggle('is-open', open);
+    drawer.classList.toggle('is-open', open);
   }
+
+  // Mobil: tap på en toppflik öppnar dess undermeny istället för att navigera direkt.
+  // Andra tappet (eller tap på undermeny-länk) navigerar.
+  drawer.addEventListener('click', (e) => {
+    const top = e.target.closest('.nav-toptab');
+    const isMobile = window.matchMedia('(max-width: 820px)').matches;
+    if (top && isMobile) {
+      const group = top.dataset.group;
+      const submenu = drawer.querySelector(`.nav-subgroup-mobile[data-group="${group}"]`);
+      const alreadyOpen = submenu && submenu.classList.contains('is-open');
+      drawer.querySelectorAll('.nav-subgroup-mobile').forEach(s => s.classList.remove('is-open'));
+      if (submenu && !alreadyOpen) {
+        submenu.classList.add('is-open');
+        e.preventDefault();
+        return;
+      }
+    }
+    if (e.target.tagName === 'A') setOpen(false);
+  });
 
   btn.addEventListener('click', () => {
     setOpen(btn.getAttribute('aria-expanded') !== 'true');
   });
 
-  links.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') setOpen(false);
-  });
-
   document.addEventListener('click', (e) => {
-    if (!links.classList.contains('is-open')) return;
-    if (e.target.closest('nav')) return;
+    if (!drawer.classList.contains('is-open')) return;
+    if (e.target.closest('.site-nav')) return;
     setOpen(false);
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && links.classList.contains('is-open')) setOpen(false);
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')) setOpen(false);
   });
-}
-
-function setupVersionTabs() {
-  const tabs = document.querySelectorAll('.version-tab');
-  if (!tabs.length) return;
-
-  function readInitial() {
-    try {
-      const urlVer = new URL(window.location.href).searchParams.get('v');
-      if (urlVer === 'kort') return 'kort';
-      if (urlVer === 'full') return 'full';
-      if (localStorage.getItem('lokal-version') === 'kort') return 'kort';
-    } catch (e) {}
-    return 'full';
-  }
-
-  function apply(version, persist) {
-    document.body.classList.toggle('version-kort', version === 'kort');
-    tabs.forEach(t => {
-      const active = t.dataset.version === version;
-      t.classList.toggle('is-active', active);
-      t.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-    if (persist) {
-      try { localStorage.setItem('lokal-version', version); } catch (e) {}
-      try {
-        const url = new URL(window.location.href);
-        if (version === 'kort') url.searchParams.set('v', 'kort');
-        else url.searchParams.delete('v');
-        window.history.replaceState({}, '', url.pathname + (url.search ? url.search : '') + url.hash);
-      } catch (e) {}
-    }
-  }
-
-  apply(readInitial(), false);
-
-  tabs.forEach(t => t.addEventListener('click', () => {
-    apply(t.dataset.version, true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }));
 }
 
 function setupReveal() {
@@ -2649,9 +3294,11 @@ function setupReveal() {
 }
 
 function setupScrollUI() {
+  const siteNav = document.querySelector('.site-nav');
   const sections = [
     { id: 'sammanfattning', label: 'Sammanfattning' },
     { id: 'oversikt',       label: 'Spåren' },
+    { id: 'hierarki',       label: 'Hur behov tillgodoses' },
     { id: 'jamforelse',     label: 'Tidsjämförelse' },
     { id: 'kontext',        label: 'Kontext' },
     { id: 'per-typ',        label: 'Per lokaltyp' },
@@ -2661,8 +3308,10 @@ function setupScrollUI() {
     { id: 'spar-c',         label: 'C. Tillbyggnad' },
     { id: 'spar-d',         label: 'D. Nybyggnad' },
     { id: 'moduler',        label: 'Moduler' },
+    { id: 'kostnad',        label: 'Kostnad' },
     { id: 'beslut',         label: 'Beslutsstöd' },
     { id: 'kallor',         label: 'Källor' },
+    { id: 'verifiering',    label: 'Verifieringsstatus' },
   ].filter(s => document.getElementById(s.id));
 
   const progress = document.createElement('div');
@@ -2706,6 +3355,18 @@ function setupScrollUI() {
       const info = dotMap.get(id);
       info.btn.classList.add('active');
       pill.textContent = info.label;
+    }
+
+    // Synka tvånivåers nav: aktiv toppflik + aktiv underflik.
+    // Innan första matchande sektion ligger över triggerY visar vi första gruppen.
+    if (siteNav) {
+      const sectionEl = id ? document.getElementById(id) : null;
+      const group = sectionEl ? (sectionEl.getAttribute('data-nav-group') || 'oversikt') : 'oversikt';
+      siteNav.setAttribute('data-active-group', group);
+      siteNav.setAttribute('data-active-section', id || '');
+      siteNav.querySelectorAll('.nav-subtab').forEach(a => {
+        a.classList.toggle('is-active', a.dataset.section === id);
+      });
     }
   };
 
