@@ -469,28 +469,72 @@
 }
 </style>
 
-<nav>
-  <div class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></div>
-  <button type="button" class="nav-menu-toggle" aria-label="Meny" aria-expanded="false" aria-controls="primary-nav-links">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="primary-nav-links">
-    <li><a href="#dp-tldr">Sammanfattning</a></li>
-    <li><a href="#dp-skr">SKR-data</a></li>
-    <li><a href="#dp-index">Ledtidsindex</a></li>
-    <li><a href="#dp-process">Processen</a></li>
-    <li><a href="#dp-overklagande">Överklaganden</a></li>
-    <li><a href="#dp-konsekvenser">Konsekvenser</a></li>
-    <li><a href="#dp-kallor">Källor</a></li>
-    <li class="nav-divider" aria-hidden="true"></li>
-    <li class="nav-link-page">
-      <a href="/" title="Tillbaka till lokalförsörjningsguiden">
-        <span class="nav-page-arrow" aria-hidden="true">←</span>
-        <span class="nav-page-eyebrow">Egen sida</span>
-        <span>Guiden</span>
-      </a>
-    </li>
-  </ul>
+<nav class="site-nav" data-active-group="process" data-page="detaljplan">
+  <div class="nav-row nav-row-primary">
+    <a href="/" class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
+    <button type="button" class="nav-menu-toggle" aria-label="Meny" aria-expanded="false" aria-controls="primary-nav-toptabs">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-toptabs" id="primary-nav-toptabs" role="tablist">
+      <li>
+        <a href="/#sammanfattning" class="nav-toptab is-external" data-group="oversikt">Översikt</a>
+        <ul class="nav-subgroup-mobile" data-group="oversikt">
+          <li><a href="/#sammanfattning">Sammanfattning</a></li>
+          <li><a href="/#oversikt">De fyra spåren</a></li>
+          <li><a href="/#jamforelse">Tidsjämförelse</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/#per-typ" class="nav-toptab is-external" data-group="behov">Behov &amp; kund</a>
+        <ul class="nav-subgroup-mobile" data-group="behov">
+          <li><a href="/#per-typ">Per lokaltyp</a></li>
+          <li><a href="/#exempel">Exempel</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#dp-tldr" class="nav-toptab" data-group="process">Process</a>
+        <ul class="nav-subgroup-mobile" data-group="process">
+          <li><a href="#dp-tldr">Detaljplan — översikt</a></li>
+          <li><a href="#dp-process">Processens skeden</a></li>
+          <li><a href="#dp-overklagande">Överklaganden</a></li>
+          <li><a href="#dp-konsekvenser">Konsekvenser</a></li>
+          <li><a href="/#spar-a">Tillbaka till spår A–D</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/#kontext" class="nav-toptab is-external" data-group="tid">Tid &amp; pengar</a>
+        <ul class="nav-subgroup-mobile" data-group="tid">
+          <li><a href="/#kontext">Nationell kontext</a></li>
+          <li><a href="/#beslut">Beslutsstöd</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#dp-kallor" class="nav-toptab" data-group="kallor">Källor</a>
+        <ul class="nav-subgroup-mobile" data-group="kallor">
+          <li><a href="#dp-kallor">Källor (denna sida)</a></li>
+          <li><a href="/#kallor">Källor — Guiden</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="nav-row nav-row-sub" aria-label="Underflikar">
+    <ul class="nav-subtabs" data-group="process">
+      <li><a href="#dp-tldr"          class="nav-subtab" data-section="dp-tldr">Översikt</a></li>
+      <li><a href="#dp-definitioner"  class="nav-subtab" data-section="dp-definitioner">Definitioner</a></li>
+      <li><a href="#dp-skr"           class="nav-subtab" data-section="dp-skr">SKR-data</a></li>
+      <li><a href="#dp-index"         class="nav-subtab" data-section="dp-index">Ledtidsindex</a></li>
+      <li><a href="#dp-process"       class="nav-subtab" data-section="dp-process">Processens skeden</a></li>
+      <li><a href="#dp-forfarande"    class="nav-subtab" data-section="dp-forfarande">Förfaranden</a></li>
+      <li><a href="#dp-overklagande"  class="nav-subtab" data-section="dp-overklagande">Överklaganden</a></li>
+      <li><a href="#dp-konsekvenser"  class="nav-subtab" data-section="dp-konsekvenser">Konsekvenser</a></li>
+      <li><a href="#dp-kallor"        class="nav-subtab" data-section="dp-kallor">Källor</a></li>
+    </ul>
+    <ul class="nav-subtabs" data-group="kallor">
+      <li><a href="#dp-kallor" class="nav-subtab" data-section="dp-kallor">Källor (denna sida)</a></li>
+      <li><a href="/#kallor"   class="nav-subtab is-external">Källor — Guiden</a></li>
+    </ul>
+  </div>
 </nav>
 
 <div class="dp-back-bar">
@@ -942,33 +986,92 @@
 
 <script>
 (function () {
-  function init() {
+  function setupMobileDrawer() {
     var btn = document.querySelector('.nav-menu-toggle');
-    var links = document.querySelector('.nav-links');
-    if (!btn || !links) return;
+    var drawer = document.querySelector('.nav-toptabs');
+    if (!btn || !drawer) return;
 
     function setOpen(open) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      links.classList.toggle('is-open', open);
+      drawer.classList.toggle('is-open', open);
     }
+
+    drawer.addEventListener('click', function (e) {
+      var top = e.target.closest && e.target.closest('.nav-toptab');
+      var isMobile = window.matchMedia('(max-width: 820px)').matches;
+      if (top && isMobile) {
+        var group = top.dataset.group;
+        var submenu = drawer.querySelector('.nav-subgroup-mobile[data-group="' + group + '"]');
+        var alreadyOpen = submenu && submenu.classList.contains('is-open');
+        var subs = drawer.querySelectorAll('.nav-subgroup-mobile');
+        for (var i = 0; i < subs.length; i++) subs[i].classList.remove('is-open');
+        if (submenu && !alreadyOpen) {
+          submenu.classList.add('is-open');
+          e.preventDefault();
+          return;
+        }
+      }
+      if (e.target.tagName === 'A') setOpen(false);
+    });
 
     btn.addEventListener('click', function () {
       setOpen(btn.getAttribute('aria-expanded') !== 'true');
     });
 
-    links.addEventListener('click', function (e) {
-      if (e.target.tagName === 'A') setOpen(false);
-    });
-
     document.addEventListener('click', function (e) {
-      if (!links.classList.contains('is-open')) return;
-      if (e.target.closest('nav')) return;
+      if (!drawer.classList.contains('is-open')) return;
+      if (e.target.closest('.site-nav')) return;
       setOpen(false);
     });
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && links.classList.contains('is-open')) setOpen(false);
+      if (e.key === 'Escape' && drawer.classList.contains('is-open')) setOpen(false);
     });
+  }
+
+  function setupActiveSubtab() {
+    var siteNav = document.querySelector('.site-nav');
+    if (!siteNav) return;
+
+    var sectionIds = [
+      'dp-tldr', 'dp-definitioner', 'dp-skr', 'dp-index',
+      'dp-process', 'dp-forfarande', 'dp-overklagande',
+      'dp-konsekvenser', 'dp-kallor'
+    ];
+    var sections = sectionIds
+      .map(function (id) { return document.getElementById(id); })
+      .filter(Boolean);
+
+    function update() {
+      var triggerY = window.innerHeight * 0.32;
+      var current = null;
+      for (var i = 0; i < sections.length; i++) {
+        var rect = sections[i].getBoundingClientRect();
+        if (rect.top <= triggerY) current = sections[i].id;
+        else break;
+      }
+      siteNav.setAttribute('data-active-section', current || '');
+      var subtabs = siteNav.querySelectorAll('.nav-subtab');
+      for (var j = 0; j < subtabs.length; j++) {
+        var s = subtabs[j];
+        s.classList.toggle('is-active', s.dataset.section === current);
+      }
+    }
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () { update(); ticking = false; });
+        ticking = true;
+      }
+    }, { passive: true });
+    window.addEventListener('resize', update, { passive: true });
+    update();
+  }
+
+  function init() {
+    setupMobileDrawer();
+    setupActiveSubtab();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
