@@ -487,6 +487,145 @@ section { padding: 5rem 2rem; scroll-margin-top: 100px; }
   color: var(--gold-light); letter-spacing: 0.03em;
 }
 
+/* ─── HIERARKI: HUR BEHOV TILLGODOSES ─── */
+#hierarki { background: var(--white); }
+.hierarki-intro { color: var(--muted); margin-top: 1rem; max-width: 70ch; }
+.hierarki-trappa {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.hierarki-steg {
+  display: grid;
+  grid-template-columns: 60px 1fr 130px 200px;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  border-radius: var(--r);
+  position: relative;
+}
+.hierarki-steg .niva {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+}
+.hierarki-steg .body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.hierarki-steg .body p {
+  font-size: 0.92rem;
+  color: var(--navy-mid);
+  line-height: 1.55;
+  margin: 0;
+  max-width: none;
+}
+.hierarki-steg .ledtid {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--navy);
+  font-weight: 600;
+  text-align: right;
+  line-height: 1.1;
+}
+.hierarki-steg .ledtid span {
+  display: block;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+.hierarki-steg .ragardighet {
+  font-size: 0.82rem;
+  color: var(--navy-mid);
+  line-height: 1.4;
+  border-left: 2px solid rgba(0,0,0,0.08);
+  padding-left: 0.9rem;
+}
+.hierarki-steg .ragardighet strong {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+}
+.hierarki-steg .indikator {
+  position: absolute;
+  left: -1px; top: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--gold);
+  opacity: var(--steg-fyll, 0.25);
+  border-radius: var(--r) 0 0 var(--r);
+}
+.hierarki-steg.niva-1 { --steg-fyll: 0.22; }
+.hierarki-steg.niva-2 { --steg-fyll: 0.45; }
+.hierarki-steg.niva-3 { --steg-fyll: 0.68; }
+.hierarki-steg.niva-4 { --steg-fyll: 0.92; }
+
+@media (max-width: 900px) {
+  .hierarki-steg { grid-template-columns: 50px 1fr; }
+  .hierarki-steg .ledtid {
+    grid-column: 2;
+    text-align: left;
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+  }
+  .hierarki-steg .ragardighet {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    padding: 0.7rem 0 0;
+    margin-top: 0.4rem;
+  }
+}
+
+.hierarki-callout {
+  margin-top: 2.2rem;
+  background: linear-gradient(135deg, #FFF5DC 0%, #F4E5B8 100%);
+  border: 1px solid #E8C97A;
+  border-left: 5px solid var(--gold);
+  border-radius: var(--r);
+  padding: 1.4rem 1.7rem;
+}
+.hierarki-callout .stamp {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8B6914;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.hierarki-callout h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--navy);
+}
+.hierarki-callout p {
+  font-size: 0.95rem;
+  color: var(--navy-mid);
+  line-height: 1.6;
+  max-width: none;
+}
+.hierarki-callout p + p { margin-top: 0.6rem; }
+.hierarki-callout em { color: var(--navy); font-style: italic; font-weight: 500; }
+
 /* ─── PER LOKALTYP ─────────────────── */
 #per-typ { background: var(--parchment); }
 .typ-grid {
@@ -1313,8 +1452,9 @@ footer strong { color: rgba(255,255,255,0.8); }
         </ul>
       </li>
       <li>
-        <a href="#per-typ" class="nav-toptab" data-group="behov">Behov &amp; kund</a>
+        <a href="#hierarki" class="nav-toptab" data-group="behov">Behov &amp; kund</a>
         <ul class="nav-subgroup-mobile" data-group="behov">
+          <li><a href="#hierarki">Hur behov tillgodoses</a></li>
           <li><a href="#per-typ">Per lokaltyp</a></li>
           <li><a href="#exempel">Exempel</a></li>
         </ul>
@@ -1353,8 +1493,9 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li><a href="#jamforelse"      class="nav-subtab" data-section="jamforelse">Tidsjämförelse</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="behov">
-      <li><a href="#per-typ" class="nav-subtab" data-section="per-typ">Per lokaltyp</a></li>
-      <li><a href="#exempel" class="nav-subtab" data-section="exempel">Exempel</a></li>
+      <li><a href="#hierarki" class="nav-subtab" data-section="hierarki">Hur behov tillgodoses</a></li>
+      <li><a href="#per-typ"  class="nav-subtab" data-section="per-typ">Per lokaltyp</a></li>
+      <li><a href="#exempel"  class="nav-subtab" data-section="exempel">Exempel</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="process">
       <li><a href="/detaljplan" class="nav-subtab is-external">Detaljplan</a></li>
@@ -1428,6 +1569,80 @@ footer strong { color: rgba(255,255,255,0.8); }
     <h2>Hur lokaler kan tillgodoses</h2>
     <p class="mt-2" style="color:var(--muted)">Varje spår har fundamentalt olika förutsättningar, ledtider och ekonomiska konsekvenser. De fördjupas i egna avsnitt nedan.</p>
     <div class="spar-grid" id="spar-grid-container"></div>
+  </div>
+</section>
+
+<!-- HIERARKI: HUR BEHOV TILLGODOSES (KUNDPERSPEKTIV) -->
+<section id="hierarki" data-nav-group="behov">
+  <div class="container">
+    <span class="section-label">Kundperspektiv</span>
+    <h2>Hur behov tillgodoses — i ordning från enklast till mest omfattande</h2>
+    <p class="hierarki-intro">När en verksamhet behöver lokaler finns en informell hierarki: börja med det enklaste, gå vidare till nästa steg först om det inte räcker. I praktiken är spåren ofta inte utbytbara — varje verksamhet har förutsättningar som styr vilket spår som faktiskt fungerar. Trappan blir därför ett samtal om kompromisser, inte ett mekaniskt val.</p>
+
+    <div class="hierarki-trappa">
+      <div class="hierarki-steg niva-1">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">1</div>
+        <div class="body">
+          <h3>Inhyrning</h3>
+          <p>Hyra in en befintlig lokal som passar verksamheten direkt. Snabbast om marknaden har rätt utbud — men beroende av att rätt lokal faktiskt finns ledig på rätt plats vid rätt tidpunkt.</p>
+        </div>
+        <div class="ledtid">3–12 mån<span>vid befintlig lokal</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Lämplig lokal måste finnas på marknaden. Skola/förskola och vård- och omsorgslokaler har stränga tekniska krav (ventilation, brand, utomhusyta) som utesluter de flesta kontorslokaler.
+        </div>
+      </div>
+
+      <div class="hierarki-steg niva-2">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">2</div>
+        <div class="body">
+          <h3>Övertagande / ombyggnation av befintlig lokal</h3>
+          <p>Ta över en lokal som blir ledig — antingen i det egna beståndet eller efter en annan verksamhet — och bygga om den till det nya behovet. På pappret det "enkla" långsiktiga spåret eftersom ingen ny mark eller detaljplan krävs.</p>
+        </div>
+        <div class="ledtid">2–5 år<span>med ombyggnad</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Befintlig byggnad måste ha rätt geometri, bärighet och planändamål. Dolda skador kan fördubbla tid och kostnad. Förutsätter att en lokal faktiskt blir ledig — något kommunen sällan kan styra över i tid.
+        </div>
+      </div>
+
+      <div class="hierarki-steg niva-3">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">3</div>
+        <div class="body">
+          <h3>Tillbyggnad</h3>
+          <p>Utöka en befintlig byggnad med ny yta. Ger riktad kapacitetsökning där behovet finns, ofta utan ny detaljplan om byggrätten medger.</p>
+        </div>
+        <div class="ledtid">3–6 år<span>tillbyggnad</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Befintlig fastighet måste ha utrymme och byggrätt. Verksamheten påverkas av byggarbete på plats. Begränsar hur stor utökning som ryms.
+        </div>
+      </div>
+
+      <div class="hierarki-steg niva-4">
+        <span class="indikator" aria-hidden="true"></span>
+        <div class="niva">4</div>
+        <div class="body">
+          <h3>Nybyggnation</h3>
+          <p>Bygga nytt på lämplig mark. Ger maximal flexibilitet och anpassning till verksamheten — men förutsätter ofta att en ny detaljplan tas fram, vilket ensamt kan ta 2–5 år enligt SKR.</p>
+        </div>
+        <div class="ledtid">4–8 år<span>med ny detaljplan</span></div>
+        <div class="ragardighet">
+          <strong>Förutsättning</strong>
+          Tillgång till lämplig mark, planberedskap (eller acceptans för planprocess), kommunalt investerings&shy;utrymme. Den enda nivån som kan dimensioneras helt efter verksamhetens behov från start.
+        </div>
+      </div>
+    </div>
+
+    <div class="hierarki-callout">
+      <span class="stamp">Den dolda kompromissen</span>
+      <h3>Det enkla spåret är att ta över lokaler någon annan lämnar — men det är sällan det någon vill</h3>
+      <p>Trappan ovan ser ut som ett rationellt val mellan alternativ — men i praktiken är de övre stegen <em>billigare på papperet</em> och samtidigt <em>sämre för verksamheten</em>. Att ta över en lokal någon annan lämnar tar månader, men det betyder att verksamheten ska anpassa sig till en byggnad som ritades för något annat. Det riskerar att inte ge en effektiv verksamhet — inte i pedagogisk yta, inte i logistik, inte i arbetsmiljö.</p>
+      <p>Därför är hierarkin ofta inte en glidskala från bra till sämre — den är ett samtal om kompromisser. Den snabbaste lösningen som passar verksamheten kan ligga på nivå 3 eller 4. Det är skälet till att lokalförsörjningsplaner inte mekaniskt går "uppifrån och ner" i hierarkin, utan utgår från verksamhetens faktiska behov.</p>
+    </div>
   </div>
 </section>
 
@@ -2593,6 +2808,7 @@ function setupScrollUI() {
   const sections = [
     { id: 'sammanfattning', label: 'Sammanfattning' },
     { id: 'oversikt',       label: 'Spåren' },
+    { id: 'hierarki',       label: 'Hur behov tillgodoses' },
     { id: 'jamforelse',     label: 'Tidsjämförelse' },
     { id: 'kontext',        label: 'Kontext' },
     { id: 'per-typ',        label: 'Per lokaltyp' },
