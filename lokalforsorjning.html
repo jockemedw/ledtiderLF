@@ -487,6 +487,124 @@ section { padding: 5rem 2rem; scroll-margin-top: 100px; }
   color: var(--gold-light); letter-spacing: 0.03em;
 }
 
+/* ─── KOSTNAD: TID OCH PENGAR ─── */
+#kostnad {
+  background: linear-gradient(135deg, #1A2744 0%, #2C3E62 60%, #1A2744 100%);
+  color: #fff;
+}
+#kostnad .section-label { color: var(--gold-light); }
+#kostnad h2 { color: #fff; }
+#kostnad h2 em { color: var(--gold-light); font-style: italic; }
+#kostnad > .container > p { color: rgba(255,255,255,0.8); }
+
+.kostnad-kurva {
+  margin-top: 2.6rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem 1.8rem;
+}
+.kostnad-kurva-titel {
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.kostnad-kurva-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 360px;
+}
+.kostnad-kurva-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+  margin-top: 1.1rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.78);
+}
+.kostnad-kurva-legend .pill {
+  display: inline-block;
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+.kostnad-kurva-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.56);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.kostnad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+.kostnad-kort {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--r);
+  padding: 1.4rem 1.5rem;
+}
+.kostnad-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+.kostnad-kort .siffra {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.kostnad-kort .label {
+  display: block;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+.kostnad-kort p {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.55;
+  max-width: none;
+}
+.kostnad-kort cite {
+  display: block;
+  font-style: normal;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.7rem;
+}
+
+.kostnad-key {
+  margin-top: 2rem;
+  background: rgba(232, 201, 122, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 1.3rem 1.6rem;
+  border-radius: 0 var(--r) var(--r) 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.92);
+}
+.kostnad-key strong { color: var(--gold-light); }
+.kostnad-key em { font-style: italic; color: #fff; font-weight: 500; }
+
 /* ─── HIERARKI: HUR BEHOV TILLGODOSES ─── */
 #hierarki { background: var(--white); }
 .hierarki-intro { color: var(--muted); margin-top: 1rem; max-width: 70ch; }
@@ -1474,6 +1592,7 @@ footer strong { color: rgba(255,255,255,0.8); }
         <a href="#kontext" class="nav-toptab" data-group="tid">Tid &amp; pengar</a>
         <ul class="nav-subgroup-mobile" data-group="tid">
           <li><a href="#kontext">Nationell kontext</a></li>
+          <li><a href="#kostnad">Kostnad</a></li>
           <li><a href="#beslut">Beslutsstöd</a></li>
         </ul>
       </li>
@@ -1507,6 +1626,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     </ul>
     <ul class="nav-subtabs" data-group="tid">
       <li><a href="#kontext" class="nav-subtab" data-section="kontext">Nationell kontext</a></li>
+      <li><a href="#kostnad" class="nav-subtab" data-section="kostnad">Kostnad</a></li>
       <li><a href="#beslut"  class="nav-subtab" data-section="beslut">Beslutsstöd</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="kallor">
@@ -1770,6 +1890,100 @@ footer strong { color: rgba(255,255,255,0.8); }
     <div class="modul-grid" id="modul-grid"></div>
     <div class="modul-varning">
       <strong>Varning:</strong> Temporära lösningar tenderar att bli permanenta. Uppsala rapporterar att ~20 % av kommunens förskolor drivs i modulbyggnader. SVT (2021): <em>"Förskolemodulerna är här för att stanna."</em> Använd moduler med en explicit plan och datum för avveckling.
+    </div>
+  </div>
+</section>
+
+<!-- KOSTNAD: TID OCH PENGAR -->
+<section id="kostnad" data-nav-group="tid">
+  <div class="container">
+    <span class="section-label">Tid &amp; pengar</span>
+    <h2>När pengarna <em>låses</em> — och varför noggrannhet tidigt sparar år</h2>
+    <p class="mt-2">Tid och pengar i lokalprojekt hör ihop. Branschens tumregel är att den allra största delen av en byggnads totala investeringskostnad bestäms <em>innan ett enda spadtag tagits</em>: i förstudie, programskede och tidig projektering. Att gå tillbaka och ändra senare är inte en justering — det är i praktiken en omstart.</p>
+
+    <div class="kostnad-kurva" data-slide-skip>
+      <div class="kostnad-kurva-titel">Kostnaderna binds upp långt innan de betalas</div>
+      <svg class="kostnad-kurva-svg" viewBox="0 0 720 320" role="img" aria-labelledby="kostnad-kurva-titel kostnad-kurva-desc">
+        <title id="kostnad-kurva-titel">Kostnadsbindning över projektets faser</title>
+        <desc id="kostnad-kurva-desc">Två kurvor visar kumulativ andel kostnader (1) bundna genom beslut, och (2) faktiskt utbetalda, från behov till klart.</desc>
+
+        <!-- Bakgrund / gridlinjer -->
+        <g stroke="rgba(255,255,255,0.08)" stroke-width="1">
+          <line x1="60" y1="40"  x2="700" y2="40"/>
+          <line x1="60" y1="100" x2="700" y2="100"/>
+          <line x1="60" y1="160" x2="700" y2="160"/>
+          <line x1="60" y1="220" x2="700" y2="220"/>
+          <line x1="60" y1="280" x2="700" y2="280"/>
+        </g>
+
+        <!-- Y-axel-etiketter -->
+        <g fill="rgba(255,255,255,0.55)" font-family="Jost, sans-serif" font-size="11" text-anchor="end">
+          <text x="52" y="44">100%</text>
+          <text x="52" y="104">75%</text>
+          <text x="52" y="164">50%</text>
+          <text x="52" y="224">25%</text>
+          <text x="52" y="284">0%</text>
+        </g>
+
+        <!-- 80%-pricklinje -->
+        <line x1="60" y1="88" x2="700" y2="88" stroke="#E8C97A" stroke-width="1" stroke-dasharray="3 4" opacity="0.55"/>
+        <text x="700" y="82" fill="#E8C97A" font-family="Jost, sans-serif" font-size="10" text-anchor="end" letter-spacing="0.1em">80% LÅST</text>
+
+        <!-- Markering vid program-fasen (där 80% nås) -->
+        <line x1="280" y1="40" x2="280" y2="280" stroke="rgba(232,201,122,0.4)" stroke-width="1" stroke-dasharray="2 4"/>
+        <circle cx="280" cy="88" r="5" fill="#E8C97A"/>
+        <text x="290" y="78" fill="#E8C97A" font-family="Jost, sans-serif" font-size="11" font-weight="600">~80% av kostnaden bunden</text>
+
+        <!-- Bunden-kurva (S-kurva som når ~80% vid Program) -->
+        <path d="M 60 280 C 100 270, 140 230, 180 180 C 220 130, 260 100, 280 88 C 320 78, 380 58, 460 50 C 540 44, 620 42, 700 40"
+              fill="none" stroke="#E8C97A" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Utbetald-kurva (långsam start, accelererar i byggnation) -->
+        <path d="M 60 280 C 120 278, 200 274, 280 268 C 360 262, 420 240, 520 160 C 580 110, 640 70, 700 40"
+              fill="none" stroke="#0891B2" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- X-axel -->
+        <line x1="60" y1="280" x2="700" y2="280" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+
+        <!-- X-axel-etiketter -->
+        <g fill="rgba(255,255,255,0.75)" font-family="Jost, sans-serif" font-size="11" text-anchor="middle" letter-spacing="0.04em">
+          <text x="100" y="305">Behov</text>
+          <text x="180" y="305">Förstudie</text>
+          <text x="280" y="305">Program</text>
+          <text x="400" y="305">Projektering</text>
+          <text x="540" y="305">Byggnation</text>
+          <text x="680" y="305">Klart</text>
+        </g>
+      </svg>
+      <div class="kostnad-kurva-legend">
+        <span><span class="pill" style="background:#E8C97A"></span>Kostnader bundna genom beslut</span>
+        <span><span class="pill" style="background:#0891B2"></span>Kostnader faktiskt utbetalda</span>
+      </div>
+      <p class="kostnad-kurva-note">Schematisk illustration. Den exakta kurvan varierar mellan projekt — men formen (snabb bindning tidigt, sen utbetalning) är robust över studier av offentliga byggprojekt. <strong data-verifiering="preliminar" style="color:var(--gold-light)">[Siffror att verifiera]</strong></p>
+    </div>
+
+    <div class="kostnad-grid">
+      <div class="kostnad-kort">
+        <span class="label">Bundet vid program</span>
+        <div class="siffra" data-verifiering="preliminar">~80 %</div>
+        <h3>Kostnaden låses tidigt</h3>
+        <p>Branschdata pekar på att 70–80 % av en byggnads totala investerings&shy;kostnad bestäms av beslut i förstudie- och programskede — långt innan upphandlingen är klar.</p>
+        <cite data-verifiering="preliminar">Branschstudier — preliminär siffra, källa att bekräfta</cite>
+      </div>
+      <div class="kostnad-kort">
+        <h3>Sena programförändringar är omstart, inte justering</h3>
+        <p>När verksamhetens behov ändras efter projekteringsstart krävs nya utredningar, ofta nytt programskede och ibland ny detaljplan. Det adderar inte veckor utan månader till år — och kostnaderna räknas om från grunden.</p>
+        <cite data-verifiering="verifierad">Bekräftat mönster i Lejonfastigheters slutrapporter</cite>
+      </div>
+      <div class="kostnad-kort">
+        <h3>Planberedskap är den enda hävstången</h3>
+        <p>Att korta ledtiden i planskedet kräver att kommunen har planlagt mark <em>i förväg</em>. Det är den enskilt största kostnads&shy;besparing en kommun kan göra — utan att ge avkall på pröv&shy;nings&shy;kvalitet.</p>
+        <cite data-verifiering="verifierad">Boverket — strategisk planering för långsiktigt hållbara skolor</cite>
+      </div>
+    </div>
+
+    <div class="kostnad-key">
+      <strong>Slutsats:</strong> Tid och pengar är samma fråga. Att vara noggrann tidigt — i behovsanalys, programarbete och planberedskap — kostar lite tid och stora pengar i förskedet, men sparar år och tiotals miljoner i de senare faserna. <em>Den dyraste kortsiktigheten är att hoppa över förskedet för att "spara tid".</em>
     </div>
   </div>
 </section>
@@ -2818,6 +3032,7 @@ function setupScrollUI() {
     { id: 'spar-c',         label: 'C. Tillbyggnad' },
     { id: 'spar-d',         label: 'D. Nybyggnad' },
     { id: 'moduler',        label: 'Moduler' },
+    { id: 'kostnad',        label: 'Kostnad' },
     { id: 'beslut',         label: 'Beslutsstöd' },
     { id: 'kallor',         label: 'Källor' },
   ].filter(s => document.getElementById(s.id));
