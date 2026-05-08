@@ -1808,17 +1808,17 @@ footer strong { color: rgba(255,255,255,0.8); }
     <h2>Det viktigaste först</h2>
 
     <div class="tldr-grid">
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="verifierad">
         <div class="tldr-siffra">4</div>
         <div class="tldr-label">spår</div>
         <p>Hyra in, bygga om, bygga till eller bygga nytt. Valet styr ledtid, kostnad och flexibilitet.</p>
       </div>
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="verifierad">
         <div class="tldr-siffra">3 mån<span class="tldr-tilltecken">–</span>8 år</div>
         <div class="tldr-label">spann i ledtid</div>
         <p>Från snabbaste hyreslösning till ny skola med detaljplaneläggning. Skillnaden ligger främst i förskedet, inte i bygget.</p>
       </div>
-      <div class="tldr-kort">
+      <div class="tldr-kort" data-verifiering="verifierad">
         <div class="tldr-siffra">~7 år</div>
         <div class="tldr-label">för en ny skola</div>
         <p>Lunds kommun anger detta som genomsnitt — bekräftas av Uppsala, Stockholm och flera andras lokalförsörjningsplaner. Själva byggfasen är endast 2–3 år.</p>
@@ -2555,37 +2555,46 @@ const DATA = {
       siffra: "4,8",
       enhet: "år i snitt",
       beskrivning: "Genomsnittlig ledtid från beslut om planuppdrag till startbesked i 52 kommuner som representerar ~80 % av Sveriges lägenhetsproduktion. Ökning från 4,5 år (2023) och 4,7 år (2024). Avser flerbostadshus — illustrerar generella plan- och lovprocesser som även skolfastigheter berörs av.",
-      kalla: "Nationellt Ledtidsindex 2025 (Initiativet Bygg i Tid, Byggföretagen, Fastighetsägarna)"
+      kalla: "Nationellt Ledtidsindex 2025 (Initiativet Bygg i Tid, Byggföretagen, Fastighetsägarna)",
+      verifiering: "preliminar",
+      verifieringNot: "Ledtidsindex avser flerbostadshus med ≥ 5 lägenheter. Tillämpning på lokalförsörjning (skola/förskola/LSS) är vägledande men inte direkt jämförbar — behöver kompletteras med skolfastighets-specifik data."
     },
     {
       siffra: "var fjärde",
       enhet: "detaljplan överklagas",
       beskrivning: "SKR konstaterar att ”omkring var fjärde antagen detaljplan” överklagas — en stabil nivå över flera mätperioder. Endast 12 % av överklagandena leder till att planen helt eller delvis ändras i mark- och miljödomstolen. Genomsnittlig domstolstid: 8,4 månader.",
-      kalla: "SKR, Jämförelser inom detaljplaneområdet 2024 + Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)"
+      kalla: "SKR, Jämförelser inom detaljplaneområdet 2024 + Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)",
+      verifiering: "verifierad"
     },
     {
       siffra: "~7",
       enhet: "år i Lund",
       beskrivning: "Lunds kommun anger på sin officiella webbplats: ”Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt.” Bilden bekräftas av Uppsala Skolfastigheter och flera kommuners lokalförsörjningsplaner.",
-      kalla: "Lunds kommun (lund.se, hämtad 2026)"
+      kalla: "Lunds kommun (lund.se, hämtad 2026)",
+      verifiering: "verifierad"
     },
     {
       siffra: "3 av 10",
       enhet: "år byggnation",
       beskrivning: "Kvarngärdesskolan i Uppsala (F–9, kapacitet 990 elever) byggdes på 3 år — spadtag aug 2022, invigning sep 2025 — och tilldelades PQi-utmärkelsen för byggåret 2024 (7 av 150 projekt). De 3 åren avser dock enbart byggfasen. Detaljplanen startade 2015 och vann laga kraft 2020. Hela processen tog cirka 10 år.",
-      kalla: "Uppsala Skolfastigheter, Uppsala kommun"
+      kalla: "Uppsala Skolfastigheter, Uppsala kommun",
+      verifiering: "verifierad"
     },
     {
       siffra: "18–24",
       enhet: "mån — målbilden",
       beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar dock att kommunerna i genomsnitt inte når upp till denna målsättning. Gapet mellan ambition och utfall är en strukturell utmaning som påverkar alla kommunala lokalförsörjningsprojekt.",
-      kalla: "Nationellt Ledtidsindex 2025"
+      kalla: "Nationellt Ledtidsindex 2025",
+      verifiering: "preliminar",
+      verifieringNot: "Målbild från flerbostadssidan — överförbarheten till kommunala lokalförsörjningsprojekt behöver bekräftas (samma planenhet men annan typ av plan)."
     },
     {
       siffra: "18–24",
       enhet: "mån — kommunens egen målbild",
       beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar att kommunerna i genomsnitt inte når upp till denna målsättning. För kommunala byggherrar med prioriterade samhällsprojekt är förhållandena ofta bättre än för bostadsmarknaden, men gapet mellan målbild och utfall kvarstår även för aktiva planprocesser.",
-      kalla: "Nationellt Ledtidsindex 2025"
+      kalla: "Nationellt Ledtidsindex 2025",
+      verifiering: "preliminar",
+      verifieringNot: "Två poster i kontext-listan har samma siffra 18–24 men olika nyans. Dubblett bör ses över — välj en av versionerna eller slå ihop dem."
     }
   ],
 
@@ -3035,10 +3044,11 @@ function renderKontext() {
   const el = document.getElementById("kontext-grid");
   if (!el) return;
   el.innerHTML = DATA.kontext.map(k => {
-    // Långa textsiffror (mer än 4 tecken) får mindre fontstorlek
     const sifferKlass = k.siffra.length > 4 ? "siffra lang" : "siffra";
+    const verAttr = k.verifiering ? ` data-verifiering="${k.verifiering}"` : '';
+    const verNot = k.verifieringNot ? ` data-verifiering-not="${k.verifieringNot.replace(/"/g, '&quot;')}"` : '';
     return `
-    <div class="kontext-kort">
+    <div class="kontext-kort"${verAttr}${verNot}>
       <div class="${sifferKlass}">${k.siffra}</div>
       <div class="enhet">${k.enhet}</div>
       <div class="beskrivning">${k.beskrivning}</div>
