@@ -1451,6 +1451,37 @@ body.show-verifiering [data-verifiering="verifierad"]::after { background: #0596
 
 /* ─── KALLOR ────────────────────────────────── */
 #kallor { background: var(--white); }
+.kallregister-pill {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  margin-top: 1.6rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(232, 201, 122, 0.55);
+  background: rgba(232, 201, 122, 0.08);
+  color: var(--gold) !important;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.kallregister-pill:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff !important;
+  text-decoration: none;
+}
+.kallregister-pill-eyebrow {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-right: 1px solid rgba(181, 130, 42, 0.4);
+  padding-right: 0.7rem;
+}
+.kallregister-pill:hover .kallregister-pill-eyebrow { border-right-color: rgba(255,255,255,0.5); }
+.kallregister-pill-text { font-weight: 500; }
+.kallregister-pill-arrow { font-size: 0.95rem; }
+
 .kallor-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem; margin-top: 2.5rem;
@@ -1751,7 +1782,8 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li>
         <a href="#kallor" class="nav-toptab" data-group="kallor">Källor</a>
         <ul class="nav-subgroup-mobile" data-group="kallor">
-          <li><a href="#kallor">Källor</a></li>
+          <li><a href="#kallor">Källor — kortöversikt</a></li>
+          <li><a href="/kallregister">Källregister ↗</a></li>
           <li><a href="#verifiering">Verifieringsstatus</a></li>
         </ul>
       </li>
@@ -1783,8 +1815,9 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li><a href="#beslut"  class="nav-subtab" data-section="beslut">Beslutsstöd</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="kallor">
-      <li><a href="#kallor"      class="nav-subtab" data-section="kallor">Källor</a></li>
-      <li><a href="#verifiering" class="nav-subtab" data-section="verifiering">Verifieringsstatus</a></li>
+      <li><a href="#kallor"        class="nav-subtab" data-section="kallor">Källor — kortöversikt</a></li>
+      <li><a href="/kallregister"  class="nav-subtab is-external">Källregister</a></li>
+      <li><a href="#verifiering"   class="nav-subtab" data-section="verifiering">Verifieringsstatus</a></li>
     </ul>
   </div>
 </nav>
@@ -2176,6 +2209,13 @@ footer strong { color: rgba(255,255,255,0.8); }
     <span class="section-label">Fördjupning & källförteckning</span>
     <h2>Källor och referensmaterial</h2>
     <p class="mt-2" style="color:var(--muted)">Alla ledtider och statistiska uppgifter i detta material baseras på nedanstående svenska källor. Siffror avser det senast tillgängliga underlaget per angiven källa.</p>
+
+    <a class="kallregister-pill" href="/kallregister" title="Bläddra i hela källregistret">
+      <span class="kallregister-pill-eyebrow">Egen sida</span>
+      <span class="kallregister-pill-text">Källregistret — bläddra och filtrera bland alla källor</span>
+      <span class="kallregister-pill-arrow" aria-hidden="true">↗</span>
+    </a>
+
     <div class="kallor-grid" id="kallor-grid"></div>
   </div>
 </section>

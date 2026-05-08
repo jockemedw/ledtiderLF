@@ -1,0 +1,432 @@
+{
+  "uppdaterad": "2026-05-08",
+  "omraden": [
+    { "id": "detaljplan",         "namn": "Detaljplan & planprocess",  "kort": "DP", "farg": "#2563EB" },
+    { "id": "skolor-forskolor",   "namn": "Skol- och förskolelokaler", "kort": "SK", "farg": "#059669" },
+    { "id": "fastighet-demografi","namn": "Fastighet & demografi",     "kort": "FD", "farg": "#B5822A" }
+  ],
+  "kallor": [
+    {
+      "id": "ledtidsindex-2024",
+      "omrade": "detaljplan",
+      "typ": "branschindex",
+      "titel": "Nationellt Ledtidsindex 2024 — Kommuner med effektiva plan- och bygglovsprocesser",
+      "organisation": "Initiativet Bygg i Tid (Byggföretagen, Fastighetsägarna m.fl.)",
+      "datum": "2024-09",
+      "url": "https://byggforetagen.se/app/uploads/2024/09/Nationellt-Ledtidsindex-2024_0912.pdf",
+      "sammandrag": "Årligt index som rangordnar svenska kommuner efter effektiviteten i plan- och bygglovsprocessen. Mäter ledtider, resurseffektivitet, servicenivå och produktionstakt. 2024 års rapport visar att den genomsnittliga ledtiden ökat till 4,7 år, trots att initiativtagarna anser att ledtiderna inte bör överstiga 2,5 år."
+    },
+    {
+      "id": "ledtidsindex-2025",
+      "omrade": "detaljplan",
+      "typ": "branschindex",
+      "titel": "Nationellt Ledtidsindex 2025 — Kommuner med effektiva plan- och bygglovsprocesser",
+      "organisation": "Initiativet Bygg i Tid (Byggföretagen, Fastighetsägarna m.fl.)",
+      "datum": "2025-09",
+      "url": "https://byggforetagen.se/app/uploads/2025/09/Nationellt-Ledtidsindex-2025.pdf",
+      "sammandrag": "Senaste utgåvan av det årliga ledtidsindexet med uppdaterad rankning av kommuner. Mätningen omfattar enbart detaljplaner för flerbostadshus med ≥ 5 lägenheter — vägledande, men direkt jämförelse med skol-/förskoleplaner kräver kompletterande underlag."
+    },
+    {
+      "id": "evidens-samhallseffekter-2022",
+      "omrade": "detaljplan",
+      "typ": "rapport",
+      "titel": "Samhällseffekter av långa ledtider i plan- och bygglovsprocessen",
+      "organisation": "Evidens (uppdrag av Bygg i Tid / Byggföretagen / Riksbyggen / Fastighetsägarna)",
+      "datum": "2022-05",
+      "url": "https://www.initiativetbyggitid.se/_files/ugd/f0837f_9ef7953c03bf4e4fa64c69a7b75b6a02.pdf",
+      "sammandrag": "Kvantifierar de samhällsekonomiska effekterna av långa ledtider i planprocessen. Visar att en 4 % kostnadsökning till följd av långa ledtider minskar bostadsbyggandet med ca 2 000 bostäder/år. Användbar för att motivera kostnaderna av tidsutdräkt även för kommunala lokaler."
+    },
+    {
+      "id": "evidens-overklagande-2023",
+      "omrade": "detaljplan",
+      "typ": "forskning",
+      "titel": "Överklagandet av detaljplaner — omfattning, effekter och orsaker",
+      "organisation": "Evidens (uppdrag av SKR, Byggföretagen, Fastighetsägarna)",
+      "datum": "2023",
+      "url": "https://skr.se/download/18.3ecbf48018722d6400630e06/1680246439371/%C3%96verklagande-av-detaljplaner.pdf",
+      "sammandrag": "Studie av omfattning och konsekvenser av överklaganden av detaljplaner. Visar att nästan varannan bostad överklagas, att domstolens handläggning i snitt tar drygt 8 månader, samt att de allra flesta överklagade planer står sig i högre instans. Central källa för förseningseffekten +14 mån."
+    },
+    {
+      "id": "skr-jamforelser-detaljplan",
+      "omrade": "detaljplan",
+      "typ": "statistik",
+      "titel": "Jämförelser inom detaljplaneområdet (Öppna jämförelser)",
+      "organisation": "Sveriges Kommuner och Regioner (SKR) i samarbete med RKA/Kolada",
+      "datum": "löpande",
+      "url": "https://skr.se/byggandeochbostaderplanering/jamforelserinomdetaljplaneomradet.9842.html",
+      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med fokus på bostäder och tidsåtgång i planarbetet. Genomsnittlig ledtid från planstart till byggstart anges till 4,8 år. Datat samlas in återkommande (ny insamling 2024–2025 publiceras 2026)."
+    },
+    {
+      "id": "skr-overklaganden-portal",
+      "omrade": "detaljplan",
+      "typ": "vagledning",
+      "titel": "Överklaganden av detaljplaner och bygglov",
+      "organisation": "Sveriges Kommuner och Regioner (SKR)",
+      "datum": "löpande",
+      "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/planerabyggabo/boendebostader/okatbostadsbyggande/overklagandenavdetaljplanerochbygglov.28410.html",
+      "sammandrag": "SKR:s samlingssida om överklagandeprocessen för detaljplaner och bygglov, med statistik och länkar till underliggande rapporter. Förklarar omfång, effekter och orsaker till överklaganden — relevant för att kommunicera varför lokalförsörjningsprojekt riskerar förseningar."
+    },
+    {
+      "id": "boverket-pbl-detaljplan",
+      "omrade": "detaljplan",
+      "typ": "vagledning",
+      "titel": "Detaljplaneprocessen — PBL kunskapsbanken",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/detaljplan/detaljplaneprocessen/",
+      "sammandrag": "Boverkets officiella vägledning till detaljplaneprocessen enligt plan- och bygglagen, inklusive standardförfarande och utökat förfarande, samråd, granskning, antagande och överklagande. Grunddokument för att förklara processens steg och tidsåtgång."
+    },
+    {
+      "id": "boverket-pbl-tillampning-2024",
+      "omrade": "detaljplan",
+      "typ": "rapport",
+      "titel": "Redovisning av tillämpningen av plan- och bygglagstiftningen år 2024 (Rapport 2025:11)",
+      "organisation": "Boverket",
+      "datum": "2025",
+      "url": "https://www.boverket.se/globalassets/publikationer/dokument/2025/redovisning-av-tillampningen-av-plan--och-bygglagstiftningen-ar-2024.pdf",
+      "sammandrag": "Boverkets årliga uppföljning av PBL-tillämpningen baserad på enkät till 286 kommuner och alla 21 länsstyrelser. Innehåller jämförande tidsserier 2013–2024 och visar bl.a. att antalet beslutade detaljplaner och markanvisningar fortsätter minska."
+    },
+    {
+      "id": "boverket-lansstyrelsen",
+      "omrade": "detaljplan",
+      "typ": "vagledning",
+      "titel": "Länsstyrelsens roll i detaljplaneprocessen — PBL kunskapsbanken",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/detaljplan/lansstyrelsens-tillsyn/mellan/lansstyrelsens-roll/",
+      "sammandrag": "Förklarar länsstyrelsens dubbla roll som rådgivande och tillsynsmyndighet under samråd och granskning. Beskriver hur statens intressen (riksintressen, MKN, strandskydd, hälsa/säkerhet) bevakas och kan fördröja eller stoppa planer."
+    },
+    {
+      "id": "pbl-2010-900",
+      "omrade": "detaljplan",
+      "typ": "lagstiftning",
+      "titel": "Plan- och bygglag (2010:900)",
+      "organisation": "Sveriges riksdag (Svensk författningssamling)",
+      "datum": "2010 (löpande revideringar)",
+      "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-bygglag-2010900_sfs-2010-900/",
+      "sammandrag": "Den fullständiga lagtexten, inklusive 5 kap. (detaljplan), 9 kap. (bygglov) och 13 kap. (överklagande). Primärkälla för formella krav, tidsfrister och processteg."
+    },
+    {
+      "id": "domstolsstatistik-2024",
+      "omrade": "detaljplan",
+      "typ": "statistik",
+      "titel": "Domstolsstatistik 2024",
+      "organisation": "Domstolsverket / Sveriges Domstolar",
+      "datum": "2025",
+      "url": "https://www.domstol.se/globalassets/filer/gemensamt-innehall/styrning-och-riktlinjer/statistik/2024/domstolsstatistik_2024.pdf",
+      "sammandrag": "Officiell årsstatistik inkl. mark- och miljödomstolarna och Mark- och miljööverdomstolen. Mediantider, kvartiler och målflöden för PBL-mål och miljömål. Underlag för att kvantifiera överklagandetidens påverkan."
+    },
+    {
+      "id": "lantmateriet-planeringsprocessen",
+      "omrade": "detaljplan",
+      "typ": "vagledning",
+      "titel": "Lantmäterimyndighetens roll i planeringsprocessen",
+      "organisation": "Lantmäteriet",
+      "datum": "2016-06",
+      "url": "https://www.lantmateriet.se/globalassets/om-lantmateriet/rattsinformation/handbocker/lantmaterimyndighetens-roll-i-planeringsprocessen.pdf",
+      "sammandrag": "Handbok som beskriver lantmäterimyndighetens medverkan vid framtagande av detaljplaner, plangranskning och fastighetsbildning. Förklarar varför Lantmäteriet behöver vara med tidigt i planprocessen och hur fastighetsbildning påverkar tidplan för byggstart."
+    },
+
+    {
+      "id": "skr-flexibla-grundskolor",
+      "omrade": "skolor-forskolor",
+      "typ": "rapport",
+      "titel": "Flexibla grundskolor — utformning av kommunala grundskolor för föränderliga behov",
+      "organisation": "SKR · FoU-fonden för kommunernas fastighetsfrågor",
+      "datum": "2024-01",
+      "url": "https://skr.se/skr/tjanster/rapporterochskrifter/publikationer/flexiblagrundskolorutformningavkommunalagrundskolorforforanderligabehov.78747.html",
+      "sammandrag": "Beskriver hur kommunala grundskolor kan utformas flexibelt för att möta föränderliga behov över tid till följd av demografiska och pedagogiska skiften. Innehåller exempel kring sambruk av ytor mellan skola och fritids, samt principer för långsiktig anpassningsbarhet."
+    },
+    {
+      "id": "skr-produktionskostnad-skolor",
+      "omrade": "skolor-forskolor",
+      "typ": "rapport",
+      "titel": "Produktionskostnad för skolor",
+      "organisation": "SKR · FoU-fonden för kommunernas fastighetsfrågor",
+      "datum": "2017",
+      "url": "https://skr.se/download/18.45167e4317e2b341b24acf17/1642679935272/7585-394-9.pdf",
+      "sammandrag": "Genomgång av investeringskostnader för nybyggnation av kommunala skolor och förskolor med analys av kostnadsdrivande faktorer och variationer. Ger jämförelsetal kr/m² BTA och kr per elevplats. Användbar som benchmark vid kalkyl."
+    },
+    {
+      "id": "skr-inredningsplanering",
+      "omrade": "skolor-forskolor",
+      "typ": "vagledning",
+      "titel": "Inredningsplanering — En planeringsmodell för inredning i skolor och förskolor",
+      "organisation": "SKR · FoU-fonden för kommunernas fastighetsfrågor",
+      "datum": "okänt",
+      "url": "https://extra.skr.se/download/18.3c9f9e1e17db3f33e521c09/1639419902564/7164-501-2.pdf",
+      "sammandrag": "Vägledning för inrednings- och möbleringsplanering i skol- och förskolelokaler kopplat till lokalprogram och pedagogisk verksamhet. Beskriver hur funktionskrav och ytanvändning samspelar med inredning."
+    },
+    {
+      "id": "skr-fou-fastigheter",
+      "omrade": "skolor-forskolor",
+      "typ": "branschorganisation",
+      "titel": "FoU-fonden för kommunernas fastighetsfrågor",
+      "organisation": "Sveriges Kommuner och Regioner (SKR)",
+      "datum": "löpande",
+      "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/fastigheter/fonderforforskningochutveckling/foufondenforkommunernasfastighetsfragor.12993.html",
+      "sammandrag": "Portal för SKR:s FoU-arbete kring kommunala verksamhetslokaler — skolor, förskolor, vård, äldreomsorg. Publicerar löpande nyckeltal, NKI-undersökningar och rapporter. Central källa för svenska benchmark inom offentlig fastighetsförvaltning."
+    },
+    {
+      "id": "sisab-bifrostvagen",
+      "omrade": "skolor-forskolor",
+      "typ": "slutrapport",
+      "titel": "Slutrapport Bifrostvägen 2–6 — ny förskola enligt SISAB UPP",
+      "organisation": "Skolfastigheter i Stockholm AB (SISAB)",
+      "datum": "2024-12",
+      "url": "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/skolfastigheter-i-stockholm-ab/mote-2024-12-17/agenda/bilaga-11-slutrapport-bifrostvagen-2-6-sisab-upppdf?downloadMode=open",
+      "sammandrag": "Slutrapport för en ny treavdelnings förskola i Järva uppförd enligt SISAB:s modulkoncept UPP med fabrikstillverkade trämoduler. Redovisar utfall i tid, kostnad, ytor och pedagogiska kvaliteter."
+    },
+    {
+      "id": "sisab-portal",
+      "omrade": "skolor-forskolor",
+      "typ": "branschorganisation",
+      "titel": "Skolfastigheter i Stockholm AB — sisab.se",
+      "organisation": "Skolfastigheter i Stockholm AB (SISAB)",
+      "datum": "löpande",
+      "url": "https://sisab.se/",
+      "sammandrag": "SISAB är Stockholms stads bolag för skol- och förskolefastigheter och publicerar löpande information om byggprojekt, modulkonceptet UPP och hållbarhetsarbete. Erbjuder jämförelsedata och projektredovisningar som är direkt jämförbara med Lejonfastigheters verksamhet."
+    },
+    {
+      "id": "uppsala-kvarngardesskolan",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Nya Kvarngärdesskolan — projektsida och uppföljning",
+      "organisation": "Uppsala kommun Skolfastigheter AB",
+      "datum": "2025",
+      "url": "https://skolfastigheter.uppsala.se/projekt-och-upphandling/aktuella-byggprojekt/nya-kvarngardesskolan/",
+      "sammandrag": "Projektgenomgång av Kvarngärdesskolan: F–9 grundskola och idrottshall, 15 898 m² BTA, kapacitet 990 elever, byggd i partneringsamverkan och belönad för projektkvalitet 2024. Närmast jämförbar referens till större grundskolor i samma storleksklass som Linköpings behov."
+    },
+    {
+      "id": "boverket-strategisk-planering",
+      "omrade": "skolor-forskolor",
+      "typ": "vagledning",
+      "titel": "Strategisk planering för långsiktigt hållbara förskolor och skolor",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/samhallsplanering/arkitektur-och-gestaltad-livsmiljo/arbetssatt/skolors-miljo/larmiljoer-samhallsbygget/strategisk-planering/",
+      "sammandrag": "Boverkets vägledning beskriver hur kommuner bör arbeta med fleråriga lokalförsörjningsplaner som kopplas till bostadsbyggande och elevprognoser. Innefattar lokaliseringsprinciper, flexibilitet, enhetsstorlek och samspel med översiktsplanering."
+    },
+    {
+      "id": "boverket-gor-plats",
+      "omrade": "skolor-forskolor",
+      "typ": "vagledning",
+      "titel": "Gör plats för barn och unga! Vägledning för planering av skolans och förskolans utemiljö",
+      "organisation": "Boverket (i samarbete med Movium, SLU)",
+      "datum": "2015",
+      "url": "https://www.boverket.se/globalassets/publikationer/dokument/2015/gor-plats-for-barn-och-unga-bokversion.pdf",
+      "sammandrag": "Nationell vägledning om friyta, utemiljö och lokalisering för förskolor och skolor med riktvärden för m² friyta per barn/elev. Refereras ofta i kommunala riktlinjer. Underlag för tomtval och fastighetsstorlek."
+    },
+    {
+      "id": "boverket-tidsbegransat-bygglov",
+      "omrade": "skolor-forskolor",
+      "typ": "vagledning",
+      "titel": "Tidsbegränsat bygglov — PBL kunskapsbanken (9 kap. 33 § PBL)",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/tidsbegransat-bygglov/",
+      "sammandrag": "Vägledning om tidsbegränsade bygglov enligt 9 kap. 33 § PBL — direkt tillämplig vid akut kapacitetshantering med modulskolor och paviljonger. Förklarar maxtider (10 år, totalt 15 år) och återställandekrav."
+    },
+    {
+      "id": "skolverket-statistik",
+      "omrade": "skolor-forskolor",
+      "typ": "statistik",
+      "titel": "Statistik om förskola och skola",
+      "organisation": "Skolverket",
+      "datum": "löpande",
+      "url": "https://www.skolverket.se/statistik-och-utvarderingar/statistik-om-forskola-och-skola",
+      "sammandrag": "Skolverkets officiella statistikportal med årlig data om antal barn/elever, skolenheter, personal och kostnader. Underlag för elevprognoser per kommun och skolform — grunddata för dimensionering av kommunala lokalförsörjningsplaner."
+    },
+    {
+      "id": "stockholm-lfp-2025-2045",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Lokalförsörjningsplan 2025–2027 med framåtblick till 2045 (Utbildningsnämnden)",
+      "organisation": "Stockholms stad, Utbildningsnämnden / SISAB",
+      "datum": "2024-04",
+      "url": "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/utbildningsnamnden/mote-2024-04-25/agenda/bilaga-4-lokalforsorjningsplan-2025-2045pdf?downloadMode=open",
+      "sammandrag": "Stockholms stads lokalförsörjningsplan för skolor och förskolor med horisont till 2045. Visar hur staden hanterar minskande elevtal närmaste tio åren följt av ökning från 2033, samt resonemang om centraliserade evakueringslokaler och underhållsbehov i SISAB:s ~1,8 miljoner kvm."
+    },
+    {
+      "id": "goteborg-lfp-2025",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Göteborgs Stads lokalförsörjningsplan 2025",
+      "organisation": "Göteborgs Stad (Stadsfastighetsförvaltningen)",
+      "datum": "2024-12",
+      "url": "https://www4.goteborg.se/prod/Intraservice/Namndhandlingar/SamrumPortal.nsf/5AFE5CDF8B5994BBC1258BE70041F7EB/$File/8_20241211.pdf?OpenElement=",
+      "sammandrag": "Stadsövergripande lokalförsörjningsplan med detaljerad redovisning av över- och underkapacitet inom förskola och grundskola per mellanområde. Visar metodik för geografisk balansering av platser. Bra exempel på områdesbaserad analys."
+    },
+    {
+      "id": "malmo-lfp-2026-2035",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Lokalförsörjningsplan för Malmö stad 2026–2035",
+      "organisation": "Malmö stad (Stadsfastigheter / Serviceförvaltningen)",
+      "datum": "2025-06",
+      "url": "https://motenmedborgarportal.malmo.se/welcome-sv/namnder-styrelser/tekniska-namnden/mote-2025-06-16/agenda/lokalforsorjningsplan-for-malmo-stad-2026-2035stk-2024-1746-49pdf?downloadMode=open",
+      "sammandrag": "Tioårig lokalförsörjningsplan med fokus på växling från nybyggnation till ombyggnation/avveckling av befintliga förskolor när elevkullarna minskar. Beskriver beståndets fördelning (~70 % egenägt). Användbar för att planera för demografisk svacka och därpå följande uppgång."
+    },
+    {
+      "id": "linkoping-bildningsnamnden-lfp-2019",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Bildningsnämndens lokalförsörjningsplan 2019–2028",
+      "organisation": "Linköpings kommun, Bildningsnämnden",
+      "datum": "2018-04",
+      "url": "https://sammantraden.linkoping.se/welcome-sv/namnder-styrelser/bildningsnamnden/bildningsnamnden-2018-04-19/agenda/bilaga-1-bildningsnamndens-lokalforsorjningsplan-2019-2028-apr-18pdf?downloadMode=download",
+      "sammandrag": "Linköpings tidigare lokalförsörjningsplan för bildningsnämnden med tioårigt perspektiv — direkt relevant kontextdokument. Innehåller behov per skolform och områdesvis fördelning. Utgångspunkt för uppföljning och jämförelse med nyare planer."
+    },
+
+    {
+      "id": "boverket-lca",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "Vägledning om LCA för byggnader (Livscykelanalys)",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/byggande/hallbart-byggande-och-forvaltning/livscykelanalys/",
+      "sammandrag": "Boverkets officiella vägledning om livscykelanalys (LCA) för byggnader, riktad till byggherrar och beställare. Beskriver hur LCA används i tidiga skeden, vid upphandling och vid uppföljning. Central referens för långsiktig hållbarhet och investeringsbeslut."
+    },
+    {
+      "id": "boverket-klimatdeklaration",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "Klimatdeklaration — en handbok",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/klimatdeklaration/",
+      "sammandrag": "Boverkets handbok om klimatdeklaration, obligatorisk för nya byggnader sedan 1 januari 2022. Beskriver vilka byggnader som omfattas, beräkningsmetodik och kommande gränsvärden (planerade till 2027 och 2030). Direkt relevant vid nyproduktion."
+    },
+    {
+      "id": "boverket-bbr-energi",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "Energihushållningskrav i Boverkets byggregler (BBR)",
+      "organisation": "Boverket",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/byggande/bygg-och-renovera-energieffektivt/energihushallningskrav/",
+      "sammandrag": "Sammanställning av BBR:s krav på primärenergital, värmeisolering och elanvändning för nya byggnader, inklusive nära-nollenergibyggnad. Anger nivåer för flerbostadshus och lokaler. Underlag för dimensionering av driftkostnader och energiprestanda."
+    },
+    {
+      "id": "sgbc-miljobyggnad",
+      "omrade": "fastighet-demografi",
+      "typ": "branschorganisation",
+      "titel": "Miljöbyggnad — om certifieringen",
+      "organisation": "Sweden Green Building Council (SGBC)",
+      "datum": "löpande",
+      "url": "https://www.sgbc.se/certifiering/miljobyggnad/vad-ar-miljobyggnad/",
+      "sammandrag": "Beskrivning av Sveriges mest använda hållbarhetscertifiering, med betygen Brons, Silver och Guld. Inkluderar Miljöbyggnad iDrift för befintliga byggnader och kopplar till EU-taxonomin. Användbar referens vid kommunikation om kvalitetsnivå."
+    },
+    {
+      "id": "skr-lcc-tidiga-skeden",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "LCA och LCC i tidiga skeden",
+      "organisation": "SKR · Offentliga fastigheter",
+      "datum": "2021-11",
+      "url": "https://skr.se/offentligafastigheter/publikationer/publikationer/lcaochlccitidigaskeden.62771.html",
+      "sammandrag": "Skrift framtagen av samarbetet Offentliga fastigheter (kommuner, regioner och statliga fastighetsförvaltare) som ger metodstöd för att arbeta med livscykelanalys och livscykelkostnad i förstudie- och programskede. Direkt relevant för att motivera 80%-kostnadslåsningen tidigt."
+    },
+    {
+      "id": "skr-strategisk-lokalresursplanering",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "Strategisk lokalresursplanering",
+      "organisation": "Sveriges Kommuner och Regioner (SKR)",
+      "datum": "löpande",
+      "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/fastighetlokalforsorjning/lokalresursplanering/strategisklokalresursplanering.13009.html",
+      "sammandrag": "SKR:s vägledning om strategisk lokalresursplanering i kommuner och regioner, med skrifter om lokalförsörjningsprocessen och strategier för ökad lokaleffektivitet. Innehåller praktiska exempel från flera kommuner — kärnreferens för Lejonfastigheters processarbete."
+    },
+    {
+      "id": "scb-befolkningsframskrivning",
+      "omrade": "fastighet-demografi",
+      "typ": "statistik",
+      "titel": "Befolkningsframskrivningar — regionala prognoser till 2070",
+      "organisation": "Statistiska centralbyrån (SCB)",
+      "datum": "2024-06",
+      "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/",
+      "sammandrag": "SCB:s officiella befolkningsframskrivningar för Sverige, län, kommuner och delområden fram till 2070, uppdelade på ettårsklasser och kön. Grunden för demografisk dimensionering av förskole- och skollokaler i kommunala lokalförsörjningsplaner."
+    },
+    {
+      "id": "kommuninvest-laneskuld-2024",
+      "omrade": "fastighet-demografi",
+      "typ": "finansiering",
+      "titel": "Den kommunala låneskulden 2024",
+      "organisation": "Kommuninvest",
+      "datum": "2024",
+      "url": "https://kommuninvest.se/forskning/",
+      "sammandrag": "Årlig rapport om kommunsektorns skuldutveckling, investeringsnivåer och hållbar finansiering. Visar att 81 procent av investeringarna 2023 utfördes i kommunala bolag. Viktig finansieringskontext för kommunala fastighetsbolag."
+    },
+    {
+      "id": "kommuninvest-finanspolicy",
+      "omrade": "fastighet-demografi",
+      "typ": "finansiering",
+      "titel": "Finanspolicy inom kommunsektorn — vägledning",
+      "organisation": "Kommuninvest",
+      "datum": "2024",
+      "url": "https://kommuninvest.se/download/18.e6f1d6318fa4a7c94dbe35/1716885521586/Finanspolicy%20inom%20kommunsektorn%20-%20v%C3%A4gledning.pdf",
+      "sammandrag": "Vägledning från Kommuninvest om finanspolicy för kommuner och kommunala bolag, med fokus på lånefinansiering, ränterisk och leasing. Stöd för kommunikation kring kostnadseffekter av investeringsstyrning och långsiktig finansiering."
+    },
+    {
+      "id": "rir-kostsam-kvadratjakt-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "rapport",
+      "titel": "Kostsam kvadratjakt — statens användning och anskaffning av kontorslokaler (RiR 2025)",
+      "organisation": "Riksrevisionen",
+      "datum": "2025",
+      "url": "https://www.riksrevisionen.se/granskningar/granskningsrapporter/2025/kostsam-kvadratjakt---statens-anvandning-och-anskaffning-av-kontorslokaler.html",
+      "sammandrag": "Riksrevisionens granskning av statens lokalförsörjning som visar att 2,5–4 miljarder kronor skulle kunna sparas årligen genom mer effektiv lokalanvändning. Principer kan överföras till kommunal lokalförsörjning för att motivera ytsnålhet och uppföljning."
+    },
+    {
+      "id": "lund-strategisk-lfp-2024-2033",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Strategisk lokalförsörjningsplan 2024–2033",
+      "organisation": "Lunds kommun",
+      "datum": "2023-12",
+      "url": "https://moten.lund.se/welcome-sv/namnder-styrelser/kommunstyrelsen/kommunstyrelsen/agenda/bilaga-2-strategisk-lokalforsorjningsplan-2024-2033-2023-12-08pdf?downloadMode=download",
+      "sammandrag": "Lunds kommunövergripande lokalförsörjningsplan med tioårig horisont. Beskriver demografiskt underlag, prognosticerad lokalkostnadsutveckling per barn/elev samt utmaningar med överkapacitet och områdesplanering. Konkret jämförelseexempel för Linköping."
+    },
+    {
+      "id": "uppsala-pedagogiska-lfp-2023",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Lokalförsörjningsplan för pedagogiska lokaler 2023–2027 med utblick till 2032",
+      "organisation": "Uppsala kommun",
+      "datum": "2023",
+      "url": "https://www.uppsala.se/kommun-och-politik/publikationer/2023/bostads--och-lokalforsorjningsplaner/lokalforsorjningsplan-for-pedagogiska-lokaler-20232027-med-utblick-till-2032/",
+      "sammandrag": "Uppsala kommuns plan för förskola och skola med utblick till 2032. Redovisar både utbyggnadsbehov (>9 000 nya platser) och senare anpassningar med stängningar p.g.a. minskade barnkullar. Mycket relevant referensplan med stark demografisk underbyggnad."
+    },
+    {
+      "id": "linkoping-kommungemensam-lfp-2024",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Kommungemensam lokalförsörjningsplan 2024–2033",
+      "organisation": "Linköpings kommun (kommunstyrelsen)",
+      "datum": "2023-12",
+      "url": "https://sammantraden.linkoping.se/welcome-sv/namnder-styrelser/kommunstyrelsen/kommunstyrelsen-231212/agenda/bilaga-2-kommungemensam-lokalforsorjningsplanpdf?downloadMode=download",
+      "sammandrag": "Linköpings tioåriga lokalförsörjningsplan där Lejonfastigheter pekas ut som kommunens lokalförsörjare. Innehåller prioriterade åtgärder och beskriver den nya lokalförsörjningsprocessen från 2024 som koppling mot budgetarbetet. Direkt relevant grunddokument."
+    },
+    {
+      "id": "repab-fakta",
+      "omrade": "fastighet-demografi",
+      "typ": "statistik",
+      "titel": "Repab Fakta — nyckeltal för fastighetsförvaltning",
+      "organisation": "Repab / Svensk Byggtjänst",
+      "datum": "löpande",
+      "url": "https://byggtjanst.se/bokhandel/forvaltning/fastighetsekonomi",
+      "sammandrag": "Årligen uppdaterad nyckeltalsserie över drift-, underhålls- och förbrukningskostnader uppdelat på fastighetstyp (bostäder, kontor, lokaler). Standardreferens i svensk fastighetsbransch för budgetarbete och projektkalkyler."
+    },
+    {
+      "id": "msci-sweden-property",
+      "omrade": "fastighet-demografi",
+      "typ": "statistik",
+      "titel": "MSCI Sweden Annual Property Index (tidigare IPD Svenskt Fastighetsindex)",
+      "organisation": "MSCI Real Estate",
+      "datum": "löpande",
+      "url": "https://www.msci.com/www/ipd-factsheets/ipd-sweden-annual-property/0163074976",
+      "sammandrag": "Det etablerade svenska fastighetsindexet som mäter direktavkastning och totalavkastning för svenska fastighetsinvesteringar baserat på marknadsvärderingar. Inkluderar ett kommunalt bostadsindex. Branschstandard för jämförelse av fastighetsförvaltningens ekonomiska prestanda."
+    }
+  ]
+}
