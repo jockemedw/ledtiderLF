@@ -838,6 +838,60 @@ section { padding: 5rem 2rem; scroll-margin-top: 72px; }
   padding: 0.8rem 1rem; background: rgba(0,0,0,0.04); border-radius: var(--r);
 }
 
+/* Benchmark-strip — nationella referenstal under Gantt */
+.gantt-bench {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem 1.6rem;
+  padding: 1.2rem 1.4rem 1.3rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  border-radius: var(--r);
+}
+.gantt-bench-rad strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--navy);
+  letter-spacing: -0.005em;
+}
+.gantt-bench-rad span {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--navy-mid);
+  line-height: 1.45;
+}
+.gantt-bench-rad cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold);
+}
+.gantt-bench-link {
+  grid-column: 1 / -1;
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--gold);
+  border-top: 1px dashed var(--border);
+  padding-top: 0.7rem;
+  margin-top: 0.2rem;
+}
+.gantt-bench-link:hover { color: var(--navy); text-decoration: underline; }
+@media (max-width: 700px) {
+  .gantt-bench { grid-template-columns: 1fr; gap: 1rem; padding: 1rem 1.1rem 1.1rem; }
+  .gantt-bench-rad strong { font-size: 1.5rem; }
+}
+
 /* ─── SPÅRDETALJER ─────────────────────────── */
 .spar-section { background: var(--white); }
 .spar-section:nth-of-type(even) { background: var(--parchment); }
@@ -1416,8 +1470,8 @@ footer strong { color: rgba(255,255,255,0.8); }
 <section id="jamforelse">
   <div class="container">
     <span class="section-label">Tidsjämförelse</span>
-    <h2>Så här fördelar sig tiden</h2>
-    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario. Den vertikala linjen markerar när Lejonfastigheter får uppdraget. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
+    <h2>Så fördelar sig tiden i svenska lokalprojekt</h2>
+    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario, sammanställt från svenska kommunala fastighetsbolags publika slutrapporter (SISAB, Micasa, Uppsala Skolfastigheter) och nationella branschstudier. Den vertikala linjen markerar när uppdraget överlämnas till fastighetsägaren. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
     <div class="gantt-wrap">
       <div class="gantt-inner">
         <div class="gantt-axis" id="gantt-axis"></div>
@@ -1425,7 +1479,27 @@ footer strong { color: rgba(255,255,255,0.8); }
       </div>
     </div>
     <div class="gantt-legend" id="gantt-legend"></div>
-    <p class="gantt-note">De färgade staplarna avser normalfall från det att Lejonfastigheter erhåller uppdraget. Det streckade området till vänster om nollpunkten visar verksamhetens egen tid före (identifiering av behov, intern beredning) — som varierar mycket mellan projekt men typiskt är 6–24 månader. Överklaganden av detaljplan (+14 mån i snitt) eller upphandling (+2–12 mån) är inte inräknade.</p>
+
+    <div class="gantt-bench" aria-label="Nationella referenstal">
+      <div class="gantt-bench-rad">
+        <strong>4,8 år</strong>
+        <span>Riksgenomsnitt detaljplanstart → byggstart över 52 kommuner och ~1 450 detaljplaner.</span>
+        <cite>Nationellt Ledtidsindex 2025 (Bygg i Tid)</cite>
+      </div>
+      <div class="gantt-bench-rad">
+        <strong>~7 år</strong>
+        <span>"Från tanke till färdig" förskola eller skola — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner.</span>
+        <cite>Lunds kommun, lund.se</cite>
+      </div>
+      <div class="gantt-bench-rad">
+        <strong>+14 månader</strong>
+        <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige.</span>
+        <cite>Evidens 2023 / SKR 2024</cite>
+      </div>
+      <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
+    </div>
+
+    <p class="gantt-note">Staplarna avser typiska svenska kommunala lokalprojekt — inte ett enskilt fastighetsbolags interna kalkyl. Den långa stapeln för "Nybyggnad med ny detaljplan" ligger i linje med Bygg i Tids riksgenomsnitt på 4,8 år för enbart detaljplanen, plus projektering och byggnation. Effekten av eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-upphandlingar (+2–12 mån) är <em>inte</em> inräknad i staplarna och tillkommer.</p>
   </div>
 </section>
 
@@ -2205,8 +2279,8 @@ function renderSparGrid() {
 
 // ── Gantt-diagram
 function renderGantt() {
-  const FORE = 24;  // 24 mån (2 år) före nollpunkt = verksamhetens scope
-  const EFTER = 84; // 84 mån (7 år) efter = Lejons scope
+  const FORE = 24;  // 24 mån (2 år) före nollpunkt = verksamhetens förskede
+  const EFTER = 84; // 84 mån (7 år) efter = fastighetsägarens scope
   const TOTAL = FORE + EFTER; // 108 mån = 9 år
   const NOLL_PCT = (FORE / TOTAL) * 100; // procent där 0 ligger
 
@@ -2218,7 +2292,7 @@ function renderGantt() {
   for (let yr = -2; yr <= 7; yr++) {
     const pct = ((yr * 12 + FORE) / TOTAL) * 100;
     let label;
-    if (yr === 0) label = "Lejons<br>uppdrag";
+    if (yr === 0) label = "Uppdrag<br>startar";
     else if (yr < 0) label = yr + " år";
     else label = yr + " år";
     const cls = yr === 0 ? "gantt-axis-year gantt-axis-zero" : "gantt-axis-year";
