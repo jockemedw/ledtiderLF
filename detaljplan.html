@@ -183,19 +183,93 @@
   color: var(--navy-mid);
 }
 
+/* ─── PRÖVNING, INTE HANDLÄGGNING ─── */
+#dp-provning {
+  background: linear-gradient(135deg, #1A2744 0%, #2C3E62 100%);
+  color: #fff;
+}
+#dp-provning .section-label { color: var(--gold-light); }
+#dp-provning h2 { color: #fff; }
+#dp-provning h2 em { color: var(--gold-light); font-style: italic; }
+#dp-provning > .container > p { color: rgba(255,255,255,0.8); }
+.dp-misk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin-top: 2.2rem;
+}
+@media (max-width: 700px) { .dp-misk-grid { grid-template-columns: 1fr; } }
+.dp-misk-kort {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: var(--r);
+  padding: 1.4rem 1.6rem;
+}
+.dp-misk-kort .stamp {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+.dp-misk-kort.fel .stamp {
+  background: rgba(220, 38, 38, 0.18);
+  color: #FCA5A5;
+  border: 1px solid rgba(220, 38, 38, 0.45);
+}
+.dp-misk-kort.ratt .stamp {
+  background: rgba(232, 201, 122, 0.18);
+  color: var(--gold-light);
+  border: 1px solid rgba(232, 201, 122, 0.45);
+}
+.dp-misk-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.dp-misk-kort p { font-size: 0.95rem; color: rgba(255,255,255,0.82); line-height: 1.55; }
+
+.dp-quote-strip {
+  margin-top: 2.4rem;
+  background: rgba(255,255,255,0.04);
+  border-left: 4px solid var(--gold);
+  padding: 1.4rem 1.6rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.92);
+  font-size: 1.05rem;
+  font-family: 'Cormorant Garamond', serif;
+  border-radius: 0 var(--r) var(--r) 0;
+}
+.dp-quote-strip cite {
+  display: block;
+  margin-top: 0.6rem;
+  font-style: normal;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
 #dp-process { background: var(--parchment); }
 .dp-skeden {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.9rem;
 }
 .dp-skede {
   display: grid;
   grid-template-columns: 56px 1fr auto;
-  gap: 1rem;
+  gap: 1rem 1.2rem;
   align-items: start;
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.3rem;
   background: var(--white);
   border-radius: var(--r);
   border-left: 4px solid var(--navy);
@@ -209,12 +283,12 @@
 }
 .dp-skede h4 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
-.dp-skede p {
-  font-size: 0.92rem;
+.dp-skede > .body p {
+  font-size: 0.94rem;
   color: var(--navy-mid);
 }
 .dp-skede .tid {
@@ -229,10 +303,125 @@
   border-radius: 999px;
   align-self: flex-start;
 }
+.dp-skede .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
+  color: var(--navy-mid);
+}
+.dp-skede .meta-rad {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-basis: 100%;
+}
+.dp-skede .meta-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 88px;
+}
+.dp-skede .styr-tag {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  margin-top: 0.6rem;
+}
+.dp-skede .styr-tag.lag { background: #FFF5DC; color: #8B6914; border: 1px solid #E8C97A; }
+.dp-skede .styr-tag.val { background: #E8F4F8; color: #0E6B85; border: 1px solid #A2D4E0; }
+.dp-skede .styr-tag.bada { background: #F4E8F4; color: #6B2D6B; border: 1px solid #C9A2C9; }
+
 @media (max-width: 700px) {
   .dp-skede { grid-template-columns: 44px 1fr; }
   .dp-skede .tid { grid-column: 1 / -1; justify-self: start; }
+  .dp-skede .meta { font-size: 0.78rem; }
+  .dp-skede .meta-label { min-width: 76px; }
 }
+
+/* ─── JÄMFÖRBARHET MELLAN KOMMUNER ─── */
+.dp-jambar-kort {
+  margin-top: 2rem;
+  background: #FFF5DC;
+  border: 1px solid #E8C97A;
+  border-left: 5px solid var(--gold);
+  border-radius: var(--r);
+  padding: 1.3rem 1.6rem;
+}
+.dp-jambar-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: var(--navy);
+}
+.dp-jambar-kort p {
+  font-size: 0.92rem;
+  color: var(--navy-mid);
+  line-height: 1.55;
+}
+.dp-jambar-kort p + p { margin-top: 0.55rem; }
+.dp-jambar-kort .stamp {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8B6914;
+  margin-bottom: 0.5rem;
+}
+
+/* ─── LAG VS KOMMUNALT VAL ─── */
+#dp-lagval { background: var(--white); }
+.dp-lagval-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+@media (max-width: 700px) { .dp-lagval-grid { grid-template-columns: 1fr; } }
+.dp-lagval-kort {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 1.3rem 1.5rem;
+}
+.dp-lagval-kort.lag { background: #FFFBF0; border-left: 4px solid var(--gold); }
+.dp-lagval-kort.val { background: #F0F8FB; border-left: 4px solid #0891B2; }
+.dp-lagval-kort h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+.dp-lagval-kort .stamp {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.dp-lagval-kort.lag .stamp { color: #8B6914; }
+.dp-lagval-kort.val .stamp { color: #0E6B85; }
+.dp-lagval-kort ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.4rem;
+}
+.dp-lagval-kort li {
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.9rem;
+  color: var(--navy-mid);
+}
+.dp-lagval-kort li:first-child { border-top: 0; }
+.dp-lagval-kort strong { color: var(--navy); }
 
 #dp-forfarande { background: var(--white); }
 .dp-jamfor {
@@ -492,10 +681,11 @@
         </ul>
       </li>
       <li>
-        <a href="#dp-tldr" class="nav-toptab" data-group="process">Process</a>
+        <a href="#dp-provning" class="nav-toptab" data-group="process">Process</a>
         <ul class="nav-subgroup-mobile" data-group="process">
-          <li><a href="#dp-tldr">Detaljplan — översikt</a></li>
-          <li><a href="#dp-process">Processens skeden</a></li>
+          <li><a href="#dp-provning">Prövning, inte handläggning</a></li>
+          <li><a href="#dp-process">Skedena steg för steg</a></li>
+          <li><a href="#dp-lagval">Lag eller kommunalt val</a></li>
           <li><a href="#dp-overklagande">Överklaganden</a></li>
           <li><a href="#dp-konsekvenser">Konsekvenser</a></li>
           <li><a href="/#spar-a">Tillbaka till spår A–D</a></li>
@@ -520,12 +710,12 @@
 
   <div class="nav-row nav-row-sub" aria-label="Underflikar">
     <ul class="nav-subtabs" data-group="process">
-      <li><a href="#dp-tldr"          class="nav-subtab" data-section="dp-tldr">Översikt</a></li>
-      <li><a href="#dp-definitioner"  class="nav-subtab" data-section="dp-definitioner">Definitioner</a></li>
+      <li><a href="#dp-provning"      class="nav-subtab" data-section="dp-provning">Prövningen</a></li>
+      <li><a href="#dp-tldr"          class="nav-subtab" data-section="dp-tldr">Sammanfattning</a></li>
+      <li><a href="#dp-process"       class="nav-subtab" data-section="dp-process">Skedena</a></li>
+      <li><a href="#dp-lagval"        class="nav-subtab" data-section="dp-lagval">Lag eller val</a></li>
       <li><a href="#dp-skr"           class="nav-subtab" data-section="dp-skr">SKR-data</a></li>
       <li><a href="#dp-index"         class="nav-subtab" data-section="dp-index">Ledtidsindex</a></li>
-      <li><a href="#dp-process"       class="nav-subtab" data-section="dp-process">Processens skeden</a></li>
-      <li><a href="#dp-forfarande"    class="nav-subtab" data-section="dp-forfarande">Förfaranden</a></li>
       <li><a href="#dp-overklagande"  class="nav-subtab" data-section="dp-overklagande">Överklaganden</a></li>
       <li><a href="#dp-konsekvenser"  class="nav-subtab" data-section="dp-konsekvenser">Konsekvenser</a></li>
       <li><a href="#dp-kallor"        class="nav-subtab" data-section="dp-kallor">Källor</a></li>
@@ -540,17 +730,44 @@
 <div class="dp-back-bar">
   <a href="/">← Tillbaka till lokalförsörjningsguiden</a>
   <span class="sep">/</span>
-  <span class="crumb">Fördjupning · Detaljplaners ledtider nationellt</span>
+  <span class="crumb">Fördjupning · Detaljplanen som prövning</span>
 </div>
 
 <!-- HERO -->
 <section id="dp-hero" class="dp-hero">
   <p class="hero-eyebrow">Fördjupning</p>
-  <h1>Detaljplanen<br>— ledtidens <em>dolda tyngdpunkt</em></h1>
+  <h1>En prövning<br>— inte en <em>handläggning</em></h1>
   <p>
-    Av de spår som tar år snarare än månader är det nästan alltid detaljplaneprocessen som utgör tidsspjälken. Här finns en sammanställning av vad nationella mätningar säger om hur lång tid en detaljplan faktiskt tar, varför den drar ut, och vad det betyder för kommunala lokalbehov.
+    Den utbredda bilden av detaljplaneprocessen som administration — "någon sitter vid en dator och knappar tillräckligt länge så kommer det ut en plan" — är en missuppfattning. En detaljplan är en lagstadgad <em>prövning</em> där olika allmänna och enskilda intressen vägs mot varandra under flera offentliga skeden. Det här materialet förklarar varför det tar tid, vad som styrs av lag, och vad som styrs av kommunala val.
   </p>
   <span class="hero-tagline">SKR · Boverket · Bygg i Tid · Evidens · Sveriges Domstolar</span>
+</section>
+
+<!-- PRÖVNING, INTE HANDLÄGGNING -->
+<section id="dp-provning" data-nav-group="process">
+  <div class="container">
+    <span class="section-label">Den centrala missuppfattningen</span>
+    <h2>Vad <em>en detaljplan</em> faktiskt är</h2>
+    <p class="mt-2">När detaljplaner beskrivs som "långsamma" eller "byråkratiska" döljer det vad som egentligen pågår. Plan- och bygglagen kräver inte handläggning — den kräver prövning, dialog och möjlighet att överklaga. De skedena <em>är</em> processen.</p>
+
+    <div class="dp-misk-grid">
+      <div class="dp-misk-kort fel">
+        <span class="stamp">Missuppfattning</span>
+        <h3>"Någon sitter vid en dator och knappar tillräckligt länge så kommer det ut en plan"</h3>
+        <p>Den här bilden förekommer regelbundet hos nämnder och tjänstemän som inte arbetar löpande med planprocessen. Den behandlar detaljplanen som om den vore en bygglovsansökan eller ett tillståndsärende — en stängd, intern handläggning där tempo enbart styrs av personalstyrka och rutiner.</p>
+      </div>
+      <div class="dp-misk-kort ratt">
+        <span class="stamp">Vad det är</span>
+        <h3>En öppen prövning av allmänna och enskilda intressen</h3>
+        <p>Plan- och bygglagen (5 kap.) föreskriver utredningar, samråd med länsstyrelse, sakägare och allmänhet, granskning, antagande i fullmäktige och rätt att överklaga. Var och en av dessa skeden tar tid <em>i sig</em> — inte för att processen är ineffektiv, utan för att processen är prövande till sin natur.</p>
+      </div>
+    </div>
+
+    <div class="dp-quote-strip">
+      Att korta planprocessen handlar i grunden om att korta tiden för demokratiska processer, för att kunna se till och tillvarata allmänna och enskilda intressen, vilket ofta leder till bättre planer.
+      <cite>SKR — Jämförelser inom detaljplaneområdet 2024 (sammanfattning)</cite>
+    </div>
+  </div>
 </section>
 
 <!-- TLDR -->
@@ -736,70 +953,164 @@
 </section>
 
 <!-- PROCESSENS SKEDEN -->
-<section id="dp-process">
+<section id="dp-process" data-nav-group="process">
   <div class="container">
     <span class="section-label">Skede för skede</span>
-    <h2>Vad som faktiskt händer mellan planuppdrag och inflyttning</h2>
-    <p class="mt-2" style="color:var(--muted)">En detaljplan rör sig genom 6–8 formella skeden enligt PBL. Här är de viktigaste, med typiska tidsspann och vad som händer.</p>
+    <h2>Prövningens olika delar — och vem som är med i varje</h2>
+    <p class="mt-2" style="color:var(--muted)">Plan- och bygglagen föreskriver att en detaljplan ska prövas i flera offentliga skeden. Varje skede har egna parter, eget syfte och egen rättslig styrning. Tidsspannen nedan avser typfall i svenska kommuner — utan eventuella överklaganden.</p>
 
     <div class="dp-skeden">
       <div class="dp-skede">
         <div class="nummer">1</div>
-        <div>
+        <div class="body">
           <h4>Planbesked</h4>
-          <p>Kommunen meddelar om man avser att inleda planarbete. Lagstadgad bortre gräns: <strong>4 månader</strong> från komplett ansökan.</p>
+          <p>Kommunen ger formellt besked om man avser att inleda planarbete. Beslutet är inte överklagbart, men ger sökanden förutsägbarhet.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Parter</span><span>Kommunen (planenheten + ansvarig nämnd) ⇄ den som ansökt om planbesked.</span></div>
+            <div class="meta-rad"><span class="meta-label">Vad prövas</span><span>Är det meningsfullt att inleda planläggning? Är frågan lämplig att pröva i detaljplan?</span></div>
+            <div class="meta-rad"><span class="meta-label">Lagrum</span><span>PBL 5 kap. 2–5 §§. Bortre gräns: <strong>4 månader</strong> från komplett ansökan.</span></div>
+          </div>
+          <span class="styr-tag lag">Tiden styrd av lag</span>
         </div>
         <span class="tid">≤ 4 mån</span>
       </div>
+
       <div class="dp-skede">
         <div class="nummer">2</div>
-        <div>
-          <h4>Planuppdrag</h4>
-          <p>Beslut om att starta planarbete (SKR:s nollpunkt). Avtal om planarbete sluts, projektorganisation sätts, utredningar beställs (geo, dagvatten, buller, trafik, barnkonsekvens m.m.).</p>
+        <div class="body">
+          <h4>Utredningsskede (efter planuppdrag)</h4>
+          <p>Beslut om att starta planarbete (SKR:s nollpunkt). Här bedrivs det mesta av prövningens sakliga innehåll: tekniska utredningar, dialog med sakägare, samordning med översiktsplan och VA-/trafiknät.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Parter</span><span>Planenheten, exploatör/förvaltning, miljö- och hälsoskydd, trafik, VA, naturvård. Ofta länsstyrelsen i tidig dialog.</span></div>
+            <div class="meta-rad"><span class="meta-label">Utredningar</span><span>Geoteknik · dagvatten · trafik · buller · luft · arkeologi · naturvärden · barnkonsekvens · miljökonsekvens (MKB)</span></div>
+            <div class="meta-rad"><span class="meta-label">Vad styr tiden</span><span>Antalet utredningar (lagkrav, men exakt omfattning är delvis kommunalt val), kapacitet hos planenhet och konsulter, hur etablerade förutsättningarna är.</span></div>
+          </div>
+          <span class="styr-tag bada">Lag + kommunalt val</span>
         </div>
-        <span class="tid">2–8 mån</span>
+        <span class="tid">6–18 mån</span>
       </div>
+
       <div class="dp-skede">
         <div class="nummer">3</div>
-        <div>
+        <div class="body">
           <h4>Plansamråd</h4>
-          <p>Förslaget skickas till länsstyrelse, sakägare, allmänhet. Standardförfarande: vanligen 3–4 veckor. Utökat förfarande: minst 3 veckor men ofta längre. Utredningar ofta kompletteras efter inkomna synpunkter.</p>
+          <p>Förslaget ställs ut för formellt samråd. Detta är processens första breda offentliga prövning — alla berörda får möjlighet att lämna synpunkter.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Samråds&shy;parter</span><span><strong>Länsstyrelsen</strong> (statliga intressen, riksintressen, hälsa &amp; säkerhet) · <strong>kända sakägare</strong> (grannar, fastighetsägare) · <strong>kommunala organ</strong> (lantmäteri, miljö-, trafik-, VA-) · <strong>allmänhet</strong> · ev. <strong>regionala myndigheter</strong> (Trafikverket, Försvarsmakten m.fl.)</span></div>
+            <div class="meta-rad"><span class="meta-label">Tid att svara</span><span>Standardförfarande: oftast 3–4 veckor. Utökat: minst 3 veckor, i praktiken längre.</span></div>
+            <div class="meta-rad"><span class="meta-label">Efter samråd</span><span>Kommunen bemöter samtliga synpunkter i samrådsredogörelse. Många utredningar måste kompletteras.</span></div>
+            <div class="meta-rad"><span class="meta-label">Lagrum</span><span>PBL 5 kap. 11–17 §§.</span></div>
+          </div>
+          <span class="styr-tag lag">Krav enligt lag</span>
         </div>
         <span class="tid">3–6 mån</span>
       </div>
+
       <div class="dp-skede">
         <div class="nummer">4</div>
-        <div>
+        <div class="body">
           <h4>Granskning</h4>
-          <p>Reviderat förslag ställs ut. Standardförfarande: 2 veckor. Utökat: minst 3 veckor. Sista chansen för synpunkter — det som inte lyfts här riskerar att inte beaktas i ett senare överklagande.</p>
+          <p>Det reviderade förslaget ställs ut igen. Detta är sista chansen för synpunkter — det som inte lyfts här kan i normalfallet inte ligga till grund för senare överklagande.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Parter</span><span>Samma som vid samråd, men nu med ett rättsligt skarpare syfte: alla får tillfälle att läsa det förslag som faktiskt avses antas.</span></div>
+            <div class="meta-rad"><span class="meta-label">Tid</span><span>Standard: 2 veckor. Utökat: minst 3 veckor.</span></div>
+            <div class="meta-rad"><span class="meta-label">Efter granskning</span><span>Granskningsutlåtande tas fram. Vid större förändringar kan ny granskning krävas — ger ofta extra månader.</span></div>
+            <div class="meta-rad"><span class="meta-label">Lagrum</span><span>PBL 5 kap. 18–24 §§.</span></div>
+          </div>
+          <span class="styr-tag lag">Krav enligt lag</span>
         </div>
         <span class="tid">2–4 mån</span>
       </div>
+
       <div class="dp-skede">
         <div class="nummer">5</div>
-        <div>
+        <div class="body">
           <h4>Antagande</h4>
-          <p>Beslut i kommunfullmäktige (utökat förfarande) eller delegerat till nämnd (standard). Denna punkt är SKR:s slutpunkt för "planuppdrag → antagande".</p>
+          <p>Den politiska prövningen. Beslutet att anta planen är ett politiskt beslut — det går att avslå även en formellt korrekt plan.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Beslutar</span><span><strong>Kommunfullmäktige</strong> vid utökat förfarande, alternativt delegerat till <strong>byggnadsnämnd</strong> (eller motsv.) vid standard.</span></div>
+            <div class="meta-rad"><span class="meta-label">Berednings&shy;tid</span><span>1–3 mån från färdig planhandling till klubbat beslut. Politisk kalender (sommaruppehåll, val) kan förlänga.</span></div>
+            <div class="meta-rad"><span class="meta-label">Lagrum</span><span>PBL 5 kap. 27 §. SKR:s slutpunkt för måttet "planuppdrag → antagande".</span></div>
+          </div>
+          <span class="styr-tag val">Politiskt beslut</span>
         </div>
         <span class="tid">1–3 mån</span>
       </div>
+
       <div class="dp-skede">
         <div class="nummer">6</div>
-        <div>
+        <div class="body">
           <h4>Laga kraft</h4>
-          <p>3 veckor efter antagandet om beslutet inte överklagas. Först nu kan bygglov beviljas på den nya planen.</p>
+          <p>3 veckors överklagandetid. Om ingen överklagar vinner planen laga kraft — först då kan bygglov sökas på den nya planen.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Vem kan överklaga</span><span>Sakägare som lämnat synpunkter senast under granskning, samt vissa intresseorganisationer.</span></div>
+            <div class="meta-rad"><span class="meta-label">Lagrum</span><span>PBL 13 kap.</span></div>
+          </div>
+          <span class="styr-tag lag">Tiden styrd av lag</span>
         </div>
         <span class="tid">3 v</span>
       </div>
+
       <div class="dp-skede" style="border-left-color:#DB2777;">
         <div class="nummer" style="color:#DB2777;">7</div>
-        <div>
+        <div class="body">
           <h4>Eventuellt överklagande</h4>
-          <p>Mark- och miljödomstolen (MMD) prövar i första instans, Mark- och miljööverdomstolen (MÖD) i andra. <strong>Genomsnittlig handläggningstid 8,4 månader hos MMD</strong> (2021-nivå). Effekt på total ledtid: +14 månader i snitt enligt Evidens.</p>
+          <p>Mark- och miljödomstolen (MMD) prövar i första instans, Mark- och miljööverdomstolen (MÖD) i andra. Den juridiska prövningen tar tid oavsett utfall.</p>
+          <div class="meta">
+            <div class="meta-rad"><span class="meta-label">Domstol</span><span>MMD i första instans (<strong>8,4 mån</strong> i snitt 2021), MÖD i andra. Slutligen Högsta domstolen i undantagsfall.</span></div>
+            <div class="meta-rad"><span class="meta-label">Effekt</span><span>+14 månader i snitt på total ledtid när planen ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas.</span></div>
+            <div class="meta-rad"><span class="meta-label">Lagrum</span><span>PBL 13 kap. + lag (2010:921) om mark- och miljödomstolar.</span></div>
+          </div>
+          <span class="styr-tag lag">Rättslig prövning</span>
         </div>
         <span class="tid">+8–18 mån</span>
       </div>
     </div>
+
+    <div class="dp-jambar-kort">
+      <span class="stamp">Jämförbarhet mellan kommuner</span>
+      <h3>Olika kommuner mäter olika — försiktighet med rakajämförelser</h3>
+      <p>När man jämför ledtider mellan kommuner är det avgörande att veta <em>var</em> mätningen börjar. Västerås har formellt börjat sin planprocess först när ett färdigt samrådsförslag finns — det vill säga efter större delen av utredningsskedet (skede&nbsp;2 ovan). Linköping räknar planuppdrag som nollpunkt, vilket inkluderar utredningsskedet.</p>
+      <p>Det innebär att en "snabb" kommun i officiella siffror kan ha samma faktiska ledtid som en "långsam" — men har valt att inte räkna med den första, ofta längsta delen. Slutsatsen: <strong>Linköping är inte påvisat långsamt jämfört med jämförbara kommuner.</strong> Det som ser ut som skillnader mellan kommuner är ofta skillnader i mättekniken.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LAG VS KOMMUNALT VAL -->
+<section id="dp-lagval" data-nav-group="process">
+  <div class="container">
+    <span class="section-label">Vad styr tempot?</span>
+    <h2>Lag eller kommunalt val — vad ligger bakom ledtiden?</h2>
+    <p class="mt-2" style="color:var(--muted)">Det är vanligt att höra att "kommunen borde gå snabbare". Men i praktiken är en betydande del av ledtiden inte ett kommunalt beslut alls — den följer av plan- och bygglagstiftningen. Här är fördelningen.</p>
+
+    <div class="dp-lagval-grid">
+      <div class="dp-lagval-kort lag">
+        <span class="stamp">Styrs av lag</span>
+        <h3>Det här går inte att förkorta lokalt</h3>
+        <ul>
+          <li><strong>Samråd</strong> minst 3 veckor (utökat förfarande) eller normalt 3–4 veckor (standard). PBL 5 kap.</li>
+          <li><strong>Granskning</strong> minst 2 veckor (standard) / 3 veckor (utökat). PBL 5 kap.</li>
+          <li><strong>Överklagandetid</strong> 3 veckor från antagande till laga kraft. PBL 13 kap.</li>
+          <li><strong>Domstolens prövning</strong> ~8 månader i MMD i snitt — ligger helt utanför kommunens kontroll.</li>
+          <li><strong>Krav på utredningar</strong> som MKB, barnkonsekvens, riksintresseprövning, om förutsättningarna utlöser dem.</li>
+          <li><strong>Beslut i fullmäktige</strong> vid utökat förfarande — kan inte delegeras.</li>
+        </ul>
+      </div>
+      <div class="dp-lagval-kort val">
+        <span class="stamp">Kommunalt val</span>
+        <h3>Det här går att påverka — men ofta med kvalitetspris</h3>
+        <ul>
+          <li><strong>Bemanning på planenheten.</strong> 7 av 10 kommuner anger att resursbrist är den enskilt största flaskhalsen.</li>
+          <li><strong>Planberedskap</strong> — om kommunen har planlagt mark <em>i förväg</em> kan ledtiden i praktiken hoppa över skede 1–6.</li>
+          <li><strong>Utredningsambition utöver lagkrav.</strong> Hur djupt prövas trafik, dagvatten, sociala konsekvenser? Mer noggrann prövning ger bättre planer men längre tid.</li>
+          <li><strong>Politisk dialog tidigt</strong> minskar risken för sena ändringar — men kräver tid att samordna.</li>
+          <li><strong>Förvaltnings&shy;övergripande samordning</strong> mellan plan, mark, exploatering och berörda nämnder.</li>
+          <li><strong>Val av förfarande</strong> där lagen tillåter — standard tar typiskt 9–18 mån, utökat 18–48 mån.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="gantt-note mt-3"><strong>Slutsats:</strong> Ledtiderna styrs av två saker — lagstiftningens minimitider och prövningens omfattning, plus kommunens kapacitet att driva processen. Den första kan inte förändras lokalt. Den andra kräver investering i planenheten och i planberedskap, inte krav på snabbare handläggning.</p>
   </div>
 </section>
 
@@ -1034,8 +1345,8 @@
     if (!siteNav) return;
 
     var sectionIds = [
-      'dp-tldr', 'dp-definitioner', 'dp-skr', 'dp-index',
-      'dp-process', 'dp-forfarande', 'dp-overklagande',
+      'dp-provning', 'dp-tldr', 'dp-definitioner', 'dp-skr', 'dp-index',
+      'dp-process', 'dp-forfarande', 'dp-lagval', 'dp-overklagande',
       'dp-konsekvenser', 'dp-kallor'
     ];
     var sections = sectionIds
