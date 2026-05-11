@@ -533,6 +533,33 @@ body.show-verifiering .verifiering-toggle::before {
   box-shadow: 0 0 6px var(--gold-light);
 }
 
+/* Sammanställ-knappen — samma piltablett som Källstatus men utan punkt-prick */
+.sammanstall-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.78);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  transition: background .15s, color .15s, border-color .15s;
+  flex-shrink: 0;
+}
+.sammanstall-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+.sammanstall-toggle[aria-pressed="true"] {
+  background: rgba(232, 201, 122, 0.14);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
 /* Markörer på flaggade element (visas bara när toggle är på) */
 [data-verifiering] { position: relative; }
 body.show-verifiering [data-verifiering="preliminar"] {
@@ -1746,6 +1773,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="nav-row nav-row-primary">
     <a href="/" class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
     <button type="button" class="verifiering-toggle" aria-pressed="false" title="Visa vilka siffror som är verifierade, preliminära, eller kräver MOS-data">Källstatus</button>
+    <button type="button" class="sammanstall-toggle" aria-pressed="false" title="Plocka sektioner till en egen skräddarsydd sammanställning">Sammanställ</button>
     <button type="button" class="nav-menu-toggle" aria-label="Meny" aria-expanded="false" aria-controls="primary-nav-toptabs">
       <span></span><span></span><span></span>
     </button>
