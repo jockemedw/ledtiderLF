@@ -27,11 +27,16 @@ const TYP_LABELS = {
   forskning: 'Forskning',
   branschorganisation: 'Branschorgan',
   finansiering: 'Finansiering',
+  samhallsfastighetsbolag: 'Samhällsfastighetsbolag',
 };
 
 export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor }) {
   const [sok, setSok] = useState('');
-  const [valdaOmraden, setValdaOmraden] = useState(() => new Set(omraden.map(o => o.id)));
+  // Områden med dolt_default: true (t.ex. "tangerande-bostad") är avbockade
+  // från start så att standardvyn visar enbart samhällsfastigheter.
+  const [valdaOmraden, setValdaOmraden] = useState(
+    () => new Set(omraden.filter(o => !o.dolt_default).map(o => o.id))
+  );
   const [sortering, setSortering] = useState('datum-ny');
 
   const omradeMap = useMemo(() => Object.fromEntries(omraden.map(o => [o.id, o])), [omraden]);
@@ -59,8 +64,9 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
       else next.add(id);
-      // Aldrig tom — visa allt om man avmarkerar sista
-      return next.size === 0 ? new Set(omraden.map(o => o.id)) : next;
+      // Aldrig tom — fall tillbaka till standardurvalet (utan dolt_default-områden)
+      if (next.size === 0) return new Set(omraden.filter(o => !o.dolt_default).map(o => o.id));
+      return next;
     });
   };
 

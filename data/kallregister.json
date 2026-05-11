@@ -1,60 +1,62 @@
 {
-  "uppdaterad": "2026-05-08",
+  "uppdaterad": "2026-05-11",
   "omraden": [
     { "id": "detaljplan",         "namn": "Detaljplan & planprocess",  "kort": "DP", "farg": "#2563EB" },
     { "id": "skolor-forskolor",   "namn": "Skol- och förskolelokaler", "kort": "SK", "farg": "#059669" },
-    { "id": "fastighet-demografi","namn": "Fastighet & demografi",     "kort": "FD", "farg": "#B5822A" }
+    { "id": "fastighet-demografi","namn": "Fastighet & demografi",     "kort": "FD", "farg": "#B5822A" },
+    { "id": "samhallsfastighetsbolag", "namn": "Samhällsfastighetsbolag", "kort": "SF", "farg": "#7C3AED" },
+    { "id": "tangerande-bostad",  "namn": "Tangerande (bostadsbenchmark)", "kort": "TB", "farg": "#9CA3AF", "dolt_default": true, "not": "Avser flerbostadshus eller bostadsmarknaden. Refereras med caveat i materialet — relevant som benchmark men inte direkt jämförbart med samhällsfastigheter." }
   ],
   "kallor": [
     {
       "id": "ledtidsindex-2024",
-      "omrade": "detaljplan",
+      "omrade": "tangerande-bostad",
       "typ": "branschindex",
       "titel": "Nationellt Ledtidsindex 2024 — Kommuner med effektiva plan- och bygglovsprocesser",
       "organisation": "Initiativet Bygg i Tid (Byggföretagen, Fastighetsägarna m.fl.)",
       "datum": "2024-09",
       "url": "https://byggforetagen.se/app/uploads/2024/09/Nationellt-Ledtidsindex-2024_0912.pdf",
-      "sammandrag": "Årligt index som rangordnar svenska kommuner efter effektiviteten i plan- och bygglovsprocessen. Mäter ledtider, resurseffektivitet, servicenivå och produktionstakt. 2024 års rapport visar att den genomsnittliga ledtiden ökat till 4,7 år, trots att initiativtagarna anser att ledtiderna inte bör överstiga 2,5 år."
+      "sammandrag": "Årligt index som mäter ledtider i kommunal plan- och bygglovsprocess — men beräknat på flerbostadshus med ≥ 5 lägenheter. 2024 års rapport visar att den genomsnittliga ledtiden ökat till 4,7 år. Vägledande för planledtiderna även för samhällsfastigheter, men inte direkt jämförbart — kommunala lokalprojekt har ofta andra förutsättningar (egen mark, prioritering, färre överklaganden)."
     },
     {
       "id": "ledtidsindex-2025",
-      "omrade": "detaljplan",
+      "omrade": "tangerande-bostad",
       "typ": "branschindex",
       "titel": "Nationellt Ledtidsindex 2025 — Kommuner med effektiva plan- och bygglovsprocesser",
       "organisation": "Initiativet Bygg i Tid (Byggföretagen, Fastighetsägarna m.fl.)",
       "datum": "2025-09",
       "url": "https://byggforetagen.se/app/uploads/2025/09/Nationellt-Ledtidsindex-2025.pdf",
-      "sammandrag": "Senaste utgåvan av det årliga ledtidsindexet med uppdaterad rankning av kommuner. Mätningen omfattar enbart detaljplaner för flerbostadshus med ≥ 5 lägenheter — vägledande, men direkt jämförelse med skol-/förskoleplaner kräver kompletterande underlag."
+      "sammandrag": "Senaste utgåvan av det årliga ledtidsindexet. Mätningen omfattar enbart detaljplaner för flerbostadshus med ≥ 5 lägenheter. Refereras i Gantt-staplarna som riksgenomsnitt (4,8 år) men med tydlig caveat — kommunala lokaler är inte med i underlaget. Använd som benchmark, inte som direkt jämförelse med skol-/förskoleprojekt."
     },
     {
       "id": "evidens-samhallseffekter-2022",
-      "omrade": "detaljplan",
+      "omrade": "tangerande-bostad",
       "typ": "rapport",
       "titel": "Samhällseffekter av långa ledtider i plan- och bygglovsprocessen",
       "organisation": "Evidens (uppdrag av Bygg i Tid / Byggföretagen / Riksbyggen / Fastighetsägarna)",
       "datum": "2022-05",
       "url": "https://www.initiativetbyggitid.se/_files/ugd/f0837f_9ef7953c03bf4e4fa64c69a7b75b6a02.pdf",
-      "sammandrag": "Kvantifierar de samhällsekonomiska effekterna av långa ledtider i planprocessen. Visar att en 4 % kostnadsökning till följd av långa ledtider minskar bostadsbyggandet med ca 2 000 bostäder/år. Användbar för att motivera kostnaderna av tidsutdräkt även för kommunala lokaler."
+      "sammandrag": "Kvantifierar de samhällsekonomiska effekterna av långa ledtider i planprocessen — beräknat på bostadsbyggande (4 % kostnadsökning ↔ ca 2 000 färre bostäder/år). Mekanismen som beskrivs (kostnaden av tidsutdräkt) är överförbar till kommunal lokalförsörjning, men siffrorna är inte direkt tillämpliga."
     },
     {
       "id": "evidens-overklagande-2023",
-      "omrade": "detaljplan",
+      "omrade": "tangerande-bostad",
       "typ": "forskning",
       "titel": "Överklagandet av detaljplaner — omfattning, effekter och orsaker",
       "organisation": "Evidens (uppdrag av SKR, Byggföretagen, Fastighetsägarna)",
       "datum": "2023",
       "url": "https://skr.se/download/18.3ecbf48018722d6400630e06/1680246439371/%C3%96verklagande-av-detaljplaner.pdf",
-      "sammandrag": "Studie av omfattning och konsekvenser av överklaganden av detaljplaner. Visar att nästan varannan bostad överklagas, att domstolens handläggning i snitt tar drygt 8 månader, samt att de allra flesta överklagade planer står sig i högre instans. Central källa för förseningseffekten +14 mån."
+      "sammandrag": "Studie av omfattning och konsekvenser av överklaganden av detaljplaner — mätt på antal bostäder i de planer som överklagas. Procentsatserna (24 % överklagas, 12 % ändras, ~8 mån i domstol) bygger på bostadsplaner men beskriver mekaniken i processen. Källa för förseningseffekten +14 mån som även gäller skol- och förskoleplaner när de överklagas."
     },
     {
       "id": "skr-jamforelser-detaljplan",
-      "omrade": "detaljplan",
+      "omrade": "tangerande-bostad",
       "typ": "statistik",
       "titel": "Jämförelser inom detaljplaneområdet (Öppna jämförelser)",
       "organisation": "Sveriges Kommuner och Regioner (SKR) i samarbete med RKA/Kolada",
       "datum": "löpande",
       "url": "https://skr.se/byggandeochbostaderplanering/jamforelserinomdetaljplaneomradet.9842.html",
-      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med fokus på bostäder och tidsåtgång i planarbetet. Genomsnittlig ledtid från planstart till byggstart anges till 4,8 år. Datat samlas in återkommande (ny insamling 2024–2025 publiceras 2026)."
+      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med bostadsplaner som primärt mätobjekt. Genomsnittlig ledtid från planstart till byggstart anges till 4,8 år. Vägledande indikator för planmognad i en kommun även när lokalförsörjning ska in i samma planprocess. Ny insamling 2024–2025 publiceras 2026."
     },
     {
       "id": "skr-overklaganden-portal",
@@ -376,7 +378,7 @@
       "organisation": "Riksrevisionen",
       "datum": "2025",
       "url": "https://www.riksrevisionen.se/granskningar/granskningsrapporter/2025/kostsam-kvadratjakt---statens-anvandning-och-anskaffning-av-kontorslokaler.html",
-      "sammandrag": "Riksrevisionens granskning av statens lokalförsörjning som visar att 2,5–4 miljarder kronor skulle kunna sparas årligen genom mer effektiv lokalanvändning. Principer kan överföras till kommunal lokalförsörjning för att motivera ytsnålhet och uppföljning."
+      "sammandrag": "Riksrevisionens granskning av statens lokalförsörjning — fokus på kontorslokaler, men de strukturella iakttagelserna (svag uppföljning av ytor, otydligt ägarstyre, för stor och dyr lokalstock) är direkt överförbara till kommunala samhällsfastigheter. 2,5–4 mdkr/år bedöms kunna sparas med effektivare lokalanvändning. Argumentbas för ytsnålhet och systematisk uppföljning."
     },
     {
       "id": "lund-strategisk-lfp-2024-2033",
@@ -416,17 +418,58 @@
       "organisation": "Repab / Svensk Byggtjänst",
       "datum": "löpande",
       "url": "https://byggtjanst.se/bokhandel/forvaltning/fastighetsekonomi",
-      "sammandrag": "Årligen uppdaterad nyckeltalsserie över drift-, underhålls- och förbrukningskostnader uppdelat på fastighetstyp (bostäder, kontor, lokaler). Standardreferens i svensk fastighetsbransch för budgetarbete och projektkalkyler."
+      "sammandrag": "Årligen uppdaterad nyckeltalsserie över drift-, underhålls- och förbrukningskostnader. Egna nyckeltalsböcker finns för Skolor, Vårdfastigheter och Kommunhus/lokaler — det är de spåren som är relevanta för kommunal lokalförsörjning. Standardreferens i svensk fastighetsbransch för budgetarbete och projektkalkyler."
+    },
+
+    {
+      "id": "akademiska-hus",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Akademiska Hus — statligt ägt bolag för universitets- och högskolefastigheter",
+      "organisation": "Akademiska Hus AB (helägt av svenska staten)",
+      "datum": "löpande",
+      "url": "https://www.akademiskahus.se/",
+      "sammandrag": "Sveriges största aktör inom utbildnings- och forskningsfastigheter — universitet och högskolor över hela landet. Publicerar års- och hållbarhetsredovisning samt en återkommande Campusbarometer med nyckeltal kring driftnetto, energi, klimat och lokaleffektivitet. Referens för samhällsfastigheter i den högre änden av komplexitet."
     },
     {
-      "id": "msci-sweden-property",
-      "omrade": "fastighet-demografi",
-      "typ": "statistik",
-      "titel": "MSCI Sweden Annual Property Index (tidigare IPD Svenskt Fastighetsindex)",
-      "organisation": "MSCI Real Estate",
+      "id": "specialfastigheter",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Specialfastigheter — statligt ägt bolag för rätts- och säkerhetsfastigheter",
+      "organisation": "Specialfastigheter Sverige AB (helägt av svenska staten)",
       "datum": "löpande",
-      "url": "https://www.msci.com/www/ipd-factsheets/ipd-sweden-annual-property/0163074976",
-      "sammandrag": "Det etablerade svenska fastighetsindexet som mäter direktavkastning och totalavkastning för svenska fastighetsinvesteringar baserat på marknadsvärderingar. Inkluderar ett kommunalt bostadsindex. Branschstandard för jämförelse av fastighetsförvaltningens ekonomiska prestanda."
+      "url": "https://www.specialfastigheter.se/",
+      "sammandrag": "Förvaltar och utvecklar samhällsfastigheter med säkerhetskrav — kriminalvård, polis, domstol, försvar. Publicerar årsredovisning med nyckeltal för säkerhetsanpassade lokaler. Användbar referens för Lejonfastigheter när säkerhetskrav och funktionskrav i samhällslokaler ska kommuniceras."
+    },
+    {
+      "id": "hemso",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Hemsö Fastighets AB — privat aktör inom samhällsfastigheter",
+      "organisation": "Hemsö Fastighets AB (ägare: Tredje AP-fonden + Sagax)",
+      "datum": "löpande",
+      "url": "https://www.hemso.se/",
+      "sammandrag": "Sveriges största privata aktör inom samhällsfastigheter — utbildning, vård, äldreboende, rättsväsende. Publicerar kvartals- och årsrapporter med transaktionsvolym, hyresnivåer, vakanser och projektportfölj. Värdefull marknadsreferens för fastighetsvärdering och hyresnivåer i samhällsfastighetssegmentet."
+    },
+    {
+      "id": "vacse",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Vacse AB — samhällsfastigheter ägt av sju svenska pensionsstiftelser",
+      "organisation": "Vacse AB (ägare: AI Pension, Kåpan Pensioner m.fl. tjänstepensionsstiftelser)",
+      "datum": "löpande",
+      "url": "https://www.vacse.se/",
+      "sammandrag": "Pensionsstiftelseägt fastighetsbolag specialiserat på samhällsfastigheter med långa hyresavtal — typiskt domstolar, polishus, vårdcentraler, skolor med kommun/region som hyresgäst. Användbar referens för långsiktig hyresvärd-modell och hyresnivå för samhällsfastigheter med starka hyresgäster."
+    },
+    {
+      "id": "stenvalvet",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Stenvalvet — fastighetsbolag inriktat på offentligt finansierade hyresgäster",
+      "organisation": "Fastighets AB Stenvalvet (ägare: bl.a. Kåpan Tjänstepension, Kyrkans Pension, Stiftelsen för Strategisk Forskning)",
+      "datum": "löpande",
+      "url": "https://www.stenvalvet.se/",
+      "sammandrag": "Stiftelse- och pensionsägt fastighetsbolag som äger och förvaltar samhällsfastigheter — skolor, vård, omsorg, rättsväsende — med kommuner, regioner och stat som hyresgäster. Komplement till Hemsö och Vacse som marknadsreferens för fastighetsvärdering, driftnetto och hyresavtalslängd i samhällsfastighetssegmentet."
     }
   ]
 }
