@@ -196,6 +196,10 @@ a:hover { text-decoration: underline; }
    även om scrollUI inte hittar matchande lokal sektion */
 .site-nav[data-active-group=""] .nav-subtabs { display: none; }
 
+/* Mobil-drawerns sub-listor ska aldrig synas på desktop — de hör hemma i
+   hamburger-menyn och visas explicit av @media (max-width: 820px). */
+.nav-subgroup-mobile { display: none; }
+
 /* ─── SECTIONS ─────────────────────────────── */
 section { padding: 5rem 2rem; scroll-margin-top: 80px; }
 .container { max-width: 1100px; margin: 0 auto; }
