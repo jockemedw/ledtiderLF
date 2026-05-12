@@ -27,11 +27,16 @@ const TYP_LABELS = {
   forskning: 'Forskning',
   branschorganisation: 'Branschorgan',
   finansiering: 'Finansiering',
+  samhallsfastighetsbolag: 'Samhällsfastighetsbolag',
 };
 
 export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor }) {
   const [sok, setSok] = useState('');
-  const [valdaOmraden, setValdaOmraden] = useState(() => new Set(omraden.map(o => o.id)));
+  // Områden med dolt_default: true (t.ex. "tangerande-bostad") är avbockade
+  // från start så att standardvyn visar enbart samhällsfastigheter.
+  const [valdaOmraden, setValdaOmraden] = useState(
+    () => new Set(omraden.filter(o => !o.dolt_default).map(o => o.id))
+  );
   const [sortering, setSortering] = useState('datum-ny');
 
   const omradeMap = useMemo(() => Object.fromEntries(omraden.map(o => [o.id, o])), [omraden]);
@@ -59,8 +64,9 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
       else next.add(id);
-      // Aldrig tom — visa allt om man avmarkerar sista
-      return next.size === 0 ? new Set(omraden.map(o => o.id)) : next;
+      // Aldrig tom — fall tillbaka till standardurvalet (utan dolt_default-områden)
+      if (next.size === 0) return new Set(omraden.filter(o => !o.dolt_default).map(o => o.id));
+      return next;
     });
   };
 
@@ -175,7 +181,7 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
 
 function KallaKort({ k, omrade }) {
   return (
-    <li className="kr-kort">
+    <li className="kr-kort" id={k.id}>
       <div className="kr-kort-topp">
         <span className="kr-kort-omrade" style={{ background: omrade?.farg }}>
           {omrade?.namn || k.omrade}
@@ -212,6 +218,7 @@ function Nav({ omraden }) {
         <ul className="nav-subtabs" data-group="kallor">
           <li><a href="/#kallor" className="nav-subtab is-external">Källor — kortöversikt</a></li>
           <li><a href="/kallregister" className="nav-subtab is-active">Källregister</a></li>
+          <li><a href="/nyckeltal" className="nav-subtab is-external">Nyckeltal</a></li>
           <li><a href="/#verifiering" className="nav-subtab is-external">Verifieringsstatus</a></li>
         </ul>
       </div>

@@ -493,10 +493,8 @@ section { padding: 5rem 2rem; scroll-margin-top: 80px; }
   color: var(--gold-light); letter-spacing: 0.03em;
 }
 
-/* ─── VERIFIERINGSSTATUS ─── */
-/* Element kan markeras med data-verifiering="verifierad|preliminar|mos-kravs".
-   Markörerna är dolda by default; toggle i nav slår på body.show-verifiering. */
-.verifiering-toggle {
+/* Sammanställ-knappen — pill i headern */
+.sammanstall-toggle {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.22);
   color: rgba(255,255,255,0.78);
@@ -515,22 +513,11 @@ section { padding: 5rem 2rem; scroll-margin-top: 80px; }
   transition: background .15s, color .15s, border-color .15s;
   flex-shrink: 0;
 }
-.verifiering-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
-.verifiering-toggle::before {
-  content: '';
-  display: inline-block;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-}
-body.show-verifiering .verifiering-toggle {
+.sammanstall-toggle:hover { color: #fff; border-color: rgba(255,255,255,0.5); }
+.sammanstall-toggle[aria-pressed="true"] {
   background: rgba(232, 201, 122, 0.14);
   border-color: var(--gold);
   color: var(--gold-light);
-}
-body.show-verifiering .verifiering-toggle::before {
-  background: var(--gold);
-  box-shadow: 0 0 6px var(--gold-light);
 }
 
 /* Markörer på flaggade element (visas bara när toggle är på) */
@@ -1457,36 +1444,6 @@ body.show-verifiering [data-verifiering="verifierad"]::after { background: #0596
 
 /* ─── KALLOR ────────────────────────────────── */
 #kallor { background: var(--white); }
-.kallregister-pill {
-  display: inline-flex; align-items: center; gap: 0.7rem;
-  margin-top: 1.6rem;
-  padding: 0.65rem 1.1rem;
-  border: 1px solid rgba(232, 201, 122, 0.55);
-  background: rgba(232, 201, 122, 0.08);
-  color: var(--gold) !important;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-  transition: background .15s, color .15s, border-color .15s;
-}
-.kallregister-pill:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: #fff !important;
-  text-decoration: none;
-}
-.kallregister-pill-eyebrow {
-  font-size: 0.62rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 600;
-  border-right: 1px solid rgba(181, 130, 42, 0.4);
-  padding-right: 0.7rem;
-}
-.kallregister-pill:hover .kallregister-pill-eyebrow { border-right-color: rgba(255,255,255,0.5); }
-.kallregister-pill-text { font-weight: 500; }
-.kallregister-pill-arrow { font-size: 0.95rem; }
 
 .kallor-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1731,7 +1688,6 @@ footer strong { color: rgba(255,255,255,0.8); }
 
 @media (max-width: 480px) {
   .nav-brand span { display: none; }
-  .verifiering-toggle { display: none; } /* Källstatus-knappen finns kvar i Verifieringsöversikt-sektionen */
   .scroll-dots { display: none !important; }
   section { padding: 3rem 1rem; }
   .floating-title { font-size: 0.68rem; padding: 5px 12px; max-width: calc(100vw - 100px); }
@@ -1745,7 +1701,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 <nav class="site-nav" data-active-group="oversikt" data-page="lokal">
   <div class="nav-row nav-row-primary">
     <a href="/" class="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
-    <button type="button" class="verifiering-toggle" aria-pressed="false" title="Visa vilka siffror som är verifierade, preliminära, eller kräver MOS-data">Källstatus</button>
+    <button type="button" class="sammanstall-toggle" aria-pressed="false" title="Plocka sektioner till en egen skräddarsydd sammanställning">Sammanställ</button>
     <button type="button" class="nav-menu-toggle" aria-label="Meny" aria-expanded="false" aria-controls="primary-nav-toptabs">
       <span></span><span></span><span></span>
     </button>
@@ -1790,7 +1746,7 @@ footer strong { color: rgba(255,255,255,0.8); }
         <ul class="nav-subgroup-mobile" data-group="kallor">
           <li><a href="#kallor">Källor — kortöversikt</a></li>
           <li><a href="/kallregister">Källregister ↗</a></li>
-          <li><a href="#verifiering">Verifieringsstatus</a></li>
+          <li><a href="/nyckeltal">Nyckeltal ↗</a></li>
         </ul>
       </li>
     </ul>
@@ -1823,7 +1779,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     <ul class="nav-subtabs" data-group="kallor">
       <li><a href="#kallor"        class="nav-subtab" data-section="kallor">Källor — kortöversikt</a></li>
       <li><a href="/kallregister"  class="nav-subtab is-external">Källregister</a></li>
-      <li><a href="#verifiering"   class="nav-subtab" data-section="verifiering">Verifieringsstatus</a></li>
+      <li><a href="/nyckeltal"     class="nav-subtab is-external">Nyckeltal</a></li>
     </ul>
   </div>
 </nav>
@@ -2216,24 +2172,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     <h2>Källor och referensmaterial</h2>
     <p class="mt-2" style="color:var(--muted)">Alla ledtider och statistiska uppgifter i detta material baseras på nedanstående svenska källor. Siffror avser det senast tillgängliga underlaget per angiven källa.</p>
 
-    <a class="kallregister-pill" href="/kallregister" title="Bläddra i hela källregistret">
-      <span class="kallregister-pill-eyebrow">Egen sida</span>
-      <span class="kallregister-pill-text">Källregistret — bläddra och filtrera bland alla källor</span>
-      <span class="kallregister-pill-arrow" aria-hidden="true">↗</span>
-    </a>
-
     <div class="kallor-grid" id="kallor-grid"></div>
-  </div>
-</section>
-
-<!-- VERIFIERINGSÖVERSIKT -->
-<section id="verifiering" data-nav-group="kallor">
-  <div class="container">
-    <span class="section-label">Verifieringsstatus</span>
-    <h2>Vilka siffror är klara, och vilka behöver verifieras?</h2>
-    <p class="mt-2" style="color:var(--muted)">Tryck på <strong>Källstatus</strong> i headern för att markera flaggade siffror direkt i materialet. Listan nedan genereras automatiskt ur sidans innehåll. Inga MOS-data publiceras innan de är signat av Miljö- och samhällsbyggnadsförvaltningen.</p>
-
-    <div id="verifiering-innehall"></div>
   </div>
 </section>
 
@@ -3164,110 +3103,9 @@ document.addEventListener("DOMContentLoaded", () => {
   renderModuler();
   renderBeslut();
   renderKallor();
-  renderVerifiering();
-  setupVerifieringToggle();
   setupReveal();
   setupScrollUI();
 });
-
-// ── Verifieringsstatus ─────────────────────────────────────────
-function setupVerifieringToggle() {
-  const btn = document.querySelector('.verifiering-toggle');
-  if (!btn) return;
-  function apply(on, persist) {
-    document.body.classList.toggle('show-verifiering', !!on);
-    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    btn.textContent = on ? 'Källstatus på' : 'Källstatus';
-    if (persist) {
-      try { localStorage.setItem('show-verifiering', on ? '1' : '0'); } catch (e) {}
-    }
-  }
-  let initial = false;
-  try { initial = localStorage.getItem('show-verifiering') === '1'; } catch (e) {}
-  apply(initial, false);
-  btn.addEventListener('click', () => {
-    apply(!document.body.classList.contains('show-verifiering'), true);
-  });
-}
-
-function renderVerifiering() {
-  const wrap = document.getElementById('verifiering-innehall');
-  if (!wrap) return;
-
-  const sektionsLabel = (id) => {
-    const labels = {
-      sammanfattning: 'Sammanfattning', oversikt: 'De fyra spåren',
-      hierarki: 'Hur behov tillgodoses', jamforelse: 'Tidsjämförelse',
-      kontext: 'Nationell kontext', 'per-typ': 'Per lokaltyp',
-      exempel: 'Exempel', 'spar-a': 'Spår A — Hyra in',
-      'spar-b': 'Spår B — Bygga om', 'spar-c': 'Spår C — Tillbyggnad',
-      'spar-d': 'Spår D — Nybyggnad', moduler: 'Moduler',
-      kostnad: 'Kostnad', beslut: 'Beslutsstöd', kallor: 'Källor',
-    };
-    return labels[id] || id;
-  };
-  const findSektion = (el) => {
-    let cur = el;
-    while (cur && cur !== document.body) {
-      if (cur.tagName === 'SECTION' && cur.id) return cur.id;
-      cur = cur.parentElement;
-    }
-    return null;
-  };
-  const summarize = (el) => {
-    // Försök hitta en kort beskrivande text — siffra eller första rubrik
-    const big = el.querySelector('.tldr-siffra, .siffra, strong, h3, h4');
-    let kort = big ? big.textContent.trim() : '';
-    let resten = (el.textContent || '').replace(/\s+/g, ' ').trim();
-    if (kort && resten.startsWith(kort)) resten = resten.slice(kort.length).trim();
-    if (resten.length > 180) resten = resten.slice(0, 177) + '…';
-    return { kort, resten };
-  };
-
-  const grupper = [
-    { status: 'mos-kravs',  rubrik: 'Kräver verifiering av MOS', lead: 'Inga påståenden om MOS ledtider får publiceras utan att vara signat av Miljö- och samhällsbyggnadsförvaltningen.' },
-    { status: 'preliminar', rubrik: 'Preliminära siffror',       lead: 'Vägledande siffror där exakt källa eller relevans för lokalförsörjning behöver bekräftas innan extern publicering.' },
-    { status: 'verifierad', rubrik: 'Verifierat',                lead: 'Siffror med fastställd källa som tål extern referens.' },
-  ];
-
-  const html = grupper.map(g => {
-    const items = Array.from(document.querySelectorAll('[data-verifiering="' + g.status + '"]'))
-      // Skippa själva flaggorna inom andra flaggor (yttre element räknas)
-      .filter(el => !el.parentElement || !el.parentElement.closest('[data-verifiering="' + g.status + '"]'));
-
-    const rader = items.map(el => {
-      const sek = findSektion(el);
-      const sum = summarize(el);
-      const not = el.getAttribute('data-verifiering-not') || '';
-      const sektionLink = sek
-        ? '<a href="#' + sek + '">' + sektionsLabel(sek) + ' →</a>'
-        : '';
-      return [
-        '<div class="verifiering-rad">',
-          '<div class="text">',
-            sum.kort ? '<strong>' + sum.kort + '</strong> ' : '',
-            sum.resten,
-          '</div>',
-          '<div class="sektion">' + sektionLink + '</div>',
-          not ? '<div class="anteckning"><strong>Att verifiera:</strong> ' + not + '</div>' : '',
-        '</div>',
-      ].join('');
-    }).join('');
-
-    return [
-      '<div class="verifiering-grupp ' + g.status + '">',
-        '<h3><span class="dot" aria-hidden="true"></span>' + g.rubrik,
-          ' <span class="count">(' + items.length + ')</span></h3>',
-        '<p class="lead">' + g.lead + '</p>',
-        items.length
-          ? '<div class="verifiering-lista">' + rader + '</div>'
-          : '<p style="color:var(--muted);font-style:italic;">Inga noteringar i den här kategorin.</p>',
-      '</div>',
-    ].join('');
-  }).join('');
-
-  wrap.innerHTML = html;
-}
 
 function setupMobileMenu() {
   const btn = document.querySelector('.nav-menu-toggle');

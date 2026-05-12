@@ -5,6 +5,7 @@ import path from 'path';
 import dynamic from 'next/dynamic';
 
 const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
+const PickMode = dynamic(() => import('../components/PickMode.jsx'), { ssr: false });
 
 export async function getStaticProps() {
   const htmlPath = path.join(process.cwd(), 'lokalforsorjning.html');
@@ -53,6 +54,7 @@ export default function Home({ css, bodyInnehall, scriptInnehall }) {
       />
 
       <CommentLayer />
+      <PickMode />
     </>
   );
 }
