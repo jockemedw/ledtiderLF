@@ -1895,6 +1895,43 @@ footer strong { color: rgba(255,255,255,0.8); }
   </div>
 </section>
 
+<!-- TIDSJÄMFÖRELSE / GANTT -->
+<section id="jamforelse" data-nav-group="oversikt">
+  <div class="container">
+    <span class="section-label">Tidsjämförelse</span>
+    <h2>Så fördelar sig tiden i svenska lokalprojekt</h2>
+    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario, sammanställt från svenska kommunala fastighetsbolags publika slutrapporter (SISAB, Micasa, Uppsala Skolfastigheter) och nationella branschstudier. Den vertikala linjen markerar när uppdraget överlämnas till fastighetsägaren. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
+    <div class="gantt-wrap">
+      <div class="gantt-inner">
+        <div class="gantt-axis" id="gantt-axis"></div>
+        <div id="gantt-rows"></div>
+      </div>
+    </div>
+    <div class="gantt-legend" id="gantt-legend"></div>
+
+    <div class="gantt-bench" aria-label="Nationella referenstal">
+      <div class="gantt-bench-rad" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med ≥ 5 lägenheter, inte lokalförsörjning. Siffran är vägledande men direkt jämförelse med skol-/förskoleprojekt behöver kompletteras.">
+        <strong>4,8 år</strong>
+        <span>Riksgenomsnitt detaljplanstart → byggstart över 52 kommuner och ~1 450 detaljplaner.</span>
+        <cite>Nationellt Ledtidsindex 2025 (Bygg i Tid)</cite>
+      </div>
+      <div class="gantt-bench-rad" data-verifiering="verifierad">
+        <strong>~7 år</strong>
+        <span>"Från tanke till färdig" förskola eller skola — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner.</span>
+        <cite>Lunds kommun, lund.se</cite>
+      </div>
+      <div class="gantt-bench-rad" data-verifiering="verifierad">
+        <strong>+14 månader</strong>
+        <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige.</span>
+        <cite>Evidens 2023 / SKR 2024</cite>
+      </div>
+      <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
+    </div>
+
+    <p class="gantt-note">Staplarna avser typiska svenska kommunala lokalprojekt — inte ett enskilt fastighetsbolags interna kalkyl. Den långa stapeln för "Nybyggnad med ny detaljplan" ligger i linje med Bygg i Tids riksgenomsnitt på 4,8 år för enbart detaljplanen, plus projektering och byggnation. Effekten av eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-upphandlingar (+2–12 mån) är <em>inte</em> inräknad i staplarna och tillkommer.</p>
+  </div>
+</section>
+
 <!-- HIERARKI: HUR BEHOV TILLGODOSES (KUNDPERSPEKTIV) -->
 <section id="hierarki" data-nav-group="behov">
   <div class="container">
@@ -1969,63 +2006,6 @@ footer strong { color: rgba(255,255,255,0.8); }
   </div>
 </section>
 
-<!-- TIDSJÄMFÖRELSE / GANTT -->
-<section id="jamforelse" data-nav-group="oversikt">
-  <div class="container">
-    <span class="section-label">Tidsjämförelse</span>
-    <h2>Så fördelar sig tiden i svenska lokalprojekt</h2>
-    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario, sammanställt från svenska kommunala fastighetsbolags publika slutrapporter (SISAB, Micasa, Uppsala Skolfastigheter) och nationella branschstudier. Den vertikala linjen markerar när uppdraget överlämnas till fastighetsägaren. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
-    <div class="gantt-wrap">
-      <div class="gantt-inner">
-        <div class="gantt-axis" id="gantt-axis"></div>
-        <div id="gantt-rows"></div>
-      </div>
-    </div>
-    <div class="gantt-legend" id="gantt-legend"></div>
-
-    <div class="gantt-bench" aria-label="Nationella referenstal">
-      <div class="gantt-bench-rad" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med ≥ 5 lägenheter, inte lokalförsörjning. Siffran är vägledande men direkt jämförelse med skol-/förskoleprojekt behöver kompletteras.">
-        <strong>4,8 år</strong>
-        <span>Riksgenomsnitt detaljplanstart → byggstart över 52 kommuner och ~1 450 detaljplaner.</span>
-        <cite>Nationellt Ledtidsindex 2025 (Bygg i Tid)</cite>
-      </div>
-      <div class="gantt-bench-rad" data-verifiering="verifierad">
-        <strong>~7 år</strong>
-        <span>"Från tanke till färdig" förskola eller skola — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner.</span>
-        <cite>Lunds kommun, lund.se</cite>
-      </div>
-      <div class="gantt-bench-rad" data-verifiering="verifierad">
-        <strong>+14 månader</strong>
-        <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige.</span>
-        <cite>Evidens 2023 / SKR 2024</cite>
-      </div>
-      <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
-    </div>
-
-    <p class="gantt-note">Staplarna avser typiska svenska kommunala lokalprojekt — inte ett enskilt fastighetsbolags interna kalkyl. Den långa stapeln för "Nybyggnad med ny detaljplan" ligger i linje med Bygg i Tids riksgenomsnitt på 4,8 år för enbart detaljplanen, plus projektering och byggnation. Effekten av eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-upphandlingar (+2–12 mån) är <em>inte</em> inräknad i staplarna och tillkommer.</p>
-  </div>
-</section>
-
-<!-- NATIONELL KONTEXT -->
-<section id="kontext" data-nav-group="tid">
-  <div class="container">
-    <span class="section-label">Nationell kontext</span>
-    <h2>Ledtiderna är en strukturell verklighet</h2>
-    <p class="mt-2" style="color:var(--muted)">Långa ledtider i kommunala byggprojekt är inte unikt för Linköping eller Lejonfastigheter — det är ett nationellt mönster som bekräftas av Sveriges Kommuner och Regioner, Boverket och oberoende branschstudier.</p>
-
-    <div class="kontext-grid" id="kontext-grid"></div>
-
-    <div class="kontext-citat">
-      <blockquote>
-        "Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt."
-      </blockquote>
-      <cite>— Lunds kommun, officiell projektinformation (lund.se)</cite>
-    </div>
-
-    <p class="gantt-note mt-3">Primärkällor: SKR (<em>Jämförelser inom detaljplaneområdet 2024</em>), Boverket (rapport 2025:11), Initiativet Bygg i Tid/Byggföretagen/Fastighetsägarna (<em>Nationellt Ledtidsindex 2025</em>), Evidens (<em>Överklagande av detaljplaner 2023</em>, uppdrag SKR/Byggföretagen/Fastighetsägarna), Lunds kommun, Uppsala Skolfastigheter, Linköpings kommun. Se fullständig källförteckning.</p>
-  </div>
-</section>
-
 <!-- PER LOKALTYP -->
 <section id="per-typ" data-nav-group="behov">
   <div class="container">
@@ -2094,6 +2074,26 @@ footer strong { color: rgba(255,255,255,0.8); }
     <div class="modul-varning">
       <strong>Varning:</strong> Temporära lösningar tenderar att bli permanenta. Uppsala rapporterar att ~20 % av kommunens förskolor drivs i modulbyggnader. SVT (2021): <em>"Förskolemodulerna är här för att stanna."</em> Använd moduler med en explicit plan och datum för avveckling.
     </div>
+  </div>
+</section>
+
+<!-- NATIONELL KONTEXT -->
+<section id="kontext" data-nav-group="tid">
+  <div class="container">
+    <span class="section-label">Nationell kontext</span>
+    <h2>Ledtiderna är en strukturell verklighet</h2>
+    <p class="mt-2" style="color:var(--muted)">Långa ledtider i kommunala byggprojekt är inte unikt för Linköping eller Lejonfastigheter — det är ett nationellt mönster som bekräftas av Sveriges Kommuner och Regioner, Boverket och oberoende branschstudier.</p>
+
+    <div class="kontext-grid" id="kontext-grid"></div>
+
+    <div class="kontext-citat">
+      <blockquote>
+        "Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt."
+      </blockquote>
+      <cite>— Lunds kommun, officiell projektinformation (lund.se)</cite>
+    </div>
+
+    <p class="gantt-note mt-3">Primärkällor: SKR (<em>Jämförelser inom detaljplaneområdet 2024</em>), Boverket (rapport 2025:11), Initiativet Bygg i Tid/Byggföretagen/Fastighetsägarna (<em>Nationellt Ledtidsindex 2025</em>), Evidens (<em>Överklagande av detaljplaner 2023</em>, uppdrag SKR/Byggföretagen/Fastighetsägarna), Lunds kommun, Uppsala Skolfastigheter, Linköpings kommun. Se fullständig källförteckning.</p>
   </div>
 </section>
 
@@ -2229,6 +2229,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     <div class="kallor-grid" id="kallor-grid"></div>
   </div>
 </section>
+
 
 <footer>
   <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Arbetsmaterial april 2026 · Internt beslutsunderlag
