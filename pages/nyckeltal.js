@@ -2,6 +2,7 @@ import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
 import { useMemo, useState } from 'react';
+import MinimalNav from '../components/MinimalNav.jsx';
 
 export async function getStaticProps() {
   const root = process.cwd();
@@ -102,7 +103,7 @@ export default function Nyckeltal({ sharedCss, uppdaterad, kategorier, nyckeltal
         <style dangerouslySetInnerHTML={{ __html: nyckeltalCss }} />
       </Head>
 
-      <Nav />
+      <MinimalNav title="Nyckeltal" />
 
       <section className="nt-hero">
         <div className="nt-hero-inner">
@@ -286,31 +287,6 @@ function kortaKalla(k) {
   return ord || k.titel || k.id;
 }
 
-function Nav() {
-  return (
-    <nav className="site-nav" data-active-group="kallor" data-page="nyckeltal">
-      <div className="nav-row nav-row-primary">
-        <a href="/" className="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
-        <ul className="nav-toptabs">
-          <li><a href="/#sammanfattning" className="nav-toptab is-external" data-group="oversikt">Översikt</a></li>
-          <li><a href="/#hierarki" className="nav-toptab is-external" data-group="behov">Behov &amp; kund</a></li>
-          <li><a href="/detaljplan" className="nav-toptab is-external" data-group="process">Process</a></li>
-          <li><a href="/#kontext" className="nav-toptab is-external" data-group="tid">Tid &amp; pengar</a></li>
-          <li><a href="/kallregister" className="nav-toptab" data-group="kallor">Källor</a></li>
-        </ul>
-      </div>
-      <div className="nav-row nav-row-sub">
-        <ul className="nav-subtabs" data-group="kallor">
-          <li><a href="/#kallor" className="nav-subtab is-external">Källor — kortöversikt</a></li>
-          <li><a href="/kallregister" className="nav-subtab is-external">Källregister</a></li>
-          <li><a href="/nyckeltal" className="nav-subtab is-active">Nyckeltal</a></li>
-          <li><a href="/#verifiering" className="nav-subtab is-external">Verifieringsstatus</a></li>
-        </ul>
-      </div>
-    </nav>
-  );
-}
-
 const nyckeltalCss = `
 .nt-hero {
   background: linear-gradient(135deg, #1A2744 0%, #2C3E62 60%, #1A2744 100%);
@@ -342,7 +318,7 @@ const nyckeltalCss = `
   border-bottom: 1px solid var(--border);
   padding: 1.4rem 2rem 1.2rem;
   position: sticky;
-  top: 92px;
+  top: 44px;
   z-index: 50;
 }
 .nt-control-rad {
@@ -597,7 +573,7 @@ const nyckeltalCss = `
 }
 
 @media (max-width: 820px) {
-  .nt-controls { top: 56px; padding: 1rem 1rem 0.85rem; }
+  .nt-controls { top: 44px; padding: 1rem 1rem 0.85rem; }
   .nt-lista { padding: 2rem 1rem 3rem; }
   .nt-sektion-head { padding: 1rem 1.2rem; gap: 0.7rem; }
   .nt-sektion-head h2 { font-size: 1.3rem; }

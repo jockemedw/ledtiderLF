@@ -3,6 +3,7 @@ import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import { normalize, parse, serialize } from '../lib/section-selection.js';
+import MinimalNav from '../components/MinimalNav.jsx';
 
 // Plockar ut <section id="X">...</section> ur lokalforsorjning.html för
 // varje sektion-id i `?ids=...` och serverar dem som en egen sida.
@@ -93,9 +94,10 @@ export default function Skraddarsydd({ css, sektionerHtml, antal, okand, titlar,
         <style dangerouslySetInnerHTML={{ __html: TILLAGGS_CSS }} />
       </Head>
 
+      <MinimalNav title="Skräddarsydd sammanställning" />
+
       <header className="skr-header">
         <div className="skr-header-inner">
-          <p className="skr-eyebrow">Lejonfastigheter · Lokalförsörjning</p>
           <h1>Skräddarsydd sammanställning</h1>
           {antal > 0 && (
             <p className="skr-summary">
@@ -109,8 +111,6 @@ export default function Skraddarsydd({ css, sektionerHtml, antal, okand, titlar,
             </p>
           )}
           <p className="skr-bak">
-            <Link href={'/' + (query ? '?' + query : '')}>← Tillbaka till fullversionen</Link>
-            {' · '}
             <a href={'/api/pptx' + (query ? '?' + query : '')}>Exportera PPT</a>
           </p>
           {okand.length > 0 && (

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
 import { useMemo, useState } from 'react';
+import MinimalNav from '../components/MinimalNav.jsx';
 
 export async function getStaticProps() {
   const root = process.cwd();
@@ -89,7 +90,7 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
         <style dangerouslySetInnerHTML={{ __html: kallregisterCss }} />
       </Head>
 
-      <Nav active="kallor" omraden={omraden} />
+      <MinimalNav title="Källregister" />
 
       <section className="kr-hero">
         <div className="kr-hero-inner">
@@ -201,31 +202,6 @@ function KallaKort({ k, omrade }) {
   );
 }
 
-function Nav({ omraden }) {
-  return (
-    <nav className="site-nav" data-active-group="kallor" data-page="kallregister">
-      <div className="nav-row nav-row-primary">
-        <a href="/" className="nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
-        <ul className="nav-toptabs">
-          <li><a href="/#sammanfattning" className="nav-toptab is-external" data-group="oversikt">Översikt</a></li>
-          <li><a href="/#hierarki" className="nav-toptab is-external" data-group="behov">Behov &amp; kund</a></li>
-          <li><a href="/detaljplan" className="nav-toptab is-external" data-group="process">Process</a></li>
-          <li><a href="/#kontext" className="nav-toptab is-external" data-group="tid">Tid &amp; pengar</a></li>
-          <li><a href="/kallregister" className="nav-toptab" data-group="kallor">Källor</a></li>
-        </ul>
-      </div>
-      <div className="nav-row nav-row-sub">
-        <ul className="nav-subtabs" data-group="kallor">
-          <li><a href="/#kallor" className="nav-subtab is-external">Källor — kortöversikt</a></li>
-          <li><a href="/kallregister" className="nav-subtab is-active">Källregister</a></li>
-          <li><a href="/nyckeltal" className="nav-subtab is-external">Nyckeltal</a></li>
-          <li><a href="/#verifiering" className="nav-subtab is-external">Verifieringsstatus</a></li>
-        </ul>
-      </div>
-    </nav>
-  );
-}
-
 const kallregisterCss = `
 .kr-hero {
   background: linear-gradient(135deg, #1A2744 0%, #2C3E62 60%, #1A2744 100%);
@@ -257,7 +233,7 @@ const kallregisterCss = `
   border-bottom: 1px solid var(--border);
   padding: 1.6rem 2rem 1.4rem;
   position: sticky;
-  top: 92px;
+  top: 44px;
   z-index: 50;
 }
 .kr-control-rad {
@@ -425,7 +401,7 @@ const kallregisterCss = `
 }
 
 @media (max-width: 820px) {
-  .kr-controls { top: 56px; padding: 1rem 1rem 0.9rem; }
+  .kr-controls { top: 44px; padding: 1rem 1rem 0.9rem; }
   .kr-control-rad { gap: 0.6rem; }
   .kr-sortering label { font-size: 0.7rem; }
   .kr-lista { padding: 2rem 1rem 3rem; }
