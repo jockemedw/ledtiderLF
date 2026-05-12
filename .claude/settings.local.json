@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "mcp__ad716c0c-348c-4941-86d1-931aeafba278__list_teams",
+      "mcp__ad716c0c-348c-4941-86d1-931aeafba278__list_deployments"
     ]
   }
 }
