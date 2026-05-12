@@ -181,7 +181,7 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
 
 function KallaKort({ k, omrade }) {
   return (
-    <li className="kr-kort">
+    <li className="kr-kort" id={k.id}>
       <div className="kr-kort-topp">
         <span className="kr-kort-omrade" style={{ background: omrade?.farg }}>
           {omrade?.namn || k.omrade}
@@ -218,6 +218,7 @@ function Nav({ omraden }) {
         <ul className="nav-subtabs" data-group="kallor">
           <li><a href="/#kallor" className="nav-subtab is-external">Källor — kortöversikt</a></li>
           <li><a href="/kallregister" className="nav-subtab is-active">Källregister</a></li>
+          <li><a href="/nyckeltal" className="nav-subtab is-external">Nyckeltal</a></li>
           <li><a href="/#verifiering" className="nav-subtab is-external">Verifieringsstatus</a></li>
         </ul>
       </div>
