@@ -1484,9 +1484,12 @@ body.show-verifiering [data-verifiering="verifierad"]::after { background: #0596
 
 /* ─── KALLOR ────────────────────────────────── */
 #kallor { background: var(--white); }
+.kallregister-pills {
+  display: flex; flex-wrap: wrap; gap: 0.7rem;
+  margin-top: 1.6rem;
+}
 .kallregister-pill {
   display: inline-flex; align-items: center; gap: 0.7rem;
-  margin-top: 1.6rem;
   padding: 0.65rem 1.1rem;
   border: 1px solid rgba(232, 201, 122, 0.55);
   background: rgba(232, 201, 122, 0.08);
@@ -2246,11 +2249,18 @@ footer strong { color: rgba(255,255,255,0.8); }
     <h2>Källor och referensmaterial</h2>
     <p class="mt-2" style="color:var(--muted)">Alla ledtider och statistiska uppgifter i detta material baseras på nedanstående svenska källor. Siffror avser det senast tillgängliga underlaget per angiven källa.</p>
 
-    <a class="kallregister-pill" href="/kallregister" title="Bläddra i hela källregistret">
-      <span class="kallregister-pill-eyebrow">Egen sida</span>
-      <span class="kallregister-pill-text">Källregistret — bläddra och filtrera bland alla källor</span>
-      <span class="kallregister-pill-arrow" aria-hidden="true">↗</span>
-    </a>
+    <div class="kallregister-pills">
+      <a class="kallregister-pill" href="/kallregister" title="Bläddra och filtrera bland alla källor">
+        <span class="kallregister-pill-eyebrow">Egen sida</span>
+        <span class="kallregister-pill-text">Källregistret — alla källor med sökruta och kategori-filter</span>
+        <span class="kallregister-pill-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="kallregister-pill" href="/nyckeltal" title="Citerbara nyckeltal extraherade ur källorna">
+        <span class="kallregister-pill-eyebrow">Egen sida</span>
+        <span class="kallregister-pill-text">Nyckeltal — alla siffror med källa, datum och verifieringsstatus</span>
+        <span class="kallregister-pill-arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
 
     <div class="kallor-grid" id="kallor-grid"></div>
   </div>
