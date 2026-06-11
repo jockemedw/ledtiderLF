@@ -63,16 +63,20 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
 `npm test` — kör Vitest-svit för `lib/auth.js` och `lib/anchor.js`. UI och API verifieras manuellt enligt testplanen i `docs/superpowers/specs/2026-04-21-kommentarer-design.md`.
 
-## Populärversion (.pptx)
+## PowerPoint-export (.pptx)
 
-En kort, visuell populärversion (4–5 bilder) genereras från `scripts/popular-slides.json` via `pptxgenjs`. Layouterna är fasta (`titel`, `siffra-stor`, `trappa`, `tabell`, `tva-spalter`) så att resultatet alltid följer Lejonfastigheters varumärkespalett.
+Två lägen, båda genererade från `scripts/popular-slides.json` via `pptxgenjs`. Layouterna är fasta (`titel`, `siffra-stor`, `trappa`, `tabell`, `tva-spalter`, `kort-grid`, `innehall`) så att resultatet alltid följer Lejonfastigheters varumärkespalett.
+
+1. **Populärversionen** — den kurerade korta versionen (5 bilder, slides med `popular: true`). Byggs av `npm run pptx` utan argument eller `GET /api/pptx` utan `ids`.
+2. **Skräddarsydd export** — valfri blandning av sidans sektioner, en slide per sektion plus omslag. Varje valbar sektion i navigationen har en kurerad slide (testas i `lib/__tests__/pptx-builder.test.js`). Nås via Sammanställ-knappen på sidan ("Exportera PowerPoint"), `/skraddarsydd`-sidan eller `GET /api/pptx?ids=...`.
 
 ```bash
-npm run pptx                      # alla slides → dist/lokalforsorjning-popular.pptx
-npm run pptx -- titel,kostnad-80  # bara valda slides
-npm run pptx -- --out=foo.pptx    # eget filnamn (under dist/)
+npm run pptx                                # populärversionen → dist/lokalforsorjning-popular.pptx
+npm run pptx -- titel,kostnad-80            # bara valda slide-id:n
+npm run pptx -- --sections=moduler,beslut   # via sektion-id:n (omslag läggs till)
+npm run pptx -- --out=foo.pptx              # eget filnamn (under dist/)
 ```
 
-Slides definieras i `scripts/popular-slides.json`. Varje slide refererar till ett HTML-ankare i fullversionen (fältet `ankare`) så att det är spårbart varifrån innehållet kommer — men själva innehållet ligger i JSON, inte i HTML, för att populärversionen ska vara stabil och redigerbar oberoende av webbsidans layout.
+Slides definieras i `scripts/popular-slides.json`. Varje slide refererar till ett HTML-ankare i fullversionen (fältet `ankare`) så att det är spårbart varifrån innehållet kommer — men själva innehållet ligger i JSON, inte i HTML, för att exporten ska vara stabil och redigerbar oberoende av webbsidans layout.
 
 `dist/` är gitignored — varje användare regenererar .pptx själv.

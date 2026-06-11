@@ -111,7 +111,7 @@ export default function Skraddarsydd({ css, sektionerHtml, antal, okand, titlar,
             </p>
           )}
           <p className="skr-bak">
-            <a href={'/api/pptx' + (query ? '?' + query : '')}>Exportera PPT</a>
+            <a href={'/api/pptx' + (query ? '?' + query : '')}>Exportera PowerPoint — en slide per sektion</a>
           </p>
           {okand.length > 0 && (
             <p className="skr-varning">

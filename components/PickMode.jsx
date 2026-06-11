@@ -214,7 +214,7 @@ export default function PickMode() {
             href={'/api/pptx' + serialize(ids)}
             aria-disabled={valda.length === 0}
             onClick={e => { if (valda.length === 0) e.preventDefault(); }}
-          >Exportera PPT</a>
+          >Exportera PowerPoint</a>
           <div className="pick-cta-row">
             <button
               type="button"
@@ -231,6 +231,7 @@ export default function PickMode() {
           </div>
           <p className="pick-foot-not">
             Länken du delar bär hela urvalet — ingen inloggning krävs.
+            PowerPoint-exporten ger en slide per vald sektion, plus omslag.
           </p>
         </footer>
       </aside>

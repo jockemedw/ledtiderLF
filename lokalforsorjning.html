@@ -1844,7 +1844,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     <p class="hero-eyebrow">Lejonfastigheter AB — Beslutsfattarguide</p>
     <h1 class="hero-title">Från behov<br>till <em>inflyttning</em></h1>
     <p class="hero-ingress">
-      Att tillgodose ett lokalbehov tar allt från tre månader till åtta år — beroende på vilket väg som väljs och hur tidigt planeringen startar. Det här materialet förklarar varför, och vad som faktiskt tar tid.
+      Att tillgodose ett lokalbehov tar allt från tre månader till åtta år — beroende på vilken väg som väljs och hur tidigt planeringen startar. Det här materialet förklarar varför, och vad som faktiskt tar tid.
     </p>
     <span class="hero-tagline">Fyra spår · Faktiska ledtider · Svenska referensdata</span>
   </div>
@@ -1920,9 +1920,9 @@ footer strong { color: rgba(255,255,255,0.8); }
         <span>"Från tanke till färdig" förskola eller skola — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner.</span>
         <cite>Lunds kommun, lund.se</cite>
       </div>
-      <div class="gantt-bench-rad" data-verifiering="verifierad">
+      <div class="gantt-bench-rad" data-verifiering="preliminar" data-verifiering-not="Snittsiffran +14 mån avser bostadsplaner (Evidens 2023). Motsvarande siffra specifikt för samhällsfastigheter saknas i öppen statistik.">
         <strong>+14 månader</strong>
-        <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige.</span>
+        <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige. Snittet avser bostadsplaner — siffra specifikt för samhällsfastigheter saknas i öppen statistik.</span>
         <cite>Evidens 2023 / SKR 2024</cite>
       </div>
       <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
@@ -2074,7 +2074,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Interimslösningen</span>
     <h2>Modulbyggnader</h2>
-    <p class="mt-2">Moduler är inte ett femte spår — de är ett verktyg som köper tid medan ett permanent spår planeras. <strong>De ”korta” tiderna som ofta nämns (veckor) gäller endast vid akuta händelser som brand eller vattenskada</strong>, där bygglov kan hanteras snabbspår och tomten redan har rätt planändamål. För ordinarie temporära behov (6 månader–5 år) krävs samma bygglovsprocess som för all annan byggnation, plus tidsbegränsat bygglov (max 10 år, förlängningsbart till 15) och rätt planändamål.</p>
+    <p class="mt-2">Moduler är inte ett femte spår — de är ett verktyg som köper tid medan ett permanent spår planeras. <strong>De ”korta” tiderna som ofta nämns (veckor) gäller endast vid akuta händelser som brand eller vattenskada</strong>, där bygglov kan hanteras i snabbspår och tomten redan har rätt planändamål. För ordinarie temporära behov (6 månader–5 år) krävs samma bygglovsprocess som för all annan byggnation, plus tidsbegränsat bygglov (max 10 år, förlängningsbart till 15) och rätt planändamål.</p>
     <div class="modul-grid" id="modul-grid"></div>
     <div class="modul-varning">
       <strong>Varning:</strong> Temporära lösningar tenderar att bli permanenta. Uppsala rapporterar att ~20 % av kommunens förskolor drivs i modulbyggnader. SVT (2021): <em>"Förskolemodulerna är här för att stanna."</em> Använd moduler med en explicit plan och datum för avveckling.
@@ -2167,7 +2167,7 @@ footer strong { color: rgba(255,255,255,0.8); }
         <span><span class="pill" style="background:#E8C97A"></span>Kostnader bundna genom beslut</span>
         <span><span class="pill" style="background:#0891B2"></span>Kostnader faktiskt utbetalda</span>
       </div>
-      <p class="kostnad-kurva-note">Schematisk illustration. Den exakta kurvan varierar mellan projekt — men formen (snabb bindning tidigt, sen utbetalning) är robust över studier av offentliga byggprojekt. <strong data-verifiering="preliminar" style="color:var(--gold-light)">[Siffror att verifiera]</strong></p>
+      <p class="kostnad-kurva-note">Schematisk illustration. Den exakta kurvan varierar mellan projekt — men formen (snabb bindning tidigt, sen utbetalning) är robust över studier av offentliga byggprojekt. <span data-verifiering="preliminar">Nivån 70–80 % är en branschtolkning av MacLeamy/CURT 2004 och Paulson 1976 — primärkällorna visar kvalitativa kurvor utan exakt procenttal.</span></p>
     </div>
 
     <div class="kostnad-grid">
@@ -2245,7 +2245,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 
 
 <footer>
-  <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Arbetsmaterial april 2026 · Internt beslutsunderlag
+  <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Arbetsmaterial juni 2026 · Internt beslutsunderlag
 </footer>
 
 <script>
@@ -2429,7 +2429,7 @@ const DATA = {
       farg: "#C0392B",
       minManader: 30,
       maxManader: 96,
-      passar: "Permanent nytt lokalbehovet",
+      passar: "Permanent nytt lokalbehov",
       varning: "5–8 år med ny detaljplan — planering måste starta omedelbart",
 
       scenarios: [
@@ -2566,7 +2566,7 @@ const DATA = {
     { tid: "< 6 månader",  rek: "A. Hyra in (eller modul)", text: "Inget annat spår är realistiskt. Acceptera begränsningarna — planera permanent lösning parallellt." },
     { tid: "1–3 år",       rek: "B. Bygga om",              text: "Om lämplig byggnad finns i beståndet och ingen ny detaljplan krävs. Annars modul som interimslösning." },
     { tid: "3–5 år",       rek: "C eller D (no DP)",        text: "Tillbyggnad om befintlig byggnad finns. Nybyggnad om mark och plan redan är på plats." },
-    { tid: "5 år eller mer", rek: "D. Nybyggnad",           text: "Starta detaljplaneprocess och säkra budget nu. Behovet finns 2030 — besluten måste fattas 2025." },
+    { tid: "5 år eller mer", rek: "D. Nybyggnad",           text: "Starta detaljplaneprocess och säkra budget nu. Ett behov som finns 2031 kräver beslut 2026." },
   ],
 
   moduler: [
@@ -2635,19 +2635,11 @@ const DATA = {
     },
     {
       siffra: "18–24",
-      enhet: "mån — målbilden",
-      beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar dock att kommunerna i genomsnitt inte når upp till denna målsättning. Gapet mellan ambition och utfall är en strukturell utmaning som påverkar alla kommunala lokalförsörjningsprojekt.",
+      enhet: "mån — kommunens egen målbild",
+      beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar dock att kommunerna i genomsnitt inte når upp till denna målsättning. För kommunala byggherrar med prioriterade samhällsprojekt är förhållandena ofta bättre än för bostadsmarknaden, men gapet mellan målbild och utfall kvarstår även för aktiva planprocesser.",
       kalla: "Nationellt Ledtidsindex 2025",
       verifiering: "preliminar",
       verifieringNot: "Målbild från flerbostadssidan — överförbarheten till kommunala lokalförsörjningsprojekt behöver bekräftas (samma planenhet men annan typ av plan)."
-    },
-    {
-      siffra: "18–24",
-      enhet: "mån — kommunens egen målbild",
-      beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar att kommunerna i genomsnitt inte når upp till denna målsättning. För kommunala byggherrar med prioriterade samhällsprojekt är förhållandena ofta bättre än för bostadsmarknaden, men gapet mellan målbild och utfall kvarstår även för aktiva planprocesser.",
-      kalla: "Nationellt Ledtidsindex 2025",
-      verifiering: "preliminar",
-      verifieringNot: "Två poster i kontext-listan har samma siffra 18–24 men olika nyans. Dubblett bör ses över — välj en av versionerna eller slå ihop dem."
     }
   ],
 
