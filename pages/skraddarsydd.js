@@ -61,9 +61,13 @@ const TITEL_FALLBACK = {
 };
 
 function sectionTitle(html, id) {
-  const m = html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
+  // Samma rubrikval som Sammanställ-panelen: sektionsetiketten först,
+  // annars h2, annars spårens fallback.
+  const m =
+    html.match(/<span class="section-label">([\s\S]*?)<\/span>/i) ||
+    html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
   if (!m) return TITEL_FALLBACK[id] || null;
-  return m[1].replace(/<[^>]+>/g, '').trim();
+  return m[1].replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').trim();
 }
 
 export async function getServerSideProps({ query }) {
