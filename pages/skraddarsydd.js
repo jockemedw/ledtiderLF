@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Script from 'next/script';
 import fs from 'fs';
 import path from 'path';
 import { normalize, parse, serialize } from '../lib/section-selection.js';
@@ -12,6 +13,20 @@ import MinimalNav from '../components/MinimalNav.jsx';
 function extractStyle(raw) {
   const m = raw.match(/<style>([\s\S]*?)<\/style>/);
   return m ? m[1] : '';
+}
+
+// Samma extraktion + init-transform som pages/index.js — utan scriptet är
+// alla JS-renderade delar (spårkort, gantt, spårsektioner, per-typ, exempel,
+// kontext, moduler, beslut, källor) tomma. Render-funktionerna null-guardar
+// sina containrar, så bara valda sektioner renderas.
+function extractScript(raw) {
+  const m = raw.match(/<script>([\s\S]*?)<\/script>/);
+  let script = m ? m[1] : '';
+  script = script.replace(
+    /document\.addEventListener\(\s*["']DOMContentLoaded["']\s*,\s*\(\s*\)\s*=>\s*\{([\s\S]*?)\}\s*\)\s*;?/,
+    '(function initDirect() {\n  if (document.readyState === "loading") {\n    document.addEventListener("DOMContentLoaded", initDirect);\n    return;\n  }\n$1\n})();'
+  );
+  return script;
 }
 
 function extractSection(raw, id) {
@@ -37,9 +52,17 @@ function listSectionIds(raw) {
   return ids;
 }
 
-function sectionTitle(html) {
+// Spårsektionernas rubriker renderas av JS och finns inte i statisk HTML.
+const TITEL_FALLBACK = {
+  'spar-a': 'Spår A: Hyra in',
+  'spar-b': 'Spår B: Bygga om',
+  'spar-c': 'Spår C: Tillbyggnad',
+  'spar-d': 'Spår D: Nybyggnad',
+};
+
+function sectionTitle(html, id) {
   const m = html.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
-  if (!m) return null;
+  if (!m) return TITEL_FALLBACK[id] || null;
   return m[1].replace(/<[^>]+>/g, '').trim();
 }
 
@@ -59,11 +82,12 @@ export async function getServerSideProps({ query }) {
     .filter(s => s.html);
 
   const okand = requested.filter(id => !ids.includes(id));
-  const titlar = sektioner.map(s => ({ id: s.id, titel: sectionTitle(s.html) }));
+  const titlar = sektioner.map(s => ({ id: s.id, titel: sectionTitle(s.html, s.id) }));
 
   return {
     props: {
       css,
+      scriptInnehall: sektioner.length ? extractScript(raw) : '',
       sektionerHtml: sektioner.map(s => s.html).join('\n'),
       antal: sektioner.length,
       okand,
@@ -73,7 +97,7 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default function Skraddarsydd({ css, sektionerHtml, antal, okand, titlar, query }) {
+export default function Skraddarsydd({ css, scriptInnehall, sektionerHtml, antal, okand, titlar, query }) {
   const titel = antal === 0
     ? 'Skräddarsydd sammanställning — inga sektioner valda'
     : `Skräddarsydd sammanställning (${antal} sektion${antal === 1 ? '' : 'er'})`;
@@ -135,6 +159,14 @@ export default function Skraddarsydd({ css, sektionerHtml, antal, okand, titlar,
         <div
           className="skr-innehall"
           dangerouslySetInnerHTML={{ __html: sektionerHtml }}
+        />
+      )}
+
+      {scriptInnehall && (
+        <Script
+          id="skr-data-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: scriptInnehall }}
         />
       )}
 
