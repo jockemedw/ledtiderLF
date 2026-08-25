@@ -3425,7 +3425,14 @@ function setupScrollUI() {
     { id: 'kostnad',        label: 'Kostnad' },
     { id: 'beslut',         label: 'Beslutsstöd' },
     { id: 'kallor',         label: 'Källor' },
-  ].filter(s => document.getElementById(s.id));
+  ].filter(s => document.getElementById(s.id))
+    // Scroll-indikatorn kräver att listan följer sidans faktiska ordning —
+    // findCurrent bryter vid första sektion under trigger-linjen.
+    .sort((a, b) => {
+      const pos = document.getElementById(a.id)
+        .compareDocumentPosition(document.getElementById(b.id));
+      return pos & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+    });
 
   const progress = document.createElement('div');
   progress.className = 'scroll-progress';
