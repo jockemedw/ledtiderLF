@@ -28,20 +28,32 @@ export default function PickMode() {
       kallor: 'Källor',
     };
 
-    const items = [];
-    document.querySelectorAll('.nav-subtab[data-section]').forEach(el => {
-      const id = el.dataset.section;
-      const titel = (el.textContent || '').trim();
-      const parent = el.closest('.nav-subtabs');
-      const grupp = parent?.dataset?.group || 'ovrig';
-      if (!id || !titel) return;
-      items.push({ id, titel, grupp, gruppTitel: groupNames[grupp] || grupp });
-    });
-    setCatalog(items);
+    // Panelen visar sektionernas riktiga rubriker (h2) så att urvalet går
+    // att matcha mot sidan — nav-etiketten är bara fallback.
+    const byggKatalog = () => {
+      const items = [];
+      document.querySelectorAll('.nav-subtab[data-section]').forEach(el => {
+        const id = el.dataset.section;
+        const h2 = document.getElementById(id)?.querySelector('h2');
+        const titel = (h2?.textContent || el.textContent || '').trim();
+        const parent = el.closest('.nav-subtabs');
+        const grupp = parent?.dataset?.group || 'ovrig';
+        if (!id || !titel) return;
+        items.push({ id, titel, grupp, gruppTitel: groupNames[grupp] || grupp });
+      });
+      return items;
+    };
 
-    const tillatna = items.map(x => x.id);
-    setIds(normalize(parse(window.location.search), tillatna));
+    const items = byggKatalog();
+    setCatalog(items);
+    setIds(normalize(parse(window.location.search), items.map(x => x.id)));
     initieratRef.current = true;
+
+    // Spårsektionernas rubriker renderas av sidans script efter mount —
+    // skanna om så att även de får sina riktiga rubriker.
+    const t1 = setTimeout(() => setCatalog(byggKatalog()), 700);
+    const t2 = setTimeout(() => setCatalog(byggKatalog()), 2000);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
   // Knyt headerknappen
