@@ -23,7 +23,7 @@
       "ordning": 2,
       "ankare": "kostnad",
       "popular": true,
-      "layout": "siffra-stor",
+      "layout": "kurva",
       "titel": "70–80 % av kostnaden låses tidigt",
       "underrubrik": "Tid och pengar är samma fråga",
       "siffra": "70–80 %",
@@ -33,7 +33,41 @@
         "Den dyraste kortsiktigheten är att hoppa över förskedet för att 'spara tid'.",
         "Planberedskap är den enskilt största kostnads­besparingen utan kvalitetsförlust."
       ],
-      "kalla": "Branschtolkning av MacLeamy/CURT 2004 och Paulson 1976 (ASCE) — primärkällorna visar kvalitativa kurvor utan exakt procenttal"
+      "kalla": "Branschtolkning av MacLeamy/CURT 2004 och Paulson 1976 (ASCE) — primärkällorna visar kvalitativa kurvor utan exakt procenttal",
+      "kurva": {
+        "skeden": [
+          "Idé",
+          "Förstudie",
+          "Program",
+          "Projektering",
+          "Byggnation",
+          "Drift"
+        ],
+        "serier": [
+          {
+            "namn": "Låst (bunden) kostnad",
+            "varden": [
+              5,
+              35,
+              75,
+              85,
+              95,
+              100
+            ]
+          },
+          {
+            "namn": "Nedlagd kostnad",
+            "varden": [
+              1,
+              3,
+              8,
+              25,
+              85,
+              100
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "hierarki",
@@ -44,10 +78,30 @@
       "titel": "Hur behov tillgodoses",
       "underrubrik": "I ordning från enklast till mest omfattande",
       "steg": [
-        { "niva": 1, "namn": "Inhyrning", "ledtid": "3–12 mån", "beskrivning": "Snabbast — om rätt lokal finns ledig på rätt plats." },
-        { "niva": 2, "namn": "Övertagande / ombyggnad", "ledtid": "2–5 år", "beskrivning": "Ta över befintlig byggnad. Dolda skador kan fördubbla tid och kostnad." },
-        { "niva": 3, "namn": "Tillbyggnad", "ledtid": "2–3,5 år", "beskrivning": "Utöka befintlig byggnad. Kräver byggrätt — med planändring 4–7 år." },
-        { "niva": 4, "namn": "Nybyggnation", "ledtid": "5–8 år", "beskrivning": "Maximal flexibilitet — men ofta ny detaljplan på 2–5 år." }
+        {
+          "niva": 1,
+          "namn": "Inhyrning",
+          "ledtid": "3–12 mån",
+          "beskrivning": "Snabbast — om rätt lokal finns ledig på rätt plats."
+        },
+        {
+          "niva": 2,
+          "namn": "Övertagande / ombyggnad",
+          "ledtid": "2–5 år",
+          "beskrivning": "Ta över befintlig byggnad. Dolda skador kan fördubbla tid och kostnad."
+        },
+        {
+          "niva": 3,
+          "namn": "Tillbyggnad",
+          "ledtid": "2–3,5 år",
+          "beskrivning": "Utöka befintlig byggnad. Kräver byggrätt — med planändring 4–7 år."
+        },
+        {
+          "niva": 4,
+          "namn": "Nybyggnation",
+          "ledtid": "5–8 år",
+          "beskrivning": "Maximal flexibilitet — men ofta ny detaljplan på 2–5 år."
+        }
       ],
       "callout": "Det enkla spåret är att ta över lokaler någon annan lämnar — men det är sällan det någon vill, eftersom verksamheten då ska anpassa sig till en byggnad ritad för något annat."
     },
@@ -56,20 +110,63 @@
       "ordning": 4,
       "ankare": "jamforelse",
       "popular": true,
-      "layout": "tabell",
+      "layout": "intervall",
       "titel": "Ledtider per fas",
       "underrubrik": "Typiska tidsspann i svenska kommunala lokalprojekt",
-      "kolumner": ["Spår", "Total ledtid", "Vad som styr tiden"],
+      "fotnot": "Eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-processer kommer ovanpå. Källor: SISAB, Micasa, Uppsala Skolfastigheter, Bygg i Tid, SKR.",
+      "maxAr": 8,
       "rader": [
-        ["A. Hyra in (befintlig lokal)", "3–12 månader", "Marknadens utbud, hyresgästanpassning"],
-        ["A2. Hyresvärds­upphandling", "2–4 år", "LOU-upphandling, ev. detaljplan på hyresvärdens mark"],
-        ["B. Bygga om", "2–5 år", "Dolda skador, evakuering, omfattning"],
-        ["C. Tillbyggnad (inom DP)", "2–3,5 år", "Bygglov, byggrätt, verksamhets­påverkan"],
-        ["C. Tillbyggnad (planändring)", "4–7 år", "Detaljplaneändring tillkommer"],
-        ["D. Nybyggnad (befintlig DP)", "2,5–4 år", "Projektering, byggnation, upphandling"],
-        ["D. Nybyggnad (ny DP)", "5–8 år", "Detaljplan ensam: 2–5 år (SKR 2024)"]
-      ],
-      "fotnot": "Eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-processer kommer ovanpå. Källor: SISAB, Micasa, Uppsala Skolfastigheter, Bygg i Tid, SKR."
+        {
+          "namn": "A. Hyra in (befintlig lokal)",
+          "tid": "3–12 månader",
+          "driver": "Marknadens utbud, hyresgästanpassning",
+          "min": 0.25,
+          "max": 1
+        },
+        {
+          "namn": "A2. Hyresvärds­upphandling",
+          "tid": "2–4 år",
+          "driver": "LOU-upphandling, ev. detaljplan",
+          "min": 2,
+          "max": 4
+        },
+        {
+          "namn": "B. Bygga om",
+          "tid": "2–5 år",
+          "driver": "Dolda skador, evakuering, omfattning",
+          "min": 2,
+          "max": 5
+        },
+        {
+          "namn": "C. Tillbyggnad (inom DP)",
+          "tid": "2–3,5 år",
+          "driver": "Bygglov, byggrätt, verksamhets­påverkan",
+          "min": 2,
+          "max": 3.5
+        },
+        {
+          "namn": "C. Tillbyggnad (planändring)",
+          "tid": "4–7 år",
+          "driver": "Detaljplaneändring tillkommer",
+          "min": 4,
+          "max": 7
+        },
+        {
+          "namn": "D. Nybyggnad (befintlig DP)",
+          "tid": "2,5–4 år",
+          "driver": "Projektering, byggnation, upphandling",
+          "min": 2.5,
+          "max": 4
+        },
+        {
+          "namn": "D. Nybyggnad (ny DP)",
+          "tid": "5–8 år",
+          "driver": "Detaljplan ensam: 2–5 år (SKR 2024)",
+          "min": 5,
+          "max": 8,
+          "farg": "B5822A"
+        }
+      ]
     },
     {
       "id": "provning",
@@ -101,10 +198,26 @@
       "titel": "Det viktigaste först",
       "underrubrik": "På 30 sekunder",
       "kort": [
-        { "siffra": "4", "etikett": "spår", "text": "Hyra in, bygga om, bygga till eller bygga nytt. Valet styr ledtid, kostnad och flexibilitet." },
-        { "siffra": "3 mån–8 år", "etikett": "spann i ledtid", "text": "Från snabbaste hyreslösning till ny skola med detaljplan. Skillnaden ligger i förskedet, inte i bygget." },
-        { "siffra": "~7 år", "etikett": "för en ny skola", "text": "Lunds kommuns genomsnitt — bekräftas av Uppsala, Stockholm m.fl. Byggfasen är bara 2–3 år." },
-        { "siffra": "70–80 %", "etikett": "av kostnaden låses tidigt", "text": "Beslut i förstudie- och programskede binder större delen av investeringen." }
+        {
+          "siffra": "4",
+          "etikett": "spår",
+          "text": "Hyra in, bygga om, bygga till eller bygga nytt. Valet styr ledtid, kostnad och flexibilitet."
+        },
+        {
+          "siffra": "3 mån–8 år",
+          "etikett": "spann i ledtid",
+          "text": "Från snabbaste hyreslösning till ny skola med detaljplan. Skillnaden ligger i förskedet, inte i bygget."
+        },
+        {
+          "siffra": "~7 år",
+          "etikett": "för en ny skola",
+          "text": "Lunds kommuns genomsnitt — bekräftas av Uppsala, Stockholm m.fl. Byggfasen är bara 2–3 år."
+        },
+        {
+          "siffra": "70–80 %",
+          "etikett": "av kostnaden låses tidigt",
+          "text": "Beslut i förstudie- och programskede binder större delen av investeringen."
+        }
       ],
       "callout": "Nyckeln: den största tidsvinsten är en tydlig och stabil behovsbild innan projektering påbörjas. Sena förändringar är i praktiken en omstart — inte en justering."
     },
@@ -116,10 +229,26 @@
       "titel": "Hur lokaler kan tillgodoses",
       "underrubrik": "De fyra spåren",
       "kort": [
-        { "siffra": "A", "etikett": "Hyra in · 3 mån–4 år", "text": "Befintlig lokal eller hyresvärdsupphandling. Snabbast — men strukturellt dyrare långsiktigt." },
-        { "siffra": "B", "etikett": "Bygga om · 2–5 år", "text": "Anpassning av befintlig byggnad i beståndet. Dolda skador kan fördubbla tid och kostnad." },
-        { "siffra": "C", "etikett": "Tillbyggnad · 2–3,5 år", "text": "Kapacitetsökning på befintlig plats. Kräver byggrätt — annars lika lång tid som nybyggnad." },
-        { "siffra": "D", "etikett": "Nybyggnad · 2,5–8 år", "text": "Maximal flexibilitet. Med ny detaljplan 5–8 år — planeringen måste starta omedelbart." }
+        {
+          "siffra": "A",
+          "etikett": "Hyra in · 3 mån–4 år",
+          "text": "Befintlig lokal eller hyresvärdsupphandling. Snabbast — men strukturellt dyrare långsiktigt."
+        },
+        {
+          "siffra": "B",
+          "etikett": "Bygga om · 2–5 år",
+          "text": "Anpassning av befintlig byggnad i beståndet. Dolda skador kan fördubbla tid och kostnad."
+        },
+        {
+          "siffra": "C",
+          "etikett": "Tillbyggnad · 2–3,5 år",
+          "text": "Kapacitetsökning på befintlig plats. Kräver byggrätt — annars lika lång tid som nybyggnad."
+        },
+        {
+          "siffra": "D",
+          "etikett": "Nybyggnad · 2,5–8 år",
+          "text": "Maximal flexibilitet. Med ny detaljplan 5–8 år — planeringen måste starta omedelbart."
+        }
       ],
       "callout": "Varje spår har fundamentalt olika förutsättningar, ledtider och ekonomiska konsekvenser."
     },
@@ -130,13 +259,43 @@
       "layout": "tabell",
       "titel": "Typiska ledtider och kostnader per lokaltyp",
       "underrubrik": "Byggfas (genomförandebeslut → inflyttning) om inte annat anges",
-      "kolumner": ["Lokaltyp", "Byggtid", "Budget", "Att veta"],
+      "kolumner": [
+        "Lokaltyp",
+        "Byggtid",
+        "Budget",
+        "Att veta"
+      ],
       "rader": [
-        ["Förskolor (3–8 avd)", "21–37 mån", "25–115 mkr", "Modulkoncept SISAB UPP: 21 mån"],
-        ["Grundskolor F–9", "18 mån ombyggn. · 3 år nybyggn.", "10–150 mkr", "Hela processen inkl. DP: 8–10 år"],
-        ["Vård- och omsorgsboenden", "2–3 år byggfas", "380–500 mkr", "Markanvisning → inflytt: 11–13 år (Micasa)"],
-        ["LSS-gruppbostäder", "10–15 mån", "20–50 mkr", "Snabbast i byggfas — brist i >50 % av kommunerna"],
-        ["Idrottshallar (fullstor)", "12–18 mån", "40–130 mkr", "Större arenor: 24–33 mån"]
+        [
+          "Förskolor (3–8 avd)",
+          "21–37 mån",
+          "25–115 mkr",
+          "Modulkoncept SISAB UPP: 21 mån"
+        ],
+        [
+          "Grundskolor F–9",
+          "18 mån ombyggn. · 3 år nybyggn.",
+          "10–150 mkr",
+          "Hela processen inkl. DP: 8–10 år"
+        ],
+        [
+          "Vård- och omsorgsboenden",
+          "2–3 år byggfas",
+          "380–500 mkr",
+          "Markanvisning → inflytt: 11–13 år (Micasa)"
+        ],
+        [
+          "LSS-gruppbostäder",
+          "10–15 mån",
+          "20–50 mkr",
+          "Snabbast i byggfas — brist i >50 % av kommunerna"
+        ],
+        [
+          "Idrottshallar (fullstor)",
+          "12–18 mån",
+          "40–130 mkr",
+          "Större arenor: 24–33 mån"
+        ]
       ],
       "fotnot": "Total processtid inkl. detaljplan och programskede är ofta 3–7 år längre än byggtiden. Källor: SISAB slutrapporter 2019–2024, Micasa lägesrapport 2025, Uppsala Skolfastigheter, ByggfaktaDOCU."
     },
@@ -147,11 +306,27 @@
       "layout": "tabell",
       "titel": "Lejonfastigheter och en spegling",
       "underrubrik": "Aktuella projekt jämförda med likartade projekt hos andra kommunala fastighetsbolag",
-      "kolumner": ["Exempel", "Lejonfastigheter", "Spegling"],
+      "kolumner": [
+        "Exempel",
+        "Lejonfastigheter",
+        "Spegling"
+      ],
       "rader": [
-        ["Vårdboende + förskola", "Lägerbålet 1, Linköping — 225 mkr, ≈24 mån bygg (klar dec 2026)", "Hemlingborg, Gävle — ≈36 mån bygg + ~1 år projektering"],
-        ["LSS-gruppbostad", "6 lgh, klar hösten 2024, ≈12–15 mån", "Avesta · Ludvika · Örnsköldsvik — 6 lgh, 10–15 mån, 20–30 mkr"],
-        ["Förskola", "Vallastaden — 72 barn, ≈10 mån bygg (färdig detaljplan)", "Krokom — 5 år från behovsbeslut, varav 12 mån produktion"]
+        [
+          "Vårdboende + förskola",
+          "Lägerbålet 1, Linköping — 225 mkr, ≈24 mån bygg (klar dec 2026)",
+          "Hemlingborg, Gävle — ≈36 mån bygg + ~1 år projektering"
+        ],
+        [
+          "LSS-gruppbostad",
+          "6 lgh, klar hösten 2024, ≈12–15 mån",
+          "Avesta · Ludvika · Örnsköldsvik — 6 lgh, 10–15 mån, 20–30 mkr"
+        ],
+        [
+          "Förskola",
+          "Vallastaden — 72 barn, ≈10 mån bygg (färdig detaljplan)",
+          "Krokom — 5 år från behovsbeslut, varav 12 mån produktion"
+        ]
       ],
       "fotnot": "Skillnaden ligger sällan i bygget utan i förskedet: Vallastaden hade färdig detaljplan i förväg; Krokom är den vanligaste verkligheten. Källor: Lejonfastigheter, RO-Gruppen, ByggPartner, ByggfaktaDOCU, Krokoms kommun."
     },
@@ -170,7 +345,26 @@
         "Strukturellt dyrare långsiktigt: 135–500 mnkr mer än ägande över 33 år (Kommuninvest 2021).",
         "Skola, förskola och omsorg har tekniska krav som utesluter de flesta kontorslokaler."
       ],
-      "kalla": "SKR, Kommuninvest 2021, LOU 3 kap. 19 §"
+      "kalla": "SKR, Kommuninvest 2021, LOU 3 kap. 19 §",
+      "badge": "A",
+      "faser": [
+        {
+          "namn": "Söka lokal",
+          "tid": "1–4 v"
+        },
+        {
+          "namn": "Politiskt beslut",
+          "tid": "4–8 v"
+        },
+        {
+          "namn": "Avtal",
+          "tid": "2–6 v"
+        },
+        {
+          "namn": "Anpassning",
+          "tid": "2–6 mån"
+        }
+      ]
     },
     {
       "id": "spar-b",
@@ -187,7 +381,26 @@
         "Evakuering är politiskt känslig och kan överklagas.",
         "Annars förutsägbart: SISAB:s åtta ombyggnader 2019–2023 höll +4 % mot budget i median."
       ],
-      "kalla": "SISAB slutrapporter 2019–2023, Helsingborgs stad"
+      "kalla": "SISAB slutrapporter 2019–2023, Helsingborgs stad",
+      "badge": "B",
+      "faser": [
+        {
+          "namn": "Förstudie & beslut",
+          "tid": "6–12 mån"
+        },
+        {
+          "namn": "Projektering",
+          "tid": "6–12 mån"
+        },
+        {
+          "namn": "Evakuering & bygglov",
+          "tid": "3–12 mån"
+        },
+        {
+          "namn": "Byggnation",
+          "tid": "10–24 mån"
+        }
+      ]
     },
     {
       "id": "spar-c",
@@ -203,7 +416,26 @@
         "Ger riktad kapacitetsökning där behovet finns, utan ny mark.",
         "Verksamheten påverkas av byggarbete på plats och kan behöva evakueras delvis."
       ],
-      "kalla": "SKR, Boverket"
+      "kalla": "SKR, Boverket",
+      "badge": "C",
+      "faser": [
+        {
+          "namn": "Förstudie & beslut",
+          "tid": "4–8 mån"
+        },
+        {
+          "namn": "Projektering",
+          "tid": "6–10 mån"
+        },
+        {
+          "namn": "Bygglov",
+          "tid": "2–5 mån"
+        },
+        {
+          "namn": "Byggnation",
+          "tid": "12–24 mån"
+        }
+      ]
     },
     {
       "id": "spar-d",
@@ -220,7 +452,22 @@
         "Budget och plats i lokalförsörjningsplanen måste säkras 3–5 år före byggstart.",
         "Parallellisering av projektering och planskede kan korta tiden — kräver stabilt politiskt mandat."
       ],
-      "kalla": "SKR 2024, Evidens 2023, Nationellt Ledtidsindex 2025"
+      "kalla": "SKR 2024, Evidens 2023, Nationellt Ledtidsindex 2025",
+      "badge": "D",
+      "faser": [
+        {
+          "namn": "Detaljplan (normalfall)",
+          "tid": "12–48 mån"
+        },
+        {
+          "namn": "Beslut & projektering",
+          "tid": "12–26 mån"
+        },
+        {
+          "namn": "Byggnation",
+          "tid": "12–30 mån"
+        }
+      ]
     },
     {
       "id": "moduler",
@@ -230,9 +477,21 @@
       "titel": "Modulbyggnader",
       "underrubrik": "Interimslösningen — inte ett femte spår",
       "kort": [
-        { "siffra": "6–18 mån", "etikett": "Moduluthyrning", "text": "Med bygglov — 'veckor' gäller bara akuta händelser. ≈1 700 kr/m²/år (Sala-exemplet). Tidsbegränsat bygglov max 10+5 år." },
-        { "siffra": "12–24 mån", "etikett": "Modulköp (permanent)", "text": "Teknisk livslängd 25–40 år. Binder kapital men ger lägre kostnad per år." },
-        { "siffra": "18–24 mån", "etikett": "Konceptbyggnad", "text": "Permanent prefab i trä (t.ex. SISAB UPP) — lämplig som ersättning av uttjänt förskola." }
+        {
+          "siffra": "6–18 mån",
+          "etikett": "Moduluthyrning",
+          "text": "Med bygglov — 'veckor' gäller bara akuta händelser. ≈1 700 kr/m²/år (Sala-exemplet). Tidsbegränsat bygglov max 10+5 år."
+        },
+        {
+          "siffra": "12–24 mån",
+          "etikett": "Modulköp (permanent)",
+          "text": "Teknisk livslängd 25–40 år. Binder kapital men ger lägre kostnad per år."
+        },
+        {
+          "siffra": "18–24 mån",
+          "etikett": "Konceptbyggnad",
+          "text": "Permanent prefab i trä (t.ex. SISAB UPP) — lämplig som ersättning av uttjänt förskola."
+        }
       ],
       "callout": "Varning: temporärt blir lätt permanent — ~20 % av Uppsalas förskolor drivs i moduler. Använd moduler med en explicit plan och datum för avveckling.",
       "fotnot": "Källor: SISAB, Uppsala kommun, SVT 2021, branschdata moduluthyrning."
@@ -245,10 +504,26 @@
       "titel": "Ledtiderna är en strukturell verklighet",
       "underrubrik": "Nationell kontext — inte unikt för Linköping",
       "kort": [
-        { "siffra": "4,8 år", "etikett": "detaljplan → byggstart", "text": "Riksgenomsnitt i 52 kommuner. Trend: 4,5 (2023) → 4,7 (2024) → 4,8 (2025). Avser flerbostadshus — vägledande för lokaler." },
-        { "siffra": "var fjärde", "etikett": "detaljplan överklagas", "text": "Endast 12 % av överklagandena ändrar planen. Genomsnittlig domstolstid: 8,4 månader." },
-        { "siffra": "~7 år", "etikett": "tanke → färdig skola", "text": "Lunds kommun — bekräftas av Uppsala, Stockholm och flera kommuners lokalförsörjningsplaner." },
-        { "siffra": "3 av 10 år", "etikett": "är byggnation", "text": "Kvarngärdesskolan, Uppsala: 3 års byggfas men 10 år totalt — detaljplanen startade 2015." }
+        {
+          "siffra": "4,8 år",
+          "etikett": "detaljplan → byggstart",
+          "text": "Riksgenomsnitt i 52 kommuner. Trend: 4,5 (2023) → 4,7 (2024) → 4,8 (2025). Avser flerbostadshus — vägledande för lokaler."
+        },
+        {
+          "siffra": "var fjärde",
+          "etikett": "detaljplan överklagas",
+          "text": "Endast 12 % av överklagandena ändrar planen. Genomsnittlig domstolstid: 8,4 månader."
+        },
+        {
+          "siffra": "~7 år",
+          "etikett": "tanke → färdig skola",
+          "text": "Lunds kommun — bekräftas av Uppsala, Stockholm och flera kommuners lokalförsörjningsplaner."
+        },
+        {
+          "siffra": "3 av 10 år",
+          "etikett": "är byggnation",
+          "text": "Kvarngärdesskolan, Uppsala: 3 års byggfas men 10 år totalt — detaljplanen startade 2015."
+        }
       ],
       "callout": "”Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år.” — Lunds kommun (lund.se)",
       "fotnot": "Källor: Nationellt Ledtidsindex 2025, SKR 2024, Evidens 2023, Lunds kommun, Uppsala Skolfastigheter."
@@ -260,12 +535,32 @@
       "layout": "tabell",
       "titel": "Vilket spår passar ditt behov?",
       "underrubrik": "Utgå från när lokalen behövs och vilket behov som ska mötas",
-      "kolumner": ["När behövs lokalen?", "Rekommenderat spår", "Att tänka på"],
+      "kolumner": [
+        "När behövs lokalen?",
+        "Rekommenderat spår",
+        "Att tänka på"
+      ],
       "rader": [
-        ["< 6 månader", "A. Hyra in (eller modul)", "Inget annat spår är realistiskt. Planera permanent lösning parallellt."],
-        ["1–3 år", "B. Bygga om", "Om lämplig byggnad finns i beståndet och ingen ny detaljplan krävs."],
-        ["3–5 år", "C eller D (utan ny DP)", "Tillbyggnad om byggnad finns. Nybyggnad om mark och plan är på plats."],
-        ["5 år eller mer", "D. Nybyggnad", "Starta detaljplaneprocess och säkra budget nu. Ett behov 2031 kräver beslut 2026."]
+        [
+          "< 6 månader",
+          "A. Hyra in (eller modul)",
+          "Inget annat spår är realistiskt. Planera permanent lösning parallellt."
+        ],
+        [
+          "1–3 år",
+          "B. Bygga om",
+          "Om lämplig byggnad finns i beståndet och ingen ny detaljplan krävs."
+        ],
+        [
+          "3–5 år",
+          "C eller D (utan ny DP)",
+          "Tillbyggnad om byggnad finns. Nybyggnad om mark och plan är på plats."
+        ],
+        [
+          "5 år eller mer",
+          "D. Nybyggnad",
+          "Starta detaljplaneprocess och säkra budget nu. Ett behov 2031 kräver beslut 2026."
+        ]
       ],
       "fotnot": "Förutsättning: ledtiderna gäller när behovsbilden är tydlig och stabil vid projektstart — sena förändringar innebär i praktiken en omstart av tidigare skeden."
     },
