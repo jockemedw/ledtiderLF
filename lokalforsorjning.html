@@ -1748,6 +1748,13 @@ footer strong { color: rgba(255,255,255,0.8); }
 }
 
 /* ─── PRÖVNINGEN (planprocessen) ─────────── */
+.prov-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:0.8rem; margin:0 0 2rem; }
+@media (max-width:860px){ .prov-stats { grid-template-columns:repeat(2,1fr); } }
+.prov-stat { background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:10px; padding:1rem 1.1rem; box-shadow:0 2px 12px rgba(26,35,69,0.06); }
+.prov-stat .tal { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.prov-stat .etikett { font-size:0.78rem; color:var(--muted); margin-top:0.2rem; }
+.prov-lank { display:inline-block; margin-top:1.4rem; padding:0.75rem 1.5rem; background:var(--navy); color:var(--gold-light); border-radius:8px; font-family:'Jost',sans-serif; font-weight:500; font-size:0.95rem; text-decoration:none; }
+.prov-lank:hover { background:var(--navy-mid); text-decoration:none; }
 .prov-kontrast { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:1.8rem 0 2.4rem; }
 @media (max-width:760px){ .prov-kontrast { grid-template-columns:1fr; } }
 .prov-kort { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.5rem; box-shadow:0 2px 12px rgba(26,35,69,0.06); }
@@ -1850,7 +1857,6 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li><a href="#spar-d"  class="nav-subtab" data-section="spar-d">D. Nybyggnad</a></li>
       <li><a href="#moduler" class="nav-subtab" data-section="moduler">Moduler</a></li>
       <li><a href="#provning" class="nav-subtab" data-section="provning">Prövningen</a></li>
-      <li><a href="/detaljplan" class="nav-subtab is-external">Detaljplan</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="tid">
       <li><a href="#kontext" class="nav-subtab" data-section="kontext">Nationell kontext</a></li>
@@ -2135,6 +2141,25 @@ footer strong { color: rgba(255,255,255,0.8); }
       </div>
     </div>
 
+    <div class="prov-stats">
+      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med minst 5 lägenheter — vägledande även för lokaler.">
+        <div class="tal">4,8 år</div>
+        <div class="etikett">riksgenomsnitt planuppdrag → startbesked (Ledtidsindex 2025)</div>
+      </div>
+      <div class="prov-stat" data-verifiering="verifierad">
+        <div class="tal">44 mån</div>
+        <div class="etikett">mediantid detaljplan → laga kraft (2022–2023)</div>
+      </div>
+      <div class="prov-stat" data-verifiering="verifierad">
+        <div class="tal">~25 %</div>
+        <div class="etikett">av antagna detaljplaner överklagas — 12 % av överklagandena ändrar planen</div>
+      </div>
+      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Snittsiffran avser bostadsplaner (Evidens/Arkwright 2022) — siffra för samhällsfastigheter saknas i öppen statistik.">
+        <div class="tal">+14 mån</div>
+        <div class="etikett">extra ledtid i snitt när planen överklagas men vinner laga kraft</div>
+      </div>
+    </div>
+
     <h3 style="margin-bottom:0.9rem">Prövningens moment</h3>
 
     <div class="prov-steg" data-verifiering="verifierad">
@@ -2221,7 +2246,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <strong>Slutsats:</strong> att korta plantiden handlar mindre om att ”handlägga fortare” — och mer om att börja tidigare. Prövningens moment är demokratiska rättigheter och statliga kontrollstationer; det kommunen råder över är när processen startar och hur väl förberedd den är.
     </div>
 
-    <p class="mt-2" style="margin-top:1.2rem"><a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a></p>
+    <a class="prov-lank" href="/detaljplan">Fördjupning: Detaljplaner nationellt — siffror, jämförelser och reformer →</a>
   </div>
 </section>
 
