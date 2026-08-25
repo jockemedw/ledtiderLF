@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './CommentLayer.module.css';
-import { assignAnchorsInDocument, ensureAnchor } from '../lib/anchor.js';
+import { assignAnchorsInDocument, ensureAnchor, readAnchorText } from '../lib/anchor.js';
 import CommentPillar from './CommentPillar.jsx';
 import CommentForm from './CommentForm.jsx';
 import AdminLock from './AdminLock.jsx';
@@ -381,7 +381,7 @@ export default function CommentLayer() {
     const items = Array.from(map.values()).map((g) => {
       const rect = g.el.getBoundingClientRect();
       const top = rect.top + window.scrollY;
-      const label = (g.el.textContent || '').trim().slice(0, 60) || g.el.tagName.toLowerCase();
+      const label = readAnchorText(g.el).trim().slice(0, 60) || g.el.tagName.toLowerCase();
       return { ...g, top, label };
     });
     items.sort((a, b) => a.top - b.top);
