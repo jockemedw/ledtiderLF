@@ -35,10 +35,10 @@ Alla kan lägga kommentarer genom att hovra på ett element (rubrik, stycke, lis
 
 Som admin (enda inloggningen) kan du redigera eller ta bort vilken kommentar som helst:
 1. Klicka på låsikonen uppe till höger
-2. Ange admin-lösenordet
+2. Ange lösenordet `ledtider` (fast, inbyggt i koden — en bekvämlighetsspärr, inte ett säkerhetsskydd)
 3. "Redigera" / "Ta bort" dyker upp på varje pillar
 
-Admin-sessionen håller i 7 dagar via en signerad cookie.
+Admin-sessionen håller i 7 dagar via en signerad cookie. Inga miljövariabler behövs för adminläget.
 
 ## Setup för lokal utveckling
 
@@ -50,21 +50,15 @@ Admin-sessionen håller i 7 dagar via en signerad cookie.
 
 | Variabel | Vad |
 |---|---|
-| `ADMIN_PASSWORD` | Admin-lösenord (du väljer) |
-| `ADMIN_SECRET` | HMAC-secret (≥32 tecken slumpmässiga) |
 | `BLOB_READ_WRITE_TOKEN` | Token från Vercel Blob (skapas automatiskt när du ansluter en blob-store till projektet) |
 
-Generera en `ADMIN_SECRET`:
-```
-node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-```
+Ingen annan konfiguration behövs — inga andra tjänster eller databaser används.
 
 ## Deploy till Vercel
 
 1. Importera repot i Vercel
 2. Gå till Storage → Create → Blob → Connect till projektet (ger automatiskt `BLOB_READ_WRITE_TOKEN`)
-3. Lägg till `ADMIN_PASSWORD` och `ADMIN_SECRET` under Settings → Environment Variables
-4. Deploya
+3. Deploya — inga andra miljövariabler eller integrationer krävs
 
 ## Tester
 
