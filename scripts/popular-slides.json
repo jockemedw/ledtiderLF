@@ -110,61 +110,158 @@
       "ordning": 4,
       "ankare": "jamforelse",
       "popular": true,
-      "layout": "intervall",
-      "titel": "Ledtider per fas",
-      "underrubrik": "Typiska tidsspann i svenska kommunala lokalprojekt",
+      "layout": "gantt",
+      "titel": "Så fördelar sig tiden i svenska lokalprojekt",
+      "underrubrik": "Normalfall per spår och scenario — streckat är verksamhetens förskede före uppdraget",
       "fotnot": "Eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-processer kommer ovanpå. Källor: SISAB, Micasa, Uppsala Skolfastigheter, Bygg i Tid, SKR.",
-      "maxAr": 8,
-      "rader": [
+      "gantt": [
         {
-          "namn": "A. Hyra in (befintlig lokal)",
-          "tid": "3–12 månader",
-          "driver": "Marknadens utbud, hyresgästanpassning",
-          "min": 0.25,
-          "max": 1
+          "label": "A1. Hyra in",
+          "sublabel": "Befintlig lokal",
+          "forskedeMan": 6,
+          "totalManader": 6,
+          "segment": [
+            {
+              "fas": "beslut",
+              "andel": 0.4
+            },
+            {
+              "fas": "anpassning",
+              "andel": 0.6
+            }
+          ]
         },
         {
-          "namn": "A2. Hyresvärds­upphandling",
-          "tid": "2–4 år",
-          "driver": "LOU-upphandling, ev. detaljplan",
-          "min": 2,
-          "max": 4
+          "label": "A2. Hyresvärdsupphandling",
+          "sublabel": "Rätt DP finns — annars +1–4 år",
+          "forskedeMan": 12,
+          "totalManader": 30,
+          "segment": [
+            {
+              "fas": "beslut",
+              "andel": 0.22
+            },
+            {
+              "fas": "upphandling",
+              "andel": 0.28
+            },
+            {
+              "fas": "projektering",
+              "andel": 0.22
+            },
+            {
+              "fas": "byggnation",
+              "andel": 0.28
+            }
+          ]
         },
         {
-          "namn": "B. Bygga om",
-          "tid": "2–5 år",
-          "driver": "Dolda skador, evakuering, omfattning",
-          "min": 2,
-          "max": 5
+          "label": "B. Bygga om",
+          "sublabel": "Utan ny detaljplan",
+          "forskedeMan": 12,
+          "totalManader": 36,
+          "segment": [
+            {
+              "fas": "beslut",
+              "andel": 0.22
+            },
+            {
+              "fas": "projektering",
+              "andel": 0.28
+            },
+            {
+              "fas": "evakuering",
+              "andel": 0.12
+            },
+            {
+              "fas": "upphandling",
+              "andel": 0.1
+            },
+            {
+              "fas": "byggnation",
+              "andel": 0.28
+            }
+          ]
         },
         {
-          "namn": "C. Tillbyggnad (inom DP)",
-          "tid": "2–3,5 år",
-          "driver": "Bygglov, byggrätt, verksamhets­påverkan",
-          "min": 2,
-          "max": 3.5
+          "label": "C. Tillbyggnad",
+          "sublabel": "Inom befintlig detaljplan",
+          "forskedeMan": 12,
+          "totalManader": 30,
+          "segment": [
+            {
+              "fas": "beslut",
+              "andel": 0.2
+            },
+            {
+              "fas": "projektering",
+              "andel": 0.27
+            },
+            {
+              "fas": "evakuering",
+              "andel": 0.1
+            },
+            {
+              "fas": "byggnation",
+              "andel": 0.43
+            }
+          ]
         },
         {
-          "namn": "C. Tillbyggnad (planändring)",
-          "tid": "4–7 år",
-          "driver": "Detaljplaneändring tillkommer",
-          "min": 4,
-          "max": 7
+          "label": "D. Nybyggnad",
+          "sublabel": "Befintlig DP medger byggnation",
+          "forskedeMan": 18,
+          "totalManader": 40,
+          "segment": [
+            {
+              "fas": "beslut",
+              "andel": 0.15
+            },
+            {
+              "fas": "projektering",
+              "andel": 0.28
+            },
+            {
+              "fas": "upphandling",
+              "andel": 0.12
+            },
+            {
+              "fas": "evakuering",
+              "andel": 0.1
+            },
+            {
+              "fas": "byggnation",
+              "andel": 0.35
+            }
+          ]
         },
         {
-          "namn": "D. Nybyggnad (befintlig DP)",
-          "tid": "2,5–4 år",
-          "driver": "Projektering, byggnation, upphandling",
-          "min": 2.5,
-          "max": 4
-        },
-        {
-          "namn": "D. Nybyggnad (ny DP)",
-          "tid": "5–8 år",
-          "driver": "Detaljplan ensam: 2–5 år (SKR 2024)",
-          "min": 5,
-          "max": 8,
-          "farg": "B5822A"
+          "label": "D. Nybyggnad",
+          "sublabel": "Med ny detaljplan (normalfall)",
+          "forskedeMan": 24,
+          "totalManader": 72,
+          "segment": [
+            {
+              "fas": "plan",
+              "andel": 0.55
+            },
+            {
+              "fas": "beslut",
+              "andel": 0.1
+            },
+            {
+              "fas": "projektering",
+              "andel": 0.15
+            },
+            {
+              "fas": "upphandling",
+              "andel": 0.05
+            },
+            {
+              "fas": "byggnation",
+              "andel": 0.15
+            }
+          ]
         }
       ]
     },
@@ -225,32 +322,44 @@
       "id": "oversikt",
       "ordning": 11,
       "ankare": "oversikt",
-      "layout": "kort-grid",
+      "layout": "spar-kort",
       "titel": "Hur lokaler kan tillgodoses",
       "underrubrik": "De fyra spåren",
-      "kort": [
+      "callout": "Varje spår har fundamentalt olika förutsättningar, ledtider och ekonomiska konsekvenser.",
+      "sparKort": [
         {
-          "siffra": "A",
-          "etikett": "Hyra in · 3 mån–4 år",
-          "text": "Befintlig lokal eller hyresvärdsupphandling. Snabbast — men strukturellt dyrare långsiktigt."
+          "bokstav": "A",
+          "farg": "0891B2",
+          "namn": "Hyra in",
+          "subtitle": "Befintlig lokal eller ny lokal uppförd av extern part",
+          "tid": "3 mån–4 år",
+          "varning": "Strukturellt dyrare långsiktigt"
         },
         {
-          "siffra": "B",
-          "etikett": "Bygga om · 2–5 år",
-          "text": "Anpassning av befintlig byggnad i beståndet. Dolda skador kan fördubbla tid och kostnad."
+          "bokstav": "B",
+          "farg": "059669",
+          "namn": "Bygga om",
+          "subtitle": "Ombyggnad av befintlig byggnad i beståndet",
+          "tid": "2–5 år",
+          "varning": "Dolda skador kan fördubbla tid och kostnad"
         },
         {
-          "siffra": "C",
-          "etikett": "Tillbyggnad · 2–3,5 år",
-          "text": "Kapacitetsökning på befintlig plats. Kräver byggrätt — annars lika lång tid som nybyggnad."
+          "bokstav": "C",
+          "farg": "D97706",
+          "namn": "Tillbyggnad",
+          "subtitle": "Utökning av befintlig byggnad på samma fastighet",
+          "tid": "2–3,5 år",
+          "varning": "Kräver ofta detaljplaneändring — lika lång tid som nybyggnad"
         },
         {
-          "siffra": "D",
-          "etikett": "Nybyggnad · 2,5–8 år",
-          "text": "Maximal flexibilitet. Med ny detaljplan 5–8 år — planeringen måste starta omedelbart."
+          "bokstav": "D",
+          "farg": "C0392B",
+          "namn": "Nybyggnad",
+          "subtitle": "Ny byggnad på befintlig eller ny mark",
+          "tid": "2,5–8 år",
+          "varning": "5–8 år med ny detaljplan — planeringen måste starta omedelbart"
         }
-      ],
-      "callout": "Varje spår har fundamentalt olika förutsättningar, ledtider och ekonomiska konsekvenser."
+      ]
     },
     {
       "id": "per-typ",
@@ -350,21 +459,26 @@
       "faser": [
         {
           "namn": "Söka lokal",
-          "tid": "1–4 v"
+          "tid": "1–4 v",
+          "fas": "beslut"
         },
         {
           "namn": "Politiskt beslut",
-          "tid": "4–8 v"
+          "tid": "4–8 v",
+          "fas": "beslut"
         },
         {
           "namn": "Avtal",
-          "tid": "2–6 v"
+          "tid": "2–6 v",
+          "fas": "upphandling"
         },
         {
           "namn": "Anpassning",
-          "tid": "2–6 mån"
+          "tid": "2–6 mån",
+          "fas": "anpassning"
         }
-      ]
+      ],
+      "badgeFarg": "0891B2"
     },
     {
       "id": "spar-b",
@@ -386,21 +500,26 @@
       "faser": [
         {
           "namn": "Förstudie & beslut",
-          "tid": "6–12 mån"
+          "tid": "6–12 mån",
+          "fas": "beslut"
         },
         {
           "namn": "Projektering",
-          "tid": "6–12 mån"
+          "tid": "6–12 mån",
+          "fas": "projektering"
         },
         {
           "namn": "Evakuering & bygglov",
-          "tid": "3–12 mån"
+          "tid": "3–12 mån",
+          "fas": "evakuering"
         },
         {
           "namn": "Byggnation",
-          "tid": "10–24 mån"
+          "tid": "10–24 mån",
+          "fas": "byggnation"
         }
-      ]
+      ],
+      "badgeFarg": "059669"
     },
     {
       "id": "spar-c",
@@ -421,21 +540,26 @@
       "faser": [
         {
           "namn": "Förstudie & beslut",
-          "tid": "4–8 mån"
+          "tid": "4–8 mån",
+          "fas": "beslut"
         },
         {
           "namn": "Projektering",
-          "tid": "6–10 mån"
+          "tid": "6–10 mån",
+          "fas": "projektering"
         },
         {
           "namn": "Bygglov",
-          "tid": "2–5 mån"
+          "tid": "2–5 mån",
+          "fas": "evakuering"
         },
         {
           "namn": "Byggnation",
-          "tid": "12–24 mån"
+          "tid": "12–24 mån",
+          "fas": "byggnation"
         }
-      ]
+      ],
+      "badgeFarg": "D97706"
     },
     {
       "id": "spar-d",
@@ -457,17 +581,21 @@
       "faser": [
         {
           "namn": "Detaljplan (normalfall)",
-          "tid": "12–48 mån"
+          "tid": "12–48 mån",
+          "fas": "plan"
         },
         {
           "namn": "Beslut & projektering",
-          "tid": "12–26 mån"
+          "tid": "12–26 mån",
+          "fas": "projektering"
         },
         {
           "namn": "Byggnation",
-          "tid": "12–30 mån"
+          "tid": "12–30 mån",
+          "fas": "byggnation"
         }
-      ]
+      ],
+      "badgeFarg": "C0392B"
     },
     {
       "id": "moduler",
