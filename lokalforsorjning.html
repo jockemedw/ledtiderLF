@@ -2017,10 +2017,10 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Per lokaltyp</span>
     <h2>Typiska ledtider och kostnader</h2>
-    <p class="mt-2" style="color:var(--muted)">Data sammanställd från SISAB (Stockholm), Micasa (Stockholm), Uppsala Skolfastigheter och branschdata (ByggfaktaDOCU). Siffrorna avser <em>byggfasen</em> (genomförandebeslut till inflyttning) om inte annat anges — <strong>total processtid inkl. detaljplan och programskede är ofta 3–7 år längre</strong>.</p>
+    <p class="mt-2" style="color:var(--muted)">Data sammanställd från SISAB (Stockholm), Micasa (Stockholm), Uppsala Skolfastigheter och branschdata (ByggfaktaDOCU). Varje kort redovisar samma kärnrader så att lokaltyperna kan jämföras: <strong>total ledtid</strong> (behov→inflyttning inom befintlig detaljplan), <strong>byggfas</strong> (genomförandebeslut→inflyttning) och <strong>budget</strong>. Kräver projektet ny detaljplan tillkommer planprocessen — se spår D.</p>
     <div class="typ-grid" id="typ-grid"></div>
     <p class="gantt-note mt-4">
-      <strong>Metodnot:</strong> Tider avser tid från <em>genomförandebeslut</em> (GB) till <em>inflyttning</em> enligt publicerade slutrapporter — detaljplane- och programskede är inte inräknade. Avvikelser mot budget är medianvärden från respektive urval. Urval baseras på 15 SISAB-projekt 2019–2023, Micasas egen lägesrapport 2025 om de fem senaste VoB-projekten, samt 8 dokumenterade LSS- och idrottshallsprojekt 2019–2025. Lejonfastigheters egna projekt kan variera betydligt beroende på detaljplaneläge, markförutsättningar och omfattning.
+      <strong>Metodnot:</strong> Byggfas avser tid från <em>genomförandebeslut</em> (GB) till <em>inflyttning</em> enligt publicerade slutrapporter. Totaler markerade med ≈ och * är härledda: byggfas + dokumenterat förskede (program, beslut, upphandling) inom befintlig detaljplan — övriga totaler är källbelagda direkt (Lund, Kvarngärdesskolan, Micasa). Avvikelser mot budget är medianvärden från respektive urval. Urval baseras på 15 SISAB-projekt 2019–2023, Micasas egen lägesrapport 2025 om de fem senaste VoB-projekten, samt 8 dokumenterade LSS- och idrottshallsprojekt 2019–2025. Lejonfastigheters egna projekt kan variera betydligt beroende på detaljplaneläge, markförutsättningar och omfattning.
     </p>
   </div>
 </section>
@@ -2657,65 +2657,65 @@ const DATA = {
       namn: "Förskolor",
       eyebrow: "Nybyggnad · 3–8 avd",
       rader: [
-        { etikett: "Byggtid (GB→inflytt)", varde: "21–37 mån" },
-        { etikett: "Modulförskola UPP", varde: "21 mån" },
-        { etikett: "Traditionell nybyggnad", varde: "30–36 mån" },
-        { etikett: "Budget (mkr)", varde: "25–115" },
+        { etikett: "Total ledtid (behov→inflytt)", varde: "≈4–7 år *" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "21–37 mån" },
+        { etikett: "Budget nybyggnad", varde: "25–115 mkr" },
+        { etikett: "Modulförskola UPP (byggfas)", varde: "21 mån" },
         { etikett: "Avvikelse mot budget", varde: "+22–27 %" }
       ],
-      insikt: "SISAB:s modulkoncept (UPP) för 3–4 avdelningar kan färdigställas på knappt två år efter beslut. Traditionell nybyggnad för 6–12 avdelningar tar snittvis 30+ månader — och notera: utan detaljplan, programskede och upphandling tillkommer ytterligare 2–4 år.",
-      kalla: "SISAB slutrapporter 2019–2023 (8 projekt)"
+      insikt: "Total ledtid härledd: byggfas 21–37 mån + 2–4 år för program, upphandling och beslut enligt SISAB:s notering — i linje med Krokoms förskola: 5 år från behovsbeslut varav 12 månaders produktion. SISAB:s modulkoncept (UPP) för 3–4 avdelningar kan färdigställas på knappt två år efter beslut.",
+      kalla: "SISAB slutrapporter 2019–2023 (8 projekt), Krokoms kommun"
     },
     {
       namn: "Grundskolor F–9",
       eyebrow: "Ombyggnad / Nybyggnad",
       rader: [
-        { etikett: "Ombyggnad (median)", varde: "18 mån" },
-        { etikett: "Större nybyggnad (bygg)", varde: "3 år" },
-        { etikett: "Hela processen inkl. DP", varde: "8–10 år" },
+        { etikett: "Total ledtid (behov→inflytt)", varde: "7–10 år" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "18 mån ombyggn. · ~3 år nybyggn." },
         { etikett: "Budget ombyggnad", varde: "10–150 mkr" },
+        { etikett: "Med ny detaljplan", varde: "8–10 år" },
         { etikett: "Avvikelse ombyggnad", varde: "+4 % (median)" }
       ],
-      insikt: "Ombyggnadsprojekt är förvånansvärt förutsägbara — SISAB:s åtta dokumenterade ombyggnader 2019–2023 höll sig inom +4 % mot budget i median. Utmaningen ligger istället i planerings- och beslutsfasen. Uppsala Kvarngärdesskolan (F–9, 990 elever) exemplifierar: 3 års byggfas — men detaljplanen startade 2015 och hela processen tog 10 år.",
-      kalla: "SISAB slutrapporter, Uppsala Skolfastigheter"
+      insikt: "Total ledtid ur källorna: Lunds kommun anger ~7 år från tanke till färdig skola som genomsnitt; Kvarngärdesskolan i Uppsala (F–9, 990 elever, ny detaljplan) tog 10 år varav 3 års byggfas. Ombyggnader är förvånansvärt förutsägbara — SISAB:s åtta dokumenterade ombyggnader 2019–2023 höll +4 % mot budget i median.",
+      kalla: "Lunds kommun, SISAB slutrapporter, Uppsala Skolfastigheter"
     },
     {
       namn: "Vård- och omsorgsboenden",
       eyebrow: "SÄBO · 60–100 lgh",
       rader: [
-        { etikett: "Markanvisning→inflytt", varde: "11–13 år" },
-        { etikett: "Från inriktningsbeslut", varde: "5–9 år" },
-        { etikett: "Endast byggfas", varde: "2–3 år" },
+        { etikett: "Total ledtid (behov→inflytt)", varde: "5–9 år" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "2–3 år" },
         { etikett: "Budget nybyggnad", varde: "380–500 mkr" },
+        { etikett: "Markanvisning→inflytt (Micasa)", varde: "11–13 år" },
         { etikett: "Boverkets stöd 2025", varde: "492 mkr/år" }
       ],
-      insikt: "Micasa konstaterar själva i sin lägesrapport 2025: ”Erfarenhet från bolagets fem senaste projekt visar att processen från markanvisning till inflyttning är 11–13 år.” Det är den längsta ledtiden bland Lejonfastigheters lokaltyper. Boverkets investeringsstöd kräver dock att själva byggfasen hålls inom 2 år.",
+      insikt: "Total ledtid ur källorna: 5–9 år från inriktningsbeslut. Micasa konstaterar själva i sin lägesrapport 2025: ”Erfarenhet från bolagets fem senaste projekt visar att processen från markanvisning till inflyttning är 11–13 år.” Det är den längsta ledtiden bland Lejonfastigheters lokaltyper. Boverkets investeringsstöd kräver dock att själva byggfasen hålls inom 2 år.",
       kalla: "Micasa Fastigheter, Boverket"
     },
     {
       namn: "LSS-gruppbostäder",
       eyebrow: "6 lgh · 600–850 kvm",
       rader: [
-        { etikett: "Byggtid produktion", varde: "10–15 mån" },
-        { etikett: "Antal lägenheter", varde: "5–6 st (praxis; Socialstyrelsen rek. 3–5)" },
-        { etikett: "Budget typisk", varde: "20–50 mkr" },
-        { etikett: "Typisk bruttoarea", varde: "600–850 m²" },
+        { etikett: "Total ledtid (behov→inflytt)", varde: "≈2–3,5 år *" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "10–15 mån" },
+        { etikett: "Budget nybyggnad", varde: "20–50 mkr" },
+        { etikett: "Storlek", varde: "6 lgh · 600–850 m² (Socialstyrelsen rek. 3–5 boende)" },
         { etikett: "Kommunal brist", varde: ">50 % av kommuner" }
       ],
-      insikt: "LSS-gruppbostäder är den snabbaste lokaltypen i byggfas — typiskt knappt ett år. Socialstyrelsen rekommenderar 3–5 personer per gruppbostad (max 5–6). Mer än hälften av Sveriges kommuner uppger i Boverkets bostadsmarknadsenkät att de har underskott — behovet är ackumulerat.",
+      insikt: "Total ledtid härledd: byggfas 10–15 mån + förstudie, beslut, projektering och upphandling (typiskt 1–2 år) — LSS-gruppbostäder byggs oftast inom befintlig detaljplan och är den snabbaste lokaltypen i byggfas. Mer än hälften av Sveriges kommuner uppger i Boverkets bostadsmarknadsenkät att de har underskott — behovet är ackumulerat.",
       kalla: "ByggfaktaDOCU 2020–2024, Socialstyrelsen, Boverket"
     },
     {
       namn: "Idrottshallar",
       eyebrow: "Fullstor · 1 500–4 000 kvm",
       rader: [
-        { etikett: "Byggtid fullstor", varde: "12–18 mån" },
-        { etikett: "Större arenor", varde: "24–33 mån" },
+        { etikett: "Total ledtid (behov→inflytt)", varde: "≈2,5–4 år *" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "12–18 mån" },
         { etikett: "Budget fullstor", varde: "40–130 mkr" },
-        { etikett: "Budget arena (6 000+ m²)", varde: "120–330 mkr" },
-        { etikett: "SISAB avvikelse", varde: "+4 % (1 projekt)" }
+        { etikett: "Större arenor (byggfas · budget)", varde: "24–33 mån · 120–330 mkr" },
+        { etikett: "Avvikelse mot budget", varde: "+4 % (1 projekt)" }
       ],
-      insikt: "Själva byggfasen för en fullstor idrottshall är typiskt 12–18 månader. Större flerfunktionella anläggningar (evenemangsarenor med läktare, flera hallar) tar 2–3 år. Detaljplaneläget och markförutsättningar avgör oftast den totala tiden.",
+      insikt: "Total ledtid härledd: byggfas 12–18 mån + förskede (program, beslut, upphandling) typiskt 1,5–2,5 år inom befintlig detaljplan — kräver planändring gäller i stället spår D:s tider. Större flerfunktionella anläggningar (evenemangsarenor med läktare, flera hallar) tar 2–3 år i byggfas. Detaljplaneläget och markförutsättningar avgör oftast den totala tiden.",
       kalla: "ByggfaktaDOCU 2019–2025, SISAB, Göteborgs stad, Malmö stad"
     }
   ],

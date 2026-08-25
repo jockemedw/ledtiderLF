@@ -367,46 +367,52 @@
       "ankare": "per-typ",
       "layout": "tabell",
       "titel": "Typiska ledtider och kostnader per lokaltyp",
-      "underrubrik": "Byggfas (genomförandebeslut → inflyttning) om inte annat anges",
+      "underrubrik": "Total ledtid = behov→inflytt inom befintlig detaljplan · byggfas = genomförandebeslut→inflytt",
       "kolumner": [
         "Lokaltyp",
-        "Byggtid",
+        "Total ledtid",
+        "Varav byggfas",
         "Budget",
         "Att veta"
       ],
       "rader": [
         [
           "Förskolor (3–8 avd)",
+          "≈4–7 år *",
           "21–37 mån",
           "25–115 mkr",
-          "Modulkoncept SISAB UPP: 21 mån"
+          "Modul UPP: 21 mån byggfas"
         ],
         [
           "Grundskolor F–9",
+          "7–10 år",
           "18 mån ombyggn. · 3 år nybyggn.",
-          "10–150 mkr",
-          "Hela processen inkl. DP: 8–10 år"
+          "10–150 mkr (ombyggn.)",
+          "Lund ~7 år snitt; med ny DP 8–10 år"
         ],
         [
           "Vård- och omsorgsboenden",
-          "2–3 år byggfas",
+          "5–9 år",
+          "2–3 år",
           "380–500 mkr",
-          "Markanvisning → inflytt: 11–13 år (Micasa)"
+          "Markanvisning→inflytt: 11–13 år (Micasa)"
         ],
         [
           "LSS-gruppbostäder",
+          "≈2–3,5 år *",
           "10–15 mån",
           "20–50 mkr",
           "Snabbast i byggfas — brist i >50 % av kommunerna"
         ],
         [
           "Idrottshallar (fullstor)",
+          "≈2,5–4 år *",
           "12–18 mån",
           "40–130 mkr",
-          "Större arenor: 24–33 mån"
+          "Arenor: 24–33 mån · 120–330 mkr"
         ]
       ],
-      "fotnot": "Total processtid inkl. detaljplan och programskede är ofta 3–7 år längre än byggtiden. Källor: SISAB slutrapporter 2019–2024, Micasa lägesrapport 2025, Uppsala Skolfastigheter, ByggfaktaDOCU."
+      "fotnot": "* Härledd total: byggfas + dokumenterat förskede (program, beslut, upphandling) inom befintlig detaljplan — med ny detaljplan gäller spår D (5–8 år). Källor: SISAB slutrapporter 2019–2024, Micasa lägesrapport 2025, Lunds kommun, Uppsala Skolfastigheter, ByggfaktaDOCU."
     },
     {
       "id": "exempel",
