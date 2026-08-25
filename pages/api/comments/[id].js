@@ -19,10 +19,11 @@ export default async function handler(req, res) {
 
   if (req.method === 'PATCH') {
     const { text } = req.body ?? {};
-    if (typeof text !== 'string' || text.length < 1 || text.length > 2000) {
+    const txt = typeof text === 'string' ? text.trim() : '';
+    if (txt.length < 1 || txt.length > 2000) {
       return res.status(400).json({ error: 'text måste vara 1–2000 tecken' });
     }
-    const updated = await updateComment(id, { text: text.trim() });
+    const updated = await updateComment(id, { text: txt });
     if (!updated) return res.status(404).json({ error: 'Hittas ej' });
     return res.status(200).json({ comment: updated });
   }

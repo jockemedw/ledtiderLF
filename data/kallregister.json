@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-05-12",
+  "uppdaterad": "2026-08-25",
   "omraden": [
     {
       "id": "detaljplan",
@@ -91,7 +91,7 @@
       "organisation": "Sveriges Kommuner och Regioner (SKR) i samarbete med RKA/Kolada",
       "datum": "löpande",
       "url": "https://skr.se/byggandeochbostaderplanering/jamforelserinomdetaljplaneomradet.9842.html",
-      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med bostadsplaner som primärt mätobjekt. Genomsnittlig ledtid från planstart till byggstart anges till 4,8 år. Vägledande indikator för planmognad i en kommun även när lokalförsörjning ska in i samma planprocess. Ny insamling 2024–2025 publiceras 2026."
+      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med bostadsplaner som primärt mätobjekt. Ledtidsindex (Bygg i Tid) mäter separat 4,8 år från planuppdrag till startbesked — SKR:s eget huvudmått är planuppdrag till antagande. Vägledande indikator för planmognad i en kommun även när lokalförsörjning ska in i samma planprocess. Ny insamling 2024–2025 publiceras 2026."
     },
     {
       "id": "skr-overklaganden-portal",
@@ -121,7 +121,7 @@
       "organisation": "Boverket",
       "datum": "2025",
       "url": "https://www.boverket.se/globalassets/publikationer/dokument/2025/redovisning-av-tillampningen-av-plan--och-bygglagstiftningen-ar-2024.pdf",
-      "sammandrag": "Boverkets årliga uppföljning av PBL-tillämpningen baserad på enkät till 286 kommuner och alla 21 länsstyrelser. Innehåller jämförande tidsserier 2013–2024 och visar bl.a. att antalet beslutade detaljplaner och markanvisningar fortsätter minska."
+      "sammandrag": "Boverkets årliga uppföljning av PBL-tillämpningen baserad på underlag från 285 av Sveriges 290 kommuner och alla 21 länsstyrelser. Innehåller jämförande tidsserier 2013–2024 och visar bl.a. att antalet beslutade detaljplaner och markanvisningar fortsätter minska."
     },
     {
       "id": "boverket-lansstyrelsen",
@@ -331,7 +331,7 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/klimatdeklaration/",
-      "sammandrag": "Boverkets handbok om klimatdeklaration, obligatorisk för nya byggnader sedan 1 januari 2022. Beskriver vilka byggnader som omfattas, beräkningsmetodik och kommande gränsvärden (planerade till 2027 och 2030). Direkt relevant vid nyproduktion."
+      "sammandrag": "Boverkets handbok om klimatdeklaration, obligatorisk för nya byggnader sedan 1 januari 2022. Beskriver vilka byggnader som omfattas, beräkningsmetodik och kommande krav: utökad deklaration senast jan 2028 och gränsvärden senast jan 2030 (den tidigare 2027-tidplanen skrotades aug 2025). Direkt relevant vid nyproduktion."
     },
     {
       "id": "boverket-bbr-energi",
@@ -481,7 +481,7 @@
       "organisation": "Hemsö Fastighets AB (ägare: Tredje AP-fonden + Sagax)",
       "datum": "löpande",
       "url": "https://www.hemso.se/",
-      "sammandrag": "Sveriges största privata aktör inom samhällsfastigheter — utbildning, vård, äldreboende, rättsväsende. Fastighetsvärde över 75 mdkr 2024, driftnetto 3 833 mnkr (+19 % resultat). Under 2024 färdigställdes 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %. Värdefull marknadsreferens för hyresnivåer och transaktionsvolym i samhällsfastighetssegmentet."
+      "sammandrag": "Sveriges största privata aktör inom samhällsfastigheter — utbildning, vård, äldreboende, rättsväsende. Fastighetsvärde ca 86 mdkr 2024, driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr (+7 %). Under 2024 färdigställdes 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %. Värdefull marknadsreferens för hyresnivåer och transaktionsvolym i samhällsfastighetssegmentet."
     },
     {
       "id": "vacse",
@@ -491,7 +491,7 @@
       "organisation": "Vacse AB (ägare: AI Pension, Kåpan Pensioner m.fl. tjänstepensionsstiftelser)",
       "datum": "löpande",
       "url": "https://www.vacse.se/",
-      "sammandrag": "Pensionsstiftelseägt fastighetsbolag specialiserat på samhällsfastigheter — domstolar, polishus, vårdcentraler, skolor. Hyresintäkter 165,3 mnkr 2024, driftöverskott 128,0 mnkr, förvaltningsresultat 92,5 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster; viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år)."
+      "sammandrag": "Pensionsstiftelseägt fastighetsbolag specialiserat på samhällsfastigheter — domstolar, polishus, vårdcentraler, skolor. Hyresintäkter 615,5 mnkr 2024 (+10,0 %), driftöverskott 470,8 mnkr, förvaltningsresultat 336,0 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster; viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år)."
     },
     {
       "id": "stenvalvet",
@@ -611,7 +611,7 @@
       "organisation": "Hemsö Fastighets AB",
       "datum": "2025-03",
       "url": "https://www.hemso.se/content/uploads/2025/03/Arsredovisning-2024.pdf",
-      "sammandrag": "Fastighetsvärde över 75 mdkr; driftnetto 3 833 mnkr 2024 (+19 % resultatökning). Färdigställde 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %."
+      "sammandrag": "Fastighetsvärde ca 86 mdkr; driftnetto 3 833 mnkr 2024, förvaltningsresultat 2 498 mnkr (+7 %). Färdigställde 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %."
     },
     {
       "id": "vacse-arsredovisning-2024",
@@ -621,7 +621,7 @@
       "organisation": "Vacse AB (publ)",
       "datum": "2025",
       "url": "https://storage.mfn.se/9565f85d-94be-4d98-8d8f-be7c6e2bbe03/arsredovisning-2024.pdf",
-      "sammandrag": "Hyresintäkter 165,3 mnkr (+7,2 %), driftöverskott 128,0 mnkr, förvaltningsresultat 92,5 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster. Viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år)."
+      "sammandrag": "Hyresintäkter 615,5 mnkr helåret 2024 (+10,0 %), driftöverskott 470,8 mnkr, förvaltningsresultat 336,0 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster. Viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år)."
     },
     {
       "id": "stenvalvet-arsredovisning-2024",
@@ -1091,7 +1091,7 @@
       "organisation": "Adda Inköpscentral (f.d. SKL Kommentus)",
       "datum": "2018",
       "url": "https://www.adda.se/upphandling-och-ramavtal/ramavtal-och-avtalskategorier/bygg-och-fastighet/forskolebyggnader/forskolebyggnader-2018/",
-      "sammandrag": "Nationellt ramavtal för nyckelfärdiga förskolebyggnader. Fyra konceptstorlekar: A) 60–80 barn 1-plan, B) 80–120 barn 1-plan, C) 80–120 barn 2-plan, D) 120–160 barn 2-plan. 11 leverantörer. Slutar 2026-03-15."
+      "sammandrag": "Nationellt ramavtal för nyckelfärdiga förskolebyggnader. Fyra konceptstorlekar: A) 60–80 barn 1-plan, B) 80–120 barn 1-plan, C) 80–120 barn 2-plan, D) 120–160 barn 2-plan. 11 leverantörer. Löpte ut 2026-03-15."
     },
     {
       "id": "adda-forskola-skola-2025-2",
@@ -1101,7 +1101,7 @@
       "organisation": "Adda Inköpscentral",
       "datum": "2026",
       "url": "https://www.adda.se/upphandling-och-ramavtal/planerade-och-pagaende-upphandlingar/forskole-och-skolbyggnader-2025-2/",
-      "sammandrag": "Efterföljaren till Förskolebyggnader 2018, utökad till att även omfatta grundskolebyggnader. Planerad avtalsstart sommaren 2026."
+      "sammandrag": "Efterföljaren till Förskolebyggnader 2018, utökad till att även omfatta grundskolebyggnader. Avtalsstart sommaren 2026."
     },
     {
       "id": "skr-bestallarvanlig-samverkan-2021",
@@ -1151,7 +1151,7 @@
       "organisation": "Sala kommun / Adapteo",
       "datum": "2017-08",
       "url": "https://adapteo.se/insights/gardesta-skola",
-      "sammandrag": "161 moduler, 5 340 m² BTA i två plan, 350 elever. Hyresavtal 4 år, 37 mkr → ca 6 900 kr/m² BTA/år. Leveranstid 3 månader för montage. Modulskola är OPEX (hyra) inte CAPEX — leverantören äger byggnaden."
+      "sammandrag": "161 moduler, 5 340 m² BTA i två plan, 350 elever. Hyresavtal 4 år, 37 mkr över 4 år → ca 1 700 kr/m² BTA/år. Leveranstid 3 månader för montage. Modulskola är OPEX (hyra) inte CAPEX — leverantören äger byggnaden."
     }
   ]
 }

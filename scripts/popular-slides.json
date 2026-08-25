@@ -2,9 +2,9 @@
   "meta": {
     "varumarke": "Lejonfastigheter",
     "undertitel": "Lokalförsörjningsguide — populärversion",
-    "fooFooter": "Internt arbetsmaterial · Hänvisar till fullversionen för fullständig referens",
+    "footer": "Internt arbetsmaterial · Hänvisar till fullversionen för fullständig referens",
     "lank": "Fullversion: lejonfastigheter.se/lokalforsorjning",
-    "datum": "Senast uppdaterat: juni 2026"
+    "datum": "Senast uppdaterat: augusti 2026"
   },
   "slides": [
     {
@@ -46,8 +46,8 @@
       "steg": [
         { "niva": 1, "namn": "Inhyrning", "ledtid": "3–12 mån", "beskrivning": "Snabbast — om rätt lokal finns ledig på rätt plats." },
         { "niva": 2, "namn": "Övertagande / ombyggnad", "ledtid": "2–5 år", "beskrivning": "Ta över befintlig byggnad. Dolda skador kan fördubbla tid och kostnad." },
-        { "niva": 3, "namn": "Tillbyggnad", "ledtid": "3–6 år", "beskrivning": "Utöka befintlig byggnad. Kräver byggrätt och påverkar verksamheten." },
-        { "niva": 4, "namn": "Nybyggnation", "ledtid": "4–8 år", "beskrivning": "Maximal flexibilitet — men ofta ny detaljplan på 2–5 år." }
+        { "niva": 3, "namn": "Tillbyggnad", "ledtid": "2–3,5 år", "beskrivning": "Utöka befintlig byggnad. Kräver byggrätt — med planändring 4–7 år." },
+        { "niva": 4, "namn": "Nybyggnation", "ledtid": "5–8 år", "beskrivning": "Maximal flexibilitet — men ofta ny detaljplan på 2–5 år." }
       ],
       "callout": "Det enkla spåret är att ta över lokaler någon annan lämnar — men det är sällan det någon vill, eftersom verksamheten då ska anpassa sig till en byggnad ritad för något annat."
     },
@@ -64,9 +64,10 @@
         ["A. Hyra in (befintlig lokal)", "3–12 månader", "Marknadens utbud, hyresgästanpassning"],
         ["A2. Hyresvärds­upphandling", "2–4 år", "LOU-upphandling, ev. detaljplan på hyresvärdens mark"],
         ["B. Bygga om", "2–5 år", "Dolda skador, evakuering, omfattning"],
-        ["C. Tillbyggnad", "3–6 år", "Bygglov, byggrätt, verksamhets­påverkan"],
-        ["D. Nybyggnad (befintlig DP)", "4–6 år", "Projektering, byggnation, upphandling"],
-        ["D. Nybyggnad (ny DP)", "6–8+ år", "Detaljplan ensam: 2–5 år (SKR 2024)"]
+        ["C. Tillbyggnad (inom DP)", "2–3,5 år", "Bygglov, byggrätt, verksamhets­påverkan"],
+        ["C. Tillbyggnad (planändring)", "4–7 år", "Detaljplaneändring tillkommer"],
+        ["D. Nybyggnad (befintlig DP)", "2,5–4 år", "Projektering, byggnation, upphandling"],
+        ["D. Nybyggnad (ny DP)", "5–8 år", "Detaljplan ensam: 2–5 år (SKR 2024)"]
       ],
       "fotnot": "Eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-processer kommer ovanpå. Källor: SISAB, Micasa, Uppsala Skolfastigheter, Bygg i Tid, SKR."
     },
@@ -229,7 +230,7 @@
       "titel": "Modulbyggnader",
       "underrubrik": "Interimslösningen — inte ett femte spår",
       "kort": [
-        { "siffra": "6–18 mån", "etikett": "Moduluthyrning", "text": "Med bygglov — 'veckor' gäller bara akuta händelser. 391–941 kr/m²/år. Tidsbegränsat bygglov max 10+5 år." },
+        { "siffra": "6–18 mån", "etikett": "Moduluthyrning", "text": "Med bygglov — 'veckor' gäller bara akuta händelser. ≈1 700 kr/m²/år (Sala-exemplet). Tidsbegränsat bygglov max 10+5 år." },
         { "siffra": "12–24 mån", "etikett": "Modulköp (permanent)", "text": "Teknisk livslängd 25–40 år. Binder kapital men ger lägre kostnad per år." },
         { "siffra": "18–24 mån", "etikett": "Konceptbyggnad", "text": "Permanent prefab i trä (t.ex. SISAB UPP) — lämplig som ersättning av uttjänt förskola." }
       ],

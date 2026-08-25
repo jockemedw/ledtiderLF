@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-05-12",
+  "uppdaterad": "2026-08-25",
   "kategorier": [
     { "id": "ledtider",        "namn": "Ledtider",            "kort": "TID", "farg": "#2563EB", "ingress": "Hur lång tid varje spår tar, från behov till inflyttning. Intervall snarare än punkter där spridning är meningsfull." },
     { "id": "kr-per-yta",      "namn": "Kostnad per yta",     "kort": "KR/M²","farg": "#B5822A", "ingress": "Byggentreprenadkostnad kr/m² BTA per lokaltyp. Aktuella svenska projekt 2024–2025 där annat ej anges." },
@@ -44,17 +44,17 @@
       "id": "ledtid-spar-c",
       "kategori": "ledtider",
       "etikett": "Spår C — Tillbyggnad",
-      "varde": "3–6 år",
+      "varde": "2–3,5 år",
       "kalla_ids": ["skr-strategisk-lokalresursplanering"],
       "verifiering": "verifierad",
       "datum": "löpande",
-      "not": "Kräver byggrätt och påverkar verksamheten"
+      "not": "Inom befintlig byggrätt. Med planändring 4–7 år. Påverkar verksamheten"
     },
     {
       "id": "ledtid-spar-d-bdp",
       "kategori": "ledtider",
       "etikett": "Spår D — Nybyggnad (befintlig DP)",
-      "varde": "4–6 år",
+      "varde": "2,5–4 år",
       "kalla_ids": ["skr-strategisk-lokalresursplanering"],
       "verifiering": "verifierad",
       "datum": "löpande",
@@ -64,7 +64,7 @@
       "id": "ledtid-spar-d-nydp",
       "kategori": "ledtider",
       "etikett": "Spår D — Nybyggnad (ny DP krävs)",
-      "varde": "6–8+ år",
+      "varde": "5–8 år",
       "kalla_ids": ["skr-strategisk-lokalresursplanering", "ledtidsindex-2025"],
       "verifiering": "verifierad",
       "datum": "löpande",
@@ -118,7 +118,7 @@
       "kategori": "ledtider",
       "etikett": "LSS-gruppbostad, byggtid",
       "varde": "~1 år",
-      "kalla_ids": ["sisab-bifrostvagen", "jonkoping-dunkehalla-lss-2024"],
+      "kalla_ids": ["jonkoping-dunkehalla-lss-2024"],
       "verifiering": "verifierad",
       "datum": "2024",
       "not": "Snabbaste lokaltypen i byggfas"
@@ -126,7 +126,7 @@
     {
       "id": "ledtid-byggtid-f9-stor",
       "kategori": "ledtider",
-      "etikett": "F-9-skola ~1 000 elever, byggtid",
+      "etikett": "F-9-skola 990 elever, byggtid",
       "varde": "~3 år",
       "kalla_ids": ["uppsala-kvarngardesskolan-2025-slutrapport"],
       "verifiering": "verifierad",
@@ -209,7 +209,7 @@
       "kategori": "kr-per-yta",
       "etikett": "Idrottshall fullstor (1 200–1 800 m² fristående)",
       "varde": "18 000–25 000 kr/m² BTA",
-      "kalla_ids": ["adda-forskolebyggnader-2018"],
+      "kalla_ids": [],
       "verifiering": "preliminar",
       "datum": "2023–2024",
       "not": "Lägre kr/m² än skola pga enklare planlösning"
@@ -230,7 +230,7 @@
       "etikett": "Vård- och omsorgsboende, kommunalt",
       "varde": "20 000–33 000 kr/m² BTA",
       "kalla_ids": ["orebro-brickebacken-vob-2024"],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2024",
       "not": "Brickebacken Örebro 230 mkr/106 lgh"
     },
@@ -248,11 +248,11 @@
       "id": "kr-modulskola-hyra",
       "kategori": "kr-per-yta",
       "etikett": "Modulskola (hyra/OPEX, ej CAPEX)",
-      "varde": "1 700 kr/m²/månad",
+      "varde": "≈1 700 kr/m²/år",
       "kalla_ids": ["sala-modulskola-adapteo"],
       "verifiering": "verifierad",
       "datum": "2017",
-      "not": "Gärdesta Sala — leverantören äger byggnaden, kommunen hyr"
+      "not": "Gärdesta Sala: 37 mkr på 4 år för 5 340 m² BTA ≈ 1 700 kr/m²/år — leverantören äger byggnaden, kommunen hyr"
     },
     {
       "id": "kr-bki-arstakt",
@@ -400,11 +400,11 @@
       "id": "akt-hemso-vardering",
       "kategori": "aktorer",
       "etikett": "Hemsö — fastighetsvärde",
-      "varde": ">75 mdkr",
+      "varde": "≈86 mdkr",
       "kalla_ids": ["hemso-arsredovisning-2024", "hemso"],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Driftnetto 3 833 mnkr (+19 % resultat). Uthyrningsgrad 97–99 %"
+      "not": "Driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr (+7 %). Uthyrningsgrad 97–99 %"
     },
     {
       "id": "akt-hemso-leverans",
@@ -424,7 +424,7 @@
       "kalla_ids": ["vacse-arsredovisning-2024", "vacse"],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Passerade 10 mdkr första gången. Hyresintäkter 165,3 mnkr (+7,2 %)"
+      "not": "Passerade 10 mdkr första gången. Hyresintäkter helåret 615,5 mnkr (+10,0 %)"
     },
     {
       "id": "akt-vacse-avtalslangd",
@@ -739,7 +739,7 @@
       "kalla_ids": ["epbd-recast-2024-1275"],
       "verifiering": "verifierad",
       "datum": "2024-05",
-      "not": "EU-direktiv 2024/1275 trädde i kraft 28 maj 2024"
+      "not": "EU-direktiv 2024/1275 trädde i kraft 28 maj 2024. Direktivets genomförandefrist: 29 maj 2026"
     },
     {
       "id": "kli-nzeb-offentligt",
@@ -920,7 +920,7 @@
       "kalla_ids": ["adda-forskolebyggnader-2018"],
       "verifiering": "verifierad",
       "datum": "2018",
-      "not": "Nytt avtal Förskole- och skolbyggnader 2025-2 startar sommaren 2026"
+      "not": "Ramavtalet löpte ut 2026-03-15; efterföljaren Förskole- och skolbyggnader 2025-2 startade sommaren 2026"
     },
     {
       "id": "ver-framtidens-us",

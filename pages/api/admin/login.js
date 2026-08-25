@@ -18,8 +18,8 @@ export default function handler(req, res) {
   }
   const { password } = req.body ?? {};
   const expected = process.env.ADMIN_PASSWORD;
-  if (!expected) {
-    return res.status(500).json({ error: 'ADMIN_PASSWORD ej konfigurerat' });
+  if (!expected || !process.env.ADMIN_SECRET || process.env.ADMIN_SECRET.length < 16) {
+    return res.status(500).json({ error: 'Admin ej konfigurerat' });
   }
   if (typeof password !== 'string' || !equalStrings(password, expected)) {
     return res.status(401).json({ error: 'Fel lösenord' });

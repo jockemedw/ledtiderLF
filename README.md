@@ -1,24 +1,31 @@
 # Lokalförsörjningsguide — statisk Next.js-app
 
-Next.js-app som serverar `lokalforsorjning.html` som en webbsida, med ett lager av kommentarer ovanpå.
+Next.js-app som serverar `lokalforsorjning.html` som en webbsida, med ett lager av kommentarer och plock-läge (Sammanställ) ovanpå, samt undersidorna `/detaljplan`, `/kallregister`, `/nyckeltal` och `/skraddarsydd`.
 
 ## Struktur
 
 ```
 ledtiderLF/
 ├── pages/
-│   ├── index.js            ← Serverar HTML-innehållet
-│   └── api/                ← API-routes för kommentarer + admin
-├── components/             ← React-komponenter för kommentarslagret
-├── lib/                    ← auth, anchor, comments helpers
-├── lokalforsorjning.html   ← Själva innehållet, läses vid build
+│   ├── index.js            ← Serverar lokalforsorjning.html
+│   ├── detaljplan.js       ← Serverar detaljplan.html (fördjupning)
+│   ├── kallregister.js     ← Bläddrbart källregister (data/kallregister.json)
+│   ├── nyckeltal.js        ← Citerbara nyckeltal (data/siffror.json)
+│   ├── skraddarsydd.js     ← Skräddarsydd sammanställning av valda sektioner
+│   └── api/                ← API-routes för kommentarer, admin + pptx
+├── components/             ← React-komponenter: kommentarslager + plock-läge
+├── lib/                    ← auth, anchor, comments, pptx-builder
+├── data/                   ← siffror.json (nyckeltal) + kallregister.json (källor)
+├── scripts/                ← popular-slides.json + pptx-CLI
+├── lokalforsorjning.html   ← Huvudinnehållet, läses vid build
+├── detaljplan.html         ← Fördjupningssidans innehåll
 ├── package.json
 └── next.config.js
 ```
 
 ## Uppdatera innehållet
 
-Redigera `lokalforsorjning.html` direkt i GitHub via webben (klicka filen → pennan). Alla data ligger i `DATA`-objektet längst ner i `<script>`-blocket. Commit → Vercel deployar automatiskt inom ~1 minut.
+Redigera `lokalforsorjning.html` / `detaljplan.html` direkt i GitHub via webben (klicka filen → pennan). Sidspecifika data ligger i `DATA`-objektet längst ner i `<script>`-blocket; nyckeltal och källor ligger i `data/siffror.json` respektive `data/kallregister.json`. Commit → Vercel deployar automatiskt inom ~1 minut.
 
 Befintliga kommentarers ankare består så länge elementets första 30 tecken av text är intakta. Kraftiga omskrivningar gör att kommentaren hamnar i panelen "Föräldralösa kommentarer".
 
@@ -61,7 +68,9 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
 ## Tester
 
-`npm test` — kör Vitest-svit för `lib/auth.js` och `lib/anchor.js`. UI och API verifieras manuellt enligt testplanen i `docs/superpowers/specs/2026-04-21-kommentarer-design.md`.
+`npm test` — kör Vitest-sviterna för `lib/auth.js`, `lib/anchor.js`, `lib/pptx-builder.js`, sektionsurvalet och dataintegriteten i `data/*.json` (unika id:n, giltiga korsreferenser). UI och API verifieras manuellt enligt testplanen i `docs/superpowers/specs/2026-04-21-kommentarer-design.md`.
+
+Notera: kommentarer lagras i Vercel Blob med `access: 'public'` — skrivning och radering går genom admin-skyddat API, men själva blobbarna är läsbara för den som känner store-URL:en. Medveten avvägning för internt arbetsmaterial; lägg inte känsligt innehåll i kommentarer.
 
 ## PowerPoint-export (.pptx)
 

@@ -246,12 +246,13 @@ export default function CommentLayer() {
   }
 
   async function checkAdmin() {
-    const r = await fetch('/api/comments/c_00000000', {
-      method: 'PATCH',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ text: 'probe' }),
-    });
-    setIsAdmin(r.status !== 401);
+    try {
+      const r = await fetch('/api/admin/me');
+      const j = await r.json();
+      setIsAdmin(r.ok && j.admin === true);
+    } catch {
+      setIsAdmin(false);
+    }
   }
 
   async function handleCreate({ initials, text }) {
