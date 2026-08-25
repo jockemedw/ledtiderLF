@@ -1746,6 +1746,39 @@ footer strong { color: rgba(255,255,255,0.8); }
   section { padding: 3rem 1rem; }
   .floating-title { font-size: 0.68rem; padding: 5px 12px; max-width: calc(100vw - 100px); }
 }
+
+/* ─── PRÖVNINGEN (planprocessen) ─────────── */
+.prov-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:0.8rem; margin:0 0 2rem; }
+@media (max-width:860px){ .prov-stats { grid-template-columns:repeat(2,1fr); } }
+.prov-stat { background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:10px; padding:1rem 1.1rem; box-shadow:0 2px 12px rgba(26,35,69,0.06); }
+.prov-stat .tal { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:700; color:var(--navy); line-height:1.1; }
+.prov-stat .etikett { font-size:0.78rem; color:var(--muted); margin-top:0.2rem; }
+.prov-lank { display:inline-block; margin-top:1.4rem; padding:0.75rem 1.5rem; background:var(--navy); color:var(--gold-light); border-radius:8px; font-family:'Jost',sans-serif; font-weight:500; font-size:0.95rem; text-decoration:none; }
+.prov-lank:hover { background:var(--navy-mid); text-decoration:none; }
+.prov-kontrast { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:1.8rem 0 2.4rem; }
+@media (max-width:760px){ .prov-kontrast { grid-template-columns:1fr; } }
+.prov-kort { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1.4rem 1.5rem; box-shadow:0 2px 12px rgba(26,35,69,0.06); }
+.prov-kort--miss { border-top:4px solid #C0392B; }
+.prov-kort--verk { border-top:4px solid var(--gold); }
+.prov-eyebrow { font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:600; font-family:'Jost',sans-serif; }
+.prov-kort--miss .prov-eyebrow { color:#C0392B; }
+.prov-kort--verk .prov-eyebrow { color:var(--gold); }
+.prov-kort h3 { margin:0.35rem 0 0.5rem; font-size:1.25rem; }
+.prov-kort p { font-size:0.95rem; color:var(--navy-mid); margin:0; }
+.prov-steg { display:grid; grid-template-columns:2.6rem 1fr auto; gap:0 1rem; align-items:start; background:#fff; border:1px solid var(--border); border-radius:8px; padding:0.9rem 1.1rem; margin-bottom:0.6rem; }
+.prov-steg .nr { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:700; color:var(--gold); line-height:1.1; }
+.prov-steg h4 { margin:0 0 0.25rem; font-size:1.02rem; }
+.prov-steg p { margin:0; font-size:0.9rem; color:var(--navy-mid); }
+.prov-chip { display:inline-block; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; font-family:'Jost',sans-serif; padding:0.25rem 0.65rem; border-radius:40px; white-space:nowrap; margin-top:0.15rem; }
+.prov-chip--lag { background:rgba(37,99,235,0.1); color:var(--fas-plan); border:1px solid rgba(37,99,235,0.35); }
+.prov-chip--kommun { background:rgba(5,150,105,0.1); color:var(--fas-projektering); border:1px solid rgba(5,150,105,0.35); }
+@media (max-width:640px){ .prov-steg { grid-template-columns:2.2rem 1fr; } .prov-steg .prov-chip { grid-column:2; justify-self:start; } }
+.prov-varfor { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:1.4rem; }
+@media (max-width:760px){ .prov-varfor { grid-template-columns:1fr; } }
+.prov-varfor-kort { background:#fff; border:1px solid var(--border); border-radius:10px; padding:1.3rem 1.5rem; }
+.prov-varfor-kort h4 { margin:0 0 0.7rem; font-size:1.02rem; display:flex; align-items:center; gap:0.5rem; }
+.prov-varfor-kort ul { margin:0; padding-left:1.15rem; }
+.prov-varfor-kort li { font-size:0.9rem; color:var(--navy-mid); margin-bottom:0.45rem; }
 </style>
 </head>
 
@@ -1818,12 +1851,12 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li><a href="#exempel"  class="nav-subtab" data-section="exempel">Exempel</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="process">
-      <li><a href="/detaljplan" class="nav-subtab is-external">Detaljplan</a></li>
       <li><a href="#spar-a"  class="nav-subtab" data-section="spar-a">A. Hyra in</a></li>
       <li><a href="#spar-b"  class="nav-subtab" data-section="spar-b">B. Bygga om</a></li>
       <li><a href="#spar-c"  class="nav-subtab" data-section="spar-c">C. Tillbyggnad</a></li>
       <li><a href="#spar-d"  class="nav-subtab" data-section="spar-d">D. Nybyggnad</a></li>
       <li><a href="#moduler" class="nav-subtab" data-section="moduler">Moduler</a></li>
+      <li><a href="#provning" class="nav-subtab" data-section="provning">Prövningen</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="tid">
       <li><a href="#kontext" class="nav-subtab" data-section="kontext">Nationell kontext</a></li>
@@ -2088,7 +2121,137 @@ footer strong { color: rgba(255,255,255,0.8); }
   </div>
 </section>
 
+<!-- PRÖVNINGEN — planprocessen som lagstadgad prövning -->
+<section id="provning" data-nav-group="process">
+  <div class="container">
+    <span class="section-label">Fördjupning: Planprocessen</span>
+    <h2>Detaljplanen är en prövning — inte en handläggning</h2>
+    <p class="mt-2" style="color:var(--muted); max-width:75ch">En utbredd missuppfattning hos nämnder och tjänstepersoner är att detaljplanen är administration: ett dokument som ”handläggs” och som går fortare med fler handläggare. I själva verket är den en <strong>lagstadgad prövning</strong> av allmänna och enskilda intressen enligt plan- och bygglagen — med moment, tidsfrister och rättigheter som kommunen inte kan välja bort.</p>
+
+    <div class="prov-kontrast">
+      <div class="prov-kort prov-kort--miss">
+        <span class="prov-eyebrow">Vanlig bild</span>
+        <h3>”Handläggning”</h3>
+        <p>”Någon sitter vid en dator och knappar tillräckligt länge så kommer det ut en plan.” Med den bilden blir långa plantider ett resursproblem som borde lösas med mer personal eller högre tempo — och väntetiden framstår som byråkrati.</p>
+      </div>
+      <div class="prov-kort prov-kort--verk">
+        <span class="prov-eyebrow">Verklighet</span>
+        <h3>Lagstadgad prövning</h3>
+        <p>Planprocessen prövar om marken är lämplig för det som ska byggas — mot grannars, allmänhetens och statens intressen. Utredningar, samråd, granskning, antagande och rätten att överklaga <em>är</em> processens innehåll, inte hinder för den.</p>
+      </div>
+    </div>
+
+    <div class="prov-stats">
+      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med minst 5 lägenheter — vägledande även för lokaler.">
+        <div class="tal">4,8 år</div>
+        <div class="etikett">riksgenomsnitt planuppdrag → startbesked (Ledtidsindex 2025)</div>
+      </div>
+      <div class="prov-stat" data-verifiering="verifierad">
+        <div class="tal">44 mån</div>
+        <div class="etikett">mediantid detaljplan → laga kraft (2022–2023)</div>
+      </div>
+      <div class="prov-stat" data-verifiering="verifierad">
+        <div class="tal">~25 %</div>
+        <div class="etikett">av antagna detaljplaner överklagas — 12 % av överklagandena ändrar planen</div>
+      </div>
+      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Snittsiffran avser bostadsplaner (Evidens/Arkwright 2022) — siffra för samhällsfastigheter saknas i öppen statistik.">
+        <div class="tal">+14 mån</div>
+        <div class="etikett">extra ledtid i snitt när planen överklagas men vinner laga kraft</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:0.9rem">Prövningens moment</h3>
+
+    <div class="prov-steg" data-verifiering="verifierad">
+      <div class="nr">1</div>
+      <div>
+        <h4>Utredningar</h4>
+        <p>Dagvatten, buller, trafik, geoteknik, naturvärden, arkeologi — underlaget som prövningen vilar på. Omfattningen styrs av platsens förhållanden och av vad länsstyrelsen kräver för att inte ingripa mot planen.</p>
+      </div>
+      <span class="prov-chip prov-chip--lag">Kravställs i prövningen</span>
+    </div>
+
+    <div class="prov-steg">
+      <div class="nr">2</div>
+      <div>
+        <h4>Planförslag &amp; dialog</h4>
+        <p>Planförslaget arbetas fram i dialog med kommunens förvaltningar, fastighetsägare och verksamheter. Här görs avvägningarna mellan intressen — utformning, byggrätt, trafik, friyta.</p>
+      </div>
+      <span class="prov-chip prov-chip--kommun">Kommunens arbete</span>
+    </div>
+
+    <div class="prov-steg" data-verifiering="verifierad">
+      <div class="nr">3</div>
+      <div>
+        <h4>Samråd</h4>
+        <p>Kommunen ska samråda med <strong>länsstyrelsen, lantmäterimyndigheten, kända sakägare, boende som berörs samt myndigheter och sammanslutningar med väsentligt intresse</strong> (PBL 5 kap.). Alla synpunkter sammanställs och bemöts i en samrådsredogörelse.</p>
+      </div>
+      <span class="prov-chip prov-chip--lag">Lagstadgat</span>
+    </div>
+
+    <div class="prov-steg" data-verifiering="verifierad">
+      <div class="nr">4</div>
+      <div>
+        <h4>Granskning</h4>
+        <p>Det justerade förslaget ställs ut — minst två veckor vid standardförfarande, minst tre vid utökat. Nya synpunkter besvaras i ett granskningsutlåtande. Den som inte yttrat sig senast under granskningen förlorar i regel rätten att överklaga.</p>
+      </div>
+      <span class="prov-chip prov-chip--lag">Lagstadgat</span>
+    </div>
+
+    <div class="prov-steg" data-verifiering="verifierad">
+      <div class="nr">5</div>
+      <div>
+        <h4>Antagande</h4>
+        <p>Planen antas av kommunfullmäktige — vid standardförfarande kan beslutet delegeras till nämnd. Ett politiskt beslut som följer nämndernas sammanträdeskalender.</p>
+      </div>
+      <span class="prov-chip prov-chip--lag">Politiskt beslut</span>
+    </div>
+
+    <div class="prov-steg" data-verifiering="preliminar" data-verifiering-not="Snittsiffran +14 mån avser bostadsplaner (Evidens/Arkwright 2022) — motsvarande siffra för samhällsfastigheter saknas i öppen statistik.">
+      <div class="nr">6</div>
+      <div>
+        <h4>Laga kraft — eller överklagande</h4>
+        <p>Tre veckor efter antagandet vinner planen laga kraft — om ingen överklagar. Sakägare med flera kan överklaga till mark- och miljödomstolen (median ~6 månader 2024) och vidare till Mark- och miljööverdomstolen. Ungefär var fjärde plan överklagas; de som ändå vinner laga kraft försenas med i snitt +14 månader.</p>
+      </div>
+      <span class="prov-chip prov-chip--lag">Lagstadgad rättighet</span>
+    </div>
+
+    <h3 style="margin:2rem 0 0.4rem">Varför drar det ut på tiden?</h3>
+    <p class="mt-2" style="color:var(--muted); max-width:75ch">Delar av tiden är inbyggd i lagstiftningen och gemensam för alla Sveriges kommuner — andra delar går att påverka lokalt. Att skilja dem åt är avgörande för rätt förväntningar och rätt åtgärder.</p>
+
+    <div class="prov-varfor">
+      <div class="prov-varfor-kort" data-verifiering="verifierad">
+        <h4><span class="prov-chip prov-chip--lag">Styrs av lag</span> — kan inte väljas bort</h4>
+        <ul>
+          <li>Samrådskretsen och rätten att yttra sig (PBL 5 kap.)</li>
+          <li>Granskningstidens minimilängd och kungörelser</li>
+          <li>Länsstyrelsens ingripandegrunder — hälsa och säkerhet, riksintressen, strandskydd, miljökvalitetsnormer — som styr utredningskraven</li>
+          <li>Överklaganderätten och domstolsprövning i två instanser</li>
+          <li>Tre veckors laga kraft-tid efter antagande</li>
+        </ul>
+      </div>
+      <div class="prov-varfor-kort">
+        <h4><span class="prov-chip prov-chip--kommun">Kommunen kan påverka</span></h4>
+        <ul>
+          <li>Planberedskap — planlägga innan behovet blir akut</li>
+          <li>Stabil behovsbild och tydliga beställningar in i planarbetet</li>
+          <li>Utredningar som görs i förväg eller parallellt</li>
+          <li>Prioritering av planresurser och parallella skeden — t.ex. projektering under granskningstiden</li>
+          <li>Val av förfarande där lagen medger: standard typiskt 9–18 månader, utökat 18–48</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tldr-key" style="margin-top:1.6rem">
+      <strong>Slutsats:</strong> att korta plantiden handlar mindre om att ”handlägga fortare” — och mer om att börja tidigare. Prövningens moment är demokratiska rättigheter och statliga kontrollstationer; det kommunen råder över är när processen startar och hur väl förberedd den är.
+    </div>
+
+    <a class="prov-lank" href="/detaljplan">Fördjupning: Detaljplaner nationellt — siffror, jämförelser och reformer →</a>
+  </div>
+</section>
+
 <!-- NATIONELL KONTEXT -->
+
 <section id="kontext" data-nav-group="tid">
   <div class="container">
     <span class="section-label">Nationell kontext</span>
@@ -3258,6 +3421,7 @@ function setupScrollUI() {
     { id: 'spar-c',         label: 'C. Tillbyggnad' },
     { id: 'spar-d',         label: 'D. Nybyggnad' },
     { id: 'moduler',        label: 'Moduler' },
+    { id: 'provning',       label: 'Prövningen' },
     { id: 'kostnad',        label: 'Kostnad' },
     { id: 'beslut',         label: 'Beslutsstöd' },
     { id: 'kallor',         label: 'Källor' },

@@ -268,7 +268,7 @@
     {
       "id": "provning",
       "ordning": 5,
-      "ankare": "dp-provning",
+      "ankare": "provning",
       "popular": true,
       "layout": "tva-spalter",
       "titel": "Detaljplanen är en prövning — inte en handläggning",
