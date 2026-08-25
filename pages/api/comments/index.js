@@ -18,17 +18,19 @@ export default async function handler(req, res) {
     if (typeof anchor !== 'string' || !anchor) {
       return res.status(400).json({ error: 'anchor krävs' });
     }
-    if (typeof initials !== 'string' || initials.length < 1 || initials.length > 5) {
+    const init = typeof initials === 'string' ? initials.trim() : '';
+    if (init.length < 1 || init.length > 5) {
       return res.status(400).json({ error: 'initials måste vara 1–5 tecken' });
     }
-    if (typeof text !== 'string' || text.length < 1 || text.length > 2000) {
+    const txt = typeof text === 'string' ? text.trim() : '';
+    if (txt.length < 1 || txt.length > 2000) {
       return res.status(400).json({ error: 'text måste vara 1–2000 tecken' });
     }
     try {
       const comment = await createComment({
         anchor: anchor.slice(0, 200),
-        initials: initials.trim().toUpperCase(),
-        text: text.trim(),
+        initials: init.toUpperCase(),
+        text: txt,
       });
       return res.status(201).json({ comment });
     } catch (err) {

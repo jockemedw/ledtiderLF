@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     res.setHeader('Content-Disposition', `attachment; filename="${filnamn}"`);
     res.setHeader('Cache-Control', 'no-store');
     if (result.missingSections.length) {
-      res.setHeader('X-Pptx-Missing-Sections', result.missingSections.join(','));
+      res.setHeader('X-Pptx-Missing-Sections', result.missingSections.map(s => s.replace(/[^\x20-\x7e]|,/g, '_')).join(','));
     }
     return res.status(200).send(result.buffer);
   } catch (err) {

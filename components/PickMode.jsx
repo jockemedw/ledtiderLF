@@ -80,9 +80,8 @@ export default function PickMode() {
   }, [catalog]);
 
   const valda = useMemo(() => {
-    const set = new Set(ids);
     return ids
-      .filter(id => set.has(id) && tillatna.includes(id))
+      .filter(id => tillatna.includes(id))
       .map(id => ({ id, titel: titelById[id] }));
   }, [ids, titelById, tillatna]);
 

@@ -1,5 +1,5 @@
 import crypto from 'node:crypto';
-import { signAdminToken } from '../../../lib/auth.js';
+import { signAdminToken, ADMIN_PASSWORD } from '../../../lib/auth.js';
 
 const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
 const SEVEN_DAYS_S = 7 * 24 * 60 * 60;
@@ -17,11 +17,7 @@ export default function handler(req, res) {
     return res.status(405).end();
   }
   const { password } = req.body ?? {};
-  const expected = process.env.ADMIN_PASSWORD;
-  if (!expected) {
-    return res.status(500).json({ error: 'ADMIN_PASSWORD ej konfigurerat' });
-  }
-  if (typeof password !== 'string' || !equalStrings(password, expected)) {
+  if (typeof password !== 'string' || !equalStrings(password, ADMIN_PASSWORD)) {
     return res.status(401).json({ error: 'Fel lösenord' });
   }
   const expiry = Date.now() + SEVEN_DAYS_MS;
