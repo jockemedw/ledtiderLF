@@ -28,14 +28,18 @@ export default function PickMode() {
       kallor: 'Källor',
     };
 
-    // Panelen visar sektionernas riktiga rubriker (h2) så att urvalet går
-    // att matcha mot sidan — nav-etiketten är bara fallback.
+    // Panelen visar hela styckets rubrik — sektionsetiketten överst i varje
+    // sektion ("Fördjupning: Planprocessen", "Per lokaltyp" …). Spårsektionerna
+    // saknar etikett och använder sin h2 ("Spår A: Hyra in"); nav-etiketten
+    // är sista fallback.
     const byggKatalog = () => {
       const items = [];
       document.querySelectorAll('.nav-subtab[data-section]').forEach(el => {
         const id = el.dataset.section;
-        const h2 = document.getElementById(id)?.querySelector('h2');
-        const titel = (h2?.textContent || el.textContent || '').trim();
+        const sektion = document.getElementById(id);
+        const etikett = sektion?.querySelector('.section-label');
+        const h2 = sektion?.querySelector('h2');
+        const titel = (etikett?.textContent || h2?.textContent || el.textContent || '').trim();
         const parent = el.closest('.nav-subtabs');
         const grupp = parent?.dataset?.group || 'ovrig';
         if (!id || !titel) return;
