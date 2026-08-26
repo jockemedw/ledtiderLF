@@ -422,37 +422,6 @@
       "fotnot": "* Härledd total: byggfas + dokumenterat förskede (program, beslut, upphandling) inom befintlig detaljplan — med ny detaljplan gäller spår D (5–8 år). Källor: SISAB slutrapporter 2019–2024, Micasa lägesrapport 2025, Lunds kommun, Uppsala Skolfastigheter, ByggfaktaDOCU."
     },
     {
-      "id": "exempel",
-      "ordning": 13,
-      "ankare": "exempel",
-      "layout": "tabell",
-      "titel": "Lejonfastigheter och en spegling",
-      "underrubrik": "Aktuella projekt jämförda med likartade projekt hos andra kommunala fastighetsbolag",
-      "kolumner": [
-        "Exempel",
-        "Lejonfastigheter",
-        "Spegling"
-      ],
-      "rader": [
-        [
-          "Vårdboende + förskola",
-          "Lägerbålet 1, Linköping — 225 mkr, ≈24 mån bygg (klar dec 2026)",
-          "Hemlingborg, Gävle — ≈36 mån bygg + ~1 år projektering"
-        ],
-        [
-          "LSS-gruppbostad",
-          "6 lgh, klar hösten 2024, ≈12–15 mån",
-          "Avesta · Ludvika · Örnsköldsvik — 6 lgh, 10–15 mån, 20–30 mkr"
-        ],
-        [
-          "Förskola",
-          "Vallastaden — 72 barn, ≈10 mån bygg (färdig detaljplan)",
-          "Krokom — 5 år från behovsbeslut, varav 12 mån produktion"
-        ]
-      ],
-      "fotnot": "Skillnaden ligger sällan i bygget utan i förskedet: Vallastaden hade färdig detaljplan i förväg; Krokom är den vanligaste verkligheten. Källor: Lejonfastigheter, RO-Gruppen, ByggPartner, ByggfaktaDOCU, Krokoms kommun."
-    },
-    {
       "id": "spar-a",
       "ordning": 14,
       "ankare": "spar-a",
