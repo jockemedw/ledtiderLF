@@ -1014,79 +1014,6 @@ body.show-verifiering .verifiering-toggle::before {
   letter-spacing: 0.05em;
 }
 
-/* ─── EXEMPEL (Linköping ↔ extern spegling) ─── */
-#exempel { background: var(--white); }
-.exempel-grid {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2.5rem;
-}
-.exempel-par {
-  background: var(--parchment);
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 1.6rem 1.8rem;
-}
-.exempel-titel {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  color: var(--navy);
-  margin: 0 0 1rem 0;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
-}
-.exempel-jamf {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
-}
-@media (max-width: 700px) {
-  .exempel-jamf { grid-template-columns: 1fr; }
-}
-.exempel-kort {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1.2rem 1.3rem;
-  border-left: 4px solid var(--gold);
-}
-.exempel-kort.lejon { border-left-color: var(--navy); }
-.exempel-kort .exempel-eyebrow {
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 0.4rem;
-}
-.exempel-kort.lejon .exempel-eyebrow { color: var(--navy); }
-.exempel-kort h4 {
-  font-family: 'Jost', sans-serif;
-  font-size: 1rem;
-  color: var(--navy);
-  margin: 0 0 0.8rem 0;
-  font-weight: 600;
-}
-.exempel-rad {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.4rem 0;
-  font-size: 0.85rem;
-  border-bottom: 1px dashed rgba(0,0,0,0.06);
-}
-.exempel-rad:last-of-type { border-bottom: none; }
-.exempel-rad .e-label { color: var(--muted); }
-.exempel-rad .e-val { color: var(--navy); font-weight: 600; text-align: right; }
-.exempel-poang {
-  margin-top: 1.1rem;
-  padding: 0.9rem 1rem;
-  background: #fff;
-  border-left: 3px solid var(--gold);
-  border-radius: 0 6px 6px 0;
-  font-size: 0.88rem;
-  color: var(--navy);
-  line-height: 1.5;
-}
-.exempel-poang strong { color: var(--gold); }
 
 /* ─── SPAR-KORT (OVERVIEW) ─────────────────── */
 #oversikt { background: var(--white); }
@@ -1673,14 +1600,6 @@ footer strong { color: rgba(255,255,255,0.8); }
   .typ-insikt { font-size: 8pt !important; background: #f5f5f5 !important; padding: 0.5rem !important; margin-top: 0.7rem !important; }
   .typ-kalla { font-size: 7pt !important; }
   
-  /* Exempel (print) */
-  .exempel-par { padding: 0.7rem !important; background: #fff !important; border: 1pt solid #000 !important; page-break-inside: avoid; margin-bottom: 0.5rem !important; }
-  .exempel-titel { font-size: 12pt !important; }
-  .exempel-jamf { grid-template-columns: 1fr 1fr !important; gap: 0.5rem !important; }
-  .exempel-kort { padding: 0.5rem !important; border-left: 2pt solid #000 !important; }
-  .exempel-kort h4 { font-size: 9pt !important; }
-  .exempel-rad { font-size: 7.5pt !important; padding: 0.2rem 0 !important; }
-  .exempel-poang { font-size: 8pt !important; padding: 0.5rem !important; background: #f5f5f5 !important; }
   
   .kontext-citat {
     background: #fff !important;
@@ -1862,7 +1781,6 @@ footer strong { color: rgba(255,255,255,0.8); }
         <ul class="nav-subgroup-mobile" data-group="behov">
           <li><a href="#hierarki">Hur behov tillgodoses</a></li>
           <li><a href="#per-typ">Per lokaltyp</a></li>
-          <li><a href="#exempel">Exempel</a></li>
         </ul>
       </li>
       <li>
@@ -1904,7 +1822,6 @@ footer strong { color: rgba(255,255,255,0.8); }
     <ul class="nav-subtabs" data-group="behov">
       <li><a href="#hierarki" class="nav-subtab" data-section="hierarki">Hur behov tillgodoses</a></li>
       <li><a href="#per-typ"  class="nav-subtab" data-section="per-typ">Per lokaltyp</a></li>
-      <li><a href="#exempel"  class="nav-subtab" data-section="exempel">Exempel</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="process">
       <li><a href="#spar-a"  class="nav-subtab" data-section="spar-a">A. Hyra in</a></li>
@@ -2110,24 +2027,6 @@ footer strong { color: rgba(255,255,255,0.8); }
     <div class="typ-grid" id="typ-grid"></div>
     <p class="gantt-note mt-4">
       <strong>Metodnot:</strong> Byggfas avser tid från <em>genomförandebeslut</em> (GB) till <em>inflyttning</em> enligt publicerade slutrapporter. Totaler markerade med ≈ och * är härledda: byggfas + dokumenterat förskede (program, beslut, upphandling) inom befintlig detaljplan — övriga totaler är källbelagda direkt (Lund, Kvarngärdesskolan, Micasa). Avvikelser mot budget är medianvärden från respektive urval. Urval baseras på 15 SISAB-projekt 2019–2023, Micasas egen lägesrapport 2025 om de fem senaste VoB-projekten, samt 8 dokumenterade LSS- och idrottshallsprojekt 2019–2025. Lejonfastigheters egna projekt kan variera betydligt beroende på detaljplaneläge, markförutsättningar och omfattning.
-    </p>
-  </div>
-</section>
-
-<!-- EXEMPEL: LINKÖPING ↔ EXTERN SPEGLING -->
-<section id="exempel" data-nav-group="behov">
-  <div class="container">
-    <span class="section-label">Konkreta exempel</span>
-    <h2>Lejonfastigheters projekt — och en spegling i andra kommuner</h2>
-    <p class="mt-2" style="color:var(--muted)">Tre aktuella Lejonfastigheter-projekt jämfört med likartade projekt från andra svenska kommunala fastighetsbolag. Syftet är att förankra siffrorna i konkret verklighet.</p>
-    <div class="exempel-grid" id="exempel-grid"></div>
-
-    <aside class="kostnad-key mt-3" style="background:rgba(26,39,68,0.05);border-color:rgba(26,39,68,0.25)">
-      <strong>Regional benchmark — Framtidens Universitetssjukhus (Linköping):</strong> Region Östergötlands största fastighetsinvestering någonsin: <strong>80 000 m² nybyggnation + 55 000 m² ombyggnation, ca 3,8 mdkr</strong>, löper 2011–2025 (14 år). Visar att även regionsjukhus har ledtider i samma klass som de mest komplexa kommunala storprojekten — och att förstudie-/programskedet är lika avgörande där. <cite data-verifiering="verifierad" style="display:block;margin-top:0.4rem;font-style:italic;font-size:0.85em;color:var(--muted)">Region Östergötland — Regionfastigheter, byggprojekt Universitetssjukhuset Linköping</cite>
-    </aside>
-
-    <p class="gantt-note mt-3">
-      <strong>Källa:</strong> Lejonfastigheters projektkommunikation och pressmeddelanden, RO-Gruppens pressmeddelande oktober 2024 (Lägerbålet), ByggPartners projektreferens (Hemlingborg), ByggfaktaDOCU (LSS-projekt), Krokoms kommun och Nyköpings kommun (förskolor), Corren och Fastighetssverige.
     </p>
   </div>
 </section>
@@ -2954,82 +2853,6 @@ const DATA = {
   ],
   // ══════════════════════════════════════════════════
 
-  // ═══════ EXEMPEL: LINKÖPING ↔ EXTERN SPEGLING ═══════
-  exempel: [
-    {
-      titel: "Vårdboende + förskola i samma byggnad",
-      lejon: {
-        namn: "Lägerbålet 1, Linköping (Berga)",
-        rader: [
-          { e: "Omfattning", v: "90 vårdplatser + 100 förskolebarn" },
-          { e: "Storlek", v: "10 800 m² BTA · 4 vån" },
-          { e: "Budget (entreprenad)", v: "225 mkr" },
-          { e: "Bygg", v: "Början 2025 → dec 2026" },
-          { e: "Byggtid", v: "≈ 24 mån" },
-          { e: "Övrigt", v: "Gemensamt storkök · RO-Gruppen totalentreprenör" }
-        ]
-      },
-      spegling: {
-        namn: "Hemlingborg, Gävle (Gavlefastigheter)",
-        rader: [
-          { e: "Omfattning", v: "80 vårdplatser + 120 förskolebarn + skola F-6 + idrottshall" },
-          { e: "Konstruktion", v: "Trästomme · partnering" },
-          { e: "Bygg", v: "Hösten 2020 → 2023" },
-          { e: "Byggtid", v: "≈ 36 mån" },
-          { e: "Förskede", v: "Projektering 2019–2020 (~1 år)" }
-        ]
-      },
-      poang: "Båda projekten kombinerar omsorg och pedagogik under ett tak — en allt vanligare modell. Hemlingborg är något större och mer komplex, vilket också syns i byggtiden. Lejonfastigheters Lägerbålet ligger inom det förväntade spannet för denna typkategori."
-    },
-    {
-      titel: "LSS-gruppbostad",
-      lejon: {
-        namn: "LSS-gruppbostad, Linköping (2024)",
-        rader: [
-          { e: "Omfattning", v: "6 lägenheter" },
-          { e: "Färdigställd", v: "Hösten 2024" },
-          { e: "Byggtid", v: "≈ 12–15 mån" },
-          { e: "Sammanhang", v: "En av flera nybyggda LSS-bostäder i kommunen" }
-        ]
-      },
-      spegling: {
-        namn: "Skogsbo (Avesta) · Ludvika · Gimåt-Högland (Örnsköldsvik)",
-        rader: [
-          { e: "Beställare", v: "Tre olika kommunala bolag" },
-          { e: "Omfattning", v: "6 lägenheter (var och en)" },
-          { e: "Storlek", v: "600–850 m² BTA" },
-          { e: "Budget", v: "20–30 mkr" },
-          { e: "Byggtid", v: "10–15 mån" },
-          { e: "Mönster", v: "Konsekvent storlek — 6 lgh (över Socialstyrelsens rekommenderade 3–5)" }
-        ]
-      },
-      poang: "LSS-gruppbostäder följer ett standardiserat mönster nationellt — fem till sex lägenheter, 600–850 m² BTA, byggtid kring ett år, budget 20–30 mkr. Dunkehalla/Jönköping (5 lgh, 823 m², klar 2025), Bollnäs och Ludvika bekräftar intervallet. Lejonfastigheters projekt 2024 ligger på samma nivå som motsvarande projekt i andra svenska kommuner."
-    },
-    {
-      titel: "Förskola",
-      lejon: {
-        namn: "Vallastadens förskola, Linköping",
-        rader: [
-          { e: "Omfattning", v: "72 barn · utomhuspedagogik" },
-          { e: "Bygg", v: "v.9 2015 → januari 2016" },
-          { e: "Byggtid", v: "≈ 10 mån" },
-          { e: "Sammanhang", v: "Bland första byggnader i Vallastaden — detaljplan klar i förväg" }
-        ]
-      },
-      spegling: {
-        namn: "Krokoms konceptförskola",
-        rader: [
-          { e: "Omfattning", v: "170 barn · 10 avdelningar" },
-          { e: "Behovsbeslut", v: "September 2019" },
-          { e: "Planerad invigning", v: "2022" },
-          { e: "Faktisk invigning", v: "September 2024" },
-          { e: "Total processtid", v: "5 år" },
-          { e: "Försening pga", v: "Avropsstopp (entreprenörens konkurs) + detaljplanearbete" }
-        ]
-      },
-      poang: "<strong>Vallastaden = bäst tänkbara förutsättningar:</strong> färdig detaljplan, känd byggherre, tidigt skede av stadsdelsbyggande. <strong>Krokom = vanligaste verkligheten:</strong> 5 år från behovsbeslut till invigning, oavsett att själva produktionen bara tog 12 månader. Skillnaden ligger inte i bygget utan i förskedet."
-    }
-  ],
   // ══════════════════════════════════════════════════
 
   kallor: [
@@ -3360,35 +3183,6 @@ function renderLokaltyper() {
     </div>`).join("");
 }
 
-function renderExempel() {
-  const el = document.getElementById("exempel-grid");
-  if (!el || !DATA.exempel) return;
-  el.innerHTML = DATA.exempel.map(ex => `
-    <div class="exempel-par">
-      <h3 class="exempel-titel">${ex.titel}</h3>
-      <div class="exempel-jamf">
-        <div class="exempel-kort lejon">
-          <div class="exempel-eyebrow">Lejonfastigheter</div>
-          <h4>${ex.lejon.namn}</h4>
-          ${ex.lejon.rader.map(r => `
-            <div class="exempel-rad">
-              <span class="e-label">${r.e}</span>
-              <span class="e-val">${r.v}</span>
-            </div>`).join("")}
-        </div>
-        <div class="exempel-kort">
-          <div class="exempel-eyebrow">Spegling</div>
-          <h4>${ex.spegling.namn}</h4>
-          ${ex.spegling.rader.map(r => `
-            <div class="exempel-rad">
-              <span class="e-label">${r.e}</span>
-              <span class="e-val">${r.v}</span>
-            </div>`).join("")}
-        </div>
-      </div>
-      <div class="exempel-poang">${ex.poang}</div>
-    </div>`).join("");
-}
 
 // ── INIT
 document.addEventListener("DOMContentLoaded", () => {
@@ -3397,7 +3191,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderGantt();
   renderKontext();
   renderLokaltyper();
-  renderExempel();
   DATA.spar.forEach(s => renderSpar(s));
   renderModuler();
   renderBeslut();
@@ -3510,7 +3303,6 @@ function setupScrollUI() {
     { id: 'jamforelse',     label: 'Tidsjämförelse' },
     { id: 'kontext',        label: 'Kontext' },
     { id: 'per-typ',        label: 'Per lokaltyp' },
-    { id: 'exempel',        label: 'Exempel' },
     { id: 'spar-a',         label: 'A. Hyra in' },
     { id: 'spar-b',         label: 'B. Bygga om' },
     { id: 'spar-c',         label: 'C. Tillbyggnad' },
