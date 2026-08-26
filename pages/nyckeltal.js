@@ -113,6 +113,8 @@ export default function Nyckeltal({ sharedCss, uppdaterad, kategorier, nyckeltal
             {totalt} citerbara nyckeltal som översikten bygger på — ledtider, kostnader,
             bestånd, demografi, regelverk och verifieringsstatus. Varje rad har en
             klickbar källa och en verifieringsmarkör. Intervall där spridning är meningsfull.
+            Samtliga rader har genomgått en hårdkontroll mot primärkällorna — håll muspekaren
+            över statusmarkören för datum och detaljer.
           </p>
           <span className="nt-meta">Uppdaterat {uppdaterad}</span>
         </div>
@@ -272,7 +274,12 @@ function NyckeltalRad({ rad, kallorById }) {
       </td>
       <td className="nt-td-status">
         <span className="nt-status-dot" style={{ background: farg }} aria-hidden="true" />
-        <span className="nt-status-text">{VERIFIERING_LABELS[rad.verifiering] || rad.verifiering}</span>
+        <span
+          className="nt-status-text"
+          title={rad.hardkontroll ? `Hårdkontroll ${rad.hardkontroll.datum}${rad.hardkontroll.not ? ' — ' + rad.hardkontroll.not : ''}` : undefined}
+        >
+          {VERIFIERING_LABELS[rad.verifiering] || rad.verifiering}
+        </span>
       </td>
     </tr>
   );

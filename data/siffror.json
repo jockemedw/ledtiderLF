@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-25",
+  "uppdaterad": "2026-08-26",
   "kategorier": [
     {
       "id": "ledtider",
@@ -60,9 +60,13 @@
       "kalla_ids": [
         "skr-strategisk-lokalresursplanering"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "löpande",
-      "not": "Marknadens utbud och hyresgästanpassning styr tiden. Snabbast — om rätt lokal finns ledig."
+      "not": "Marknadens utbud och hyresgästanpassning styr tiden. Snabbast — om rätt lokal finns ledig.",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan underkänd i fas A (404). SKR:s ersättningssida 'Verksamhetslokaler, planering' kontrollerad — den innehåller inga ledtidsangivelser för lokalanskaffningsspår."
+      }
     },
     {
       "id": "ledtid-spar-a2",
@@ -72,9 +76,13 @@
       "kalla_ids": [
         "skr-hyra-lokal-lou"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2021-12",
-      "not": "LOU-process + ev. detaljplan på hyresvärdens mark"
+      "not": "LOU-process + ev. detaljplan på hyresvärdens mark",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan (SKL:s LOU-vägledning, 74 s.) innehåller ingen tidsangivelse '2–4 år' — den beskriver LOU som 'tidskrävande' (s. 11) men kvantifierar inte."
+      }
     },
     {
       "id": "ledtid-spar-b",
@@ -84,9 +92,13 @@
       "kalla_ids": [
         "skr-strategisk-lokalresursplanering"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "löpande",
-      "not": "Dolda skador kan fördubbla tid och kostnad"
+      "not": "Dolda skador kan fördubbla tid och kostnad",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan underkänd i fas A (404); ersättningssidan hos SKR saknar ledtidsangivelser."
+      }
     },
     {
       "id": "ledtid-spar-c",
@@ -96,9 +108,13 @@
       "kalla_ids": [
         "skr-strategisk-lokalresursplanering"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "löpande",
-      "not": "Inom befintlig byggrätt. Med planändring 4–7 år. Påverkar verksamheten"
+      "not": "Inom befintlig byggrätt. Med planändring 4–7 år. Påverkar verksamheten",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan underkänd i fas A (404); ersättningssidan hos SKR saknar ledtidsangivelser."
+      }
     },
     {
       "id": "ledtid-spar-d-bdp",
@@ -108,9 +124,13 @@
       "kalla_ids": [
         "skr-strategisk-lokalresursplanering"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "löpande",
-      "not": "Projektering, byggnation, upphandling — utan planprocess"
+      "not": "Projektering, byggnation, upphandling — utan planprocess",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan underkänd i fas A (404); ersättningssidan hos SKR saknar ledtidsangivelser."
+      }
     },
     {
       "id": "ledtid-spar-d-nydp",
@@ -121,9 +141,13 @@
         "skr-strategisk-lokalresursplanering",
         "ledtidsindex-2025"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Detaljplan ensam: 2–5 år"
+      "not": "Detaljplan ensam: 2–5 år",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens 'Detaljplan ensam: 2–5 år' bör justeras: Ledtidsindex 2025 anger 2,5–5,9 år (viktat snitt 3,9 år) för enbart detaljplan."
+      }
     },
     {
       "id": "ledtid-detaljplan-snitt-2024",
@@ -136,7 +160,10 @@
       "verifiering": "verifierad",
       "datum": "2024-09",
       "not": "Avser flerbostadshus ≥ 5 lgh — vägledande för samhällsfastigheter, ej direkt jämförbar",
-      "tangerande": true
+      "tangerande": true,
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ledtid-detaljplan-snitt-2025",
@@ -149,7 +176,10 @@
       "verifiering": "verifierad",
       "datum": "2025-09",
       "not": "Avser flerbostadshus ≥ 5 lgh. Trend: 4,5 (2023) → 4,7 (2024) → 4,8 (2025).",
-      "tangerande": true
+      "tangerande": true,
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ledtid-overklagande",
@@ -160,10 +190,14 @@
         "evidens-overklagande-2023",
         "evidens-samhallseffekter-2022"
       ],
-      "verifiering": "preliminar",
+      "verifiering": "verifierad",
       "datum": "2023",
       "not": "Snittsiffran avser bostadsplaner — motsvarande siffra för samhällsfastigheter saknas i öppen statistik",
-      "tangerande": true
+      "tangerande": true,
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Uppgradering från preliminär: siffran återfinns ordagrant i båda källorna. Caveaten (avser bostadsplaner) stämmer och bör stå kvar."
+      }
     },
     {
       "id": "ledtid-mmd-omloppstid",
@@ -171,11 +205,16 @@
       "etikett": "Mark- och miljödomstol, omloppstid (median)",
       "varde": "~6 mån",
       "kalla_ids": [
-        "domstolsstatistik-2024"
+        "domstolsstatistik-2024",
+        "evidens-overklagande-2023"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Endast en av flera möjliga instanser (MMD → MÖD → HD)"
+      "not": "Endast en av flera möjliga instanser (MMD → MÖD → HD)",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Domstolsstatistik 2024 särredovisar INTE omloppstider/median för MMD:s PBL-mål (gäller även 2025-utgåvan). Närmaste belagda siffra: Evidens 2023 — MMD i genomsnitt 5,5 mån (2021). Överväg omformulering till 'snitt ~5,5 mån (Evidens)' eller källa Sveriges Domstolars årsredovisning."
+      }
     },
     {
       "id": "ledtid-byggtid-lss",
@@ -185,9 +224,13 @@
       "kalla_ids": [
         "jonkoping-dunkehalla-lss-2024"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2024",
-      "not": "Snabbaste lokaltypen i byggfas"
+      "not": "Snabbaste lokaltypen i byggfas",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Enda källan underkänd i fas A (ByggfaktaDOCU-sidan 404). Indirekta uppgifter via sökindex stöder ~11 mån byggtid, men fritt åtkomlig ersättningskälla saknas."
+      }
     },
     {
       "id": "ledtid-byggtid-f9-stor",
@@ -195,11 +238,16 @@
       "etikett": "F-9-skola 990 elever, byggtid",
       "varde": "~3 år",
       "kalla_ids": [
-        "uppsala-kvarngardesskolan-2025-slutrapport"
+        "uppsala-kvarngardesskolan-2025-slutrapport",
+        "uppsala-skolfastigheter-kvarngardesskolan"
       ],
       "verifiering": "verifierad",
       "datum": "2025-08",
-      "not": "Kvarngärdesskolan Uppsala: sommar 2022 → HT 2025 i samverkansentreprenad"
+      "not": "Kvarngärdesskolan Uppsala: sommar 2022 → HT 2025 i samverkansentreprenad",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Angiven källa (uppsala.se-artikeln) bekräftar invigning sep 2025 men inte byggstarten — byggtiden framgår av Skolfastigheters projektsida, som föreslås läggas till som källa."
+      }
     },
     {
       "id": "ledtid-total-forskola",
@@ -211,7 +259,10 @@
       ],
       "verifiering": "preliminar",
       "datum": "2019–2023",
-      "not": "Härledd: byggfas 21–37 mån (SISAB, 8 projekt) + 2–4 år program/upphandling/beslut enligt SISAB:s notering. Jfr Krokom: 5 år från behovsbeslut varav 12 mån produktion"
+      "not": "Härledd: byggfas 21–37 mån (SISAB, 8 projekt) + 2–4 år program/upphandling/beslut enligt SISAB:s notering. Jfr Krokom: 5 år från behovsbeslut varav 12 mån produktion",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ledtid-total-grundskola",
@@ -222,9 +273,13 @@
         "lund-strategisk-lfp-2024-2033",
         "uppsala-kvarngardesskolan-2025-slutrapport"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2024–2025",
-      "not": "Lund: ~7 år snitt från tanke till färdig skola. Kvarngärdesskolan (ny DP): 10 år varav 3 års byggfas"
+      "not": "Lund: ~7 år snitt från tanke till färdig skola. Kvarngärdesskolan (ny DP): 10 år varav 3 års byggfas",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Nedgradering från verifierad: Lund-källan är onåbar (moten.lund.se blockerar anslutningar, fas A) och Kvarngärdesskolans 10-årstotal står inte i den angivna Uppsala-artikeln. Byggfasen 3 år är däremot belagd."
+      }
     },
     {
       "id": "ledtid-total-grundskola-ombyggnad",
@@ -244,11 +299,16 @@
       "etikett": "Vård- och omsorgsboende, total ledtid",
       "varde": "5–9 år",
       "kalla_ids": [
-        "micasa-fastigheter"
+        "micasa-fastigheter",
+        "micasa-behov-till-boende-2026"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2025",
-      "not": "Från inriktningsbeslut. Markanvisning→inflytt: 11–13 år (Micasas fem senaste projekt). Byggfas 2–3 år"
+      "not": "Från inriktningsbeslut. Markanvisning→inflytt: 11–13 år (Micasas fem senaste projekt). Byggfas 2–3 år",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Angiven källa (Micasas årsredovisningssida) innehåller inte ledtidsuppgifterna. Micasas artikel 'Från behov till färdigt boende' (2026-06-30) föreslås som kompletterande källa."
+      }
     },
     {
       "id": "ledtid-total-lss",
@@ -258,19 +318,29 @@
       "kalla_ids": [
         "jonkoping-dunkehalla-lss-2024"
       ],
-      "verifiering": "preliminar",
+      "verifiering": "ej-verifierbar",
       "datum": "2024",
-      "not": "Härledd: byggfas 10–15 mån + förstudie/beslut/projektering/upphandling typiskt 1–2 år, inom befintlig detaljplan"
+      "not": "Härledd: byggfas 10–15 mån + förstudie/beslut/projektering/upphandling typiskt 1–2 år, inom befintlig detaljplan",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Enda källan underkänd i fas A (404) och värdet är dessutom härlett (byggfas + typiskt förskede)."
+      }
     },
     {
       "id": "ledtid-total-idrottshall",
       "kategori": "ledtider",
       "etikett": "Idrottshall fullstor, total ledtid (behov→inflytt)",
       "varde": "≈2,5–4 år",
-      "kalla_ids": [],
+      "kalla_ids": [
+        "lund-idrottshall-idrottsstraket-2025"
+      ],
       "verifiering": "preliminar",
       "datum": "2019–2025",
-      "not": "Härledd: byggfas 12–18 mån (ByggfaktaDOCU) + förskede typiskt 1,5–2,5 år, inom befintlig detaljplan. Med ny detaljplan gäller spår D (5–8 år)"
+      "not": "Härledd: byggfas 12–18 mån (ByggfaktaDOCU) + förskede typiskt 1,5–2,5 år, inom befintlig detaljplan. Med ny detaljplan gäller spår D (5–8 år)",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Tomma kalla_ids. WebSearch gav käll-kandidat: Lunds kommun (2025-09-19) anger projekttid ca två år från KF-beslut för fullstor hall; ByggfaktaDOCU-projekt visar byggtider 13–18 mån. Föreslår Lund-nyheten som källa."
+      }
     },
     {
       "id": "ledtid-framtidens-us",
@@ -282,7 +352,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2011–2025",
-      "not": "Lokal regional benchmark — visar att även regionsjukhus har samma ledtidsklass som stora kommunala projekt"
+      "not": "Lokal regional benchmark — visar att även regionsjukhus har samma ledtidsklass som stora kommunala projekt",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "14 år är härlett ur 'Byggtid: 2011–2025' — står inte som talet 14 på sidan, vilket är acceptabelt."
+      }
     },
     {
       "id": "ledtid-norge-byggesak",
@@ -290,11 +364,16 @@
       "etikett": "Norge — lagstadgad frist byggsökan",
       "varde": "12 veckor",
       "kalla_ids": [
-        "ssb-kostra-byggesak"
+        "ssb-kostra-byggesak",
+        "lovdata-pbl-21-7"
       ],
       "verifiering": "verifierad",
       "datum": "löpande",
-      "not": "Automatisk gebyrreduktion 25 %/vecka över fristen. Norsk modell — skillnad mot svensk PBL"
+      "not": "Automatisk gebyrreduktion 25 %/vecka över fristen. Norsk modell — skillnad mot svensk PBL",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Angiven källa (SSB-statistiksidan) innehåller inte fristuppgiften — 12-veckorsfristen står i plan- og bygningsloven § 21-7 (verifierad hos Lovdata). Gebyrreduktionen 25 %/vecka följer av byggesaksforskriften (SAK10) § 7-4, inte av lagen — bör förtydligas i not. Föreslår Lovdata som källa."
+      }
     },
     {
       "id": "ledtid-tidsbegransat-bygglov",
@@ -307,7 +386,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "löpande",
-      "not": "9 kap. 33 § PBL. Inget undantag för skolor — bara säsongskaraktär (9 kap. 9 §) och tidigare bostadsregel"
+      "not": "9 kap. 33 § PBL. Inget undantag för skolor — bara säsongskaraktär (9 kap. 9 §) och tidigare bostadsregel",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Lagrumshänvisningen '9 kap. 33 § PBL' i not är föråldrad — efter omnumreringen (Lag 2026:504, nya 9 kap. sedan dec 2025) är det 9 kap. 71–72 a §§. Sak samma: max 10 år + 5 år i taget, sammanlagt 15 år (20 år för häkten/anstalter)."
+      }
     },
     {
       "id": "ledtid-modulskola-montage",
@@ -319,7 +402,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2017",
-      "not": "Gärdesta Sala: 161 moduler, 5 340 m², 350 elever — leveranstid för montage"
+      "not": "Gärdesta Sala: 161 moduler, 5 340 m², 350 elever — leveranstid för montage",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Datum-fältet bör ändras från 2017 till 2018 — skolan stod klar sommaren 2018 (montage maj–juli 2018) enligt Sala kommuns pressmeddelande 2018-07-30."
+      }
     },
     {
       "id": "kr-forskola",
@@ -330,8 +417,12 @@
         "enkoping-grillby-forskola-2024"
       ],
       "verifiering": "verifierad",
-      "datum": "2024",
-      "not": "Tre svenska 2024-projekt (Grillby/Enköping, Källdal/Uddevalla, IP/Kumla). Höga änden = passivhus/höga klimatkrav"
+      "datum": "2021-10",
+      "not": "Tre svenska 2024-projekt (Grillby/Enköping, Källdal/Uddevalla, IP/Kumla). Höga änden = passivhus/höga klimatkrav",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Nyckeltalets datum 2024 är fel — Grillby stod klar okt 2021. Intervallets ytterkanter (30/38) vilar på ociterade projekt (Källdal Uddevalla, Kumla IP)."
+      }
     },
     {
       "id": "kr-grundskola-medel",
@@ -339,25 +430,33 @@
       "etikett": "F-6/F-9 skola ~400 elever inkl. hall (6 600–7 850 m²)",
       "varde": "30 000–35 000 kr/m² BTA",
       "kalla_ids": [
-        "norrkoping-smedbyskolan-2024"
+        "norrkoping-smedbyskolan-2024",
+        "norrkoping-smedbyskolan-byggstart-2021"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2024-08",
-      "not": "Smedbyskolan Norrköping 252 mkr/7 850 m². Geografiskt nära Linköping"
+      "not": "Smedbyskolan Norrköping 252 mkr/7 850 m². Geografiskt nära Linköping",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "252 mkr och fullstor idrottshall är belagda, men BTA 7 850 m2 finns inte i någon nåbar källa — kr/m2-talet (252/7 850 ≈ 32 100) hänger i luften. Wayback-kopia av originalnyheten finns (fas A ny_url) men web.archive.org är blockerat härifrån."
+      }
     },
     {
       "id": "kr-grundskola-stor",
       "kategori": "kr-per-yta",
       "etikett": "F-9 skola ~900–1 000 elever inkl. hall (14 000–18 600 m²)",
-      "varde": "25 000–32 000 kr/m² BTA",
+      "varde": "25 000–36 000 kr/m² BTA",
       "kalla_ids": [
         "halmstad-vallasskolan-2025",
-        "uppsala-kvarngardesskolan-2025-slutrapport",
-        "stockholm-kista-ang-skola-2024"
+        "uppsala-kvarngardesskolan-2025-slutrapport"
       ],
       "verifiering": "verifierad",
       "datum": "2024–2025",
-      "not": "Vallås Halmstad 475 mkr/18 600 m², Kvarngärdesskolan Uppsala 510 mkr. Stora skolor får skalfördelar"
+      "not": "Vallås Halmstad 475 mkr/18 600 m², Kvarngärdesskolan Uppsala 510 mkr. Stora skolor får skalfördelar",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Kista Äng motsäger nuvarande intervall (385 mkr/9 073 m2 ≈ 42 400 kr/m2 enligt dokumentets egna siffror, prel. 2020) och föreslås utgå ur kalla_ids. Kvarngärdesskolans slutbudget 575 mkr (upp från 510) lyfter övre gränsen från 32 000 till ca 36 000."
+      }
     },
     {
       "id": "kr-idrottshall",
@@ -365,9 +464,13 @@
       "etikett": "Idrottshall fullstor (1 200–1 800 m² fristående)",
       "varde": "18 000–25 000 kr/m² BTA",
       "kalla_ids": [],
-      "verifiering": "preliminar",
+      "verifiering": "ej-verifierbar",
       "datum": "2023–2024",
-      "not": "Lägre kr/m² än skola pga enklare planlösning"
+      "not": "Lägre kr/m² än skola pga enklare planlösning",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Intervallet 18 000–25 000 är rimligt mittfält men saknar primärkälla; funna exempel ligger både under (14 000, äldre enkel hall Stockholm) och klart över (Hallsberg 2024: ca 60 mkr/1 600 m2 ≈ 37 500 kr/m2)."
+      }
     },
     {
       "id": "kr-lss",
@@ -377,9 +480,13 @@
       "kalla_ids": [
         "jonkoping-dunkehalla-lss-2024"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2024",
-      "not": "Tre 2024-projekt: Dunkehalla Jönköping, Ludvika, Bollnäs. Yta-intervall bredare än materialet tidigare angav"
+      "not": "Tre 2024-projekt: Dunkehalla Jönköping, Ludvika, Bollnäs. Yta-intervall bredare än materialet tidigare angav",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Värdet matchar de indirekt bekräftade siffrorna (20–30 mkr/823 m2 = 24 300–36 500 kr/m2) — behåll gärna, men skaffa en nåbar källa, t.ex. Jönköpings kommuns upphandlings-/projektdokument."
+      }
     },
     {
       "id": "kr-vob-kommunalt",
@@ -387,11 +494,16 @@
       "etikett": "Vård- och omsorgsboende, kommunalt",
       "varde": "20 000–33 000 kr/m² BTA",
       "kalla_ids": [
-        "orebro-brickebacken-vob-2024"
+        "orebro-brickebacken-vob-2024",
+        "orebro-brickebacken-byggfakta-2024"
       ],
       "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Brickebacken Örebro 230 mkr/106 lgh"
+      "not": "Brickebacken Örebro 230 mkr/106 lgh",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "BTA-antagandet 7 000–8 000 m2 saknar källa — endast kr/plats går att belägga. Byggherre är Örebrobostäder, inte Futurum som källpostens organisationsfält anger."
+      }
     },
     {
       "id": "kr-vob-privat",
@@ -399,11 +511,16 @@
       "etikett": "Vård- och omsorgsboende, privat utvecklare",
       "varde": "40 000–57 000 kr/m² UY",
       "kalla_ids": [
-        "hemso-arsredovisning-2024"
+        "hemso-arsredovisning-2024",
+        "hemso-bredang-attendo-2022"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Hemsö Bredäng 240 mkr/4 200 m² UY. Inkluderar utvecklingskostnader och markvärde"
+      "not": "Hemsö Bredäng 240 mkr/4 200 m² UY. Inkluderar utvecklingskostnader och markvärde",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens Bredäng-siffror finns INTE i AR 2024 (endast NollCO2-omnämnande s. 35) — de kommer från Hemsös pressmeddelande 2022 (föreslagen ny källa). AR-tabellen har även svenska äldreboenden på 33 000–35 000 kr/m2 (Sarvträsk, Ängegärde) — överväg att vidga intervallet nedåt till ca 33 000–57 000."
+      }
     },
     {
       "id": "kr-modulskola-hyra",
@@ -414,8 +531,12 @@
         "sala-modulskola-adapteo"
       ],
       "verifiering": "verifierad",
-      "datum": "2017",
-      "not": "Gärdesta Sala: 37 mkr på 4 år för 5 340 m² BTA ≈ 1 700 kr/m²/år — leverantören äger byggnaden, kommunen hyr"
+      "datum": "2018-07",
+      "not": "Gärdesta Sala: 37 mkr på 4 år för 5 340 m² BTA ≈ 1 700 kr/m²/år — leverantören äger byggnaden, kommunen hyr",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Datum bör vara 2018 (skolan klar sommaren 2018), inte 2017; käll-URL bör bytas till Sala kommuns pressmeddelande (fas A ny_url)."
+      }
     },
     {
       "id": "kr-bki-arstakt",
@@ -423,11 +544,16 @@
       "etikett": "BKI flerbostadshus — årstakt feb 2025",
       "varde": "−0,2 %",
       "kalla_ids": [
-        "scb-bki-2025"
+        "scb-bki-2025",
+        "scb-bki-statistiknyhet-feb-2025"
       ],
       "verifiering": "verifierad",
       "datum": "2025-02",
-      "not": "Första negativa årstakten sedan 1950-talet. 2024–2025 är en relativ prisplatå efter 2021–2023 års uppgång"
+      "not": "Första negativa årstakten sedan 1950-talet. 2024–2025 är en relativ prisplatå efter 2021–2023 års uppgång",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens 'första negativa årstakten sedan 1950-talet' stämmer inte för feb 2025 — det var femte månaden i rad med negativ årstakt (den första kom hösten 2024). Nyare data (fas A): +3,2 % juli 2026 — platå-formuleringen för 2024–2025 bör uppdateras till förnyad kostnadsökning."
+      }
     },
     {
       "id": "kr-plats-forskola",
@@ -437,9 +563,13 @@
       "kalla_ids": [
         "enkoping-grillby-forskola-2024"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2024",
-      "not": "Baseras på tre svenska 2024-projekt, 6 avd à ~100 barn"
+      "not": "Baseras på tre svenska 2024-projekt, 6 avd à ~100 barn",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Intervallet 650 000–900 000 stöds inte av det enda citerade projektet: med uppgiven kapacitet 160 barn (E-posten/Skolkoll) ger Grillby ca 420 000 kr/plats, och även med notens antagande 100–120 barn blir det 560 000–670 000. Värdet bör ses över och beläggas med de två ociterade projekten (Källdal, Kumla)."
+      }
     },
     {
       "id": "kr-plats-fmedel",
@@ -447,24 +577,33 @@
       "etikett": "F-6 skola — kr per elevplats",
       "varde": "500 000–700 000 kr/elev",
       "kalla_ids": [
-        "norrkoping-smedbyskolan-2024"
+        "norrkoping-smedbyskolan-2024",
+        "norrkoping-smedbyskolan-byggstart-2021"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Inkl. idrottshall"
+      "not": "Inkl. idrottshall",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Elevantalet (420 enligt Byggnyheter; pressmeddelandet anger endast 'två klasser i varje årskurs') står inte i någon verifierad primärkälla — därav preliminär, inte verifierad."
+      }
     },
     {
       "id": "kr-plats-f9-stor",
       "kategori": "kr-per-enhet",
       "etikett": "F-9 skola ~1 000 elever — kr per elevplats",
-      "varde": "475 000–550 000 kr/elev",
+      "varde": "450 000–580 000 kr/elev",
       "kalla_ids": [
         "halmstad-vallasskolan-2025",
         "uppsala-kvarngardesskolan-2025-slutrapport"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2024–2025",
-      "not": "Inkl. idrottshall. Skalfördelar jämfört med mellanstora skolor"
+      "not": "Inkl. idrottshall. Skalfördelar jämfört med mellanstora skolor",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Nuvarande intervall bygger på kontraktssummor (475/510 mkr); Kvarngärdesskolans slutbudget 575 mkr spränger taket 550 000. Vallås elevantal varierar mellan källor (900–1 045), därav preliminär på det nya intervallet."
+      }
     },
     {
       "id": "kr-plats-vob",
@@ -472,11 +611,16 @@
       "etikett": "VOB — kr per plats",
       "varde": "2,0–2,5 mkr/plats",
       "kalla_ids": [
-        "orebro-brickebacken-vob-2024"
+        "orebro-brickebacken-vob-2024",
+        "orebro-brickebacken-byggfakta-2024"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Brickebacken Örebro: 230 mkr / 106 lgh ≈ 2,2 mkr/plats"
+      "not": "Brickebacken Örebro: 230 mkr / 106 lgh ≈ 2,2 mkr/plats",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Byggherre är Örebrobostäder/ÖBO Omsorgsfastigheter, inte Futurum som källposten anger. Boendet överlämnades till kommunen april 2026."
+      }
     },
     {
       "id": "kr-plats-lss",
@@ -486,9 +630,13 @@
       "kalla_ids": [
         "jonkoping-dunkehalla-lss-2024"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2024",
-      "not": "Totalbudget 20–30 mkr för 6 lägenheter"
+      "not": "Totalbudget 20–30 mkr för 6 lägenheter",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Enligt sökindex och fas A har Dunkehalla 5 lägenheter, inte 6: 20–30 mkr/5 lgh = 4,0–6,0 mkr/lgh, över angivet 3,3–5,0 (som bygger på 6 lgh). Värde eller not bör ses över när nåbar källa finns."
+      }
     },
     {
       "id": "kr-modulskola-per-elev-ar",
@@ -499,8 +647,12 @@
         "sala-modulskola-adapteo"
       ],
       "verifiering": "verifierad",
-      "datum": "2017",
-      "not": "Gärdesta Sala 37 mkr / 350 elever / 4 år"
+      "datum": "2018-07",
+      "not": "Gärdesta Sala 37 mkr / 350 elever / 4 år",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Datum bör vara 2018, inte 2017 (samma som kr-modulskola-hyra); käll-URL bör bytas till Sala kommuns pressmeddelande."
+      }
     },
     {
       "id": "kr-skola-driftskostnad",
@@ -512,7 +664,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "+1,6 % fast pris jmf 2023. Komplement till investerings-kr/m² BTA"
+      "not": "+1,6 % fast pris jmf 2023. Komplement till investerings-kr/m² BTA",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "kr-regioner-investering",
@@ -524,7 +679,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Snitt 1 578 kr/inv, median 1 395 kr/inv"
+      "not": "Snitt 1 578 kr/inv, median 1 395 kr/inv",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "kr-kostnadssankning-tidplan",
@@ -534,9 +692,13 @@
       "kalla_ids": [
         "skr-lcc-tidiga-skeden"
       ],
-      "verifiering": "preliminar",
+      "verifiering": "ej-verifierbar",
       "datum": "branschtolkning",
-      "not": "Branschtolkning av MacLeamy/CURT 2004-kurvan. Primärkällan visar kvalitativ kurva utan exakt procenttal — 70–80 % är en accepterad medelnivå"
+      "not": "Branschtolkning av MacLeamy/CURT 2004-kurvan. Primärkällan visar kvalitativ kurva utan exakt procenttal — 70–80 % är en accepterad medelnivå",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Behåll gärna som uttalad tumregel, men märk den som branschtolkning snarare än källbelagd siffra — notens formulering är redan ärlig. Käll-URL bör bytas till extra.skr.se-adressen (fas A ny_url)."
+      }
     },
     {
       "id": "akt-akademiska-hus-bestand",
@@ -549,7 +711,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Sveriges största samhällsfastighetsägare inom utbildning/forskning"
+      "not": "Sveriges största samhällsfastighetsägare inom utbildning/forskning",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "AR 2025 (mars 2026) publicerad — kontrollera beståndssiffran vid uppdatering till 2025."
+      }
     },
     {
       "id": "akt-akademiska-hus-ekonomi",
@@ -561,20 +727,28 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Förvaltningsresultat 4 617 mnkr (+8 %). Investeringar ca 2,5 mdkr"
+      "not": "Förvaltningsresultat 4 617 mnkr (+8 %). Investeringar ca 2,5 mdkr",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "AR 2025: hyresintäkter 7 947 mnkr, förvaltningsresultat 4 846 mnkr — föreslå uppdatering till 2025 års utfall (kräver även nytt datum)."
+      }
     },
     {
       "id": "akt-specialfastigheter-bestand",
       "kategori": "aktorer",
       "etikett": "Specialfastigheter — bestånd",
-      "varde": "1,1 mn m² (174 fast.)",
+      "varde": "≈1,2 mn m² (176 fast.)",
       "kalla_ids": [
         "specialfastigheter-arsredovisning-2024",
         "specialfastigheter"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Kriminalvård, polis, domstol, försvar"
+      "not": "Kriminalvård, polis, domstol, försvar",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Värdet rättat mot AR 2024 (176 fastigheter, 1 184 tkvm). Startsidans 174 fast./1,1 mn m² speglar sannolikt läget efter 2025 års avyttringar (AR 2025: fastighetsvärde 47,4 mdkr efter försäljningar om 9,6 mdkr)."
+      }
     },
     {
       "id": "akt-specialfastigheter-ekonomi",
@@ -586,7 +760,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Fastighetsvärde ca 52 mdkr. Projektutvecklingsinvesteringar 5,1 mdkr"
+      "not": "Fastighetsvärde ca 52 mdkr. Projektutvecklingsinvesteringar 5,1 mdkr",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens 'projektutvecklingsinvesteringar 5,1 mdkr' avser 2025, inte 2024 — 2024 var investeringarna 5 818 mnkr (s. 59). Rätta noten. Fastighetsvärde ca 52 mdkr (51 915 mnkr) bekräftat."
+      }
     },
     {
       "id": "akt-hemso-vardering",
@@ -599,7 +777,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr (+7 %). Uthyrningsgrad 97–99 %"
+      "not": "Driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr (+7 %). Uthyrningsgrad 97–99 %",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "AR 2025: fastighetsvärde 87 231 mnkr, förvaltningsresultat 2 541 mnkr — överväg uppdatering. Notens '+7 %' är exakt +6,5 %."
+      }
     },
     {
       "id": "akt-hemso-leverans",
@@ -611,7 +793,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "12 projekt totalt under året"
+      "not": "12 projekt totalt under året",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens '12 projekt' stämmer inte — AR 2024 s. 24 anger 8 större färdigställda projekt. Rätta noten."
+      }
     },
     {
       "id": "akt-vacse-ekonomi",
@@ -624,7 +810,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Passerade 10 mdkr första gången. Hyresintäkter helåret 615,5 mnkr (+10,0 %)"
+      "not": "Passerade 10 mdkr första gången. Hyresintäkter helåret 615,5 mnkr (+10,0 %)",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källpostens URL levererar fel dokument (NP3:s årsredovisning) — byt till fas A:s korrigerade URL. AR 2025 publicerad."
+      }
     },
     {
       "id": "akt-vacse-avtalslangd",
@@ -636,7 +826,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "98,9 % offentliga hyresgäster. Vissa avtal upp till 15 år. Långsiktig hyresvärdsmodell"
+      "not": "98,9 % offentliga hyresgäster. Vissa avtal upp till 15 år. Långsiktig hyresvärdsmodell",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Samma URL-fel i källposten som för akt-vacse-ekonomi (PDF:n är NP3:s)."
+      }
     },
     {
       "id": "akt-stenvalvet-bestand",
@@ -649,7 +843,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Ca 100 fastigheter. Marknadsvärde ca 15,9 mdkr"
+      "not": "Ca 100 fastigheter. Marknadsvärde ca 15,9 mdkr",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källpostens URL pekar på fel dokument (en banks årsredovisning) — byt till fas A:s korrigerade URL. Webbplatsen visar nu ca 110 fastigheter/603 000 m²/16,8 mdkr; AHR 2025: 598 tkvm, 16,5 mdkr. Notens 'ca 100 fastigheter' är exakt 108."
+      }
     },
     {
       "id": "akt-sisab",
@@ -658,11 +856,16 @@
       "varde": "~1,8 mn m² (~600 byggn.)",
       "kalla_ids": [
         "sisab-portal",
-        "stockholm-lfp-2025-2045"
+        "stockholm-lfp-2025-2045",
+        "stockholm-stad-sisab-bolagssida"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Stockholms stads bolag för skolor och förskolor. ~200 000 personer i lokalerna dagligen"
+      "not": "Stockholms stads bolag för skolor och förskolor. ~200 000 personer i lokalerna dagligen",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Siffrorna återfinns inte i de angivna källorna (sisab.se startsida saknar dem; Stockholms LFP-PDF saknar kvm-uppgift) — ny källa föreslagen: Stockholms stads bolagssida för SISAB."
+      }
     },
     {
       "id": "akt-micasa",
@@ -674,7 +877,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Stockholms stads bolag för äldreboenden, seniorboende, LSS. Omsättning 1 181,7 mnkr 2024"
+      "not": "Stockholms stads bolag för äldreboenden, seniorboende, LSS. Omsättning 1 181,7 mnkr 2024",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Sidan Företagsfakta anger 944 000 kvm bruttoarea — '~1 mn m²' OK. Notens omsättning 1 181,7 mnkr (2024) mot sidans nuvarande 1,20 mdkr; AR 2025 publicerad och 2024 års rapport är inte längre nedladdningsbar."
+      }
     },
     {
       "id": "akt-norrevo",
@@ -684,9 +891,13 @@
       "kalla_ids": [
         "norrevo-fastigheter"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2023",
-      "not": "Norrköpings motsvarighet till Lejonfastigheter — direkt regional benchmark"
+      "not": "Norrköpings motsvarighet till Lejonfastigheter — direkt regional benchmark",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Byt källa: Norrevos årsredovisning 2023 eller Norrköpings kommuns fastighetssida (fas A:s ersättnings-URL saknar dock ytsiffran). Domänen norrevo.se levererade främmande innehåll (kasinosajt) vid direktkontroll."
+      }
     },
     {
       "id": "akt-futurum",
@@ -698,7 +909,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Örebros kommunala skol-/förskolebolag. Hälften förskolor, 30 % grundskolor"
+      "not": "Örebros kommunala skol-/förskolebolag. Hälften förskolor, 30 % grundskolor",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "akt-stadsfast-goteborg",
@@ -710,7 +924,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "löpande",
-      "not": "En av Sveriges största kommunala lokalförvaltare"
+      "not": "En av Sveriges största kommunala lokalförvaltare",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Siffrorna ligger på undersidan 'Stadsfastighetsförvaltningens fastigheter', inte på källpostens ingångssida — precisera gärna käll-URL:en."
+      }
     },
     {
       "id": "akt-stadsfast-malmo",
@@ -722,7 +940,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "löpande",
-      "not": "Malmö stads serviceförvaltning"
+      "not": "Malmö stads serviceförvaltning",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "'~600 obj.' återfinns inte uttryckligen på sidan (motsägs ej)."
+      }
     },
     {
       "id": "akt-vastfastigheter",
@@ -732,9 +954,13 @@
       "kalla_ids": [
         "vastfastigheter-vgr"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "löpande",
-      "not": "VGR:s sjukhusfastigheter — Sveriges största regionala vårdfastighetsförvaltare"
+      "not": "VGR:s sjukhusfastigheter — Sveriges största regionala vårdfastighetsförvaltare",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källposten bör uppdateras: Västfastigheter heter nu VGR fastigheter (fastighet.vgregion.se). Ytsiffran >1,5 mn m² kan möjligen beläggas i VGR:s årsredovisning — annars omformulera till källans 'en av Västsveriges största fastighetsförvaltare'."
+      }
     },
     {
       "id": "akt-region-skane",
@@ -744,9 +970,13 @@
       "kalla_ids": [
         "region-skane-regionfastigheter"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Komplexa sjukhusbyggnader, vårdcentraler, depåer"
+      "not": "Komplexa sjukhusbyggnader, vårdcentraler, depåer",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Överväg att ändra värdet till '>1 mn m²' (källans egen formulering) eller komplettera källregistret med ett belägg för 1,6 mn m² (t.ex. Esri Sveriges kundcase med Regionfastigheter)."
+      }
     },
     {
       "id": "akt-region-ostergotland",
@@ -759,7 +989,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2011–2025",
-      "not": "80 000 m² nybyggt + 55 000 m² ombyggt. Lokal aktör i Linköping"
+      "not": "80 000 m² nybyggt + 55 000 m² ombyggt. Lokal aktör i Linköping",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "akt-statsbygg",
@@ -772,7 +1005,11 @@
       "verifiering": "verifierad",
       "datum": "2024",
       "not": "Motsvarar SFV i Sverige",
-      "tangerande": true
+      "tangerande": true,
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Årsrapport 2025 publicerad: ca 3,0 mn m² fördelat på 2 156 byggnader — överväg uppdatering."
+      }
     },
     {
       "id": "akt-oslobygg",
@@ -782,10 +1019,14 @@
       "kalla_ids": [
         "oslobygg-arsberetning-2024"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2024",
       "not": "Oslos kommunala lokalförsörjare. Investerar 5–6 mdr NOK/år. Närmaste nordiska motsvarighet till Lejonfastigheter",
-      "tangerande": true
+      "tangerande": true,
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Angiven källa (Framsikt-årsberetningen) är JS-renderad och innehållet kan inte maskinläsas — överväg att komplettera med Oslobyggs pressmeddelande/om-oss-sida som källa. Årsberetning 2025 finns."
+      }
     },
     {
       "id": "akt-senaatti",
@@ -798,7 +1039,11 @@
       "verifiering": "verifierad",
       "datum": "2024",
       "not": "Finlands statliga lokalförsörjare. Byggnadsinvesteringar 407 milj EUR 2024",
-      "tangerande": true
+      "tangerande": true,
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens 'byggnadsinvesteringar 407 milj EUR 2024' saknar stöd — 2024 var totala investeringar 759 M€ (s. 15). Rätta noten. Vuosikertomus 2025: omsättning 1 021,5 M€, byggnadsinvesteringar 763 M€."
+      }
     },
     {
       "id": "dem-sverige-tillvaxt",
@@ -810,7 +1055,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2026-04",
-      "not": "Kraftig nedrevidering från 45 000/år 2021–2025"
+      "not": "Kraftig nedrevidering från 45 000/år 2021–2025",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Siffran står i rapporten Sveriges framtida befolkning 2026–2070, inte i själva statistiknyheten — komplettera gärna källposten med rapportsidans URL (scb.se .../produktrelaterat/rapporter/sveriges-framtida-befolkning-2026-2070/)."
+      }
     },
     {
       "id": "dem-tfr-2025",
@@ -818,11 +1067,16 @@
       "etikett": "TFR (fertilitet) 2025",
       "varde": "1,42",
       "kalla_ids": [
-        "scb-framtida-befolkning-2026-2070"
+        "scb-framtida-befolkning-2026-2070",
+        "scb-fruktsamhet-2025"
       ],
       "verifiering": "verifierad",
       "datum": "2025",
-      "not": "Historisk botten för Sverige"
+      "not": "Historisk botten för Sverige",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "I den angivna statistiknyheten beskrivs fruktsamheten endast kvalitativt — ny SCB-källa föreslagen som direkt belägg för 1,42."
+      }
     },
     {
       "id": "dem-fodda-2025",
@@ -834,7 +1088,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2025",
-      "not": "Lägst på 23 år"
+      "not": "Lägst på 23 år",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "dem-grundskola-2024",
@@ -846,7 +1103,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024–2025",
-      "not": "Minskning −5 440 elever vs föregående år — största i absoluta tal hittills"
+      "not": "Minskning −5 440 elever vs föregående år — största i absoluta tal hittills",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens 'största i absoluta tal hittills' är inaktuell: läsåret 2025/26 minskade elevantalet med ca 9 900 (Skolverket, mars 2026) och är nu rekordet. Uppdatera noten eller hela nyckeltalet till 2025/26-utgåvan."
+      }
     },
     {
       "id": "dem-prognos-2035",
@@ -858,7 +1119,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2026-04",
-      "not": "SCB:s aktuella framskrivning"
+      "not": "SCB:s aktuella framskrivning",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "dem-linkoping-tillvaxt",
@@ -868,9 +1132,13 @@
       "kalla_ids": [
         "linkoping-befolkningsprognos-2024-2034"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2025-04",
-      "not": "Genomsnitt 2024–2034. Q3 2025: 168 714 inv (största relativa ökning i Östergötland)"
+      "not": "Genomsnitt 2024–2034. Q3 2025: 168 714 inv (största relativa ökning i Östergötland)",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Käll-URL:en ger 404 (kontrollerad igen i fas B) — uppdatera källposten till nya statistikingången. Notens Q3 2025-uppgift (168 714 inv) ej kontrollerad. En nyare prognosomgång kan finnas: kommunens pressmeddelande 'Linköping fortsätter växa i ett osäkert omvärldsläge' (via.tt.se, 2026) bör kontrolleras, liksom Correns uppgift om ~650 invånares ökning 2025."
+      }
     },
     {
       "id": "dem-linkoping-fsk",
@@ -880,9 +1148,13 @@
       "kalla_ids": [
         "linkoping-befolkningsprognos-2024-2034"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2025-04",
-      "not": "Växande förskoleåldrar (till 10 888 år 2034) — avviker från rikssnitt"
+      "not": "Växande förskoleåldrar (till 10 888 år 2034) — avviker från rikssnitt",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Uppdatera käll-URL:en (404). Uppgiften i sak bekräftad från kommunens eget prognosmaterial."
+      }
     },
     {
       "id": "dem-linkoping-grundskola",
@@ -892,9 +1164,13 @@
       "kalla_ids": [
         "linkoping-befolkningsprognos-2024-2034"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2025-04",
-      "not": "Krympande grundskoleåldrar (till 10 716 år 2034). Trycket flyttas från utbyggnad till anpassning"
+      "not": "Krympande grundskoleåldrar (till 10 716 år 2034). Trycket flyttas från utbyggnad till anpassning",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Uppdatera käll-URL:en (404). Uppgiften i sak bekräftad från kommunens eget prognosmaterial."
+      }
     },
     {
       "id": "dem-norrkoping",
@@ -906,7 +1182,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2025-08",
-      "not": "Utbildningsnämnden har fattat beslut om anpassningar (förskola, skola). Gymnasieåldrar ökar dock"
+      "not": "Utbildningsnämnden har fattat beslut om anpassningar (förskola, skola). Gymnasieåldrar ökar dock",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Notens 'utbildningsnämnden har fattat beslut om anpassningar' står inte i prognosdokumentet — belägg saknas i angiven källa. Nyare prognosomgång 2026–2035 (mars 2026) finns; riktningen (minskande barn/unga, ökande gymnasieåldrar) består."
+      }
     },
     {
       "id": "dem-linkoping-budget-bun",
@@ -914,11 +1194,16 @@
       "etikett": "Linköping — demografianpassning BUN 2025",
       "varde": "+39 mnkr",
       "kalla_ids": [
-        "linkoping-budget-2025-2030"
+        "linkoping-budget-2025-2030",
+        "linkoping-budget-2025-pressmeddelande"
       ],
       "verifiering": "verifierad",
       "datum": "2024-11",
-      "not": "Barn- och ungdomsnämnden förstärkning i budget 2025"
+      "not": "Barn- och ungdomsnämnden förstärkning i budget 2025",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Beloppet 39 mnkr står inte i själva budgetdokumentet (fas A) utan i kommunens pressmeddelande om budget 2025 — ny källa föreslagen. Budgetkällans URL är dessutom 404."
+      }
     },
     {
       "id": "dem-linkoping-lss",
@@ -926,11 +1211,16 @@
       "etikett": "Linköping — LSS-utbyggnad 2025",
       "varde": "+25 mnkr",
       "kalla_ids": [
-        "linkoping-budget-2025-2030"
+        "linkoping-budget-2025-2030",
+        "linkoping-budget-2025-pressmeddelande"
       ],
       "verifiering": "verifierad",
       "datum": "2024-11",
-      "not": "Social- och omsorgsnämnden för LSS-utbyggnad och daglig verksamhet"
+      "not": "Social- och omsorgsnämnden för LSS-utbyggnad och daglig verksamhet",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Noten bör kompletteras: beloppet omfattar även förbättrat stöd i skyddat boende, inte bara LSS-utbyggnad och daglig verksamhet. Belägget ligger i pressmeddelandet (ny källa, samma som för dem-linkoping-budget-bun), inte i budget-PDF:n vars URL dessutom är 404."
+      }
     },
     {
       "id": "dem-linkoping-hyresnota",
@@ -938,11 +1228,15 @@
       "etikett": "Linköping — hyresnota till Lejonfastigheter",
       "varde": "1 392 → 1 666 mnkr/år",
       "kalla_ids": [
-        "linkoping-lfp-2024-revision"
+        "linkoping-kommungemensam-lfp-2024"
       ],
       "verifiering": "verifierad",
-      "datum": "2024-12",
-      "not": "+21 % efter LFP-åtgärdspaket"
+      "datum": "2023-12",
+      "not": "+21 % efter LFP-åtgärdspaket",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Byt källa till linkoping-kommungemensam-lfp-2024 och ändra nyckeltalets datum till 2023-12 (dokumentet daterat 2023-10-26, KS 2023-12-12). Obs: dokumentet skriver 'kostnad 2023' — sannolikt tryckfel för 2033 (prognostabellen löper 2024–2033). Den angivna källan (LFP-revisionen 2024) anger i stället 1 392,4 resp. 1 453 mkr och saknar 1 666-uppgiften."
+      }
     },
     {
       "id": "dem-linkoping-investering",
@@ -954,7 +1248,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024-11",
-      "not": "Nytt krav: 50 % egenfinansiering av investeringar"
+      "not": "Nytt krav: 50 % egenfinansiering av investeringar",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Käll-URL:en är 404 — använd fas A:s ersättning (kommunens TT-speglade dokument) eller leta stabil URL på linkoping.se. Notens '50 % egenfinansiering av investeringar' återfinns inte som explicit krav i dokumentet (formuleras som att budgeterade resultat ska täcka investeringar utöver avskrivningar) — omformulera eller belägg separat. Budget 2026 (KS juni 2025) finns med nya ramar."
+      }
     },
     {
       "id": "kli-klimatdeklaration-obligatorisk",
@@ -966,7 +1264,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2022",
-      "not": "Gäller nya byggnader"
+      "not": "Gäller nya byggnader",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Obs: Boverket föreslog 20 maj 2026 att klimatdeklarationsreglerna upphävs och ersätts av livscykel-GWP-krav i PBL 2028/2030 — kan nämnas i not."
+      }
     },
     {
       "id": "kli-utokad-deklaration",
@@ -974,11 +1276,15 @@
       "etikett": "Utökad klimatdeklaration — ikraft",
       "varde": "senast jan 2028",
       "kalla_ids": [
-        "boverket-gransvarde-uppdrag-2025"
+        "boverket-livscykel-gwp-2026"
       ],
       "verifiering": "verifierad",
       "datum": "2025-08",
-      "not": "Förskjutet från tidigare 2027-tidplan. Boverkets uppdrag redovisas senast 1 juni 2026"
+      "not": "Förskjutet från tidigare 2027-tidplan. Boverkets uppdrag redovisas senast 1 juni 2026",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Not föråldrad: uppdraget är redovisat 20 maj 2026 (rapport 2026:16), inte 'redovisas senast 1 juni 2026'. 2028-kravet gäller byggnader >1 000 m2; övriga nya byggnader från 1 jan 2030. Begreppet 'utökad klimatdeklaration' ersätts i förslaget av livscykel-GWP-krav i PBL (klimatdeklarationsreglerna upphävs). Källpostens URL är död — ersätt med ny källa."
+      }
     },
     {
       "id": "kli-gransvarde-klimat",
@@ -986,11 +1292,15 @@
       "etikett": "Gränsvärde klimatpåverkan — ikraft",
       "varde": "senast jan 2030",
       "kalla_ids": [
-        "boverket-gransvarde-uppdrag-2025"
+        "boverket-livscykel-gwp-2026"
       ],
       "verifiering": "verifierad",
       "datum": "2025-08",
-      "not": "Boverket föreslår sänkning −25 % från 2025-nivån"
+      "not": "Boverket föreslår sänkning −25 % från 2025-nivån",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Not:ens uppgift 'Boverket föreslår sänkning −25 % från 2025-nivån' stöds INTE av slutredovisningen — ingen sådan procentsats på nyhetssidan; där anges i stället skärpningsriktning till 2050 med målbild −90 % till 2040 jämfört med 1990. Ta bort/ersätt −25 %-uppgiften. Källpostens URL död — ersätt med boverket-livscykel-gwp-2026."
+      }
     },
     {
       "id": "kli-epbd-ikrafttrad-se",
@@ -1002,7 +1312,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024-05",
-      "not": "EU-direktiv 2024/1275 trädde i kraft 28 maj 2024. Direktivets genomförandefrist: 29 maj 2026"
+      "not": "EU-direktiv 2024/1275 trädde i kraft 28 maj 2024. Direktivets genomförandefrist: 29 maj 2026",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Genomförandet är stegvis: lagändringar (PBL, energideklarationslagen; SFS 2026:745/744) 1 juli 2026, förordningsändringar 1 juli resp. 1 okt 2026, Boverkets föreskrifter planeras 1 okt 2026. Sverige 'något försenat' mot EU-fristen 29 maj 2026 — not:en stämmer."
+      }
     },
     {
       "id": "kli-nzeb-offentligt",
@@ -1015,7 +1329,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024–2025",
-      "not": "Alla nya byggnader 2030. Krav per EPBD-recast"
+      "not": "Alla nya byggnader 2030. Krav per EPBD-recast",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "kli-solceller-2027",
@@ -1023,11 +1340,16 @@
       "etikett": "Solcellsplikt offentligt >2 000 m²",
       "varde": "senast 2027",
       "kalla_ids": [
-        "epbd-recast-2024-1275"
+        "epbd-recast-2024-1275",
+        "svensk-solenergi-epbd"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Per EPBD-recast"
+      "not": "Per EPBD-recast",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Avser befintliga offentliga byggnader >2 000 m2 (senast 31 dec 2027). Nya kommersiella/offentliga byggnader >250 m2 träffas redan senast 31 dec 2026. Angiven källas URL (Boverkets EPBD-sida) innehåller inte solcellstrappan — komplettera med ny källa."
+      }
     },
     {
       "id": "kli-solceller-2028",
@@ -1035,11 +1357,16 @@
       "etikett": "Solcellsplikt offentligt >750 m²",
       "varde": "senast 2028",
       "kalla_ids": [
-        "epbd-recast-2024-1275"
+        "epbd-recast-2024-1275",
+        "svensk-solenergi-epbd"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Per EPBD-recast. Steg 2 i solcellstrappa"
+      "not": "Per EPBD-recast. Steg 2 i solcellstrappa",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Avser befintliga offentliga byggnader >750 m2 (senast 31 dec 2028); steg 3 är >250 m2 senast 31 dec 2030. Samma källkomplettering som kli-solceller-2027 (svensk-solenergi-epbd)."
+      }
     },
     {
       "id": "kli-meps-2030",
@@ -1047,11 +1374,16 @@
       "etikett": "MEPS lokaler — inga i 16 % minst eff.",
       "varde": "senast 2030",
       "kalla_ids": [
-        "epbd-recast-2024-1275"
+        "epbd-recast-2024-1275",
+        "skr-pm-eed-epbd-2025"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Trappa: 16 % 2030 → 26 % 2033"
+      "not": "Trappa: 16 % 2030 → 26 % 2033",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Tröskeln avser de 16 % med sämst energiprestanda år 2020. Angiven källas URL (Boverkets EPBD-sida) innehåller inte MEPS-uppgifterna — komplettera med redan registrerad källa skr-pm-eed-epbd-2025."
+      }
     },
     {
       "id": "kli-meps-2033",
@@ -1059,11 +1391,16 @@
       "etikett": "MEPS lokaler — inga i 26 % minst eff.",
       "varde": "senast 2033",
       "kalla_ids": [
-        "epbd-recast-2024-1275"
+        "epbd-recast-2024-1275",
+        "skr-pm-eed-epbd-2025"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Boverket bedömer ~31 000 svenska lokalbyggnader behöver effektiviseras till 2033"
+      "not": "Boverket bedömer ~31 000 svenska lokalbyggnader behöver effektiviseras till 2033",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Årtalet och 26 %-tröskeln bekräftade. Not:ens '~31 000 lokalbyggnader' ej återfunnen i källorna: SKR:s PM anger totalt 124 130 lokalbyggnader (s. 5); 26 % av dessa är ca 32 000 — siffran är rimlig men bör källbeläggas mot Boverkets delrapport (prel. minimikrav, okt 2024/okt 2025) eller justeras till ~32 000."
+      }
     },
     {
       "id": "kli-taxonomi-nzeb",
@@ -1075,7 +1412,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2021",
-      "not": "För taxonomi-anpassning. Klimatdeklaration livscykel krävs för >5 000 m²"
+      "not": "För taxonomi-anpassning. Klimatdeklaration livscykel krävs för >5 000 m²",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källpostens URL (Boverkets taxonomisida) innehåller inte kriterierna (fas A: underkand) — byt till EUR-Lex 2021/2139 enligt fas A:s förslag. Not:ens 'klimatdeklaration livscykel krävs för >5 000 m2' bör nyanseras: kriteriet är att livscykel-GWP beräknas för varje stadium och lämnas ut till investerare/kunder på begäran."
+      }
     },
     {
       "id": "kli-livscykel-byggprocess",
@@ -1085,21 +1426,29 @@
       "kalla_ids": [
         "iva-vagval-klimatet"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "preliminar",
       "datum": "2020",
-      "not": "Över 50 års livscykel. Förklarar varför programskedet är centralt"
+      "not": "Över 50 års livscykel. Förklarar varför programskedet är centralt",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Angiven källa (IVA Vägval för klimatet, projektsidan) innehåller inte 50 %-uppgiften (fas A). Uppgiften härrör från IVA & Sveriges Byggindustriers rapport 'Klimatpåverkan från byggprocessen' (2014) — sekundärt bekräftad hos Sustainable Innovation: 'klimatpåverkan från byggfasen motsvarar 50 % av fastighetens totala påverkan under 50 års livscykel'. Byt källhänvisning till 2014-rapporten; fungerande URL till rapporten kunde inte fastställas inom hämtningsbudgeten (iva.se-publikationssidan ger 404)."
+      }
     },
     {
       "id": "kli-akademiska-hus-utslapp",
       "kategori": "klimat",
       "etikett": "Akademiska Hus — utsläppsminskning",
-      "varde": "−50 %",
+      "varde": "−64 %",
       "kalla_ids": [
         "akademiska-hus-arsredovisning-2024"
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Från basår 2019. Första svenska fastighetsbolag med godkänt SBTi Net-Zero-mål"
+      "not": "Från basår 2019. Första svenska fastighetsbolag med godkänt SBTi Net-Zero-mål",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan motsäger −50 %: utfallet vid utgången av 2024 är −64 % mot basår 2019 (s. 7 måltabell 'Klimatavtryck −64 %', s. 8 'reducerat våra klimatutsläpp med 64 procent jämfört med 2019'). Not:ens 'första svenska fastighetsbolag med godkänt SBTi Net-Zero-mål' återfinns inte i årsredovisningen (rapporten säger endast nettonoll 2040 verifierat av SBTi) — stryk eller källbelägg separat. AR 2025 finns (fas A) och bör på sikt ersätta som källa."
+      }
     },
     {
       "id": "ver-80-procent",
@@ -1111,7 +1460,10 @@
       ],
       "verifiering": "preliminar",
       "datum": "branschtolkning",
-      "not": "Branschtolkning av MacLeamy/CURT 2004-kurvan. Primärkällan är kvalitativ, anger inte exakt procenttal. Acceptabelt intervall: 70–80 %"
+      "not": "Branschtolkning av MacLeamy/CURT 2004-kurvan. Primärkällan är kvalitativ, anger inte exakt procenttal. Acceptabelt intervall: 70–80 %",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ver-14-man",
@@ -1121,9 +1473,13 @@
       "kalla_ids": [
         "evidens-samhallseffekter-2022"
       ],
-      "verifiering": "preliminar",
+      "verifiering": "verifierad",
       "datum": "2022",
-      "not": "Avser bostadsplaner. Motsvarande siffra för samhällsfastigheter saknas i öppen statistik"
+      "not": "Avser bostadsplaner. Motsvarande siffra för samhällsfastigheter saknas i öppen statistik",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Uppgradering från preliminär: +14 mån återfinns ordagrant i källan (Evidens 2022, s. 18, Arkwright-analysen) och även i Evidens överklaganderapport 2023 (s. 18). Slutsatsen 'Verifierad för bostäder' håller."
+      }
     },
     {
       "id": "ver-lss-matt",
@@ -1133,9 +1489,13 @@
       "kalla_ids": [
         "jonkoping-dunkehalla-lss-2024"
       ],
-      "verifiering": "preliminar",
+      "verifiering": "ej-verifierbar",
       "datum": "2024",
-      "not": "6 lgh = övre gränsen i Socialstyrelsens vägledning (rekommenderas 3–5). Yta-intervall bör utvidgas till 600–850 m²"
+      "not": "6 lgh = övre gränsen i Socialstyrelsens vägledning (rekommenderas 3–5). Yta-intervall bör utvidgas till 600–850 m²",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källan underkänd i fas A (404). Indexerade uppgifter anger 5 lägenheter — inte ca 6 som i källsammandraget. Socialstyrelsen-uppgiften (rekommendation 3–5, max 6) behöver egen källpost för att kunna verifieras."
+      }
     },
     {
       "id": "ver-dp-snitt",
@@ -1147,7 +1507,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2025-09",
-      "not": "Caveat: avser bostadsplaner. Korrekt återgivet i materialet med markörer"
+      "not": "Caveat: avser bostadsplaner. Korrekt återgivet i materialet med markörer",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ver-tidsbegransat-bygglov",
@@ -1159,7 +1522,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "löpande",
-      "not": "Inget undantag för skolor. Bostadsregeln i 9 kap. 33 a § gäller endast bostäder"
+      "not": "Inget undantag för skolor. Bostadsregeln i 9 kap. 33 a § gäller endast bostäder",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Slutsatsen håller i sak, men lagrumshänvisningarna är föråldrade efter PBL-omnumreringen dec 2025 (Lag 2026:504): 9 kap. 33 § → 9 kap. 71–72 §§, bostadsregeln 33 a § → 72 a §. Uppdatera not."
+      }
     },
     {
       "id": "ver-sisab-bestand",
@@ -1171,43 +1538,58 @@
       ],
       "verifiering": "verifierad",
       "datum": "2024",
-      "not": "Bekräftad mot Stockholms stads officiella sida"
+      "not": "Bekräftad mot Stockholms stads officiella sida",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ver-klimat-tidplan",
       "kategori": "verifiering",
       "etikett": "Klimatdeklaration: gränsvärden 2027 + 2030",
-      "varde": "Falsk — tidplanen ändrad",
+      "varde": "Rättad — utökad deklaration 2028, gränsvärden 2030 (slutredovisat maj 2026)",
       "kalla_ids": [
         "boverket-gransvarde-uppdrag-2025"
       ],
-      "verifiering": "falsk",
+      "verifiering": "verifierad",
       "datum": "2025-08",
-      "not": "Korrekt nu: utökad deklaration 2028 + gränsvärden 2030. Tidigare 2027-tidplan skrotades aug 2025"
+      "not": "Korrekt nu: utökad deklaration 2028 + gränsvärden 2030. Tidigare 2027-tidplan skrotades aug 2025",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Sedan maj-rundan har Boverket slutredovisat uppdraget (2026-05-20, rapport 2026:16): livscykel-GWP redovisas från 1 jan 2028 för byggnader >1000 m², alla nya byggnader plus gränsvärden från 1 jan 2030, kraven flyttas till PBL. Källposten bör peka på slutredovisningen (fas A:s ny_url). Sammandragets '-25 % till 2030' är osäker (medierapportering nämner ca 35 %)."
+      }
     },
     {
       "id": "ver-linkoping-9000",
       "kategori": "verifiering",
       "etikett": "Linköping: 9 000+ nya elevplatser",
-      "varde": "Preliminär — primärkälla blockerad",
+      "varde": "Ej verifierbar — siffran finns inte i åtkomlig LFP-PDF (daterad 2024-04-15)",
       "kalla_ids": [
         "linkoping-lfp-2024-revision"
       ],
-      "verifiering": "preliminar",
+      "verifiering": "ej-verifierbar",
       "datum": "2024-12",
-      "not": "Refererad i Lejonfastigheters bygglista. Exakt siffra kräver manuell PDF-nedladdning från sammanträdesportalen"
+      "not": "Refererad i Lejonfastigheters bygglista. Exakt siffra kräver manuell PDF-nedladdning från sammanträdesportalen",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Radens motivering 'primärkälla blockerad' är inaktuell: PDF:en på angiven URL går nu att hämta (13 s.), men den är daterad 2024-04-15 och innehåller varken '9 000' elevplatser eller något åtgärdspaket. Siffran kommer sannolikt från ett annat/senare dokument som behöver identifieras."
+      }
     },
     {
       "id": "ver-linkoping-hyresnota",
       "kategori": "verifiering",
       "etikett": "Linköpings hyresnota 1 392 mnkr/år",
-      "varde": "Verifierad",
+      "varde": "Verifierad — LFP 2024–2033 s. 24",
       "kalla_ids": [
-        "linkoping-lfp-2024-revision"
+        "linkoping-kommungemensam-lfp-2024"
       ],
       "verifiering": "verifierad",
       "datum": "2024-12",
-      "not": "Ökar till 1 666 mnkr (+21 %) efter LFP-åtgärdspaket"
+      "not": "Ökar till 1 666 mnkr (+21 %) efter LFP-åtgärdspaket",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "1 392 → 1 666 mnkr (+21 %) återfinns ordagrant i Kommungemensam LFP 2024–2033, avsnitt 4.4 s. 24. Obs: dec 2024-revisionen på tidigare angiven URL anger i stället 1 353 (totalt) resp. 1 453 mkr (Lejonfastigheter) och saknar 1 666-uppgiften."
+      }
     },
     {
       "id": "ver-adda-ramavtal",
@@ -1217,9 +1599,13 @@
       "kalla_ids": [
         "adda-forskolebyggnader-2018"
       ],
-      "verifiering": "verifierad",
+      "verifiering": "ej-verifierbar",
       "datum": "2018",
-      "not": "Ramavtalet löpte ut 2026-03-15; efterföljaren Förskole- och skolbyggnader 2025-2 startade sommaren 2026"
+      "not": "Ramavtalet löpte ut 2026-03-15; efterföljaren Förskole- och skolbyggnader 2025-2 startade sommaren 2026",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Källsidan är borttagen (äkta 404 sedan avtalet löpte ut 2026-03-15; Wayback-kopia finns men är egress-blockerad härifrån). Utgången 2026-03-15 och efterföljaren Förskole- och skolbyggnader 2025-2 (avtalsstart 2026-08-15) är bekräftade, men '11 leverantörer' kan inte längre kontrolleras mot öppen källa."
+      }
     },
     {
       "id": "ver-framtidens-us",
@@ -1231,7 +1617,10 @@
       ],
       "verifiering": "verifierad",
       "datum": "2011–2025",
-      "not": "Projektet löper 14 år — illustrerar att regionsjukhus har ledtider som komplexa kommunala storprojekt"
+      "not": "Projektet löper 14 år — illustrerar att regionsjukhus har ledtider som komplexa kommunala storprojekt",
+      "hardkontroll": {
+        "datum": "2026-08-26"
+      }
     },
     {
       "id": "ver-lou-hyresundantag",
@@ -1243,7 +1632,11 @@
       ],
       "verifiering": "verifierad",
       "datum": "2021-12",
-      "not": "Skolor/sjukhus med starka anpassningskrav riskerar falla utanför undantaget. Hertsöskolan i Luleå (Expandia-moduler) är publicerat case"
+      "not": "Skolor/sjukhus med starka anpassningskrav riskerar falla utanför undantaget. Hertsöskolan i Luleå (Expandia-moduler) är publicerat case",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Två sakfel i not/källsammandrag: (1) Hertsöskolan i Luleå (Expandia) förekommer INTE i källan — närmaste case är rättsfallet 'Bostadsmodulerna' (Kammarrätten i Sundsvall, mål 395-10, skolmoduler = byggentreprenadkontrakt, s. 60); stryk eller källbelägg Hertsöskolan separat. (2) Utgivare är SKL, juni 2019 (ISBN 978-91-7585-737-4) — inte SKR 2021-12."
+      }
     }
   ]
 }

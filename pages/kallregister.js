@@ -31,8 +31,23 @@ const TYP_LABELS = {
   samhallsfastighetsbolag: 'Samhällsfastighetsbolag',
 };
 
+const HK_LABELS = {
+  godkand: 'Hårdkontroll godkänd',
+  anmarkning: 'Hårdkontroll: anmärkning',
+  underkand: 'Hårdkontroll: underkänd',
+  'ej-kontrollerbar': 'Ej kontrollerbar',
+};
+
+const HK_FARG = {
+  godkand: '#059669',
+  anmarkning: '#D97706',
+  underkand: '#DC2626',
+  'ej-kontrollerbar': '#6B7280',
+};
+
 export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor }) {
   const [sok, setSok] = useState('');
+  const [endastHK, setEndastHK] = useState(false);
   // Områden med dolt_default: true (t.ex. "tangerande-bostad") är avbockade
   // från start så att standardvyn visar enbart samhällsfastigheter.
   const [valdaOmraden, setValdaOmraden] = useState(
@@ -45,6 +60,9 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
   const filtrerade = useMemo(() => {
     const sokLower = sok.trim().toLowerCase();
     let lista = kallor.filter(k => valdaOmraden.has(k.omrade));
+    if (endastHK) {
+      lista = lista.filter(k => k.hardkontroll?.status === 'godkand');
+    }
     if (sokLower) {
       lista = lista.filter(k =>
         (k.titel || '').toLowerCase().includes(sokLower) ||
@@ -58,7 +76,7 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
       'organisation-az': (a, b) => (a.organisation || '').localeCompare(b.organisation || '', 'sv'),
     };
     return [...lista].sort(cmp[sortering] || cmp['datum-ny']);
-  }, [kallor, sok, valdaOmraden, sortering]);
+  }, [kallor, sok, valdaOmraden, sortering, endastHK]);
 
   const toggleOmrade = (id) => {
     setValdaOmraden(prev => {
@@ -117,6 +135,14 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
               onChange={(e) => setSok(e.target.value)}
               aria-label="Sök bland källorna"
             />
+            <label className="kr-hk-toggle">
+              <input
+                type="checkbox"
+                checked={endastHK}
+                onChange={(e) => setEndastHK(e.target.checked)}
+              />
+              Endast hårdkontrollerade
+            </label>
             <div className="kr-sortering">
               <label>
                 Sortera
@@ -181,6 +207,7 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
 }
 
 function KallaKort({ k, omrade }) {
+  const hk = k.hardkontroll;
   return (
     <li className="kr-kort" id={k.id}>
       <div className="kr-kort-topp">
@@ -188,6 +215,16 @@ function KallaKort({ k, omrade }) {
           {omrade?.namn || k.omrade}
         </span>
         {k.typ ? <span className="kr-kort-typ">{TYP_LABELS[k.typ] || k.typ}</span> : null}
+        {hk ? (
+          <span
+            className="kr-kort-hk"
+            style={{ color: HK_FARG[hk.status] || '#6B7280', borderColor: HK_FARG[hk.status] || '#6B7280' }}
+            title={`Hårdkontroll ${hk.datum} (${hk.metod})${hk.not ? ' — ' + hk.not : ''}`}
+          >
+            <span className="kr-kort-hk-prick" aria-hidden="true" style={{ background: HK_FARG[hk.status] || '#6B7280' }} />
+            {HK_LABELS[hk.status] || hk.status}
+          </span>
+        ) : null}
         <span className="kr-kort-datum">{k.datum || 'okänt'}</span>
       </div>
       <h3 className="kr-kort-titel">{k.titel}</h3>
@@ -356,6 +393,24 @@ const kallregisterCss = `
   padding: 0.18rem 0.55rem;
   border-radius: 4px;
 }
+.kr-kort-hk {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  border: 1px solid;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  cursor: help;
+}
+.kr-kort-hk-prick {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.kr-hk-toggle {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.82rem; color: var(--muted);
+  cursor: pointer; white-space: nowrap;
+}
+.kr-hk-toggle input { accent-color: var(--gold); cursor: pointer; }
 .kr-kort-datum { color: var(--muted); margin-left: auto; }
 .kr-kort-titel {
   font-family: 'Cormorant Garamond', serif;

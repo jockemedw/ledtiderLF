@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-25",
+  "uppdaterad": "2026-08-26",
   "omraden": [
     {
       "id": "detaljplan",
@@ -51,7 +51,13 @@
       "organisation": "Initiativet Bygg i Tid (Byggföretagen, Fastighetsägarna m.fl.)",
       "datum": "2024-09",
       "url": "https://byggforetagen.se/app/uploads/2024/09/Nationellt-Ledtidsindex-2024_0912.pdf",
-      "sammandrag": "Årligt index som mäter ledtider i kommunal plan- och bygglovsprocess — men beräknat på flerbostadshus med ≥ 5 lägenheter. 2024 års rapport visar att den genomsnittliga ledtiden ökat till 4,7 år. Vägledande för planledtiderna även för samhällsfastigheter, men inte direkt jämförbart — kommunala lokalprojekt har ofta andra förutsättningar (egen mark, prioritering, färre överklaganden)."
+      "sammandrag": "Årligt index som mäter ledtider i kommunal plan- och bygglovsprocess — men beräknat på flerbostadshus med ≥ 5 lägenheter. 2024 års rapport visar att den genomsnittliga ledtiden ökat till 4,7 år. Vägledande för planledtiderna även för samhällsfastigheter, men inte direkt jämförbart — kommunala lokalprojekt har ofta andra förutsättningar (egen mark, prioritering, färre överklaganden).",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hamtad. Titelblad 'Nationellt Ledtidsindex — Kommuner med effektiva plan- och bygglovsprocesser 2024', framtagen av Initiativet Bygg i Tid, Byggforetagen och Fastighetsagarna. Central siffra bekraftad: genomsnittlig ledtid okade fran 4,5 till 4,7 ar. Anmarkning enbart for att nyare utgava finns (2025 ars index, som redan ar egen post i kallregistret: ledtidsindex-2025). — Nyare utgåva: Nationellt Ledtidsindex 2025 (2025-09)"
+      }
     },
     {
       "id": "ledtidsindex-2025",
@@ -61,7 +67,12 @@
       "organisation": "Initiativet Bygg i Tid (Byggföretagen, Fastighetsägarna m.fl.)",
       "datum": "2025-09",
       "url": "https://byggforetagen.se/app/uploads/2025/09/Nationellt-Ledtidsindex-2025.pdf",
-      "sammandrag": "Senaste utgåvan av det årliga ledtidsindexet. Mätningen omfattar enbart detaljplaner för flerbostadshus med ≥ 5 lägenheter. Refereras i Gantt-staplarna som riksgenomsnitt (4,8 år) men med tydlig caveat — kommunala lokaler är inte med i underlaget. Använd som benchmark, inte som direkt jämförelse med skol-/förskoleprojekt."
+      "sammandrag": "Senaste utgåvan av det årliga ledtidsindexet. Mätningen omfattar enbart detaljplaner för flerbostadshus med ≥ 5 lägenheter. Refereras i Gantt-staplarna som riksgenomsnitt (4,8 år) men med tydlig caveat — kommunala lokaler är inte med i underlaget. Använd som benchmark, inte som direkt jämförelse med skol-/förskoleprojekt.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "evidens-samhallseffekter-2022",
@@ -69,9 +80,15 @@
       "typ": "rapport",
       "titel": "Samhällseffekter av långa ledtider i plan- och bygglovsprocessen",
       "organisation": "Evidens (uppdrag av Bygg i Tid / Byggföretagen / Riksbyggen / Fastighetsägarna)",
-      "datum": "2022-05",
+      "datum": "2022-06",
       "url": "https://www.initiativetbyggitid.se/_files/ugd/f0837f_9ef7953c03bf4e4fa64c69a7b75b6a02.pdf",
-      "sammandrag": "Kvantifierar de samhällsekonomiska effekterna av långa ledtider i planprocessen — beräknat på bostadsbyggande (4 % kostnadsökning ↔ ca 2 000 färre bostäder/år). Mekanismen som beskrivs (kostnaden av tidsutdräkt) är överförbar till kommunal lokalförsörjning, men siffrorna är inte direkt tillämpliga."
+      "sammandrag": "Kvantifierar de samhällsekonomiska effekterna av långa ledtider i planprocessen — beräknat på bostadsbyggande (4 % kostnadsökning ↔ ca 2 000 färre bostäder/år). Mekanismen som beskrivs (kostnaden av tidsutdräkt) är överförbar till kommunal lokalförsörjning, men siffrorna är inte direkt tillämpliga.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hamtad (38 s.). Titelblad 'Samhallseffekter av langa ledtider i plan- och bygglovsprocessen', Evidens pa uppdrag av Initiativet Bygg i Tid. Centrala siffror bekraftade: +4 procents kostnadsokning och ca 2 000 farre nya bostader per ar. Avvikelse: rapporten ar daterad 'Juni 2022', inte 2022-05 som i kallposten (en manads fel)."
+      }
     },
     {
       "id": "evidens-overklagande-2023",
@@ -80,8 +97,14 @@
       "titel": "Överklagandet av detaljplaner — omfattning, effekter och orsaker",
       "organisation": "Evidens (uppdrag av SKR, Byggföretagen, Fastighetsägarna)",
       "datum": "2023",
-      "url": "https://skr.se/download/18.3ecbf48018722d6400630e06/1680246439371/%C3%96verklagande-av-detaljplaner.pdf",
-      "sammandrag": "Studie av omfattning och konsekvenser av överklaganden av detaljplaner — mätt på antal bostäder i de planer som överklagas. Procentsatserna (24 % överklagas, 12 % ändras, ~8 mån i domstol) bygger på bostadsplaner men beskriver mekaniken i processen. Källa för förseningseffekten +14 mån som även gäller skol- och förskoleplaner när de överklagas."
+      "url": "https://evidensgruppen.se/wp-content/uploads/2023/03/rapport-overklagande-av-detaljplaner-mars-2023.pdf",
+      "sammandrag": "Studie av omfattning och konsekvenser av överklaganden av detaljplaner — mätt på antal bostäder i de planer som överklagas. Procentsatserna (24 % överklagas, 12 % ändras, ~8 mån i domstol) bygger på bostadsplaner men beskriver mekaniken i processen. Källa för förseningseffekten +14 mån som även gäller skol- och förskoleplaner när de överklagas.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "Kallpostens URL (skr.se/download/...) ger HTTP 404 — SKR:s omlagda webbplats har dodat download-lankarna. Rapporten finns dock i identiskt skick hos Evidens: verifierad via nedladdning fran evidensgruppen.se (41 s., 'Overklagande av detaljplaner - omfattning, effekter och orsaker', Mars 2023, pa uppdrag av Byggforetagen i samarbete med SKR och Fastighetsagarna). Alla centrala siffror i sammandraget aterfanns. Byt till ny_url. Obs: evidensgruppen.se har botskydd — lanken fungerar i webblasare men inte alltid for skript. — Tidigare URL: https://skr.se/download/18.3ecbf48018722d6400630e06/1680246439371/%C3%96verklagande-av-detaljplaner.pdf"
+      }
     },
     {
       "id": "skr-jamforelser-detaljplan",
@@ -91,7 +114,12 @@
       "organisation": "Sveriges Kommuner och Regioner (SKR) i samarbete med RKA/Kolada",
       "datum": "löpande",
       "url": "https://skr.se/byggandeochbostaderplanering/jamforelserinomdetaljplaneomradet.9842.html",
-      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med bostadsplaner som primärt mätobjekt. Ledtidsindex (Bygg i Tid) mäter separat 4,8 år från planuppdrag till startbesked — SKR:s eget huvudmått är planuppdrag till antagande. Vägledande indikator för planmognad i en kommun även när lokalförsörjning ska in i samma planprocess. Ny insamling 2024–2025 publiceras 2026."
+      "sammandrag": "SKR:s öppna jämförelser av kommunernas detaljplanering, med bostadsplaner som primärt mätobjekt. Ledtidsindex (Bygg i Tid) mäter separat 4,8 år från planuppdrag till startbesked — SKR:s eget huvudmått är planuppdrag till antagande. Vägledande indikator för planmognad i en kommun även när lokalförsörjning ska in i samma planprocess. Ny insamling 2024–2025 publiceras 2026.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "skr-overklaganden-portal",
@@ -101,7 +129,13 @@
       "organisation": "Sveriges Kommuner och Regioner (SKR)",
       "datum": "löpande",
       "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/planerabyggabo/boendebostader/okatbostadsbyggande/overklagandenavdetaljplanerochbygglov.28410.html",
-      "sammandrag": "SKR:s samlingssida om överklagandeprocessen för detaljplaner och bygglov, med statistik och länkar till underliggande rapporter. Förklarar omfång, effekter och orsaker till överklaganden — relevant för att kommunicera varför lokalförsörjningsprojekt riskerar förseningar."
+      "sammandrag": "SKR:s samlingssida om överklagandeprocessen för detaljplaner och bygglov, med statistik och länkar till underliggande rapporter. Förklarar omfång, effekter och orsaker till överklaganden — relevant för att kommunicera varför lokalförsörjningsprojekt riskerar förseningar.",
+      "hardkontroll": {
+        "status": "underkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL:en ger HTTP 404 (SKR:s felsida) bade via WebFetch och curl. SKR har gjort om sin URL-struktur; aven den nyare sokvagen .../planeringbyggandebostad/fysiskplanering/overklagandenavdetaljplanerochbygglov.28410.html samt varianten under /byggandeochbostaderplanering/ ger 404. Ingen fungerande ersattningssida hittades vid webbsokning. Den underliggande Evidens-rapporten finns dock kvar pa evidensgruppen.se (se kalla evidens-overklagande-2023)."
+      }
     },
     {
       "id": "boverket-pbl-detaljplan",
@@ -111,7 +145,12 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/detaljplan/detaljplaneprocessen/",
-      "sammandrag": "Boverkets officiella vägledning till detaljplaneprocessen enligt plan- och bygglagen, inklusive standardförfarande och utökat förfarande, samråd, granskning, antagande och överklagande. Grunddokument för att förklara processens steg och tidsåtgång."
+      "sammandrag": "Boverkets officiella vägledning till detaljplaneprocessen enligt plan- och bygglagen, inklusive standardförfarande och utökat förfarande, samråd, granskning, antagande och överklagande. Grunddokument för att förklara processens steg och tidsåtgång.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "manuell"
+      }
     },
     {
       "id": "boverket-pbl-tillampning-2024",
@@ -121,7 +160,13 @@
       "organisation": "Boverket",
       "datum": "2025",
       "url": "https://www.boverket.se/globalassets/publikationer/dokument/2025/redovisning-av-tillampningen-av-plan--och-bygglagstiftningen-ar-2024.pdf",
-      "sammandrag": "Boverkets årliga uppföljning av PBL-tillämpningen baserad på underlag från 285 av Sveriges 290 kommuner och alla 21 länsstyrelser. Innehåller jämförande tidsserier 2013–2024 och visar bl.a. att antalet beslutade detaljplaner och markanvisningar fortsätter minska."
+      "sammandrag": "Boverkets årliga uppföljning av PBL-tillämpningen baserad på underlag från 286 av Sveriges 290 kommuner och alla 21 länsstyrelser. Innehåller jämförande tidsserier 2013–2024 och visar bl.a. att antalet beslutade detaljplaner och markanvisningar fortsätter minska.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hamtad (67 s.). Titelblad bekraftar 'Redovisning av tillampningen av plan- och bygglagstiftningen ar 2024', Rapport 2025:11, utgivare Boverket april 2025. Avvikelse: rapporten anger att 'alla 21 lansstyrelser samt 286 av landets 290 kommuner' lamnat underlag — kallpostens '285 av 290' ar strikt fel (285 forekommer bara som antal svarande pa en enskild tillsynsfraga). Nyare utgava finns dessutom: Rapport 2026:15 om ar 2025 (april 2026). — Nyare utgåva: Redovisning av tillampningen av plan- och bygglagstiftningen ar 2025 (Rapport 2026:15) (2026-04)"
+      }
     },
     {
       "id": "boverket-lansstyrelsen",
@@ -131,7 +176,13 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/detaljplan/lansstyrelsens-tillsyn/mellan/lansstyrelsens-roll/",
-      "sammandrag": "Förklarar länsstyrelsens dubbla roll som rådgivande och tillsynsmyndighet under samråd och granskning. Beskriver hur statens intressen (riksintressen, MKN, strandskydd, hälsa/säkerhet) bevakas och kan fördröja eller stoppa planer."
+      "sammandrag": "Förklarar länsstyrelsens dubbla roll som rådgivande och tillsynsmyndighet under samråd och granskning. Beskriver hur statens intressen (riksintressen, MKN, strandskydd, hälsa/säkerhet) bevakas och kan fördröja eller stoppa planer.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "manuell",
+        "not": "HTTP 200. Sidans faktiska rubrik ar 'Lansstyrelsens roll i mellankommunal samordning' — en undersida under lansstyrelsens tillsyn, inte en generell sida med kallpostens titel 'Lansstyrelsens roll i detaljplaneprocessen'. Innehallet tacker dock det kallposten beskriver: radgivande roll och tillsynsansvar, samt att lansstyrelsen sarskilt bevakar riksintressen, miljokvalitetsnormer, strandskydd, mellankommunal samordning och halsa/sakerhet, och kan overprova antagandebeslut. Verifierad via curl (WebFetch fangade bara megamenyn)."
+      }
     },
     {
       "id": "pbl-2010-900",
@@ -141,7 +192,12 @@
       "organisation": "Sveriges riksdag (Svensk författningssamling)",
       "datum": "2010 (löpande revideringar)",
       "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-bygglag-2010900_sfs-2010-900/",
-      "sammandrag": "Den fullständiga lagtexten, inklusive 5 kap. (detaljplan), 9 kap. (bygglov) och 13 kap. (överklagande). Primärkälla för formella krav, tidsfrister och processteg."
+      "sammandrag": "Den fullständiga lagtexten, inklusive 5 kap. (detaljplan), 9 kap. (bygglov) och 13 kap. (överklagande). Primärkälla för formella krav, tidsfrister och processteg.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "domstolsstatistik-2024",
@@ -151,7 +207,13 @@
       "organisation": "Domstolsverket / Sveriges Domstolar",
       "datum": "2025",
       "url": "https://www.domstol.se/globalassets/filer/gemensamt-innehall/styrning-och-riktlinjer/statistik/2024/domstolsstatistik_2024.pdf",
-      "sammandrag": "Officiell årsstatistik inkl. mark- och miljödomstolarna och Mark- och miljööverdomstolen. Mediantider, kvartiler och målflöden för PBL-mål och miljömål. Underlag för att kvantifiera överklagandetidens påverkan."
+      "sammandrag": "Officiell årsstatistik inkl. mark- och miljödomstolarna och Mark- och miljööverdomstolen. Mediantider, kvartiler och målflöden för PBL-mål och miljömål. Underlag för att kvantifiera överklagandetidens påverkan.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hamtad (59 s.). Titel 'Domstolsstatistik 2024', utgivare Domstolsverket/Sveriges Domstolar — metadata stammer. Tabell 1.2c (tryckt s. 22-23) ger malfloden for mark- och miljodomstolarna inkl. PBL-mal och miljomal 2020-2024. Avvikelse: kallpostens pastaende om 'mediantider, kvartiler ... for PBL-mal' aterfinns inte — bilagan 'Verksamhetsmal (omloppstider)' redovisar 75:e percentiler for tingsratter/hovratter/forvaltningsratter men inte separat for mark- och miljodomstolarnas PBL-mal, och Mark- och miljooverdomstolen sarredovisas inte. Nyare utgava finns: Domstolsstatistik 2025. — Nyare utgåva: Domstolsstatistik 2025 (2026)"
+      }
     },
     {
       "id": "lantmateriet-planeringsprocessen",
@@ -161,7 +223,12 @@
       "organisation": "Lantmäteriet",
       "datum": "2016-06",
       "url": "https://www.lantmateriet.se/globalassets/om-lantmateriet/rattsinformation/handbocker/lantmaterimyndighetens-roll-i-planeringsprocessen.pdf",
-      "sammandrag": "Handbok som beskriver lantmäterimyndighetens medverkan vid framtagande av detaljplaner, plangranskning och fastighetsbildning. Förklarar varför Lantmäteriet behöver vara med tidigt i planprocessen och hur fastighetsbildning påverkar tidplan för byggstart."
+      "sammandrag": "Handbok som beskriver lantmäterimyndighetens medverkan vid framtagande av detaljplaner, plangranskning och fastighetsbildning. Förklarar varför Lantmäteriet behöver vara med tidigt i planprocessen och hur fastighetsbildning påverkar tidplan för byggstart.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "skr-flexibla-grundskolor",
@@ -170,28 +237,46 @@
       "titel": "Flexibla grundskolor — utformning av kommunala grundskolor för föränderliga behov",
       "organisation": "SKR · FoU-fonden för kommunernas fastighetsfrågor",
       "datum": "2024-01",
-      "url": "https://skr.se/skr/tjanster/rapporterochskrifter/publikationer/flexiblagrundskolorutformningavkommunalagrundskolorforforanderligabehov.78747.html",
-      "sammandrag": "Beskriver hur kommunala grundskolor kan utformas flexibelt för att möta föränderliga behov över tid till följd av demografiska och pedagogiska skiften. Innehåller exempel kring sambruk av ytor mellan skola och fritids, samt principer för långsiktig anpassningsbarhet."
+      "url": "https://extra.skr.se/offentligafastigheter/publikationer/publikationer/flexiblagrundskolorutformningavkommunalagrundskolorforforanderligabehov.79098.html",
+      "sammandrag": "Beskriver hur kommunala grundskolor kan utformas flexibelt för att möta föränderliga behov över tid till följd av demografiska och pedagogiska skiften. Innehåller exempel kring sambruk av ytor mellan skola och fritids, samt principer för långsiktig anpassningsbarhet.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Angiven URL på skr.se svarar HTTP 404 (SKR har strukturerat om sin webbplats). Publikationen finns kvar på Offentliga fastigheters webbplats (extra.skr.se), verifierad: titel, FoU-fonden som finansiär och publiceringsdatum 2024-01-30 stämmer med källposten. — Tidigare URL: https://skr.se/skr/tjanster/rapporterochskrifter/publikationer/flexiblagrundskolorutformningavkommunalagrundskolorforforanderligabehov.78747.html"
+      }
     },
     {
       "id": "skr-produktionskostnad-skolor",
       "omrade": "skolor-forskolor",
       "typ": "rapport",
       "titel": "Produktionskostnad för skolor",
-      "organisation": "SKR · FoU-fonden för kommunernas fastighetsfrågor",
-      "datum": "2017",
-      "url": "https://skr.se/download/18.45167e4317e2b341b24acf17/1642679935272/7585-394-9.pdf",
-      "sammandrag": "Genomgång av investeringskostnader för nybyggnation av kommunala skolor och förskolor med analys av kostnadsdrivande faktorer och variationer. Ger jämförelsetal kr/m² BTA och kr per elevplats. Användbar som benchmark vid kalkyl."
+      "organisation": "SKL (Sveriges Kommuner och Landsting) · FoU-fonden för kommunernas fastighetsfrågor",
+      "datum": "2016-04",
+      "url": "https://extra.skr.se/download/18.45167e4317e2b341b24acf17/1642679935272/7585-394-9.pdf",
+      "sammandrag": "Genomgång av investeringskostnader för nybyggnation av kommunala skolor och förskolor med analys av kostnadsdrivande faktorer och variationer. Ger jämförelsetal kr/m² BTA och kr per elevplats. Användbar som benchmark vid kalkyl.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "Angiven nedladdnings-URL på skr.se returnerar SKR:s 404-sida (HTML, 'Felsida 404 - SKR'). Samma PDF finns på extra.skr.se (22 sidor, verifierad). Obs: dokumentet är utgivet av Sveriges Kommuner och Landsting 2016 (Stockholm i april 2016, ISBN 978-91-7585-394-9), inte 2017 som källposten anger. — Tidigare URL: https://skr.se/download/18.45167e4317e2b341b24acf17/1642679935272/7585-394-9.pdf"
+      }
     },
     {
       "id": "skr-inredningsplanering",
       "omrade": "skolor-forskolor",
       "typ": "vagledning",
       "titel": "Inredningsplanering — En planeringsmodell för inredning i skolor och förskolor",
-      "organisation": "SKR · FoU-fonden för kommunernas fastighetsfrågor",
-      "datum": "okänt",
+      "organisation": "SKL (Sveriges Kommuner och Landsting) · FoU-fonden för kommunernas fastighetsfrågor",
+      "datum": "2010",
       "url": "https://extra.skr.se/download/18.3c9f9e1e17db3f33e521c09/1639419902564/7164-501-2.pdf",
-      "sammandrag": "Vägledning för inrednings- och möbleringsplanering i skol- och förskolelokaler kopplat till lokalprogram och pedagogisk verksamhet. Beskriver hur funktionskrav och ytanvändning samspelar med inredning."
+      "sammandrag": "Vägledning för inrednings- och möbleringsplanering i skol- och förskolelokaler kopplat till lokalprogram och pedagogisk verksamhet. Beskriver hur funktionskrav och ytanvändning samspelar med inredning.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF 96 sidor hämtad och verifierad: titel 'Inredningsplanering — En planeringsmodell för inredning i skolor och förskolor' stämmer. Avvikelse i metadata: utgivare är Sveriges Kommuner och Landsting (SKL) 2010, ISBN 978-91-7164-501-2 — källpostens datum 'okänt' kan fyllas i med 2010 och organisationen är SKL (före namnbytet till SKR)."
+      }
     },
     {
       "id": "skr-fou-fastigheter",
@@ -200,8 +285,14 @@
       "titel": "FoU-fonden för kommunernas fastighetsfrågor",
       "organisation": "Sveriges Kommuner och Regioner (SKR)",
       "datum": "löpande",
-      "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/fastigheter/fonderforforskningochutveckling/foufondenforkommunernasfastighetsfragor.12993.html",
-      "sammandrag": "Portal för SKR:s FoU-arbete kring kommunala verksamhetslokaler — skolor, förskolor, vård, äldreomsorg. Publicerar löpande nyckeltal, NKI-undersökningar och rapporter. Central källa för svenska benchmark inom offentlig fastighetsförvaltning."
+      "url": "https://skr.se/byggandeochbostaderplanering/fastighetsforvaltning.7700.html",
+      "sammandrag": "Portal för SKR:s FoU-arbete kring kommunala verksamhetslokaler — skolor, förskolor, vård, äldreomsorg. Publicerar löpande nyckeltal, NKI-undersökningar och rapporter. Central källa för svenska benchmark inom offentlig fastighetsförvaltning.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "Angiven URL svarar HTTP 404 och även den omdirigerade varianten med 'fastighetlokalforsorjning' i sökvägen är borttagen — SKR har lagt om hela webbstrukturen. FoU-fondens innehåll finns nu på SKR:s sida 'Fastighetsförvaltning', verifierad: beskriver FoU-fonden för kommunernas fastighetsfrågor (Kommunfonden), pågående projekt, nyckeltalsnätverk och länkar till verksamhetsplan 2026 och verksamhetsuppföljning 2025. — Tidigare URL: https://skr.se/skr/samhallsplaneringinfrastruktur/fastigheter/fonderforforskningochutveckling/foufondenforkommunernasfastighetsfragor.12993.html"
+      }
     },
     {
       "id": "sisab-bifrostvagen",
@@ -211,7 +302,12 @@
       "organisation": "Skolfastigheter i Stockholm AB (SISAB)",
       "datum": "2024-12",
       "url": "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/skolfastigheter-i-stockholm-ab/mote-2024-12-17/agenda/bilaga-11-slutrapport-bifrostvagen-2-6-sisab-upppdf?downloadMode=open",
-      "sammandrag": "Slutrapport för en ny treavdelnings förskola i Järva uppförd enligt SISAB:s modulkoncept UPP med fabrikstillverkade trämoduler. Redovisar utfall i tid, kostnad, ytor och pedagogiska kvaliteter."
+      "sammandrag": "Slutrapport för en ny treavdelnings förskola i Järva uppförd enligt SISAB:s modulkoncept UPP med fabrikstillverkade trämoduler. Redovisar utfall i tid, kostnad, ytor och pedagogiska kvaliteter.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "sisab-portal",
@@ -221,7 +317,12 @@
       "organisation": "Skolfastigheter i Stockholm AB (SISAB)",
       "datum": "löpande",
       "url": "https://sisab.se/",
-      "sammandrag": "SISAB är Stockholms stads bolag för skol- och förskolefastigheter och publicerar löpande information om byggprojekt, modulkonceptet UPP och hållbarhetsarbete. Erbjuder jämförelsedata och projektredovisningar som är direkt jämförbara med Lejonfastigheters verksamhet."
+      "sammandrag": "SISAB är Stockholms stads bolag för skol- och förskolefastigheter och publicerar löpande information om byggprojekt, modulkonceptet UPP och hållbarhetsarbete. Erbjuder jämförelsedata och projektredovisningar som är direkt jämförbara med Lejonfastigheters verksamhet.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "uppsala-kvarngardesskolan",
@@ -231,7 +332,13 @@
       "organisation": "Uppsala kommun Skolfastigheter AB",
       "datum": "2025",
       "url": "https://skolfastigheter.uppsala.se/projekt-och-upphandling/aktuella-byggprojekt/nya-kvarngardesskolan/",
-      "sammandrag": "Projektgenomgång av Kvarngärdesskolan: F–9 grundskola och idrottshall, 15 898 m² BTA, kapacitet 990 elever, byggd i partneringsamverkan och belönad för projektkvalitet 2024. Närmast jämförbar referens till större grundskolor i samma storleksklass som Linköpings behov."
+      "sammandrag": "Projektgenomgång av Kvarngärdesskolan: F–9 grundskola och idrottshall, 15 898 m² BTA, kapacitet 990 elever, byggd i partneringsamverkan och belönad för projektkvalitet 2024. Närmast jämförbar referens till större grundskolor i samma storleksklass som Linköpings behov.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Projektsidan fungerar och bekräftar nästan alla uppgifter: F–9-skola med 15 898 kvm BTA, kapacitet 990 elever (630 i F–6, 360 i 7–9), stor idrottshall med mindre sporthall, samverkansentreprenad med ByggDialog, Miljöbyggnad Silver. Sammandragets uppgift om att projektet 'belönats för projektkvalitet 2024' återfinns dock inte på sidan."
+      }
     },
     {
       "id": "boverket-strategisk-planering",
@@ -240,8 +347,14 @@
       "titel": "Strategisk planering för långsiktigt hållbara förskolor och skolor",
       "organisation": "Boverket",
       "datum": "löpande",
-      "url": "https://www.boverket.se/sv/samhallsplanering/arkitektur-och-gestaltad-livsmiljo/arbetssatt/skolors-miljo/larmiljoer-samhallsbygget/strategisk-planering/",
-      "sammandrag": "Boverkets vägledning beskriver hur kommuner bör arbeta med fleråriga lokalförsörjningsplaner som kopplas till bostadsbyggande och elevprognoser. Innefattar lokaliseringsprinciper, flexibilitet, enhetsstorlek och samspel med översiktsplanering."
+      "url": "https://www.boverket.se/sv/om-boverket/publikationer/2026/forskolors-och-skolors-fysiska-miljo/",
+      "sammandrag": "Boverkets vägledning beskriver hur kommuner bör arbeta med fleråriga lokalförsörjningsplaner som kopplas till bostadsbyggande och elevprognoser. Innefattar lokaliseringsprinciper, flexibilitet, enhetsstorlek och samspel med översiktsplanering.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL:en svarar 301 och pekar om till Boverkets publikationssida för 'Förskolors och skolors fysiska miljö' — webbvägledningen om skolors miljö/strategisk planering har ersatts av en samlad vägledningspublikation (2026, 640 sidor). Gamla adressen bör bytas ut. — Tidigare URL: https://www.boverket.se/sv/samhallsplanering/arkitektur-och-gestaltad-livsmiljo/arbetssatt/skolors-miljo/larmiljoer-samhallsbygget/strategisk-planering/ — Nyare utgåva: Förskolors och skolors fysiska miljö — vägledning (2026-01)"
+      }
     },
     {
       "id": "boverket-gor-plats",
@@ -251,7 +364,12 @@
       "organisation": "Boverket (i samarbete med Movium, SLU)",
       "datum": "2015",
       "url": "https://www.boverket.se/globalassets/publikationer/dokument/2015/gor-plats-for-barn-och-unga-bokversion.pdf",
-      "sammandrag": "Nationell vägledning om friyta, utemiljö och lokalisering för förskolor och skolor med riktvärden för m² friyta per barn/elev. Refereras ofta i kommunala riktlinjer. Underlag för tomtval och fastighetsstorlek."
+      "sammandrag": "Nationell vägledning om friyta, utemiljö och lokalisering för förskolor och skolor med riktvärden för m² friyta per barn/elev. Refereras ofta i kommunala riktlinjer. Underlag för tomtval och fastighetsstorlek.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "boverket-tidsbegransat-bygglov",
@@ -261,7 +379,13 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/tidsbegransat-bygglov/",
-      "sammandrag": "Vägledning om tidsbegränsade bygglov enligt 9 kap. 33 § PBL — direkt tillämplig vid akut kapacitetshantering med modulskolor och paviljonger. Förklarar maxtider (10 år, totalt 15 år) och återställandekrav."
+      "sammandrag": "Vägledning om tidsbegränsade bygglov enligt 9 kap. 33 § PBL — direkt tillämplig vid akut kapacitetshantering med modulskolor och paviljonger. Förklarar maxtider (10 år, totalt 15 år) och återställandekrav.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan i PBL kunskapsbanken fungerar och bekräftar sakinnehållet: tidsbegränsat bygglov högst 10 år, förlängning med högst 5 år i taget, sammanlagt högst 15 år (20 år för häkten/anstalter), samt avsnitt om återställande. Avvikelse: källpostens lagrumshänvisning '9 kap. 33 § PBL' är föråldrad — sidan hänvisar till PBL 9 kap. 71–72 a §§ i lydelse enligt Lag (2026:504); paragraferna har omnumrerats."
+      }
     },
     {
       "id": "skolverket-statistik",
@@ -271,7 +395,12 @@
       "organisation": "Skolverket",
       "datum": "löpande",
       "url": "https://www.skolverket.se/statistik-och-utvarderingar/statistik-om-forskola-och-skola",
-      "sammandrag": "Skolverkets officiella statistikportal med årlig data om antal barn/elever, skolenheter, personal och kostnader. Underlag för elevprognoser per kommun och skolform — grunddata för dimensionering av kommunala lokalförsörjningsplaner."
+      "sammandrag": "Skolverkets officiella statistikportal med årlig data om antal barn/elever, skolenheter, personal och kostnader. Underlag för elevprognoser per kommun och skolform — grunddata för dimensionering av kommunala lokalförsörjningsplaner.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "stockholm-lfp-2025-2045",
@@ -281,7 +410,13 @@
       "organisation": "Stockholms stad, Utbildningsnämnden / SISAB",
       "datum": "2024-04",
       "url": "https://meetingspublic.stockholm.se/welcome-sv/namnder-styrelser/utbildningsnamnden/mote-2024-04-25/agenda/bilaga-4-lokalforsorjningsplan-2025-2045pdf?downloadMode=open",
-      "sammandrag": "Stockholms stads lokalförsörjningsplan för skolor och förskolor med horisont till 2045. Visar hur staden hanterar minskande elevtal närmaste tio åren följt av ökning från 2033, samt resonemang om centraliserade evakueringslokaler och underhållsbehov i SISAB:s ~1,8 miljoner kvm."
+      "sammandrag": "Stockholms stads lokalförsörjningsplan för skolor och förskolor med horisont till 2045. Visar hur staden hanterar minskande elevtal närmaste tio åren följt av ökning från 2033, samt resonemang om centraliserade evakueringslokaler och underhållsbehov i SISAB:s ~1,8 miljoner kvm.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF 46 sidor hämtad: 'Bilaga 4 Lokalförsörjningsplan 2025–2027 Med framåtblick till 2045', utbildningsnämnden 2024-04-25 — titel/organisation/datum stämmer. Sammandragets huvuduppgifter bekräftade, men siffran '~1,8 miljoner kvm' för SISAB:s bestånd återfinns inte i dokumentet. Årlig plan: en sökning efter 2025 års utgåva (LFP 2026–2028) gav ingen träff, men serien är årlig så nyare utgåva bör bevakas."
+      }
     },
     {
       "id": "goteborg-lfp-2025",
@@ -291,7 +426,13 @@
       "organisation": "Göteborgs Stad (Stadsfastighetsförvaltningen)",
       "datum": "2024-12",
       "url": "https://www4.goteborg.se/prod/Intraservice/Namndhandlingar/SamrumPortal.nsf/5AFE5CDF8B5994BBC1258BE70041F7EB/$File/8_20241211.pdf?OpenElement=",
-      "sammandrag": "Stadsövergripande lokalförsörjningsplan med detaljerad redovisning av över- och underkapacitet inom förskola och grundskola per mellanområde. Visar metodik för geografisk balansering av platser. Bra exempel på områdesbaserad analys."
+      "sammandrag": "Stadsövergripande lokalförsörjningsplan med detaljerad redovisning av över- och underkapacitet inom förskola och grundskola per mellanområde. Visar metodik för geografisk balansering av platser. Bra exempel på områdesbaserad analys.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF hämtad: tjänsteutlåtande 'Göteborgs Stads lokalförsörjningsplan 2025' (SLK-2024-00504, utfärdat 2024-11-13, KS 2024-12-11) med planen som bilaga. Avvikelse: avsändare är stadsledningskontoret, inte stadsfastighetsförvaltningen som källposten anger. Nyare utgåva finns: Göteborgs Stads lokalförsörjningsplan 2026 (KS december 2025, bordlagd till 2026-01-28). — Nyare utgåva: Göteborgs Stads lokalförsörjningsplan 2026 (2025-12)"
+      }
     },
     {
       "id": "malmo-lfp-2026-2035",
@@ -301,7 +442,13 @@
       "organisation": "Malmö stad (Stadsfastigheter / Serviceförvaltningen)",
       "datum": "2025-06",
       "url": "https://motenmedborgarportal.malmo.se/welcome-sv/namnder-styrelser/tekniska-namnden/mote-2025-06-16/agenda/lokalforsorjningsplan-for-malmo-stad-2026-2035stk-2024-1746-49pdf?downloadMode=open",
-      "sammandrag": "Tioårig lokalförsörjningsplan med fokus på växling från nybyggnation till ombyggnation/avveckling av befintliga förskolor när elevkullarna minskar. Beskriver beståndets fördelning (~70 % egenägt). Användbar för att planera för demografisk svacka och därpå följande uppgång."
+      "sammandrag": "Tioårig lokalförsörjningsplan med fokus på växling från nybyggnation till ombyggnation/avveckling av befintliga förskolor när elevkullarna minskar. Beskriver beståndets fördelning (~70 % egenägt). Användbar för att planera för demografisk svacka och därpå följande uppgång.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF 32 sidor hämtad: 'Lokalförsörjningsplan Malmö stad 2026–2035', upprättad 2025-03-10, ärende STK-2024-1746, behandlad i tekniska nämnden 2025-06-16 — stämmer med källposten. Avvikelse: rapporten är upprättad av stadskontoret (ekonomiavdelningen), inte stadsfastigheter/serviceförvaltningen. Nyare utgåva finns: Lokalförsörjningsplan för Malmö stad 2027–2036 (KF 2026-04-23). — Nyare utgåva: Lokalförsörjningsplan för Malmö stad 2027–2036 (2026-04)"
+      }
     },
     {
       "id": "linkoping-bildningsnamnden-lfp-2019",
@@ -311,7 +458,13 @@
       "organisation": "Linköpings kommun, Bildningsnämnden",
       "datum": "2018-04",
       "url": "https://sammantraden.linkoping.se/welcome-sv/namnder-styrelser/bildningsnamnden/bildningsnamnden-2018-04-19/agenda/bilaga-1-bildningsnamndens-lokalforsorjningsplan-2019-2028-apr-18pdf?downloadMode=download",
-      "sammandrag": "Linköpings tidigare lokalförsörjningsplan för bildningsnämnden med tioårigt perspektiv — direkt relevant kontextdokument. Innehåller behov per skolform och områdesvis fördelning. Utgångspunkt för uppföljning och jämförelse med nyare planer."
+      "sammandrag": "Linköpings tidigare lokalförsörjningsplan för bildningsnämnden med tioårigt perspektiv — direkt relevant kontextdokument. Innehåller behov per skolform och områdesvis fördelning. Utgångspunkt för uppföljning och jämförelse med nyare planer.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF 17 sidor hämtad: 'Bildningsnämndens lokalförsörjningsplan 2019-2028', antagen av bildningsnämnden 2018-04, diarienummer BIN 2018-138 — titel/organisation/datum stämmer. Planen avser gymnasieskola, gymnasiesärskola och vuxenutbildning (inte alla skolformer). Nyare planering finns: kommungemensam lokalförsörjningsplan behandlad i kommunstyrelsen 2023-12-12, vilket gör 2019–2028-planens behovssiffror inaktuella (källposten beskriver den dock uttryckligen som tidigare plan för jämförelse). — Nyare utgåva: Kommungemensam lokalförsörjningsplan, Linköpings kommun (2023-12)"
+      }
     },
     {
       "id": "boverket-lca",
@@ -321,7 +474,12 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/byggande/hallbart-byggande-och-forvaltning/livscykelanalys/",
-      "sammandrag": "Boverkets officiella vägledning om livscykelanalys (LCA) för byggnader, riktad till byggherrar och beställare. Beskriver hur LCA används i tidiga skeden, vid upphandling och vid uppföljning. Central referens för långsiktig hållbarhet och investeringsbeslut."
+      "sammandrag": "Boverkets officiella vägledning om livscykelanalys (LCA) för byggnader, riktad till byggherrar och beställare. Beskriver hur LCA används i tidiga skeden, vid upphandling och vid uppföljning. Central referens för långsiktig hållbarhet och investeringsbeslut.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "boverket-klimatdeklaration",
@@ -331,7 +489,12 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/klimatdeklaration/",
-      "sammandrag": "Boverkets handbok om klimatdeklaration, obligatorisk för nya byggnader sedan 1 januari 2022. Beskriver vilka byggnader som omfattas, beräkningsmetodik och kommande krav: utökad deklaration senast jan 2028 och gränsvärden senast jan 2030 (den tidigare 2027-tidplanen skrotades aug 2025). Direkt relevant vid nyproduktion."
+      "sammandrag": "Boverkets handbok om klimatdeklaration, obligatorisk för nya byggnader sedan 1 januari 2022. Beskriver vilka byggnader som omfattas, beräkningsmetodik och kommande krav: utökad deklaration senast jan 2028 och gränsvärden senast jan 2030 (den tidigare 2027-tidplanen skrotades aug 2025). Direkt relevant vid nyproduktion.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "boverket-bbr-energi",
@@ -341,7 +504,13 @@
       "organisation": "Boverket",
       "datum": "löpande",
       "url": "https://www.boverket.se/sv/byggande/bygg-och-renovera-energieffektivt/energihushallningskrav/",
-      "sammandrag": "Sammanställning av BBR:s krav på primärenergital, värmeisolering och elanvändning för nya byggnader, inklusive nära-nollenergibyggnad. Anger nivåer för flerbostadshus och lokaler. Underlag för dimensionering av driftkostnader och energiprestanda."
+      "sammandrag": "Sammanställning av BBR:s krav på primärenergital, värmeisolering och elanvändning för nya byggnader, inklusive nära-nollenergibyggnad. Anger nivåer för flerbostadshus och lokaler. Underlag för dimensionering av driftkostnader och energiprestanda.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "HTTP 200, sidtitel 'Energihushållningskrav - Boverket'. Innehållet matchar sammandraget (primärenergital, värmegenomgångskoefficient, eleffekt, BBR avsnitt 9). MEN sidan beskriver fortfarande BBR (2011:6) — BBR har ersatts av nya byggregler i BFS 2024-serien och övergångsperioden gick ut 30 juni 2026, så sidan är i praktiken en historisk kravreferens."
+      }
     },
     {
       "id": "sgbc-miljobyggnad",
@@ -351,7 +520,12 @@
       "organisation": "Sweden Green Building Council (SGBC)",
       "datum": "löpande",
       "url": "https://www.sgbc.se/certifiering/miljobyggnad/vad-ar-miljobyggnad/",
-      "sammandrag": "Beskrivning av Sveriges mest använda hållbarhetscertifiering, med betygen Brons, Silver och Guld. Inkluderar Miljöbyggnad iDrift för befintliga byggnader och kopplar till EU-taxonomin. Användbar referens vid kommunikation om kvalitetsnivå."
+      "sammandrag": "Beskrivning av Sveriges mest använda hållbarhetscertifiering, med betygen Brons, Silver och Guld. Inkluderar Miljöbyggnad iDrift för befintliga byggnader och kopplar till EU-taxonomin. Användbar referens vid kommunikation om kvalitetsnivå.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "skr-lcc-tidiga-skeden",
@@ -359,9 +533,15 @@
       "typ": "vagledning",
       "titel": "LCA och LCC i tidiga skeden",
       "organisation": "SKR · Offentliga fastigheter",
-      "datum": "2021-11",
-      "url": "https://skr.se/offentligafastigheter/publikationer/publikationer/lcaochlccitidigaskeden.62771.html",
-      "sammandrag": "Skrift framtagen av samarbetet Offentliga fastigheter (kommuner, regioner och statliga fastighetsförvaltare) som ger metodstöd för att arbeta med livscykelanalys och livscykelkostnad i förstudie- och programskede. Direkt relevant för att motivera 80%-kostnadslåsningen tidigt."
+      "datum": "2022-03",
+      "url": "https://extra.skr.se/offentligafastigheter/publikationer/publikationer/lcaochlccitidigaskeden.62771.html",
+      "sammandrag": "Skrift framtagen av samarbetet Offentliga fastigheter (kommuner, regioner och statliga fastighetsförvaltare) som ger metodstöd för att arbeta med livscykelanalys och livscykelkostnad i förstudie- och programskede. Direkt relevant för att motivera 80%-kostnadslåsningen tidigt.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "301-redirect från skr.se till extra.skr.se — nya URL:en fungerar och visar rätt publikation med PDF-nedladdning. Dessutom datumavvikelse: sidan anger publicering 28 mars 2022 (aktualitetsgranskad våren 2023), källposten anger 2021-11. — Tidigare URL: https://skr.se/offentligafastigheter/publikationer/publikationer/lcaochlccitidigaskeden.62771.html"
+      }
     },
     {
       "id": "skr-strategisk-lokalresursplanering",
@@ -370,8 +550,14 @@
       "titel": "Strategisk lokalresursplanering",
       "organisation": "Sveriges Kommuner och Regioner (SKR)",
       "datum": "löpande",
-      "url": "https://skr.se/skr/samhallsplaneringinfrastruktur/fastighetlokalforsorjning/lokalresursplanering/strategisklokalresursplanering.13009.html",
-      "sammandrag": "SKR:s vägledning om strategisk lokalresursplanering i kommuner och regioner, med skrifter om lokalförsörjningsprocessen och strategier för ökad lokaleffektivitet. Innehåller praktiska exempel från flera kommuner — kärnreferens för Lejonfastigheters processarbete."
+      "url": "https://skr.se/byggandeochbostaderplanering/verksamhetslokalerplanering.7613.html",
+      "sammandrag": "SKR:s vägledning om strategisk lokalresursplanering i kommuner och regioner, med skrifter om lokalförsörjningsprocessen och strategier för ökad lokaleffektivitet. Innehåller praktiska exempel från flera kommuner — kärnreferens för Lejonfastigheters processarbete.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "HTTP 404 ('Felsida 404 - SKR') via både WebFetch och curl; även varianter av sökvägen ger 404. SKR har strukturerat om webbplatsen. Motsvarande innehåll finns nu på sidan 'Verksamhetslokaler, planering' som innehåller avsnittet Strategisk lokalresursplanering (verifierad 200 med rätt innehåll). — Tidigare URL: https://skr.se/skr/samhallsplaneringinfrastruktur/fastighetlokalforsorjning/lokalresursplanering/strategisklokalresursplanering.13009.html"
+      }
     },
     {
       "id": "scb-befolkningsframskrivning",
@@ -381,7 +567,13 @@
       "organisation": "Statistiska centralbyrån (SCB)",
       "datum": "2026-04",
       "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/",
-      "sammandrag": "SCB:s officiella befolkningsframskrivningar. Senaste utgåva: 'Sveriges framtida befolkning 2026–2070' (april 2026) som reviderar ner tillväxttakten kraftigt. Grunddata för demografisk dimensionering av förskole- och skollokaler. För Linköping specifikt finns kommunens egen prognos 2024–2034 (apr 2025): barn 0–5 år +833, barn 6–12 år −2 476 fram till 2034."
+      "sammandrag": "SCB:s officiella befolkningsframskrivningar. Senaste utgåva: 'Sveriges framtida befolkning 2026–2070' (april 2026) som reviderar ner tillväxttakten kraftigt. Grunddata för demografisk dimensionering av förskole- och skollokaler. För Linköping specifikt finns kommunens egen prognos 2024–2034 (apr 2025): barn 0–5 år +833, barn 6–12 år −2 476 fram till 2034.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "HTTP 200, fungerande statistiksida från SCB. Senaste utgåva 'Sveriges framtida befolkning 2026–2070' publicerad 16 april 2026 — matchar källpostens datum 2026-04. Avvikelse i källpostens titel: 'regionala prognoser till 2070' stämmer inte — den nationella framskrivningen går till 2070 men den regionala ('Den framtida befolkningen i Sveriges län och kommuner') avser 2024–2040. Linköpings egen prognos ingår naturligen inte på SCB-sidan."
+      }
     },
     {
       "id": "kommuninvest-laneskuld-2024",
@@ -391,7 +583,13 @@
       "organisation": "Kommuninvest",
       "datum": "2024",
       "url": "https://kommuninvest.se/forskning/",
-      "sammandrag": "Årlig rapport om kommunsektorns skuldutveckling, investeringsnivåer och hållbar finansiering. Visar att 81 procent av investeringarna 2023 utfördes i kommunala bolag. Viktig finansieringskontext för kommunala fastighetsbolag."
+      "sammandrag": "Årlig rapport om kommunsektorns skuldutveckling, investeringsnivåer och hållbar finansiering. Visar att 81 procent av investeringarna 2023 utfördes i kommunala bolag. Viktig finansieringskontext för kommunala fastighetsbolag.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "URL:en (kommuninvest.se/forskning/) fungerar (HTTP 200) och listar rapportserien 'Den kommunala låneskulden', men är en generisk samlingssida — 2024 års rapport och sammandragets 81-procentssiffra syns inte där. Nyare utgåva finns: 'Den kommunala låneskulden 2025' (publicerad okt 2025). — Nyare utgåva: Den kommunala låneskulden 2025 (2025-10)"
+      }
     },
     {
       "id": "kommuninvest-finanspolicy",
@@ -401,7 +599,12 @@
       "organisation": "Kommuninvest",
       "datum": "2024",
       "url": "https://kommuninvest.se/download/18.e6f1d6318fa4a7c94dbe35/1716885521586/Finanspolicy%20inom%20kommunsektorn%20-%20v%C3%A4gledning.pdf",
-      "sammandrag": "Vägledning från Kommuninvest om finanspolicy för kommuner och kommunala bolag, med fokus på lånefinansiering, ränterisk och leasing. Stöd för kommunikation kring kostnadseffekter av investeringsstyrning och långsiktig finansiering."
+      "sammandrag": "Vägledning från Kommuninvest om finanspolicy för kommuner och kommunala bolag, med fokus på lånefinansiering, ränterisk och leasing. Stöd för kommunikation kring kostnadseffekter av investeringsstyrning och långsiktig finansiering.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "rir-kostsam-kvadratjakt-2025",
@@ -411,7 +614,12 @@
       "organisation": "Riksrevisionen",
       "datum": "2025",
       "url": "https://www.riksrevisionen.se/granskningar/granskningsrapporter/2025/kostsam-kvadratjakt---statens-anvandning-och-anskaffning-av-kontorslokaler.html",
-      "sammandrag": "Riksrevisionens granskning av statens lokalförsörjning — fokus på kontorslokaler, men de strukturella iakttagelserna (svag uppföljning av ytor, otydligt ägarstyre, för stor och dyr lokalstock) är direkt överförbara till kommunala samhällsfastigheter. 2,5–4 mdkr/år bedöms kunna sparas med effektivare lokalanvändning. Argumentbas för ytsnålhet och systematisk uppföljning."
+      "sammandrag": "Riksrevisionens granskning av statens lokalförsörjning — fokus på kontorslokaler, men de strukturella iakttagelserna (svag uppföljning av ytor, otydligt ägarstyre, för stor och dyr lokalstock) är direkt överförbara till kommunala samhällsfastigheter. 2,5–4 mdkr/år bedöms kunna sparas med effektivare lokalanvändning. Argumentbas för ytsnålhet och systematisk uppföljning.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "lund-strategisk-lfp-2024-2033",
@@ -421,7 +629,13 @@
       "organisation": "Lunds kommun",
       "datum": "2023-12",
       "url": "https://moten.lund.se/welcome-sv/namnder-styrelser/kommunstyrelsen/kommunstyrelsen/agenda/bilaga-2-strategisk-lokalforsorjningsplan-2024-2033-2023-12-08pdf?downloadMode=download",
-      "sammandrag": "Lunds kommunövergripande lokalförsörjningsplan med tioårig horisont. Beskriver demografiskt underlag, prognosticerad lokalkostnadsutveckling per barn/elev samt utmaningar med överkapacitet och områdesplanering. Konkret jämförelseexempel för Linköping."
+      "sammandrag": "Lunds kommunövergripande lokalförsörjningsplan med tioårig horisont. Beskriver demografiskt underlag, prognosticerad lokalkostnadsutveckling per barn/elev samt utmaningar med överkapacitet och områdesplanering. Konkret jämförelseexempel för Linköping.",
+      "hardkontroll": {
+        "status": "ej-kontrollerbar",
+        "datum": "2026-08-26",
+        "metod": "manuell",
+        "not": "Servern moten.lund.se vägrar anslutning: curl ger 'Recv failure: Connection reset by peer' vid tre försök (även med webbläsar-user-agent) och WebFetch ger HTTP 503. Sannolikt blockering av datacenter-trafik. Dokumentets existens och innehåll kunde inte verifieras. WebSearch bekräftar dock att Lunds KS antagit en strategisk lokalförsörjningsplan 2024–2033 (tioårig, uppdateras årligen); ingen nyare utgåva (2025–2034) för Lund kunde beläggas."
+      }
     },
     {
       "id": "uppsala-pedagogiska-lfp-2023",
@@ -430,8 +644,14 @@
       "titel": "Lokalförsörjningsplan för pedagogiska lokaler 2023–2027 med utblick till 2032",
       "organisation": "Uppsala kommun",
       "datum": "2023",
-      "url": "https://www.uppsala.se/kommun-och-politik/publikationer/2023/bostads--och-lokalforsorjningsplaner/lokalforsorjningsplan-for-pedagogiska-lokaler-20232027-med-utblick-till-2032/",
-      "sammandrag": "Uppsala kommuns plan för förskola och skola med utblick till 2032. Redovisar både utbyggnadsbehov (>9 000 nya platser) och senare anpassningar med stängningar p.g.a. minskade barnkullar. Mycket relevant referensplan med stark demografisk underbyggnad."
+      "url": "https://www.uppsala.se/contentassets/63c4b271c2a24f1a8013420a7ea298ba/6.-lokalforsorjningsplan-for-pedagogiska-lokaler-2023-2027-med-utblick-till-2032.pdf",
+      "sammandrag": "Uppsala kommuns plan för förskola och skola med utblick till 2032. Redovisar både utbyggnadsbehov (>9 000 nya platser) och senare anpassningar med stängningar p.g.a. minskade barnkullar. Mycket relevant referensplan med stark demografisk underbyggnad.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "Publikationssidan ger HTTP 404 ('Sidan du vill nå kan inte hittas - Uppsala kommun') via både WebFetch och curl. Själva planen finns dock kvar som PDF på uppsala.se (contentassets, 7 MB, verifierad genom läsning av s. 1–4): tjänsteskrivelse 2022-11-02 (UBN-2022-06387) + 'LFP UBN 2023 Lokalförsörjningsplan för pedagogiska lokaler 2023–2027 med utblick till 2032'. Titel/organisation matchar; sammandragets '>9 000 nya platser' återfanns inte i de lästa sidorna. Uppsala har även senare planer (tjänsteskrivelse om bostads- och lokalförsörjningsplaner 2026–2035 sedd i sökträff, ej verifierad). — Tidigare URL: https://www.uppsala.se/kommun-och-politik/publikationer/2023/bostads--och-lokalforsorjningsplaner/lokalforsorjningsplan-for-pedagogiska-lokaler-20232027-med-utblick-till-2032/"
+      }
     },
     {
       "id": "linkoping-kommungemensam-lfp-2024",
@@ -441,7 +661,12 @@
       "organisation": "Linköpings kommun (kommunstyrelsen)",
       "datum": "2023-12",
       "url": "https://sammantraden.linkoping.se/welcome-sv/namnder-styrelser/kommunstyrelsen/kommunstyrelsen-231212/agenda/bilaga-2-kommungemensam-lokalforsorjningsplanpdf?downloadMode=download",
-      "sammandrag": "Linköpings tioåriga lokalförsörjningsplan där Lejonfastigheter pekas ut som kommunens lokalförsörjare. Innehåller prioriterade åtgärder och beskriver den nya lokalförsörjningsprocessen från 2024 som koppling mot budgetarbetet. Direkt relevant grunddokument."
+      "sammandrag": "Linköpings tioåriga lokalförsörjningsplan där Lejonfastigheter pekas ut som kommunens lokalförsörjare. Innehåller prioriterade åtgärder och beskriver den nya lokalförsörjningsprocessen från 2024 som koppling mot budgetarbetet. Direkt relevant grunddokument.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "repab-fakta",
@@ -451,7 +676,13 @@
       "organisation": "Repab / Svensk Byggtjänst",
       "datum": "löpande",
       "url": "https://byggtjanst.se/bokhandel/forvaltning/fastighetsekonomi",
-      "sammandrag": "Årligen uppdaterad nyckeltalsserie över drift-, underhålls- och förbrukningskostnader. Egna nyckeltalsböcker finns för Skolor, Vårdfastigheter och Kommunhus/lokaler — det är de spåren som är relevanta för kommunal lokalförsörjning. Standardreferens i svensk fastighetsbransch för budgetarbete och projektkalkyler."
+      "sammandrag": "Årligen uppdaterad nyckeltalsserie över drift-, underhålls- och förbrukningskostnader. Egna nyckeltalsböcker finns för Skolor, Vårdfastigheter och Kommunhus/lokaler — det är de spåren som är relevanta för kommunal lokalförsörjning. Standardreferens i svensk fastighetsbransch för budgetarbete och projektkalkyler.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "HTTP 200, fungerande kategorisida 'Fastighetsekonomi' hos Svensk Byggtjänst med 17 böcker, inkl. Repab Fakta 2026-utgåvor (Bostäder, Underhållskostnader m.fl.). Men de för källposten centrala spårböckerna (Skolor, Vårdfastigheter, Kommunhus/lokaler) syns inte på kategorisidan — sammandragets uppgift kunde inte bekräftas där. Momentum (repab.momentum.se) listar hela faktabokserien inkl. skolor och vårdbyggnader enligt sökträffar. — Nyare utgåva: Repab Fakta 2026 (årsutgåva) (2026-01)"
+      }
     },
     {
       "id": "akademiska-hus",
@@ -461,7 +692,13 @@
       "organisation": "Akademiska Hus AB (helägt av svenska staten)",
       "datum": "löpande",
       "url": "https://www.akademiskahus.se/",
-      "sammandrag": "Sveriges största samhällsfastighetsägare inom utbildning/forskning: ca 3,4 miljoner m² uthyrningsbar yta, hyresintäkter 7 860 mnkr 2024 (+5 %), förvaltningsresultat 4 617 mnkr (+8 %), investeringar ca 2,5 mdkr. Första svenska fastighetsbolag med godkänt SBTi Net-Zero-mål; klimatutsläppen ca −50 % från basår 2019. Publicerar Studentbarometern och löpande finansiella rapporter. Lokalt i Linköping: Campusplan Valla 2030 styr utvecklingen på LiU."
+      "sammandrag": "Sveriges största samhällsfastighetsägare inom utbildning/forskning: ca 3,4 miljoner m² uthyrningsbar yta, hyresintäkter 7 860 mnkr 2024 (+5 %), förvaltningsresultat 4 617 mnkr (+8 %), investeringar ca 2,5 mdkr. Första svenska fastighetsbolag med godkänt SBTi Net-Zero-mål; klimatutsläppen ca −50 % från basår 2019. Publicerar Studentbarometern och löpande finansiella rapporter. Lokalt i Linköping: Campusplan Valla 2030 styr utvecklingen på LiU.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Startsidan svarar 200 och är Akademiska Hus officiella webbplats. Sammandragets nyckeltal bekräftade på sidan: 3,4 miljoner m2, hyresintäkter 7 860 mnkr 2024, förvaltningsresultat 4 617 mnkr, investeringsnivå 2,5 mdkr, SBTi-verifierat nettonollmål 2040. Anmärkning: års- och hållbarhetsredovisning 2025 publicerades mars 2026 med nya värden. — Nyare utgåva: Akademiska Hus års- och hållbarhetsredovisning 2025 (2026-03)"
+      }
     },
     {
       "id": "specialfastigheter",
@@ -471,7 +708,13 @@
       "organisation": "Specialfastigheter Sverige AB (helägt av svenska staten)",
       "datum": "löpande",
       "url": "https://www.specialfastigheter.se/",
-      "sammandrag": "Statligt ägt bolag som förvaltar 174 fastigheter med ca 1,1 miljoner m² lokalarea — kriminalvård, polis, domstol, försvar. Totala intäkter 3 502 mnkr 2024 (+14 %), förvaltningsresultat 1 713 mnkr (+5 %), fastighetsvärde ca 52 mdkr, projektutvecklingsinvesteringar 5,1 mdkr. Användbar referens för samhällslokaler med säkerhets- och funktionskrav."
+      "sammandrag": "Statligt ägt bolag som förvaltar 174 fastigheter med ca 1,1 miljoner m² lokalarea — kriminalvård, polis, domstol, försvar. Totala intäkter 3 502 mnkr 2024 (+14 %), förvaltningsresultat 1 713 mnkr (+5 %), fastighetsvärde ca 52 mdkr, projektutvecklingsinvesteringar 5,1 mdkr. Användbar referens för samhällslokaler med säkerhets- och funktionskrav.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Startsidan svarar 200, bekräftad som Specialfastigheter Sverige AB (org.nr 556537-5945). Sammandragets nyckeltal bekräftade: 174 fastigheter, ca 1,1 miljoner m2, intäkter 3 502 mnkr 2024, förvaltningsresultat 1 713 mnkr, fastighetsvärde ca 52 mdkr. Anmärkning: bokslut 2025 finns med väsentligt ändrade värden, bl.a. sänkt fastighetsvärde. — Nyare utgåva: Specialfastigheter bokslut/års- och hållbarhetsredovisning 2025 (2026-02)"
+      }
     },
     {
       "id": "hemso",
@@ -481,7 +724,13 @@
       "organisation": "Hemsö Fastighets AB (ägare: Tredje AP-fonden + Sagax)",
       "datum": "löpande",
       "url": "https://www.hemso.se/",
-      "sammandrag": "Sveriges största privata aktör inom samhällsfastigheter — utbildning, vård, äldreboende, rättsväsende. Fastighetsvärde ca 86 mdkr 2024, driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr (+7 %). Under 2024 färdigställdes 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %. Värdefull marknadsreferens för hyresnivåer och transaktionsvolym i samhällsfastighetssegmentet."
+      "sammandrag": "Sveriges största privata aktör inom samhällsfastigheter — utbildning, vård, äldreboende, rättsväsende. Fastighetsvärde ca 86 mdkr 2024, driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr (+7 %). Under 2024 färdigställdes 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %. Värdefull marknadsreferens för hyresnivåer och transaktionsvolym i samhällsfastighetssegmentet.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Startsidan svarar 200 och är Hemsö Fastighets AB:s officiella webbplats. Sammandragets nyckeltal bekräftade: fastighetsvärde ca 86 mdkr 2024, driftnetto 3 833 mnkr, förvaltningsresultat 2 498 mnkr, 12 färdigställda projekt, uthyrningsgrad 97-99 %. Anmärkning: årsredovisning 2025 finns med nya värden. — Nyare utgåva: Hemsö årsredovisning 2025 (2026-03)"
+      }
     },
     {
       "id": "vacse",
@@ -491,7 +740,13 @@
       "organisation": "Vacse AB (ägare: AI Pension, Kåpan Pensioner m.fl. tjänstepensionsstiftelser)",
       "datum": "löpande",
       "url": "https://www.vacse.se/",
-      "sammandrag": "Pensionsstiftelseägt fastighetsbolag specialiserat på samhällsfastigheter — domstolar, polishus, vårdcentraler, skolor. Hyresintäkter 615,5 mnkr 2024 (+10,0 %), driftöverskott 470,8 mnkr, förvaltningsresultat 336,0 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster; viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år)."
+      "sammandrag": "Pensionsstiftelseägt fastighetsbolag specialiserat på samhällsfastigheter — domstolar, polishus, vårdcentraler, skolor. Hyresintäkter 615,5 mnkr 2024 (+10,0 %), driftöverskott 470,8 mnkr, förvaltningsresultat 336,0 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster; viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år).",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Startsidan svarar 200 och är Vacse AB:s (publ) officiella webbplats. Bekräftat på sidan: fastighetsvärde 10+ mdkr, uthyrningsgrad 100 %, viktad återstående hyrestid ca 9,6 år. Resultatsiffrorna för 2024 (615,5/470,8/336,0 mnkr) visas inte på startsidan utan kommer från bokslutet. Anmärkning: delårsrapporter 2025 finns med nyare siffror. — Nyare utgåva: Vacse AB (publ) delårsrapport januari-september 2025 (2025-10)"
+      }
     },
     {
       "id": "stenvalvet",
@@ -500,8 +755,14 @@
       "titel": "Stenvalvet — fastighetsbolag inriktat på offentligt finansierade hyresgäster",
       "organisation": "Fastighets AB Stenvalvet (ägare: bl.a. Kåpan Tjänstepension, Kyrkans Pension, Stiftelsen för Strategisk Forskning)",
       "datum": "löpande",
-      "url": "https://www.stenvalvet.se/",
-      "sammandrag": "Stiftelse- och pensionsägt fastighetsbolag som äger ca 100 fastigheter, ca 589 000–593 000 m², marknadsvärde ca 15,9 mdkr. Driftnetto 597 mnkr 2024 (+10 % drivet av nya/omförhandlade hyresavtal och KPI-indexering). Hyresgäster är kommuner, regioner och stat inom utbildning, vård/omsorg, rättsväsende och myndigheter."
+      "url": "https://stenvalvet.se/",
+      "sammandrag": "Stiftelse- och pensionsägt fastighetsbolag som äger ca 100 fastigheter, ca 589 000–593 000 m², marknadsvärde ca 15,9 mdkr. Driftnetto 597 mnkr 2024 (+10 % drivet av nya/omförhandlade hyresavtal och KPI-indexering). Hyresgäster är kommuner, regioner och stat inom utbildning, vård/omsorg, rättsväsende och myndigheter.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "www.stenvalvet.se ger 301-redirect via hostingdomänen stenvalvetse.c5742.cloudnet.cloud som i sin tur redirectar till https://stenvalvet.se/ (utan www) — kedjan fungerar men URL:en bör bytas till slutdestinationen. Sidan bekräftar driftnetto 597 mnkr 2024 men visar nu uppdaterade beståndssiffror: ca 110 fastigheter, ca 603 000 m2, fastighetsvärde ca 16,8 mdkr (sammandraget anger ca 100 fastigheter, 589 000-593 000 m2, 15,9 mdkr). — Tidigare URL: https://www.stenvalvet.se/"
+      }
     },
     {
       "id": "micasa-fastigheter",
@@ -511,7 +772,13 @@
       "organisation": "Micasa Fastigheter i Stockholm AB (helägt av Stockholms stad)",
       "datum": "löpande",
       "url": "https://micasa.se/om-oss/foretagsfakta/ars--och-hallbarhetsredovisning",
-      "sammandrag": "Stockholms stads kommunala bolag för äldreboenden, seniorbostäder och LSS/behandlingshem. Bestånd ca 102 fastigheter om ca 1 miljon kvm; omsättning 1 181,7 mnkr 2024. Direkt motsvarighet till Lejonfastigheters vård- och omsorgssegment och naturlig benchmark för LSS-/äldreboendekostnader."
+      "sammandrag": "Stockholms stads kommunala bolag för äldreboenden, seniorbostäder och LSS/behandlingshem. Bestånd ca 102 fastigheter om ca 1 miljon kvm; omsättning 1 181,7 mnkr 2024. Direkt motsvarighet till Lejonfastigheters vård- och omsorgssegment och naturlig benchmark för LSS-/äldreboendekostnader.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan svarar 200 och är Micasa Fastigheters (org.nr 556581-7870) sida för års- och hållbarhetsredovisning, senast uppdaterad 2026-05-25. Endast den senaste redovisningen (2025) finns för nedladdning; äldre år kräver kontakt med bolaget. Sammandragets nyckeltal (102 fastigheter, ca 1 miljon kvm, omsättning 1 181,7 mnkr 2024) återfinns inte på själva sidan utan ligger i rapport-PDF:en. — Nyare utgåva: Micasa Fastigheter års- och hållbarhetsredovisning 2025 (2026-05)"
+      }
     },
     {
       "id": "norrevo-fastigheter",
@@ -520,8 +787,14 @@
       "titel": "Norrevo Fastigheter — Norrköpings kommuns fastighetsbolag",
       "organisation": "Norrköping Norrevo Fastigheter AB (helägt av Norrköpings kommun)",
       "datum": "löpande",
-      "url": "https://www.norrevo.se/om-norrevo/vara-fastigheter/",
-      "sammandrag": "Norrköpings motsvarighet till Lejonfastigheter — bestånd ca 116 000 m² publika kommunala lokaler (förskolor, skolor, vårdboenden, mötesarenor). Omsättning 240,7 mnkr 2023. Per 2023-12-28 övertog Norrköpings kommun fastighetsägandet direkt från bolaget — strukturjämförelse mot Linköpings modell där Lejonfastigheter äger."
+      "url": "https://norrkoping.se/arbete-och-naringsliv/samhallsfastigheter/byggnader-som-forvaltas-av-norrkopings-kommun",
+      "sammandrag": "Norrköpings motsvarighet till Lejonfastigheter — bestånd ca 116 000 m² publika kommunala lokaler (förskolor, skolor, vårdboenden, mötesarenor). Omsättning 240,7 mnkr 2023. Per 2023-12-28 övertog Norrköpings kommun fastighetsägandet direkt från bolaget — strukturjämförelse mot Linköpings modell där Lejonfastigheter äger.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL:en levererar helt fel innehåll: WebFetch fick en svenskspråkig affiliatesajt om utländska casinon utan svensk licens (domänen förefaller kapad/övertagen), och direkt curl mot samma URL ger HTTP 403. Inget av Norrevos fastighetsinnehåll finns kvar. Norrköpings kommun övertog fastighetsägandet 2023-12-28 och kommunens egen sida beskriver nu beståndet ('Lokalerna på denna sida har tidigare förvaltats av Norrevo Fastigheter AB'). — Tidigare URL: https://www.norrevo.se/om-norrevo/vara-fastigheter/"
+      }
     },
     {
       "id": "futurum-fastigheter-orebro",
@@ -531,7 +804,13 @@
       "organisation": "Futurum Fastigheter i Örebro AB (helägt av Örebro kommun)",
       "datum": "2024",
       "url": "https://www.futurumfastigheter.se/wp-content/uploads/2025/10/Arsredovisning-Futurum-Fastigheter-i-Orebro-AB-2024.pdf",
-      "sammandrag": "Örebros kommunala bolag för förskolor, grundskolor och gymnasieskolor. Uthyrningsbar yta 400 268 m² 2024 (drygt hälften förskolor, ca 30 % grundskolor). Ansvarar för ca 30 000 barns vardag. Direkt jämförbar med Lejonfastigheters skol- och förskolesegment."
+      "sammandrag": "Örebros kommunala bolag för förskolor, grundskolor och gymnasieskolor. Uthyrningsbar yta 400 268 m² 2024 (drygt hälften förskolor, ca 30 % grundskolor). Ansvarar för ca 30 000 barns vardag. Direkt jämförbar med Lejonfastigheters skol- och förskolesegment.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF:en (30 sidor, e-signerad) laddades ner och är korrekt dokument: 'Årsredovisning för räkenskapsåret 2024, Futurum Fastigheter i Örebro AB', org.nr 556736-6215, ägt via Örebro Rådhus AB av Örebro kommun. Uthyrningsbar yta 400 268 m2 bekräftad. Anmärkning: sammandragets 'ca 30 000 barns vardag' återfinns inte i årsredovisningen (uppgiften kommer sannolikt från bolagets webbplats). Ingen årsredovisning 2025 hittad vid sökning (2024 års rapport publicerades så sent som okt 2025)."
+      }
     },
     {
       "id": "stadsfastigheter-goteborg",
@@ -541,7 +820,13 @@
       "organisation": "Göteborgs Stad, Stadsfastighetsförvaltningen",
       "datum": "löpande",
       "url": "https://goteborg.se/stadsfastighetsforvaltningen",
-      "sammandrag": "En av Sveriges största förvaltare av offentliga lokaler — ca 1 500 adresser och ca 2,2 miljoner m² lokalyta för skola, förskola, äldreomsorg, kultur och fritid i Göteborg. Storleksbenchmark för kommunal samhällsfastighetsförvaltning."
+      "sammandrag": "En av Sveriges största förvaltare av offentliga lokaler — ca 1 500 adresser och ca 2,2 miljoner m² lokalyta för skola, förskola, äldreomsorg, kultur och fritid i Göteborg. Storleksbenchmark för kommunal samhällsfastighetsförvaltning.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan svarar 200 och är Göteborgs Stads officiella sida för stadsfastighetsförvaltningen (organisation och verksamhet beskrivs, ca 700 anställda i sex avdelningar). Sammandragets nyckeltal — ca 1 500 adresser och ca 2,2 miljoner m2 lokalyta — återfinns dock inte på sidan."
+      }
     },
     {
       "id": "stadsfastigheter-malmo",
@@ -551,17 +836,28 @@
       "organisation": "Malmö stad, Serviceförvaltningen (Stadsfastigheter)",
       "datum": "löpande",
       "url": "https://malmo.se/Om-Malmo-stad/Var-organisation/Forvaltningar/Serviceforvaltningen/Serviceforvaltningens-verksamheter/Stadsfastigheter.html",
-      "sammandrag": "Förvaltar ca 1,8 miljoner m² byggnader och 4,9 miljoner m² mark fördelat på ca 600 objekt — skola, barnomsorg, äldreomsorg, kultur och fritid. Levererar lokalförsörjning till Malmö stads egna verksamheter."
+      "sammandrag": "Förvaltar ca 1,8 miljoner m² byggnader och 4,9 miljoner m² mark fördelat på ca 600 objekt — skola, barnomsorg, äldreomsorg, kultur och fritid. Levererar lokalförsörjning till Malmö stads egna verksamheter.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "vastfastigheter-vgr",
       "omrade": "samhallsfastighetsbolag",
       "typ": "samhallsfastighetsbolag",
       "titel": "Västfastigheter — Västra Götalandsregionens sjukhusfastigheter",
-      "organisation": "Västra Götalandsregionen (VGR), Västfastigheter",
+      "organisation": "VGR fastigheter (Västra Götalandsregionen), tidigare Västfastigheter",
       "datum": "löpande",
-      "url": "https://www.vastfastigheter.se/",
-      "sammandrag": "Förvaltar VGR:s sjukhusfastigheter — över 1,5 miljoner m². Sveriges största regionala fastighetsförvaltare för hälso- och sjukvård. Relevant benchmark när Region Östergötlands stora vårdinvesteringar (t.ex. Framtidens US) ska kontextualiseras."
+      "url": "https://fastighet.vgregion.se/",
+      "sammandrag": "Förvaltar VGR:s sjukhusfastigheter — över 1,5 miljoner m². Sveriges största regionala fastighetsförvaltare för hälso- och sjukvård. Relevant benchmark när Region Östergötlands stora vårdinvesteringar (t.ex. Framtidens US) ska kontextualiseras.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "www.vastfastigheter.se ger 301-redirect till https://fastighet.vgregion.se/ som nu är varumärkt 'VGR fastigheter' (Västra Götalandsregionen, org.nr 232100-0131). Namnet Västfastigheter används i praktiken inte längre på sidan. Sammandragets 'över 1,5 miljoner m2' återfinns inte på sidan; den beskriver sig som 'en av Västsveriges största fastighetsförvaltare' med sjukhus, skolor, kollektivtrafik m.m. — Tidigare URL: https://www.vastfastigheter.se/"
+      }
     },
     {
       "id": "region-skane-regionfastigheter",
@@ -571,7 +867,13 @@
       "organisation": "Region Skåne, Regionservice/Regionfastigheter",
       "datum": "löpande",
       "url": "https://www.skane.se/om-region-skane/fastigheter/region-skane-som-fastighetsagare/",
-      "sammandrag": "En av södra Sveriges största fastighetsägare — över 1,6 miljoner m². Komplexa sjukhusbyggnader, vårdcentraler och buss-/tågdepåer."
+      "sammandrag": "En av södra Sveriges största fastighetsägare — över 1,6 miljoner m². Komplexa sjukhusbyggnader, vårdcentraler och buss-/tågdepåer.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan svarar 200 och är Region Skånes officiella sida 'Region Skåne som fastighetsägare'; förvaltningen Regionfastigheter bekräftas som ansvarig. Avvikelse: sidan anger 'över en miljon kvadratmeter', inte 'över 1,6 miljoner m2' som i sammandraget. Sjukhusbyggnader samt tåg- och bussdepåer bekräftade (även vindkraftverk)."
+      }
     },
     {
       "id": "region-ostergotland-fastigheter",
@@ -581,7 +883,13 @@
       "organisation": "Region Östergötland",
       "datum": "löpande",
       "url": "https://www.regionostergotland.se/ro/om-region-ostergotland/fastigheter-och-lokaler",
-      "sammandrag": "Region Östergötlands fastighetsfunktion förvaltar sjukvårds- och utbildningslokaler vid Universitetssjukhuset i Linköping, Vrinnevisjukhuset samt vårdcentraler och tandvård. Lokal sidoaktör till Lejonfastigheter — bl.a. byggprojektet Framtidens US (80 000 m² nybyggt + 55 000 m² ombyggt, ca 3,8 mdkr, 2011–2025)."
+      "sammandrag": "Region Östergötlands fastighetsfunktion förvaltar sjukvårds- och utbildningslokaler vid Universitetssjukhuset i Linköping, Vrinnevisjukhuset samt vårdcentraler och tandvård. Lokal sidoaktör till Lejonfastigheter — bl.a. byggprojektet Framtidens US (80 000 m² nybyggt + 55 000 m² ombyggt, ca 3,8 mdkr, 2011–2025).",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan svarar 200 och är Region Östergötlands officiella sida 'Fastigheter och lokaler' som beskriver Regionfastigheters uppdrag (rådgivning i lokalfrågor, projektplanering, om- och nybyggnad, felanmälan). Sammandragets specifika uppgifter — Universitetssjukhuset, Vrinnevisjukhuset och Framtidens US (80 000 m2 nybyggt, 55 000 m2 ombyggt, ca 3,8 mdkr) — återfinns dock inte på denna sida."
+      }
     },
     {
       "id": "akademiska-hus-arsredovisning-2024",
@@ -591,7 +899,13 @@
       "organisation": "Akademiska Hus AB",
       "datum": "2025-03",
       "url": "https://www.akademiskahus.se/siteassets/dokument/finansiella-dokument/arsredovisningar/arsredovisning-2024-sve.pdf",
-      "sammandrag": "Hyresintäkter 7 860 mnkr (+5 %), förvaltningsresultat 4 617 mnkr (+8 %), investeringar ca 2,5 mdkr. Bestånd ca 3,4 miljoner m² uthyrningsbar yta. Första svenska fastighetsbolag med godkänt Net-Zero-mål enligt SBTi; klimatutsläppen ca −50 % från basår 2019."
+      "sammandrag": "Hyresintäkter 7 860 mnkr (+5 %), förvaltningsresultat 4 617 mnkr (+8 %), investeringar ca 2,5 mdkr. Bestånd ca 3,4 miljoner m² uthyrningsbar yta. Första svenska fastighetsbolag med godkänt Net-Zero-mål enligt SBTi; klimatutsläppen ca −50 % från basår 2019.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (116 sidor, skapad 2025-03-11). Titel 'Hållbara kunskapsmiljöer års- och hållbarhetsredovisning 2024' och utgivare stämmer. Hyresintäkter 7 860 Mkr (+349 från 7 511, ca +5 %) s. 12/36, förvaltningsresultat 4 617 Mkr (+353, +8 %) s. 12, investeringar i egen projektportfölj 2 550 Mkr s. 15, area 3 403 tkvm s. 3, SBTi Net-Zero-verifiering 2024 s. 4/74 — allt bekräftat. Avvikelser: klimatutsläppen var vid utgången av 2024 −64 % mot basår 2019 (s. 7-8), inte 'ca −50 %' som sammandraget anger; påståendet 'första svenska fastighetsbolag' med godkänt SBTi-mål återfinns inte i dokumentet (kommer sannolikt från pressmeddelande). Nyare utgåva (AR 2025) finns. — Nyare utgåva: Hållbara kunskapsmiljöer — års- och hållbarhetsredovisning 2025 (Akademiska Hus) (2026-03)"
+      }
     },
     {
       "id": "specialfastigheter-arsredovisning-2024",
@@ -601,7 +915,13 @@
       "organisation": "Specialfastigheter Sverige AB",
       "datum": "2025-03",
       "url": "https://www.specialfastigheter.se/download/18.254a3b8919545f8c04960772/1741876587990/Arsredovisning_2024.pdf",
-      "sammandrag": "174 fastigheter med ca 1,1 miljoner m² lokalarea (kriminalvård, försvar, övrigt). Totala intäkter 3 502 mnkr (+14 %), förvaltningsresultat 1 713 mnkr (+5 %), fastighetsvärde ca 52 mdkr, projektutvecklingsinvesteringar 5,1 mdkr."
+      "sammandrag": "174 fastigheter med ca 1,1 miljoner m² lokalarea (kriminalvård, försvar, övrigt). Totala intäkter 3 502 mnkr (+14 %), förvaltningsresultat 1 713 mnkr (+5 %), fastighetsvärde ca 52 mdkr, projektutvecklingsinvesteringar 5,1 mdkr.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (122 sidor, skapad 2025-03-11). Titel 'En säker värd — Års- och hållbarhetsredovisning 2024' och utgivare stämmer. Totala intäkter 3 502 Mkr (+14 % från 3 063) s. 6, förvaltningsresultat 1 713 Mkr (+5 % från 1 624) s. 9, fastighetsvärde 51 915 Mkr ≈ 52 mdkr s. 24 — bekräftat. Avvikelser: antal fastigheter är 176 (s. 3, 38), inte 174; lokalarea 1 184 tkvm ≈ 1,2 miljoner m² (s. 6, 38), sammandraget anger 1,1; investeringarna 2024 var 5 818 Mkr i fastighetsprojekt (5 824 inkl. förvärv, s. 56/59) — sammandragets '5,1 mdkr' återfinns inte för 2024 (5,1 % är direktavkastningen; 5,1 mdkr stämmer däremot för 2025). Nyare utgåva finns. — Nyare utgåva: Specialfastigheter års- och hållbarhetsredovisning 2025 (2026-03)"
+      }
     },
     {
       "id": "hemso-arsredovisning-2024",
@@ -611,7 +931,13 @@
       "organisation": "Hemsö Fastighets AB",
       "datum": "2025-03",
       "url": "https://www.hemso.se/content/uploads/2025/03/Arsredovisning-2024.pdf",
-      "sammandrag": "Fastighetsvärde ca 86 mdkr; driftnetto 3 833 mnkr 2024, förvaltningsresultat 2 498 mnkr (+7 %). Färdigställde 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %."
+      "sammandrag": "Fastighetsvärde ca 86 mdkr; driftnetto 3 833 mnkr 2024, förvaltningsresultat 2 498 mnkr (+7 %). Färdigställde 12 projekt med 82 äldreboendeplatser och 4 700 skolplatser. Ekonomisk uthyrningsgrad historiskt 97–99 %.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (118 sidor, skapad 2025-03-25). Titel 'Vi stärker ryggraden i samhället' och utgivare stämmer. Fastighetsvärde 86,0 mdkr (s. 15), driftnetto 3 833 mkr (+5,6 %) s. 60, förvaltningsresultat 2 498 mkr (+6,5 %, sammandragets 'ca +7 %' OK) s. 60, 82 nya äldreboendeplatser och 4 700 nya skolplatser (s. 4, 5, 24), ekonomisk uthyrningsgrad 97,7 % (s. 4) — bekräftat. Avvikelse: sammandraget anger '12 projekt' men redovisningen anger 8 större färdigställda projekt 2024 (s. 24). Nyare utgåva (AR 2025) finns. — Nyare utgåva: Hemsö års- och hållbarhetsredovisning 2025 (2026-03)"
+      }
     },
     {
       "id": "vacse-arsredovisning-2024",
@@ -620,8 +946,14 @@
       "titel": "Vacse AB (publ) Års- och hållbarhetsredovisning 2024",
       "organisation": "Vacse AB (publ)",
       "datum": "2025",
-      "url": "https://storage.mfn.se/9565f85d-94be-4d98-8d8f-be7c6e2bbe03/arsredovisning-2024.pdf",
-      "sammandrag": "Hyresintäkter 615,5 mnkr helåret 2024 (+10,0 %), driftöverskott 470,8 mnkr, förvaltningsresultat 336,0 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster. Viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år)."
+      "url": "https://storage.mfn.se/c/aHR0cHM6Ly9tYi5jaXNpb24uY29tL01haW4vMTAzNzIvNDEyMzg1OC8zMzQzODgxLnBkZg/vacse-ab-publ-ars-och-hallbarhetsredovisning-2024.pdf",
+      "sammandrag": "Hyresintäkter 615,5 mnkr helåret 2024 (+10,0 %), driftöverskott 470,8 mnkr, förvaltningsresultat 336,0 mnkr. Fastighetsvärde över 10 mdkr för första gången. Uthyrningsgrad 100 % varav 98,9 % offentliga hyresgäster. Viktad återstående hyrestid ca 9,6 år (vissa avtal 15 år).",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL:en levererar fel dokument: PDF:en på storage.mfn.se/9565f85d-... är NP3 Fastigheters årsredovisning 2024 (142 sidor, NP3-innehåll rakt igenom), inte Vacses. Korrekt Vacse-PDF hittad via sökning och verifierad: 'Vacse Års- och hållbarhetsredovisning 2024' (98 sidor, skapad 2025-03-24). Där bekräftas samtliga sammandragets uppgifter: hyresintäkter 615,5 mkr +10,0 % (s. 54), driftöverskott 470,8 mkr (s. 54), förvaltningsresultat 336,0 mkr (s. 54), fastighetsvärde 10 305 mkr — över 10 mdkr (s. 19/82), uthyrningsgrad 100 % (s. 19), 98,9 % offentliga hyresgäster (s. 45), genomsnittlig återstående kontraktstid 9,6 år (s. 19, 45). Byt URL. Nyare utgåva (AR 2025) finns. — Tidigare URL: https://storage.mfn.se/9565f85d-94be-4d98-8d8f-be7c6e2bbe03/arsredovisning-2024.pdf — Nyare utgåva: Vacse AB (publ) Års- och hållbarhetsredovisning 2025 (2026-03)"
+      }
     },
     {
       "id": "stenvalvet-arsredovisning-2024",
@@ -630,8 +962,14 @@
       "titel": "Fastighets AB Stenvalvet — Års- och hållbarhetsredovisning 2024",
       "organisation": "Fastighets AB Stenvalvet (publ)",
       "datum": "2025-03",
-      "url": "https://mb.cision.com/Main/3555/4111812/3288266.pdf",
-      "sammandrag": "Ca 100 fastigheter, area ca 589 000–593 000 m², marknadsvärde ca 15,9 mdkr. Driftnetto 597 mnkr 2024 (+10 % drivet av nya/omförhandlade hyresavtal samt KPI-indexering)."
+      "url": "https://mb.cision.com/Main/21205/4121942/3334090.pdf",
+      "sammandrag": "Ca 100 fastigheter, area ca 589 000–593 000 m², marknadsvärde ca 15,9 mdkr. Driftnetto 597 mnkr 2024 (+10 % drivet av nya/omförhandlade hyresavtal samt KPI-indexering).",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL:en levererar fel dokument: mb.cision.com/Main/3555/4111812/3288266.pdf är en banks årsredovisning (388 sidor med utlåning, kärnprimärkapital m.m.), inte Stenvalvets. Korrekt PDF hittad via Stenvalvets pressida och verifierad: 'Års- och hållbarhetsredovisning 2024' (120 sidor, skapad 2025-03-20). Där bekräftas: 108 fastigheter i 36 kommuner (sammandragets 'ca 100' acceptabelt), uthyrningsbar area 593 tkvm (588 fg år — sammandragets 589–593 stämmer), fastighetsvärde 15,9 mdkr, driftnetto +10 % i jämförbart bestånd (s. 3, 8, 16). Avvikelse i sammandraget: driftnettot 2024 var 791 mkr (s. 4), inte 597 mnkr. Byt URL. Nyare utgåva (AHR 2025) finns. — Tidigare URL: https://mb.cision.com/Main/3555/4111812/3288266.pdf — Nyare utgåva: Stenvalvet års- och hållbarhetsredovisning 2025 (2026-03)"
+      }
     },
     {
       "id": "akademiska-hus-studentbarometern-2024",
@@ -641,7 +979,13 @@
       "organisation": "Akademiska Hus AB",
       "datum": "2024",
       "url": "https://www.akademiskahus.se/contentassets/6270b9ce1fe74f6cb461c8e73d5788a4/studentbarometer_aha_2024.pdf",
-      "sammandrag": "Akademiska Hus återkommande undersökning av studenters upplevelse av campusmiljöer. Underlag för hur fysisk lokal påverkar nyttjandegrad och nöjdhet."
+      "sammandrag": "Akademiska Hus återkommande undersökning av studenters upplevelse av campusmiljöer. Underlag för hur fysisk lokal påverkar nyttjandegrad och nöjdhet.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (20 sidor, skapad 2024-11-28). Titel 'Studentbarometern 2024', genomförd av Norstat på uppdrag av Akademiska Hus: webbenkät med 1 053 svarande universitets- och högskolestudenter, insamling 22 maj–6 juni 2024. Innehållet motsvarar sammandraget (studenters upplevelse av campusmiljöer). Anmärkning: nyare utgåva (Studentbarometern 2025) finns publicerad. — Nyare utgåva: Studentbarometern 2025 (Akademiska Hus) (2025-06)"
+      }
     },
     {
       "id": "halmstad-vallasskolan-2025",
@@ -649,9 +993,15 @@
       "typ": "kommunal-plan",
       "titel": "Nya Vallåsskolan börjar byggas 2025 — F-9 för 900 + 60 elever",
       "organisation": "Halmstads kommun",
-      "datum": "2025-04",
+      "datum": "2020-08",
       "url": "https://www.mynewsdesk.com/se/halmstadskommun/pressreleases/nya-vallaasskolan-boerjar-byggas-2025-3027341",
-      "sammandrag": "F-9-skola för 900 + 60 anpassad grundskola, ca 18 600 m² BTA, två idrottshallar. Kontraktssumma ca 470–475 mkr → ca 25 000–26 000 kr/m² BTA. Byggstart juni 2025, klar HT 2028."
+      "sammandrag": "F-9-skola för 1 000 elever (400 F-3 + 600 4-9) + 45 platser anpassad grundskola, ca 18 600 m² BTA, två idrottshallar. Kontraktssumma ca 470–475 mkr → ca 25 000–26 000 kr/m² BTA. Byggstart juni 2025, klar HT 2028.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL fungerar (200, rätt pressmeddelande). Men pressmeddelandet är publicerat 2020-08-18, inte 2025-04. Dokumentet anger 1 000 elever (400 F-3 + 600 4-9) och 45 platser i grundsärskolan — inte 60. Kostnad ca 475 mkr, byggstart 2025, klar 2028 bekräftas. Sammandragets 18 600 m2 BTA, två idrottshallar, kontraktssumma 470-475 mkr och byggstart juni 2025 återfinns inte i dokumentet."
+      }
     },
     {
       "id": "uppsala-kvarngardesskolan-2025-slutrapport",
@@ -661,7 +1011,13 @@
       "organisation": "Uppsala kommun / Uppsala Skolfastigheter / ByggDialog",
       "datum": "2025-08",
       "url": "https://www.uppsala.se/kommun-och-politik/nyheter-och-pressmeddelanden/2025/nya-kvarngardesskolan-invigd/",
-      "sammandrag": "F-9 + idrottshall + matsal (330 platser), kapacitet ca 1 000 elever, budget 510 mkr i samverkansentreprenad. Byggtid sommar 2022–HT 2025 (~3 år)."
+      "sammandrag": "F-9 + idrottshall + matsal (330 platser), kapacitet ca 1 000 elever, budget 510 mkr i samverkansentreprenad. Byggtid sommar 2022–HT 2025 (~3 år).",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL fungerar, rätt artikel (Uppsala kommun, publicerad 2025-09-05, källpost anger 2025-08). Bekräftar F-9, upp till 990 elever, idrottshall, matsal med kök, samverkan Skolfastigheter-ByggDialog, arkitekt Archus, Miljöbyggnad Silver 4.0, trästomme, solceller. Sammandragets budget 510 mkr, byggtid sommar 2022-HT 2025 och matsal 330 platser nämns inte i artikeln."
+      }
     },
     {
       "id": "stockholm-kista-ang-skola-2024",
@@ -669,9 +1025,15 @@
       "typ": "kommunal-plan",
       "titel": "Ny F-9-skola för 900 elever planeras i Kista Äng",
       "organisation": "SISAB / Stockholms stad",
-      "datum": "2024-06",
+      "datum": "2020-09",
       "url": "https://www.mynewsdesk.com/se/moderaterna-stockholms-stad/pressreleases/ny-f-9-skola-foer-900-elever-planeras-i-kista-aeng-3030573",
-      "sammandrag": "SISAB-projekt: F-9 för 900 elever, projektkostnad ~385 mkr (preliminär). Vid antagen BTA 12 000–14 000 m² motsvarar det ca 27 000–32 000 kr/m² BTA. Stockholmsbenchmark."
+      "sammandrag": "SISAB-projekt: F-9 för 900 elever, projektkostnad ~385 mkr (preliminär). Skolbyggnad om 9 073 m² enligt pressmeddelandet → ca 42 000 kr/m². Stockholmsbenchmark.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL fungerar, rätt pressmeddelande (Moderaterna Stockholms stad). Men publicerat 2020-09-01, inte 2024-06. Bekräftar F-9 för 900 elever, ca 385 mkr, SISAB. Viktigt: dokumentet anger skolbyggnad om 9 073 m2 — sammandragets antagande 12 000-14 000 m2 BTA (27 000-32 000 kr/m2) motsägs; 385 mkr / 9 073 m2 ger ca 42 000 kr/m2. Byggstart angavs till januari 2022, byggtid 3,5 år."
+      }
     },
     {
       "id": "norrkoping-smedbyskolan-2024",
@@ -680,8 +1042,14 @@
       "titel": "Smedbyskolan och Kungsängsskolan invigda 2024",
       "organisation": "Norrevo / Norrköpings kommun",
       "datum": "2024-08",
-      "url": "https://norrkoping.se/nyheter/2024/2024-08-29-kungsangsskolan-och-smedbyskolan-invigda",
-      "sammandrag": "F-6-skola i två plan, 14 klasser (350–400 elever), inkl. fullstor idrottshall. Total byggarea ca 7 850 m² BTA. Budget 252 mkr → ca 32 000 kr/m² BTA. Geografiskt nära Linköping — direkt jämförbar referens."
+      "url": "https://web.archive.org/web/20251015145422/https://norrkoping.se/nyheter/2024/2024-08-29-kungsangsskolan-och-smedbyskolan-invigda",
+      "sammandrag": "F-6-skola i två plan, 14 klasser (350–400 elever), inkl. fullstor idrottshall. Total byggarea ca 7 850 m² BTA. Budget 252 mkr → ca 32 000 kr/m² BTA. Geografiskt nära Linköping — direkt jämförbar referens.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Äkta 404 — verifierat med både WebFetch och curl. Nyhetssidan är borttagen från norrkoping.se. Wayback-kopia från 2025-10-15 finns (kunde inte läsas härifrån p.g.a. egress-blockering av web.archive.org, men fungerar i webbläsare). Ersättningskandidaten via.tt.se (pressinbjudan 2024-08-26) saknar sammandragets siffror (7 850 m2, 252 mkr). WebSearch bekräftar invigning 2024-08-29 och att skolorna tillsammans tar ca 750 elever. — Tidigare URL: https://norrkoping.se/nyheter/2024/2024-08-29-kungsangsskolan-och-smedbyskolan-invigda"
+      }
     },
     {
       "id": "motala-vatternskolan-2025",
@@ -691,7 +1059,13 @@
       "organisation": "Motala kommun",
       "datum": "2025-09",
       "url": "https://www.motala.se/nyheter/upphandling-av-entreprenor-till-nya-vatternskolan-klar/",
-      "sammandrag": "F-6 för 392 elever + förskola 160 barn + idrottshall + fritidsgård. Kommunfullmäktige godkände 330 mkr (2023). Byggstart dec 2025."
+      "sammandrag": "F-6 för 392 elever + förskola 160 barn + idrottshall + fritidsgård. Kommunfullmäktige godkände 330 mkr (2023). Byggstart dec 2025.",
+      "hardkontroll": {
+        "status": "ej-kontrollerbar",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "Sidan ligger bakom bot-verifiering: WebFetch får 404, curl får 200 men bara en 'please wait while your request is being verified'-sida; Wayback-kopia (2026-03-13) finns men web.archive.org är egress-blockerat härifrån. Sidan är indexerad och live enligt sökmotor. WebSearch bekräftar: upphandlingen klar, Åhlin & Ekeroth Byggnads AB (ByggPartnerGruppen) vann, F-6 för 392 elever (två paralleller), förskola, fullstor idrottshall, fritidsgård, spadtag förskolan dec 2025, förskolan klar jan/feb 2027. 330 mkr kunde inte verifieras."
+      }
     },
     {
       "id": "enkoping-grillby-forskola-2024",
@@ -699,19 +1073,31 @@
       "typ": "slutrapport",
       "titel": "Grillby förskola, Enköping (Arcona)",
       "organisation": "Enköpings kommun / Arcona",
-      "datum": "2024",
+      "datum": "2021-10",
       "url": "https://www.arcona.se/produktomraden/utbildningsbyggnader/grillby-forskola/",
-      "sammandrag": "Förskola ca 2 100 m² BTA, kontraktssumma ca 67 mkr → ca 31 900 kr/m² BTA. 6 avdelningar (100–120 barn). Modernt referensprojekt 2024."
+      "sammandrag": "Förskola ca 2 100 m² BTA, kontraktssumma ca 67 mkr → ca 31 900 kr/m² BTA. 6 avdelningar (100–120 barn). Modernt referensprojekt 2024.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL fungerar, rätt referenssida hos Arcona. Bekräftar ca 2 100 m2 BTA och kontraktssumma ca 67 mkr. Men projektet pågick okt 2019-okt 2021 och stod klart oktober 2021 — inte 2024 som källposten anger. 6 avdelningar och 100-120 barn nämns inte på sidan."
+      }
     },
     {
       "id": "orebro-brickebacken-vob-2024",
       "omrade": "fastighet-demografi",
       "typ": "kommunal-plan",
       "titel": "Vård- och omsorgsboende södra Brickebacken, Örebro",
-      "organisation": "Örebro kommun / Futurum",
+      "organisation": "Örebrobostäder / Örebro kommun",
       "datum": "2024-03",
       "url": "https://www.nyaprojekt.se/2024/03/22/byggstart-vard-och-omsorgsboende-i-sodra-brickebacken-i-orebro/",
-      "sammandrag": "Vård- och omsorgsboende 106 lägenheter, total investering ca 230 mkr → ca 2,2 mkr/plats. Antagen BTA ~7 000–8 000 m² → 29 000–33 000 kr/m² BTA."
+      "sammandrag": "Vård- och omsorgsboende 106 lägenheter, total investering ca 230 mkr → ca 2,2 mkr/plats. Antagen BTA ~7 000–8 000 m² → 29 000–33 000 kr/m² BTA.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "HTTP 200, artikeln finns: 'Byggstart: Vård- och omsorgsboende i Södra Brickebacken i Örebro', Nya Projekt (Stordåhd Kommunikation), 22 mars 2024. Men två avvikelser: (1) byggherre är Örebrobostäder — inte Futurum som källpostens organisationsfält anger; (2) sammandragets centrala siffror 230 mkr investering och BTA 7 000–8 000 m2 nämns INTE i artikeln, så kalkylen 2,2 mkr/plats och 29 000–33 000 kr/m2 BTA saknar stöd i denna källa."
+      }
     },
     {
       "id": "jonkoping-dunkehalla-lss-2024",
@@ -721,7 +1107,13 @@
       "organisation": "Jönköpings kommun",
       "datum": "2024-09",
       "url": "https://www.byggfaktadocu.se/dunkehalla-gruppbostad-klammestorp-1-27/projekt.html",
-      "sammandrag": "LSS-gruppbostad 823 m² BTA, ca 6 lägenheter, kostnad 20–30 mkr → ca 24 000–36 000 kr/m² BTA. Bekräftar materialets LSS-påstående men yta-intervallet bör utvidgas till 600–850 m²."
+      "sammandrag": "LSS-gruppbostad 823 m² BTA, ca 6 lägenheter, kostnad 20–30 mkr → ca 24 000–36 000 kr/m² BTA. Bekräftar materialets LSS-påstående men yta-intervallet bör utvidgas till 600–850 m².",
+      "hardkontroll": {
+        "status": "underkand",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "Projektsidan hos ByggfaktaDOCU ger 404 ('Page could not be found') via både WebFetch och curl med webbläsar-user-agent — sidan är borttagen eller ligger bakom inloggning. Sökmotorindexering av samma sida bekräftar dock sammandragets uppgifter indirekt: byggstart september 2024, byggtid ca 11 månader, kostnad 20–30 mkr, bruttoarea 823 m2, Jönköpings kommun beställare, totalentreprenör Brixly. Notera: 5 lägenheter enligt indexerad projektinfo, inte ca 6 som i sammandraget. Ingen fritt tillgänglig ersättnings-URL hittad."
+      }
     },
     {
       "id": "scb-bki-2025",
@@ -731,7 +1123,13 @@
       "organisation": "SCB",
       "datum": "löpande",
       "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/priser-och-ekonomiska-tendenser/priser/byggkostnadsindex-bki/",
-      "sammandrag": "BKI för flerbostadshus minskade -0,2 % feb 2025 vs feb 2024 — första negativa årstakten sedan 1950-talet. 2024–2025 är en relativ platå i byggprisutvecklingen efter den kraftiga uppgången 2021–2023."
+      "sammandrag": "BKI för flerbostadshus minskade -0,2 % feb 2025 vs feb 2024 — första negativa årstakten sedan 1950-talet. 2024–2025 är en relativ platå i byggprisutvecklingen efter den kraftiga uppgången 2021–2023.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "HTTP 200, korrekt SCB-statistiksida för Byggkostnadsindex (BKI). Sidan visar nu data t.o.m. juli 2026: BKI för flerbostadshus +3,2 % på årsbasis (juli 2026 vs juli 2025) och +0,1 % juni–juli 2026. Sammandragets siffra '-0,2 % feb 2025' visas inte längre på sidan, och beskrivningen av 2024–2025 som platå är inaktuell — index stiger igen. Nästa publicering 15 september 2026. — Nyare utgåva: Byggkostnadsindex (BKI) — utfall juli 2026 (2026-08)"
+      }
     },
     {
       "id": "skr-regionernas-fastighetsnyckeltal-2024",
@@ -741,7 +1139,12 @@
       "organisation": "SKR / FoU-fonden för fastighetsfrågor",
       "datum": "2025-05",
       "url": "https://extra.skr.se/offentligafastigheter/publikationer/publikationer/regionernasfastighetsnyckeltalavseende2024.90540.html",
-      "sammandrag": "Tolfte årgång. Regionernas investeringsnivå 2024 ca 14 mdkr. Snitt 1 578 kr/inv i investering, median 1 395 kr/inv. Innehåller drift-, energi- och investeringsnyckeltal för sjukvårdsfastigheter."
+      "sammandrag": "Tolfte årgång. Regionernas investeringsnivå 2024 ca 14 mdkr. Snitt 1 578 kr/inv i investering, median 1 395 kr/inv. Innehåller drift-, energi- och investeringsnyckeltal för sjukvårdsfastigheter.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "skolverket-kostnader-2024",
@@ -751,7 +1154,12 @@
       "organisation": "Skolverket",
       "datum": "2025-09",
       "url": "https://www.skolverket.se/sok-publikationer/publikationsserier/beskrivande-statistik/2025/kostnader-for-skolvasendet-och-annan-pedagogisk-verksamhet-2024",
-      "sammandrag": "Total kostnad för skolväsendet 2024: 368,3 mdkr (+1,6 % fast pris). Driftskostnadsbenchmark — komplement till kr/m² BTA-investeringssiffror."
+      "sammandrag": "Total kostnad för skolväsendet 2024: 368,3 mdkr (+1,6 % fast pris). Driftskostnadsbenchmark — komplement till kr/m² BTA-investeringssiffror.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "prop-2024-25-169-bygglov",
@@ -761,7 +1169,12 @@
       "organisation": "Regeringen / Landsbygds- och infrastrukturdepartementet",
       "datum": "2025-05",
       "url": "https://www.regeringen.se/contentassets/65b78cab2c2d46a2abd128521917ec14/ett-nytt-regelverk-for-bygglov-prop.-202425169.pdf",
-      "sammandrag": "Ny bygglovsproposition som differentierar bygglovsplikten geografiskt. Trädde i kraft 1 december 2025. Förändrar mindre kompletteringsåtgärder, inte primärt samhällsfastigheter på egen mark."
+      "sammandrag": "Ny bygglovsproposition som differentierar bygglovsplikten geografiskt. Trädde i kraft 1 december 2025. Förändrar mindre kompletteringsåtgärder, inte primärt samhällsfastigheter på egen mark.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "boverket-pbl-nyheter-dec-2025",
@@ -771,7 +1184,13 @@
       "organisation": "Boverket",
       "datum": "2025-12",
       "url": "https://www.boverket.se/sv/samhallsplanering/uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/",
-      "sammandrag": "Boverkets sammanställning av PBL-ändringar enligt prop. 2024/25:169. Övergångsregler: äldre regler gäller för ärenden inlett före 1 dec 2025."
+      "sammandrag": "Boverkets sammanställning av PBL-ändringar enligt prop. 2024/25:169. Övergångsregler: äldre regler gäller för ärenden inlett före 1 dec 2025.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "manuell",
+        "not": "HTTP 200. Sidan 'Lista med PBL-andringar som tradde i kraft den 1 december 2025' finns och matchar titel/organisation (verifierad via curl; WebFetch fangade bara megamenyn). Innehallet bekraftar nytt 9 kap. PBL enligt prop. 2024/25:169. Avvikelse: kallpostens pastaende om overgangsregler ('aldre regler galler for arenden inledda fore 1 dec 2025') aterfanns inte pa sidan vid sokning pa 'overgangs', 'inlet', 'paborja' — sidan namner i stallet bl.a. att vissa planbestammelser om minskad lovplikt slutar galla 1 december 2027."
+      }
     },
     {
       "id": "miljotillstand-utredning-dir-2025-2",
@@ -781,7 +1200,12 @@
       "organisation": "Regeringen / Klimat- och näringslivsdepartementet",
       "datum": "2025-01",
       "url": "https://www.regeringen.se/pressmeddelanden/2025/01/miljotillstandsutredningen-far-nytt-tillaggsdirektiv/",
-      "sammandrag": "Regeringen ger Miljötillståndsutredningen (KN 2023:02) uppdrag att utreda hur handläggningstider i plan- och bygglovsprocessen kan kortas. Delbetänkande om kortare ledtider för planbeslut: deadline 31 december 2025."
+      "sammandrag": "Regeringen ger Miljötillståndsutredningen (KN 2023:02) uppdrag att utreda hur handläggningstider i plan- och bygglovsprocessen kan kortas. Delbetänkande om kortare ledtider för planbeslut: deadline 31 december 2025.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "remiss-andring-detaljplan-2024",
@@ -791,7 +1215,12 @@
       "organisation": "Regeringen / Landsbygds- och infrastrukturdepartementet",
       "datum": "2024-10",
       "url": "https://regeringen.se/remisser/2024/10/remiss-av-uppdrag-om-oversyn-av-regelverket-for-andring-av-detaljplan-och-av-olagliga-planbestammelser/",
-      "sammandrag": "Remiss av Boverkets utredning om enklare ändring av detaljplan utan att hela planen behöver göras om — direkt relevant för 'flytta gränsen på skolgården'-fall."
+      "sammandrag": "Remiss av Boverkets utredning om enklare ändring av detaljplan utan att hela planen behöver göras om — direkt relevant för 'flytta gränsen på skolgården'-fall.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "epbd-recast-2024-1275",
@@ -801,7 +1230,13 @@
       "organisation": "Europeiska unionen",
       "datum": "2024-05",
       "url": "https://www.boverket.se/sv/byggande/uppdrag/direktiv-for-byggnaders-energiprestanda/",
-      "sammandrag": "EPBD-recast trädde i kraft 28 maj 2024; svensk implementering 1 juli 2026. Nya offentliga byggnader nollutsläpp senast 2028 (alla nya 2030). MEPS för lokaler: senast 2030 inga lokaler i de 16 % minst energieffektiva. Solcellsplikt offentligt >2000 m² senast 2027, >750 m² senast 2028. Boverket bedömer ca 31 000 lokalbyggnader behöver effektiviseras till 2033."
+      "sammandrag": "EPBD-recast trädde i kraft 28 maj 2024; svensk implementering 1 juli 2026. Nya offentliga byggnader nollutsläpp senast 2028 (alla nya 2030). MEPS för lokaler: senast 2030 inga lokaler i de 16 % minst energieffektiva. Solcellsplikt offentligt >2000 m² senast 2027, >750 m² senast 2028. Boverket bedömer ca 31 000 lokalbyggnader behöver effektiviseras till 2033.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan svarar 200 (verifierad via curl då WebFetch bara fick menyn). Rätt ämne: Boverkets samlingssida om EPBD/direktiv 2024/1275. Bekräftat: ikraftträdande 28 maj 2024, EU-frist 29 maj 2026, svenska lagändringar i PBL och energideklarationslagen träder i kraft 1 juli 2026 (SFS 2026:744/745), nya offentligt ägda byggnader nollutsläpp från 2028 och alla nya från 2030. Sammandragets uppgifter om MEPS (16 % sämsta lokalerna till 2030), solcellsplikt >2000 m2 2027 / >750 m2 2028 samt 'ca 31 000 lokalbyggnader' återfinns dock INTE på sidan. Sidan noterar även att Sveriges genomförande blir 'något försenat' relativt EU-fristen."
+      }
     },
     {
       "id": "skr-pm-eed-epbd-2025",
@@ -811,7 +1246,13 @@
       "organisation": "Sveriges Kommuner och Regioner (SKR)",
       "datum": "2025-10",
       "url": "https://skr.se/download/18.2eae6b4519a0f5b858e91b99/1761657634107/Energidirektiv_EED-EPBD_okt2025_PM-SKR-28oktober.pdf",
-      "sammandrag": "SKR:s tolkning av EPBD-recast och EED för kommunala fastighetsägare: nollutsläppskrav för nya offentliga byggnader från 2028, solcellsplikt 2027–2028, MEPS-krav på lokaler från 2030."
+      "sammandrag": "SKR:s tolkning av EPBD-recast och EED för kommunala fastighetsägare: nollutsläppskrav för nya offentliga byggnader från 2028, solcellsplikt 2027–2028, MEPS-krav på lokaler från 2030.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF laddades ner utan problem (5 sidor, SKR/Andreas Hagnell, daterad 2025-10-27/28) — titel, organisation och datum stämmer. Nollutsläppskrav 2028/2030 och MEPS bekräftade. Sammandragets uppgift 'solcellsplikt 2027–2028' återfinns dock inte med de årtalen i PM:et — där sägs endast att solenergiinstallationer krävs och att 'olika årtal gäller för olika kategorier och storlek på byggnaderna' (s. 4)."
+      }
     },
     {
       "id": "boverket-gransvarde-uppdrag-2025",
@@ -820,8 +1261,14 @@
       "titel": "Nytt regeringsuppdrag om gränsvärden för byggnaders klimatpåverkan",
       "organisation": "Boverket / Regeringen",
       "datum": "2025-08",
-      "url": "https://www.boverket.se/sv/klimatdeklaration/om-klimatdeklaration/nyheter/nytt-regeringsuppdrag-till-boverket-om-gransvarden-for-byggnaders-klimatpaverkan/",
-      "sammandrag": "Utökad klimatdeklaration ska träda i kraft senast jan 2028, gränsvärden för klimatpåverkan senast jan 2030. Boverkets förslag (aug 2025): sänk gränsvärdet -25 % till 2030 jmf 2025-nivån. Uppdraget redovisas senast 1 juni 2026."
+      "url": "https://www.boverket.se/sv/om-boverket/nyheter-aktuellt/nyheter/regler-om-byggnaders-klimatpaverkan--boverket-lamnar-forslag-till-nya-krav/",
+      "sammandrag": "Utökad klimatdeklaration ska träda i kraft senast jan 2028, gränsvärden för klimatpåverkan senast jan 2030. Boverkets förslag (aug 2025): sänk gränsvärdet -25 % till 2030 jmf 2025-nivån. Uppdraget redovisas senast 1 juni 2026.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "URL:en ger äkta 404 (två försök, WebFetch + curl med browser-UA) — nyhetssidan är borttagen. Uppdraget är dessutom redan slutredovisat: Boverket lämnade lag- och förordningsförslag till regeringen 20 maj 2026. Ersättnings-URL (verifierad, 200): Boverkets nyhet om slutredovisningen. Sammandragets uppgift 'Boverkets förslag (aug 2025): -25 % till 2030' kunde inte verifieras; i slutförslaget anges inte den siffran (medierapportering nämner ca 35 %). — Tidigare URL: https://www.boverket.se/sv/klimatdeklaration/om-klimatdeklaration/nyheter/nytt-regeringsuppdrag-till-boverket-om-gransvarden-for-byggnaders-klimatpaverkan/ — Nyare utgåva: Regler om livscykel-GWP och gränsvärden för byggnaders klimatpåverkan (Boverkets slutredovisning, rapport 2026:16) (2026-05)"
+      }
     },
     {
       "id": "eu-taxonomi-2021-2139",
@@ -830,8 +1277,14 @@
       "titel": "Delegerad förordning (EU) 2021/2139 — taxonomins klimat-DA",
       "organisation": "Europeiska kommissionen",
       "datum": "2021-06",
-      "url": "https://www.boverket.se/sv/byggande/cirkular-ekonomi/styrmedel/taxonomin/",
-      "sammandrag": "EU-taxonomins krav för byggnader: nybyggnad primärenergi ≥ 10 % under NZEB; klimatdeklaration livscykel för byggnader >5000 m²; befintliga topp 15 % i nationellt bestånd. För kommunala samhällsfastigheter inte bindande men styr finansieringsvillkor."
+      "url": "https://eur-lex.europa.eu/legal-content/SV/TXT/?uri=CELEX%3A32021R2139",
+      "sammandrag": "EU-taxonomins krav för byggnader: nybyggnad primärenergi ≥ 10 % under NZEB; klimatdeklaration livscykel för byggnader >5000 m²; befintliga topp 15 % i nationellt bestånd. För kommunala samhällsfastigheter inte bindande men styr finansieringsvillkor.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL:en svarar 200 men är fel dokument relativt källposten: Boverkets sida 'Taxonomin' (publicerad 20 maj 2024) handlar om taxonomiförordningen 2020/852 och cirkulär ekonomi-akten (EU) 2023/2486. Klimat-DA 2021/2139 nämns inte alls, och sammandragets centrala krav (primärenergi >=10 % under NZEB, klimatdeklaration >5000 m2, topp 15 % av beståndet) återfinns inte på sidan. Postens organisation (Europeiska kommissionen) och datum (2021-06) matchar inte sidan (Boverket, 2024). Förslag på korrekt URL: EUR-Lex för 2021/2139. — Tidigare URL: https://www.boverket.se/sv/byggande/cirkular-ekonomi/styrmedel/taxonomin/"
+      }
     },
     {
       "id": "scb-framtida-befolkning-2026-2070",
@@ -841,7 +1294,13 @@
       "organisation": "SCB",
       "datum": "2026-04",
       "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/pong/statistiknyhet/sveriges-framtida-befolkning-2026-2070/",
-      "sammandrag": "Senaste framskrivningen. 2026–2030 ökar Sverige med ~5 000 personer/år (jmf 45 000/år 2021–2025). 2035 prognos: 10,8 mn invånare. Antal skolbarn 6–15 år minskar stadigt under 15 år framåt. 2025 föddes 97 500 barn — lägst på 23 år, TFR 1,42."
+      "sammandrag": "Senaste framskrivningen. 2026–2030 ökar Sverige med ~5 000 personer/år (jmf 45 000/år 2021–2025). 2035 prognos: 10,8 mn invånare. Antal skolbarn 6–15 år minskar stadigt under 15 år framåt. 2025 föddes 97 500 barn — lägst på 23 år, TFR 1,42.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan svarar 200 (hämtad via curl, WebFetch fick 503). Statistiknyhet 'Antalet födda fortsätter att minska', SCB, publicerad 2026-04-16, avser framskrivningen 2026–2070 — titel/organisation/datum stämmer. Flera av sammandragets centrala värden bekräftade, men tre uppgifter återfinns inte i statistiknyheten: ökningstakten '~5 000 personer/år 2026–2030', jämförelsen '45 000/år 2021–2025' och TFR 1,42 (fruktsamheten beskrivs bara kvalitativt); de kan finnas i den fullständiga rapporten."
+      }
     },
     {
       "id": "linkoping-befolkningsprognos-2024-2034",
@@ -850,8 +1309,14 @@
       "titel": "Linköpings befolkningsprognos 2024–2034",
       "organisation": "Linköpings kommun (kommunstyrelsen)",
       "datum": "2025-04",
-      "url": "https://www.linkoping.se/kommun-och-politik/fakta-om-linkoping/statistik/linkoping-i-siffror/befolkning/prognos/",
-      "sammandrag": "Kommunstyrelsen antog 8 april 2025. Befolkningen ökar ~1 150 pers/år nästa decennium. Barn 0–5 år: +833 till 10 888 år 2034. Barn 6–12 år: -2 476 till 10 716 år 2034. Linköping avviker från riket — växande förskoleåldrar samtidigt som grundskoleåldrar krymper."
+      "url": "https://www.linkoping.se/kommun-och-politik/fakta-om-linkoping/linkoping-i-siffror",
+      "sammandrag": "Kommunstyrelsen antog 8 april 2025. Befolkningen ökar ~1 150 pers/år nästa decennium. Barn 0–5 år: +833 till 10 888 år 2034. Barn 6–12 år: -2 476 till 10 716 år 2034. Linköping avviker från riket — växande förskoleåldrar samtidigt som grundskoleåldrar krymper.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "URL:en ger äkta 404 (WebFetch och curl med browser-UA) — linkoping.se har strukturerats om och hela den gamla statistikgrenen '/statistik/linkoping-i-siffror/...' är borttagen; ny ingång är 'Linköping i siffror' (JS-driven sida utan direkta undersidor). Sammandragets samtliga siffror kunde dock bekräftas via webbsökning (kommunens pressmeddelande och indexerat sidinnehåll): KS antog prognosen 8 april 2025, +1 150 pers/år, 0–5 år +833 till 10 888 år 2034, 6–12 år -2 476 till 10 716 år 2034. — Tidigare URL: https://www.linkoping.se/kommun-och-politik/fakta-om-linkoping/statistik/linkoping-i-siffror/befolkning/prognos/"
+      }
     },
     {
       "id": "norrkoping-befolkningsprognos-2025-2034",
@@ -861,7 +1326,13 @@
       "organisation": "Norrköpings kommun",
       "datum": "2025-08",
       "url": "https://norrkoping.se/download/18.6212ec29198c5d45284479e/1755845032578/Reviderad%20befolkningsprognos%20f%C3%B6r%20kommunen%20och%20delomr%C3%A5den%202025.pdf",
-      "sammandrag": "Reviderad prognos visar tydliga minskningar av barn och unga. Utbildningsnämnden har fattat beslut om anpassningar i förskola och skola till följd av lägre demografi. Gymnasieåldrarna ökar dock."
+      "sammandrag": "Reviderad prognos visar tydliga minskningar av barn och unga. Utbildningsnämnden har fattat beslut om anpassningar i förskola och skola till följd av lägre demografi. Gymnasieåldrarna ökar dock.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF:en laddades ner utan problem (31 sidor, 'Befolkningsprognos för Norrköpings kommun 2025–2034', Kommundirektörens kontor/Statistikfunktionen, daterad 22 augusti 2025 — augustirevideringen, så 'Reviderad' i posttiteln stämmer i sak). Minskningen av barn/unga och gymnasieökningen bekräftade. Sammandragets uppgift att 'utbildningsnämnden har fattat beslut om anpassningar' står dock INTE i dokumentet (kommer från annan källa). Dessutom finns en nyare prognosomgång (2026–2035, mars 2026). — Nyare utgåva: Befolkningsprognos för Norrköping åren 2026–2035 (2026-03)"
+      }
     },
     {
       "id": "skolverket-grundskola-2024-25",
@@ -871,7 +1342,13 @@
       "organisation": "Skolverket",
       "datum": "2025-03",
       "url": "https://www.skolverket.se/sok-publikationer/publikationsserier/beskrivande-statistik/2025/elever-och-skolenheter-i-grundskolan---lasaret-2024-25",
-      "sammandrag": "Drygt 1 100 000 elever i grundskolan, en minskning med nästan 5 440 elever jmf föregående år — den största minskningen i absoluta tal hittills. Bekräftar att den demografiska svackan redan börjat slå."
+      "sammandrag": "Drygt 1 100 000 elever i grundskolan, en minskning med nästan 5 440 elever jmf föregående år — den största minskningen i absoluta tal hittills. Bekräftar att den demografiska svackan redan börjat slå.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Publikationssidan fungerar och alla sammandragets siffror bekräftade: drygt 1 100 000 elever, minskning 5 440 elever mot föregående läsår, beskriven som största minskningen hittills. Men en nyare utgåva finns (läsåret 2025/26, mars 2026) som ändrar den centrala uppgiften: minskningen 2025/26 är nästan dubbelt så stor och är nu den största hittills. — Nyare utgåva: Elever och skolenheter i grundskolan — läsåret 2025/26 (2026-03)"
+      }
     },
     {
       "id": "cva-chalmers-vardens-arkitektur",
@@ -880,8 +1357,14 @@
       "titel": "Centrum för vårdens arkitektur (CVA) — Chalmers",
       "organisation": "Chalmers tekniska högskola / Göteborgs universitet",
       "datum": "löpande",
-      "url": "https://www.chalmers.se/sv/centrum/cva/",
-      "sammandrag": "Sveriges ledande forskningscentrum för evidensbaserad design av vårdmiljöer. AIDAH-projektet (Architectural Inventions for Dwelling, Ageing and Healthcare) undersöker hur arkitektur i särskilda boenden påverkar livskvalitet. Direkt relevant för LSS-gruppbostäder och VOB."
+      "url": "https://www.chalmers.se/centrum/cva/",
+      "sammandrag": "Sveriges ledande forskningscentrum för evidensbaserad design av vårdmiljöer. AIDAH-projektet (Architectural Inventions for Dwelling, Ageing and Healthcare) undersöker hur arkitektur i särskilda boenden påverkar livskvalitet. Direkt relevant för LSS-gruppbostäder och VOB.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Soft-404: URL:en med /sv/-prefix svarar 200 men redirectar till Chalmers generella centrumöversikt (chalmers.se/centrum/), inte CVA-sidan. Rätt sida finns på ny adress utan /sv/: chalmers.se/centrum/cva/ (verifierad, 200, titel 'Centrum för vårdens arkitektur'). Sammandragets beskrivning 'Sveriges ledande centrum' för vårdens fysiska miljöer bekräftas där, men AIDAH-projektet nämns inte på nya sidan (äldre projekt). — Tidigare URL: https://www.chalmers.se/sv/centrum/cva/"
+      }
     },
     {
       "id": "cmb-kommunal-strategisk-fastighetsforvaltning",
@@ -889,9 +1372,15 @@
       "typ": "forskning",
       "titel": "Kommunal strategisk fastighetsförvaltning — hinder och möjligheter",
       "organisation": "CMB Chalmers (Centre for Management of the Built Environment)",
-      "datum": "2024",
+      "datum": "2022",
       "url": "https://www.cmb-chalmers.se/aktivitet/kommunal-strategisk-fastighetsforvaltning-hinder-och-mojligheter-2/",
-      "sammandrag": "CMB-forskning som identifierar att stora behov av förnyelse kombinerat med klimatmål kräver omprövad arbetsmetodik och bättre samverkan mellan förvaltningar. Relevant för Lejonfastigheters roll gentemot Linköpings nämnder."
+      "sammandrag": "CMB-forskning som identifierar att stora behov av förnyelse kombinerat med klimatmål kräver omprövad arbetsmetodik och bättre samverkan mellan förvaltningar. Relevant för Lejonfastigheters roll gentemot Linköpings nämnder.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan fungerar och innehållet matchar ämnet: CMB-frukostseminarium 'Kommunal strategisk fastighetsförvaltning – hinder och möjligheter' med forskarna Ingrid Svensson och Pernilla Gluch (Chalmers), om strategiska utmaningar när kommunala fastighetsförvaltare ska genomföra nödvändiga omfattande renoveringar, behov av ny syn på förvaltning och översyn av roller för effektiv samverkan. Avvikelser: sidan är daterad 4 februari 2022, inte 2024 som källposten anger, och är en aktivitets-/seminariesida baserad på forskning snarare än en forskningsrapport."
+      }
     },
     {
       "id": "iva-resurseffektiva-lokaler",
@@ -900,8 +1389,14 @@
       "titel": "Resurseffektiva lokaler i Sverige",
       "organisation": "Kungl. Ingenjörsvetenskapsakademien (IVA)",
       "datum": "2019",
-      "url": "https://www.iva.se/globalassets/bilder/projekt/resurseffektivitet-och-cirkular-ekonomi/201912-iva-rece-branschrapport-lokaler-h.pdf",
-      "sammandrag": "IVA-rapport som visar att kontors- och lokalbestånd nyttjas till ~10 procent och föreslår att skattefrågor, hyreslag och PBL ses över för att möjliggöra lokaldelning. Den centrala policyimpulsen för 'samnyttja innan du bygger nytt'."
+      "url": "https://www.iva.se/contentassets/ab0dbb9ad4a047058cf447814a3a3b5e/201912-iva-rece-branschrapport-lokaler.pdf",
+      "sammandrag": "IVA-rapport som visar att kontors- och lokalbestånd nyttjas till ~10 procent och föreslår att skattefrågor, hyreslag och PBL ses över för att möjliggöra lokaldelning. Den centrala policyimpulsen för 'samnyttja innan du bygger nytt'.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "Original-URL:en (globalassets-sökvägen) ger HTTP 500 'Något gick fel' vid upprepade försök (curl x2 med olika UA samt WebFetch) — trasig resurs hos IVA. Rapporten återfanns via webbsökning på ny IVA-adress (contentassets) och verifierades i sin helhet (60 sidor). Obs: rapporten är daterad januari 2020 på omslaget (posten anger 2019; filnamnet 201912). — Tidigare URL: https://www.iva.se/globalassets/bilder/projekt/resurseffektivitet-och-cirkular-ekonomi/201912-iva-rece-branschrapport-lokaler-h.pdf"
+      }
     },
     {
       "id": "iva-vagval-klimatet",
@@ -911,7 +1406,13 @@
       "organisation": "Kungl. Ingenjörsvetenskapsakademien (IVA)",
       "datum": "2020",
       "url": "https://www.iva.se/det-iva-gor/projekt-och-program/vagval-for-klimatet/",
-      "sammandrag": "IVAs delprojekt om samhällsbyggnad pekar på att ~50 % av en byggnads klimatpåverkan över 50 år ligger i byggprocessen — direkt relevant för programskede, materialval och klimatdeklaration."
+      "sammandrag": "IVAs delprojekt om samhällsbyggnad pekar på att ~50 % av en byggnads klimatpåverkan över 50 år ligger i byggprocessen — direkt relevant för programskede, materialval och klimatdeklaration.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Projektsidan fungerar och handlar om IVA:s 'Vägval för klimatet'. Men delprojekten listas som Industrisystem, Transportsystem, Samhällssystem, Livsmedelssystem och Energisystem — inte 'Samhällsbyggnad' som posten anger — och sammandragets centrala uppgift att ~50 % av en byggnads klimatpåverkan över 50 år ligger i byggprocessen återfinns inte på sidan (den finns sannolikt i delrapporten, som inte är länkad med siffran synlig)."
+      }
     },
     {
       "id": "ivl-kunskapsbank-klimat-bebyggelse",
@@ -921,7 +1422,12 @@
       "organisation": "IVL Svenska Miljöinstitutet",
       "datum": "2021",
       "url": "https://www.ivl.se/projekt/kunskapsbank-for-klimat-och-bebyggelse.html",
-      "sammandrag": "IVL:s samlade kunskap om klimatneutralt byggande. Bryter ned tekniska, organisatoriska och regulatoriska åtgärder per skede."
+      "sammandrag": "IVL:s samlade kunskap om klimatneutralt byggande. Bryter ned tekniska, organisatoriska och regulatoriska åtgärder per skede.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "ccbuild-cirkulart-byggande",
@@ -931,7 +1437,12 @@
       "organisation": "IVL Svenska Miljöinstitutet med branschpartners",
       "datum": "löpande",
       "url": "https://ccbuild.se/",
-      "sammandrag": "Nationell plattform för cirkulärt byggande — kunskapsbank, marknadsplats för återbruksprodukter, digitala verktyg. Resurs- och avfallsriktlinjer för byggande och rivning."
+      "sammandrag": "Nationell plattform för cirkulärt byggande — kunskapsbank, marknadsplats för återbruksprodukter, digitala verktyg. Resurs- och avfallsriktlinjer för byggande och rivning.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "smart-built-environment",
@@ -941,7 +1452,12 @@
       "organisation": "IQ Samhällsbyggnad / Formas, Vinnova, Energimyndigheten",
       "datum": "löpande",
       "url": "https://www.smartbuilt.se/projekt/publikationer/",
-      "sammandrag": "Strategiskt innovationsprogram för digitalisering av samhällsbyggnadssektorn. Innehåller forskning om informationshantering i offentliga beställares byggprocesser."
+      "sammandrag": "Strategiskt innovationsprogram för digitalisering av samhällsbyggnadssektorn. Innehåller forskning om informationshantering i offentliga beställares byggprocesser.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "skolhusgruppen-publikationer",
@@ -951,7 +1467,12 @@
       "organisation": "Skolhusgruppen",
       "datum": "löpande",
       "url": "https://www.skolhusgruppen.se/publikationer-25288138",
-      "sammandrag": "Samlar svensk forskning och praktik om skol- och förskolemiljöer. Forskningsöversikt 2023 av Jansson & Herbert sammanställer 88 vetenskapliga publikationer. Centralt nav för evidensbaserad skoldesign."
+      "sammandrag": "Samlar svensk forskning och praktik om skol- och förskolemiljöer. Forskningsöversikt 2023 av Jansson & Herbert sammanställer 88 vetenskapliga publikationer. Centralt nav för evidensbaserad skoldesign.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "manuell"
+      }
     },
     {
       "id": "lindahl-chalmers",
@@ -961,7 +1482,13 @@
       "organisation": "Chalmers, Arkitektur och samhällsbyggnadsteknik",
       "datum": "löpande",
       "url": "https://research.chalmers.se/en/person/goranlin",
-      "sammandrag": "Docent vid Chalmers med fokus på projektledning och FM ur beställarperspektiv, särskilt planering av arbetsplatser och vårdmiljöer. Central svensk akademisk röst för beställarrollen."
+      "sammandrag": "Professor vid Chalmers med fokus på projektledning och FM ur beställarperspektiv, särskilt planering av arbetsplatser och vårdmiljöer. Central svensk akademisk röst för beställarrollen.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan fungerar och bekräftar forskningsprofilen: Göran Lindahl vid Chalmers (Construction Management, inom institutionen för arkitektur och samhällsbyggnadsteknik), 99 publikationer 1994–2026 om byggherrens/beställarens krav, 'dynamic capabilities of public construction clients', usability/FM, vårdmiljöer och nordiska arbetsplatskoncept. Avvikelse: sammandraget anger 'docent' men sidan anger Professor — titeln bör uppdateras."
+      }
     },
     {
       "id": "statsbygg-arsrapport-2024",
@@ -971,7 +1498,13 @@
       "organisation": "Statsbygg (Norge, Digitaliserings- og forvaltningsdepartementet)",
       "datum": "2025-03",
       "url": "https://dok.statsbygg.no/wp-content/uploads/2025/03/Arsrapport2024_endelig-3.pdf",
-      "sammandrag": "Norges statliga lokalförsörjare (motsvarar SFV i Sverige). Förvaltar ~2,9 miljoner m² statliga byggnader. 2024 var aktiviteten rekordhög med Nytt Regjeringskvartal, Livsvitenskapsbygget, NTNU Campussamling m.fl. Rapporten dokumenterar konkret avvikelseanalys — direkt jämförbar med svenska programskede-resonemang."
+      "sammandrag": "Norges statliga lokalförsörjare (motsvarar SFV i Sverige). Förvaltar ~2,9 miljoner m² statliga byggnader. 2024 var aktiviteten rekordhög med Nytt Regjeringskvartal, Livsvitenskapsbygget, NTNU Campussamling m.fl. Rapporten dokumenterar konkret avvikelseanalys — direkt jämförbar med svenska programskede-resonemang.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF:en laddades ner (95 sidor) och är korrekt dokument: Statsbyggs Årsrapport 2024. Central uppgift bekräftad: 'Ved utgangen av 2024 forvaltet Statsbygg et samlet areal på 2,9 mill. kvadratmeter' (s. 19). Regjeringskvartalet, Livsvitenskapsbygget och NTNU Campussamling omnämns flerfaldigt. Anmärkning: Årsrapport 2025 är publicerad (verifierad med HTTP 200). — Nyare utgåva: Statsbygg Årsrapport 2025 (2026-03)"
+      }
     },
     {
       "id": "oslobygg-arsberetning-2024",
@@ -981,7 +1514,13 @@
       "organisation": "Oslobygg KF, Oslo kommune",
       "datum": "2025",
       "url": "https://oslokommune.framsikt.net/2024/obf/mr-202412-arsberetning_2024_oslobygg_kf",
-      "sammandrag": "Oslos kommunala lokalförsörjare — slogs ihop 2021 av Undervisningsbygg, Omsorgsbygg, Kultur- og idrettsbygg, Boligbygg. ~2,7 miljoner m², ~1 800 byggnader. Investerar 5–6 mdr NOK/år. Närmaste direkta motsvarighet till Lejonfastigheter — fast i Oslo-skala."
+      "sammandrag": "Oslos kommunala lokalförsörjare — slogs ihop 2021 av Undervisningsbygg, Omsorgsbygg, Kultur- og idrettsbygg, Boligbygg. ~2,7 miljoner m², ~1 800 byggnader. Investerar 5–6 mdr NOK/år. Närmaste direkta motsvarighet till Lejonfastigheter — fast i Oslo-skala.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "URL:en svarar 200 och sidans metadata (og:title) bekräftar 'Årsberetning 2024 for Oslobygg KF' på Oslo kommunes Framsikt-plattform. Innehållet är dock helt JS-renderat, så sammandragets siffror (2,7 miljoner m2, 1 800 byggnader, 5-6 mdr NOK/år) kunde inte verifieras i dokumenttexten. WebSearch bekräftar dock oberoende ca 1 800 byggnader och investeringar 5-6 mdr NOK/år, samt att Årsberetning 2025 nu finns via Oslo kommunes rapporteringssida. — Nyare utgåva: Årsberetning 2025 — Oslobygg KF (2026-03)"
+      }
     },
     {
       "id": "oslobygg-kostnadsanalys-skoler",
@@ -991,7 +1530,13 @@
       "organisation": "Oslobygg KF / DFØ Anskaffelser",
       "datum": "2023-11",
       "url": "https://www.anskaffelser.no/sites/default/files/2024-06/Rapport-Sammenstilling-av-kostnadsnivaer-Bentsebrua-skole-Torvbraten-skole-30.11.2023.pdf",
-      "sammandrag": "Jämförande kostnadsanalys mellan två norska skolprojekt — bakgrund till offentlig debatt där Bjørvika skole rapporterades ~3 gånger så dyr per elev som Vestli. Visar hur kravnivå, plats och programskede driver kostnadsspridning."
+      "sammandrag": "Jämförande kostnadsanalys mellan två norska skolprojekt — bakgrund till offentlig debatt där Bjørvika skole rapporterades ~3 gånger så dyr per elev som Vestli. Visar hur kravnivå, plats och programskede driver kostnadsspridning.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF:en laddades ner (35 sidor) och är korrekt dokument: 'Kostnadsanalyse — Sammenstilling av kostnadsnivåer for Bentsebrua skole og Torvbråten skole', beställare Oslobygg KF, utförd av Holte Consulting och Menon Economics, daterad 30 november 2023, ver 1.0. Anmärkning: sammandragets uppgift om Bjørvika skole ~3 gånger dyrare per elev än Vestli förekommer inte i rapporten (0 träffar på Bjørvika/Vestli) — den delen av sammandraget är kontext från den offentliga debatten, inte rapportinnehåll. Engångsrapport, ingen nyare utgåva relevant."
+      }
     },
     {
       "id": "senaatti-arsrapport-2024",
@@ -1001,7 +1546,13 @@
       "organisation": "Senatfastigheter (Finland)",
       "datum": "2025-02",
       "url": "https://www.senaatti.fi/app/uploads/2025/02/Tilinpaatos-Senaatti-kiinteistot-2024.pdf",
-      "sammandrag": "Finlands statliga lokalförsörjare för civila myndigheter. Koncernen omsatte 2024 ca 1 mdr EUR. Byggnadsinvesteringar 407 milj. EUR. Senatkoncernen sänkte myndighetshyror med 19 milj. EUR vid årsskiftet 2025. Direkt jämförbar med SFV/Statsbygg."
+      "sammandrag": "Finlands statliga lokalförsörjare för civila myndigheter. Koncernen omsatte 2024 ca 1 mdr EUR. Byggnadsinvesteringar 407 milj. EUR. Senatkoncernen sänkte myndighetshyror med 19 milj. EUR vid årsskiftet 2025. Direkt jämförbar med SFV/Statsbygg.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (63 sidor, 'Senaatti-kiinteistöt Toimintakertomus ja tilinpäätös 1.1.–31.12.2024', daterad 25.2.2025). Bekräftat: koncernens omsättning 997,4 milj. euro ≈ ca 1 mdr EUR (s. 7); hyressänkning från 1.1.2025 om ca 13 milj. euro (Senaatti) + 7 milj. euro (Puolustuskiinteistöt) ≈ 20 milj. euro, och Senaattis vuosikertomus anger 19 milj. euro — sammandragets uppgift i allt väsentligt korrekt (s. 18, 30). Avvikelse: 'byggnadsinvesteringar 407 milj. EUR' återfinns inte — 2024 var totala investeringar 759 milj. euro, varav 728 inom investeringsfullmakten (s. 15). Nyare utgåva (tilinpäätös 2025) finns. — Nyare utgåva: Senaatti-konsernin toimintakertomus ja tilinpäätös 2025 / vuosikertomus 2025 (2026-02)"
+      }
     },
     {
       "id": "bygherreforeningen-dk",
@@ -1011,7 +1562,13 @@
       "organisation": "Bygherreforeningen, Danmark",
       "datum": "löpande",
       "url": "https://bygherreforeningen.dk/saadan-er-bygherrerne-i-danmark/",
-      "sammandrag": "Dansk motsvarighet till Byggherrarna Sverige. 270 medlemmar (offentliga, allmännyttiga, privata beställare) som tillsammans bygger för >100 mdr DKK/år. Samarbetar med Byggeriets Evalueringscenter om nationell nyckeltalsmodell."
+      "sammandrag": "Dansk motsvarighet till Byggherrarna Sverige. 270 medlemmar (offentliga, allmännyttiga, privata beställare) som tillsammans bygger för >100 mdr DKK/år. Samarbetar med Byggeriets Evalueringscenter om nationell nyckeltalsmodell.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan fungerar: 'Sådan er bygherrerne i Danmark' hos Bygherreforeningen, med statistik från medlemsundersökning 2024 (könsfördelning, ålder, utbildning, roller). Avvikelse: sammandragets centrala uppgifter — 270 medlemmar, byggvolym >100 mdr DKK/år och samarbetet med Byggeriets Evalueringscenter om nyckeltalsmodell — återfinns inte på just denna sida; de uppgifterna behöver annan källhänvisning (t.ex. föreningens om-oss-sida)."
+      }
     },
     {
       "id": "by-og-havn-arsrapport-2024",
@@ -1021,7 +1578,13 @@
       "organisation": "Udviklingsselskabet By & Havn I/S (Köpenhamns kommun + finansministeriet)",
       "datum": "2025-04",
       "url": "https://byoghavn.dk/wp-content/uploads/2025/07/By-Havn-Aarsrapport-2024-1.pdf",
-      "sammandrag": "Köpenhamns offentligt ägda projektbolag för stadsutveckling (Ørestad, Nordhavn). Bolaget säljer byggrätter som styr när skolor och daginstitutioner byggs ut — strukturell motsvarighet till svenska markanvisningsmodellen. Första gången rapporten är CSRD-integrerad."
+      "sammandrag": "Köpenhamns offentligt ägda projektbolag för stadsutveckling (Ørestad, Nordhavn). Bolaget säljer byggrätter som styr när skolor och daginstitutioner byggs ut — strukturell motsvarighet till svenska markanvisningsmodellen. Första gången rapporten är CSRD-integrerad.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (130 sidor, skapad 2025-03-31). Rätt dokument: Udviklingsselskabet By & Havn I/S årsrapport 2024. Bekräftat: ägs av Københavns Kommune 95 % och staten 5 % (s. 7); säljer byggeretter som kärnaffär, bl.a. Enghave Brygge 100 000 etagemeter — största enskilda försäljningen i bolagets historia (s. 5, 9-10, 13); Ørestad/Nordhavn genomgående. Nyans: rapporten beskriver sig som 'förberedelse' inför CSRD — strukturen avspeglar CSRD-krav men redovisningen sker enligt Årsregnskabsloven (s. 2), så 'CSRD-integrerad' är en lätt överdrift. Nyare utgåva (årsrapport 2025) finns. — Nyare utgåva: By & Havn Årsrapport 2025 (2026-03)"
+      }
     },
     {
       "id": "ssb-kostra-byggesak",
@@ -1031,7 +1594,13 @@
       "organisation": "Statistisk sentralbyrå (SSB) / DiBK, Norge",
       "datum": "löpande",
       "url": "https://www.ssb.no/natur-og-miljo/statistikker/fysplan/aar",
-      "sammandrag": "Norsk nationell statistik för byggsöknads- och reguleringsplanshandläggning per kommun. Norge har lagstadgad 12-veckors frist för byggesak med automatisk gebyrreduktion (25 %/vecka). Direkt jämförbar primärkälla mot svensk PBL-handläggningstid."
+      "sammandrag": "Norsk nationell statistik för byggsöknads- och reguleringsplanshandläggning per kommun. Norge har lagstadgad 12-veckors frist för byggesak med automatisk gebyrreduktion (25 %/vecka). Direkt jämförbar primärkälla mot svensk PBL-handläggningstid.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Sidan fungerar: SSB:s statistiksida 'Plan- og byggesaksbehandling' (fysplan) inom KOSTRA. Avvikelser: statistiksidan uppdaterades senast 2021-07-01 och 'neste oppdatering' är 'foreløpig ikke fastsatt' — som primärkälla för aktuella handläggningstider bör i stället Statistikkbanken användas, där KOSTRA-nyckeltalen för plan- og byggesaksbehandling finns t.o.m. 2024 (tabell 14304). Sammandragets uppgifter om lagstadgad 12-veckorsfrist och automatisk gebyrreduktion återfinns inte på sidan (de följer av plan- og bygningsloven § 21-7, inte av SSB-statistiken) och behöver separat källa. — Nyare utgåva: KOSTRA-nøkkeltall for plan- og byggesaksbehandling, Statistikkbanken tabell 14304 (2015–2024) (2025-06)"
+      }
     },
     {
       "id": "linkoping-budget-2025-2030",
@@ -1040,8 +1609,14 @@
       "titel": "Budget 2025 med plan för 2026–2030 — Linköpings kommun",
       "organisation": "Linköpings kommun",
       "datum": "2024-11",
-      "url": "https://www.linkoping.se/contentassets/1d75d3d8b5e84f7595208795efa20a1a/budget-2025-med-plan-for-2026-2030.pdf",
-      "sammandrag": "Investeringsram 803 mnkr för 2025. Nytt finansiellt krav: 50 % av investeringar ska finansieras med egna medel. Barn- och ungdomsnämnden tillförs 39 mnkr för demografianpassning; social- och omsorgsnämnden 25 mnkr för LSS-utbyggnad."
+      "url": "https://via.tt.se/files/3235469/3506398/73221/sv",
+      "sammandrag": "Investeringsram 803 mnkr för 2025. Nytt finansiellt krav: 50 % av investeringar ska finansieras med egna medel. Barn- och ungdomsnämnden tillförs 39 mnkr för demografianpassning; social- och omsorgsnämnden 25 mnkr för LSS-utbyggnad.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "websearch",
+        "not": "URL:en ger äkta 404 (två försök inkl. browser-UA) — linkoping.se:s gamla contentassets-sökväg är borttagen efter webbplatsomläggning. Dokumentet återfanns i identisk kopia via kommunens pressmeddelande (via.tt.se) och verifierades (61 sidor, 'Budget för 2025 med plan för 2026–2030'). Investeringsramen 803 mnkr bekräftad. Tre av sammandragets uppgifter återfinns dock INTE i dokumentet: det explicita kravet '50 % av investeringar ska finansieras med egna medel' (dokumentet formulerar det som att budgeterade resultat ska täcka investeringar utöver avskrivningar), '39 mnkr till barn- och ungdomsnämnden för demografianpassning' och '25 mnkr till social- och omsorgsnämnden för LSS-utbyggnad' (dokumentet nämner i stället bl.a. 35 mnkr förskolebemanning, 15 mnkr grundskola, 50 mnkr totalt till social- och omsorgsnämnden inkl. två nya gruppbostäder). — Tidigare URL: https://www.linkoping.se/contentassets/1d75d3d8b5e84f7595208795efa20a1a/budget-2025-med-plan-for-2026-2030.pdf — Nyare utgåva: Budget 2026 för Linköpings kommun med plan för 2027–2031 (2025-06)"
+      }
     },
     {
       "id": "linkoping-lfp-2024-revision",
@@ -1051,7 +1626,13 @@
       "organisation": "Linköpings kommun, Kommunstyrelsen",
       "datum": "2024-12",
       "url": "https://sammantraden.linkoping.se/welcome-sv/namnder-styrelser/kommunstyrelsen/kommunstyrelsen-2024-12-03/agenda/bilaga-2-kommungemensam-lokalforsorjningsplanpdf?downloadMode=open",
-      "sammandrag": "Senaste reviderade kommungemensamma LFP, beslutad KS 2024-12-03. Åtgärdspaket för skola, förskola, äldreboenden, LSS och idrott. Refererar hyresnotor ~1 392 mnkr/år → ~1 666 mnkr/år (+21 %) efter åtgärdspaket."
+      "sammandrag": "Senaste reviderade kommungemensamma LFP, beslutad KS 2024-12-03. Åtgärdspaket för skola, förskola, äldreboenden, LSS och idrott. Refererar hyresnotor ~1 392 mnkr/år → ~1 666 mnkr/år (+21 %) efter åtgärdspaket.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF (13 sidor) nedladdad: 'Kommungemensam Lokalförsörjningsplan, Linköpings kommun'. Men dokumentet är daterat 2024-04-15 — inte december 2024 — även om URL:en pekar på bilaga 2 till KS-sammanträdet 2024-12-03. Sammandragets hyresnotor 1 392 -> 1 666 mnkr/år (+21 %) återfinns INTE i dokumentet; det anger i stället total hyreskostnad ca 1 353 mkr/år (858 585 m2 BRA, snitt 1 617 kr/m2) resp. ca 1 453 mkr för lokaler hyrda av Lejonfastigheter. Orden 'åtgärdspaket', 'äldreboende' och 'LSS' förekommer inte. Sammandraget verkar beskriva ett annat/senare dokument. WebSearch efter dec 2025-revision gav ingen tydlig träff."
+      }
     },
     {
       "id": "region-ostergotland-framtidens-us",
@@ -1061,7 +1642,12 @@
       "organisation": "Region Östergötland, Regionfastigheter",
       "datum": "löpande",
       "url": "https://www.regionostergotland.se/ro/om-region-ostergotland/fastigheter-och-lokaler/byggprojekt-i-region-ostergotland/byggprojekt-universitetssjukhuset-i-linkoping",
-      "sammandrag": "Regionens största fastighetsinvestering: 80 000 m² nybyggnation + 55 000 m² ombyggnation 2011–2025. Investeringsbeslut totalt ca 3,8 mdkr. Visar att även regionsjukhus har ledtider i nivå med stora kommunala projekt (14 år)."
+      "sammandrag": "Regionens största fastighetsinvestering: 80 000 m² nybyggnation + 55 000 m² ombyggnation 2011–2025. Investeringsbeslut totalt ca 3,8 mdkr. Visar att även regionsjukhus har ledtider i nivå med stora kommunala projekt (14 år).",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "norrkoping-principer-lokalforsorjning",
@@ -1069,9 +1655,15 @@
       "typ": "kommunal-plan",
       "titel": "Principer för Lokalförsörjning — Norrköpings kommun",
       "organisation": "Norrköpings kommun, Samhällsbyggnadskontoret",
-      "datum": "2024-01",
+      "datum": "2023-08",
       "url": "https://norrkoping.se/download/18.48976c7718c8af0a6c542ae/1705412136601/KS%202023_0531-2%20_%20KS%202023_0531-2%20Principer%20f%C3%B6r%20lokalf%C3%B6rs%C3%B6rjning%20-%20Lokalf%C3%B6rs%C3%B6rjningsplan%201%201917705_1676706_0.PDF",
-      "sammandrag": "Norrköpings styrdokument med principer, roller och planprocess för lokalförsörjning. Direkt jämförbar med Linköpings KS-styrdokument."
+      "sammandrag": "Norrköpings styrdokument med principer, roller och planprocess för lokalförsörjning. Direkt jämförbar med Linköpings KS-styrdokument.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF (3 sidor) nedladdad. Rätt dokument: 'Principer för Lokalförsörjning', riktlinje, Strategisk planering/Samhällsbyggnadskontoret, Norrköpings kommun. Men dokumentet är daterat 2023-08-11 och antaget av kommunstyrelsen 2023-09-25 § 143 — källpostens datum 2024-01 är bara filens uppladdningstidpunkt."
+      }
     },
     {
       "id": "akademiska-hus-campusplan-valla-2030",
@@ -1081,7 +1673,12 @@
       "organisation": "Akademiska Hus & Linköpings universitet",
       "datum": "2018",
       "url": "https://www.akademiskahus.se/contentassets/36eb607b99f347e39c9768fd8b415088/campusplan_liu_valla_2030_webb.pdf",
-      "sammandrag": "Strukturplan för Campus Valla 2018–2030, framtagen av Akademiska Hus i samarbete med LiU och Linköpings kommun. Konkretiseras t.ex. via Studenthus Valla (Miljöbyggnad guld)."
+      "sammandrag": "Strukturplan för Campus Valla 2018–2030, framtagen av Akademiska Hus i samarbete med LiU och Linköpings kommun. Konkretiseras t.ex. via Studenthus Valla (Miljöbyggnad guld).",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "adda-forskolebyggnader-2018",
@@ -1090,8 +1687,14 @@
       "titel": "Ramavtal Förskolebyggnader 2018",
       "organisation": "Adda Inköpscentral (f.d. SKL Kommentus)",
       "datum": "2018",
-      "url": "https://www.adda.se/upphandling-och-ramavtal/ramavtal-och-avtalskategorier/bygg-och-fastighet/forskolebyggnader/forskolebyggnader-2018/",
-      "sammandrag": "Nationellt ramavtal för nyckelfärdiga förskolebyggnader. Fyra konceptstorlekar: A) 60–80 barn 1-plan, B) 80–120 barn 1-plan, C) 80–120 barn 2-plan, D) 120–160 barn 2-plan. 11 leverantörer. Löpte ut 2026-03-15."
+      "url": "https://web.archive.org/web/20260207224314/https://www.adda.se/upphandling-och-ramavtal/ramavtal-och-avtalskategorier/bygg-och-fastighet/forskolebyggnader/forskolebyggnader-2018/",
+      "sammandrag": "Nationellt ramavtal för nyckelfärdiga förskolebyggnader. Fyra konceptstorlekar: A) 60–80 barn 1-plan, B) 80–120 barn 1-plan, C) 80–120 barn 2-plan, D) 120–160 barn 2-plan. 11 leverantörer. Löpte ut 2026-03-15.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "Äkta 404 (verifierat med WebFetch och curl) — sidan är borttagen från adda.se sedan ramavtalet löpte ut 2026-03-15. Wayback-kopia från 2026-02-07 finns (web.archive.org är egress-blockerat härifrån men fungerar i webbläsare). Efterföljaren Förskole- och skolbyggnader 2025-2 är verifierad live på adda.se. — Tidigare URL: https://www.adda.se/upphandling-och-ramavtal/ramavtal-och-avtalskategorier/bygg-och-fastighet/forskolebyggnader/forskolebyggnader-2018/ — Nyare utgåva: Förskole- och skolbyggnader 2025-2 (2026-08)"
+      }
     },
     {
       "id": "adda-forskola-skola-2025-2",
@@ -1101,27 +1704,44 @@
       "organisation": "Adda Inköpscentral",
       "datum": "2026",
       "url": "https://www.adda.se/upphandling-och-ramavtal/planerade-och-pagaende-upphandlingar/forskole-och-skolbyggnader-2025-2/",
-      "sammandrag": "Efterföljaren till Förskolebyggnader 2018, utökad till att även omfatta grundskolebyggnader. Avtalsstart sommaren 2026."
+      "sammandrag": "Efterföljaren till Förskolebyggnader 2018, utökad till att även omfatta grundskolebyggnader. Avtalsstart sommaren 2026.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     },
     {
       "id": "skr-bestallarvanlig-samverkan-2021",
       "omrade": "samhallsfastighetsbolag",
       "typ": "vagledning",
       "titel": "Beställarvänlig samverkan i byggentreprenader",
-      "organisation": "SKR & Byggherrarna",
-      "datum": "2021",
-      "url": "https://skr.se/download/18.45167e4317e2b341b24abed9/1642672845288/7585-726-8.pdf",
-      "sammandrag": "SKR-vägledning som beskriver partnering/samverkansentreprenad ur offentlig beställares perspektiv. Centralt påstående: partnering kräver tydlig beställarroll för att leverera tids- och kostnadsvinster."
+      "organisation": "SKL (Sveriges Kommuner och Landsting) & Byggherrarna",
+      "datum": "2019-05",
+      "url": "https://extra.skr.se/download/18.3c9f9e1e17db3f33e522f6f/1639429780497/7585-726-8.pdf",
+      "sammandrag": "SKR-vägledning som beskriver partnering/samverkansentreprenad ur offentlig beställares perspektiv. Centralt påstående: partnering kräver tydlig beställarroll för att leverera tids- och kostnadsvinster.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "Ursprungs-URL:en ger SKR:s 404-sida ('Felsida 404 - SKR') — död länk. Fungerande spegel hittad på extra.skr.se med identiskt filnamn (7585-726-8.pdf) och verifierad: 'Beställarvänlig samverkan i byggentreprenader — en introduktion: nyckelkomponenter för en lyckad samverkan samt referat från workshop' (22 sidor). Avvikelser i metadata: skriften är daterad Stockholm i maj 2019 (utgiven av SKL, ISBN 978-91-7585-726-8, publicerad 2019-06-27), inte 2021; Byggherrarna medverkade som huvudtalare (Lennartsson, Lenberg) men utgivaren är SKL/SKR. Innehållet stödjer sammandragets centrala påstående om partnering ur offentlig beställares perspektiv och beställarrollens betydelse (s. 8-14). — Tidigare URL: https://skr.se/download/18.45167e4317e2b341b24abed9/1642672845288/7585-726-8.pdf"
+      }
     },
     {
       "id": "skr-hyra-lokal-lou",
       "omrade": "skolor-forskolor",
       "typ": "vagledning",
       "titel": "Gäller LOU vid hyra av lokal? — SKR-vägledning",
-      "organisation": "Sveriges Kommuner och Regioner (SKR)",
-      "datum": "2021-12",
+      "organisation": "SKL (Sveriges Kommuner och Landsting)",
+      "datum": "2019-06",
       "url": "https://extra.skr.se/download/18.3c9f9e1e17db3f33e522d60/1639428881194/7585-737-4.pdf",
-      "sammandrag": "Vägledning om hyresundantaget i LOU 3 kap. Rena hyresavtal undantagna, men skolor/sjukhus med starka anpassningskrav riskerar falla utanför. Hertsöskolan i Luleå (Expandia-moduler) som case."
+      "sammandrag": "Vägledning om hyresundantaget i LOU 3 kap. Rena hyresavtal undantagna, men skolor/sjukhus med starka anpassningskrav riskerar falla utanför. Hertsöskolan i Luleå (Expandia-moduler) som case.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "URL fungerar, PDF (74 sidor) nedladdad: 'Gäller LOU vid hyra av lokal? Tips och råd'. Men utgivare är SKL (Sveriges Kommuner och Landsting), publicerad juni 2019 (© SKL 2019, ISBN 978-91-7585-737-4) — inte SKR 2021-12 som källposten anger (2021-12 är filens uppladdningstid på extra.skr.se). Hyresundantaget i LOU behandlas genomgående (56 träffar på 'hyresundantag'). Sammandragets case 'Hertsöskolan i Luleå (Expandia-moduler)' finns INTE i dokumentet — närmaste motsvarighet är rättsfallet 'Bostadsmodulerna' (Kammarrätten i Sundsvall, mål nr 395-10) om skolmoduler, s. 60."
+      }
     },
     {
       "id": "byggherrarna-strategisk-partnering",
@@ -1129,9 +1749,15 @@
       "typ": "rapport",
       "titel": "Strategisk Partnering",
       "organisation": "Byggherrarna Sverige AB",
-      "datum": "2018",
+      "datum": "2012-06",
       "url": "https://www.byggherre.se/library/1093/rapport_strategisk_partnering.pdf",
-      "sammandrag": "Byggherrarnas rapport om strategisk (flerprojekts-)partnering som komplement till klassisk projektpartnering."
+      "sammandrag": "Byggherrarnas rapport om strategisk (flerprojekts-)partnering som komplement till klassisk projektpartnering.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad OK (19 sidor). Rätt dokument: 'Rapport - Strategisk Partnering — en sammanfattning av arbetssätt och status', Byggherrarna Sverige AB, författare Anna Rhodin. Avvikelse: rapporten är daterad 2012-06-01, inte 2018 som källposten anger. Innehållet motsvarar sammandraget: vad strategisk (flerprojekts-)partnering är, arbetssätt, erfarenheter och lämpliga användningsområden."
+      }
     },
     {
       "id": "konkurrensverket-entreprenad-2014",
@@ -1141,7 +1767,12 @@
       "organisation": "Konkurrensverket / Per Erik Eriksson (LTU) & John Hane",
       "datum": "2014",
       "url": "https://www.konkurrensverket.se/globalassets/dokument/informationsmaterial/rapporter-och-broschyrer/uppdragsforskning/forsk-rapport_2014-4_entreprenadupphandlingar.pdf",
-      "sammandrag": "Akademisk genomgång av entreprenadformer (utförande/total/samverkan/partnering) ur byggherrens perspektiv. Visar att partnering ger mätbara effekter när delaktiviteter (gemensamma mål, teambuilding, gemensam projektdatabas, facilitator) faktiskt implementeras."
+      "sammandrag": "Akademisk genomgång av entreprenadformer (utförande/total/samverkan/partnering) ur byggherrens perspektiv. Visar att partnering ger mätbara effekter när delaktiviteter (gemensamma mål, teambuilding, gemensam projektdatabas, facilitator) faktiskt implementeras.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "pdf-nedladdning"
+      }
     },
     {
       "id": "sala-modulskola-adapteo",
@@ -1149,9 +1780,210 @@
       "typ": "slutrapport",
       "titel": "Gärdesta modulskola, Sala — Skandinaviens största modulskola",
       "organisation": "Sala kommun / Adapteo",
-      "datum": "2017-08",
-      "url": "https://adapteo.se/insights/gardesta-skola",
-      "sammandrag": "161 moduler, 5 340 m² BTA i två plan, 350 elever. Hyresavtal 4 år, 37 mkr över 4 år → ca 1 700 kr/m² BTA/år. Leveranstid 3 månader för montage. Modulskola är OPEX (hyra) inte CAPEX — leverantören äger byggnaden."
+      "datum": "2018-07",
+      "url": "https://www.sala.se/message/15350/?type=press",
+      "sammandrag": "161 moduler, 5 340 m² BTA i två plan, 350 elever. Hyresavtal 4 år, 37 mkr över 4 år → ca 1 700 kr/m² BTA/år. Leveranstid 3 månader för montage. Modulskola är OPEX (hyra) inte CAPEX — leverantören äger byggnaden.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-08-26",
+        "metod": "webfetch",
+        "not": "404: adapteo.se/insights/gardesta-skola redirectar till /kundreferenser/gardesta-skola som också ger 404 — sidan borttagen. Ersättning verifierad: Sala kommuns pressmeddelande 'Skandinaviens största modulskola färdig i Sala' (2018-07-30) bekräftar alla centrala siffror. OBS: skolan stod klar sommaren 2018, inte 2017-08 som källposten anger; montagetid knappt tre månader (maj-juli 2018). — Tidigare URL: https://adapteo.se/insights/gardesta-skola"
+      }
+    },
+    {
+      "id": "uppsala-skolfastigheter-kvarngardesskolan",
+      "omrade": "skolor-forskolor",
+      "typ": "slutrapport",
+      "titel": "Nya Kvarngärdesskolan — projektsida",
+      "organisation": "Uppsala kommun Skolfastigheter AB",
+      "datum": "2025",
+      "url": "https://skolfastigheter.uppsala.se/projekt-och-upphandling/aktuella-byggprojekt/nya-kvarngardesskolan/",
+      "sammandrag": "Projektsida för Nya Kvarngärdesskolan: byggstart sommaren 2022 (spadtag augusti 2022), byggtid ca tre år, inflytt höstterminen 2025. Bruttoarea 15 898 m², kapacitet 990 elever, två skolbyggnader, idrottshall och matsal med 330 sittplatser. Samverkansentreprenad med ByggDialog.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "micasa-behov-till-boende-2026",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Från behov till färdigt boende — så arbetar Micasa för framtidens omsorg",
+      "organisation": "Micasa Fastigheter i Stockholm AB",
+      "datum": "2026-06",
+      "url": "https://micasa.se/nyheter/nyheter/2026-06-30-fran-behov-till-fardigt-boende---sa-arbetar-micasa-for-framtidens-omsorg",
+      "sammandrag": "Micasas beskrivning av nyproduktionsprocessen för vård- och omsorgsboende: från de första utredningarna till inflyttning kan det gå mer än tio år. Exempel Ånn i Årsta: initierat 2016, inriktningsbeslut KF 2020, byggstart årsskiftet 2024/25, inflytt 2028 — ca 12 år totalt, ca 8 år från inriktningsbeslut, byggtid ca 3 år.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "lund-idrottshall-idrottsstraket-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Ny idrottshall beställd — viktig pusselbit i Idrottsstråket",
+      "organisation": "Lunds kommun",
+      "datum": "2025-09",
+      "url": "https://lund.se/nyheter/nyheter/2025-09-19-ny-idrottshall-bestalld---viktig-pusselbit-i-idrottsstraket",
+      "sammandrag": "Lunds kommun beställer fullstor idrottshall i Idrottsstråket; preliminär projekttid cirka två år från beslut i kommunfullmäktige till färdig hall. Tillsammans med publicerade projektdata (byggtider 13–18 mån för fullstora hallar, t.ex. Nyköping 13 mån, Norrköping 18 mån) stöder den ledtidsintervallet ca 2,5–4 år behov→inflytt inom befintlig detaljplan.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "lovdata-pbl-21-7",
+      "omrade": "nordisk-benchmark",
+      "typ": "lagstiftning",
+      "titel": "Plan- og bygningsloven (LOV-2008-06-27-71) § 21-7 — Tidsfrister med særskilte virkninger",
+      "organisation": "Lovdata (Norge)",
+      "datum": "löpande",
+      "url": "https://lovdata.no/lov/2008-06-27-71/%C2%A721-7",
+      "sammandrag": "Lagstadgad frist: byggesøknad ska avgöras av kommunen inom tolv veckor från fullständig ansökan; vid överskriden frist ska kommunen betala tillbaka byggesaksgebyret enligt föreskrift (byggesaksforskriften SAK10 § 7-4: 25 % per påbörjad vecka). Kortare 3-veckorsfrist för vissa ärendetyper. Primärkälla för den norska 12-veckorsfristen.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "norrkoping-smedbyskolan-byggstart-2021",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Nu börjar bygget av nya Smedbyskolan",
+      "organisation": "Norrköpings kommun",
+      "datum": "2021-05",
+      "url": "https://via.tt.se/pressmeddelande/3298783/nu-borjar-bygget-av-nya-smedbyskolan?publisherId=1347718",
+      "sammandrag": "Byggstart maj 2021. Budget 252 mkr, F-6-skola med två klasser per årskurs, två plan, fullstor idrottshall, klar våren 2024. Bekräftar budgeten men anger ingen BTA.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "orebro-brickebacken-byggfakta-2024",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Nybyggnad av vård- och omsorgsboende i södra Brickebacken (ByggfaktaDOCU)",
+      "organisation": "ByggfaktaDOCU / Örebrobostäder AB",
+      "datum": "2024",
+      "url": "https://www.byggfaktadocu.se/nybyggnad-av-vaard-och-omsorgsboende-i-sodra/projekt.html",
+      "sammandrag": "Projektpost: 106 lägenheter, uppskattad kostnad 230 mkr, totalentreprenör Consto AB, byggherre Örebrobostäder AB, byggtid jan 2024–feb 2026 (26 mån) → ca 2,17 mkr/plats. Ingen BTA angiven.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "hemso-bredang-attendo-2022",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "rapport",
+      "titel": "Hemsö utvecklar äldreboende i Bredäng för Attendo",
+      "organisation": "Hemsö Fastighets AB",
+      "datum": "2022-05",
+      "url": "https://hemso.se/press/nyheter/2022/5/hemso-utvecklar-aldreboende-i-bredang-for-attendo",
+      "sammandrag": "Total investering ca 240 mkr, 4 200 kvm uthyrbar yta, 62 platser, 15-årigt hyresavtal med Attendo → ca 57 000 kr/m2 UY. NollCO2 + Miljöbyggnad Guld, trästomme. Invigt mars 2025.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "scb-bki-statistiknyhet-feb-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "branschindex",
+      "titel": "Fortsatt negativ årstakt för Byggkostnadsindex (februari 2025)",
+      "organisation": "SCB",
+      "datum": "2025-03",
+      "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/priser-och-ekonomiska-tendenser/priser/byggkostnadsindex-bki/pong/statistiknyhet/byggkostnadsindex-for-byggnader-februari-2025/",
+      "sammandrag": "BKI för flerbostadshus −0,2 % feb 2024–feb 2025 (femte månaden i rad med negativ årstakt); +0,3 % jan–feb 2025. Räntekostnader −24,5 % i årstakt. Permanent källa för det historiska feb 2025-värdet — BKI-landningssidan visar bara senaste utfallet.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "stockholm-stad-sisab-bolagssida",
+      "omrade": "skolor-forskolor",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Sisab — Skolfastigheter i Stockholm AB (Stockholms stads bolagssida)",
+      "organisation": "Stockholms stad",
+      "datum": "löpande",
+      "url": "https://start.stockholm/om-stockholms-stad/organisation/bolag/sisab--skolfastigheter-i-stockholm-ab/",
+      "sammandrag": "Ägaren Stockholms stads presentation av SISAB: bolaget äger och förvaltar merparten av stadens skolor och förskolor, cirka 600 byggnader om cirka 1,8 miljoner kvadratmeter där över 200 000 personer vistas dagligen.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "scb-fruktsamhet-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "statistik",
+      "titel": "Antal födda barn per kvinna i Sverige når ny lägstanivå (pressmeddelande)",
+      "organisation": "SCB",
+      "datum": "2026-02",
+      "url": "https://www.scb.se/pressmeddelande/antal-fodda-barn-per-kvinna-i-sverige-nar-ny-lagstaniva/",
+      "sammandrag": "Summerad fruktsamhet 1,42 år 2025 (1,43 år 2024) — det lägsta talet någonsin i en statistikserie som sträcker sig flera hundra år tillbaka. 97 500 barn föddes 2025, det lägsta antalet på 23 år.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "linkoping-budget-2025-pressmeddelande",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "En stabil budget för att framtidssäkra Linköping (pressmeddelande, budget 2025)",
+      "organisation": "Linköpings kommun",
+      "datum": "2024-11",
+      "url": "https://via.tt.se/pressmeddelande/3943608/en-stabil-budget-for-att-framtidssakra-linkoping?publisherId=3235469&lang=sv",
+      "sammandrag": "Kommunens pressmeddelande om budget 2025: barn- och ungdomsnämnden tillförs 39 mnkr för att dämpa effekterna av färre barn i verksamheterna; social- och omsorgsnämnden tillförs 25 mnkr för förbättrat stöd i skyddat boende, ökad utbyggnadstakt av LSS-bostäder och fler platser i daglig verksamhet. Oförändrad skattesats 20,20.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "boverket-livscykel-gwp-2026",
+      "omrade": "fastighet-demografi",
+      "typ": "lagstiftning",
+      "titel": "Regler om livscykel-GWP och gränsvärden för byggnaders klimatpåverkan (Boverkets slutredovisning, rapport 2026:16)",
+      "organisation": "Boverket",
+      "datum": "2026-05",
+      "url": "https://www.boverket.se/sv/om-boverket/nyheter-aktuellt/nyheter/regler-om-byggnaders-klimatpaverkan--boverket-lamnar-forslag-till-nya-krav/",
+      "sammandrag": "Boverket lämnade 20 maj 2026 lag- och förordningsförslag till regeringen: hela livscykelns klimatpåverkan (livscykel-GWP) redovisas senast 1 jan 2028 för byggnader >1 000 m2, övriga nya byggnader från 1 jan 2030 då även gränsvärden införs. Kraven läggs i PBL som tekniskt egenskapskrav; nuvarande klimatdeklarationsregler upphävs. Gränsvärden differentieras per byggnadstyp; skärpningsriktning mot 2050 med målbild -90 % till 2040 jämfört med 1990.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "svensk-solenergi-epbd",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "Solklara byggnader — EPBD-direktivets solenergikrav (artikel 10)",
+      "organisation": "Svensk Solenergi",
+      "datum": "2024",
+      "url": "https://svensksolenergi.se/solklara-byggnader-epbd-direktivet/",
+      "sammandrag": "Genomgång av EPBD artikel 10: solenergiinstallationer krävs på befintliga offentliga byggnader >2 000 m2 senast 31 dec 2027, >750 m2 senast 31 dec 2028 och >250 m2 senast 31 dec 2030; nya kommersiella och offentliga byggnader >250 m2 senast 31 dec 2026; nya bostadshus och takparkeringar senast 31 dec 2029.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     }
   ]
 }
