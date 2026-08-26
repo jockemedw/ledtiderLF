@@ -1789,6 +1789,201 @@
         "metod": "webfetch",
         "not": "404: adapteo.se/insights/gardesta-skola redirectar till /kundreferenser/gardesta-skola som också ger 404 — sidan borttagen. Ersättning verifierad: Sala kommuns pressmeddelande 'Skandinaviens största modulskola färdig i Sala' (2018-07-30) bekräftar alla centrala siffror. OBS: skolan stod klar sommaren 2018, inte 2017-08 som källposten anger; montagetid knappt tre månader (maj-juli 2018). — Tidigare URL: https://adapteo.se/insights/gardesta-skola"
       }
+    },
+    {
+      "id": "uppsala-skolfastigheter-kvarngardesskolan",
+      "omrade": "skolor-forskolor",
+      "typ": "slutrapport",
+      "titel": "Nya Kvarngärdesskolan — projektsida",
+      "organisation": "Uppsala kommun Skolfastigheter AB",
+      "datum": "2025",
+      "url": "https://skolfastigheter.uppsala.se/projekt-och-upphandling/aktuella-byggprojekt/nya-kvarngardesskolan/",
+      "sammandrag": "Projektsida för Nya Kvarngärdesskolan: byggstart sommaren 2022 (spadtag augusti 2022), byggtid ca tre år, inflytt höstterminen 2025. Bruttoarea 15 898 m², kapacitet 990 elever, två skolbyggnader, idrottshall och matsal med 330 sittplatser. Samverkansentreprenad med ByggDialog.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "micasa-behov-till-boende-2026",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Från behov till färdigt boende — så arbetar Micasa för framtidens omsorg",
+      "organisation": "Micasa Fastigheter i Stockholm AB",
+      "datum": "2026-06",
+      "url": "https://micasa.se/nyheter/nyheter/2026-06-30-fran-behov-till-fardigt-boende---sa-arbetar-micasa-for-framtidens-omsorg",
+      "sammandrag": "Micasas beskrivning av nyproduktionsprocessen för vård- och omsorgsboende: från de första utredningarna till inflyttning kan det gå mer än tio år. Exempel Ånn i Årsta: initierat 2016, inriktningsbeslut KF 2020, byggstart årsskiftet 2024/25, inflytt 2028 — ca 12 år totalt, ca 8 år från inriktningsbeslut, byggtid ca 3 år.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "lund-idrottshall-idrottsstraket-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Ny idrottshall beställd — viktig pusselbit i Idrottsstråket",
+      "organisation": "Lunds kommun",
+      "datum": "2025-09",
+      "url": "https://lund.se/nyheter/nyheter/2025-09-19-ny-idrottshall-bestalld---viktig-pusselbit-i-idrottsstraket",
+      "sammandrag": "Lunds kommun beställer fullstor idrottshall i Idrottsstråket; preliminär projekttid cirka två år från beslut i kommunfullmäktige till färdig hall. Tillsammans med publicerade projektdata (byggtider 13–18 mån för fullstora hallar, t.ex. Nyköping 13 mån, Norrköping 18 mån) stöder den ledtidsintervallet ca 2,5–4 år behov→inflytt inom befintlig detaljplan.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "lovdata-pbl-21-7",
+      "omrade": "nordisk-benchmark",
+      "typ": "lagstiftning",
+      "titel": "Plan- og bygningsloven (LOV-2008-06-27-71) § 21-7 — Tidsfrister med særskilte virkninger",
+      "organisation": "Lovdata (Norge)",
+      "datum": "löpande",
+      "url": "https://lovdata.no/lov/2008-06-27-71/%C2%A721-7",
+      "sammandrag": "Lagstadgad frist: byggesøknad ska avgöras av kommunen inom tolv veckor från fullständig ansökan; vid överskriden frist ska kommunen betala tillbaka byggesaksgebyret enligt föreskrift (byggesaksforskriften SAK10 § 7-4: 25 % per påbörjad vecka). Kortare 3-veckorsfrist för vissa ärendetyper. Primärkälla för den norska 12-veckorsfristen.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "norrkoping-smedbyskolan-byggstart-2021",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Nu börjar bygget av nya Smedbyskolan",
+      "organisation": "Norrköpings kommun",
+      "datum": "2021-05",
+      "url": "https://via.tt.se/pressmeddelande/3298783/nu-borjar-bygget-av-nya-smedbyskolan?publisherId=1347718",
+      "sammandrag": "Byggstart maj 2021. Budget 252 mkr, F-6-skola med två klasser per årskurs, två plan, fullstor idrottshall, klar våren 2024. Bekräftar budgeten men anger ingen BTA.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "orebro-brickebacken-byggfakta-2024",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Nybyggnad av vård- och omsorgsboende i södra Brickebacken (ByggfaktaDOCU)",
+      "organisation": "ByggfaktaDOCU / Örebrobostäder AB",
+      "datum": "2024",
+      "url": "https://www.byggfaktadocu.se/nybyggnad-av-vaard-och-omsorgsboende-i-sodra/projekt.html",
+      "sammandrag": "Projektpost: 106 lägenheter, uppskattad kostnad 230 mkr, totalentreprenör Consto AB, byggherre Örebrobostäder AB, byggtid jan 2024–feb 2026 (26 mån) → ca 2,17 mkr/plats. Ingen BTA angiven.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "hemso-bredang-attendo-2022",
+      "omrade": "samhallsfastighetsbolag",
+      "typ": "rapport",
+      "titel": "Hemsö utvecklar äldreboende i Bredäng för Attendo",
+      "organisation": "Hemsö Fastighets AB",
+      "datum": "2022-05",
+      "url": "https://hemso.se/press/nyheter/2022/5/hemso-utvecklar-aldreboende-i-bredang-for-attendo",
+      "sammandrag": "Total investering ca 240 mkr, 4 200 kvm uthyrbar yta, 62 platser, 15-årigt hyresavtal med Attendo → ca 57 000 kr/m2 UY. NollCO2 + Miljöbyggnad Guld, trästomme. Invigt mars 2025.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "scb-bki-statistiknyhet-feb-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "branschindex",
+      "titel": "Fortsatt negativ årstakt för Byggkostnadsindex (februari 2025)",
+      "organisation": "SCB",
+      "datum": "2025-03",
+      "url": "https://www.scb.se/hitta-statistik/statistik-efter-amne/priser-och-ekonomiska-tendenser/priser/byggkostnadsindex-bki/pong/statistiknyhet/byggkostnadsindex-for-byggnader-februari-2025/",
+      "sammandrag": "BKI för flerbostadshus −0,2 % feb 2024–feb 2025 (femte månaden i rad med negativ årstakt); +0,3 % jan–feb 2025. Räntekostnader −24,5 % i årstakt. Permanent källa för det historiska feb 2025-värdet — BKI-landningssidan visar bara senaste utfallet.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "stockholm-stad-sisab-bolagssida",
+      "omrade": "skolor-forskolor",
+      "typ": "samhallsfastighetsbolag",
+      "titel": "Sisab — Skolfastigheter i Stockholm AB (Stockholms stads bolagssida)",
+      "organisation": "Stockholms stad",
+      "datum": "löpande",
+      "url": "https://start.stockholm/om-stockholms-stad/organisation/bolag/sisab--skolfastigheter-i-stockholm-ab/",
+      "sammandrag": "Ägaren Stockholms stads presentation av SISAB: bolaget äger och förvaltar merparten av stadens skolor och förskolor, cirka 600 byggnader om cirka 1,8 miljoner kvadratmeter där över 200 000 personer vistas dagligen.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "scb-fruktsamhet-2025",
+      "omrade": "fastighet-demografi",
+      "typ": "statistik",
+      "titel": "Antal födda barn per kvinna i Sverige når ny lägstanivå (pressmeddelande)",
+      "organisation": "SCB",
+      "datum": "2026-02",
+      "url": "https://www.scb.se/pressmeddelande/antal-fodda-barn-per-kvinna-i-sverige-nar-ny-lagstaniva/",
+      "sammandrag": "Summerad fruktsamhet 1,42 år 2025 (1,43 år 2024) — det lägsta talet någonsin i en statistikserie som sträcker sig flera hundra år tillbaka. 97 500 barn föddes 2025, det lägsta antalet på 23 år.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "linkoping-budget-2025-pressmeddelande",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "En stabil budget för att framtidssäkra Linköping (pressmeddelande, budget 2025)",
+      "organisation": "Linköpings kommun",
+      "datum": "2024-11",
+      "url": "https://via.tt.se/pressmeddelande/3943608/en-stabil-budget-for-att-framtidssakra-linkoping?publisherId=3235469&lang=sv",
+      "sammandrag": "Kommunens pressmeddelande om budget 2025: barn- och ungdomsnämnden tillförs 39 mnkr för att dämpa effekterna av färre barn i verksamheterna; social- och omsorgsnämnden tillförs 25 mnkr för förbättrat stöd i skyddat boende, ökad utbyggnadstakt av LSS-bostäder och fler platser i daglig verksamhet. Oförändrad skattesats 20,20.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "boverket-livscykel-gwp-2026",
+      "omrade": "fastighet-demografi",
+      "typ": "lagstiftning",
+      "titel": "Regler om livscykel-GWP och gränsvärden för byggnaders klimatpåverkan (Boverkets slutredovisning, rapport 2026:16)",
+      "organisation": "Boverket",
+      "datum": "2026-05",
+      "url": "https://www.boverket.se/sv/om-boverket/nyheter-aktuellt/nyheter/regler-om-byggnaders-klimatpaverkan--boverket-lamnar-forslag-till-nya-krav/",
+      "sammandrag": "Boverket lämnade 20 maj 2026 lag- och förordningsförslag till regeringen: hela livscykelns klimatpåverkan (livscykel-GWP) redovisas senast 1 jan 2028 för byggnader >1 000 m2, övriga nya byggnader från 1 jan 2030 då även gränsvärden införs. Kraven läggs i PBL som tekniskt egenskapskrav; nuvarande klimatdeklarationsregler upphävs. Gränsvärden differentieras per byggnadstyp; skärpningsriktning mot 2050 med målbild -90 % till 2040 jämfört med 1990.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "svensk-solenergi-epbd",
+      "omrade": "fastighet-demografi",
+      "typ": "vagledning",
+      "titel": "Solklara byggnader — EPBD-direktivets solenergikrav (artikel 10)",
+      "organisation": "Svensk Solenergi",
+      "datum": "2024",
+      "url": "https://svensksolenergi.se/solklara-byggnader-epbd-direktivet/",
+      "sammandrag": "Genomgång av EPBD artikel 10: solenergiinstallationer krävs på befintliga offentliga byggnader >2 000 m2 senast 31 dec 2027, >750 m2 senast 31 dec 2028 och >250 m2 senast 31 dec 2030; nya kommersiella och offentliga byggnader >250 m2 senast 31 dec 2026; nya bostadshus och takparkeringar senast 31 dec 2029.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
     }
   ]
 }
