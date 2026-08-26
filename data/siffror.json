@@ -57,15 +57,13 @@
       "kategori": "ledtider",
       "etikett": "Spår A — Hyra in (befintlig lokal)",
       "varde": "3–12 mån",
-      "kalla_ids": [
-        "skr-strategisk-lokalresursplanering"
-      ],
+      "kalla_ids": [],
       "verifiering": "ej-verifierbar",
       "datum": "löpande",
-      "not": "Marknadens utbud och hyresgästanpassning styr tiden. Snabbast — om rätt lokal finns ledig.",
+      "not": "Behåll 3–12 mån men märk som branschbedömning/erfarenhetsvärde (jfr kr-kostnadssankning-tidplan): 'Erfarenhetsvärde — marknadens utbud, ev. bygglov och hyresgästanpassning styr tiden; primärkälla saknas sedan SKR:s sida om strategisk lokalresursplanering togs bort.'",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Källan underkänd i fas A (404). SKR:s ersättningssida 'Verksamhetslokaler, planering' kontrollerad — den innehåller inga ledtidsangivelser för lokalanskaffningsspår."
+        "not": "Uppföljningsrunda 2026-08-26: Behåll 3–12 mån men märk som branschbedömning/erfarenhetsvärde (jfr kr-kostnadssankning-tidplan): 'Erfarenhetsvärde — marknadens utbud, ev. bygglov och hyresgäs"
       }
     },
     {
@@ -78,10 +76,10 @@
       ],
       "verifiering": "ej-verifierbar",
       "datum": "2021-12",
-      "not": "LOU-process + ev. detaljplan på hyresvärdens mark",
+      "not": "Behåll 2–4 år som branschbedömning. Not: 'Erfarenhetsvärde — LOU-process (annonsering, anbudstid, ev. överprövning) plus hyresvärdens projektering/byggnation; SKR:s vägledning beskriver processen som tidskrävande utan att kvantifiera.'",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Källan (SKL:s LOU-vägledning, 74 s.) innehåller ingen tidsangivelse '2–4 år' — den beskriver LOU som 'tidskrävande' (s. 11) men kvantifierar inte."
+        "not": "Uppföljningsrunda 2026-08-26: Behåll 2–4 år som branschbedömning. Not: 'Erfarenhetsvärde — LOU-process (annonsering, anbudstid, ev. överprövning) plus hyresvärdens projektering/byggnation; S"
       }
     },
     {
@@ -90,14 +88,15 @@
       "etikett": "Spår B — Bygga om befintlig byggnad",
       "varde": "2–5 år",
       "kalla_ids": [
-        "skr-strategisk-lokalresursplanering"
+        "lekeberg-lfp-2021-2031",
+        "sisab-portal"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Dolda skador kan fördubbla tid och kostnad",
+      "not": "Momentsumma i kommunal byggprocess ca 2–4 år (Lekebergs LFP 2021–2031, Tabell 1 s. 10–11, remissversion); SISAB-ombyggnader 2,5–4 år. Dolda skador kan fördubbla tid och kostnad.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Källan underkänd i fas A (404); ersättningssidan hos SKR saknar ledtidsangivelser."
+        "not": "Uppföljningsrunda 2026-08-26: Momentsumma i kommunal byggprocess ca 2–4 år (Lekebergs LFP 2021–2031, Tabell 1 s. 10–11, remissversion); SISAB-ombyggnader 2,5–4 år. Dolda skador kan fördubbla"
       }
     },
     {
@@ -106,14 +105,15 @@
       "etikett": "Spår C — Tillbyggnad",
       "varde": "2–3,5 år",
       "kalla_ids": [
-        "skr-strategisk-lokalresursplanering"
+        "lekeberg-lfp-2021-2031",
+        "ledtidsindex-2025"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Inom befintlig byggrätt. Med planändring 4–7 år. Påverkar verksamheten",
+      "not": "Härlett intervall; närliggande stöd i Lekebergs LFP (momentsumma 2–4 år utan planändring). Med planändring 4–7 år (Ledtidsindex 2025: DP 2,5–5,9 år). Påverkar verksamheten.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Källan underkänd i fas A (404); ersättningssidan hos SKR saknar ledtidsangivelser."
+        "not": "Uppföljningsrunda 2026-08-26: Härlett intervall; närliggande stöd i Lekebergs LFP (momentsumma 2–4 år utan planändring). Med planändring 4–7 år (Ledtidsindex 2025: DP 2,5–5,9 år). Påverkar v"
       }
     },
     {
@@ -122,14 +122,15 @@
       "etikett": "Spår D — Nybyggnad (befintlig DP)",
       "varde": "2,5–4 år",
       "kalla_ids": [
-        "skr-strategisk-lokalresursplanering"
+        "lekeberg-lfp-2021-2031",
+        "sisab-bifrostvagen"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Projektering, byggnation, upphandling — utan planprocess",
+      "not": "Momentsumma utan planprocess ca 2–4 år (Lekebergs LFP, Tabell 1); SISAB:s förskola Bifrostvägen: genomförandebeslut sep 2020 → godkänd entreprenad okt 2023, ca 3 år.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Källan underkänd i fas A (404); ersättningssidan hos SKR saknar ledtidsangivelser."
+        "not": "Uppföljningsrunda 2026-08-26: Momentsumma utan planprocess ca 2–4 år (Lekebergs LFP, Tabell 1); SISAB:s förskola Bifrostvägen: genomförandebeslut sep 2020 → godkänd entreprenad okt 2023, ca "
       }
     },
     {
@@ -138,15 +139,16 @@
       "etikett": "Spår D — Nybyggnad (ny DP krävs)",
       "varde": "5–8 år",
       "kalla_ids": [
-        "skr-strategisk-lokalresursplanering",
+        "lekeberg-lfp-2021-2031",
+        "malmo-lfp-2026-2035",
         "ledtidsindex-2025"
       ],
       "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Detaljplan ensam: 2–5 år",
+      "not": "Malmös LFP: \"cirka 6–8 år att genomföra en investering i nya lokaler\"; Lekeberg: nybyggnad utan DP kan ta upp till fem år; Ledtidsindex 2025: DP ensam 2,5–5,9 år.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Notens 'Detaljplan ensam: 2–5 år' bör justeras: Ledtidsindex 2025 anger 2,5–5,9 år (viktat snitt 3,9 år) för enbart detaljplan."
+        "not": "Uppföljningsrunda 2026-08-26: Malmös LFP: \"cirka 6–8 år att genomföra en investering i nya lokaler\"; Lekeberg: nybyggnad utan DP kan ta upp till fem år; Ledtidsindex 2025: DP ensam 2,5–5,9 å"
       }
     },
     {
@@ -222,14 +224,15 @@
       "etikett": "LSS-gruppbostad, byggtid",
       "varde": "~1 år",
       "kalla_ids": [
-        "jonkoping-dunkehalla-lss-2024"
+        "jonkoping-dunkehalla-lss-2024",
+        "ornskoldsvik-lss-domsjo-2026"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Snabbaste lokaltypen i byggfas",
+      "not": "Snabbaste lokaltypen i byggfas. Örnsköldsviks dubbelprojekt Domsjö (2 gruppbostäder, 12 lgh): byggstart apr 2026 → inflytt aug 2027, ca 16 mån.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Enda källan underkänd i fas A (ByggfaktaDOCU-sidan 404). Indirekta uppgifter via sökindex stöder ~11 mån byggtid, men fritt åtkomlig ersättningskälla saknas."
+        "not": "Uppföljningsrunda 2026-08-26: Snabbaste lokaltypen i byggfas. Örnsköldsviks dubbelprojekt Domsjö (2 gruppbostäder, 12 lgh): byggstart apr 2026 → inflytt aug 2027, ca 16 mån."
       }
     },
     {
@@ -291,7 +294,11 @@
       ],
       "verifiering": "preliminar",
       "datum": "2019–2023",
-      "not": "Härledd: byggfas ~18 mån (SISAB, 8 ombyggnader 2019–2023) + förskede 1–2 år. Normalt ingen ny detaljplan; behov av evakueringslokaler kan förlänga"
+      "not": "Härledd: byggfas ~18 mån (SISAB, 8 ombyggnader 2019–2023) + förskede 1–2 år. Normalt ingen ny detaljplan; behov av evakueringslokaler kan förlänga",
+      "hardkontroll": {
+        "datum": "2026-08-26",
+        "not": "Tillkom efter huvudrundan (PR #22). Härledd ur SISAB-empiri (godkänd källa); ej separat nivå 3-kontrollerad."
+      }
     },
     {
       "id": "ledtid-total-vob",
@@ -316,14 +323,15 @@
       "etikett": "LSS-gruppbostad, total ledtid (behov→inflytt)",
       "varde": "≈2–3,5 år",
       "kalla_ids": [
-        "jonkoping-dunkehalla-lss-2024"
+        "jonkoping-dunkehalla-lss-2024",
+        "ornskoldsvik-lss-domsjo-2026"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Härledd: byggfas 10–15 mån + förstudie/beslut/projektering/upphandling typiskt 1–2 år, inom befintlig detaljplan",
+      "not": "Härledd: byggfas ca 12–16 mån (Örnsköldsvik Domsjö) + förskede typiskt 1–2 år inom befintlig byggrätt.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Enda källan underkänd i fas A (404) och värdet är dessutom härlett (byggfas + typiskt förskede)."
+        "not": "Uppföljningsrunda 2026-08-26: Härledd: byggfas ca 12–16 mån (Örnsköldsvik Domsjö) + förskede typiskt 1–2 år inom befintlig byggrätt."
       }
     },
     {
@@ -427,18 +435,18 @@
     {
       "id": "kr-grundskola-medel",
       "kategori": "kr-per-yta",
-      "etikett": "F-6/F-9 skola ~400 elever inkl. hall (6 600–7 850 m²)",
-      "varde": "30 000–35 000 kr/m² BTA",
+      "etikett": "F-6/F-9 skola ~400 elever inkl. hall (6 600–8 800 m²)",
+      "varde": "ca 28 500–35 000 kr/m² BTA",
       "kalla_ids": [
         "norrkoping-smedbyskolan-2024",
         "norrkoping-smedbyskolan-byggstart-2021"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "2024-08",
-      "not": "Smedbyskolan Norrköping 252 mkr/7 850 m². Geografiskt nära Linköping",
+      "not": "Smedbyskolan Norrköping 252 mkr / 8 819 m² (skolbyggnadens storlek enl. kommunens invigningsnyhet; areatyp ospecificerad) ≈ 28 600 kr/m². Tidigare antagen yta 7 850 m² var en hopblandning med Kungsängsskolan.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "252 mkr och fullstor idrottshall är belagda, men BTA 7 850 m2 finns inte i någon nåbar källa — kr/m2-talet (252/7 850 ≈ 32 100) hänger i luften. Wayback-kopia av originalnyheten finns (fas A ny_url) men web.archive.org är blockerat härifrån."
+        "not": "Uppföljningsrunda 2026-08-26: Smedbyskolan Norrköping 252 mkr / 8 819 m² (skolbyggnadens storlek enl. kommunens invigningsnyhet; areatyp ospecificerad) ≈ 28 600 kr/m². Tidigare antagen yta 7"
       }
     },
     {
@@ -462,30 +470,36 @@
       "id": "kr-idrottshall",
       "kategori": "kr-per-yta",
       "etikett": "Idrottshall fullstor (1 200–1 800 m² fristående)",
-      "varde": "18 000–25 000 kr/m² BTA",
-      "kalla_ids": [],
-      "verifiering": "ej-verifierbar",
+      "varde": "ca 23 000–38 000 kr/m² BTA",
+      "kalla_ids": [
+        "nordanstig-bergsjo-idrottshall-2024",
+        "ronneby-listerby-idrottshall-2025",
+        "sydnarkenytt-hallsberg-idrottshall-2024",
+        "sydnarkenytt-hallsberg-spadtag-2025"
+      ],
+      "verifiering": "verifierad",
       "datum": "2023–2024",
-      "not": "Lägre kr/m² än skola pga enklare planlösning",
+      "not": "Tre kommunala hallar 2023–2026: Bergsjö/Nordanstig 43 mkr/1 850 m² ≈ 23 tkr/m², Listerby/Ronneby 60 mkr/1 600 m² ≈ 37,5 tkr/m², Hallsberg 45–60 mkr/1 600–2 000 m² (byggstart 2025).",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Intervallet 18 000–25 000 är rimligt mittfält men saknar primärkälla; funna exempel ligger både under (14 000, äldre enkel hall Stockholm) och klart över (Hallsberg 2024: ca 60 mkr/1 600 m2 ≈ 37 500 kr/m2)."
+        "not": "Uppföljningsrunda 2026-08-26: Tre kommunala hallar 2023–2026: Bergsjö/Nordanstig 43 mkr/1 850 m² ≈ 23 tkr/m², Listerby/Ronneby 60 mkr/1 600 m² ≈ 37,5 tkr/m², Hallsberg 45–60 mkr/1 600–2 000 "
       }
     },
     {
       "id": "kr-lss",
       "kategori": "kr-per-yta",
-      "etikett": "LSS-gruppbostad (6 lgh, 600–850 m² BTA)",
+      "etikett": "LSS-gruppbostad (5–6 lgh, 600–850 m² BTA)",
       "varde": "24 000–36 000 kr/m² BTA",
       "kalla_ids": [
-        "jonkoping-dunkehalla-lss-2024"
+        "jonkoping-dunkehalla-lss-2024",
+        "jonkoping-kbfp-2025-2030"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Tre 2024-projekt: Dunkehalla Jönköping, Ludvika, Bollnäs. Yta-intervall bredare än materialet tidigare angav",
+      "not": "Dunkehalla Jönköping (Brixly totalentr., klar 2025): 5 lgh, 823 m² BTA, 20–30 mkr → 24 300–36 500 kr/m². Jönköpings KBFP-uppföljning anger 5–6 lgh som norm.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Värdet matchar de indirekt bekräftade siffrorna (20–30 mkr/823 m2 = 24 300–36 500 kr/m2) — behåll gärna, men skaffa en nåbar källa, t.ex. Jönköpings kommuns upphandlings-/projektdokument."
+        "not": "Uppföljningsrunda 2026-08-26: Dunkehalla Jönköping (Brixly totalentr., klar 2025): 5 lgh, 823 m² BTA, 20–30 mkr → 24 300–36 500 kr/m². Jönköpings KBFP-uppföljning anger 5–6 lgh som norm."
       }
     },
     {
@@ -559,16 +573,21 @@
       "id": "kr-plats-forskola",
       "kategori": "kr-per-enhet",
       "etikett": "Förskola — kr per barnplats",
-      "varde": "650 000–900 000 kr/plats",
+      "varde": "ca 400 000–650 000 kr/plats",
       "kalla_ids": [
-        "enkoping-grillby-forskola-2024"
+        "enkoping-grillby-forskola-2024",
+        "uddevalla-lingatan-forskola-2026",
+        "uddevalla-lingatan-byggfakta-2024",
+        "bohuslaningen-kalldal-180-barn-2023",
+        "kumla-nyfiken-forskoleplatser-2024",
+        "sydnarkenytt-nyfiken-invigning-2026"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Baseras på tre svenska 2024-projekt, 6 avd à ~100 barn",
+      "not": "Tre belagda projekt 2021–2026: Grillby/Enköping 67 mkr/ca 160 platser ≈ 420 tkr, Lingatan (fd Källdal)/Uddevalla 80 mkr/180 platser ≈ 440 tkr, Nyfiken/Kumla ca 90 mkr/148 platser ≈ 610 tkr. Kumlas kostnad via sökindex — därav preliminär.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Intervallet 650 000–900 000 stöds inte av det enda citerade projektet: med uppgiven kapacitet 160 barn (E-posten/Skolkoll) ger Grillby ca 420 000 kr/plats, och även med notens antagande 100–120 barn blir det 560 000–670 000. Värdet bör ses över och beläggas med de två ociterade projekten (Källdal, Kumla)."
+        "not": "Uppföljningsrunda 2026-08-26: Tre belagda projekt 2021–2026: Grillby/Enköping 67 mkr/ca 160 platser ≈ 420 tkr, Lingatan (fd Källdal)/Uddevalla 80 mkr/180 platser ≈ 440 tkr, Nyfiken/Kumla ca "
       }
     },
     {
@@ -626,16 +645,17 @@
       "id": "kr-plats-lss",
       "kategori": "kr-per-enhet",
       "etikett": "LSS — kr per lägenhet",
-      "varde": "3,3–5,0 mkr/lgh",
+      "varde": "4,0–6,0 mkr/lgh",
       "kalla_ids": [
-        "jonkoping-dunkehalla-lss-2024"
+        "jonkoping-dunkehalla-lss-2024",
+        "jonkoping-kbfp-2025-2030"
       ],
-      "verifiering": "ej-verifierbar",
+      "verifiering": "preliminar",
       "datum": "2024",
-      "not": "Totalbudget 20–30 mkr för 6 lägenheter",
+      "not": "Dunkehalla Jönköping: 20–30 mkr / 5 lgh (inte 6 som tidigare antagits) = 4,0–6,0 mkr/lgh. Källan nåbar endast via sökindex.",
       "hardkontroll": {
         "datum": "2026-08-26",
-        "not": "Enligt sökindex och fas A har Dunkehalla 5 lägenheter, inte 6: 20–30 mkr/5 lgh = 4,0–6,0 mkr/lgh, över angivet 3,3–5,0 (som bygger på 6 lgh). Värde eller not bör ses över när nåbar källa finns."
+        "not": "Uppföljningsrunda 2026-08-26: Dunkehalla Jönköping: 20–30 mkr / 5 lgh (inte 6 som tidigare antagits) = 4,0–6,0 mkr/lgh. Källan nåbar endast via sökindex."
       }
     },
     {

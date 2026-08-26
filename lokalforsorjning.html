@@ -2146,9 +2146,9 @@ footer strong { color: rgba(255,255,255,0.8); }
         <div class="tal">4,8 år</div>
         <div class="etikett">riksgenomsnitt planuppdrag → startbesked (Ledtidsindex 2025)</div>
       </div>
-      <div class="prov-stat" data-verifiering="verifierad">
-        <div class="tal">44 mån</div>
-        <div class="etikett">mediantid detaljplan → laga kraft (2022–2023)</div>
+      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex 2025 (s. 14): genomsnitt, ej median; detaljplaner för flerbostadshus ≥5 lgh med laga kraft 2017–2024.">
+        <div class="tal">46 mån</div>
+        <div class="etikett">genomsnittlig tid planuppdrag → laga kraft (Ledtidsindex 2025)</div>
       </div>
       <div class="prov-stat" data-verifiering="verifierad">
         <div class="tal">~25 %</div>
@@ -2622,7 +2622,7 @@ const DATA = {
           huvudfarg: "#922b21",
           faser: [
             { namn: "Planbesked",                      fas: "plan",        tid: "4 mån",    kommentar: "Lagstadgat; faktisk tid kan vara längre" },
-            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "12–48 mån",kommentar: "Median Sverige 2022–2023: 44 mån · 25 % överklagas (+14 mån)" },
+            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "12–48 mån",kommentar: "Snitt Sverige: planuppdrag → laga kraft 46 mån (Ledtidsindex 2025) · 25 % överklagas (+14 mån)" },
             { namn: "Laga kraft (om ej överklagad)",   fas: "plan",        tid: "3 veckor", kommentar: "" },
             { namn: "Förstudie & politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kan delvis parallelliseras med planprocessen" },
             { namn: "Projektering + upphandling",      fas: "projektering",tid: "8–18 mån", kommentar: "" },
@@ -2631,7 +2631,7 @@ const DATA = {
         }
       ],
       begransningar: [
-        "Mediantid detaljplan → laga kraft: 44 månader (2022–2023). Andel kommuner under 1 år: 13 % (2022–23)",
+        "Genomsnittlig tid planuppdrag → laga kraft: 46 månader (Ledtidsindex 2025, flerbostadshusplaner 2017–2024). Bara ca 40 % av kommunerna klarar planuppdrag → antagande på ≤2 år (SKR 2024–2025)",
         "25 % av alla detaljplaner överklagas; 12 % av överklagandena ändrar planen — resten orsakar fördröjning utan utbyte",
         "Budget och plats i lokalförsörjningsplanen måste säkras 3–5 år före byggstart",
         "Sena beslutsändringar — t.ex. ändrad inriktning, omfattning eller demografiska omprövningar — kan kasta tillbaka tidsplanen flera år och i praktiken tvinga fram en omstart av tidigare skeden",
@@ -2853,7 +2853,7 @@ const DATA = {
         { etikett: "Med ny detaljplan", varde: "8–10 år" },
         { etikett: "Kostnad per yta", varde: "25 000–35 000 kr/m² BTA" }
       ],
-      insikt: "Total ledtid ur källorna: Lunds kommun anger ~7 år från tanke till färdig skola som genomsnitt; Kvarngärdesskolan i Uppsala (F–9, 990 elever, ny detaljplan) tog 10 år varav 3 års byggfas. Budgeten följer storleken: Smedbyskolan i Norrköping (~400 elever, 7 850 m²) kostade 252 mkr, medan Vallås i Halmstad och Kvarngärdesskolan (900–1 000 elever) landade på 475–510 mkr — stora skolor ger skalfördelar per elevplats.",
+      insikt: "Total ledtid ur källorna: Lunds kommun anger ~7 år från tanke till färdig skola som genomsnitt; Kvarngärdesskolan i Uppsala (F–9, 990 elever, ny detaljplan) tog 10 år varav 3 års byggfas. Budgeten följer storleken: Smedbyskolan i Norrköping (~400 elever, 8 819 m²) kostade 252 mkr, medan Vallås i Halmstad och Kvarngärdesskolan (900–1 000 elever) landade på 475–510 mkr — stora skolor ger skalfördelar per elevplats.",
       kalla: "Lunds kommun, Uppsala Skolfastigheter, Norrköpings kommun, Halmstads kommun"
     },
     {
@@ -2871,12 +2871,12 @@ const DATA = {
     },
     {
       namn: "LSS-gruppbostäder",
-      eyebrow: "6 lgh · 600–850 kvm",
+      eyebrow: "5–6 lgh · 600–850 kvm",
       rader: [
         { etikett: "Total ledtid (behov→inflytt)", varde: "≈2–3,5 år *" },
         { etikett: "— varav byggfas (GB→inflytt)", varde: "10–15 mån" },
         { etikett: "Budget nybyggnad", varde: "20–50 mkr" },
-        { etikett: "Storlek", varde: "6 lgh · 600–850 m² (Socialstyrelsen rek. 3–5 boende)" },
+        { etikett: "Storlek", varde: "5–6 lgh · 600–850 m² (Socialstyrelsen rek. 3–5 boende)" },
         { etikett: "Kommunal brist", varde: ">50 % av kommuner" }
       ],
       insikt: "Total ledtid härledd: byggfas 10–15 mån + förstudie, beslut, projektering och upphandling (typiskt 1–2 år) — LSS-gruppbostäder byggs oftast inom befintlig detaljplan och är den snabbaste lokaltypen i byggfas. Mer än hälften av Sveriges kommuner uppger i Boverkets bostadsmarknadsenkät att de har underskott — behovet är ackumulerat.",
@@ -2947,7 +2947,7 @@ const DATA = {
           { e: "Mönster", v: "Konsekvent storlek — 6 lgh (över Socialstyrelsens rekommenderade 3–5)" }
         ]
       },
-      poang: "LSS-gruppbostäder följer ett standardiserat mönster nationellt — sex lägenheter, 600–850 m² BTA, byggtid kring ett år, budget 20–30 mkr. Dunkehalla/Jönköping (823 m², 2024), Bollnäs och Ludvika bekräftar intervallet. Lejonfastigheters projekt 2024 ligger på samma nivå som motsvarande projekt i andra svenska kommuner."
+      poang: "LSS-gruppbostäder följer ett standardiserat mönster nationellt — fem till sex lägenheter, 600–850 m² BTA, byggtid kring ett år, budget 20–30 mkr. Dunkehalla/Jönköping (5 lgh, 823 m², klar 2025), Bollnäs och Ludvika bekräftar intervallet. Lejonfastigheters projekt 2024 ligger på samma nivå som motsvarande projekt i andra svenska kommuner."
     },
     {
       titel: "Förskola",

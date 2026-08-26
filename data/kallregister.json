@@ -1043,7 +1043,7 @@
       "organisation": "Norrevo / Norrköpings kommun",
       "datum": "2024-08",
       "url": "https://web.archive.org/web/20251015145422/https://norrkoping.se/nyheter/2024/2024-08-29-kungsangsskolan-och-smedbyskolan-invigda",
-      "sammandrag": "F-6-skola i två plan, 14 klasser (350–400 elever), inkl. fullstor idrottshall. Total byggarea ca 7 850 m² BTA. Budget 252 mkr → ca 32 000 kr/m² BTA. Geografiskt nära Linköping — direkt jämförbar referens.",
+      "sammandrag": "F-6-skola i två plan, 14 klasser (350–400 elever), inkl. fullstor idrottshall. Skolbyggnadens storlek 8 819 m² enligt kommunens invigningsnyhet (areatyp ospecificerad). Budget 252 mkr → ca 28 600 kr/m². Geografiskt nära Linköping — direkt jämförbar referens.",
       "hardkontroll": {
         "status": "anmarkning",
         "datum": "2026-08-26",
@@ -1979,6 +1979,201 @@
       "datum": "2024",
       "url": "https://svensksolenergi.se/solklara-byggnader-epbd-direktivet/",
       "sammandrag": "Genomgång av EPBD artikel 10: solenergiinstallationer krävs på befintliga offentliga byggnader >2 000 m2 senast 31 dec 2027, >750 m2 senast 31 dec 2028 och >250 m2 senast 31 dec 2030; nya kommersiella och offentliga byggnader >250 m2 senast 31 dec 2026; nya bostadshus och takparkeringar senast 31 dec 2029.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "lekeberg-lfp-2021-2031",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Strategisk lokalförsörjningsplan 2021–2031, avsnitt 1.4 Byggprocessen (remissversion)",
+      "organisation": "Lekebergs kommun",
+      "datum": "2021-02",
+      "url": "https://meetings.lekeberg.se/welcome-sv/namnder-styrelser/barn-och-utbildningsnamnden/mote-2021-02-02/protocol/remissversion-strategisk-lokalforsorjningsplan-2021-2031-ej-faststalldpdf?downloadMode=open",
+      "sammandrag": "Kommunal LFP med explicit tidsåtgångstabell för byggprocessens moment (Tabell 1, s. 11): förstudie/lokaliseringsalternativ 6–12 mån, detaljplan (standardförfarande) ~12 mån, rumsfunktions-/lokalprogram 2–4 mån (parallellt), projektering 3–8 mån, upphandling 2–3 mån, byggtid 12–24 mån. Anger även (s. 10) att ett nybyggnadsalternativ utan detaljplan 'kan ta upp till fem år att få fram', längre vid överklagande. OBS: remissversion publicerad i BUN:s möteshandlingar 2021-02-02, ej fastställd version — anges i not vid citering.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "ornskoldsvik-lss-domsjo-2026",
+      "omrade": "fastighet-demografi",
+      "typ": "rapport",
+      "titel": "Byggstart för LSS-boenden i Domsjö (kommunal nyhet)",
+      "organisation": "Örnsköldsviks kommun",
+      "datum": "2026-04",
+      "url": "https://www.ornskoldsvik.se/nyheter/2026-04-10-byggstart-for-lss-boenden-i-domsjo",
+      "sammandrag": "Två gruppbostäder (LSS) med totalt 12 lägenheter, gemensamma utrymmen och miljöhus. Byggstart 28 april 2026, planerat färdigställande augusti 2027 — ca 16 månaders byggtid. Nåbart empiriskt belägg för byggfasens längd för LSS-gruppbostäder (ersätter den 404:ade ByggfaktaDOCU-källan för Dunkehalla som enda tidsbelägg).",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "sandviken-lfp-omsorg-2020-2030",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Lokalförsörjningsplan Omsorgsförvaltningen 2020–2030",
+      "organisation": "Sandvikens kommun",
+      "datum": "2020-02",
+      "url": "https://sandviken.se/download/18.57fbccb01841476806070737/1667911207676/Lokalf%C3%B6rs%C3%B6rjningsplan%20f%C3%B6r%20omsorgsf%C3%B6rvaltningen.pdf",
+      "sammandrag": "Omsorgsförvaltningens LFP (KS 2020/75, 2020-02-20). Anger om särskilt boende: 'det tar upp emot fem år från beslut, via detaljplan till inflyttningsklart boende och det är under förutsättning att ingen överklagar, utdragen upphandling eller långa byggtider.' Stödjer nedre delen av ledtid-total-vob (5–9 år) och nybyggnadsspårens storleksordning vid planprocess.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "uddevalla-lingatan-forskola-2026",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Lingatans förskola (ersätter Källdals förskola) — Uddevalla växer",
+      "organisation": "Uddevalla kommun",
+      "datum": "2026-06",
+      "url": "https://www.uddevalla.se/bygga-bo-och-miljo/uddevalla-vaxer-byggprojekt/skolor-och-boende/lingatans-forskola.html",
+      "sammandrag": "Ny förskola i Källdal med 8 avdelningar i två plan, ersätter Källdals förskola från 1977. Byggstart höst 2024, färdig juni 2026, totalentreprenör T-Byggen. Kommunsidan anger inte kostnad, platser eller BTA — se kompletterande poster.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "uddevalla-lingatan-byggfakta-2024",
+      "omrade": "skolor-forskolor",
+      "typ": "statistik",
+      "titel": "Nybyggnad av förskola i Källdal, Uddevalla (Lingatan 1)",
+      "organisation": "ByggfaktaDOCU",
+      "datum": "2024-10",
+      "url": "https://www.byggfaktadocu.se/lingatan-1/projekt.html",
+      "sammandrag": "Uppskattad kostnad 80 mkr, bruttoyta 2 200 m², två våningar, byggstart okt 2024, byggtid 24 mån (färdigt sep 2026). Byggherre Uddevalla kommun, arkitekt PE Teknik & Arkitektur, totalentreprenör T-Byggen. Med 180 barn → ca 444 000 kr/plats, ca 36 000 kr/m². Sida verifierad nåbar 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "bohuslaningen-kalldal-180-barn-2023",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Källdals förskola ska rivas — Uddevalla får ny förskola, ska rymma 180 barn",
+      "organisation": "Bohusläningen",
+      "datum": "2023",
+      "url": "https://www.bohuslaningen.se/nyheter/uddevalla/uddevalla-far-ny-forskola-ska-rymma-180-barn.eb0401f0-df9c-4945-8dac-a51c47c8264e",
+      "sammandrag": "Nybygget i Källdal blir två våningar med åtta avdelningar för 180 barn. Kapacitetsuppgiften (180) framgår redan av rubrik/ingress; artikeln bakom betalvägg — ej fullständigt läst 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "kumla-nyfiken-forskoleplatser-2024",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Kumla kommun skapar 148 nya förskoleplatser (förskolan Nyfiken, Idrottsparken)",
+      "organisation": "Kumla kommun",
+      "datum": "2024-09-11",
+      "url": "https://www.mynewsdesk.com/se/kumla_kommun/pressreleases/kumla-kommun-skapar-148-nya-foerskoleplatser-3342122",
+      "sammandrag": "Förskolan Nyfiken vid Idrottsparken: kapacitet ca 148 barn, åtta avdelningar i två plan med gemensam matsal och tillagningskök. Partnering med NA Bygg, arkitekt PE Teknik & Arkitektur. Kostnad anges INTE i pressmeddelandet; ByggfaktaDOCU:s projektdata ('IP Förskolan Kumla 2:12', direktlänk död 2026-08-26) anger uppskattat ca 90 mkr → ca 610 000 kr/plats. Verifierad nåbar 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "sydnarkenytt-nyfiken-invigning-2026",
+      "omrade": "skolor-forskolor",
+      "typ": "slutrapport",
+      "titel": "Förskolan Nyfiken invigs vid Idrottsparken",
+      "organisation": "Sydnärkenytt",
+      "datum": "2026-03-11",
+      "url": "https://www.sydnarkenytt.se/kumla/artikel/foerskolan-nyfiken-invigs-vid-idrottsparken",
+      "sammandrag": "Invigning 26 mars 2026. Bekräftar plats för cirka 148 barn på åtta avdelningar, två våningar, eget tillagningskök. Notera: färdigställandet blev alltså tidig 2026, inte 'slutet av 2025' som pressmeddelandet 2024 angav. Verifierad nåbar 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "jonkoping-kbfp-2025-2030",
+      "omrade": "fastighet-demografi",
+      "typ": "kommunal-plan",
+      "titel": "Kommunalt bostadsförsörjningsprogram (KBFP) 2025–2030, Ks/2025:379",
+      "organisation": "Jönköpings kommun",
+      "datum": "2025",
+      "url": "https://www.jonkoping.se/download/18.611776d718af4a06d15769c8/1766414217491/Kommunalt%20bostadsf%C3%B6rs%C3%B6rjningsprogram%20(KBFP)%202025-2030.pdf",
+      "sammandrag": "S. 26: gruppbostäder LSS byggs och drivs i kommunens egen regi; investeringsbudgeten planerar 'byggnation av en ny gruppbostad vartannat år'. Föregående uppföljning (juni 2024, s. 9) anger 'Varje planerad gruppbostad kommer att innehålla 5–6 lägenheter'. Nåbar kommunal ramkälla för LSS-nyckeltalen; projektspecifika Dunkehalla-siffror saknas dock. PDF nedladdad och läst 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "nordanstig-bergsjo-idrottshall-2024",
+      "omrade": "skolor-forskolor",
+      "typ": "statistik",
+      "titel": "Nybyggnad av idrottshall i Bergsjö (Skolvägen 9)",
+      "organisation": "ByggfaktaDOCU / Nordanstigs kommun",
+      "datum": "2024-10",
+      "url": "https://www.byggfaktadocu.se/skolvagen-9/projekt.html",
+      "sammandrag": "Idrottshall/gymnastiksal: uppskattad kostnad 43 mkr, bruttoyta 1 850 m² → ca 23 200 kr/m². Byggstart sep 2023, byggtid 14 mån, klar okt 2024. Byggherre Nordanstigs kommun, generalentreprenör Rekab Entreprenad. Sida verifierad nåbar 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "ronneby-listerby-idrottshall-2025",
+      "omrade": "skolor-forskolor",
+      "typ": "slutrapport",
+      "titel": "Listerby idrottshall, Ronneby — 60-miljonersbygge, 1 600 m² i två plan",
+      "organisation": "Sydöstran / Sveriges Radio P4 Blekinge / Skanska / Ronneby kommun",
+      "datum": "2025-08",
+      "url": "https://www.sydostran.se/ronneby/rott-som-sticker-ut-har-ar-nya-idrottshallen-i-listerby/",
+      "sammandrag": "Fullstor hall 40x20 m med 7 m takhöjd, totalt 1 600 m² i två plan (bordtennishall på övre plan). Budget ursprungligen 40 mkr, fördyring +20 mkr → ca 60 mkr (P4 Blekinge: sverigesradio.se/artikel/idrottshallen-i-listerby-blir-20-miljoner-dyrare) → ca 37 500 kr/m². Byggd av Skanska, överlämnad april 2025, invigd 2025-08-30 (Ronneby kommuns pressinbjudan via Mynewsdesk; Skanskas referenssida skanska.com/se/sv/bygg-infrastruktur/referensprojekt/listerby-idrottshall-ronneby verifierad). Sydöstran-/SR-artiklarna kunde inte fullständigt läsas från byggmiljön (betalvägg/403) — sifferuppgifterna via sökindex.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "sydnarkenytt-hallsberg-idrottshall-2024",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Planer kring nya idrottshallen i Hallsberg",
+      "organisation": "Sydnärkenytt",
+      "datum": "2024-12-09",
+      "url": "https://www.sydnarkenytt.se/hallsberg/artikel/planer-kring-nya-idrottshallen-i-hallsberg",
+      "sammandrag": "Fullstor hall 40x20 m, 200–300 läktarplatser. 'Den totala ytan bedöms till cirka 1 600 kvadratmeter.' 'Hallen beräknas kosta runt 60 miljoner kr att bygga' → ca 37 500 kr/m² (planeringsläge). Verifierad nåbar 2026-08-26.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "sydnarkenytt-hallsberg-spadtag-2025",
+      "omrade": "skolor-forskolor",
+      "typ": "kommunal-plan",
+      "titel": "Spadtag för nya Idrottshallen, Hallsberg",
+      "organisation": "Sydnärkenytt",
+      "datum": "2025-10-27",
+      "url": "https://www.sydnarkenytt.se/hallsberg/artikel/spadtag-foer-nya-idrottshallen",
+      "sammandrag": "Officiell byggstart 2025-10-27, klar hösten 2026. '45 miljoner kostar själva bygget men drygt 60 miljoner lånar kommunen för kringskostnader.' Entreprenör NA Bygg; förlaga Närlundahallen i Askersund. Senare artikel anger total yta ca 2 000 m² → byggkostnad ca 23 000 kr/m². Verifierad nåbar 2026-08-26.",
       "hardkontroll": {
         "status": "godkand",
         "datum": "2026-08-26",
