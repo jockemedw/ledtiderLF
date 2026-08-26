@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
+import dynamic from 'next/dynamic';
+
+const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
 
 export async function getStaticProps() {
   const root = process.cwd();
@@ -32,6 +35,7 @@ export default function Detaljplan({ sharedCss, body }) {
         <style dangerouslySetInnerHTML={{ __html: sharedCss }} />
       </Head>
       <div dangerouslySetInnerHTML={{ __html: body }} />
+      <CommentLayer page="detaljplan" />
     </>
   );
 }

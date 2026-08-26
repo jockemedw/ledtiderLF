@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   }
 
   if (req.method === 'POST') {
-    const { anchor, initials, text } = req.body ?? {};
+    const { anchor, initials, text, page } = req.body ?? {};
     if (typeof anchor !== 'string' || !anchor) {
       return res.status(400).json({ error: 'anchor krävs' });
     }
@@ -31,6 +31,7 @@ export default async function handler(req, res) {
         anchor: anchor.slice(0, 200),
         initials: init.toUpperCase(),
         text: txt,
+        page: typeof page === 'string' && page ? page.slice(0, 40) : 'lokal',
       });
       return res.status(201).json({ comment });
     } catch (err) {

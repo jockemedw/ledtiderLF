@@ -32,7 +32,7 @@ function CloseIcon() {
   );
 }
 
-export default function CommentLayer() {
+export default function CommentLayer({ page = 'lokal' }) {
   const [comments, setComments] = useState([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const [composing, setComposing] = useState(null);
@@ -239,7 +239,9 @@ export default function CommentLayer() {
       const r = await fetch('/api/comments');
       const j = await r.json();
       if (!r.ok) throw new Error(j.error);
-      setComments(j.comments);
+      // Visa bara den här sidans kommentarer — äldre kommentarer utan
+      // page-fält hör till översikten ('lokal').
+      setComments(j.comments.filter((c) => (c.page || 'lokal') === page));
     } catch (e) {
       setError('Kunde inte läsa kommentarer');
     }
@@ -261,7 +263,7 @@ export default function CommentLayer() {
       const r = await fetch('/api/comments', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ anchor: composing.anchor, initials, text }),
+        body: JSON.stringify({ anchor: composing.anchor, initials, text, page }),
       });
       const j = await r.json();
       if (!r.ok) throw new Error(j.error);
