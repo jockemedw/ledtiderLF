@@ -216,7 +216,7 @@
     {
       "id": "ledtid-total-grundskola",
       "kategori": "ledtider",
-      "etikett": "Grundskola F–9, total ledtid (behov→inflytt)",
+      "etikett": "Grundskola F–9 nybyggnad, total ledtid (behov→inflytt)",
       "varde": "7–10 år",
       "kalla_ids": [
         "lund-strategisk-lfp-2024-2033",
@@ -225,6 +225,18 @@
       "verifiering": "verifierad",
       "datum": "2024–2025",
       "not": "Lund: ~7 år snitt från tanke till färdig skola. Kvarngärdesskolan (ny DP): 10 år varav 3 års byggfas"
+    },
+    {
+      "id": "ledtid-total-grundskola-ombyggnad",
+      "kategori": "ledtider",
+      "etikett": "Grundskola F–9 ombyggnad, total ledtid (behov→inflytt)",
+      "varde": "≈2,5–4 år",
+      "kalla_ids": [
+        "sisab-portal"
+      ],
+      "verifiering": "preliminar",
+      "datum": "2019–2023",
+      "not": "Härledd: byggfas ~18 mån (SISAB, 8 ombyggnader 2019–2023) + förskede 1–2 år. Normalt ingen ny detaljplan; behov av evakueringslokaler kan förlänga"
     },
     {
       "id": "ledtid-total-vob",
