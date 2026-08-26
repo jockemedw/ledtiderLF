@@ -662,6 +662,7 @@
   <a href="/" class="minimal-nav-brand">Lejonfastigheter <span>Lokalförsörjning</span></a>
   <a href="/" class="minimal-nav-back">← Översikt</a>
   <span class="minimal-nav-title">Detaljplaner — fördjupning</span>
+  <button type="button" class="verifiering-toggle" style="margin-left:auto" aria-pressed="false" title="Visa verifieringsstatus för siffror och påståenden — grönt = verifierad mot källa, guld = preliminär">Källstatus</button>
 </nav>
 
 <!-- HERO -->
@@ -1311,9 +1312,34 @@
     update();
   }
 
+  // Källstatus-toggle: samma mekanik och localStorage-nyckel som översikten
+  function setupVerifieringToggle() {
+    var btn = document.querySelector('.verifiering-toggle');
+    if (!btn) return;
+    var flaggade = document.querySelectorAll('[data-verifiering-not]');
+    for (var i = 0; i < flaggade.length; i++) {
+      if (!flaggade[i].title) flaggade[i].title = flaggade[i].getAttribute('data-verifiering-not');
+    }
+    function apply(on, persist) {
+      document.body.classList.toggle('show-verifiering', !!on);
+      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.textContent = on ? 'Källstatus på' : 'Källstatus';
+      if (persist) {
+        try { localStorage.setItem('show-verifiering', on ? '1' : '0'); } catch (e) {}
+      }
+    }
+    var initial = false;
+    try { initial = localStorage.getItem('show-verifiering') === '1'; } catch (e) {}
+    apply(initial, false);
+    btn.addEventListener('click', function () {
+      apply(!document.body.classList.contains('show-verifiering'), true);
+    });
+  }
+
   function init() {
     setupMobileDrawer();
     setupActiveSubtab();
+    setupVerifieringToggle();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
