@@ -2830,17 +2830,30 @@ const DATA = {
       kalla: "SISAB slutrapporter 2019–2023 (8 projekt), Krokoms kommun"
     },
     {
-      namn: "Grundskolor F–9",
-      eyebrow: "Ombyggnad / Nybyggnad",
+      namn: "Grundskolor F–9 — ombyggnad",
+      eyebrow: "Ombyggnad · befintlig skola",
+      rader: [
+        { etikett: "Total ledtid (behov→inflytt)", varde: "≈2,5–4 år *" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "~18 mån" },
+        { etikett: "Budget ombyggnad", varde: "10–150 mkr" },
+        { etikett: "Underlag", varde: "8 projekt (SISAB 2019–2023)" },
+        { etikett: "Avvikelse mot budget", varde: "+4 % (median)" }
+      ],
+      insikt: "Total ledtid härledd: byggfas ~18 mån + förskede (program, beslut, upphandling) typiskt 1–2 år — ombyggnad sker i befintlig fastighet och kräver normalt ingen ny detaljplan. Ombyggnader är förvånansvärt förutsägbara: SISAB:s åtta dokumenterade ombyggnader 2019–2023 höll +4 % mot budget i median. Behov av evakueringslokaler under byggtiden kan dock förlänga och fördyra.",
+      kalla: "SISAB slutrapporter 2019–2023"
+    },
+    {
+      namn: "Grundskolor F–9 — nybyggnad",
+      eyebrow: "Nybyggnad · 400–1 000 elever",
       rader: [
         { etikett: "Total ledtid (behov→inflytt)", varde: "7–10 år" },
-        { etikett: "— varav byggfas (GB→inflytt)", varde: "18 mån ombyggn. · ~3 år nybyggn." },
-        { etikett: "Budget ombyggnad", varde: "10–150 mkr" },
+        { etikett: "— varav byggfas (GB→inflytt)", varde: "≈3 år" },
+        { etikett: "Budget nybyggnad", varde: "250–510 mkr" },
         { etikett: "Med ny detaljplan", varde: "8–10 år" },
-        { etikett: "Avvikelse ombyggnad", varde: "+4 % (median)" }
+        { etikett: "Kostnad per yta", varde: "25 000–35 000 kr/m² BTA" }
       ],
-      insikt: "Total ledtid ur källorna: Lunds kommun anger ~7 år från tanke till färdig skola som genomsnitt; Kvarngärdesskolan i Uppsala (F–9, 990 elever, ny detaljplan) tog 10 år varav 3 års byggfas. Ombyggnader är förvånansvärt förutsägbara — SISAB:s åtta dokumenterade ombyggnader 2019–2023 höll +4 % mot budget i median.",
-      kalla: "Lunds kommun, SISAB slutrapporter, Uppsala Skolfastigheter"
+      insikt: "Total ledtid ur källorna: Lunds kommun anger ~7 år från tanke till färdig skola som genomsnitt; Kvarngärdesskolan i Uppsala (F–9, 990 elever, ny detaljplan) tog 10 år varav 3 års byggfas. Budgeten följer storleken: Smedbyskolan i Norrköping (~400 elever, 7 850 m²) kostade 252 mkr, medan Vallås i Halmstad och Kvarngärdesskolan (900–1 000 elever) landade på 475–510 mkr — stora skolor ger skalfördelar per elevplats.",
+      kalla: "Lunds kommun, Uppsala Skolfastigheter, Norrköpings kommun, Halmstads kommun"
     },
     {
       namn: "Vård- och omsorgsboenden",
