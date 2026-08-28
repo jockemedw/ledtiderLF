@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './CommentLayer.module.css';
-import { assignAnchorsInDocument, ensureAnchor, readAnchorText } from '../lib/anchor.js';
+import { assignAnchorsInDocument, ensureAnchor, readAnchorText, snapToCommentable } from '../lib/anchor.js';
 import CommentPillar from './CommentPillar.jsx';
 import CommentForm from './CommentForm.jsx';
 import AdminLock from './AdminLock.jsx';
@@ -44,6 +44,15 @@ export default function CommentLayer({ page = 'lokal' }) {
   const [focusedAnchor, setFocusedAnchor] = useState(null);
   const [tick, setTick] = useState(0);
   const groupRefs = useRef(new Map());
+  const composeRef = useRef(null);
+
+  // Backdrop-klick och kryss får inte kasta ett påbörjat utkast utan
+  // bekräftelse — formulärets egen Avbryt-knapp stänger däremot direkt.
+  function requestCloseCompose() {
+    const draft = composeRef.current?.querySelector('textarea')?.value.trim();
+    if (draft && !confirm('Kasta utkastet till kommentaren?')) return;
+    setComposing(null);
+  }
 
   useEffect(() => {
     assignAnchorsInDocument(document);
@@ -140,11 +149,11 @@ export default function CommentLayer({ page = 'lokal' }) {
     let lastHi = null;
 
     const onMove = (e) => {
-      const el = e.target;
-      if (isSkippable(el)) {
+      if (isSkippable(e.target)) {
         if (lastHi) { removeHighlight(lastHi); lastHi = null; }
         return;
       }
+      const el = snapToCommentable(e.target);
       if (el === lastHi) return;
       if (lastHi) removeHighlight(lastHi);
       applyHighlight(el);
@@ -152,14 +161,13 @@ export default function CommentLayer({ page = 'lokal' }) {
     };
 
     const onClick = (e) => {
-      const el = e.target;
-      if (isSkippable(el)) {
+      if (isSkippable(e.target)) {
         setSelectionMode(false);
         return;
       }
       e.preventDefault();
       e.stopPropagation();
-      const anchor = ensureAnchor(el);
+      const anchor = ensureAnchor(snapToCommentable(e.target));
       setComposing({ anchor });
       setFocusedAnchor(anchor);
       setSelectionMode(false);
@@ -520,10 +528,11 @@ export default function CommentLayer({ page = 'lokal' }) {
         <div
           className={styles.composeBackdrop}
           data-comment-ui="true"
-          onClick={() => setComposing(null)}
+          onClick={requestCloseCompose}
         >
           <div
             className={styles.composeModal}
+            ref={composeRef}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
@@ -533,7 +542,7 @@ export default function CommentLayer({ page = 'lokal' }) {
               <h3 className={styles.composeTitle}>Ny kommentar</h3>
               <button
                 className={styles.panelClose}
-                onClick={() => setComposing(null)}
+                onClick={requestCloseCompose}
                 aria-label="Stäng"
                 title="Stäng"
               >
