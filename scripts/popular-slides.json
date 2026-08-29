@@ -70,42 +70,6 @@
       }
     },
     {
-      "id": "hierarki",
-      "ordning": 3,
-      "ankare": "hierarki",
-      "popular": true,
-      "layout": "trappa",
-      "titel": "Hur behov tillgodoses",
-      "underrubrik": "I ordning från enklast till mest omfattande",
-      "steg": [
-        {
-          "niva": 1,
-          "namn": "Inhyrning",
-          "ledtid": "3–12 mån",
-          "beskrivning": "Snabbast — om rätt lokal finns ledig på rätt plats."
-        },
-        {
-          "niva": 2,
-          "namn": "Övertagande / ombyggnad",
-          "ledtid": "2–5 år",
-          "beskrivning": "Ta över befintlig byggnad. Dolda skador kan fördubbla tid och kostnad."
-        },
-        {
-          "niva": 3,
-          "namn": "Tillbyggnad",
-          "ledtid": "2–3,5 år",
-          "beskrivning": "Utöka befintlig byggnad. Kräver byggrätt — med planändring 4–7 år."
-        },
-        {
-          "niva": 4,
-          "namn": "Nybyggnation",
-          "ledtid": "5–8 år",
-          "beskrivning": "Maximal flexibilitet — men ofta ny detaljplan på 2–5 år."
-        }
-      ],
-      "callout": "Att ta över lokaler någon annan lämnar kan vara både snabbast och bäst — men lokalen är ofta ritad för en annan verksamhet, så passformen behöver prövas mot behovet innan valet görs."
-    },
-    {
       "id": "ledtider",
       "ordning": 4,
       "ankare": "jamforelse",
@@ -320,15 +284,17 @@
     },
     {
       "id": "oversikt",
-      "ordning": 11,
+      "ordning": 3,
       "ankare": "oversikt",
+      "popular": true,
       "layout": "spar-kort",
-      "titel": "Hur lokaler kan tillgodoses",
-      "underrubrik": "De fyra spåren",
-      "callout": "Varje spår har fundamentalt olika förutsättningar, ledtider och ekonomiska konsekvenser.",
+      "titel": "Hur behov tillgodoses — de fyra spåren",
+      "underrubrik": "Prövas i ordning från enklast (nivå 1) till mest omfattande (nivå 4)",
+      "callout": "Prövningsordning, inte rangordning: att ta över lokaler någon annan lämnar kan vara både snabbast och bäst — men lokalen är ofta ritad för en annan verksamhet, så passformen behöver prövas mot behovet innan valet görs.",
       "sparKort": [
         {
           "bokstav": "A",
+          "niva": 1,
           "farg": "0891B2",
           "namn": "Hyra in",
           "subtitle": "Befintlig lokal eller ny lokal uppförd av extern part",
@@ -337,6 +303,7 @@
         },
         {
           "bokstav": "B",
+          "niva": 2,
           "farg": "059669",
           "namn": "Bygga om",
           "subtitle": "Ombyggnad av befintlig byggnad i beståndet",
@@ -345,6 +312,7 @@
         },
         {
           "bokstav": "C",
+          "niva": 3,
           "farg": "D97706",
           "namn": "Tillbyggnad",
           "subtitle": "Utökning av befintlig byggnad på samma fastighet",
@@ -353,6 +321,7 @@
         },
         {
           "bokstav": "D",
+          "niva": 4,
           "farg": "C0392B",
           "namn": "Nybyggnad",
           "subtitle": "Ny byggnad på befintlig eller ny mark",
