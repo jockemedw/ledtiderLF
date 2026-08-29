@@ -1,6 +1,6 @@
 import { buildPptx } from '../../lib/pptx-builder.js';
 
-// GET /api/pptx?ids=hierarki,kostnad,spar-b
+// GET /api/pptx?ids=oversikt,kostnad,spar-b
 //   → returnerar .pptx-buffer med slides för de valda sektionerna.
 // GET /api/pptx (utan ids) → hela populärversionen.
 //

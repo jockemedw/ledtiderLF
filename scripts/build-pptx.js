@@ -7,7 +7,7 @@
  * Användning:
  *   npm run pptx                          # alla slides
  *   npm run pptx -- titel,kostnad-80      # bara valda slide-id:n
- *   npm run pptx -- --sections=hierarki,kostnad  # via sektion-id:n
+ *   npm run pptx -- --sections=oversikt,kostnad  # via sektion-id:n
  *   npm run pptx -- --out=foo.pptx        # eget filnamn (under dist/)
  */
 
