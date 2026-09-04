@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-26",
+  "uppdaterad": "2026-09-04",
   "omraden": [
     {
       "id": "detaljplan",
@@ -40,6 +40,13 @@
       "farg": "#0EA5E9",
       "dolt_default": true,
       "not": "Nordiska motsvarigheter till svensk samhällsfastighetsförsörjning — Statsbygg (Norge stat), Oslobygg (Oslo kommune), Senaatti (Finland stat), By & Havn (Köpenhamn). Default avbockad — bockas på vid internationell jämförelse."
+    },
+    {
+      "id": "kommunstatistik",
+      "namn": "Kommunstatistik (Kolada)",
+      "kort": "KS",
+      "farg": "#0F766E",
+      "not": "Nyckeltalsdatabasen Kolada, som publicerar SCB, Boverket och Räkenskapssammandraget kommun för kommun. Underlaget till sidan Linköping i jämförelse."
     }
   ],
   "kallor": [
@@ -2227,6 +2234,36 @@
       "hardkontroll": {
         "status": "godkand",
         "datum": "2026-08-26",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "kolada-planledtider",
+      "omrade": "kommunstatistik",
+      "typ": "statistik",
+      "titel": "Kolada — planledtider, planberedskap och bygglovstider per kommun",
+      "organisation": "Rådet för främjande av kommunala analyser (RKA)",
+      "datum": "löpande",
+      "url": "https://www.kolada.se/",
+      "sammandrag": "Boverkets plan- och bygglovsenkät publicerad kommun för kommun (N07926, N07927, N07923, N07924, N07925, N07928, N07929, U00810). Samma mätning som ligger bakom SKR:s öppna jämförelser, men nedbrytbar på enskild kommun och som tidsserie. Linköping 2025: 44,0 månader mediantid från planuppdrag till antagande mot kommunmedianens 29,0 (n=217), varav 16,0 månader från samrådsstart. Bygglov för en- och tvåbostadshus 2023: 41,0 dagar mot medianens 59,0. Avser bostadsplaner respektive bostadshus, inte samhällsfastigheter. Hämtas via api.kolada.se/v3 med scripts/fetch-kolada.js.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-09-04",
+        "metod": "webfetch"
+      }
+    },
+    {
+      "id": "kolada-lokalkostnad-demografi",
+      "omrade": "kommunstatistik",
+      "typ": "statistik",
+      "titel": "Kolada — lokalkostnader, demografi och verksamhetsvolymer per kommun",
+      "organisation": "Rådet för främjande av kommunala analyser (RKA)",
+      "datum": "löpande",
+      "url": "https://www.kolada.se/",
+      "sammandrag": "Räkenskapssammandragets lokalkostnader per verksamhet och SCB:s kommunframskrivningar, publicerade kommun för kommun. Linköping 2025: 27 536 kr/elev i grundskola åk 1–9 mot rikets 26 180, 33 403 kr/inskrivet barn i förskola, 4 620 kr/inv 65+ i äldreomsorg. Framskriven förändring 6–15 år på tio års sikt −17,6 % mot rikets −14,7 %, samtidigt som 80+ ökar 26,1 %. Kostnadsnivå är inte ett prestationsmått — den påverkas av nyproduktionsandel, standard och internhyresmodell.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-09-04",
         "metod": "webfetch"
       }
     }

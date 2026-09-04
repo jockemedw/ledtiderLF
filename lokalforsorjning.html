@@ -449,6 +449,25 @@ section { padding: 5rem 2rem; scroll-margin-top: 80px; }
   font-size: 0.88rem; color: var(--gold-light); font-weight: 500;
 }
 
+/* Väg in till den Kolada-kollade versionen. Ingen siffra här — täckningen
+   (5 av 15 avsnitt har underlag) redovisas i bannern på /kolada-kollad. */
+.hero-kolada {
+  margin-top: 1.8rem;
+  max-width: 62ch;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.7);
+}
+.hero-kolada strong { color: var(--gold-light); font-weight: 600; }
+.hero-kolada a {
+  color: var(--gold-light);
+  border-bottom: 1px solid rgba(232,201,122,0.4);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.hero-kolada a:hover { border-bottom-color: var(--gold-light); }
+.hero-kolada-skilje { color: rgba(255,255,255,0.35); margin: 0 0.35rem; }
+
 /* ─── NATIONELL KONTEXT ─────────────────────── */
 #kontext { background: var(--white); }
 .kontext-grid {
@@ -1529,9 +1548,12 @@ footer strong { color: rgba(255,255,255,0.8); }
     page-break-after: avoid;
   }
   #intro::before { display: none !important; }
-  .hero-title, .hero-ingress, .hero-eyebrow, .hero-tagline {
+  .hero-title, .hero-ingress, .hero-eyebrow, .hero-tagline, .hero-kolada {
     color: #000 !important;
   }
+
+  .hero-kolada a { color: #000 !important; border-bottom-color: #000 !important; }
+  .hero-kolada strong { color: #000 !important; }
   .hero-title { font-size: 24pt !important; }
   .hero-title em { color: #555 !important; }
   .hero-ingress { font-size: 11pt !important; max-width: none; }
@@ -1838,6 +1860,8 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li><a href="#kallor"        class="nav-subtab" data-section="kallor">Källor — kortöversikt</a></li>
       <li><a href="/kallregister"  class="nav-subtab is-external">Källregister</a></li>
       <li><a href="/nyckeltal"     class="nav-subtab is-external">Nyckeltal</a></li>
+      <li><a href="/kolada-kollad" class="nav-subtab is-external">Kolada-kollad</a></li>
+      <li><a href="/linkoping"     class="nav-subtab is-external">Linköping i jämförelse</a></li>
     </ul>
   </div>
 </nav>
@@ -1851,6 +1875,13 @@ footer strong { color: rgba(255,255,255,0.8); }
       Att tillgodose ett lokalbehov tar allt från tre månader till åtta år — beroende på vilken väg som väljs och hur tidigt planeringen startar. Det här materialet förklarar varför, och vad som faktiskt tar tid.
     </p>
     <span class="hero-tagline">Fyra spår · Faktiska ledtider · Svenska referensdata</span>
+
+    <p class="hero-kolada">
+      Det finns en <strong>Kolada-kollad</strong> version av den här guiden, där varje avsnitt är märkt med vad offentlig kommunstatistik kan — och inte kan — säga om det.
+      <a href="/kolada-kollad">Läs den Kolada-kollade versionen</a>
+      <span class="hero-kolada-skilje" aria-hidden="true">·</span>
+      <a href="/linkoping">Linköping mot jämförbara kommuner</a>
+    </p>
   </div>
 </section>
 
