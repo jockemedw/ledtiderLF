@@ -2,8 +2,8 @@
 
 **Genomförd:** 2026-09-04
 **Branch:** `claude/kolada-api-integration-1vqzbg`
-**Underlag:** `data/kolada.json`, 57 nyckeltal hämtade ur Koladas API v3 med `scripts/fetch-kolada.js`
-**Publicerat som:** `/kolada-kollad` (guiden med varje avsnitt märkt) och `/linkoping` (samtliga 57 nyckeltal)
+**Underlag:** `data/kolada.json`, 81 nyckeltal hämtade ur Koladas API v3 med `scripts/fetch-kolada.js`
+**Publicerat som:** `/linkoping` — ren Kolada-statistik ordnad efter guidens ämnen
 
 ---
 
@@ -15,10 +15,10 @@ Varje mått är därför klassat, och klassen styr både beräkning och presenta
 
 | Klass | Antal | Riktning | Vad som får sägas |
 |---|---:|---|---|
-| Styrmått | 6 | entydig | Avvikelsen är ett utfall — bättre eller sämre är rimliga ord |
-| Kostnadsmått | 19 | tvetydig | Avvikelsen redovisas, men aldrig som betyg |
-| Kontextmått | 32 | ingen | Beskriver förutsättningar, ingen värdering |
-| **Summa** | **57** | | |
+| Styrmått | 7 | entydig | Avvikelsen är ett utfall — bättre eller sämre är rimliga ord |
+| Kostnadsmått | 30 | tvetydig | Avvikelsen redovisas, men aldrig som betyg |
+| Kontextmått | 44 | ingen | Beskriver förutsättningar, ingen värdering |
+| **Summa** | **81** | | |
 
 Regeln är kodad, inte bara skriven: `avvikelseStil()` i `lib/kolada.js` returnerar alltid neutral ton för kostnads- och kontextmått, och `lib/__tests__/kolada.test.js` faller om någon ändrar det.
 
@@ -106,6 +106,47 @@ Linköping ligger över riket på samtliga fem, och över liknande kommuner på 
 4. **Spridningen är stor.** Grundskolans lokalkostnad spänner över landets 290 kommuner från 13 196 till 47 089 kr/elev, med p10 på 19 155 och p90 på 31 454. Linköpings 27 536 ligger inom det breda mittfältet, inte i något ytterläge.
 
 Det som ändå är värt att följa är att avvikelsen är **konsekvent** — fem mått av fem över riket. Ett enskilt mått hade varit brus; en genomgående nivåskillnad är värd en förklaring, och den förklaringen bör Lejonfastigheter kunna ge innan någon annan formulerar den åt oss.
+
+---
+
+## 3b. Investeringarna — där Lejonfastigheter blir synligt
+
+Den breda genomgången 2026-09-04 lade till tolv investerings- och balansmått. De ger materialets tydligaste strukturella fynd, och det syns bara om kommunen och kommunkoncernen läses tillsammans. Referensår 2025, kr/inv:
+
+| Mått | Linköping | Liknande kommuner | Riket | Kommunmedian | Percentil |
+|---|---:|---:|---:|---:|---|
+| Investeringsutgifter, pedagogisk verksamhet | **107** | 2 370 | 2 217 | 1 203 | p9 |
+| Investeringsutgifter, vård och omsorg | **140** | 553 | 711 | 355 | p27 |
+| Materiella anläggningstillgångar, **kommunen** | **38 254** | 79 527 | 89 587 | 80 903 | **p4** |
+| Materiella anläggningstillgångar, **kommunkoncernen** | **241 006** | 202 308 | 184 848 | 143 623 | **p97** |
+| Avskrivningar, kommunen | −1 962 | −4 118 | −4 171 | −4 238 | p97 |
+| Avskrivningar, kommunkoncernen | −10 414 | −9 389 | −8 189 | −6 609 | p7 |
+
+Spegelbilden är närmast perfekt. Linköpings **kommun** ligger på fjärde percentilen i anläggningstillgångar — bland de fyra procent lägsta i landet — och gör i praktiken inga egna investeringar i skollokaler. Linköpings **koncern** ligger på 97:e percentilen, bland de tre procent högsta, och skriver av mer än nästan alla andra.
+
+Det är samma sak sedd från två håll: beståndet ligger i Lejonfastigheter, inte i kommunens balansräkning. Detta är det närmaste Kolada kommer att mäta bolaget, och det förklarar lokalkostnadsmönstret i avsnitt 3 — kommunen betalar hyra i stället för att bära kapitalkostnad, vilket flyttar kostnaden från kapital till drift.
+
+**Konsekvensen för hur siffrorna får användas.** Kommunraden ensam är ett missvisande påstående om Linköping. Att kommunen investerar 107 kr/inv i pedagogiska lokaler mot rikets 2 217 ser ut som en sensation men är en bokföringseffekt. På `/linkoping` står de två nivåerna därför intill varandra, och noten på varje kommunrad säger varför.
+
+Självfinansieringsgraden är 85,8 procent mot liknande kommuners 82,3 — klart över kommunens eget krav på 50 procent egenfinansiering, men måttet avser kommunen och inte koncernen, så det säger inget om bolagets finansiering.
+
+---
+
+## 3c. Förvaltningskvalitet — det enda kvalitetsomdömet
+
+`N00609` *Skötsel av byggnader där kommunen har verksamhet fungerar bra*, SCB:s medborgarundersökning, andel som instämmer:
+
+| Linköping | Liknande kommuner | Större stad | Riket | Kommunmedian | Percentil |
+|---:|---:|---:|---:|---:|---|
+| **79,9 %** | 76,4 | 73,3 | 69,9 | 70,9 | p87 |
+
+Bäst av de fyra, och bättre än 87 procent av landets kommuner. Detta är det enda måttet i hela materialet som värderar själva förvaltningsuppdraget snarare än dess kostnad — och det är ett styrmått med entydig riktning, till skillnad från lokalkostnaderna.
+
+Läst tillsammans med avsnitt 3 blir bilden sammanhängande snarare än motsägelsefull: lokalerna kostar mer än i jämförbara kommuner, och de upplevs som bättre skötta. Det är ett rimligt samband, men ett samband dessa två mått inte i sig bevisar.
+
+Som motvikt finns beståndsmåtten: idrottshallar 1,24 per 10 000 invånare mot liknande kommuners 1,74 och kommunmedianens 2,35 — p8, alltså bland de åtta procent lägsta. Linköping har färre idrottshallar per invånare än nästan alla jämförbara kommuner.
+
+Energipriserna för Nils Holgersson-modellens typfastighet ligger under jämförelsekommunernas: fjärrvärme 200 kr/kvm mot 214,4 och elpris 114 mot 126,5. Typfastigheten är dock ett flerbostadshus, inte en skola, så måttet säger mer om ortens prisnivå än om beståndets prestanda.
 
 ---
 
