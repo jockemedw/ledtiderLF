@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { useMemo, useState } from 'react';
 import MinimalNav from '../components/MinimalNav.jsx';
+import { kortEtikett } from '../lib/kallhanvisning.js';
 
 export async function getStaticProps() {
   const root = process.cwd();
@@ -19,6 +20,7 @@ export async function getStaticProps() {
     organisation: k.organisation,
     url: k.url,
     datum: k.datum,
+    etikett: kortEtikett(k),
   }]));
 
   return { props: { sharedCss, ...siffror, kallorById } };
@@ -247,7 +249,7 @@ function NyckeltalRad({ rad, kallorById }) {
   const kallor = (rad.kalla_ids || []).map(id => kallorById[id]).filter(Boolean);
   const farg = VERIFIERING_FARG[rad.verifiering] || '#6B7280';
   return (
-    <tr className={`nt-rad${rad.tangerande ? ' is-tangerande' : ''}`}>
+    <tr className={`nt-rad${rad.tangerande ? ' is-tangerande' : ''}`} id={rad.id}>
       <td className="nt-td-etikett">
         <span className="nt-etikett">{rad.etikett}</span>
         {rad.tangerande && <span className="nt-tag-tangerande">tangerande</span>}
@@ -265,7 +267,7 @@ function NyckeltalRad({ rad, kallorById }) {
             {kallor.map(k => (
               <li key={k.id}>
                 <a href={`/kallregister#${k.id}`} title={`${k.titel} (${k.organisation})`}>
-                  {kortaKalla(k)}
+                  {k.etikett || kortaKalla(k)}
                 </a>
               </li>
             ))}
