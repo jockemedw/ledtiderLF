@@ -1662,6 +1662,52 @@ footer strong { color: rgba(255,255,255,0.8); }
 .prov-varfor-kort h4 { margin:0 0 0.7rem; font-size:1.02rem; display:flex; align-items:center; gap:0.5rem; }
 .prov-varfor-kort ul { margin:0; padding-left:1.15rem; }
 .prov-varfor-kort li { font-size:0.9rem; color:var(--navy-mid); margin-bottom:0.45rem; }
+
+/* Kolada-jämförelser: Linköping mot referensgrupper. Data i data/kolada.json,
+   hämtas med scripts/fetch-kolada.js. Kostnadsmått färgas aldrig. */
+.lkpg-block {
+  margin-top: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem;
+}
+.lkpg-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+.lkpg-block > p { font-size: 0.9rem; color: var(--muted); }
+.lkpg-tabell {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.lkpg-tabell th, .lkpg-tabell td {
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.lkpg-tabell thead th {
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+.lkpg-tabell .num { text-align: right; font-variant-numeric: tabular-nums; }
+.lkpg-tabell tbody tr:last-child th,
+.lkpg-tabell tbody tr:last-child td { border-bottom: none; }
+.lkpg-tabell tbody td:nth-child(2) { color: var(--navy); }
+
+@media (max-width: 700px) {
+  .lkpg-block { padding: 1.2rem 1rem; }
+  .lkpg-tabell { font-size: 0.82rem; }
+  .lkpg-tabell th, .lkpg-tabell td { padding: 0.5rem 0.4rem; }
+}
 </style>
 </head>
 
@@ -1744,6 +1790,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <li><a href="#kontext" class="nav-subtab" data-section="kontext">Nationell kontext</a></li>
       <li><a href="#kostnad" class="nav-subtab" data-section="kostnad">Kostnad</a></li>
       <li><a href="#beslut"  class="nav-subtab" data-section="beslut">Beslutsstöd</a></li>
+      <li><a href="/linkoping" class="nav-subtab is-external">Linköping i jämförelse</a></li>
     </ul>
     <ul class="nav-subtabs" data-group="kallor">
       <li><a href="#kallor"        class="nav-subtab" data-section="kallor">Källor — kortöversikt</a></li>
@@ -2057,6 +2104,31 @@ footer strong { color: rgba(255,255,255,0.8); }
 
     <div class="kontext-grid" id="kontext-grid"></div>
 
+    <div class="lkpg-block" data-verifiering="preliminar" data-verifiering-not="Kolada publicerar Boverkets plan- och bygglovsenkat, som avser bostadsplaner. Inte direkt jamforbart med planer for skola, forskola, LSS eller idrott. Mediantid, inte genomsnitt.">
+      <h3>Och så ser det ut i Linköping</h3>
+      <p>Samma mätning, nedbruten på kommun. Mediantid i månader, referensår 2025.</p>
+      <table class="lkpg-tabell">
+        <thead>
+          <tr>
+            <th>Mediantid</th>
+            <th class="num">Linköping</th>
+            <th class="num">Liknande kommuner</th>
+            <th class="num">Större stad</th>
+            <th class="num">Kommunmedian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Planuppdrag &rarr; antagande</td><td class="num"><strong>44,0</strong></td><td class="num">32,4</td><td class="num">36,6</td><td class="num">29,0</td></tr>
+          <tr><td>Samrådsstart &rarr; antagande</td><td class="num"><strong>16,0</strong></td><td class="num">12,0</td><td class="num">15,0</td><td class="num">12,0</td></tr>
+          <tr><td>Bygglov, en- och tvåbostadshus (2023)</td><td class="num"><strong>41,0 dgr</strong></td><td class="num">63,4</td><td class="num">58,4</td><td class="num">59,0</td></tr>
+        </tbody>
+      </table>
+      <p class="gantt-note mt-2">Två saker syns här. <strong>Skillnaden mellan de två första raderna är 28 månader</strong> — nästan två tredjedelar av planledtiden ligger före samråd, alltså i utrednings- och programskedet, innan planen blir synlig utåt. Och <strong>lovhandläggningen går åt andra hållet</strong>: Linköping ligger på ungefär två tredjedelar av jämförelsekommunernas tid. Flaskhalsen sitter i planskedet, inte i lovgivningen.</p>
+      <p class="gantt-note">Förväxla inte 44,0 månader med Ledtidsindex 46 månader ovan: det senare är ett riksgenomsnitt från planuppdrag till <em>laga kraft</em> för flerbostadshusplaner, det förra Linköpings mediantid till <em>antagande</em>. Olika ändpunkt, olika statistik, olika population — att talen ligger nära varandra är en tillfällighet. Kommunmedian är egen bearbetning av data från Kolada, inte en Kolada-siffra.</p>
+      <p class="mt-2"><a href="/linkoping#planprocess">Se hela jämförelsen — liknande kommuner, Större stad, riket och percentil &rarr;</a></p>
+      <cite style="display:block;margin-top:0.6rem;font-style:italic;font-size:0.85em;color:var(--muted)">Källa: Kolada (RKA), nyckeltal N07926, N07927 och U00810. Hämtat 2026-09-04.</cite>
+    </div>
+
     <div class="kontext-citat">
       <blockquote>
         "Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt."
@@ -2162,6 +2234,32 @@ footer strong { color: rgba(255,255,255,0.8); }
 
     <div class="kostnad-key" style="margin-top:1.4rem;background:rgba(232,201,122,0.08);border-color:rgba(232,201,122,0.5)">
       <strong>Linköpings kontext (2024–2025):</strong> Kommunens hyresnota till Lejonfastigheter ligger på <strong>~1 392 mnkr/år</strong> och prognostiseras öka till <strong>~1 666 mnkr/år (+21 %)</strong> efter åtgärdspaketet i kommungemensam LFP. Investeringsramen 2025 är <strong>803 mnkr</strong>, med ett nytt finansiellt krav: 50 % egenfinansiering av investeringar. <cite data-verifiering="verifierad" style="display:block;margin-top:0.4rem;font-style:italic;font-size:0.85em;color:var(--gold)">Kommungemensam lokalförsörjningsplan 2024–2033 (KS dec 2023) + Linköpings budget 2025–2030</cite>
+    </div>
+
+    <div class="lkpg-block" style="margin-top:1.4rem" data-verifiering="verifierad" data-verifiering-not="Rakenskapssammandraget via Kolada. Kostnadsniva ar inte ett prestationsmatt.">
+      <h3>Vad lokalerna kostar verksamheten — Linköping mot jämförbara kommuner</h3>
+      <p>Kommunens bokförda lokalkostnad, alltså hyresnotan ovan sedd från verksamhetens sida. Referensår 2025.</p>
+      <table class="lkpg-tabell">
+        <thead>
+          <tr>
+            <th>Lokalkostnad</th>
+            <th class="num">Linköping</th>
+            <th class="num">Liknande kommuner</th>
+            <th class="num">Större stad</th>
+            <th class="num">Riket</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Grundskola åk 1&ndash;9, kr/elev</td><td class="num"><strong>27 536</strong></td><td class="num">25 837</td><td class="num">26 144</td><td class="num">26 180</td></tr>
+          <tr><td>Förskola, kr/inskrivet barn</td><td class="num"><strong>33 403</strong></td><td class="num">31 382</td><td class="num">34 894</td><td class="num">33 651</td></tr>
+          <tr><td>Gymnasieskola, kr/elev</td><td class="num"><strong>28 942</strong></td><td class="num">27 581</td><td class="num">28 616</td><td class="num">25 802</td></tr>
+          <tr><td>Äldreomsorg, kr/inv 65+</td><td class="num"><strong>4 620</strong></td><td class="num">5 445</td><td class="num">4 942</td><td class="num">3 956</td></tr>
+          <tr><td>LSS, kr/inv</td><td class="num"><strong>629</strong></td><td class="num">549</td><td class="num">637</td><td class="num">536</td></tr>
+        </tbody>
+      </table>
+      <p class="gantt-note mt-2"><strong>Detta är kostnadsmått, inte betyg.</strong> Att Linköping ligger över riket på flera rader kan spegla hög nyproduktionsandel med tung kapitalkostnad, högre standard och energiprestanda, eller en internhyresmodell som bär mer än ren lokalkostnad — lika gärna som ineffektivt lokalutnyttjande. Spridningen mellan jämförelsekommunerna är dessutom stor: grundskolans lokalkostnad spänner över landets 290 kommuner från 13 196 till 47 089 kr/elev, med p10 på 19 155 och p90 på 31 454. Enskilda avvikelser ska tolkas försiktigt.</p>
+      <p class="mt-2"><a href="/linkoping#lokalkostnad">Se alla fjorton lokalkostnadsmått med percentil &rarr;</a></p>
+      <cite style="display:block;margin-top:0.6rem;font-style:italic;font-size:0.85em;color:var(--muted)">Källa: Kolada (RKA), nyckeltal N15009, N11020, N17008, N20060 och N28033. Hämtat 2026-09-04.</cite>
     </div>
 
     <div class="kostnad-key" style="margin-top:1.4rem;background:rgba(5,150,105,0.06);border-color:rgba(5,150,105,0.4)">

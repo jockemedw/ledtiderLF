@@ -656,6 +656,49 @@
   .dp-pall-kort h3 { font-size: 1.3rem; }
   .dp-pall-kort .siffra { font-size: 1.6rem; }
 }
+
+/* Kolada-jämförelser: Linköping mot referensgrupper. Se lib/kolada.js. */
+.lkpg-block {
+  margin-top: 2rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r);
+  padding: 1.6rem 1.8rem;
+}
+.lkpg-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 0.35rem;
+}
+.lkpg-block > p { font-size: 0.9rem; color: var(--muted); }
+.lkpg-tabell {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.lkpg-tabell th, .lkpg-tabell td {
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.lkpg-tabell thead th {
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+.lkpg-tabell .num { text-align: right; font-variant-numeric: tabular-nums; }
+.lkpg-tabell tbody tr:last-child td { border-bottom: none; }
+
+@media (max-width: 700px) {
+  .lkpg-block { padding: 1.2rem 1rem; }
+  .lkpg-tabell { font-size: 0.82rem; }
+  .lkpg-tabell th, .lkpg-tabell td { padding: 0.5rem 0.4rem; }
+}
 </style>
 
 <nav class="minimal-nav">
@@ -803,6 +846,31 @@
         </tbody>
       </table>
       <p class="gantt-note mt-3">SKR konstaterar att den största förändringen över hela mätperioden är just denna: från att hälften av kommunerna höll detaljplaner under ett år till att det idag är en exklusiv minoritet. Spannet 1–2 år är nu det vanligaste, och andelen kommuner med median över 37 månader (drygt tre år) har vuxit påtagligt.</p>
+    </div>
+
+    <div class="lkpg-block" data-verifiering="preliminar" data-verifiering-not="Kolada publicerar Boverkets plan- och bygglovsenkat per kommun. Avser bostadsplaner. Mediantid, inte genomsnitt. Kommunmedian och avvikelse ar egen bearbetning.">
+      <h3>Linköping i samma mätning</h3>
+      <p>SKR:s tabell ovan är den nationella bilden. Kolada publicerar samma underlag kommun för kommun, vilket gör Linköpings egen position mätbar. Referensår 2025, mediantid i månader.</p>
+      <table class="lkpg-tabell">
+        <thead>
+          <tr>
+            <th>Mediantid</th>
+            <th class="num">Linköping</th>
+            <th class="num">Liknande kommuner</th>
+            <th class="num">Större stad</th>
+            <th class="num">Kommunmedian</th>
+            <th class="num">Percentil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Planuppdrag &rarr; antagande</td><td class="num"><strong>44,0</strong></td><td class="num">32,4</td><td class="num">36,6</td><td class="num">29,0</td><td class="num">p75</td></tr>
+          <tr><td>Samrådsstart &rarr; antagande</td><td class="num"><strong>16,0</strong></td><td class="num">12,0</td><td class="num">15,0</td><td class="num">12,0</td><td class="num">p71</td></tr>
+        </tbody>
+      </table>
+      <p class="gantt-note mt-2">Linköping ligger i den fjärdedel av landets kommuner som har längst planledtid. Mediantiden har gått från 24 månader 2017 till 26 (2019), 39 (2021), 39,5 (2023) och 44,0 (2025) — en ökning med 83 procent på åtta år. <strong>Men försämringen är nationell.</strong> Jämförbara kommuner ökade under samma period från 17,2 till 32,4 månader (+88 %) och Större stad från 17,9 till 36,6 (+104 %). Linköping försämras alltså något långsammare än sina jämförelsegrupper, men startade högre och ligger fortfarande högre: gapet mot liknande kommuner var +40 procent 2017 och är +36 procent 2025. Problemet är reellt i absoluta tal, men det har inte uppstått i Linköping. Riket saknas i Kolada för det här måttet — därför visas kommunmedianen över samtliga 217 kommuner med värde, vilket är vår egen beräkning och inte en Kolada-siffra.</p>
+      <p class="gantt-note"><strong>28 av de 44 månaderna ligger före samrådsstart.</strong> Nästan två tredjedelar av planledtiden förbrukas alltså innan planen blir synlig utåt — i utrednings- och programskedet. Det är samma skede där kostnaden låses.</p>
+      <p class="mt-2"><a href="/linkoping#planprocess">Se hela jämförelsen med tidsserie och tio planmått &rarr;</a></p>
+      <cite style="display:block;margin-top:0.6rem;font-style:italic;font-size:0.85em;color:var(--muted)">Källa: Kolada (RKA), nyckeltal N07926 och N07927. Hämtat 2026-09-04.</cite>
     </div>
 
     <div class="dp-num-grid mt-3">

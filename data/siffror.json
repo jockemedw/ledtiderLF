@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-26",
+  "uppdaterad": "2026-09-04",
   "kategorier": [
     {
       "id": "ledtider",
@@ -1656,6 +1656,150 @@
       "hardkontroll": {
         "datum": "2026-08-26",
         "not": "Två sakfel i not/källsammandrag: (1) Hertsöskolan i Luleå (Expandia) förekommer INTE i källan — närmaste case är rättsfallet 'Bostadsmodulerna' (Kammarrätten i Sundsvall, mål 395-10, skolmoduler = byggentreprenadkontrakt, s. 60); stryk eller källbelägg Hertsöskolan separat. (2) Utgivare är SKL, juni 2019 (ISBN 978-91-7585-737-4) — inte SKR 2021-12."
+      }
+    },
+    {
+      "id": "lkpg-planledtid-antagande",
+      "kategori": "ledtider",
+      "etikett": "Linköping — planuppdrag till antagande (median)",
+      "varde": "44,0 månader",
+      "kalla_ids": [
+        "kolada-planledtider"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N07926. Kommunmedian 29,0 månader (n=217). Avser bostadsplaner. Förväxla inte med Ledtidsindex 46 månader, som är riksgenomsnitt planuppdrag till laga kraft för flerbostadshus — olika ändpunkt, olika statistik, olika population.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-planledtid-samrad",
+      "kategori": "ledtider",
+      "etikett": "Linköping — samrådsstart till antagande (median)",
+      "varde": "16,0 månader",
+      "kalla_ids": [
+        "kolada-planledtider"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N07927. Kommunmedian 12,0 månader. Skillnaden mot 44,0 innebär att 28 månader ligger före samråd, i utrednings- och programskedet.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-bygglovstid",
+      "kategori": "ledtider",
+      "etikett": "Linköping — handläggningstid bygglov (median)",
+      "varde": "41,0 dagar",
+      "kalla_ids": [
+        "kolada-planledtider"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2023",
+      "not": "Kolada U00810, nybyggnad en- och tvåbostadshus. Kommunmedian 59,0 dagar, Större stad 58,4. 2025 års värde är lägre men bygger på bara 24 inrapporterade kommuner och används därför inte som jämförelseår.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-planberedskap",
+      "kategori": "ledtider",
+      "etikett": "Linköping — planberedskap för bostäder",
+      "varde": "48,5 per 1000 inv",
+      "kalla_ids": [
+        "kolada-planledtider"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N07923. Kommunmedian 28,4. Avser bostäder — säger inget direkt om planberedskapen för samhällsfastigheter.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-lokalkostnad-grundskola",
+      "kategori": "kr-per-enhet",
+      "etikett": "Linköping — lokalkostnad grundskola åk 1–9",
+      "varde": "27 536 kr/elev",
+      "kalla_ids": [
+        "kolada-lokalkostnad-demografi"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N15009. Riket 26 180, liknande kommuner 25 837, kommunmedian 24 336. Kostnadsnivå är inte ett betyg — nyproduktionsandel, standard och internhyresmodell påverkar.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-lokalkostnad-forskola",
+      "kategori": "kr-per-enhet",
+      "etikett": "Linköping — lokalkostnad förskola (netto)",
+      "varde": "33 403 kr/inskrivet barn",
+      "kalla_ids": [
+        "kolada-lokalkostnad-demografi"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N11020. Riket 33 651, liknande kommuner 31 382, kommunmedian 30 910.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-lokalkostnad-aldreomsorg",
+      "kategori": "kr-per-enhet",
+      "etikett": "Linköping — lokalkostnad äldreomsorg, exkl. externa lokalintäkter",
+      "varde": "4 620 kr/inv 65+",
+      "kalla_ids": [
+        "kolada-lokalkostnad-demografi"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N20060. Liknande kommuner 5 445, Större stad 4 942, riket 3 956. Normerat mot befolkning 65+, inte mot boendeplatser — täckningsgraden påverkar måttet.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-demografi-grundskola-10ar",
+      "kategori": "demografi",
+      "etikett": "Linköping — framskriven förändring 6–15 år, 10 år",
+      "varde": "−17,6 %",
+      "kalla_ids": [
+        "kolada-lokalkostnad-demografi"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N02884, SCB:s kommunframskrivning. Riket −14,7 %, liknande kommuner −13,6 %. Tioårshorisonten motsvarar ledtiden för nybyggnad med ny detaljplan.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
+      }
+    },
+    {
+      "id": "lkpg-demografi-80plus-10ar",
+      "kategori": "demografi",
+      "etikett": "Linköping — framskriven förändring 80+, 10 år",
+      "varde": "+26,1 %",
+      "kalla_ids": [
+        "kolada-lokalkostnad-demografi"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N02842, SCB:s kommunframskrivning. Riket +27,2 %, liknande kommuner +32,5 %. Läses tillsammans med den minskande skolåldern — behoven flyttar, de försvinner inte.",
+      "hardkontroll": {
+        "datum": "2026-09-04",
+        "not": "Hämtat direkt ur Koladas API v3 2026-09-04 med scripts/fetch-kolada.js. Råvärde, inte bearbetning."
       }
     }
   ]

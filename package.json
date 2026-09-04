@@ -8,7 +8,8 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
-    "pptx": "node scripts/build-pptx.js"
+    "pptx": "node scripts/build-pptx.js",
+    "kolada": "node scripts/fetch-kolada.js"
   },
   "dependencies": {
     "@vercel/blob": "^0.27.0",

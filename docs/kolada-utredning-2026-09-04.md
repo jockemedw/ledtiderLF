@@ -147,7 +147,9 @@ Detta bekräftar och skärper guidens demografiavsnitt. `dem-linkoping-grundskol
 
 Poängen är dessutom att Kolada gör siffran **jämförbar**: Linköping ligger nära Norrköping och Örebro men sämre än Jönköping på skolåldrarna, och lägst av de fyra på 80+-ökningen. Det ger en mycket bättre grund för resonemanget "vi bygger skola samtidigt som elevkullarna minskar och omsorgsbehovet ökar" än en enskild kommunprognos.
 
-Utfallsdata finns också: Linköpings faktiska förändring 1–5 år var −4,5 % bara under 2025 (`N02014`), och −10,8 % över senaste femårsperioden (`N02017`). Det gör att prognoserna går att kalibrera mot utfall — vilket är precis vad `docs/research-brief.md` Spår 6 efterlyste ("bekräfta att svackan är reell och inte en artefakt").
+Utfallsdata finns också: Linköpings faktiska förändring 1–5 år var −3,2 % bara under 2025 (`N02014`), och −12,1 % över senaste femårsperioden (`N02017`).
+
+> **Rättelse 2026-09-04.** Här stod först −4,5 % och −10,8 %. Det var kvinnovärdena, inte totalerna — precis den könsuppdelningsfälla som beskrivs i avsnitt 2. Talen ovan är kontrollerade mot `gender === "T"` och stämmer med det som `scripts/fetch-kolada.js` nu hämtar. Det gör att prognoserna går att kalibrera mot utfall — vilket är precis vad `docs/research-brief.md` Spår 6 efterlyste ("bekräfta att svackan är reell och inte en artefakt").
 
 ### 3.4 Fastighetsnyckeltal — men bara för regioner
 
