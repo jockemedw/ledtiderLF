@@ -3,6 +3,8 @@ import Script from 'next/script';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
+import Kallhanvisningar from '../components/Kallhanvisningar.jsx';
+import { byggKallindex } from '../lib/kallhanvisning.js';
 import { KOLLADE_SEKTIONER, byggPanel, tackning } from '../lib/kolada.js';
 
 /**
@@ -22,6 +24,14 @@ export async function getStaticProps() {
   const root = process.cwd();
   const raw = fs.readFileSync(path.join(root, 'lokalforsorjning.html'), 'utf-8');
   const kolada = JSON.parse(fs.readFileSync(path.join(root, 'data/kolada.json'), 'utf-8'));
+
+  // Guidens HTML bär data-kalla-attribut. Samma lager som pages/index.js
+  // monterar måste finnas här, annars blir den parallella sidan guiden minus
+  // källhänvisningar i stället för guiden plus Kolada-markeringar.
+  const kallindex = byggKallindex(
+    JSON.parse(fs.readFileSync(path.join(root, 'data/kallregister.json'), 'utf-8')),
+    JSON.parse(fs.readFileSync(path.join(root, 'data/siffror.json'), 'utf-8')),
+  );
 
   const styleMatch = raw.match(/<style>([\s\S]*?)<\/style>/);
   const css = styleMatch ? styleMatch[1] : '';
@@ -63,6 +73,7 @@ export async function getStaticProps() {
       bodyInnehall,
       scriptInnehall,
       meta: kolada.meta,
+      kallindex,
       tackning: tackning(),
       sektioner: KOLLADE_SEKTIONER.map(s => ({ id: s.id, status: s.status, rubrik: s.rubrik || null })),
     },
@@ -87,7 +98,15 @@ const SEKTIONSNAMN = {
   kallor: 'Källor',
 };
 
-export default function KoladaKollad({ css, bodyInnehall, scriptInnehall, meta, tackning: t, sektioner }) {
+export default function KoladaKollad({
+  css,
+  bodyInnehall,
+  scriptInnehall,
+  meta,
+  kallindex,
+  tackning: t,
+  sektioner,
+}) {
   const medUnderlag = sektioner.filter(s => s.status !== 'ingen');
 
   return (
@@ -161,6 +180,8 @@ export default function KoladaKollad({ css, bodyInnehall, scriptInnehall, meta, 
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: scriptInnehall }}
       />
+
+      <Kallhanvisningar index={kallindex} />
     </>
   );
 }
