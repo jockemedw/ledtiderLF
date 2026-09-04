@@ -55,10 +55,10 @@ export default function Linkoping({
   return (
     <>
       <Head>
-        <title>Linköping i jämförelse — Lokalförsörjningsguide</title>
+        <title>Kolada — Linköping mot jämförbara kommuner</title>
         <meta
           name="description"
-          content="Linköpings planledtider, lokalkostnader och demografi jämförda med liknande kommuner, Större stad och riket. Data från Kolada."
+          content="Linköpings ledtider, investeringar, lokalkostnader, bestånd och demografi jämförda med liknande kommuner, Större stad och riket. Kommunstatistik ur Kolada."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -70,16 +70,18 @@ export default function Linkoping({
         <style dangerouslySetInnerHTML={{ __html: linkopingCss }} />
       </Head>
 
-      <MinimalNav title="Linköping i jämförelse" />
+      <MinimalNav title="Kolada-statistik" />
 
       <section className="lk-hero">
         <div className="lk-hero-inner">
           <span className="section-label">Kommunstatistik</span>
-          <h1>Linköping i jämförelse</h1>
+          <h1>Linköping mot jämförbara kommuner</h1>
           <p className="lk-hero-ingress">
-            Guiden i övrigt beskriver vad som gäller i Sverige. Den här sidan visar vad som gäller i
-            Linköping, mätt med samma mått som alla andra kommuner rapporterar. Underlaget är Kolada,
-            där SCB, Boverket och Räkenskapssammandraget publiceras kommun för kommun.
+            Ren kommunstatistik ur Kolada, ordnad efter guidens ämnen: ledtider, investeringar,
+            lokalkostnader, bestånd, energi, demografi och volym. Varje mått visar Linköping mot tre
+            likvärdiga referenser, medianen över landets kommuner och Linköpings percentil. Samma
+            mått som alla andra kommuner rapporterar — SCB, Boverket och Räkenskapssammandraget,
+            publicerade kommun för kommun.
           </p>
           <span className="lk-meta">
             Referensår {meta.senaste_ar} · Hämtat {meta.hamtat}
@@ -127,6 +129,15 @@ export default function Linkoping({
               </p>
             </div>
           </div>
+
+          <p className="lk-brodtext">
+            Två av avsnitten kräver särskild läsning. I <strong>Investeringar och bestånd</strong>
+            redovisas kommunen och kommunkoncernen intill varandra: koncernen omfattar de kommunala
+            bolagen, alltså även Lejonfastigheter. Att kommunen investerar lite i skollokaler betyder
+            därför inte att lite investeras — det betyder att investeringen ligger i bolaget. I
+            <strong> Energi och media</strong> avser samtliga tal en standardiserad typfastighet,
+            ett flerbostadshus, eftersom Kolada inte har kr per kvadratmeter för verksamhetslokaler.
+          </p>
 
           <div className="lk-referenser">
             <h3>De tre referenserna</h3>
@@ -185,7 +196,7 @@ export default function Linkoping({
       </section>
 
       <footer>
-        <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Linköping i jämförelse ·
+        <strong>Lejonfastigheter AB</strong> · Lokalförsörjningsguide · Kolada-statistik ·
         Internt arbetsmaterial
       </footer>
     </>

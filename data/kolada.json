@@ -3,7 +3,7 @@
     "hamtat": "2026-09-04",
     "api_bas": "https://api.kolada.se/v3",
     "skript": "scripts/fetch-kolada.js",
-    "senaste_ar": 2025,
+    "senaste_ar": 2026,
     "villkor": {
       "ravarde": "Källa: Kolada",
       "bearbetat": "Egen bearbetning av data från Kolada",
@@ -85,13 +85,28 @@
   "grupper": [
     {
       "id": "planprocess",
-      "namn": "Planprocess och lov",
-      "ingress": "Hur lång tid kommunens planering och lovgivning tar, och hur mycket som planeras. Det enda område där Kolada mäter något som direkt motsvarar guidens ledtidsargument. Underlaget är Boverkets plan- och bygglovsenkät och avser bostadsplaner."
+      "namn": "Ledtider — planprocess och lov",
+      "ingress": "Boverkets plan- och bygglovsenkät, publicerad kommun för kommun. Det enda område där Kolada mäter samma sak som guidens ledtidsargument. Underlaget avser bostadsplaner respektive bostadshus."
+    },
+    {
+      "id": "investering",
+      "namn": "Investeringar och bestånd",
+      "ingress": "Kommunens investeringsutgifter och anläggningstillgångar, redovisade både för kommunen och för kommunkoncernen. Skillnaden mellan de två nivåerna är det närmaste Kolada kommer att mäta Lejonfastigheter: beståndet ligger i bolaget, inte i kommunens egen balansräkning. Kommunraden ensam är därför missvisande."
     },
     {
       "id": "lokalkostnad",
-      "namn": "Lokalkostnad per verksamhet",
-      "ingress": "Kommunens bokförda lokalkostnad enligt Räkenskapssammandraget — i praktiken hyresnotan till Lejonfastigheter sedd från hyresgästens sida. Kostnadsnivå är inte ett betyg."
+      "namn": "Lokalkostnader per verksamhet",
+      "ingress": "Räkenskapssammandragets driftkostnad för lokaler — i praktiken hyresnotan till Lejonfastigheter sedd från verksamhetens sida. Detta är löpande kostnad per elev eller plats, inte investering per plats. Kostnadsnivå är inte ett betyg."
+    },
+    {
+      "id": "bestand",
+      "namn": "Lokalbestånd och kapacitet",
+      "ingress": "Antal anläggningar per invånare för de lokaltyper Kolada faktiskt räknar. Ett högre tal är inte automatiskt bättre — behovet styrs av demografi, geografi och föreningsliv."
+    },
+    {
+      "id": "energi",
+      "namn": "Energi och media per kvadratmeter",
+      "ingress": "Nils Holgersson-modellen prissätter el, värme, vatten och avfall per kvadratmeter för en standardiserad typfastighet. Det är den enda kr/kvm Kolada har på kommunnivå — men typfastigheten är ett flerbostadshus, inte en skola."
     },
     {
       "id": "demografi",
@@ -104,9 +119,14 @@
       "ingress": "Antal barn och elever samt inskrivningsgrad — det som översätter en befolkningsprognos till ett lokalbehov."
     },
     {
+      "id": "forvaltningskvalitet",
+      "namn": "Förvaltningskvalitet",
+      "ingress": "Medborgarnas omdöme om hur kommunens verksamhetslokaler sköts. Det enda måttet i materialet som värderar själva förvaltningsuppdraget snarare än dess kostnad."
+    },
+    {
       "id": "region-fastighet",
-      "namn": "Fastighetsnyckeltal, regionen",
-      "ingress": "Kolada har inga fastighetsnyckeltal per kvadratmeter för kommuner — serien finns bara för regioner. Region Östergötland och dess anläggningar är närmaste offentliga benchmark. Vårdfastigheter är inte skolor."
+      "namn": "Regionens fastighetsnyckeltal",
+      "ingress": "Kolada har inga kostnader per kvadratmeter för kommunala verksamhetslokaler — serien finns bara för regioner. Region Östergötland och dess anläggningar är närmaste offentliga benchmark. Vårdfastigheter är inte skolor, och en region är inte en kommun."
     }
   ],
   "katalog": [
@@ -245,6 +265,21 @@
       "tangerande": true,
       "not": "",
       "kolada_titel": "Färdigställda bostäder, nybyggnad, antal/1000 inv",
+      "publiceringsdatum": "2026-05-15"
+    },
+    {
+      "id": "N07906",
+      "kort": "Färdigställda bostäder i flerbostadshus",
+      "grupp": "planprocess",
+      "enhet": "antal/1000 inv",
+      "decimaler": 1,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "tangerande": true,
+      "not": "",
+      "kolada_titel": "Färdigställda bostäder i flerbostadshus, nybyggnad, antal/1000inv",
       "publiceringsdatum": "2026-05-15"
     },
     {
@@ -794,6 +829,332 @@
       "publiceringsdatum": "2027-04-08"
     },
     {
+      "id": "N03148",
+      "kort": "Investeringsutgifter, kommunen totalt",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Avser kommunens egna investeringar. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
+      "kolada_titel": "Investeringsutgifter kommunen totalt, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03150",
+      "kort": "Investeringsutgifter, pedagogisk verksamhet",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G35989",
+      "not": "Skolor och förskolor. Ett lågt värde betyder inte att kommunen investerar lite i skollokaler — det betyder att investeringen ligger i bolaget. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
+      "kolada_titel": "Investeringsutgifter Pedagogisk verksamhet, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03160",
+      "kort": "Investeringsutgifter, vård och omsorg",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G176609",
+      "not": "Vård- och omsorgsboenden samt LSS. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
+      "kolada_titel": "Investeringsutgifter inom vård och omsorg kommun, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03163",
+      "kort": "Investeringsutgifter, kultur och fritid",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Idrottshallar, bibliotek och fritidsanläggningar.",
+      "kolada_titel": "Investeringsutgifter inom kultur- och fritidsverksamhet kommun, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03166",
+      "kort": "Investeringsutgifter, näringsliv och bostäder",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "",
+      "kolada_titel": "Investeringsutgifter inom näringsliv och bostäder kommun, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03132",
+      "kort": "Nettoinvesteringar, kommunen totalt",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Investeringsutgifter minus investeringsinkomster.",
+      "kolada_titel": "Nettoinvesteringar, totalt kommun, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03104",
+      "kort": "Nettoinvesteringar, andel av skatt och statsbidrag",
+      "grupp": "investering",
+      "enhet": "%",
+      "decimaler": 1,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Investeringstakt satt i relation till kommunens intäkter.",
+      "kolada_titel": "Nettoinvesteringar i kommunen, andel (%) av skatt & generella statsbidrag",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03103",
+      "kort": "Självfinansieringsgrad för investeringar",
+      "grupp": "investering",
+      "enhet": "%",
+      "decimaler": 1,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Andel av investeringarna som finansieras utan nyupplåning. Linköpings budget har ett krav på 50 procent egenfinansiering. Hög självfinansiering kan också betyda att investeringstakten är låg — därför kontextmått.",
+      "kolada_titel": "Självfinansieringsgrad för kommunens investeringar, andel (%)",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03041",
+      "kort": "Materiella anläggningstillgångar, kommunen",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Kommunens eget bestånd. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
+      "kolada_titel": "Materiella & immateriella anläggningstillgångar kommunen, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03051",
+      "kort": "Materiella anläggningstillgångar, kommunkoncernen",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Inklusive de kommunala bolagen. Läs tillsammans med kommunraden ovan — skillnaden är bolagens bestånd.",
+      "kolada_titel": "Materiella & immateriella anläggningstillgångar kommunkoncern, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03012",
+      "kort": "Avskrivningar, kommunen",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Redovisas som negativt tal i Kolada. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
+      "kolada_titel": "Avskrivningar kommun, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N03063",
+      "kort": "Avskrivningar, kommunkoncernen",
+      "grupp": "investering",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Redovisas som negativt tal i Kolada. Inklusive bolagen — spegling av koncernens fastighetsbestånd.",
+      "kolada_titel": "Avskrivningar kommunkoncern, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "U09717",
+      "kort": "Idrottshallar, samtliga",
+      "grupp": "bestand",
+      "enhet": "antal/10 000 inv",
+      "decimaler": 2,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Behovet styrs av demografi, geografi och föreningsliv — fler hallar är inte automatiskt bättre.",
+      "kolada_titel": "Idrottshallar, samtliga, antal/10 000 inv",
+      "publiceringsdatum": "2027-02-24"
+    },
+    {
+      "id": "U09898",
+      "kort": "Idrottshallar per ung invånare",
+      "grupp": "bestand",
+      "enhet": "antal/1000 inv 7–20 år",
+      "decimaler": 2,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Normerat mot den åldersgrupp som använder hallarna mest.",
+      "kolada_titel": "Idrottshallar, antal/1000 inv 7-20 år",
+      "publiceringsdatum": "2027-02-24"
+    },
+    {
+      "id": "U09843",
+      "kort": "Idrottshall 18x36–22x42 m",
+      "grupp": "bestand",
+      "enhet": "antal/10 000 inv",
+      "decimaler": 2,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Normalstor hall.",
+      "kolada_titel": "Idrottshall 18x36 m till 22x42 m, antal/10 000 inv",
+      "publiceringsdatum": "2027-02-24"
+    },
+    {
+      "id": "U09864",
+      "kort": "Idrottshall 22x42 m eller större",
+      "grupp": "bestand",
+      "enhet": "antal/10 000 inv",
+      "decimaler": 2,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Fullstor hall, den storlek som krävs för matchspel i flera serier.",
+      "kolada_titel": "Idrottshall 22x42 m eller större, antal/10 000 inv",
+      "publiceringsdatum": "2027-02-24"
+    },
+    {
+      "id": "U09708",
+      "kort": "Idrottshallar, antal",
+      "grupp": "bestand",
+      "enhet": "antal",
+      "decimaler": 0,
+      "klass": "kontextmatt",
+      "riktning": "ingen",
+      "percentil": false,
+      "liknande": "G37449",
+      "not": "Absolut antal, inte normerat mot kommunstorlek — därför ingen percentil.",
+      "kolada_titel": "Idrottshallar, samtliga, antal",
+      "publiceringsdatum": null
+    },
+    {
+      "id": "N09026",
+      "kort": "Nettokostnad bibliotek",
+      "grupp": "bestand",
+      "enhet": "kr/inv",
+      "decimaler": 0,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "Hela biblioteksverksamheten, inte enbart lokalkostnaden.",
+      "kolada_titel": "Nettokostnad bibliotek, kr/inv",
+      "publiceringsdatum": "2026-08-28"
+    },
+    {
+      "id": "N45901",
+      "kort": "Fjärrvärmepris, typfastighet",
+      "grupp": "energi",
+      "enhet": "kr/kvm",
+      "decimaler": 1,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "tangerande": true,
+      "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
+      "kolada_titel": "Fjärrvärmepris inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "publiceringsdatum": "2026-11-13"
+    },
+    {
+      "id": "N45900",
+      "kort": "Elpris, typfastighet",
+      "grupp": "energi",
+      "enhet": "kr/kvm",
+      "decimaler": 1,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "tangerande": true,
+      "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
+      "kolada_titel": "Elpris inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "publiceringsdatum": "2026-11-13"
+    },
+    {
+      "id": "N45924",
+      "kort": "Vatten och avlopp, typfastighet",
+      "grupp": "energi",
+      "enhet": "kr/kvm",
+      "decimaler": 1,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "tangerande": true,
+      "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
+      "kolada_titel": "Avgift för vatten och avlopp inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "publiceringsdatum": "2026-11-13"
+    },
+    {
+      "id": "N45953",
+      "kort": "Avfallshämtning, typfastighet",
+      "grupp": "energi",
+      "enhet": "kr/kvm",
+      "decimaler": 1,
+      "klass": "kostnadsmatt",
+      "riktning": "ingen",
+      "percentil": true,
+      "liknande": "G37449",
+      "tangerande": true,
+      "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
+      "kolada_titel": "Avgift för avfallshämtning (ny definition) inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "publiceringsdatum": "2026-11-13"
+    },
+    {
+      "id": "N00609",
+      "kort": "Skötsel av kommunens verksamhetsbyggnader fungerar bra",
+      "grupp": "forvaltningskvalitet",
+      "enhet": "% som instämmer",
+      "decimaler": 1,
+      "klass": "styrmatt",
+      "riktning": "hogre_battre",
+      "percentil": true,
+      "liknande": "G37449",
+      "not": "SCB:s medborgarundersökning. Det enda måttet i materialet som värderar förvaltningsuppdraget i sig och inte dess kostnad. Urvalsundersökning — enskilda års utfall bär osäkerhet.",
+      "kolada_titel": "Medborgarundersökningen - Skötsel av byggnader där kommunen har verksamhet fungerar bra i kommunen, andel (%)",
+      "publiceringsdatum": "2026-12-15"
+    },
+    {
       "id": "U60800",
       "kort": "Area egna lokaler",
       "grupp": "region-fastighet",
@@ -1264,6 +1625,45 @@
       "ovriga": {
         "G30825": 3.3,
         "G33615": 1.4
+      }
+    },
+    "N07906": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 5.3,
+      "serie": {
+        "2015": 4,
+        "2016": 5.7,
+        "2017": 9.9,
+        "2018": 6.5,
+        "2019": 4.8,
+        "2020": 8.2,
+        "2021": 4.9,
+        "2022": 6.3,
+        "2023": 4.6,
+        "2024": 1,
+        "2025": 5.3
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 3.9,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 2.3,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 2.4,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 2.8,
+        "G33615": 0.7
       }
     },
     "N07001": {
@@ -2682,6 +3082,876 @@
         "G33615": 11.1
       }
     },
+    "N03148": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 5644,
+      "serie": {
+        "2015": 2111,
+        "2016": 2139,
+        "2017": 2437,
+        "2018": 2441,
+        "2019": 2938,
+        "2020": 5272,
+        "2021": 4566,
+        "2022": 5064,
+        "2023": 4074,
+        "2024": 4246,
+        "2025": 5644
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 9312,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 8930,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 9320,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 8307,
+        "G33615": 8714
+      }
+    },
+    "N03150": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 107,
+      "serie": {
+        "2016": 199,
+        "2017": 213,
+        "2018": 144,
+        "2019": 132,
+        "2020": 111,
+        "2021": 132,
+        "2022": 174,
+        "2023": 82,
+        "2024": 160,
+        "2025": 107
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G35989",
+          "varde": 2370,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 2121,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 2217,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 2002,
+        "G33615": 2803
+      }
+    },
+    "N03160": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 140,
+      "serie": {
+        "2015": 28,
+        "2016": 42,
+        "2017": 26,
+        "2018": 25,
+        "2019": 37,
+        "2020": 21,
+        "2021": 27,
+        "2022": 26,
+        "2023": 43,
+        "2024": 133,
+        "2025": 140
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G176609",
+          "varde": 553,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 520,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 711,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 470,
+        "G33615": 483
+      }
+    },
+    "N03163": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 1431,
+      "serie": {
+        "2015": 25,
+        "2016": 43,
+        "2017": 5,
+        "2018": 95,
+        "2019": 821,
+        "2020": 2612,
+        "2021": 1677,
+        "2022": 1316,
+        "2023": 1389,
+        "2024": 692,
+        "2025": 1431
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 626,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 1276,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 975,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 729,
+        "G33615": 327
+      }
+    },
+    "N03166": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 3,
+      "serie": {
+        "2015": 70,
+        "2016": 1,
+        "2017": 64,
+        "2018": 47,
+        "2019": 2,
+        "2020": 124,
+        "2021": 0,
+        "2022": 921,
+        "2023": 0,
+        "2024": 933,
+        "2025": 3
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 276,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 327,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 668,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 408,
+        "G33615": 328
+      }
+    },
+    "N03132": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 5177,
+      "serie": {
+        "2015": 1373,
+        "2016": 1549,
+        "2017": 1628,
+        "2018": 1812,
+        "2019": 2779,
+        "2020": 5217,
+        "2021": 4566,
+        "2022": 4905,
+        "2023": 3987,
+        "2024": 4092,
+        "2025": 5177
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 8956,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 8611,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 8692,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 8067,
+        "G33615": 8449
+      }
+    },
+    "N03104": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 8,
+      "serie": {
+        "2015": 3,
+        "2016": 3,
+        "2017": 5,
+        "2018": 3,
+        "2019": 5,
+        "2020": 10,
+        "2021": 8,
+        "2022": 8,
+        "2023": 60,
+        "2024": 7,
+        "2025": 8
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 13.1,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 12.3,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 13,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 12,
+        "G33615": 11.2
+      }
+    },
+    "N03103": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 85.8,
+      "serie": {
+        "2015": 118.4,
+        "2016": 69.4,
+        "2017": 146.2,
+        "2018": 138.1,
+        "2019": 43,
+        "2020": 84.7,
+        "2021": 155,
+        "2022": -33.6,
+        "2023": 94.1,
+        "2024": 68.9,
+        "2025": 85.8
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 82.3,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 109.8,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 86.4,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 131.6,
+        "G33615": 111.4
+      }
+    },
+    "N03041": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 38254,
+      "serie": {
+        "2015": 17004,
+        "2016": 17845,
+        "2017": 18861,
+        "2018": 19714,
+        "2019": 21114,
+        "2020": 24873,
+        "2021": 27986,
+        "2022": 31448,
+        "2023": 33259,
+        "2024": 35527,
+        "2025": 38254
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 79527,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 82402,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 89587,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 81103,
+        "G33615": 78068
+      }
+    },
+    "N03051": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 241005,
+      "serie": {
+        "2015": 147294,
+        "2016": 154216,
+        "2017": 165902,
+        "2018": 164766,
+        "2019": 176331,
+        "2020": 190789,
+        "2021": 197811,
+        "2022": 204298,
+        "2023": 215861,
+        "2024": 226316,
+        "2025": 241005
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 202308,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 206703,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 184848,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 194805,
+        "G33615": 140640
+      }
+    },
+    "N03012": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": -1962,
+      "serie": {
+        "2015": -918,
+        "2016": -1043,
+        "2017": -1115,
+        "2018": -1196,
+        "2019": -1294,
+        "2020": -1310,
+        "2021": -1315,
+        "2022": -1425,
+        "2023": -1656,
+        "2024": -1863,
+        "2025": -1962
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": -4118,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": -4180,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": -4171,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": -4078,
+        "G33615": -4021
+      }
+    },
+    "N03063": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": -10414,
+      "serie": {
+        "2015": -7832,
+        "2016": -7185,
+        "2017": -8010,
+        "2018": -7688,
+        "2019": -8089,
+        "2020": -8377,
+        "2021": -9098,
+        "2022": -9006,
+        "2023": -9211,
+        "2024": -9575,
+        "2025": -10414
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": -9389,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": -9443,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": -8189,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": -8759,
+        "G33615": -6487
+      }
+    },
+    "U09717": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 1.24,
+      "serie": {
+        "2019": 0.86,
+        "2020": 0.85,
+        "2021": 0.85,
+        "2022": 0.84,
+        "2023": 0.84,
+        "2024": 1.25,
+        "2025": 1.24
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 1.74,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 1.81,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 1.7,
+        "G33615": 2.41
+      }
+    },
+    "U09898": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 0.75,
+      "serie": {
+        "2019": 0.53,
+        "2020": 0.51,
+        "2021": 0.5,
+        "2022": 0.5,
+        "2023": 0.5,
+        "2024": 0.75,
+        "2025": 0.75
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 1.05,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 1.08,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 0.99,
+        "G33615": 1.55
+      }
+    },
+    "U09843": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 0.65,
+      "serie": {
+        "2015": 1.7,
+        "2016": 1.67,
+        "2017": 1.64,
+        "2018": 1.61,
+        "2019": 0.67,
+        "2020": 0.67,
+        "2021": 0.66,
+        "2022": 0.66,
+        "2023": 0.66,
+        "2024": 0.65,
+        "2025": 0.65
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 1.23,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 1.44,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 1.39,
+        "G33615": 1.42
+      }
+    },
+    "U09864": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 0.59,
+      "serie": {
+        "2015": 1.83,
+        "2016": 1.8,
+        "2017": 1.77,
+        "2018": 1.74,
+        "2019": 0.18,
+        "2020": 0.18,
+        "2021": 0.18,
+        "2022": 0.18,
+        "2023": 0.18,
+        "2024": 0.6,
+        "2025": 0.59
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 0.59,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 0.41,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 0.34,
+        "G33615": 0.99
+      }
+    },
+    "U09708": {
+      "ar": 2026,
+      "subjekt": "0580",
+      "varde": 21,
+      "serie": {
+        "2019": 14,
+        "2020": 14,
+        "2021": 14,
+        "2022": 14,
+        "2023": 14,
+        "2024": 21,
+        "2025": 21,
+        "2026": 21
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 26,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 21,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 22,
+        "G33615": 7
+      }
+    },
+    "N09026": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 480,
+      "serie": {
+        "2015": 456,
+        "2016": 451,
+        "2017": 452,
+        "2018": 457,
+        "2019": 442,
+        "2020": 438,
+        "2021": 425,
+        "2022": 464,
+        "2023": 465,
+        "2024": 471,
+        "2025": 480
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 556,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 564,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 538,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 542,
+        "G33615": 620
+      }
+    },
+    "N45901": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 200,
+      "serie": {
+        "2015": 143.8,
+        "2016": 148.6,
+        "2017": 150.2,
+        "2018": 153.7,
+        "2019": 154.9,
+        "2020": 156.9,
+        "2021": 158.1,
+        "2022": 160.1,
+        "2023": 165.4,
+        "2024": 182,
+        "2025": 200
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 214.4,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 205.2,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 210.4,
+        "G33615": 235.7
+      }
+    },
+    "N45900": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 114,
+      "serie": {
+        "2015": 70.6,
+        "2016": 79,
+        "2017": 77.3,
+        "2018": 95.1,
+        "2019": 98.2,
+        "2020": 69.8,
+        "2021": 88.1,
+        "2022": 133.9,
+        "2023": 159.9,
+        "2024": 117.3,
+        "2025": 114
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 126.5,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 121,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 125,
+        "G33615": 136
+      }
+    },
+    "N45924": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 60.6,
+      "serie": {
+        "2015": 44.5,
+        "2016": 44.5,
+        "2017": 44.5,
+        "2018": 44.5,
+        "2019": 44.5,
+        "2020": 45.5,
+        "2021": 46.4,
+        "2022": 46.4,
+        "2023": 49.2,
+        "2024": 56.1,
+        "2025": 60.6
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 77.9,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 86.7,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 86.5,
+        "G33615": 89.9
+      }
+    },
+    "N45953": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 24.5,
+      "serie": {
+        "2023": 20,
+        "2024": 22,
+        "2025": 24.5
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 20.3,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 21.5,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": null,
+          "saknas": "Kolada saknar värde för denna entitet"
+        }
+      },
+      "ovriga": {
+        "G30825": 21.2,
+        "G33615": 26.6
+      }
+    },
+    "N00609": {
+      "ar": 2025,
+      "subjekt": "0580",
+      "varde": 79.9,
+      "serie": {
+        "2021": 82.5,
+        "2022": 78.4,
+        "2023": 75.2,
+        "2025": 79.9
+      },
+      "referenser": {
+        "liknande": {
+          "entitet": "G37449",
+          "varde": 76.4,
+          "saknas": null
+        },
+        "storre-stad": {
+          "entitet": "G92790",
+          "varde": 73.3,
+          "saknas": null
+        },
+        "riket": {
+          "entitet": "0000",
+          "varde": 69.9,
+          "saknas": null
+        }
+      },
+      "ovriga": {
+        "G30825": 74.2,
+        "G33615": 69.3
+      }
+    },
     "U60800": {
       "ar": 2025,
       "subjekt": "0005",
@@ -3242,6 +4512,30 @@
         "procent": 3.4
       }
     },
+    "N07906": {
+      "fordelning": {
+        "n": 290,
+        "min": 0,
+        "p10": 0,
+        "p25": 0,
+        "median": 0,
+        "p75": 1.6,
+        "p90": 4.2,
+        "max": 48.7
+      },
+      "percentil": 94,
+      "avvikelse": {
+        "liknande": 35.9,
+        "storre-stad": 130.4,
+        "riket": 120.8,
+        "kommunmedian": null
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 32.5
+      }
+    },
     "N07001": {
       "fordelning": {
         "n": 290,
@@ -3708,9 +5002,9 @@
       },
       "percentil": 50,
       "avvikelse": {
-        "liknande": 63.8,
-        "storre-stad": 13.1,
-        "riket": 6.7,
+        "liknande": -63.8,
+        "storre-stad": -13.1,
+        "riket": -6.7,
         "kommunmedian": 0
       },
       "forandring": null
@@ -3728,10 +5022,10 @@
       },
       "percentil": 31,
       "avvikelse": {
-        "liknande": 31.9,
-        "storre-stad": 23,
-        "riket": 28.2,
-        "kommunmedian": 24.7
+        "liknande": -31.9,
+        "storre-stad": -23,
+        "riket": -28.2,
+        "kommunmedian": -24.7
       },
       "forandring": null
     },
@@ -3751,7 +5045,7 @@
         "liknande": -25.6,
         "storre-stad": 262.5,
         "riket": null,
-        "kommunmedian": -1066.7
+        "kommunmedian": 1066.7
       },
       "forandring": null
     },
@@ -3789,9 +5083,9 @@
       "percentil": 74,
       "avvikelse": {
         "liknande": -230,
-        "storre-stad": -7.1,
-        "riket": -29.7,
-        "kommunmedian": -50.9
+        "storre-stad": 7.1,
+        "riket": 29.7,
+        "kommunmedian": 50.9
       },
       "forandring": null
     },
@@ -3808,10 +5102,10 @@
       },
       "percentil": 36,
       "avvikelse": {
-        "liknande": 29.4,
-        "storre-stad": 14.3,
-        "riket": 19.7,
-        "kommunmedian": 11.4
+        "liknande": -29.4,
+        "storre-stad": -14.3,
+        "riket": -19.7,
+        "kommunmedian": -11.4
       },
       "forandring": null
     },
@@ -3848,10 +5142,10 @@
       },
       "percentil": 61,
       "avvikelse": {
-        "liknande": -3,
-        "storre-stad": -8.6,
-        "riket": -3,
-        "kommunmedian": -17.9
+        "liknande": 3,
+        "storre-stad": 8.6,
+        "riket": 3,
+        "kommunmedian": 17.9
       },
       "forandring": {
         "fran_ar": 2015,
@@ -3872,10 +5166,10 @@
       },
       "percentil": 30,
       "avvikelse": {
-        "liknande": 100,
-        "storre-stad": 75,
-        "riket": 75,
-        "kommunmedian": 75
+        "liknande": -100,
+        "storre-stad": -75,
+        "riket": -75,
+        "kommunmedian": -75
       },
       "forandring": {
         "fran_ar": 2015,
@@ -3896,10 +5190,10 @@
       },
       "percentil": 50,
       "avvikelse": {
-        "liknande": 13.1,
-        "storre-stad": 5.2,
-        "riket": 13.1,
-        "kommunmedian": 0.8
+        "liknande": -13.1,
+        "storre-stad": -5.2,
+        "riket": -13.1,
+        "kommunmedian": -0.8
       },
       "forandring": {
         "fran_ar": 2015,
@@ -3923,7 +5217,7 @@
         "liknande": -206.2,
         "storre-stad": -1800,
         "riket": null,
-        "kommunmedian": 750
+        "kommunmedian": -750
       },
       "forandring": {
         "fran_ar": 2015,
@@ -4055,6 +5349,549 @@
         "fran_ar": 2015,
         "till_ar": 2025,
         "procent": -5
+      }
+    },
+    "N03148": {
+      "fordelning": {
+        "n": 290,
+        "min": 879,
+        "p10": 3333,
+        "p25": 5180,
+        "median": 8139,
+        "p75": 12764,
+        "p90": 16842,
+        "max": 67743
+      },
+      "percentil": 29,
+      "avvikelse": {
+        "liknande": -39.4,
+        "storre-stad": -36.8,
+        "riket": -39.4,
+        "kommunmedian": -30.7
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 167.4
+      }
+    },
+    "N03150": {
+      "fordelning": {
+        "n": 290,
+        "min": 0,
+        "p10": 113,
+        "p25": 427,
+        "median": 1203,
+        "p75": 3130,
+        "p90": 5797,
+        "max": 24683
+      },
+      "percentil": 9,
+      "avvikelse": {
+        "liknande": -95.5,
+        "storre-stad": -95,
+        "riket": -95.2,
+        "kommunmedian": -91.1
+      },
+      "forandring": {
+        "fran_ar": 2016,
+        "till_ar": 2025,
+        "procent": -46.2
+      }
+    },
+    "N03160": {
+      "fordelning": {
+        "n": 290,
+        "min": 0,
+        "p10": 58,
+        "p25": 132,
+        "median": 355,
+        "p75": 980,
+        "p90": 2629,
+        "max": 18942
+      },
+      "percentil": 27,
+      "avvikelse": {
+        "liknande": -74.7,
+        "storre-stad": -73.1,
+        "riket": -80.3,
+        "kommunmedian": -60.6
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 400
+      }
+    },
+    "N03163": {
+      "fordelning": {
+        "n": 290,
+        "min": 0,
+        "p10": 29,
+        "p25": 133,
+        "median": 399,
+        "p75": 964,
+        "p90": 2199,
+        "max": 12345
+      },
+      "percentil": 84,
+      "avvikelse": {
+        "liknande": 128.6,
+        "storre-stad": 12.1,
+        "riket": 46.8,
+        "kommunmedian": 258.6
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 5624
+      }
+    },
+    "N03166": {
+      "fordelning": {
+        "n": 290,
+        "min": 0,
+        "p10": 0,
+        "p25": 0,
+        "median": 37,
+        "p75": 320,
+        "p90": 1208,
+        "max": 60330
+      },
+      "percentil": 39,
+      "avvikelse": {
+        "liknande": -98.9,
+        "storre-stad": -99.1,
+        "riket": -99.6,
+        "kommunmedian": -91.9
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": -95.7
+      }
+    },
+    "N03132": {
+      "fordelning": {
+        "n": 290,
+        "min": 812,
+        "p10": 3039,
+        "p25": 4972,
+        "median": 7708,
+        "p75": 12464,
+        "p90": 16584,
+        "max": 67743
+      },
+      "percentil": 26,
+      "avvikelse": {
+        "liknande": -42.2,
+        "storre-stad": -39.9,
+        "riket": -40.4,
+        "kommunmedian": -32.8
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 277.1
+      }
+    },
+    "N03104": {
+      "fordelning": {
+        "n": 290,
+        "min": 1,
+        "p10": 4,
+        "p25": 7,
+        "median": 11,
+        "p75": 17,
+        "p90": 22,
+        "max": 79
+      },
+      "percentil": 30,
+      "avvikelse": {
+        "liknande": -38.9,
+        "storre-stad": -35,
+        "riket": -38.5,
+        "kommunmedian": -27.3
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 166.7
+      }
+    },
+    "N03103": {
+      "fordelning": {
+        "n": 290,
+        "min": -18.3,
+        "p10": 36.8,
+        "p25": 52.4,
+        "median": 80.2,
+        "p75": 125.8,
+        "p90": 179.5,
+        "max": 1529.1
+      },
+      "percentil": 54,
+      "avvikelse": {
+        "liknande": 4.3,
+        "storre-stad": -21.9,
+        "riket": -0.7,
+        "kommunmedian": 7
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": -27.5
+      }
+    },
+    "N03041": {
+      "fordelning": {
+        "n": 290,
+        "min": 14027,
+        "p10": 50193,
+        "p25": 65584,
+        "median": 80903,
+        "p75": 100793,
+        "p90": 118640,
+        "max": 323483
+      },
+      "percentil": 4,
+      "avvikelse": {
+        "liknande": -51.9,
+        "storre-stad": -53.6,
+        "riket": -57.3,
+        "kommunmedian": -52.7
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 125
+      }
+    },
+    "N03051": {
+      "fordelning": {
+        "n": 290,
+        "min": 61591,
+        "p10": 99446,
+        "p25": 121283,
+        "median": 143623,
+        "p75": 176111,
+        "p90": 208518,
+        "max": 416056
+      },
+      "percentil": 97,
+      "avvikelse": {
+        "liknande": 19.1,
+        "storre-stad": 16.6,
+        "riket": 30.4,
+        "kommunmedian": 67.8
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 63.6
+      }
+    },
+    "N03012": {
+      "fordelning": {
+        "n": 290,
+        "min": -10637,
+        "p10": -5775,
+        "p25": -5086,
+        "median": -4238,
+        "p75": -3478,
+        "p90": -2725,
+        "max": -1282
+      },
+      "percentil": 97,
+      "avvikelse": {
+        "liknande": 52.4,
+        "storre-stad": 53.1,
+        "riket": 53,
+        "kommunmedian": 53.7
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": -113.7
+      }
+    },
+    "N03063": {
+      "fordelning": {
+        "n": 290,
+        "min": -82792,
+        "p10": -9717,
+        "p25": -8379,
+        "median": -6609,
+        "p75": -5569,
+        "p90": -4836,
+        "max": -2652
+      },
+      "percentil": 7,
+      "avvikelse": {
+        "liknande": -10.9,
+        "storre-stad": -10.3,
+        "riket": -27.2,
+        "kommunmedian": -57.6
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": -33
+      }
+    },
+    "U09717": {
+      "fordelning": {
+        "n": 260,
+        "min": 0,
+        "p10": 1.33,
+        "p25": 1.73,
+        "median": 2.35,
+        "p75": 3.33,
+        "p90": 4.87,
+        "max": 13.39
+      },
+      "percentil": 8,
+      "avvikelse": {
+        "liknande": -28.7,
+        "storre-stad": -31.5,
+        "riket": null,
+        "kommunmedian": -47.2
+      },
+      "forandring": {
+        "fran_ar": 2019,
+        "till_ar": 2025,
+        "procent": 44.2
+      }
+    },
+    "U09898": {
+      "fordelning": {
+        "n": 260,
+        "min": 0,
+        "p10": 0.79,
+        "p25": 1.07,
+        "median": 1.42,
+        "p75": 2.14,
+        "p90": 3,
+        "max": 9.4
+      },
+      "percentil": 8,
+      "avvikelse": {
+        "liknande": -28.6,
+        "storre-stad": -30.6,
+        "riket": null,
+        "kommunmedian": -47.2
+      },
+      "forandring": {
+        "fran_ar": 2019,
+        "till_ar": 2025,
+        "procent": 41.5
+      }
+    },
+    "U09843": {
+      "fordelning": {
+        "n": 257,
+        "min": 0,
+        "p10": 0.75,
+        "p25": 1.36,
+        "median": 2.08,
+        "p75": 2.97,
+        "p90": 3.74,
+        "max": 9.72
+      },
+      "percentil": 7,
+      "avvikelse": {
+        "liknande": -47.2,
+        "storre-stad": -54.9,
+        "riket": null,
+        "kommunmedian": -68.8
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": -61.8
+      }
+    },
+    "U09864": {
+      "fordelning": {
+        "n": 229,
+        "min": 0,
+        "p10": 0,
+        "p25": 0,
+        "median": 0,
+        "p75": 1,
+        "p90": 2.05,
+        "max": 7.87
+      },
+      "percentil": 69,
+      "avvikelse": {
+        "liknande": 0,
+        "storre-stad": 43.9,
+        "riket": null,
+        "kommunmedian": null
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": -67.8
+      }
+    },
+    "U09708": {
+      "fordelning": null,
+      "percentil": null,
+      "avvikelse": {
+        "liknande": -19.2,
+        "storre-stad": 0,
+        "riket": null,
+        "kommunmedian": null
+      },
+      "forandring": {
+        "fran_ar": 2019,
+        "till_ar": 2026,
+        "procent": 50
+      }
+    },
+    "N09026": {
+      "fordelning": {
+        "n": 290,
+        "min": 294,
+        "p10": 427,
+        "p25": 490,
+        "median": 585,
+        "p75": 696,
+        "p90": 825,
+        "max": 1290
+      },
+      "percentil": 21,
+      "avvikelse": {
+        "liknande": -13.7,
+        "storre-stad": -14.9,
+        "riket": -10.8,
+        "kommunmedian": -17.9
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 5.3
+      }
+    },
+    "N45901": {
+      "fordelning": {
+        "n": 290,
+        "min": 0,
+        "p10": 179,
+        "p25": 210,
+        "median": 228.2,
+        "p75": 261,
+        "p90": 288,
+        "max": 314
+      },
+      "percentil": 18,
+      "avvikelse": {
+        "liknande": -6.7,
+        "storre-stad": -2.5,
+        "riket": null,
+        "kommunmedian": -12.4
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 39.1
+      }
+    },
+    "N45900": {
+      "fordelning": {
+        "n": 290,
+        "min": 79.3,
+        "p10": 108.9,
+        "p25": 117.1,
+        "median": 128.8,
+        "p75": 135,
+        "p90": 157,
+        "max": 164.4
+      },
+      "percentil": 21,
+      "avvikelse": {
+        "liknande": -9.9,
+        "storre-stad": -5.8,
+        "riket": null,
+        "kommunmedian": -11.5
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 61.5
+      }
+    },
+    "N45924": {
+      "fordelning": {
+        "n": 290,
+        "min": 46.7,
+        "p10": 72.3,
+        "p25": 87.1,
+        "median": 107,
+        "p75": 123.9,
+        "p90": 147.7,
+        "max": 210.8
+      },
+      "percentil": 3,
+      "avvikelse": {
+        "liknande": -22.2,
+        "storre-stad": -30.1,
+        "riket": null,
+        "kommunmedian": -43.4
+      },
+      "forandring": {
+        "fran_ar": 2015,
+        "till_ar": 2025,
+        "procent": 36.2
+      }
+    },
+    "N45953": {
+      "fordelning": {
+        "n": 290,
+        "min": 6.3,
+        "p10": 16.3,
+        "p25": 20.4,
+        "median": 23.8,
+        "p75": 29.7,
+        "p90": 36.3,
+        "max": 61
+      },
+      "percentil": 56,
+      "avvikelse": {
+        "liknande": 20.7,
+        "storre-stad": 14,
+        "riket": null,
+        "kommunmedian": 2.9
+      },
+      "forandring": {
+        "fran_ar": 2023,
+        "till_ar": 2025,
+        "procent": 22.5
+      }
+    },
+    "N00609": {
+      "fordelning": {
+        "n": 159,
+        "min": 35.2,
+        "p10": 55.6,
+        "p25": 63.4,
+        "median": 70.9,
+        "p75": 77.1,
+        "p90": 80.3,
+        "max": 88.6
+      },
+      "percentil": 87,
+      "avvikelse": {
+        "liknande": 4.6,
+        "storre-stad": 9,
+        "riket": 14.3,
+        "kommunmedian": 12.7
+      },
+      "forandring": {
+        "fran_ar": 2021,
+        "till_ar": 2025,
+        "procent": -3.2
       }
     },
     "U60800": {
