@@ -80,8 +80,9 @@ export default function Linkoping({
             Ren kommunstatistik ur Kolada, ordnad efter guidens ämnen: ledtider, investeringar,
             lokalkostnader, bestånd, energi, demografi och volym. Varje mått visar Linköping mot tre
             likvärdiga referenser, medianen över landets kommuner och Linköpings percentil. Samma
-            mått som alla andra kommuner rapporterar — SCB, Boverket och Räkenskapssammandraget,
-            publicerade kommun för kommun.
+            mått som alla andra kommuner rapporterar. Ursprungskällan skiljer sig åt mellan måtten —
+            SCB, Räkenskapssammandraget, Skolverket, SKR och kommunernas egen rapportering — och
+            anges därför på varje rad, hämtad ur Koladas egen beskrivning.
           </p>
           <span className="lk-meta">
             Referensår {meta.senaste_ar} · Hämtat {meta.hamtat}
@@ -371,14 +372,19 @@ function MattRad({ matt, varden, bearbetat, ovrigaIdn }) {
           {matt.tangerande ? (
             <span
               className="lk-tangerande-tagg"
-              title="Måttet avser bostäder — bostadsplaner respektive bygglov för en- och tvåbostadshus — inte samhällsfastigheter"
+              title="Koladas egen beskrivning av måttet räknar bostäder — bostadsvolymer, bygglov för en- och tvåbostadshus eller en typfastighet i form av flerbostadshus — inte samhällsfastigheter"
             >
               Bostäder
             </span>
           ) : null}
-          <span className="lk-kpi-id" title={matt.kolada_titel || ''}>
+          <span className="lk-kpi-id" title={matt.kolada_beskrivning || matt.kolada_titel || ''}>
             {matt.id}
           </span>
+          {matt.kolada_kalla ? (
+            <span className="lk-kpi-kalla" title="Koladas egen källangivelse för det här nyckeltalet">
+              {matt.kolada_kalla}
+            </span>
+          ) : null}
         </span>
         {matt.not ? <span className="lk-matt-not">{matt.not}</span> : null}
       </th>
@@ -461,10 +467,19 @@ function ReferensCell({ matt, referens, avvikelse, decimaler }) {
  * får det inte. Därför två separata meningar, aldrig en gemensam.
  */
 function KallaFot({ matt, hamtat, harBearbetning }) {
+  // Ursprungskällan varierar per mått — planprocessavsnittet har fyra olika —
+  // så den anges på varje rad, aldrig som ett gemensamt påstående här.
+  const ursprung = [...new Set(matt.map(m => m.kolada_kalla).filter(Boolean))];
   return (
     <p className="lk-kalla">
       Källa: Kolada — nyckeltal {matt.map(m => m.id).join(', ')}. Hämtat {hamtat}.{' '}
       <a href="/kallregister#kolada-planledtider">Källkort</a>
+      {ursprung.length ? (
+        <>
+          <br />
+          Uppgifterna kommer ursprungligen från {ursprung.join('; ')} — se respektive rad.
+        </>
+      ) : null}
       {harBearbetning ? (
         <>
           <br />
@@ -710,6 +725,11 @@ const linkopingCss = `
   font-size: 0.7rem; color: var(--muted);
   letter-spacing: 0.06em; font-variant-numeric: tabular-nums;
 }
+.lk-kpi-kalla {
+  font-size: 0.7rem; color: var(--muted);
+  font-style: italic;
+}
+.lk-kpi-kalla::before { content: '· '; font-style: normal; }
 .lk-matt-not {
   display: block; margin-top: 0.45rem;
   font-size: 0.78rem; line-height: 1.5;

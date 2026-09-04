@@ -46,7 +46,7 @@
       "namn": "Kommunstatistik (Kolada)",
       "kort": "KS",
       "farg": "#0F766E",
-      "not": "Nyckeltalsdatabasen Kolada, som publicerar SCB, Boverket och Räkenskapssammandraget kommun för kommun. Underlaget till sidan Linköping i jämförelse."
+      "not": "Nyckeltalsdatabasen Kolada, som samlar kommunstatistik från SCB, Räkenskapssammandraget, Skolverket, SKR och kommunernas egen rapportering. Ursprungskällan varierar per nyckeltal och anges per rad på sidan Kolada-statistik."
     }
   ],
   "kallor": [
@@ -2245,11 +2245,12 @@
       "organisation": "Rådet för främjande av kommunala analyser (RKA)",
       "datum": "löpande",
       "url": "https://www.kolada.se/",
-      "sammandrag": "Boverkets plan- och bygglovsenkät publicerad kommun för kommun (N07926, N07927, N07923, N07924, N07925, N07928, N07929, U00810). Samma mätning som ligger bakom SKR:s öppna jämförelser, men nedbrytbar på enskild kommun och som tidsserie. Linköping 2025: 44,0 månader mediantid från planuppdrag till antagande mot kommunmedianens 29,0 (n=217), varav 16,0 månader från samrådsstart. Bygglov för en- och tvåbostadshus 2023: 41,0 dagar mot medianens 59,0. Avser bostadsplaner respektive bostadshus, inte samhällsfastigheter. Hämtas via api.kolada.se/v3 med scripts/fetch-kolada.js.",
+      "sammandrag": "Planledtider, planberedskap och bygglovstider publicerade kommun för kommun i Kolada (N07926, N07927, N07923, N07924, N07925, N07928, N07929, U00810). Ursprungskällan varierar per nyckeltal: SKR:s öppna jämförelser inom detaljplaneområdet med kommunernas egen rapportering för tids- och planmåtten, SCB för bygglovs- och bostadsvolymer, och kommunens egen undersökning för handläggningstiden. Linköping 2025: 44,0 månader mediantid från planuppdrag till antagande mot kommunmedianens 29,0 (n=217), varav 16,0 månader från samrådsstart. Bygglov för en- och tvåbostadshus 2023: 41,0 dagar mot medianens 59,0. Tidsmåttens omfattning är inte entydigt dokumenterad — Kolada formulerar frågan som \"de detaljplaner som antogs i kommunen\" utan avgränsning till ändamål, och för N07929 uttryckligen alla detaljplaner, medan SKR beskriver undersökningen som gjord med fokus på bostäder. Volymmåtten räknar däremot bostäder. Hämtas via api.kolada.se/v3 med scripts/fetch-kolada.js.",
       "hardkontroll": {
-        "status": "godkand",
+        "status": "anmarkning",
         "datum": "2026-09-04",
-        "metod": "webfetch"
+        "metod": "webfetch",
+        "not": "Ommärkning 2026-09-04: sammandraget angav tidigare Boverkets plan- och bygglovsenkät som källa och påstod att samtliga mått avsåg bostadsplaner. Kolada anger SKR och kommunernas egen undersökning, och tidsmåttens beskrivningar saknar avgränsning till ändamål."
       }
     },
     {

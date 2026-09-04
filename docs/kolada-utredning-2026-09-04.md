@@ -18,7 +18,7 @@ Utöver det nämns `kolada.se` som förstaval i Spår 6 i `docs/research-brief.m
 
 1. **Researchen har varit dokumentcentrerad.** Både `research-brief.md` och hårdkontrollen bygger på ett arbetssätt där en källa är en *publikation* med en URL som kan hämtas och läsas (`metod: "webfetch"` / `"pdf-nedladdning"`). Kolada är inte en publikation utan en databas — den passar inte in i det mönstret och föll därför utanför sökrutinen.
 
-2. **SKR har stått som mellanhand.** Flera av guidens starkaste ledtidspåståenden är i praktiken redan Kolada-data, fast hämtade i andra hand. `detaljplan.html` skriver att andelen kommuner som klarar planuppdrag → antagande på två år sjunkit från 48 % (2014–2015) till 13 % (2022–2023). Den siffran kommer från SKR:s Öppna jämförelser detaljplan, som i sin tur räknar på Boverkets plan- och bygglovsenkät — publicerad rad för rad i Kolada som N07926. Vi har alltså använt Koladas data utan att gå till Kolada, och därmed utan att kunna bryta ner den på Linköping.
+2. **SKR har stått som mellanhand.** Flera av guidens starkaste ledtidspåståenden är i praktiken redan Kolada-data, fast hämtade i andra hand. `detaljplan.html` skriver att andelen kommuner som klarar planuppdrag → antagande på två år sjunkit från 48 % (2014–2015) till 13 % (2022–2023). Den siffran kommer från SKR:s Öppna jämförelser detaljplan, vars uppgifter kommunerna själva rapporterar in — publicerade rad för rad i Kolada som N07926. Vi har alltså använt Koladas data utan att gå till Kolada, och därmed utan att kunna bryta ner den på Linköping.
 
 3. **Fokus på samhällsfastigheter har lett fel om Koladas innehåll.** Kolada uppfattas som en verksamhetsdatabas (skolresultat, brukarnöjdhet, personaltäthet) snarare än en fastighetsdatabas. Det stämmer delvis — se avsnitt 4 om vad som faktiskt saknas — men lokalkostnadsnyckeltalen och plan­ledtiderna har missats.
 
@@ -107,7 +107,9 @@ Två slutsatser som materialet inte kan göra idag:
 
 Övriga i samma familj: `N07923` planberedskap (Linköping 48,5 bostäder/1000 inv 2025), `N07924` planlagda bostäder senaste två åren, `N07928` andel överklagade detaljplaner (Linköping 29,6 % 2025 mot Örebro 15,0 % — guiden anger 25 % som riksnivå), `N07929` antal antagna detaljplaner (Linköping 27).
 
-Reservation som måste med: Boverkets enkät avser **bostadsplaner**. Samma caveat som redan gäller Bygg i Tid och som motiverade `tangerande-bostad`-området. Skillnaden är att Kolada ger Linköpings egen siffra, vilket gör den mer relevant trots samma metodbegränsning.
+Reservation som måste med: omfattningen är inte entydigt dokumenterad.
+
+> **Rättelse 2026-09-04.** Här stod först att Boverkets enkät avser bostadsplaner. Båda leden var fel. Kolada anger "Källa: SKR och egen undersökning i kommunen" — inte Boverket — och beskriver frågan som "de detaljplaner som antogs i kommunen", utan avgränsning till ändamål; för `N07929` uttryckligen "alla detaljplaner, oavsett förfarande". SKR beskriver undersökningen som gjord med fokus på bostäder, men den sida som skulle reda ut tidsmåttets avgränsning ger 404. Påståendet var alltså en obelagd inskränkning som dessutom underskattade måttets relevans: om skolplaner ingår är siffran direkt tillämplig på lokalförsörjning. Märkning, källattribution och noter rättade i katalogen, källregistret och på `/linkoping`.
 
 ### 3.2 Lokalkostnader per verksamhet — kommunnivå
 
@@ -210,4 +212,4 @@ Utan att ha byggt något ännu — tre alternativ i stigande ambition:
 Två saker behöver beslutas innan något byggs:
 
 - **Ska Linköpings egna siffror in i det publika materialet?** Att guiden visar att Linköping har 44 månaders planledtid mot riksmedianens 29, och ligger över riket på fyra av fem lokalkostnadsmått, är korrekt men politiskt laddat. Det är ett ägarbeslut, inte ett tekniskt.
-- **Var i strukturen hör Kolada-data hemma?** Planledtiderna avser bostadsplaner och hör metodmässigt till `tangerande-bostad` (default avbockat), men är samtidigt det mest Linköping-relevanta vi har. Antingen görs ett undantag, eller så behövs ett nytt område.
+- **Var i strukturen hör Kolada-data hemma?** Löst: ett eget område `kommunstatistik` i registret. Planledtidernas omfattning visade sig dessutom inte vara begränsad till bostadsplaner — se rättelsen ovan.
