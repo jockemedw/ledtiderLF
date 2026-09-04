@@ -3,7 +3,7 @@
 **Genomförd:** 2026-09-04
 **Branch:** `claude/kolada-api-integration-1vqzbg`
 **Underlag:** `data/kolada.json`, 57 nyckeltal hämtade ur Koladas API v3 med `scripts/fetch-kolada.js`
-**Publicerat som:** `/linkoping` samt inline-block i `#kontext`, `#kostnad` och `#dp-skr`
+**Publicerat som:** `/kolada-kollad` (guiden med varje avsnitt märkt) och `/linkoping` (samtliga 57 nyckeltal)
 
 ---
 

@@ -78,6 +78,13 @@ Två saker som är strukturella och inte får byggas bort:
 - **`varden` mot `bearbetat`.** Koladas villkor tillåter "Källa: Kolada" för råa värden men förbjuder Kolada som källa för egna bearbetningar. Filen håller därför isär dem, sidan renderar råceller ur `varden` och härledda celler ur `bearbetat`, och `lib/__tests__/kolada.test.js` faller om uppdelningen bryts.
 - **Klassningen.** Varje mått är `styrmatt`, `kostnadsmatt` eller `kontextmatt`. Bara styrmått får färgad avvikelse — en lokalkostnad per elev har ingen entydig riktning och får aldrig presenteras som ett betyg.
 
+Datat visas på två sidor:
+
+- **`/kolada-kollad`** — samma guide som huvudsidan, men varje avsnitt märkt med vad Kolada kan säga om det. Sidan läser `lokalforsorjning.html` precis som `pages/index.js`; inget innehåll är duplicerat. Panelerna skjuts in som HTML-strängar **inuti** varje sektion, direkt efter dess `<div class="container">`, och hela body renderas i en enda div. Det är inte godtyckligt: guidens CSS har `.spar-section:nth-of-type(even)` och `.spar-section + .spar-section`, som bryts både av att sektioner packas in i egna wrappers och av att element skjuts in mellan två sektioner. Sektionsmappningen ligger i `KOLLADE_SEKTIONER` i `lib/kolada.js`, och ett test faller om en ny sektion i HTML:en inte klassats.
+- **`/linkoping`** — samtliga 57 nyckeltal med de tre referenserna, percentiler och tidsserier.
+
+Kommentarslagret och Sammanställ monteras inte på `/kolada-kollad`. Kommentarsankare bygger på elementens text, som är identisk med huvudsidans — samma kommentar skulle annars dyka upp på båda sidorna.
+
 Analysen av datat ligger i `docs/kolada-analys-2026-09-04.md`, bakgrunden i `docs/kolada-utredning-2026-09-04.md`.
 
 ## Tester
