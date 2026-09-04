@@ -29,6 +29,7 @@ const {
   hamta,
   kravTackning,
   totalvarde,
+  koladaKalla,
   tillSerier,
   kommunvarden,
   sorteradSerie,
@@ -174,11 +175,19 @@ async function bygg() {
   console.log(`Hämtar anläggningsdata för ${Object.keys(ENHETER).length} enheter …`);
   const enhetsdata = await hamtaEnheter(regionKpi);
 
-  const katalog = KATALOG.map(m => ({
-    ...m,
-    kolada_titel: (metadata[m.id] || {}).title || null,
-    publiceringsdatum: (metadata[m.id] || {}).publication_date || null,
-  }));
+  const katalog = KATALOG.map(m => {
+    const k = metadata[m.id] || {};
+    return {
+      ...m,
+      kolada_titel: k.title || null,
+      // Koladas egen källangivelse, läst ur beskrivningen. Källan varierar per
+      // mått — inom planprocessgruppen finns fyra olika — så den får aldrig
+      // påstås på gruppnivå.
+      kolada_kalla: koladaKalla(k.description),
+      kolada_beskrivning: k.description || null,
+      publiceringsdatum: k.publication_date || null,
+    };
+  });
 
   const varden = {};
   const bearbetat = {};

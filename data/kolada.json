@@ -86,7 +86,7 @@
     {
       "id": "planprocess",
       "namn": "Ledtider — planprocess och lov",
-      "ingress": "Boverkets plan- och bygglovsenkät, publicerad kommun för kommun. Det enda område där Kolada mäter samma sak som guidens ledtidsargument. Underlaget avser bostadsplaner respektive bostadshus."
+      "ingress": "Det enda område där Kolada mäter samma sak som guidens ledtidsargument. Underlaget kommer från fyra olika håll — SKR:s öppna jämförelser inom detaljplaneområdet, kommunernas egen rapportering, SCB och Räkenskapssammandraget — och källan anges därför per mått. Tidsmåtten avser detaljplaner utan dokumenterad avgränsning till ändamål; volymmåtten räknar bostäder."
     },
     {
       "id": "investering",
@@ -141,9 +141,10 @@
       "percentil": true,
       "trend": true,
       "liknande": "G37449",
-      "tangerande": true,
-      "not": "Boverkets plan- och bygglovsenkät avser bostadsplaner, inte planer för skola, förskola, LSS eller idrott. Publiceras vartannat år; 2025 års värde speglar planer antagna 2023–2025. Förväxla inte med Ledtidsindex 46 månader: det är ett riksgenomsnitt från planuppdrag till laga kraft för flerbostadshusplaner, medan detta är Linköpings mediantid från planuppdrag till antagande. Olika ändpunkt, olika statistik, olika population — att talen ligger nära varandra är en tillfällighet.",
+      "not": "Omfattningen är inte entydigt dokumenterad. Kolada formulerar frågan som \"de detaljplaner som antogs i kommunen\", utan avgränsning till ändamål, medan SKR beskriver undersökningen som gjord med fokus på bostäder. Planer för skola, förskola, LSS och idrott är alltså varken uttryckligen inkluderade eller uteslutna. Publiceras vartannat år; 2025 års värde speglar planer antagna 2023–2025. Förväxla inte med Ledtidsindex 46 månader: det är ett riksgenomsnitt från planuppdrag till laga kraft för flerbostadshusplaner, medan detta är Linköpings mediantid från planuppdrag till antagande. Olika ändpunkt, olika statistik, olika population — att talen ligger nära varandra är en tillfällighet.",
       "kolada_titel": "Mediantid från planuppdrag till antagande under de senaste två åren, mediantid i månader",
+      "kolada_kalla": "SKR och egen undersökning i kommunen",
+      "kolada_beskrivning": "Mediantid från planuppdrag till antagande under de senaste två åren (T och T-1), kommer från SKR:s Öppna Jämförelse och frågan \"Hur lång var tiden från planuppdrag till antagande för de detaljplaner som antogs i kommunen under två senaste åren?\"  mediantid i månader. Källa: SKR och egen undersökning i kommunen.",
       "publiceringsdatum": "2028-02-09"
     },
     {
@@ -157,9 +158,10 @@
       "percentil": true,
       "trend": true,
       "liknande": "G37449",
-      "tangerande": true,
-      "not": "Boverkets plan- och bygglovsenkät avser bostadsplaner, inte planer för skola, förskola, LSS eller idrott. Skillnaden mot planuppdrag → antagande visar hur mycket tid som ligger före samråd, alltså i utrednings- och programskedet.",
+      "not": "Omfattningen är inte entydigt dokumenterad. Kolada formulerar frågan som \"de detaljplaner som antogs i kommunen\", utan avgränsning till ändamål, medan SKR beskriver undersökningen som gjord med fokus på bostäder. Planer för skola, förskola, LSS och idrott är alltså varken uttryckligen inkluderade eller uteslutna. Skillnaden mot planuppdrag → antagande visar hur mycket tid som ligger före samråd, alltså i utrednings- och programskedet.",
       "kolada_titel": "Mediantid från samrådsstart till antagande under de senaste två åren, mediantid i månader",
+      "kolada_kalla": "SKR och egen undersökning i kommunen",
+      "kolada_beskrivning": "Mediantid från samrådsstart till antagande under de senaste två åren (T och T-1), kommer från SKR:s Öppna Jämförelse och frågan \"Hur lång var tiden från samrådsstart till antagande för de detaljplaner som antogs i kommunen under  två senaste åren?\" Mediantid i månader. Källa: SKR och egen undersökning i kommunen.",
       "publiceringsdatum": "2028-02-09"
     },
     {
@@ -175,6 +177,8 @@
       "tangerande": true,
       "not": "Avser nybyggnad av en- och tvåbostadshus — inte samma ärendetyp som ett skolbygglov, men enda jämförbara måttet på lovhandläggning.",
       "kolada_titel": "Handläggningstid (median) från inkommen ansökan till beslut för bygglov för nybyggnad av en- och tvåbostadshus, antal dagar",
+      "kolada_kalla": "Egen undersökning i kommunen",
+      "kolada_beskrivning": "Handläggningstid i dagar (median) från inkommen ansökan till beslut för bygglov. Uppgifterna avser ärenden om bygglov för nybyggnad av ett en- eller tvåbostadshus, där beslut om bygglov fattades under året. Uppgifterna gäller alla sådana ärenden, oavsett om de ligger inom eller utom detaljplanelagt område, inom eller utom område med områdesbestämmelser, eller om de omfattas av givet förhandsbesked. Uppgifterna gäller alla ärenden oavsett om bygglovsbeslutet var positivt eller negativt. Fritidshus ingick ej innan 2026, från och med 2026 ingår de i urvalet. Observera att datainsamling pågår hela hösten, varför medelvärden inte bör användas för jämförelser förrän i slutet av året. Källa: Egen undersökning i kommunen",
       "publiceringsdatum": null
     },
     {
@@ -190,6 +194,8 @@
       "tangerande": true,
       "not": "Avser bostäder. Hög planberedskap för bostäder säger inget direkt om planberedskapen för samhällsfastigheter.",
       "kolada_titel": "Planberedskap för nya bostäder som kan byggas med stöd av alla gällande detaljplaner den 31/12, antal/1000 inv",
+      "kolada_kalla": "SKR och egen undersökning i kommunen",
+      "kolada_beskrivning": "Planberedskap för nya bostäder som kan byggas med stöd av alla gällande detaljplaner den 31/12, kommer från SKR:s Öppna Jämförelse och frågan \"Hur många bostäder kan byggas i kommunen med stöd av alla gällande detaljplaner som vunnit laga kraft senast den 31 december\", antal/1000 inv. Källa: SKR och egen undersökning i kommunen.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -202,9 +208,10 @@
       "riktning": "ingen",
       "percentil": true,
       "liknande": "G37449",
-      "tangerande": true,
-      "not": "Andelen speglar både planernas karaktär och kommunens planeringsmiljö, inte enbart handläggningen. Därför kontextmått och inte styrmått.",
+      "not": "Andelen speglar både planernas karaktär och kommunens planeringsmiljö, inte enbart handläggningen. Därför kontextmått och inte styrmått. Omfattningen är inte entydigt dokumenterad. Kolada formulerar frågan som \"de detaljplaner som antogs i kommunen\", utan avgränsning till ändamål, medan SKR beskriver undersökningen som gjord med fokus på bostäder. Planer för skola, förskola, LSS och idrott är alltså varken uttryckligen inkluderade eller uteslutna.",
       "kolada_titel": "Överklagade detaljplaner under de senaste två åren, andel (%)",
+      "kolada_kalla": "SKR och egen undersökning i kommunen",
+      "kolada_beskrivning": "Överklagade detaljplaner under senaste två åren (T och T-1), andel (%) Källa: SKR och egen undersökning i kommunen.",
       "publiceringsdatum": "2028-02-09"
     },
     {
@@ -220,6 +227,8 @@
       "tangerande": true,
       "not": "Volymmått som varierar kraftigt mellan mätperioder.",
       "kolada_titel": "Bostäder som planlagts under de senaste två åren, antal/1000 inv",
+      "kolada_kalla": "SKR och egen undersökning i kommunen",
+      "kolada_beskrivning": "Antal bostäder som planlagts under de senaste två åren (T och T-1), kommer från SKR:s Öppna Jämförelse och frågan \"Hur många nya bostäder kan byggas i kommunen med stöd av detaljplaner som vunnit laga kraft under två senaste åren?\",  antal/1000 inv. Källa: SKR och egen undersökning i kommunen.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -235,6 +244,8 @@
       "tangerande": true,
       "not": "",
       "kolada_titel": "Bostäder som beviljats bygglov under de senaste två åren, antal/1000 inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Antal bostäder som beviljats bygglov under de senaste två åren (T och T-1), avser endast permanentboende, antal/1000 invånare. Invånarantalet avser år T-1, 31 dec. Källa: SCB",
       "publiceringsdatum": "2028-05-08"
     },
     {
@@ -247,9 +258,10 @@
       "riktning": "ingen",
       "percentil": false,
       "liknande": "G37449",
-      "tangerande": true,
-      "not": "Absolut antal, inte normerat mot kommunstorlek — därför ingen percentil.",
+      "not": "Absolut antal, inte normerat mot kommunstorlek — därför ingen percentil. Koladas beskrivning anger uttryckligen alla detaljplaner där antagandebeslut fattats, oavsett förfarande och ändamål.",
       "kolada_titel": "Beslut om antagande av detaljplan som fattats i kommunen under de senaste två åren, antal",
+      "kolada_kalla": "SKR och egen undersökning i kommunen",
+      "kolada_beskrivning": "Antal beslut om antagande av detaljplan som fattats under de senaste två åren. Avser alla detaljplaner där ett antagandebeslut har fattats, oavsett förfarande. Källa: SKR och egen undersökning i kommunen.",
       "publiceringsdatum": "2028-02-09"
     },
     {
@@ -265,6 +277,8 @@
       "tangerande": true,
       "not": "",
       "kolada_titel": "Färdigställda bostäder, nybyggnad, antal/1000 inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Inkluderar småhus och flerbostadshus. Småhus avser friliggande en- och tvåbostadshus samt par-, rad- och kedjehus (exklusive fritidshus). Flerbostadshus avser bostadsbyggnader innehållande tre eller flera lägenheter inklusive loftgångshus. Alla kommuner lämnar månatligen uppgifter om beviljade bygglov. Insamlingsrutinerna utgår från PBL. Uppgift om färdigställande ska primärt baseras på det slutbesked som byggherren ska få från byggnadsnämnden för bygglovsärendet. Dividerat med antal invånare 31/12 multiplicerat med 1000. Källa: SCB.",
       "publiceringsdatum": "2026-05-15"
     },
     {
@@ -280,6 +294,8 @@
       "tangerande": true,
       "not": "",
       "kolada_titel": "Färdigställda bostäder i flerbostadshus, nybyggnad, antal/1000inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Flerbostadshus avser bostadsbyggnader innehållande tre eller flera lägenheter inklusive loftgångshus. Alla kommuner lämnar månatligen uppgifter om beviljade bygglov. Insamlingsrutinerna utgår från PBL. Uppgift om färdigställande ska primärt baseras på det slutbesked som byggherren ska få från byggnadsnämnden för bygglovsärendet. Dividerat med antal invånare 31/12 multiplicerat med 1000. Källa: SCB.",
       "publiceringsdatum": "2026-05-15"
     },
     {
@@ -294,6 +310,8 @@
       "liknande": "G37449",
       "not": "Resursinsatsen i planeringen. Läses tillsammans med planledtiden — låg kostnad och lång ledtid är ett resursargument.",
       "kolada_titel": "Kostnad fysisk o. teknisk planering, bostadsförbättringar, kr/inv",
+      "kolada_kalla": "SCB:s Räkenskapssammandrag",
+      "kolada_beskrivning": "Bruttokostnad minus interna intäkter och försäljning till andra kommuner och regioner för fysisk o. teknisk planering, bostadsförbättr, dividerat med antal invånare i kommunen den 31/12. Avser fysisk planering, bygglovsverksamhet, teknisk verksamhet och markförsörjning inklusive reglerings- och saneringsfastigheter. Även kostnader för tomma lokaler som följd av bland annat omstruktureringar i kommunen och delar av kostnader för exploatering av mark redovisas här. Som bostadsförbättring räknas sanering och upprustning av befintliga områden samt stöd till bostadsföretag. Här redovisas även bredbandsutbyggnad. Avser samtlig regi. Källa: SCB:s Räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -308,6 +326,8 @@
       "liknande": "G35989",
       "not": "Hög kostnad kan spegla nyproduktionsandel, standard eller energiprestanda lika gärna som ineffektivt lokalutnyttjande.",
       "kolada_titel": "Kostnad för lokaler i kommunal grundskola åk 1-9, kr/elev",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Lokalkostnad grundskola skolkommun dividerat med medelvärde av antal elever i kommunens grundskola åk 1-9. Kostnader för såväl egna som hyrda lokaler, inklusive kostnader för inventarier. Med lokalkostnader avses kostnader för lokaler och inventarier i form av direkta kostnader, fördelade lokalkostnader, externa och interna hyror, driftkostnader för värme, underhåll, städning m.m. samt kapitalkostnader för lokaler och de inventarier som inte räknas som lärverktyg. Kostnad för vaktmästare avseende fastighetsskötsel redovisas här. Om lokalerna utnyttjas även för annan verksamhet än skolverksamhet, ska endast de kostnader som avser skolverksamheten redovisas. Kostnader för skolbänkar, möbler, textilier etc. redovisas som lokal- och inventariekostnad medan kostnader för t.ex. symaskiner och hyvelbänkar m.m. anses vara lärverktygskostnader. Elevhemsboende redovisas under Bostadsverksamhet. Kostnadsuppgiften avser kalenderår, mätt 31 december. Avser egen regi. Elever i internationella skolor samt integrerade elever från anpassad grundskola är inkluderade nämnaren. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -322,6 +342,8 @@
       "liknande": "G35989",
       "not": "Vidare avgränsning än åk 1–9 — inkluderar förskoleklass.",
       "kolada_titel": "Kostnad för lokaler i kommunal grundskola F-9, kr/elev",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Lokalkostnad kommunal grundskola F-9 dividerat med medelvärde av antal elever i kommunens grundskola åk F-9 i egen regi. Kostnader för såväl egna som hyrda lokaler, inklusive kostnader för inventarier. Med lokalkostnader avses kostnader för lokaler och inventarier i form av direkta kostnader, fördelade lokalkostnader, externa och interna hyror, driftkostnader för värme, underhåll, städning m.m. samt kapitalkostnader för lokaler och de inventarier som inte räknas som lärverktyg. Kostnad för vaktmästare avseende fastighetsskötsel redovisas här. Om lokalerna utnyttjas även för annan verksamhet än skolverksamhet, ska endast de kostnader som avser skolverksamheten redovisas. Kostnader för skolbänkar, möbler, textilier etc. redovisas som lokal- och inventariekostnad medan kostnader för t.ex. symaskiner och hyvelbänkar m.m. anses vara lärverktygskostnader. Elevhemsboende redovisas under Bostadsverksamhet. Uppgiften avser kalenderår, mätt 31 december. Elever i internationella skolor samt integrerade elever från anpassad grundskola är inkluderade nämnaren. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -336,6 +358,8 @@
       "liknande": "G35989",
       "not": "",
       "kolada_titel": "Bruttokostnad lokaler kommunal förskoleklass, kr/elev",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Bruttokostnad lokaler i kommunal förskoleklass dividerat med antal elever i förskoleklass i kommunens egen regi, per kalenderår. Med kalenderår avses ett medelvärde av mätningarna 15 oktober innevarande och närmast föregående år. Avser egen regi. Elever i internationella skolor är exkluderade från nämnaren. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -350,6 +374,8 @@
       "liknande": "G85875",
       "not": "Netto, alltså efter interna intäkter.",
       "kolada_titel": "Nettokostnad lokaler i kommunal förskola, kr/inskrivet barn",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Nettolokalkostnad förskola skolkommun, tkr dividerat med antal inskrivna i kommunal förskola, medelvärde för åren T och T-1. Uppgiften avser kalenderår, mätt 15/10. Avser egen regi. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -364,6 +390,8 @@
       "liknande": "G85875",
       "not": "",
       "kolada_titel": "Bruttokostnad lokaler kommunal förskola, kr/inskrivet barn",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Bruttokostnad lokaler i kommunal förskola dividerat med antal inskrivna barn i förskola i kommunens egen regi, per kalenderår. Med kalenderår avses ett medelvärde av mätningarna 15 oktober innevarande och närmast föregående år. Avser egen regi. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -378,6 +406,8 @@
       "liknande": "G35989",
       "not": "Fritidshem delar oftast lokaler med skolan — kostnaden är en fördelning, inte en fristående lokalkostnad.",
       "kolada_titel": "Nettokostnad lokaler kommunalt fritidshem, kr/inskrivet barn",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Bruttokostnad lokaler minus bruttointäkt för lokaler i kommunalt fritidshem dividerat med antal inskrivna barn i fritidshem i kommunens egen regi, per kalenderår. Med kalenderår avses ett medelvärde av mätningarna 15 oktober innevarande och närmast föregående år. Avser egen regi. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -392,6 +422,8 @@
       "liknande": "G36281",
       "not": "Programmix påverkar kraftigt — yrkesprogram kräver mer specialyta per elev.",
       "kolada_titel": "Kostnader för lokaler i kommunal gymnasieskola, kr/elev",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Lokalkostnader kommunal gymnasieskola, tkr dividerat med antal elever i kommunens gymnasieskolor. Kostnader för såväl egna som hyrda lokaler, inklusive kostnader för inventarier. Med lokalkostnader avses kostnader för lokaler och inventarier i form av direkta kostnader, fördelade lokalkostnader, externa och interna hyror, driftkostnader för värme, underhåll, städning m.m. samt kapitalkostnader för lokaler och de inventarier som inte räknas som lärverktyg. Kostnad för vaktmästare avseende fastighetsskötsel redovisas här. Om lokalerna utnyttjas även för annan verksamhet än skolverksamhet, ska endast de kostnader som avser skolverksamheten redovisas. Kostnader för skolbänkar, möbler, textilier etc. redovisas som lokal- och inventariekostnad medan kostnader för t.ex. symaskiner och hyvelbänkar m.m. anses vara lärverktygskostnader. Elevhemsboende redovisas under Bostadsverksamhet. Uppgiften avser kalenderår, mätt 31 december. Avser egen regi. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -406,6 +438,8 @@
       "liknande": "G35989",
       "not": "Små elevunderlag ger stora utslag mellan kommuner och år.",
       "kolada_titel": "Kostnad för lokaler i kommunal anpassad grundskola, kr/elev",
+      "kolada_kalla": "Skolverket (Siris)",
+      "kolada_beskrivning": "Denna statistikuppgift visar kostnaden för lokaler och inventarier per elev/inskrivet barn för valt år anpassad grundskola. I  statistiken ingår kostnader för lokaler och inventarier, inklusive underhåll, städning och kostnader för  vaktmästare avseende fastighetsskötsel. I kostnaden kan interna hyror vara självkostnadsberäknade. I statistiken ingår inte kostnader för övriga vaktmästartjänster. I och med nya bestämmelser i skollagen heter grundsärskola nu anpassad grundskola. Källa Skolverket (Siris).",
       "publiceringsdatum": "2026-09-30"
     },
     {
@@ -420,6 +454,8 @@
       "liknande": "G36281",
       "not": "Små elevunderlag ger stora utslag mellan kommuner och år.",
       "kolada_titel": "Kostnad för lokaler i kommunal  anpassad gymnasieskola, kr/elev",
+      "kolada_kalla": "Skolverket (Siris)",
+      "kolada_beskrivning": "Denna statistikuppgift visar kostnaden för lokaler och inventarier per elev/inskrivet barn för valt år i kommunal  anpassad gymnasieskola. I statistiken ingår kostnader för lokaler och inventarier, inklusive underhåll, städning och kostnader för vaktmästare avseende fastighetsskötsel. I kostnaden kan interna hyror vara självkostnadsberäknade. I statistiken ingår inte kostnader för övriga vaktmästartjänster. I och med nya bestämmelser i skollagen heter gymnasiesärskola nu anpassad gymnasieskola. Källa: Skolverket (Siris).",
       "publiceringsdatum": "2026-09-30"
     },
     {
@@ -434,6 +470,8 @@
       "liknande": "G176609",
       "not": "",
       "kolada_titel": "Bruttokostnad lokaler äldreomsorg, kr/inv 65+",
+      "kolada_kalla": "SCB:s Räkenskapssammandrag och befolkningsstatistik",
+      "kolada_beskrivning": "Bruttokostnad lokaler äldreomsorg dividerat med antal invånare 65+ den 31/12. Källa: SCB:s Räkenskapssammandrag och befolkningsstatistik.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -448,6 +486,8 @@
       "liknande": "G176609",
       "not": "Normerat mot befolkning 65+, inte mot antal boendeplatser — täckningsgraden påverkar därför måttet.",
       "kolada_titel": "Kostnad lokaler exkl. externa lokalintäkter äldreomsorg, kr/inv 65+",
+      "kolada_kalla": "SCB:s Räkenskapssammandrag och befolkningsstatistik",
+      "kolada_beskrivning": "Bruttokostnad lokaler äldreomsorg exklusive externa lokalintäkter äldreomsorg, dividerat med antal invånare 65+ den 31/12. Källa: SCB:s Räkenskapssammandrag och befolkningsstatistik.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -462,6 +502,8 @@
       "liknande": "G39622",
       "not": "Normerat mot hela befolkningen, inte mot antal insatser — beslutsvolymen påverkar måttet.",
       "kolada_titel": "Bruttokostnad lokaler funktionsnedsättning LSS, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Bruttokostnad lokaler LSS, dividerat med antal invånare den 31/12. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -476,6 +518,8 @@
       "liknande": "G37449",
       "not": "Avser kommunens näringslivslokaler och arbetsområden, inte verksamhetslokaler.",
       "kolada_titel": "Kostnad arbetsområden och lokaler, kr/inv",
+      "kolada_kalla": "SCB:s Räkenskapssammandrag",
+      "kolada_beskrivning": "Bruttokostnad minus interna intäkter och försäljning till andra kommuner och regioner för arbetsområden och lokaler, dividerat med antal invånare i kommunen den 31/12. Avser iordningställda områden för industri, kontor, lager etc. Med lokaler avses industri-, hantverks- och konferenslokaler samt hotell. Samlingslokaler, konferenslokaler m.m. för uthyrning, ingår. Avser affärsverksamhet bedriven i förvaltningsform. Källa: SCB:s Räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -490,6 +534,8 @@
       "liknande": "G37449",
       "not": "Påverkas direkt av hur internhyresmodellen är konstruerad — svårjämförbart mellan kommuner.",
       "kolada_titel": "Kostnad för interna köp och övriga interna kostnader för gemensamma lokaler, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Kostnad för interna köp och övriga interna kostnader för  gemensamma lokaler i kronor, dividerat på antal invånare. Till interna köp och övriga interna kostnader förs de kostnader som uppkommer vid köp/sälj mellan verksamheter genom interndebiteringar inom kommunen. Källa: SCB",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -504,6 +550,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Invånare totalt, antal",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Antal invånare totalt den 31/12. Källa: SCB.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -518,6 +566,8 @@
       "liknande": "G37449",
       "not": "Dimensionerande för förskola.",
       "kolada_titel": "Invånare 1-5 år, antal",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Antal invånare 1-5 år den 31/12. Källa: SCB.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -532,6 +582,8 @@
       "liknande": "G37449",
       "not": "Dimensionerande för grundskola.",
       "kolada_titel": "Invånare 6-15 år, antal",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Antal invånare 6-15 år den 31/12. Källa: SCB.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -546,6 +598,8 @@
       "liknande": "G37449",
       "not": "Dimensionerande för vård- och omsorgsboende.",
       "kolada_titel": "Invånare 80+, antal",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Antal invånare 80+ den 31/12. Källa: SCB.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -560,6 +614,8 @@
       "liknande": "G37449",
       "not": "SCB:s kommunframskrivning.",
       "kolada_titel": "Framskrivning, förväntat antal invånare om fem år",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare om 5 år. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommunerna själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -574,6 +630,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntat antal invånare 06-15 år om 5 år",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare 6-15 år om 5 år. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommunerna själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -588,6 +646,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntat antal invånare 80+ om 5 år",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare 80+ om 5 år. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommunerna själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -602,6 +662,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 1-5 år kommande 5 år, (%)",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare 1-5 år om 5 år dividerat med antal invånare 1-5 år 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -616,6 +678,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 6-15 år kommande 5 år, (%)",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare 6-15 år om 5 år dividerat med antal invånare 6-15 år 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -630,6 +694,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 16-19 år kommande 5 år, (%)",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare 16-19 år om 5 år dividerat med antal invånare 16-19 år 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -644,6 +710,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 80+ kommande 5 år, (%)",
+      "kolada_kalla": "SCB (tidigare Statisticon AB)",
+      "kolada_beskrivning": "Förväntat antal invånare 80 år eller äldre om 5 år dividerat med antal invånare 80 år eller äldre 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB (tidigare Statisticon AB)",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -658,6 +726,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 1-5 år om 10 år, (%)",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förväntat antal invånare 1-5 år om 10 år dividerat med antal invånare 1-5 år 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -672,6 +742,8 @@
       "liknande": "G37449",
       "not": "Tioårshorisonten motsvarar ledtiden för nybyggnad med ny detaljplan.",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 6-15 år om 10 år, (%)",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förväntat antal invånare 6-15 år om 10 år dividerat med antal invånare 6-15 år 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -686,6 +758,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Framskrivning, förväntad förändring i antal invånare 80+ år om 10 år, (%)",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förväntat antal invånare 80+ år år om 10 år dividerat med antal invånare 80+ år 31/12 det aktuella året multiplicerat med 100. För att göra framskrivningen används antal levande födda barn, avlidna, inflyttade och utflyttade som registrerats under året. Med hjälp av denna information skattas fruktsamhet, mortalitet, antal inflyttare, inflyttarfördelningar och utflyttarrisker efter ålder och kön. Skattningarna ligger sedan till grund för beräkningen av den framtida utvecklingen av antalet födda, döda, inflyttade och utflyttade. Observera att denna framskrivning endast bygger på statistik som finns tillgänglig nationellt och ska inte förväxlas med prognoser som kommuner och regioner själva tar fram. Från och med 2022 publiceras data vart tredje år. Källa: SCB",
       "publiceringsdatum": "2026-06-16"
     },
     {
@@ -700,6 +774,8 @@
       "liknande": "G37449",
       "not": "Utfall, inte prognos — används för att kalibrera framskrivningarna.",
       "kolada_titel": "Befolkningsförändring i åldersgruppen 1-5 år sedan föregående år, procent",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förändring av invånare i åldersgruppen 1-5 år jämfört med föregående år, angivet i procent. Avser befolkningen 31/12. Källa: SCB",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -714,6 +790,8 @@
       "liknande": "G37449",
       "not": "Utfall, inte prognos.",
       "kolada_titel": "Befolkningsförändring i åldersgruppen 6-15 år sedan föregående år, procent",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förändring av invånare i åldersgruppen 6-15 år jämfört med föregående år, angivet i procent. Avser befolkningen 31/12. Källa: SCB",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -728,6 +806,8 @@
       "liknande": "G37449",
       "not": "Utfall, inte prognos.",
       "kolada_titel": "Befolkningsförändring i åldersgruppen 1-5 år under den senaste femårsperioden, procent",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förändring av invånare i åldersgruppen 1-5 år jämfört med fem år tidigare, angivet i procent. Avser befolkningen 31/12. Källa: SCB",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -742,6 +822,8 @@
       "liknande": "G37449",
       "not": "Utfall, inte prognos.",
       "kolada_titel": "Befolkningsförändring i åldersgruppen 6-15 år under den senaste femårsperioden, procent",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förändring av invånare i åldersgruppen 6-15 år jämfört med fem år tidigare, angivet i procent. Avser befolkningen 31/12. Källa: SCB",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -756,6 +838,8 @@
       "liknande": "G37449",
       "not": "Utfall, inte prognos.",
       "kolada_titel": "Befolkningsförändring i åldersgruppen 80+  år under den senaste femårsperioden, procent",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Förändring av invånare i åldersgruppen 80+ år jämfört med fem år tidigare, angivet i procent. Avser befolkningen 31/12. Källa: SCB",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -770,6 +854,8 @@
       "liknande": "G85875",
       "not": "",
       "kolada_titel": "Inskrivna barn på förskola, kommunal regi, antal",
+      "kolada_kalla": "Skolverket",
+      "kolada_beskrivning": "Antal barn i förskolor i kommunal regi, avser punktmätning 15/10. Källa: Skolverket",
       "publiceringsdatum": "2027-04-20"
     },
     {
@@ -784,6 +870,8 @@
       "liknande": "G85875",
       "not": "",
       "kolada_titel": "Inskrivna barn på förskola, hemkommun, antal",
+      "kolada_kalla": "SCB och Skolverket",
+      "kolada_beskrivning": "Antal barn folkbokförda i kommunen inskrivna i förskola. Uppgiften avser läsår, mätt 15 oktober. Källa: SCB och Skolverket.",
       "publiceringsdatum": "2027-04-20"
     },
     {
@@ -798,6 +886,8 @@
       "liknande": "G85875",
       "not": "Inskrivningsgraden avgör hur många platser en given årskull kräver.",
       "kolada_titel": "Barn 1-5 år inskrivna i förskola och pedagogisk omsorg, andel (%)",
+      "kolada_kalla": "SCB och Skolverket",
+      "kolada_beskrivning": "Antal inskrivna barn i förskola totalt, 1-5 år samt antal inskrivna barn inom pedagogisk omsorg totalt, 1-5 år, dividerat med antal barn i kommunen, 1-5 år. Avser förskolor i kommunen, oavsett regi. Uppgiften avser läsår, mätt 15/10. Källa: SCB och Skolverket.",
       "publiceringsdatum": "2027-04-20"
     },
     {
@@ -812,6 +902,8 @@
       "liknande": "G85875",
       "not": "Hög andel fristående minskar kommunens eget lokalbehov.",
       "kolada_titel": "Barn i fristående förskola, andel (%) av inskrivna barn",
+      "kolada_kalla": "Skolverket",
+      "kolada_beskrivning": "Andel av samtliga inskrivna barn som var inskrivna i verksamhet som anordnades i enskild regi eller på entreprenad. Med enskild regi avss förskola som kommunen har ett övergripande ansvar för men som drivs av annan huvudman än kommunen. Inskrivna barn avser punktmätning 15/10. Källa: Skolverket",
       "publiceringsdatum": "2027-04-16"
     },
     {
@@ -826,6 +918,8 @@
       "liknande": "G35989",
       "not": "",
       "kolada_titel": "Elever/lärare (heltidstjänst) i grundskola åk 1-9, lägeskommun, antal",
+      "kolada_kalla": "Skolverket",
+      "kolada_beskrivning": "Antal elever per lärare i årskurs 1-9 omräknat till heltidstjänster, i kommunala och fristående skolor belägna i kommunen (lägeskommun). Övrig pedagogisk personal (förskollärare, fritidspedagoger och fritidsledare) ingår inte. Elever och lärare vid internationella skolor är inte inkluderade. Avser läsår, mätt den 15 oktober. Källa: Skolverket.",
       "publiceringsdatum": "2027-04-08"
     },
     {
@@ -840,6 +934,8 @@
       "liknande": "G37449",
       "not": "Avser kommunens egna investeringar. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
       "kolada_titel": "Investeringsutgifter kommunen totalt, kr/inv",
+      "kolada_kalla": "SCBs räkenskapssammandrag",
+      "kolada_beskrivning": "Investeringsutgifter kommunen totalt dividerat med antal invånare totalt 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -854,6 +950,8 @@
       "liknande": "G35989",
       "not": "Skolor och förskolor. Ett lågt värde betyder inte att kommunen investerar lite i skollokaler — det betyder att investeringen ligger i bolaget. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
       "kolada_titel": "Investeringsutgifter Pedagogisk verksamhet, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Investeringsutgifter för pedagogisk verksamhet totalt dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter.  I pedagogisk verksamhet ingår Förskola, fritidshem och annan pedagogisk verksamhet, samt grundskola, gymnasieskola, vuxenutbildning och anpassad skola. Källa: SCB",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -868,6 +966,8 @@
       "liknande": "G176609",
       "not": "Vård- och omsorgsboenden samt LSS. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
       "kolada_titel": "Investeringsutgifter inom vård och omsorg kommun, kr/inv",
+      "kolada_kalla": "SCBs räkenskapssammandrag",
+      "kolada_beskrivning": "Investeringsutgifter vård och omsorg dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -882,6 +982,8 @@
       "liknande": "G37449",
       "not": "Idrottshallar, bibliotek och fritidsanläggningar.",
       "kolada_titel": "Investeringsutgifter inom kultur- och fritidsverksamhet kommun, kr/inv",
+      "kolada_kalla": "SCBs räkenskapssammandrag",
+      "kolada_beskrivning": "Investeringsutgifter kultur- och fritidsverksamhet dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -896,6 +998,8 @@
       "liknande": "G37449",
       "not": "",
       "kolada_titel": "Investeringsutgifter inom näringsliv och bostäder kommun, kr/inv",
+      "kolada_kalla": "SCBs räkenskapssammandrag",
+      "kolada_beskrivning": "Investeringsutgifter näringsliv och bostäder dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -910,6 +1014,8 @@
       "liknande": "G37449",
       "not": "Investeringsutgifter minus investeringsinkomster.",
       "kolada_titel": "Nettoinvesteringar, totalt kommun, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Nettoinvesteringar, totalt kommun, tkr dividerat med antal invånare totalt 31/12. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -924,6 +1030,8 @@
       "liknande": "G37449",
       "not": "Investeringstakt satt i relation till kommunens intäkter.",
       "kolada_titel": "Nettoinvesteringar i kommunen, andel (%) av skatt & generella statsbidrag",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Nettoinvesteringarna dividerade med summan av skatteintäkter och generella statsbidrag. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -938,6 +1046,8 @@
       "liknande": "G37449",
       "not": "Andel av investeringarna som finansieras utan nyupplåning. Linköpings budget har ett krav på 50 procent egenfinansiering. Hög självfinansiering kan också betyda att investeringstakten är låg — därför kontextmått.",
       "kolada_titel": "Självfinansieringsgrad för kommunens investeringar, andel (%)",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Årets resultat plus avskrivningar i procent av kommunens nettoinvesteringar. Observera att efter 2020 års förändrade redovisningsprinciper kan exploateringsersättning finnas i både täljaren (årets resultat) och nämnaren (investeringsinkomster). Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -952,6 +1062,8 @@
       "liknande": "G37449",
       "not": "Kommunens eget bestånd. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
       "kolada_titel": "Materiella & immateriella anläggningstillgångar kommunen, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Materiella & immateriella anläggningstillgångar kommun, dividerat med antal invånare totalt 31/12. Avser mark, byggnader, tekniska anläggningar, maskiner, inventarier. Tillgångarna värderas efter anskaffningsvärdet minus planenliga avskrivningar. Förekommande immateriella anläggningstillgångar ingår också. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -966,6 +1078,8 @@
       "liknande": "G37449",
       "not": "Inklusive de kommunala bolagen. Läs tillsammans med kommunraden ovan — skillnaden är bolagens bestånd.",
       "kolada_titel": "Materiella & immateriella anläggningstillgångar kommunkoncern, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Materiella & immateriella anläggningstillgångar kommunkoncern, dividerat med antal invånare totalt 31/12. Avser mark, byggnader, tekniska anläggningar, maskiner, inventarier. Tillgångarna ska värderas efter anskaffningsvärdet minus planenliga avskrivningar. Förekommande immateriella anläggnings tillgångar ingår också. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -980,6 +1094,8 @@
       "liknande": "G37449",
       "not": "Redovisas som negativt tal i Kolada. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
       "kolada_titel": "Avskrivningar kommun, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Avskrivningar kommun, tkr dividerat med antal invånare totalt 31/12. Till avskrivningar hör planenliga avskrivningar på kommuners anläggningstillgångar. Även nedskrivningar hänförs normalt till avskrivningar, i de fall de inte klassificeras som extraordinära. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -994,6 +1110,8 @@
       "liknande": "G37449",
       "not": "Redovisas som negativt tal i Kolada. Inklusive bolagen — spegling av koncernens fastighetsbestånd.",
       "kolada_titel": "Avskrivningar kommunkoncern, kr/inv",
+      "kolada_kalla": "SCB",
+      "kolada_beskrivning": "Avskrivningar kommunkoncern, tkr dividerat med antal invånare totalt 31/12. Till avskrivningar hör planenliga avskrivningar på kommuners anläggningstillgångar. Även nedskrivningar hänförs normalt till avskrivningar, i de fall de inte klassificeras som extraordinära. Källa: SCB.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -1008,6 +1126,8 @@
       "liknande": "G37449",
       "not": "Behovet styrs av demografi, geografi och föreningsliv — fler hallar är inte automatiskt bättre.",
       "kolada_titel": "Idrottshallar, samtliga, antal/10 000 inv",
+      "kolada_kalla": "SKR:s anläggningsenkät",
+      "kolada_beskrivning": "Antal idrottshallar i kommunen per 10 000 invånare. Anläggningsenkäten genomförs vart 4-5 år, senast den genomfördes var 2024. Nyckeltalet uppdateras med senaste enkäts värde varje år tills ny enkät genomförts. Avser samtliga storlekar (18x36 m till 22x42 m,  Över 22 x 42 m men under 60 x 100 m samt  60 x 100 m eller större). Källa: SKR:s anläggningsenkät",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -1022,6 +1142,8 @@
       "liknande": "G37449",
       "not": "Normerat mot den åldersgrupp som använder hallarna mest.",
       "kolada_titel": "Idrottshallar, antal/1000 inv 7-20 år",
+      "kolada_kalla": "SKR:s anläggningsenkät",
+      "kolada_beskrivning": "Antal idrottshallar i kommunen dividerat med invånare 7-20. Åldersintervallet har valts för att stämma överens med gränserna statistiken för deltagartillfällen med LOK-stöd. Avser samtliga storlekar (18x36 m till 22x42 m,  Över 22 x 42 m men under 60 x 100 m samt  60 x 100 m eller större). Anläggningsenkäten genomförs vart 4-5 år, senast den genomfördes var 2024. Nyckeltalet uppdateras med senaste enkäts värde varje år tills ny enkät genomförts. Källa: SKR:s anläggningsenkät",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -1036,6 +1158,8 @@
       "liknande": "G37449",
       "not": "Normalstor hall.",
       "kolada_titel": "Idrottshall 18x36 m till 22x42 m, antal/10 000 inv",
+      "kolada_kalla": "SKR:s Anläggningsenkät och SCB",
+      "kolada_beskrivning": "Antal Idrottshall 18x36 m till 22x42 m dividerat med antal invånare totalt den 31/12 multiplicerat med 10000. Uppgifterna bygger på kommunalt ägda och drivna anläggningar samt förenings/ ägda och drivna anläggningar. Avser inte fotbolls-, friidrotts- och ishallar. Anläggningsenkäten genomförs vart 4-5 år, senast den genomfördes var 2024. Nyckeltalet uppdateras med senaste enkäts värde varje år tills ny enkät genomförts. Källa: SKR:s Anläggningsenkät och SCB.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -1050,6 +1174,8 @@
       "liknande": "G37449",
       "not": "Fullstor hall, den storlek som krävs för matchspel i flera serier.",
       "kolada_titel": "Idrottshall 22x42 m eller större, antal/10 000 inv",
+      "kolada_kalla": "SKR:s Anläggningsenkät och SCB",
+      "kolada_beskrivning": "Antal Idrottshall 22x42 m eller större dividerat med antal invånare totalt den 31/12 multiplicerat med 10000. Uppgifterna bygger på kommunalt ägda och drivna anläggningar samt förenings/ ägda och drivna anläggningar. Avser inte fotbolls-, friidrotts- och ishallar. Anläggningsenkäten genomförs vart 4-5 år, senast den genomfördes var 2024. Nyckeltalet uppdateras med senaste enkäts värde varje år tills ny enkät genomförts. Källa: SKR:s Anläggningsenkät och SCB.",
       "publiceringsdatum": "2027-02-24"
     },
     {
@@ -1064,6 +1190,8 @@
       "liknande": "G37449",
       "not": "Absolut antal, inte normerat mot kommunstorlek — därför ingen percentil.",
       "kolada_titel": "Idrottshallar, samtliga, antal",
+      "kolada_kalla": "SKR:s anläggningsenkät",
+      "kolada_beskrivning": "Antal idrottshallar i kommunen.  Avser samtliga storlekar (18x36 m till 22x42 m,  Över 22 x 42 m men under 60 x 100 m samt  60 x 100 m eller större). Anläggningsenkäten genomförs vart 4-5 år, senast den genomfördes var 2024. Nyckeltalet uppdateras med senaste enkäts värde varje år tills ny enkät genomförts. Källa: SKR:s anläggningsenkät",
       "publiceringsdatum": null
     },
     {
@@ -1078,6 +1206,8 @@
       "liknande": "G37449",
       "not": "Hela biblioteksverksamheten, inte enbart lokalkostnaden.",
       "kolada_titel": "Nettokostnad bibliotek, kr/inv",
+      "kolada_kalla": "SCB:s Räkenskapssammandrag",
+      "kolada_beskrivning": "Nettokostnad för bibliotek, dividerat med antal invånare totalt 31/12. Med nettokostnad avses bruttokostnad minus bruttointäkt. Avser kostnader/intäkter för tillhandahållande och förmedling av information samt utlåning av medier till allmänheten. Allmänkulturell verksamhet som sker i bibliotekets regi såsom utställningar, teater etc. har förts in på Allmän kulturverksamhet. Avser samtlig regi. Källa: SCB:s Räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -1093,6 +1223,8 @@
       "tangerande": true,
       "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
       "kolada_titel": "Fjärrvärmepris inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "kolada_kalla": "Nils Holgersson gruppen",
+      "kolada_beskrivning": "Fjärrvärmekostnad i kronor per kvadratmeter inkl. moms under ett år för en typfastighet i kommunen.  Typfastigheten är i form av ett flerbostadshus med ett värmebehov på 193 000 kWh/år och en boendeyta på 1000 kvm. Källa: Nils Holgersson gruppen.",
       "publiceringsdatum": "2026-11-13"
     },
     {
@@ -1108,6 +1240,8 @@
       "tangerande": true,
       "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
       "kolada_titel": "Elpris inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "kolada_kalla": "Nils Holgersson gruppen",
+      "kolada_beskrivning": "Total elkostnad (elhandel, elnät och skatter) i kronor per kvadratmeter inkl. moms under ett år för en typfastighet i kommunen. Typfastigheten är i form av ett flerbostadshus med en boendeyta på 1000 kvm. Kostnaden baseras på det behov som fastigheten har i sig (35 A - 15 000 kWh) för belysning, tvättstuga mm och de 15 lägenheter som är inrymda i den (16 A - 2 300 kWh per lägenhet). Från och med 2019 används numera ett medelvärde för elhandelspriset för 12-månadersperioden juli%u2010juni för rörligt pris och medel för elområde 1%u20104. Tidigare användes rörligt elhandelspriset i juli månad. Källa: Nils Holgersson gruppen.",
       "publiceringsdatum": "2026-11-13"
     },
     {
@@ -1123,6 +1257,8 @@
       "tangerande": true,
       "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
       "kolada_titel": "Avgift för vatten och avlopp inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "kolada_kalla": "Nils Holgersson gruppen",
+      "kolada_beskrivning": "Kostnad för vatten och avlopp i kronor per kvadratmeter inkl. moms under ett år för en typfastighet i kommunen. Typfastigheten är i form av ett flerbostadshus med en boendeyta på 1000 kvm. Kostnaden baseras på ett vattenbehov på motsvarande 2000 m3 per år. Källa: Nils Holgersson gruppen.",
       "publiceringsdatum": "2026-11-13"
     },
     {
@@ -1138,6 +1274,8 @@
       "tangerande": true,
       "not": "Nils Holgersson-modellen prissätter en standardiserad typfastighet — ett flerbostadshus om 15 lägenheter, inte en skola. Enda kr/kvm som finns på kommunnivå, men jämförelsen är indikativ.",
       "kolada_titel": "Avgift för avfallshämtning (ny definition) inkl. moms för typfastighet enligt Nils Holgersson-modellen, kr/kvm",
+      "kolada_kalla": "Nils Holgersson gruppen",
+      "kolada_beskrivning": "Kostnad för avfallshämtning i kronor per kvadratmeter inkl. moms under ett år för en typfastighet i kommunen. Typfastigheten är i form av ett flerbostadshus med en boendeyta på 1000 kvm. Inför år 2024 har det tagits fram en ny avfallsdefinition och insamlingen sker via Avfall Sveriges statistik- och insamlingsverktyg Avfall Web. Avfallsmängden är numera exakt definierad och motsvarar i volym hämtning en gång i veckan av ett 660 liter restavfallskärl och ett 140 liter matavfallskärl. Dessutom förutsätts en dragväg på motsvarande 9 meter. Den tidigare avfallsdefinitionen i Nils Holgerssonundersökningen avseende avfall baserades på en insamlingsvolym motsvarande ca 1180 liter per vecka. Uträkningen för kostnaden är anpassat till de lokala förhållanden med sortering av olika fraktioner. Källa: Nils Holgersson gruppen.",
       "publiceringsdatum": "2026-11-13"
     },
     {
@@ -1152,6 +1290,8 @@
       "liknande": "G37449",
       "not": "SCB:s medborgarundersökning. Det enda måttet i materialet som värderar förvaltningsuppdraget i sig och inte dess kostnad. Urvalsundersökning — enskilda års utfall bär osäkerhet.",
       "kolada_titel": "Medborgarundersökningen - Skötsel av byggnader där kommunen har verksamhet fungerar bra i kommunen, andel (%)",
+      "kolada_kalla": "SCBs medborgarundersökning",
+      "kolada_beskrivning": "Andel som har svarat \"Mycket bra\" eller \"Ganska bra\" på frågan \"Hur tycker du följande saker fungerar i din kommun? Skötsel av byggnader där kommunen har verksamhet, t.ex. skolor, äldreboende\" i SCBs medborgarundersökning. De som har svarat \"Vet inte\"/\"Ingen åsikt\" är exkluderade. Källa: SCBs medborgarundersökning.",
       "publiceringsdatum": "2026-12-15"
     },
     {
@@ -1166,6 +1306,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Area egna lokaler, kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Total area för ur regionperspektiv helägda fastigheter (lokaler och bostäder), inklusive eventuella sale and lease back finansierade objekt. Inhyrda fastigheter där regionen ansvarar för driften ingår här. Uppvärmda parkeringshus i källarplan ingår här. Avser 31/12. Källa Egna uppgifter i regionen.",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1180,6 +1322,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Area egna lokaler, kvm BRA/inv",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Total area för ur regionperspektiv helägda fastigheter (lokaler och bostäder), inklusive eventuella sale and lease back finansierade objekt. Inhyrda fastigheter där regionen ansvarar för driften ingår här. Uppvärmda parkeringshus i källarplan ingår här. Avser 31/12. Dividerat med antal invånare. Källa Egna uppgifter i regionen.",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1194,6 +1338,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Vakansgrad egna lokaler, procent kvm BRA (%)",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Andelen vakanta uthyrningsbara lokaler av den totala egna arean uthyrningsbara lokaler. Avser 31/12. Källa: Egna uppgifter i regionen.",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1208,6 +1354,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Driftkostnad, underhåll (FAUH+PU) och kapitalkostnad lokaler, kr/kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Summan av driftkostnader, felavhjälpande underhåll, planerat underhåll och kapitalkostnader. Källa Egna uppgifter i regionen.",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1222,6 +1370,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Driftkostnad för lokaler, kr/kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Driftkostnaden är summan av total mediakostnad, tillsyn och skötsel. Källa Egna uppgifter i regionen.",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1236,6 +1386,8 @@
       "liknande": null,
       "not": "Lågt planerat underhåll är inte ett gott resultat — det bygger underhållsskuld.",
       "kolada_titel": "Kostnad planerat underhåll lokaler, kr/kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Kostnader för underhåll som är planerat till tid, art och omfattning med tidsintervall på mer än 1 år och som kan budgeteras i en flerårig underhållsplan. Planerat underhåll av hyresgästernas verksamhetsutrustning ingår ej. Redovisas som kronor per kvadratmeter BRA (bruksarea). Källa Egna uppgifter i regionen",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1250,6 +1402,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Kapitalkostnad lokaler, kr/kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Totala kostnader för avskrivningar och räntekostnad. Eventuella räntebidrag är borträknade. Redovisas som kronor per kvadratmeter BRA (bruksarea). Källa Egna uppgifter i regionen",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1264,6 +1418,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Snitt bokfört värde egna lokaler, kr/kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Snitt bokfört värde i kronor per kvm i kronor/kvm BRA. Källa Egna uppgifter i regionen",
       "publiceringsdatum": "2027-04-26"
     },
     {
@@ -1278,6 +1434,8 @@
       "liknande": null,
       "not": "",
       "kolada_titel": "Energianvändning i verksamhetslokaler, summerad, kWh/kvm BRA",
+      "kolada_kalla": "Egna uppgifter i regionen",
+      "kolada_beskrivning": "Total energianvändning per lokalyta (bruksarea, BRA) i regionens egna lokaler. Summa av köpt el, egenproducerad fastighetsnära el, normalårskorrigerad köpt värme, normalårskorrigerad egenproducerad värme samt fjärrkyla delat med faktor 3 för att få jämförbarhet med elbaserad kyla. Källa: Egna uppgifter i regionen.",
       "publiceringsdatum": "2027-04-26"
     }
   ],

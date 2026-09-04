@@ -206,6 +206,6 @@ Fyra saker som analysen ger underlag för, i fallande angelägenhet:
 ## 7. Kvarstående
 
 - **Bygglovsmåttet avser en- och tvåbostadshus.** Det finns inget jämförbart mått på handläggningstid för skol- eller omsorgsbygglov i Kolada. Slutsatsen om snabb lovhantering är därför indikativ, inte bevisad för vår ärendetyp.
-- **Planmåtten avser bostadsplaner.** Caveaten står vid varje förekomst, men den försvinner inte. En detaljplan för skola kan ha annan komplexitet och annan politisk laddning.
+- **Planmåttens omfattning är inte entydigt dokumenterad.** Kolada formulerar frågan som "de detaljplaner som antogs i kommunen" utan avgränsning till ändamål, och för `N07929` uttryckligen "alla detaljplaner, oavsett förfarande". SKR beskriver samtidigt undersökningen som gjord med fokus på bostäder. Frågan kan bara avgöras mot SKR:s eller RKA:s metodbeskrivning för insamlingen, och den kvarstår som olöst. Volymmåtten (planberedskap, planlagda bostäder, beviljade bygglov) räknar däremot bevisligen bostäder.
 - **N07926 publiceras vartannat år.** Nästa värde väntas 2027 och kommer att spegla planer antagna 2025–2027.
 - **Nyproduktionsandelen är inte mätt.** Den är den mest sannolika förklaringen till lokalkostnadsnivån men finns inte i Kolada. Behöver hämtas ur LF:s eget bestånd för att kunna beläggas.
