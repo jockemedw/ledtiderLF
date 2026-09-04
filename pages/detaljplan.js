@@ -2,6 +2,8 @@ import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
 import dynamic from 'next/dynamic';
+import Kallhanvisningar from '../components/Kallhanvisningar.jsx';
+import { byggKallindex } from '../lib/kallhanvisning.js';
 
 const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
 
@@ -13,10 +15,15 @@ export async function getStaticProps() {
   const sharedStyleMatch = sharedRaw.match(/<style>([\s\S]*?)<\/style>/);
   const sharedCss = sharedStyleMatch ? sharedStyleMatch[1] : '';
 
-  return { props: { sharedCss, body: pageRaw } };
+  const kallindex = byggKallindex(
+    JSON.parse(fs.readFileSync(path.join(root, 'data/kallregister.json'), 'utf-8')),
+    JSON.parse(fs.readFileSync(path.join(root, 'data/siffror.json'), 'utf-8'))
+  );
+
+  return { props: { sharedCss, body: pageRaw, kallindex } };
 }
 
-export default function Detaljplan({ sharedCss, body }) {
+export default function Detaljplan({ sharedCss, body, kallindex }) {
   return (
     <>
       <Head>
@@ -35,6 +42,7 @@ export default function Detaljplan({ sharedCss, body }) {
         <style dangerouslySetInnerHTML={{ __html: sharedCss }} />
       </Head>
       <div dangerouslySetInnerHTML={{ __html: body }} />
+      <Kallhanvisningar index={kallindex} />
       <CommentLayer page="detaljplan" />
     </>
   );

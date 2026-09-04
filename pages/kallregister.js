@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import fs from 'fs';
 import path from 'path';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import MinimalNav from '../components/MinimalNav.jsx';
 
 export async function getStaticProps() {
@@ -56,6 +56,31 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
   const [sortering, setSortering] = useState('datum-ny');
 
   const omradeMap = useMemo(() => Object.fromEntries(omraden.map(o => [o.id, o])), [omraden]);
+  const [markerad, setMarkerad] = useState(null);
+
+  // Djuplänkar från källhänvisningarna i materialet (/kallregister#<id>).
+  // Utan detta försvinner målet tyst när källan ligger i ett avbockat område
+  // (dolt_default) eller filtreras bort av en aktiv sökning.
+  useEffect(() => {
+    function oppnaHash() {
+      const id = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+      if (!id) return;
+      const kalla = kallor.find(k => k.id === id);
+      if (!kalla) return;
+      setSok('');
+      setEndastHK(false);
+      setValdaOmraden(prev => (prev.has(kalla.omrade) ? prev : new Set([...prev, kalla.omrade])));
+      setMarkerad(id);
+      // Vänta in omrenderingen innan vi scrollar till kortet.
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      });
+    }
+    oppnaHash();
+    window.addEventListener('hashchange', oppnaHash);
+    return () => window.removeEventListener('hashchange', oppnaHash);
+  }, [kallor]);
 
   const filtrerade = useMemo(() => {
     const sokLower = sok.trim().toLowerCase();
@@ -192,7 +217,7 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
           ) : (
             <ul className="kr-grid">
               {filtrerade.map(k => (
-                <KallaKort key={k.id} k={k} omrade={omradeMap[k.omrade]} />
+                <KallaKort key={k.id} k={k} omrade={omradeMap[k.omrade]} markerad={k.id === markerad} />
               ))}
             </ul>
           )}
@@ -206,10 +231,10 @@ export default function Kallregister({ sharedCss, uppdaterad, omraden, kallor })
   );
 }
 
-function KallaKort({ k, omrade }) {
+function KallaKort({ k, omrade, markerad }) {
   const hk = k.hardkontroll;
   return (
-    <li className="kr-kort" id={k.id}>
+    <li className={`kr-kort${markerad ? ' is-markerad' : ''}`} id={k.id}>
       <div className="kr-kort-topp">
         <span className="kr-kort-omrade" style={{ background: omrade?.farg }}>
           {omrade?.namn || k.omrade}
@@ -240,6 +265,10 @@ function KallaKort({ k, omrade }) {
 }
 
 const kallregisterCss = `
+.kr-kort.is-markerad {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(232, 201, 122, 0.35);
+}
 .kr-hero {
   background: linear-gradient(135deg, #1A2744 0%, #2C3E62 60%, #1A2744 100%);
   color: #fff;

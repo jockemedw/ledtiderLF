@@ -5,6 +5,8 @@ import fs from 'fs';
 import path from 'path';
 import { normalize, parse, serialize } from '../lib/section-selection.js';
 import MinimalNav from '../components/MinimalNav.jsx';
+import Kallhanvisningar from '../components/Kallhanvisningar.jsx';
+import { byggKallindex } from '../lib/kallhanvisning.js';
 
 // Plockar ut <section id="X">...</section> ur lokalforsorjning.html för
 // varje sektion-id i `?ids=...` och serverar dem som en egen sida.
@@ -97,11 +99,15 @@ export async function getServerSideProps({ query }) {
       okand,
       titlar,
       query: serialize(ids).slice(1),
+      kallindex: byggKallindex(
+        JSON.parse(fs.readFileSync(path.join(root, 'data/kallregister.json'), 'utf-8')),
+        JSON.parse(fs.readFileSync(path.join(root, 'data/siffror.json'), 'utf-8'))
+      ),
     },
   };
 }
 
-export default function Skraddarsydd({ css, scriptInnehall, sektionerHtml, antal, okand, titlar, query }) {
+export default function Skraddarsydd({ css, scriptInnehall, sektionerHtml, antal, okand, titlar, query, kallindex }) {
   const titel = antal === 0
     ? 'Skräddarsydd sammanställning — inga sektioner valda'
     : `Skräddarsydd sammanställning (${antal} sektion${antal === 1 ? '' : 'er'})`;
@@ -173,6 +179,8 @@ export default function Skraddarsydd({ css, scriptInnehall, sektionerHtml, antal
           dangerouslySetInnerHTML={{ __html: scriptInnehall }}
         />
       )}
+
+      <Kallhanvisningar index={kallindex} />
 
       <footer className="skr-footer">
         <p>

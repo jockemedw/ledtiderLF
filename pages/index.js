@@ -3,13 +3,21 @@ import Script from 'next/script';
 import fs from 'fs';
 import path from 'path';
 import dynamic from 'next/dynamic';
+import Kallhanvisningar from '../components/Kallhanvisningar.jsx';
+import { byggKallindex } from '../lib/kallhanvisning.js';
 
 const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
 const PickMode = dynamic(() => import('../components/PickMode.jsx'), { ssr: false });
 
 export async function getStaticProps() {
-  const htmlPath = path.join(process.cwd(), 'lokalforsorjning.html');
+  const root = process.cwd();
+  const htmlPath = path.join(root, 'lokalforsorjning.html');
   const raw = fs.readFileSync(htmlPath, 'utf-8');
+
+  const kallindex = byggKallindex(
+    JSON.parse(fs.readFileSync(path.join(root, 'data/kallregister.json'), 'utf-8')),
+    JSON.parse(fs.readFileSync(path.join(root, 'data/siffror.json'), 'utf-8'))
+  );
 
   const styleMatch = raw.match(/<style>([\s\S]*?)<\/style>/);
   const css = styleMatch ? styleMatch[1] : '';
@@ -27,10 +35,10 @@ export async function getStaticProps() {
     '(function initDirect() {\n  if (document.readyState === "loading") {\n    document.addEventListener("DOMContentLoaded", initDirect);\n    return;\n  }\n$1\n})();'
   );
 
-  return { props: { css, bodyInnehall, scriptInnehall } };
+  return { props: { css, bodyInnehall, scriptInnehall, kallindex } };
 }
 
-export default function Home({ css, bodyInnehall, scriptInnehall }) {
+export default function Home({ css, bodyInnehall, scriptInnehall, kallindex }) {
   return (
     <>
       <Head>
@@ -53,6 +61,7 @@ export default function Home({ css, bodyInnehall, scriptInnehall }) {
         dangerouslySetInnerHTML={{ __html: scriptInnehall }}
       />
 
+      <Kallhanvisningar index={kallindex} />
       <CommentLayer />
       <PickMode />
     </>

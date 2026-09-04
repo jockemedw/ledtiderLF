@@ -25,9 +25,11 @@ Lokalförsörjningsguide för Lejonfastigheter AB — Next.js-app som serverar `
 - Inga emojier i kod eller dokument om inte explicit ombedd.
 - HTML-innehåll redigeras direkt i `lokalforsorjning.html` / `detaljplan.html`.
 - Källor i `data/kallregister.json`, nyckeltal i `data/siffror.json` — följ befintligt schema.
+- Källhänvisning per påstående: sätt `data-kalla="<id> <id>"` på elementet (eller på dess `<cite>`). Id:t är antingen ett käll-id ur `kallregister.json` eller ett nyckeltal-id ur `siffror.json` — nyckeltalet expanderas till sina `kalla_ids`. För JS-renderade kort läggs `kalla_ids: [...]` i `DATA` och skrivs ut med `kallAttr()`.
 
 ## Risker att undvika
 
 - Inte ta bort `data-verifiering`-attribut även om Källstatus-toggle är borttagen — inerta nu men sparar bråk vid eventuell återinföring.
 - Inte introducera diagram-bibliotek utan att fråga — `/nyckeltal` är medvetet tabell-baserad.
 - Inte committa `dist/` (gitignored).
+- Inte skriva `data-kalla` med id som saknas i registret — `lib/__tests__/kallhanvisning.test.js` fäller bygget, och länken skulle peka på ett tomt ankare.

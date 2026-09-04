@@ -567,6 +567,87 @@ body.show-verifiering [data-verifiering="preliminar"]::after { background: #B582
 body.show-verifiering [data-verifiering="mos-kravs"]::after  { background: #DC2626; }
 body.show-verifiering [data-verifiering="verifierad"]::after { background: #059669; }
 
+/* ─── KÄLLHÄNVISNINGAR PER PÅSTÅENDE ───
+   Renderas av components/Kallhanvisningar.jsx i varje element med
+   data-kalla="<käll-id eller nyckeltal-id> …". Länkar till /kallregister. */
+.kall-ref {
+  display: inline-flex;
+  text-transform: none;
+  font-style: normal;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  font-family: 'Jost', sans-serif;
+  line-height: 1.5;
+}
+cite .kall-ref, li .kall-ref, p .kall-ref, span .kall-ref, td .kall-ref {
+  margin-top: 0;
+  margin-left: 0.35rem;
+}
+.kall-ref-etikett {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+.kall-ref-lank {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.08rem 0.45rem 0.12rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(181, 130, 42, 0.07);
+  color: var(--navy-mid);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.kall-ref-lank:hover,
+.kall-ref-lank:focus-visible {
+  border-color: var(--gold);
+  background: rgba(181, 130, 42, 0.16);
+  color: var(--navy);
+  text-decoration: none;
+}
+.kall-ref-lank::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+.kall-ref-lank.is-godkand::before        { background: #059669; }
+.kall-ref-lank.is-anmarkning::before     { background: #D97706; }
+.kall-ref-lank.is-underkand::before      { background: #DC2626; }
+.kall-ref-lank.is-ej-kontrollerbar::before { background: #9CA3AF; }
+.kall-ref-lank.is-saknas {
+  border-style: dashed;
+  background: none;
+  color: var(--muted);
+}
+.kall-ref-lank::after { content: '\2197'; font-size: 0.85em; opacity: 0.55; }
+
+/* Mörka sektioner (#kostnad, hjältar) behöver omvänd kontrast. */
+#kostnad .kall-ref-etikett,
+.dp-hero .kall-ref-etikett { color: rgba(255,255,255,0.6); }
+#kostnad .kall-ref-lank,
+.dp-hero .kall-ref-lank {
+  border-color: rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.88);
+}
+#kostnad .kall-ref-lank:hover,
+.dp-hero .kall-ref-lank:hover {
+  border-color: var(--gold-light);
+  background: rgba(232,201,122,0.2);
+  color: #fff;
+}
+
 /* Källstatus-knappen (återinförd efter hårdkontrollen 2026-08-26) */
 .verifiering-toggle {
   background: transparent;
@@ -1552,6 +1633,14 @@ footer strong { color: rgba(255,255,255,0.8); }
   .kallor-grid { gap: 1rem !important; }
   .kalla-item { font-size: 9pt !important; page-break-inside: avoid; }
   .kalla-url { color: #000 !important; }
+  .kall-ref-lank {
+    color: #000 !important;
+    background: none !important;
+    border-color: #999 !important;
+    font-size: 7pt !important;
+  }
+  .kall-ref-lank::after { content: '' !important; }
+  .kall-ref-etikett { color: #555 !important; font-size: 6pt !important; }
   a { color: #000 !important; text-decoration: underline !important; }
 }
 
@@ -1777,17 +1866,17 @@ footer strong { color: rgba(255,255,255,0.8); }
         <div class="tldr-label">spår</div>
         <p>Hyra in, bygga om, bygga till eller bygga nytt. Valet styr ledtid, kostnad och flexibilitet.</p>
       </div>
-      <div class="tldr-kort" data-verifiering="verifierad">
+      <div class="tldr-kort" data-kalla="ledtid-spar-a ledtid-spar-d-nydp" data-verifiering="verifierad">
         <div class="tldr-siffra">3 mån<span class="tldr-tilltecken">–</span>8 år</div>
         <div class="tldr-label">spann i ledtid</div>
         <p>Från snabbaste hyreslösning till ny skola med detaljplaneläggning. Skillnaden ligger främst i förskedet, inte i bygget.</p>
       </div>
-      <div class="tldr-kort" data-verifiering="verifierad">
+      <div class="tldr-kort" data-kalla="ledtid-total-grundskola lund-strategisk-lfp-2024-2033" data-verifiering="verifierad">
         <div class="tldr-siffra">~7 år</div>
         <div class="tldr-label">för en ny skola</div>
         <p>Lunds kommun anger detta som genomsnitt — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner. Själva byggfasen är endast 2–3 år.</p>
       </div>
-      <div class="tldr-kort" data-verifiering="preliminar" data-verifiering-not="Branschtolkning av MacLeamy/CURT 2004-figuren och Paulson 1976. Primärkällan är kvalitativ, anger inte exakt procenttal — 70–80 % är en accepterad medelnivå.">
+      <div class="tldr-kort" data-kalla="kr-kostnadssankning-tidplan" data-verifiering="preliminar" data-verifiering-not="Branschtolkning av MacLeamy/CURT 2004-figuren och Paulson 1976. Primärkällan är kvalitativ, anger inte exakt procenttal — 70–80 % är en accepterad medelnivå.">
         <div class="tldr-siffra">70–80 %</div>
         <div class="tldr-label">av kostnaden låses tidigt</div>
         <p>Beslut i förstudie- och programskede binder upp större delen av investeringen. Tidig dialog mellan verksamhet och fastighetsägare är därför den enskilt viktigaste tidsbesparingen.</p>
@@ -1828,7 +1917,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Tidsjämförelse</span>
     <h2>Så fördelar sig tiden i svenska lokalprojekt</h2>
-    <p class="mt-2" style="color:var(--muted)">Normalfall per spår och scenario, sammanställt från svenska kommunala fastighetsbolags publika slutrapporter (SISAB, Micasa, Uppsala Skolfastigheter) och nationella branschstudier. Den vertikala linjen markerar när uppdraget överlämnas till fastighetsägaren. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
+    <p class="mt-2" style="color:var(--muted)" data-kalla="sisab-portal micasa-fastigheter uppsala-skolfastigheter-kvarngardesskolan">Normalfall per spår och scenario, sammanställt från svenska kommunala fastighetsbolags publika slutrapporter (SISAB, Micasa, Uppsala Skolfastigheter) och nationella branschstudier. Den vertikala linjen markerar när uppdraget överlämnas till fastighetsägaren. Det <strong>streckade området</strong> till vänster visar verksamhetens egen tid före — behovsanalys och intern beredning som typiskt tar 6–24 månader.</p>
     <div class="gantt-wrap">
       <div class="gantt-inner">
         <div class="gantt-axis" id="gantt-axis"></div>
@@ -1841,22 +1930,22 @@ footer strong { color: rgba(255,255,255,0.8); }
       <div class="gantt-bench-rad" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med ≥ 5 lägenheter, inte lokalförsörjning. Siffran är vägledande men direkt jämförelse med skol-/förskoleprojekt behöver kompletteras.">
         <strong>4,8 år</strong>
         <span>Riksgenomsnitt planuppdrag → startbesked över 52 kommuner och ~1 450 detaljplaner.</span>
-        <cite>Nationellt Ledtidsindex 2025 (Bygg i Tid)</cite>
+        <cite data-kalla="ledtid-detaljplan-snitt-2025"></cite>
       </div>
       <div class="gantt-bench-rad" data-verifiering="verifierad">
         <strong>~7 år</strong>
         <span>"Från tanke till färdig" förskola eller skola — bekräftas av Uppsala, Stockholm och flera andra kommuners lokalförsörjningsplaner.</span>
-        <cite>Lunds kommun, lund.se</cite>
+        <cite data-kalla="ledtid-total-grundskola lund-strategisk-lfp-2024-2033"></cite>
       </div>
       <div class="gantt-bench-rad" data-verifiering="verifierad" data-verifiering-not="Siffran återfinns ordagrant i Evidens 2022 (s. 18) och Evidens 2023 (s. 18). Avser bostadsplaner — motsvarande siffra specifikt för samhällsfastigheter saknas i öppen statistik.">
         <strong>+14 månader</strong>
         <span>Genomsnittlig extra ledtid när en detaljplan överklagas men ändå vinner laga kraft. ~25 % av antagna detaljplaner överklagas i Sverige. Snittet avser bostadsplaner — siffra specifikt för samhällsfastigheter saknas i öppen statistik.</span>
-        <cite>Evidens/Arkwright 2022 / SKR 2024</cite>
+        <cite data-kalla="ledtid-overklagande skr-jamforelser-detaljplan"></cite>
       </div>
       <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
     </div>
 
-    <p class="gantt-note">Staplarna avser typiska svenska kommunala lokalprojekt — inte ett enskilt fastighetsbolags interna kalkyl. Den långa stapeln för "Nybyggnad med ny detaljplan" ligger i linje med Bygg i Tids riksgenomsnitt på 4,8 år från planuppdrag till startbesked, plus projektering och byggnation. Effekten av eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-upphandlingar (+2–12 mån) är <em>inte</em> inräknad i staplarna och tillkommer.</p>
+    <p class="gantt-note" data-kalla="ledtid-detaljplan-snitt-2025 ledtid-overklagande">Staplarna avser typiska svenska kommunala lokalprojekt — inte ett enskilt fastighetsbolags interna kalkyl. Den långa stapeln för "Nybyggnad med ny detaljplan" ligger i linje med Bygg i Tids riksgenomsnitt på 4,8 år från planuppdrag till startbesked, plus projektering och byggnation. Effekten av eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-upphandlingar (+2–12 mån) är <em>inte</em> inräknad i staplarna och tillkommer.</p>
   </div>
 </section>
 
@@ -1865,9 +1954,9 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Per lokaltyp</span>
     <h2>Typiska ledtider och kostnader</h2>
-    <p class="mt-2" style="color:var(--muted)">Data sammanställd från SISAB (Stockholm), Micasa (Stockholm), Uppsala Skolfastigheter och branschdata (ByggfaktaDOCU). Varje kort redovisar samma kärnrader så att lokaltyperna kan jämföras: <strong>total ledtid</strong> (behov→inflyttning inom befintlig detaljplan), <strong>byggfas</strong> (genomförandebeslut→inflyttning) och <strong>budget</strong>. Kräver projektet ny detaljplan tillkommer planprocessen — se spår D.</p>
+    <p class="mt-2" style="color:var(--muted)" data-kalla="sisab-portal micasa-fastigheter uppsala-skolfastigheter-kvarngardesskolan">Data sammanställd från SISAB (Stockholm), Micasa (Stockholm), Uppsala Skolfastigheter och branschdata (ByggfaktaDOCU). Varje kort redovisar samma kärnrader så att lokaltyperna kan jämföras: <strong>total ledtid</strong> (behov→inflyttning inom befintlig detaljplan), <strong>byggfas</strong> (genomförandebeslut→inflyttning) och <strong>budget</strong>. Kräver projektet ny detaljplan tillkommer planprocessen — se spår D.</p>
     <div class="typ-grid" id="typ-grid"></div>
-    <p class="gantt-note mt-4">
+    <p class="gantt-note mt-4" data-kalla="sisab-portal micasa-behov-till-boende-2026 lund-strategisk-lfp-2024-2033 uppsala-kvarngardesskolan-2025-slutrapport">
       <strong>Metodnot:</strong> Byggfas avser tid från <em>genomförandebeslut</em> (GB) till <em>inflyttning</em> enligt publicerade slutrapporter. Totaler markerade med ≈ och * är härledda: byggfas + dokumenterat förskede (program, beslut, upphandling) inom befintlig detaljplan — övriga totaler är källbelagda direkt (Lund, Kvarngärdesskolan, Micasa). Avvikelser mot budget är medianvärden från respektive urval. Urval baseras på 15 SISAB-projekt 2019–2023, Micasas egen lägesrapport 2025 om de fem senaste VoB-projekten, samt 8 dokumenterade LSS- och idrottshallsprojekt 2019–2025. Lejonfastigheters egna projekt kan variera betydligt beroende på detaljplaneläge, markförutsättningar och omfattning.
     </p>
   </div>
@@ -1910,7 +1999,7 @@ footer strong { color: rgba(255,255,255,0.8); }
   <div class="container">
     <span class="section-label">Interimslösningen</span>
     <h2>Modulbyggnader</h2>
-    <p class="mt-2">Moduler är inte ett femte spår — de är ett verktyg som köper tid medan ett permanent spår planeras. <strong>De ”korta” tiderna som ofta nämns (veckor) gäller endast vid akuta händelser som brand eller vattenskada</strong>, där bygglov kan hanteras i snabbspår och tomten redan har rätt planändamål. För ordinarie temporära behov (6 månader–5 år) krävs samma bygglovsprocess som för all annan byggnation, plus tidsbegränsat bygglov (max 10 år, förlängningsbart till 15) och rätt planändamål.</p>
+    <p class="mt-2" data-kalla="ledtid-tidsbegransat-bygglov boverket-tidsbegransat-bygglov">Moduler är inte ett femte spår — de är ett verktyg som köper tid medan ett permanent spår planeras. <strong>De ”korta” tiderna som ofta nämns (veckor) gäller endast vid akuta händelser som brand eller vattenskada</strong>, där bygglov kan hanteras i snabbspår och tomten redan har rätt planändamål. För ordinarie temporära behov (6 månader–5 år) krävs samma bygglovsprocess som för all annan byggnation, plus tidsbegränsat bygglov (max 10 år, förlängningsbart till 15) och rätt planändamål.</p>
     <div class="modul-grid" id="modul-grid"></div>
     <div class="modul-varning">
       <strong>Varning:</strong> Temporära lösningar tenderar att bli permanenta. Uppsala rapporterar att ~20 % av kommunens förskolor drivs i modulbyggnader. SVT (2021): <em>"Förskolemodulerna är här för att stanna."</em> Använd moduler med en explicit plan och datum för avveckling.
@@ -1939,19 +2028,19 @@ footer strong { color: rgba(255,255,255,0.8); }
     </div>
 
     <div class="prov-stats">
-      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med minst 5 lägenheter — vägledande även för lokaler.">
+      <div class="prov-stat" data-kalla="ledtid-detaljplan-snitt-2025" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex bygger på flerbostadshus med minst 5 lägenheter — vägledande även för lokaler.">
         <div class="tal">4,8 år</div>
         <div class="etikett">riksgenomsnitt planuppdrag → startbesked (Ledtidsindex 2025)</div>
       </div>
-      <div class="prov-stat" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex 2025 (s. 14): genomsnitt, ej median; detaljplaner för flerbostadshus ≥5 lgh med laga kraft 2017–2024.">
+      <div class="prov-stat" data-kalla="ledtidsindex-2025" data-verifiering="preliminar" data-verifiering-not="Ledtidsindex 2025 (s. 14): genomsnitt, ej median; detaljplaner för flerbostadshus ≥5 lgh med laga kraft 2017–2024.">
         <div class="tal">46 mån</div>
         <div class="etikett">genomsnittlig tid planuppdrag → laga kraft (Ledtidsindex 2025)</div>
       </div>
-      <div class="prov-stat" data-verifiering="verifierad">
+      <div class="prov-stat" data-kalla="evidens-overklagande-2023 skr-jamforelser-detaljplan" data-verifiering="verifierad">
         <div class="tal">~25 %</div>
         <div class="etikett">av antagna detaljplaner överklagas — 12 % av överklagandena ändrar planen</div>
       </div>
-      <div class="prov-stat" data-verifiering="verifierad" data-verifiering-not="Ordagrant belagd i Evidens 2022 (s. 18) och Evidens 2023 (s. 18). Avser bostadsplaner — siffra för samhällsfastigheter saknas i öppen statistik.">
+      <div class="prov-stat" data-kalla="ledtid-overklagande" data-verifiering="verifierad" data-verifiering-not="Ordagrant belagd i Evidens 2022 (s. 18) och Evidens 2023 (s. 18). Avser bostadsplaner — siffra för samhällsfastigheter saknas i öppen statistik.">
         <div class="tal">+14 mån</div>
         <div class="etikett">extra ledtid i snitt när planen överklagas men vinner laga kraft</div>
       </div>
@@ -1959,7 +2048,7 @@ footer strong { color: rgba(255,255,255,0.8); }
 
     <h3 style="margin-bottom:0.9rem">Prövningens moment</h3>
 
-    <div class="prov-steg" data-verifiering="verifierad">
+    <div class="prov-steg" data-kalla="pbl-2010-900 boverket-lansstyrelsen" data-verifiering="verifierad">
       <div class="nr">1</div>
       <div>
         <h4>Utredningar</h4>
@@ -1977,7 +2066,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <span class="prov-chip prov-chip--kommun">Kommunens arbete</span>
     </div>
 
-    <div class="prov-steg" data-verifiering="verifierad">
+    <div class="prov-steg" data-kalla="pbl-2010-900" data-verifiering="verifierad">
       <div class="nr">3</div>
       <div>
         <h4>Samråd</h4>
@@ -1986,7 +2075,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <span class="prov-chip prov-chip--lag">Lagstadgat</span>
     </div>
 
-    <div class="prov-steg" data-verifiering="verifierad">
+    <div class="prov-steg" data-kalla="pbl-2010-900" data-verifiering="verifierad">
       <div class="nr">4</div>
       <div>
         <h4>Granskning</h4>
@@ -1995,7 +2084,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <span class="prov-chip prov-chip--lag">Lagstadgat</span>
     </div>
 
-    <div class="prov-steg" data-verifiering="verifierad">
+    <div class="prov-steg" data-kalla="pbl-2010-900" data-verifiering="verifierad">
       <div class="nr">5</div>
       <div>
         <h4>Antagande</h4>
@@ -2004,7 +2093,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <span class="prov-chip prov-chip--lag">Politiskt beslut</span>
     </div>
 
-    <div class="prov-steg" data-verifiering="preliminar" data-verifiering-not="Snittsiffran +14 mån avser bostadsplaner (Evidens/Arkwright 2022) — motsvarande siffra för samhällsfastigheter saknas i öppen statistik.">
+    <div class="prov-steg" data-kalla="pbl-2010-900 ledtid-overklagande ledtid-mmd-omloppstid" data-verifiering="preliminar" data-verifiering-not="Snittsiffran +14 mån avser bostadsplaner (Evidens/Arkwright 2022) — motsvarande siffra för samhällsfastigheter saknas i öppen statistik.">
       <div class="nr">6</div>
       <div>
         <h4>Laga kraft — eller överklagande</h4>
@@ -2017,7 +2106,7 @@ footer strong { color: rgba(255,255,255,0.8); }
     <p class="mt-2" style="color:var(--muted); max-width:75ch">Delar av tiden är inbyggd i lagstiftningen och gemensam för alla Sveriges kommuner — andra delar går att påverka lokalt. Att skilja dem åt är avgörande för rätt förväntningar och rätt åtgärder.</p>
 
     <div class="prov-varfor">
-      <div class="prov-varfor-kort" data-verifiering="verifierad">
+      <div class="prov-varfor-kort" data-kalla="pbl-2010-900 boverket-lansstyrelsen" data-verifiering="verifierad">
         <h4><span class="prov-chip prov-chip--lag">Styrs av lag</span> — kan inte väljas bort</h4>
         <ul>
           <li>Samrådskretsen och rätten att yttra sig (PBL 5 kap.)</li>
@@ -2061,10 +2150,10 @@ footer strong { color: rgba(255,255,255,0.8); }
       <blockquote>
         "Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt."
       </blockquote>
-      <cite>— Lunds kommun, officiell projektinformation (lund.se)</cite>
+      <cite data-kalla="lund-strategisk-lfp-2024-2033">— Lunds kommun, officiell projektinformation (lund.se)</cite>
     </div>
 
-    <p class="gantt-note mt-3">Primärkällor: SKR (<em>Jämförelser inom detaljplaneområdet 2024</em>), Boverket (rapport 2025:11), Initiativet Bygg i Tid/Byggföretagen/Fastighetsägarna (<em>Nationellt Ledtidsindex 2025</em>), Evidens (<em>Överklagande av detaljplaner 2023</em>, uppdrag SKR/Byggföretagen/Fastighetsägarna), Lunds kommun, Uppsala Skolfastigheter, Linköpings kommun. Se fullständig källförteckning.</p>
+    <p class="gantt-note mt-3" data-kalla="skr-jamforelser-detaljplan boverket-pbl-tillampning-2024 ledtidsindex-2025 evidens-overklagande-2023 lund-strategisk-lfp-2024-2033 uppsala-skolfastigheter-kvarngardesskolan linkoping-kommungemensam-lfp-2024">Primärkällor: SKR (<em>Jämförelser inom detaljplaneområdet 2024</em>), Boverket (rapport 2025:11), Initiativet Bygg i Tid/Byggföretagen/Fastighetsägarna (<em>Nationellt Ledtidsindex 2025</em>), Evidens (<em>Överklagande av detaljplaner 2023</em>, uppdrag SKR/Byggföretagen/Fastighetsägarna), Lunds kommun, Uppsala Skolfastigheter, Linköpings kommun. Se fullständig källförteckning.</p>
   </div>
 </section>
 
@@ -2133,7 +2222,7 @@ footer strong { color: rgba(255,255,255,0.8); }
         <span><span class="pill" style="background:#E8C97A"></span>Kostnader bundna genom beslut</span>
         <span><span class="pill" style="background:#0891B2"></span>Kostnader faktiskt utbetalda</span>
       </div>
-      <p class="kostnad-kurva-note">Schematisk illustration. Den exakta kurvan varierar mellan projekt — men formen (snabb bindning tidigt, sen utbetalning) är robust över studier av offentliga byggprojekt. <span data-verifiering="preliminar">Nivån 70–80 % är en branschtolkning av MacLeamy/CURT 2004 och Paulson 1976 — primärkällorna visar kvalitativa kurvor utan exakt procenttal.</span></p>
+      <p class="kostnad-kurva-note">Schematisk illustration. Den exakta kurvan varierar mellan projekt — men formen (snabb bindning tidigt, sen utbetalning) är robust över studier av offentliga byggprojekt. <span data-kalla="kr-kostnadssankning-tidplan" data-verifiering="preliminar">Nivån 70–80 % är en branschtolkning av MacLeamy/CURT 2004 och Paulson 1976 — primärkällorna visar kvalitativa kurvor utan exakt procenttal.</span></p>
     </div>
 
     <div class="kostnad-grid">
@@ -2142,7 +2231,7 @@ footer strong { color: rgba(255,255,255,0.8); }
         <div class="siffra" data-verifiering="preliminar">70–80 %</div>
         <h3>Kostnaden låses tidigt</h3>
         <p>Branschdata pekar på att 70–80 % av en byggnads totala investerings&shy;kostnad bestäms av beslut i förstudie- och programskede — långt innan upphandlingen är klar.</p>
-        <cite data-verifiering="preliminar">Branschtolkning av MacLeamy/CURT 2004-figuren och Paulson 1976 (ASCE). Primärkällan visar kvalitativ kurva utan exakt procenttal.</cite>
+        <cite data-kalla="kr-kostnadssankning-tidplan" data-verifiering="preliminar">Branschtolkning av MacLeamy/CURT 2004-figuren och Paulson 1976 (ASCE). Primärkällan visar kvalitativ kurva utan exakt procenttal.</cite>
       </div>
       <div class="kostnad-kort">
         <h3>Sena programförändringar är omstart, inte justering</h3>
@@ -2152,7 +2241,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <div class="kostnad-kort">
         <h3>Planberedskap är den enda hävstången</h3>
         <p>Att korta ledtiden i planskedet kräver att kommunen har planlagt mark <em>i förväg</em>. Det är den enskilt största kostnads&shy;besparing en kommun kan göra — utan att ge avkall på pröv&shy;nings&shy;kvalitet.</p>
-        <cite data-verifiering="verifierad">Boverket — strategisk planering för långsiktigt hållbara skolor</cite>
+        <cite data-kalla="boverket-strategisk-planering" data-verifiering="verifierad"></cite>
       </div>
     </div>
 
@@ -2161,11 +2250,11 @@ footer strong { color: rgba(255,255,255,0.8); }
     </div>
 
     <div class="kostnad-key" style="margin-top:1.4rem;background:rgba(232,201,122,0.08);border-color:rgba(232,201,122,0.5)">
-      <strong>Linköpings kontext (2024–2025):</strong> Kommunens hyresnota till Lejonfastigheter ligger på <strong>~1 392 mnkr/år</strong> och prognostiseras öka till <strong>~1 666 mnkr/år (+21 %)</strong> efter åtgärdspaketet i kommungemensam LFP. Investeringsramen 2025 är <strong>803 mnkr</strong>, med ett nytt finansiellt krav: 50 % egenfinansiering av investeringar. <cite data-verifiering="verifierad" style="display:block;margin-top:0.4rem;font-style:italic;font-size:0.85em;color:var(--gold)">Kommungemensam lokalförsörjningsplan 2024–2033 (KS dec 2023) + Linköpings budget 2025–2030</cite>
+      <strong>Linköpings kontext (2024–2025):</strong> Kommunens hyresnota till Lejonfastigheter ligger på <strong>~1 392 mnkr/år</strong> och prognostiseras öka till <strong>~1 666 mnkr/år (+21 %)</strong> efter åtgärdspaketet i kommungemensam LFP. Investeringsramen 2025 är <strong>803 mnkr</strong>, med ett nytt finansiellt krav: 50 % egenfinansiering av investeringar. <cite data-kalla="dem-linkoping-hyresnota dem-linkoping-investering" data-verifiering="verifierad" style="display:block;margin-top:0.4rem;font-style:italic;font-size:0.85em;color:var(--gold)"></cite>
     </div>
 
     <div class="kostnad-key" style="margin-top:1.4rem;background:rgba(5,150,105,0.06);border-color:rgba(5,150,105,0.4)">
-      <strong>Kommande kostnadsdrivare — EU EPBD-recast (2024/1275):</strong> Direktivet kräver att <strong>nya offentliga byggnader är nollutsläpp från 2028</strong> (alla nya 2030). Solcellsplikt: offentliga &gt; 2 000 m² senast 2027, &gt; 750 m² senast 2028. MEPS för lokaler: senast 2030 inga lokaler i de 16 % minst energieffektiva, 2033 inga i de 26 %. Boverket bedömer att ca 31 000 svenska lokalbyggnader behöver effektiviseras till 2033. <strong>Klimatdeklarations­tidplan:</strong> utökad deklaration senast jan 2028, gränsvärden senast jan 2030 (slutredovisat av Boverket 20 maj 2026, rapport 2026:16). Svensk implementering fr.o.m. 1 juli 2026 (direktivets genomförandefrist 29 maj 2026). <cite data-verifiering="verifierad" style="display:block;margin-top:0.4rem;font-style:italic;font-size:0.85em;color:#059669">EU 2024/1275 + SKR-PM EED/EPBD okt 2025 + Boverket maj 2026 (rapport 2026:16)</cite>
+      <strong>Kommande kostnadsdrivare — EU EPBD-recast (2024/1275):</strong> Direktivet kräver att <strong>nya offentliga byggnader är nollutsläpp från 2028</strong> (alla nya 2030). Solcellsplikt: offentliga &gt; 2 000 m² senast 2027, &gt; 750 m² senast 2028. MEPS för lokaler: senast 2030 inga lokaler i de 16 % minst energieffektiva, 2033 inga i de 26 %. Boverket bedömer att ca 31 000 svenska lokalbyggnader behöver effektiviseras till 2033. <strong>Klimatdeklarations­tidplan:</strong> utökad deklaration senast jan 2028, gränsvärden senast jan 2030 (slutredovisat av Boverket 20 maj 2026, rapport 2026:16). Svensk implementering fr.o.m. 1 juli 2026 (direktivets genomförandefrist 29 maj 2026). <cite data-kalla="kli-nzeb-offentligt kli-solceller-2027 kli-meps-2030 kli-utokad-deklaration kli-gransvarde-klimat" data-verifiering="verifierad" style="display:block;margin-top:0.4rem;font-style:italic;font-size:0.85em;color:#059669"></cite>
     </div>
   </div>
 </section>
@@ -2189,7 +2278,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       </div>
       <div id="matris-rows"></div>
     </div>
-    <p class="matris-note">* LOU-undantag (3 kap. 19 § LOU) gäller för vanliga hyresavtal men inte om fastighetsägaren bygger lokalen för kommunens räkning.</p>
+    <p class="matris-note" data-kalla="ver-lou-hyresundantag">* LOU-undantag (3 kap. 19 § LOU) gäller för vanliga hyresavtal men inte om fastighetsägaren bygger lokalen för kommunens räkning.</p>
 
     <div class="behov-pika">
       <div class="behov-pika-header">En förutsättning för att tidsplanen ska hålla</div>
@@ -2250,6 +2339,7 @@ const DATA = {
         {
           namn: "A1. Hyra in befintlig lokal",
           totalText: "3–12 månader",
+          kalla_ids: ["ledtid-spar-a", "ver-lou-hyresundantag"],
           huvudfarg: "#0891B2",
           faser: [
             { namn: "Söka och identifiera lokal",      fas: "beslut",      tid: "1–4 veckor",   kommentar: "Beror på marknad och verksamhetskrav" },
@@ -2262,6 +2352,7 @@ const DATA = {
         {
           namn: "A2. Hyresvärdsupphandling",
           totalText: "2–4 år",
+          kalla_ids: ["ledtid-spar-a2"],
           huvudfarg: "#0e6b85",
           faser: [
             { namn: "Kravställning och marknadsanalys",fas: "beslut",      tid: "3–6 mån",  kommentar: "Definiera lokalbehov, tekniska krav, läge" },
@@ -2274,6 +2365,7 @@ const DATA = {
           ]
         }
       ],
+      kalla_ids: ["ver-lou-hyresundantag", "skr-hyra-lokal-lou"],
       begransningar: [
         "Skola/förskola: kräver pedagogisk yta, utomhusyta, ventilation ≥ 7 l/s/person — utesluter de flesta kontorslokaler",
         "Vård och omsorg: verksamhetsklass 5B (begränsad förmåga att sätta sig i säkerhet) — höga brandskyddskrav",
@@ -2307,6 +2399,7 @@ const DATA = {
         {
           namn: "Utan ny detaljplan",
           totalText: "2–5 år",
+          kalla_ids: ["ledtid-spar-b"],
           huvudfarg: "#059669",
           faser: [
             { namn: "Förstudie inkl. miljöinventering",fas: "beslut",      tid: "2–4 mån",  kommentar: "Asbest- och PCB-inventering obligatorisk" },
@@ -2323,6 +2416,7 @@ const DATA = {
         {
           namn: "Med ny detaljplan",
           totalText: "4–8 år",
+          kalla_ids: ["ledtid-spar-b", "ledtid-detaljplan-snitt-2025"],
           huvudfarg: "#1e7a55",
           faser: [
             { namn: "Detaljplaneprocess",              fas: "plan",        tid: "+1–4 år",  kommentar: "Standardförfarande 9–18 mån; utökat 18–48 mån" },
@@ -2330,6 +2424,7 @@ const DATA = {
           ]
         }
       ],
+      kalla_ids: ["ledtid-spar-b"],
       begransningar: [
         "Dolda skador (fukt, konstruktion) kan sticka: S:t Jörgens skola Helsingborg 17 → 60 MSEK (3,5 gånger)",
         "Futurum skola i Håbo: ~12 år totalt; kommunledningen: 'Vi ville bygga nytt men oppositionen stoppade det'",
@@ -2361,6 +2456,7 @@ const DATA = {
         {
           namn: "Inom befintlig detaljplan",
           totalText: "2–3,5 år",
+          kalla_ids: ["ledtid-spar-c"],
           huvudfarg: "#D97706",
           faser: [
             { namn: "Förstudie + politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kontrollera e-tal, höjd, BTA i gällande DP" },
@@ -2373,6 +2469,7 @@ const DATA = {
         {
           namn: "Kräver ny/ändrad detaljplan",
           totalText: "4–7 år",
+          kalla_ids: ["ledtid-spar-c", "ledtid-detaljplan-snitt-2025"],
           huvudfarg: "#b8650f",
           faser: [
             { namn: "Detaljplaneprocess",              fas: "plan",        tid: "+1–4 år",  kommentar: "Krävs om tillbyggnaden bryter mot e-tal, höjd eller planändamål" },
@@ -2380,6 +2477,7 @@ const DATA = {
           ]
         }
       ],
+      kalla_ids: ["ledtid-spar-c", "pbl-2010-900"],
       begransningar: [
         "Vanligare än vad som uppfattas att ny DP krävs — kontrollera e-tal, byggrätt och höjdbestämmelse tidigt",
         "BTA-frågan: om atrium/void redan räknats i befintlig BTA ger ny våning däröver noll ny BTA — verifiera med stadsbyggnadskontoret",
@@ -2410,6 +2508,7 @@ const DATA = {
         {
           namn: "Befintlig DP medger byggnation",
           totalText: "2,5–4 år",
+          kalla_ids: ["ledtid-spar-d-bdp"],
           huvudfarg: "#C0392B",
           faser: [
             { namn: "Förstudie & program",             fas: "beslut",      tid: "2–6 mån",  kommentar: "" },
@@ -2424,6 +2523,7 @@ const DATA = {
         {
           namn: "Ny detaljplan krävs (normalfall)",
           totalText: "5–8 år",
+          kalla_ids: ["ledtid-spar-d-nydp", "ledtid-detaljplan-snitt-2025", "pbl-2010-900"],
           huvudfarg: "#922b21",
           faser: [
             { namn: "Planbesked",                      fas: "plan",        tid: "4 mån",    kommentar: "Lagstadgat; faktisk tid kan vara längre" },
@@ -2435,6 +2535,7 @@ const DATA = {
           ]
         }
       ],
+      kalla_ids: ["ledtidsindex-2025", "evidens-overklagande-2023", "skr-jamforelser-detaljplan"],
       begransningar: [
         "Genomsnittlig tid planuppdrag → laga kraft: 46 månader (Ledtidsindex 2025, flerbostadshusplaner 2017–2024). Bara ca 40 % av kommunerna klarar planuppdrag → antagande på ≤2 år (SKR 2024–2025)",
         "25 % av alla detaljplaner överklagas; 12 % av överklagandena ändrar planen — resten orsakar fördröjning utan utbyte",
@@ -2546,6 +2647,7 @@ const DATA = {
   moduler: [
     {
       titel: "Moduluthyrning",
+      kalla_ids: ["ledtid-tidsbegransat-bygglov", "kr-modulskola-hyra", "ledtid-modulskola-montage"],
       rader: [
         { label: "Tid till inflyttning",  val: "6–18 mån (med bygglov)" },
         { label: "Akut undantag",         val: "Veckor — vid t.ex. brand/vattenskada" },
@@ -2567,6 +2669,7 @@ const DATA = {
     },
     {
       titel: "Konceptbyggnad (t.ex. SISAB UPP)",
+      kalla_ids: ["sisab-bifrostvagen"],
       rader: [
         { label: "Tid till inflyttning",  val: "18–24 mån (GB→inflytt)" },
         { label: "Typ",                   val: "Permanent prefab" },
@@ -2583,6 +2686,7 @@ const DATA = {
       enhet: "år i snitt",
       beskrivning: "Genomsnittlig ledtid från beslut om planuppdrag till startbesked i 52 kommuner som representerar ~80 % av Sveriges lägenhetsproduktion. Ökning från 4,5 år (2023) och 4,7 år (2024). Avser flerbostadshus — illustrerar generella plan- och lovprocesser som även skolfastigheter berörs av.",
       kalla: "Nationellt Ledtidsindex 2025 (Initiativet Bygg i Tid, Byggföretagen, Fastighetsägarna)",
+      kalla_ids: ["ledtid-detaljplan-snitt-2025", "ledtid-detaljplan-snitt-2024"],
       verifiering: "preliminar",
       verifieringNot: "Ledtidsindex avser flerbostadshus med ≥ 5 lägenheter. Tillämpning på lokalförsörjning (skola/förskola/LSS) är vägledande men inte direkt jämförbar — behöver kompletteras med skolfastighets-specifik data."
     },
@@ -2591,6 +2695,7 @@ const DATA = {
       enhet: "detaljplan överklagas",
       beskrivning: "SKR konstaterar att ”omkring var fjärde antagen detaljplan” överklagas — en stabil nivå över flera mätperioder. Endast 12 % av överklagandena leder till att planen helt eller delvis ändras i mark- och miljödomstolen. Handläggningstid i mark- och miljödomstolen: i genomsnitt cirka 5,5 månader (2021, enligt Evidens).",
       kalla: "SKR, Jämförelser inom detaljplaneområdet 2024 + Evidens 2023 (uppdrag SKR/Byggföretagen/Fastighetsägarna)",
+      kalla_ids: ["skr-jamforelser-detaljplan", "evidens-overklagande-2023", "ledtid-mmd-omloppstid"],
       verifiering: "verifierad"
     },
     {
@@ -2598,6 +2703,7 @@ const DATA = {
       enhet: "år i Lund",
       beskrivning: "Lunds kommun anger på sin officiella webbplats: ”Den genomsnittliga tiden från tanke till färdig förskola eller skola är ungefär sju år, men tiden kan variera mycket mellan olika projekt.” Bilden bekräftas av Uppsala Skolfastigheter och flera kommuners lokalförsörjningsplaner.",
       kalla: "Lunds kommun (lund.se, hämtad 2026)",
+      kalla_ids: ["ledtid-total-grundskola", "lund-strategisk-lfp-2024-2033"],
       verifiering: "verifierad"
     },
     {
@@ -2605,6 +2711,7 @@ const DATA = {
       enhet: "bygge — 10 år process",
       beskrivning: "Kvarngärdesskolan i Uppsala (F–9, kapacitet 990 elever) byggdes på 3 år — spadtag aug 2022, invigning sep 2025 — och tilldelades PQi-utmärkelsen för byggåret 2024 (7 av 150 projekt). De 3 åren avser dock enbart byggfasen. Detaljplanen startade 2015 och vann laga kraft 2020. Hela processen tog cirka 10 år.",
       kalla: "Uppsala Skolfastigheter, Uppsala kommun",
+      kalla_ids: ["ledtid-byggtid-f9-stor", "uppsala-skolfastigheter-kvarngardesskolan"],
       verifiering: "preliminar",
       verifieringNot: "Byggfasen 3 år (2022–2025) är källbelagd. 10-årstotalen (detaljplan 2015, laga kraft 2020) och PQi-utmärkelsen återfinns inte i de angivna källorna och behöver egen källpost."
     },
@@ -2613,6 +2720,7 @@ const DATA = {
       enhet: "mån — kommunens egen målbild",
       beskrivning: "Många kommuner anger själva 18–24 månader från planuppdrag till antagande som riktvärde för en detaljplan. Mätningar visar dock att kommunerna i genomsnitt inte når upp till denna målsättning. För kommunala byggherrar med prioriterade samhällsprojekt är förhållandena ofta bättre än för bostadsmarknaden, men gapet mellan målbild och utfall kvarstår även för aktiva planprocesser.",
       kalla: "Nationellt Ledtidsindex 2025",
+      kalla_ids: ["ledtidsindex-2025"],
       verifiering: "preliminar",
       verifieringNot: "Målbild från flerbostadssidan — överförbarheten till kommunala lokalförsörjningsprojekt behöver bekräftas (samma planenhet men annan typ av plan)."
     }
@@ -2633,7 +2741,8 @@ const DATA = {
         { etikett: "Avvikelse mot budget", varde: "+22–27 %" }
       ],
       insikt: "Total ledtid härledd: byggfas 21–37 mån + 2–4 år för program, upphandling och beslut enligt SISAB:s notering — i linje med Krokoms förskola: 5 år från behovsbeslut varav 12 månaders produktion. SISAB:s modulkoncept (UPP) för 3–4 avdelningar kan färdigställas på knappt två år efter beslut.",
-      kalla: "SISAB slutrapporter 2019–2023 (8 projekt), Krokoms kommun"
+      kalla: "SISAB slutrapporter 2019–2023 (8 projekt), Krokoms kommun",
+      kalla_ids: ["ledtid-total-forskola", "kr-forskola"]
     },
     {
       namn: "Grundskolor F–9 — ombyggnad",
@@ -2646,7 +2755,8 @@ const DATA = {
         { etikett: "Avvikelse mot budget", varde: "+4 % (median)" }
       ],
       insikt: "Total ledtid härledd: byggfas ~18 mån + förskede (program, beslut, upphandling) typiskt 1–2 år — ombyggnad sker i befintlig fastighet och kräver normalt ingen ny detaljplan. SISAB:s åtta dokumenterade ombyggnader 2019–2023 höll +4 % mot budget i median — men medianen döljer spridningen: utfallet avgörs av vad som upptäcks när byggnaden öppnas, och dolda skador kan fördubbla tid och kostnad. Behov av evakueringslokaler under byggtiden kan förlänga och fördyra ytterligare.",
-      kalla: "SISAB slutrapporter 2019–2023"
+      kalla: "SISAB slutrapporter 2019–2023",
+      kalla_ids: ["ledtid-total-grundskola-ombyggnad", "sisab-portal"]
     },
     {
       namn: "Grundskolor F–9 — nybyggnad",
@@ -2659,7 +2769,8 @@ const DATA = {
         { etikett: "Kostnad per yta", varde: "25 000–35 000 kr/m² BTA" }
       ],
       insikt: "Total ledtid ur källorna: Lunds kommun anger ~7 år från tanke till färdig skola som genomsnitt; Kvarngärdesskolan i Uppsala (F–9, 990 elever, ny detaljplan) tog 10 år varav 3 års byggfas. Budgeten följer storleken: Smedbyskolan i Norrköping (~400 elever, 8 819 m²) kostade 252 mkr, medan Vallås i Halmstad och Kvarngärdesskolan (900–1 000 elever) landade på 475–510 mkr — stora skolor ger skalfördelar per elevplats.",
-      kalla: "Lunds kommun, Uppsala Skolfastigheter, Norrköpings kommun, Halmstads kommun"
+      kalla: "Lunds kommun, Uppsala Skolfastigheter, Norrköpings kommun, Halmstads kommun",
+      kalla_ids: ["ledtid-total-grundskola", "kr-grundskola-stor"]
     },
     {
       namn: "Vård- och omsorgsboenden",
@@ -2672,7 +2783,8 @@ const DATA = {
         { etikett: "Boverkets stöd 2025", varde: "492 mkr/år" }
       ],
       insikt: "Total ledtid ur källorna: 5–9 år från inriktningsbeslut. Micasa konstaterar själva i sin lägesrapport 2025: ”Erfarenhet från bolagets fem senaste projekt visar att processen från markanvisning till inflyttning är 11–13 år.” Det är den längsta ledtiden bland Lejonfastigheters lokaltyper. Boverkets investeringsstöd kräver dock att själva byggfasen hålls inom 2 år.",
-      kalla: "Micasa Fastigheter, Boverket"
+      kalla: "Micasa Fastigheter, Boverket",
+      kalla_ids: ["ledtid-total-vob", "kr-vob-kommunalt"]
     },
     {
       namn: "LSS-gruppbostäder",
@@ -2685,7 +2797,8 @@ const DATA = {
         { etikett: "Kommunal brist", varde: ">50 % av kommuner" }
       ],
       insikt: "Total ledtid härledd: byggfas 10–15 mån + förstudie, beslut, projektering och upphandling (typiskt 1–2 år) — LSS-gruppbostäder byggs oftast inom befintlig detaljplan och är den snabbaste lokaltypen i byggfas. Mer än hälften av Sveriges kommuner uppger i Boverkets bostadsmarknadsenkät att de har underskott — behovet är ackumulerat.",
-      kalla: "ByggfaktaDOCU 2020–2024, Socialstyrelsen, Boverket"
+      kalla: "ByggfaktaDOCU 2020–2024, Socialstyrelsen, Boverket",
+      kalla_ids: ["ledtid-total-lss", "kr-lss"]
     },
     {
       namn: "Idrottshallar",
@@ -2698,7 +2811,8 @@ const DATA = {
         { etikett: "Avvikelse mot budget", varde: "+4 % (1 projekt)" }
       ],
       insikt: "Total ledtid härledd: byggfas 12–18 mån + förskede (program, beslut, upphandling) typiskt 1,5–2,5 år inom befintlig detaljplan — kräver planändring gäller i stället spår D:s tider. Större flerfunktionella anläggningar (evenemangsarenor med läktare, flera hallar) tar 2–3 år i byggfas. Detaljplaneläget och markförutsättningar avgör oftast den totala tiden.",
-      kalla: "ByggfaktaDOCU 2019–2025, SISAB, Göteborgs stad, Malmö stad"
+      kalla: "ByggfaktaDOCU 2019–2025, SISAB, Göteborgs stad, Malmö stad",
+      kalla_ids: ["ledtid-total-idrottshall", "kr-idrottshall"]
     }
   ],
   // ══════════════════════════════════════════════════
@@ -2775,6 +2889,12 @@ const DATA = {
 // Färg per fas-id
 function fasFarg(fasId) {
   return DATA.fasFarger[fasId]?.farg || "#999";
+}
+
+// data-kalla-attribut för renderade kort — components/Kallhanvisningar.jsx
+// plockar upp dem och renderar länkar till källregistret.
+function kallAttr(ids) {
+  return ids && ids.length ? ` data-kalla="${ids.join(" ")}"` : "";
 }
 
 // ── Spår-grid (overview cards)
@@ -2911,7 +3031,7 @@ function renderSpar(s) {
         <span>${sc.namn}</span>
         <span class="scenario-tid">${sc.totalText}</span>
       </div>
-      <div class="scenario-body">
+      <div class="scenario-body"${kallAttr(sc.kalla_ids)}>
         <ul class="fas-liste">
           ${sc.faser.map(f => `
             <li class="fas-item">
@@ -2927,7 +3047,7 @@ function renderSpar(s) {
     </div>`).join("");
 
   const begHtml = `
-    <div class="meta-box risk-box">
+    <div class="meta-box risk-box"${kallAttr(s.kalla_ids)}>
       <h4>Risker och begränsningar</h4>
       <ul>${s.begransningar.map(b => `<li>${b}</li>`).join("")}</ul>
     </div>`;
@@ -2948,7 +3068,7 @@ function renderModuler() {
   const el = document.getElementById("modul-grid");
   if (!el) return;
   el.innerHTML = DATA.moduler.map(m => `
-    <div class="modul-kort">
+    <div class="modul-kort"${kallAttr(m.kalla_ids)}>
       <h3>${m.titel}</h3>
       ${m.rader.map(r => `
         <div class="modul-rad">
@@ -3013,7 +3133,7 @@ function renderKontext() {
       <div class="${sifferKlass}">${k.siffra}</div>
       <div class="enhet">${k.enhet}</div>
       <div class="beskrivning">${k.beskrivning}</div>
-      <div class="kalla">${k.kalla}</div>
+      <div class="kalla"${kallAttr(k.kalla_ids)}>${k.kalla}</div>
     </div>`;
   }).join("");
 }
@@ -3033,7 +3153,7 @@ function renderLokaltyper() {
           <span class="typ-varde">${r.varde}</span>
         </div>`).join("")}
       <div class="typ-insikt">${t.insikt}</div>
-      <div class="typ-kalla">Källa: ${t.kalla}</div>
+      <div class="typ-kalla"${kallAttr(t.kalla_ids)}>Källa: ${t.kalla}</div>
     </div>`).join("");
 }
 

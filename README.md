@@ -27,6 +27,21 @@ ledtiderLF/
 
 Redigera `lokalforsorjning.html` / `detaljplan.html` direkt i GitHub via webben (klicka filen → pennan). Sidspecifika data ligger i `DATA`-objektet längst ner i `<script>`-blocket; nyckeltal och källor ligger i `data/siffror.json` respektive `data/kallregister.json`. Commit → Vercel deployar automatiskt inom ~1 minut.
 
+### Källhänvisningar
+
+Varje påstående med en siffra eller ett sakförhållande märks med `data-kalla` i HTML:en:
+
+```html
+<div class="dp-num-kort" data-kalla="ledtid-detaljplan-snitt-2025">…</div>
+<cite data-kalla="skr-jamforelser-detaljplan evidens-overklagande-2023"></cite>
+```
+
+Värdet är en lista med id:n — antingen ett käll-id ur `data/kallregister.json` eller ett nyckeltal-id ur `data/siffror.json` (som expanderas till nyckeltalets `kalla_ids`). `components/Kallhanvisningar.jsx` renderar dem som små länkar till `/kallregister#<id>` med källans titel, organisation och hårdkontrollstatus i tooltip. Ett nyckeltal utan primärkälla renderas som "ej källbelagd" och länkar till `/nyckeltal` i stället för att tyst utelämnas.
+
+För kort som renderas av `DATA`-objektet i `lokalforsorjning.html` läggs i stället `kalla_ids: ["…"]` på posten; renderfunktionen skriver ut attributet via `kallAttr()`.
+
+`npm test` kontrollerar att varje id finns i registret.
+
 Befintliga kommentarers ankare består så länge elementets första 30 tecken av text är intakta. Kraftiga omskrivningar gör att kommentaren hamnar i panelen "Föräldralösa kommentarer".
 
 ## Kommentarer
