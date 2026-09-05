@@ -132,10 +132,11 @@ export default function Linkoping({
           </div>
 
           <p className="lk-brodtext">
-            Två av avsnitten kräver särskild läsning. I <strong>Investeringar och bestånd</strong>
-            redovisas kommunen och kommunkoncernen intill varandra: koncernen omfattar de kommunala
-            bolagen, alltså även Lejonfastigheter. Att kommunen investerar lite i skollokaler betyder
-            därför inte att lite investeras — det betyder att investeringen ligger i bolaget. I
+            Två av avsnitten kräver särskild läsning. I <strong>Investeringsvolym och
+            ägarstruktur</strong> redovisas kommunen och kommunkoncernen intill varandra: koncernen
+            omfattar de kommunala bolagen, alltså även Lejonfastigheter. Skillnaden mellan raderna är
+            bolagets bestånd. Kommunens investeringsutgifter per verksamhet är däremot bortplockade —
+            när verksamhetslokalerna ägs av ett bolag mäter de balansräkning och inte byggande. I
             <strong> Energi och media</strong> avser samtliga tal en standardiserad typfastighet,
             ett flerbostadshus, eftersom Kolada inte har kr per kvadratmeter för verksamhetslokaler.
           </p>
