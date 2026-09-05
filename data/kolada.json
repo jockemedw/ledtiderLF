@@ -1,6 +1,6 @@
 {
   "meta": {
-    "hamtat": "2026-09-04",
+    "hamtat": "2026-09-05",
     "api_bas": "https://api.kolada.se/v3",
     "skript": "scripts/fetch-kolada.js",
     "senaste_ar": 2026,
@@ -90,8 +90,8 @@
     },
     {
       "id": "investering",
-      "namn": "Investeringar och bestånd",
-      "ingress": "Kommunens investeringsutgifter och anläggningstillgångar, redovisade både för kommunen och för kommunkoncernen. Skillnaden mellan de två nivåerna är det närmaste Kolada kommer att mäta Lejonfastigheter: beståndet ligger i bolaget, inte i kommunens egen balansräkning. Kommunraden ensam är därför missvisande."
+      "namn": "Investeringsvolym och ägarstruktur",
+      "ingress": "Kommunens samlade investeringsvolym och finansiering, samt anläggningstillgångar och avskrivningar för kommunen och kommunkoncernen sida vid sida. Skillnaden mellan de två nivåerna är det närmaste Kolada kommer att mäta Lejonfastigheter: beståndet ligger i bolaget, inte i kommunens egen balansräkning. Investeringsutgifter per verksamhet redovisas inte här: för en kommun som äger sina verksamhetslokaler genom ett bolag mäter de var ägandet sitter, inte vad som byggs."
     },
     {
       "id": "lokalkostnad",
@@ -523,22 +523,6 @@
       "publiceringsdatum": "2026-08-28"
     },
     {
-      "id": "N03187",
-      "kort": "Interna köp och kostnader, gemensamma lokaler",
-      "grupp": "lokalkostnad",
-      "enhet": "kr/inv",
-      "decimaler": 0,
-      "klass": "kostnadsmatt",
-      "riktning": "ingen",
-      "percentil": true,
-      "liknande": "G37449",
-      "not": "Påverkas direkt av hur internhyresmodellen är konstruerad — svårjämförbart mellan kommuner.",
-      "kolada_titel": "Kostnad för interna köp och övriga interna kostnader för gemensamma lokaler, kr/inv",
-      "kolada_kalla": "SCB",
-      "kolada_beskrivning": "Kostnad för interna köp och övriga interna kostnader för  gemensamma lokaler i kronor, dividerat på antal invånare. Till interna köp och övriga interna kostnader förs de kostnader som uppkommer vid köp/sälj mellan verksamheter genom interndebiteringar inom kommunen. Källa: SCB",
-      "publiceringsdatum": "2026-08-28"
-    },
-    {
       "id": "N01951",
       "kort": "Invånare totalt",
       "grupp": "demografi",
@@ -936,70 +920,6 @@
       "kolada_titel": "Investeringsutgifter kommunen totalt, kr/inv",
       "kolada_kalla": "SCBs räkenskapssammandrag",
       "kolada_beskrivning": "Investeringsutgifter kommunen totalt dividerat med antal invånare totalt 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
-      "publiceringsdatum": "2026-08-28"
-    },
-    {
-      "id": "N03150",
-      "kort": "Investeringsutgifter, pedagogisk verksamhet",
-      "grupp": "investering",
-      "enhet": "kr/inv",
-      "decimaler": 0,
-      "klass": "kostnadsmatt",
-      "riktning": "ingen",
-      "percentil": true,
-      "liknande": "G35989",
-      "not": "Skolor och förskolor. Ett lågt värde betyder inte att kommunen investerar lite i skollokaler — det betyder att investeringen ligger i bolaget. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
-      "kolada_titel": "Investeringsutgifter Pedagogisk verksamhet, kr/inv",
-      "kolada_kalla": "SCB",
-      "kolada_beskrivning": "Investeringsutgifter för pedagogisk verksamhet totalt dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter.  I pedagogisk verksamhet ingår Förskola, fritidshem och annan pedagogisk verksamhet, samt grundskola, gymnasieskola, vuxenutbildning och anpassad skola. Källa: SCB",
-      "publiceringsdatum": "2026-08-28"
-    },
-    {
-      "id": "N03160",
-      "kort": "Investeringsutgifter, vård och omsorg",
-      "grupp": "investering",
-      "enhet": "kr/inv",
-      "decimaler": 0,
-      "klass": "kostnadsmatt",
-      "riktning": "ingen",
-      "percentil": true,
-      "liknande": "G176609",
-      "not": "Vård- och omsorgsboenden samt LSS. Kommunkoncernen omfattar de kommunala bolagen, alltså även Lejonfastigheter. Kommunraden och koncernraden ska läsas tillsammans — beståndet ligger i bolaget, inte i kommunens egen balansräkning.",
-      "kolada_titel": "Investeringsutgifter inom vård och omsorg kommun, kr/inv",
-      "kolada_kalla": "SCBs räkenskapssammandrag",
-      "kolada_beskrivning": "Investeringsutgifter vård och omsorg dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
-      "publiceringsdatum": "2026-08-28"
-    },
-    {
-      "id": "N03163",
-      "kort": "Investeringsutgifter, kultur och fritid",
-      "grupp": "investering",
-      "enhet": "kr/inv",
-      "decimaler": 0,
-      "klass": "kostnadsmatt",
-      "riktning": "ingen",
-      "percentil": true,
-      "liknande": "G37449",
-      "not": "Idrottshallar, bibliotek och fritidsanläggningar.",
-      "kolada_titel": "Investeringsutgifter inom kultur- och fritidsverksamhet kommun, kr/inv",
-      "kolada_kalla": "SCBs räkenskapssammandrag",
-      "kolada_beskrivning": "Investeringsutgifter kultur- och fritidsverksamhet dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
-      "publiceringsdatum": "2026-08-28"
-    },
-    {
-      "id": "N03166",
-      "kort": "Investeringsutgifter, näringsliv och bostäder",
-      "grupp": "investering",
-      "enhet": "kr/inv",
-      "decimaler": 0,
-      "klass": "kostnadsmatt",
-      "riktning": "ingen",
-      "percentil": true,
-      "liknande": "G37449",
-      "not": "",
-      "kolada_titel": "Investeringsutgifter inom näringsliv och bostäder kommun, kr/inv",
-      "kolada_kalla": "SCBs räkenskapssammandrag",
-      "kolada_beskrivning": "Investeringsutgifter näringsliv och bostäder dividerat med antal invånare 31/12. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Med investeringsutgifter avses exempelvis inköp av mark, byggnader och tekniska anläggningar, inköp av maskiner och inventarier samt entreprenader och konsulter. Avser ej investeringar gjorda av kommunala bolag. Källa: SCBs räkenskapssammandrag.",
       "publiceringsdatum": "2026-08-28"
     },
     {
@@ -2368,44 +2288,6 @@
         "G33615": 359
       }
     },
-    "N03187": {
-      "ar": 2025,
-      "subjekt": "0580",
-      "varde": 0,
-      "serie": {
-        "2015": 0,
-        "2016": 0,
-        "2017": 0,
-        "2018": 0,
-        "2019": 0,
-        "2020": -1,
-        "2022": 0,
-        "2023": 0,
-        "2024": 0,
-        "2025": 0
-      },
-      "referenser": {
-        "liknande": {
-          "entitet": "G37449",
-          "varde": 382,
-          "saknas": null
-        },
-        "storre-stad": {
-          "entitet": "G92790",
-          "varde": 435,
-          "saknas": null
-        },
-        "riket": {
-          "entitet": "0000",
-          "varde": 431,
-          "saknas": null
-        }
-      },
-      "ovriga": {
-        "G30825": 289,
-        "G33615": 507
-      }
-    },
     "N01951": {
       "ar": 2025,
       "subjekt": "0580",
@@ -3277,161 +3159,6 @@
       "ovriga": {
         "G30825": 8307,
         "G33615": 8714
-      }
-    },
-    "N03150": {
-      "ar": 2025,
-      "subjekt": "0580",
-      "varde": 107,
-      "serie": {
-        "2016": 199,
-        "2017": 213,
-        "2018": 144,
-        "2019": 132,
-        "2020": 111,
-        "2021": 132,
-        "2022": 174,
-        "2023": 82,
-        "2024": 160,
-        "2025": 107
-      },
-      "referenser": {
-        "liknande": {
-          "entitet": "G35989",
-          "varde": 2370,
-          "saknas": null
-        },
-        "storre-stad": {
-          "entitet": "G92790",
-          "varde": 2121,
-          "saknas": null
-        },
-        "riket": {
-          "entitet": "0000",
-          "varde": 2217,
-          "saknas": null
-        }
-      },
-      "ovriga": {
-        "G30825": 2002,
-        "G33615": 2803
-      }
-    },
-    "N03160": {
-      "ar": 2025,
-      "subjekt": "0580",
-      "varde": 140,
-      "serie": {
-        "2015": 28,
-        "2016": 42,
-        "2017": 26,
-        "2018": 25,
-        "2019": 37,
-        "2020": 21,
-        "2021": 27,
-        "2022": 26,
-        "2023": 43,
-        "2024": 133,
-        "2025": 140
-      },
-      "referenser": {
-        "liknande": {
-          "entitet": "G176609",
-          "varde": 553,
-          "saknas": null
-        },
-        "storre-stad": {
-          "entitet": "G92790",
-          "varde": 520,
-          "saknas": null
-        },
-        "riket": {
-          "entitet": "0000",
-          "varde": 711,
-          "saknas": null
-        }
-      },
-      "ovriga": {
-        "G30825": 470,
-        "G33615": 483
-      }
-    },
-    "N03163": {
-      "ar": 2025,
-      "subjekt": "0580",
-      "varde": 1431,
-      "serie": {
-        "2015": 25,
-        "2016": 43,
-        "2017": 5,
-        "2018": 95,
-        "2019": 821,
-        "2020": 2612,
-        "2021": 1677,
-        "2022": 1316,
-        "2023": 1389,
-        "2024": 692,
-        "2025": 1431
-      },
-      "referenser": {
-        "liknande": {
-          "entitet": "G37449",
-          "varde": 626,
-          "saknas": null
-        },
-        "storre-stad": {
-          "entitet": "G92790",
-          "varde": 1276,
-          "saknas": null
-        },
-        "riket": {
-          "entitet": "0000",
-          "varde": 975,
-          "saknas": null
-        }
-      },
-      "ovriga": {
-        "G30825": 729,
-        "G33615": 327
-      }
-    },
-    "N03166": {
-      "ar": 2025,
-      "subjekt": "0580",
-      "varde": 3,
-      "serie": {
-        "2015": 70,
-        "2016": 1,
-        "2017": 64,
-        "2018": 47,
-        "2019": 2,
-        "2020": 124,
-        "2021": 0,
-        "2022": 921,
-        "2023": 0,
-        "2024": 933,
-        "2025": 3
-      },
-      "referenser": {
-        "liknande": {
-          "entitet": "G37449",
-          "varde": 276,
-          "saknas": null
-        },
-        "storre-stad": {
-          "entitet": "G92790",
-          "varde": 327,
-          "saknas": null
-        },
-        "riket": {
-          "entitet": "0000",
-          "varde": 668,
-          "saknas": null
-        }
-      },
-      "ovriga": {
-        "G30825": 408,
-        "G33615": 328
       }
     },
     "N03132": {
@@ -5030,30 +4757,6 @@
         "procent": -17.2
       }
     },
-    "N03187": {
-      "fordelning": {
-        "n": 268,
-        "min": -2,
-        "p10": 0,
-        "p25": 20,
-        "median": 242,
-        "p75": 855,
-        "p90": 1432,
-        "max": 6521
-      },
-      "percentil": 0,
-      "avvikelse": {
-        "liknande": -100,
-        "storre-stad": -100,
-        "riket": -100,
-        "kommunmedian": -100
-      },
-      "forandring": {
-        "fran_ar": 2015,
-        "till_ar": 2025,
-        "procent": null
-      }
-    },
     "N01951": {
       "fordelning": null,
       "percentil": null,
@@ -5531,102 +5234,6 @@
         "fran_ar": 2015,
         "till_ar": 2025,
         "procent": 167.4
-      }
-    },
-    "N03150": {
-      "fordelning": {
-        "n": 290,
-        "min": 0,
-        "p10": 113,
-        "p25": 427,
-        "median": 1203,
-        "p75": 3130,
-        "p90": 5797,
-        "max": 24683
-      },
-      "percentil": 9,
-      "avvikelse": {
-        "liknande": -95.5,
-        "storre-stad": -95,
-        "riket": -95.2,
-        "kommunmedian": -91.1
-      },
-      "forandring": {
-        "fran_ar": 2016,
-        "till_ar": 2025,
-        "procent": -46.2
-      }
-    },
-    "N03160": {
-      "fordelning": {
-        "n": 290,
-        "min": 0,
-        "p10": 58,
-        "p25": 132,
-        "median": 355,
-        "p75": 980,
-        "p90": 2629,
-        "max": 18942
-      },
-      "percentil": 27,
-      "avvikelse": {
-        "liknande": -74.7,
-        "storre-stad": -73.1,
-        "riket": -80.3,
-        "kommunmedian": -60.6
-      },
-      "forandring": {
-        "fran_ar": 2015,
-        "till_ar": 2025,
-        "procent": 400
-      }
-    },
-    "N03163": {
-      "fordelning": {
-        "n": 290,
-        "min": 0,
-        "p10": 29,
-        "p25": 133,
-        "median": 399,
-        "p75": 964,
-        "p90": 2199,
-        "max": 12345
-      },
-      "percentil": 84,
-      "avvikelse": {
-        "liknande": 128.6,
-        "storre-stad": 12.1,
-        "riket": 46.8,
-        "kommunmedian": 258.6
-      },
-      "forandring": {
-        "fran_ar": 2015,
-        "till_ar": 2025,
-        "procent": 5624
-      }
-    },
-    "N03166": {
-      "fordelning": {
-        "n": 290,
-        "min": 0,
-        "p10": 0,
-        "p25": 0,
-        "median": 37,
-        "p75": 320,
-        "p90": 1208,
-        "max": 60330
-      },
-      "percentil": 39,
-      "avvikelse": {
-        "liknande": -98.9,
-        "storre-stad": -99.1,
-        "riket": -99.6,
-        "kommunmedian": -91.9
-      },
-      "forandring": {
-        "fran_ar": 2015,
-        "till_ar": 2025,
-        "procent": -95.7
       }
     },
     "N03132": {

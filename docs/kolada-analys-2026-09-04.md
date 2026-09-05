@@ -102,7 +102,7 @@ Linköping ligger över riket på samtliga fem, och över liknande kommuner på 
 
 1. **Nyproduktionsandel.** En nybyggd skola bär full kapitalkostnad. En kommun mitt i ett utbyggnadsprogram får högre kr/elev än en kommun med avskrivet bestånd — utan att vara sämre skött.
 2. **Standard och energiprestanda.** Investeringar som sänker driftkostnad höjer kapitalkostnad. Nettoeffekten på kr/elev kan vara positiv i decennier innan den vänder.
-3. **Internhyresmodellen.** Vad som ryms i "lokalkostnad" skiljer sig mellan kommuner. `N03187`, interna köp för gemensamma lokaler, är 0 kr/inv i Linköping mot kommunmedianens 242 — Linköping bokför alltså detta på ett annat sätt än flertalet kommuner, vilket i sig gör kostnadsjämförelser mellan kommuner osäkra.
+3. **Internhyresmodellen.** Vad som ryms i "lokalkostnad" skiljer sig mellan kommuner. `N03187`, interna köp för gemensamma lokaler, är 0 kr/inv i Linköping mot kommunmedianens 242 — Linköping bokför alltså detta på ett annat sätt än flertalet kommuner, vilket i sig gör kostnadsjämförelser mellan kommuner osäkra. Iakttagelsen står kvar som analys, men raden är borttagen från `/linkoping` 2026-09-04: en nolla vid percentil 0 säger ingenting om Linköping utom att hyran faktureras av bolaget i stället för internt.
 4. **Spridningen är stor.** Grundskolans lokalkostnad spänner över landets 290 kommuner från 13 196 till 47 089 kr/elev, med p10 på 19 155 och p90 på 31 454. Linköpings 27 536 ligger inom det breda mittfältet, inte i något ytterläge.
 
 Det som ändå är värt att följa är att avvikelsen är **konsekvent** — fem mått av fem över riket. Ett enskilt mått hade varit brus; en genomgående nivåskillnad är värd en förklaring, och den förklaringen bör Lejonfastigheter kunna ge innan någon annan formulerar den åt oss.
@@ -110,6 +110,8 @@ Det som ändå är värt att följa är att avvikelsen är **konsekvent** — fe
 ---
 
 ## 3b. Investeringarna — där Lejonfastigheter blir synligt
+
+> **Beslut 2026-09-04.** De verksamhetsindelade kommunraderna — investeringsutgifter för pedagogisk verksamhet, vård och omsorg, kultur och fritid samt näringsliv och bostäder — har tagits bort från `/linkoping`. Tabellen nedan står kvar här som analys, eftersom den är motiveringen. Det avgörande argumentet är `N03163`: kultur och fritid ligger på **p84**, samtidigt som pedagogisk verksamhet ligger på p9 och vård och omsorg på p27. Samma kommun, samma år. Spridningen kan inte förklaras av investeringsvilja — den följer var ägandet råkar sitta. Ett tal som varierar med bolagsstruktur och inte med byggande hör inte hemma på en sida som jämför prestation. Kommun/koncern-paren är en annan sak och står kvar: de mäter ingen investering, de gör Lejonfastigheter synligt.
 
 Den breda genomgången 2026-09-04 lade till tolv investerings- och balansmått. De ger materialets tydligaste strukturella fynd, och det syns bara om kommunen och kommunkoncernen läses tillsammans. Referensår 2025, kr/inv:
 
