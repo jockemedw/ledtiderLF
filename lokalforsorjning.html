@@ -2541,11 +2541,11 @@ const DATA = {
         {
           namn: "Ny detaljplan krävs (normalfall)",
           totalText: "5–8 år",
-          kalla_ids: ["ledtid-spar-d-nydp", "ledtid-detaljplan-snitt-2025", "pbl-2010-900"],
+          kalla_ids: ["ledtid-spar-d-nydp", "planledtid-kommunmedian-antagande", "pbl-2010-900"],
           huvudfarg: "#922b21",
           faser: [
             { namn: "Planbesked",                      fas: "plan",        tid: "4 mån",    kommentar: "Lagstadgat; faktisk tid kan vara längre" },
-            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "12–48 mån",kommentar: "Snitt Sverige: planuppdrag → laga kraft 46 mån (Ledtidsindex 2025) · 25 % överklagas (+14 mån)" },
+            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "12–48 mån",kommentar: "Kommunmedian Sverige: planuppdrag → antagande 29 mån (Kolada 2025) · 25 % överklagas (+14 mån)" },
             { namn: "Laga kraft (om ej överklagad)",   fas: "plan",        tid: "3 veckor", kommentar: "" },
             { namn: "Förstudie & politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kan delvis parallelliseras med planprocessen" },
             { namn: "Projektering + upphandling",      fas: "projektering",tid: "8–18 mån", kommentar: "" },
@@ -2553,9 +2553,9 @@ const DATA = {
           ]
         }
       ],
-      kalla_ids: ["ledtidsindex-2025", "evidens-overklagande-2023", "skr-jamforelser-detaljplan"],
+      kalla_ids: ["planledtid-kommunmedian-antagande", "evidens-overklagande-2023", "skr-jamforelser-detaljplan"],
       begransningar: [
-        "Genomsnittlig tid planuppdrag → laga kraft: 46 månader (Ledtidsindex 2025, flerbostadshusplaner 2017–2024). Bara ca 40 % av kommunerna klarar planuppdrag → antagande på ≤2 år (SKR 2024–2025)",
+        "Mediantid planuppdrag → antagande: 29 månader i svenska kommuner (Kolada 2025, 217 kommuner). Bara ca 40 % av kommunerna klarar planuppdrag → antagande på ≤2 år (SKR 2024–2025)",
         "25 % av alla detaljplaner överklagas; 12 % av överklagandena ändrar planen — resten orsakar fördröjning utan utbyte",
         "Budget och plats i lokalförsörjningsplanen måste säkras 3–5 år före byggstart",
         "Sena beslutsändringar — t.ex. ändrad inriktning, omfattning eller demografiska omprövningar — kan kasta tillbaka tidsplanen flera år och i praktiken tvinga fram en omstart av tidigare skeden",
@@ -2650,7 +2650,7 @@ const DATA = {
     { kriterium: "Kräver detaljplan",           a: "Nej",      b: "Sällan",   c: "Ibland",    d: "Nästan alltid" },
     { kriterium: "Kräver LOU-upphandling",       a: "Sällan*",  b: "Ja",       c: "Ja",        d: "Ja" },
     { kriterium: "Kommunal rådighet",            a: "Låg",      b: "Hög",      c: "Hög",       d: "Hög" },
-    { kriterium: "Ekonomi lång sikt",            a: "Sämst",    b: "God",      c: "God",       d: "Bäst" },
+    { kriterium: "Ekonomi lång sikt",            a: "Beror på avtalet", b: "Överskott i koncernen", c: "Överskott i koncernen", d: "Överskott i koncernen" },
     { kriterium: "Risk för fördyrning",          a: "Låg",      b: "Hög",      c: "Medium",    d: "Medium" },
     { kriterium: "Evakuering kan behövas",       a: "Nej",      b: "Ja",       c: "Delvis",    d: "Nej" },
   ],

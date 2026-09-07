@@ -14,7 +14,7 @@ ledtiderLF/
 │   ├── skraddarsydd.js     ← Skräddarsydd sammanställning av valda sektioner
 │   └── api/                ← API-routes för kommentarer, admin + pptx
 ├── components/             ← React-komponenter: kommentarslager + plock-läge
-├── lib/                    ← auth, anchor, comments, pptx-builder
+├── lib/                    ← auth, anchor, comments, pptx-builder + sid-innehall
 ├── data/                   ← siffror.json (nyckeltal) + kallregister.json (källor)
 ├── scripts/                ← popular-slides.json + pptx-CLI
 ├── lokalforsorjning.html   ← Huvudinnehållet, läses vid build
@@ -107,9 +107,9 @@ Notera: kommentarer lagras i Vercel Blob med `access: 'public'` — skrivning oc
 
 ## PowerPoint-export (.pptx)
 
-Två lägen, båda genererade från `scripts/popular-slides.json` via `pptxgenjs`. Layouterna är fasta (`titel`, `siffra-stor`, `trappa`, `tabell`, `tva-spalter`, `kort-grid`, `innehall`, `intervall`, `kurva`) så att resultatet alltid följer Lejonfastigheters varumärkespalett.
+Två lägen, båda genererade via `pptxgenjs`. **All text hämtas ur `lokalforsorjning.html`** — presentationen är ett uttag av sidan, inte en parallell sammanfattning. Layouterna är fasta (`titel`, `tabell`, `kort-grid`, `innehall`, `gantt`, `spar-kort`, `scenario`, `typ-kort`, `kurva`, `steg`, `punkt-kort`) så att resultatet alltid följer Lejonfastigheters varumärkespalett.
 
-1. **Populärversionen** — den kurerade korta versionen (5 bilder, slides med `popular: true`). Byggs av `npm run pptx` utan argument eller `GET /api/pptx` utan `ids`.
+1. **Populärversionen** — den kurerade korta versionen (slides med `popular: true`). Byggs av `npm run pptx` utan argument eller `GET /api/pptx` utan `ids`.
 2. **Skräddarsydd export** — valfri blandning av sidans sektioner, en slide per sektion plus omslag. Varje valbar sektion i navigationen har en kurerad slide (testas i `lib/__tests__/pptx-builder.test.js`). Nås via Sammanställ-knappen på sidan ("Exportera PowerPoint"), `/skraddarsydd`-sidan eller `GET /api/pptx?ids=...`.
 
 ```bash
@@ -119,6 +119,8 @@ npm run pptx -- --sections=moduler,beslut   # via sektion-id:n (omslag läggs ti
 npm run pptx -- --out=foo.pptx              # eget filnamn (under dist/)
 ```
 
-Slides definieras i `scripts/popular-slides.json`. Varje slide refererar till ett HTML-ankare i fullversionen (fältet `ankare`) så att det är spårbart varifrån innehållet kommer — men själva innehållet ligger i JSON, inte i HTML, för att exporten ska vara stabil och redigerbar oberoende av webbsidans layout.
+Slides väljs i `scripts/popular-slides.json`, som bara bär `id`, `ordning`, `ankare` (sektion-id på sidan), `layout`, `popular` och `innehall.typ`. Ingen löptext ligger i JSON:en: `lib/sid-innehall.js` läser `DATA`-objektet och sektionernas HTML ur `lokalforsorjning.html`, och `lib/pptx-innehall.js` mappar `innehall.typ` till de fält layouten renderar. Ändras texten på sidan följer presentationen med. `lib/__tests__/pptx-trohet.test.js` fäller bygget om en slide innehåller text som inte står ordagrant på sidan (undantaget rent grafiska etiketter som sidhuvud, sidnummer och diagramaxel).
+
+Vill du lägga till en slide: skapa en funktion i `TYPER` i `lib/pptx-innehall.js` som plockar innehållet ur sidan, och peka på den från en ny post i `scripts/popular-slides.json`.
 
 `dist/` är gitignored — varje användare regenererar .pptx själv.
