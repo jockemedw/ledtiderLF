@@ -737,6 +737,22 @@
       }
     },
     {
+      "id": "kr-hyra-vs-aga-kommuninvest",
+      "kategori": "aktorer",
+      "etikett": "Hyra jämfört med äga, kalkylexempel (Kommuninvest)",
+      "varde": "+23–28 %",
+      "kalla_ids": [
+        "kommuninvest-aga-hyra-2021"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2021-04",
+      "not": "Totalt kassaflöde över 25 år för en lokal med investering 300 mnkr: hyra 434 mot äga 354 mnkr (+23 %) med ränta 1,75 % och avkastningskrav 4,6 %; +28 % med ränta 3 % och avkastningskrav 5,85 %. Förutsätter lika bygg- och driftkostnad. Vid 40 % lägre byggkostnad hos hyresvärden blir hyra i stället 13–15 % billigare. Inte ett generellt påstående om att hyra alltid är dyrare — kalkylexempel med redovisade antaganden.",
+      "hardkontroll": {
+        "datum": "2026-09-07",
+        "not": "Läst direkt ur rapportens avsnitt 3.2–3.3. Ersätter obelagt '135–500 MSEK över 33 år'."
+      }
+    },
+    {
       "id": "akt-akademiska-hus-bestand",
       "kategori": "aktorer",
       "etikett": "Akademiska Hus — bestånd",
