@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-04",
+  "uppdaterad": "2026-09-07",
   "kategorier": [
     {
       "id": "ledtider",
@@ -181,6 +181,22 @@
       "tangerande": true,
       "hardkontroll": {
         "datum": "2026-08-26"
+      }
+    },
+    {
+      "id": "planledtid-kommunmedian-antagande",
+      "kategori": "ledtider",
+      "etikett": "Sverige — planuppdrag till antagande, kommunmedian",
+      "varde": "29 mån",
+      "kalla_ids": [
+        "kolada-planledtider"
+      ],
+      "verifiering": "verifierad",
+      "datum": "2025",
+      "not": "Kolada N07926: median av 217 kommuners medianvärden 2025 (p25 19,5, p75 43,0 månader). Avser alla antagna detaljplaner utan avgränsning till ändamål; SKR:s undersökning har fokus på bostäder. Ersätter Ledtidsindex (4,8 år / 46 mån) i huvudsidans planavsnitt efter MoS synpunkt 2026-09-07 — Ledtidsindex mäter enbart flerbostadshus och kötid, medan lokalförsörjningsplaner har förtur i Linköpings prioriteringsprinciper.",
+      "hardkontroll": {
+        "datum": "2026-09-07",
+        "not": "Bearbetat värde: fordelning.median för N07926 i data/kolada.json, beräknat av scripts/fetch-kolada.js på råvärden hämtade ur Koladas API v3 2026-09-04."
       }
     },
     {

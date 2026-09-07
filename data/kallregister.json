@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-04",
+  "uppdaterad": "2026-09-07",
   "omraden": [
     {
       "id": "detaljplan",
@@ -198,6 +198,23 @@
         "datum": "2026-08-26",
         "metod": "manuell",
         "not": "HTTP 200. Sidans faktiska rubrik ar 'Lansstyrelsens roll i mellankommunal samordning' — en undersida under lansstyrelsens tillsyn, inte en generell sida med kallpostens titel 'Lansstyrelsens roll i detaljplaneprocessen'. Innehallet tacker dock det kallposten beskriver: radgivande roll och tillsynsansvar, samt att lansstyrelsen sarskilt bevakar riksintressen, miljokvalitetsnormer, strandskydd, mellankommunal samordning och halsa/sakerhet, och kan overprova antagandebeslut. Verifierad via curl (WebFetch fangade bara megamenyn)."
+      }
+    },
+    {
+      "id": "linkoping-prioritering-detaljplaner",
+      "omrade": "detaljplan",
+      "typ": "kommunal-plan",
+      "titel": "Prioritering av detaljplaner — samhällsbyggnadsnämndens prioriteringsprinciper 2023–2026",
+      "kort": "Prioriteringsprinciper Linköping 2023–2026",
+      "organisation": "Linköpings kommun, samhällsbyggnadsnämnden",
+      "datum": "2023–2026 (mandatperioden)",
+      "url": "https://www.linkoping.se/stadsplanering-och-trafik/detaljplanering/prioritering-av-detaljplaner",
+      "sammandrag": "Nya detaljplaner startas inte i turordning utan efter en samlad prioritering som nämnden beslutar varje mandatperiod. Bland de prioriterade kategorierna 2023–2026 finns 'Kommunalt och regionalt behov av vård, omsorg, skola, kultur och fritid': kommunala förvaltningars fastställda lokalförsörjningsplaner ska prioriteras, särskilt där behovet är ekonomiskt, verksamhets- eller tidsmässigt viktigt. Lokalförsörjningsplaner ligger därmed inte i kö i planportföljen — grunden för att huvudsidan inte visar kötidsstatistik för LF:s planer.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-09-07",
+        "metod": "webfetch",
+        "not": "Sidan hämtad 2026-09-07. Formuleringen om kommunala förvaltningars lokalförsörjningsplaner återfinns ordagrant under rubriken 'Prioriterade detaljplaner'."
       }
     },
     {
