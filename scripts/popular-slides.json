@@ -256,7 +256,8 @@
         {
           "siffra": "Förtur",
           "etikett": "För lokalförsörjningsbehov",
-          "text": "Kommunala lokalförsörjningsplaner prioriteras i samhällsbyggnadsnämndens prioriteringsprinciper 2023–2026 — ingen kötid i planportföljen."
+          "text": "Kommunala lokalförsörjningsplaner prioriteras i samhällsbyggnadsnämndens prioriteringsprinciper 2023–2026 — ingen kötid i planportföljen.",
+          "farg": "059669"
         }
       ],
       "callout": "Att en plan startar betyder inte att den går igenom. Planbeskedet är en första bedömning — utredningar, synpunkter i samråd och granskning eller ny lagstiftning kan ändra förutsättningarna fram till laga kraft.",
@@ -267,66 +268,94 @@
       "ordning": 5.1,
       "ankare": "provning",
       "popular": true,
-      "layout": "tabell",
+      "layout": "steg",
       "titel": "Prövningens moment",
-      "underrubrik": "Utredningar och dialog fullföljs och kompletteras genom hela processen, beroende på vilka synpunkter som kommer in",
-      "kolumner": [
-        "Moment",
-        "Vad som händer"
-      ],
-      "rader": [
-        [
-          "1. Utredningar — tidigt skede",
-          "Dagvatten, buller, trafik, geoteknik, naturvärden, arkeologi: underlaget som prövningen vilar på"
-        ],
-        [
-          "2. Planförslag & dialog — tidigt skede",
-          "Avvägningar mellan intressen i dialog med förvaltningar, fastighetsägare och verksamheter"
-        ],
-        [
-          "3. Samråd — lagstadgad målpunkt",
-          "Länsstyrelsen, lantmäteriet, sakägare, berörda boende och myndigheter yttrar sig (PBL 5 kap.)"
-        ],
-        [
-          "4. Granskning — lagstadgad målpunkt",
-          "Justerat förslag ställs ut; den som inte yttrat sig förlorar i regel rätten att överklaga"
-        ],
-        [
-          "5. Antagande — lagstadgad målpunkt",
-          "Politiskt beslut i KF, eller i nämnden på KF:s uppdrag (PBL 5 kap. 27 §); delegeras inte till tjänstepersoner"
-        ],
-        [
-          "6. Eventuellt överklagande",
-          "Mark- och miljödomstolen, vidare till Mark- och miljööverdomstolen; var fjärde plan, +14 mån i snitt"
-        ],
-        [
-          "7. Laga kraft",
-          "Först nu är prövningen avslutad och marken bekräftat lämplig; bygglov kan sökas"
-        ]
-      ],
-      "fotnot": "Lagrum: PBL 5 kap. (planprocess), 11 kap. 10 § (länsstyrelsens ingripandegrunder), 13 kap. (överklagande). Överklagandestatistik: Evidens 2023."
+      "fotnot": "Utredningar och dialog fullföljs och kompletteras genom hela processen, beroende på vilka synpunkter som kommer in. Lagrum: PBL 5 kap., 11 kap. 10 §, 13 kap. Överklagandestatistik: Evidens 2023.",
+      "grupper": [
+        {
+          "etikett": "Tidigt skede",
+          "steg": [
+            {
+              "nr": 1,
+              "titel": "Utredningar",
+              "text": "Dagvatten, buller, trafik, geoteknik, naturvärden, arkeologi — underlaget som prövningen vilar på. Omfattningen styrs av platsen och av vad planen måste hålla för."
+            },
+            {
+              "nr": 2,
+              "titel": "Planförslag & dialog",
+              "text": "Arbetas fram i dialog med förvaltningar, fastighetsägare och verksamheter. Här görs avvägningarna mellan intressen — utformning, byggrätt, trafik, friyta."
+            }
+          ]
+        },
+        {
+          "etikett": "Lagstadgade målpunkter",
+          "steg": [
+            {
+              "nr": 3,
+              "titel": "Samråd",
+              "text": "Länsstyrelsen, lantmäteriet, kända sakägare, berörda boende och myndigheter yttrar sig (PBL 5 kap.). Synpunkterna bemöts i en samrådsredogörelse."
+            },
+            {
+              "nr": 4,
+              "titel": "Granskning",
+              "text": "Det justerade förslaget ställs ut och synpunkter besvaras i ett granskningsutlåtande. Den som inte yttrat sig senast nu förlorar i regel rätten att överklaga."
+            },
+            {
+              "nr": 5,
+              "titel": "Antagande",
+              "text": "Politiskt beslut i kommunfullmäktige, eller i nämnden på fullmäktiges uppdrag (PBL 5 kap. 27 §). Delegeras inte till tjänstepersoner."
+            }
+          ]
+        },
+        {
+          "etikett": "Efter antagandet",
+          "steg": [
+            {
+              "nr": 6,
+              "titel": "Eventuellt överklagande",
+              "text": "Mark- och miljödomstolen, vidare till Mark- och miljööverdomstolen. Var fjärde plan överklagas; de som ändå vinner laga kraft försenas i snitt +14 månader."
+            },
+            {
+              "nr": 7,
+              "titel": "Laga kraft",
+              "text": "Först nu är prövningen avslutad och marken bekräftat lämplig för ändamålet. Bygglov kan sökas med stöd av planen."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "provning-varfor",
       "ordning": 5.2,
       "ankare": "provning",
       "popular": true,
-      "layout": "tva-spalter",
+      "layout": "punkt-kort",
       "titel": "Varför drar det ut på tiden?",
-      "underrubrik": "Delar av tiden är inbyggd i lagstiftningen — andra delar kan kommunen påverka",
-      "kolumner": [
+      "underrubrik": "Delar av tiden är inbyggd i lagstiftningen och gemensam för alla Sveriges kommuner — andra delar går att påverka lokalt",
+      "kort": [
         {
-          "rubrik": "Kan inte väljas bort",
-          "stamp": "Styrs av lag",
-          "innehall": "Sakägarkretsen — grannars och andra berördas rätt att yttra sig.\n\nSamråd, granskning och antagande — tre målpunkter varje plan måste passera.\n\nFlera lagrum styr vad som måste utredas: PBL, miljöbalken, EU-rätten och EU-domstolens praxis. Länsstyrelsens ingripandegrunder.\n\nÖverklaganderätt och domstolsprövning i två instanser."
+          "chip": "Styrs av lag",
+          "chipFarg": "lag",
+          "rubrik": "— kan inte väljas bort",
+          "punkter": [
+            "Sakägarkretsen — grannars och andra berördas rätt att yttra sig (PBL 5 kap.)",
+            "Samråd, granskning och antagande — tre målpunkter som varje plan måste passera",
+            "Flera lagrum styr vad som måste utredas: PBL, miljöbalken, EU-rätten och EU-domstolens praxis — inte bara svensk praxis",
+            "Länsstyrelsens ingripandegrunder — hälsa och säkerhet, riksintressen, strandskydd, miljökvalitetsnormer (PBL 11 kap. 10 §)",
+            "Överklaganderätten och domstolsprövning i två instanser"
+          ]
         },
         {
-          "rubrik": "Framförhållning och tydlighet",
-          "stamp": "Kommunen kan påverka",
-          "innehall": "Planberedskap — planlägga innan behovet blir akut.\n\nFlexibla detaljplaner — planlägga för behov vi ännu inte har, så att exempelvis en gruppbostad eller daglig verksamhet ryms när behovet uppstår.\n\nLångsiktig behovsbild och tydliga beställningar — när planen startar måste det vara klart vad som ska prövas."
+          "chip": "Kommunen kan påverka",
+          "chipFarg": "kommun",
+          "punkter": [
+            "Framförhållning och planberedskap — planlägga innan behovet blir akut",
+            "Flexibla detaljplaner — planlägga för behov vi ännu inte har, så att exempelvis en gruppbostad eller daglig verksamhet ryms när behovet uppstår",
+            "Långsiktig behovsbild och tydliga beställningar in i planarbetet — när planen startar måste det vara klart vad som ska prövas"
+          ]
         }
       ],
-      "fotnot": "Slutsats: Krävs det en ny detaljplan för att möta ett lokalförsörjningsbehov krävs det att vi börjar i tid, och när detaljplanen väl startar är ett tydligt behov en förutsättning för en effektiv process."
+      "callout": "Slutsats: Krävs det en ny detaljplan för att möta ett lokalförsörjningsbehov krävs det att vi börjar i tid och när detaljplanen väl startar är en förutsättning för en effektiv process att behovet är tydligt."
     },
     {
       "id": "sammanfattning",
