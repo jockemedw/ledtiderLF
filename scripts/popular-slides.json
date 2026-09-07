@@ -235,21 +235,21 @@
       "ankare": "provning",
       "popular": true,
       "layout": "tva-spalter",
-      "titel": "Detaljplanen är en prövning — inte en handläggning",
-      "underrubrik": "Den centrala missuppfattningen",
+      "titel": "Detaljplanen är en prövning av markens lämplighet",
+      "underrubrik": "Först vid laga kraft vet vi att marken är lämplig för ändamålet",
       "kolumner": [
         {
-          "rubrik": "Missuppfattning",
-          "stamp": "Vanlig bild",
-          "innehall": "\"Någon sitter vid en dator och knappar tillräckligt länge så kommer det ut en plan.\"\n\nDen här bilden behandlar detaljplanen som en stängd handläggning där tempo bara styrs av personalstyrka."
+          "rubrik": "Kan inte väljas bort",
+          "stamp": "Styrs av lag",
+          "innehall": "Sakägarkretsens rätt att yttra sig. Samråd, granskning och antagande som tre målpunkter varje plan måste passera.\n\nFlera lagrum styr utredningskraven: PBL, miljöbalken, EU-rätten och EU-domstolens praxis. Länsstyrelsens ingripandegrunder.\n\nÖverklaganderätt i två instanser — var fjärde plan överklagas, +14 mån i snitt."
         },
         {
-          "rubrik": "Vad det är",
-          "stamp": "Verklighet",
-          "innehall": "En lagstadgad prövning av allmänna och enskilda intressen.\n\nUtredningar, samråd med länsstyrelse, sakägare och allmänhet, granskning, antagande och rätt att överklaga. Skedena är processen — inte hinder för den."
+          "rubrik": "Framförhållning och tydlighet",
+          "stamp": "Kommunen kan påverka",
+          "innehall": "Planberedskap — planlägga innan behovet blir akut.\n\nFlexibla detaljplaner — planlägga för behov vi ännu inte har, så att gruppbostad eller daglig verksamhet ryms när behovet uppstår.\n\nLångsiktig behovsbild och tydliga beställningar — när planen startar måste det vara klart vad som ska prövas. Lokalförsörjningsbehov har förtur i nämndens prioriteringsprinciper."
         }
       ],
-      "fotnot": "Lagrum: PBL 5 kap. (planprocess) och 13 kap. (överklagande). Domstolens prövning ligger helt utanför kommunens kontroll."
+      "fotnot": "Slutsats: Krävs det en ny detaljplan för att möta ett lokalförsörjningsbehov krävs det att vi börjar i tid — och när detaljplanen väl startar är ett tydligt behov en förutsättning för en effektiv process. Lagrum: PBL 5 kap. och 13 kap."
     },
     {
       "id": "sammanfattning",
