@@ -1965,7 +1965,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
     </div>
 
-    <p class="gantt-note" data-kalla="ledtid-detaljplan-snitt-2025 ledtid-overklagande">Staplarna avser typiska svenska kommunala lokalprojekt — inte ett enskilt fastighetsbolags interna kalkyl. Den långa stapeln för "Nybyggnad med ny detaljplan" ligger i linje med Bygg i Tids riksgenomsnitt på 4,8 år från planuppdrag till startbesked, plus projektering och byggnation. Effekten av eventuella överklaganden (+14 mån i snitt) eller långdragna LOU-upphandlingar (+2–12 mån) är <em>inte</em> inräknad i staplarna och tillkommer.</p>
+    <p class="gantt-note" data-kalla="planledtid-kommunmedian-antagande lkpg-planledtid-antagande ledtid-overklagande">Staplarna är normalfall för totalentreprenad, där entreprenören detaljprojekterar efter kontrakt. Skeden som i praktiken överlappar — bygglov mot bygghandling, evakuering mot upphandling — räknas en gång, så summan av skedena i respektive spårs lista är något längre än stapeln. Byggnationssegmentet är ett medelvärde över lokaltyper; en stor F–9-skola tar snarare 24–36 månader. Planskedet bygger på kommunmedianen 29 månader från planuppdrag till antagande (Kolada 2025) — Linköpings egen median är 44 månader, vilket skulle förlänga stapeln med drygt ett år. Överklaganden (+14 mån i snitt) och överprövade upphandlingar (+3–6 mån) är <em>inte</em> inräknade.</p>
   </div>
 </section>
 
@@ -2336,7 +2336,7 @@ const DATA = {
     projektering:   { farg: "#059669", label: "Projektering" },
     byggnation:     { farg: "#C0392B", label: "Byggnation" },
     anpassning:     { farg: "#0891B2", label: "Anpassning / hyresgästanpassning" },
-    evakuering:     { farg: "#DB2777", label: "Evakuering & bygglov" },
+    evakuering:     { farg: "#DB2777", label: "Bygglov, startbesked & evakuering" },
   },
 
   spar: [
@@ -2347,7 +2347,7 @@ const DATA = {
       subtitle: "Befintlig lokal eller ny lokal uppförd av extern part",
       farg: "#0891B2",
       minManader: 3,
-      maxManader: 48,
+      maxManader: 60,
       passar: "Akuta eller tillfälliga behov — samt när mark saknas",
       varning: "Kalkylen avgörs av avtalet — särskilt av vad som gäller efter avtalstiden",
       niva: 1,
@@ -2360,26 +2360,26 @@ const DATA = {
           kalla_ids: ["ledtid-spar-a", "ver-lou-hyresundantag"],
           huvudfarg: "#0891B2",
           faser: [
-            { namn: "Söka och identifiera lokal",      fas: "beslut",      tid: "1–4 veckor",   kommentar: "Beror på marknad och verksamhetskrav" },
-            { namn: "Politiskt beslut",                fas: "beslut",      tid: "4–8 veckor",   kommentar: "Nämnd- och/eller KS-beslut" },
-            { namn: "Avtalsförhandling",               fas: "upphandling", tid: "2–6 veckor",   kommentar: "Hyresundantag gäller (3 kap. 19 § LOU)" },
-            { namn: "Ev. bygglov (verksamhetsändring)",fas: "anpassning",  tid: "6–10 veckor",  kommentar: "Om lokal byter användning" },
-            { namn: "Hyresgästanpassning",             fas: "anpassning",  tid: "2–6 månader",  kommentar: "VVS, el, ventilation, tillgänglighet" },
+            { namn: "Söka lokal och pröva lämplighet",     fas: "beslut",      tid: "1–3 mån",  kommentar: "Brandskydd, ventilation, tillgänglighet, friyta och arbetsmiljö prövas innan förhandling" },
+            { namn: "Förhandling, politiskt beslut och hyresavtal", fas: "upphandling", tid: "2–4 mån", kommentar: "Beslut fattas på förhandlat avtal · hyresundantaget i LOU gäller (3 kap. 19 §)" },
+            { namn: "Ev. bygglov för ändrad användning och startbesked", fas: "evakuering", tid: "3–5 mån", kommentar: "Krävs nästan alltid för skola, förskola och omsorg · löper parallellt med anpassningen" },
+            { namn: "Hyresgästanpassning",             fas: "anpassning",  tid: "3–8 mån",  kommentar: "Projektering och utförande: VVS, el, ventilation, tillgänglighet" },
+            { namn: "Slutbesked och verksamhetsstart", fas: "anpassning",  tid: "1–2 mån",  kommentar: "Lokalen får inte tas i bruk före slutbesked" },
           ]
         },
         {
           namn: "A2. Hyresvärdsupphandling",
-          totalText: "2–4 år",
+          totalText: "2,5–5 år",
           kalla_ids: ["ledtid-spar-a2"],
           huvudfarg: "#0e6b85",
           faser: [
-            { namn: "Kravställning och marknadsanalys",fas: "beslut",      tid: "3–6 mån",  kommentar: "Definiera lokalbehov, tekniska krav, läge" },
-            { namn: "Politiska beslut",                fas: "beslut",      tid: "2–4 mån",  kommentar: "Inriktnings- och investeringsbeslut" },
-            { namn: "LOU-upphandling",                 fas: "upphandling", tid: "6–12 mån", kommentar: "Byggentreprenadsupphandling — ej hyresundantag" },
-            { namn: "Ev. detaljplan på hyresvärdens mark",fas: "plan",     tid: "+1–4 år",  kommentar: "Om ny DP krävs tillkommer hela planprocessen" },
-            { namn: "Projektering & bygglov",          fas: "projektering",tid: "6–12 mån", kommentar: "Hyresvärden ansvarar men kommunen ställer krav" },
+            { namn: "Kravställning: funktionsprogram = förfrågningsunderlag", fas: "beslut", tid: "3–6 mån", kommentar: "Rätt planändamål på hyresvärdens mark är normalt ett kvalificeringskrav — annars tillkommer planprocessen, +2–4,5 år" },
+            { namn: "Inriktningsbeslut",               fas: "beslut",      tid: "2–3 mån",  kommentar: "Beställande nämnd och LF:s styrelse" },
+            { namn: "Upphandling enligt LOU",          fas: "upphandling", tid: "6–12 mån", kommentar: "Byggentreprenad — hyresundantaget gäller inte · förhandlat förfarande är vanligt" },
+            { namn: "Avtalsspärr, ev. överprövning och beslut om hyresavtal", fas: "upphandling", tid: "1–3 mån", kommentar: "Överprövning: +3–6 mån · långt hyresavtal går ofta till KF" },
+            { namn: "Hyresvärdens projektering, bygglov och startbesked", fas: "projektering", tid: "8–14 mån", kommentar: "Kommunen granskar handlingarna mot kravspecifikationen — avvikelser som upptäcks vid inflyttning är svåra att få rättade" },
             { namn: "Byggnation",                      fas: "byggnation",  tid: "12–24 mån",kommentar: "Lokaltyp styr byggtid (jfr spår D)" },
-            { namn: "Inflyttning",                     fas: "anpassning",  tid: "1–2 mån",  kommentar: "" },
+            { namn: "Besiktning, slutbesked och verksamhetsstart", fas: "anpassning", tid: "2–3 mån", kommentar: "" },
           ]
         }
       ],
@@ -2420,24 +2420,24 @@ const DATA = {
           kalla_ids: ["ledtid-spar-b"],
           huvudfarg: "#059669",
           faser: [
-            { namn: "Förstudie inkl. miljöinventering",fas: "beslut",      tid: "2–4 mån",  kommentar: "Asbest- och PCB-inventering obligatorisk" },
-            { namn: "Programhandling",                 fas: "beslut",      tid: "2–4 mån",  kommentar: "" },
-            { namn: "Politiska beslut",                fas: "beslut",      tid: "2–4 mån",  kommentar: "Nämnd → KS → ev. KF, investeringsbeslut" },
-            { namn: "Upphandling projektering",        fas: "upphandling", tid: "2–3 mån",  kommentar: "Med ramavtal: dagar–veckor" },
-            { namn: "Projektering",                    fas: "projektering",tid: "6–12 mån", kommentar: "" },
-            { namn: "Evakuering + bygglov",            fas: "evakuering",  tid: "3–12 mån", kommentar: "Politiskt känsligt; kan överklagas" },
-            { namn: "Upphandling entreprenad",         fas: "upphandling", tid: "3–5 mån",  kommentar: "" },
-            { namn: "Byggnation",                      fas: "byggnation",  tid: "10–24 mån",kommentar: "" },
-            { namn: "Slutbesked + inflyttning",        fas: "byggnation",  tid: "1–3 mån",  kommentar: "" },
+            { namn: "Förstudie, statusbesiktning och inventering av farliga ämnen", fas: "beslut", tid: "3–5 mån", kommentar: "Asbest trolig 1940–1982, PCB 1956–1973 · inventering obligatorisk" },
+            { namn: "Program och inriktningsbeslut",   fas: "beslut",      tid: "4–7 mån",  kommentar: "Rumsfunktionsprogram med verksamheten · beställande nämnd och LF:s styrelse" },
+            { namn: "Systemhandling och förfrågningsunderlag", fas: "projektering", tid: "6–10 mån", kommentar: "Ombyggnad kräver inmätning — relationshandlingar saknas ofta · här låses kostnaden" },
+            { namn: "Upphandling av totalentreprenad och genomförandebeslut", fas: "upphandling", tid: "4–7 mån", kommentar: "LOU, avtalsspärr · överprövning: +3–6 mån" },
+            { namn: "Evakuering, bygglov och startbesked", fas: "evakuering", tid: "3–6 mån", kommentar: "Evakueringen förbereds parallellt och ska vara klar vid byggstart · politiskt känslig, kan överklagas" },
+            { namn: "Byggnation inkl. entreprenörens bygghandling", fas: "byggnation", tid: "12–24 mån", kommentar: "Utfallet avgörs av vad som upptäcks när byggnaden öppnas" },
+            { namn: "Slutbesiktning, slutbesked och återflytt", fas: "byggnation", tid: "2–3 mån", kommentar: "" },
           ]
         },
         {
           namn: "Med ny detaljplan",
           totalText: "4–8 år",
-          kalla_ids: ["ledtid-spar-b", "ledtid-detaljplan-snitt-2025"],
+          kalla_ids: ["ledtid-spar-b", "planledtid-kommunmedian-antagande"],
           huvudfarg: "#1e7a55",
           faser: [
-            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "+1–4 år",  kommentar: "Standardförfarande 9–18 mån; utökat 18–48 mån" },
+            { namn: "Planbesked eller planuppdrag",         fas: "plan",        tid: "2–4 mån",  kommentar: "Lokalförsörjningsbehov har förtur i nämndens prioriteringsprinciper" },
+            { namn: "Detaljplaneprocess: planuppdrag → antagande", fas: "plan",   tid: "18–48 mån",kommentar: "Kommunmedian 29 mån (Kolada 2025), Linköping 44 månader · prövning av markens lämplighet, se Planprocessen" },
+            { namn: "Laga kraft",                      fas: "plan",        tid: "1–2 mån",  kommentar: "Var fjärde plan överklagas: +14 mån i snitt" },
             { namn: "Resterande steg",                 fas: "byggnation",  tid: "Som ovan", kommentar: "Samtliga skeden i B (utan DP) tillkommer" },
           ]
         }
@@ -2477,20 +2477,24 @@ const DATA = {
           kalla_ids: ["ledtid-spar-c"],
           huvudfarg: "#D97706",
           faser: [
-            { namn: "Förstudie + politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kontrollera e-tal, höjd, BTA i gällande DP" },
-            { namn: "Upphandling projektering",        fas: "upphandling", tid: "2–3 mån",  kommentar: "" },
-            { namn: "Projektering",                    fas: "projektering",tid: "6–10 mån", kommentar: "" },
-            { namn: "Bygglov",                         fas: "evakuering",  tid: "2–5 mån",  kommentar: "" },
-            { namn: "Upphandling + byggnation",        fas: "byggnation",  tid: "12–24 mån",kommentar: "" },
+            { namn: "Förstudie och program",           fas: "beslut",      tid: "3–6 mån",  kommentar: "Kontrollera e-tal, byggrätt, höjd och BTA i gällande plan tidigt" },
+            { namn: "Inriktningsbeslut",               fas: "beslut",      tid: "2–3 mån",  kommentar: "Beställande nämnd och LF:s styrelse" },
+            { namn: "Systemhandling och förfrågningsunderlag", fas: "projektering", tid: "5–8 mån", kommentar: "Här låses kostnaden" },
+            { namn: "Upphandling av totalentreprenad och genomförandebeslut", fas: "upphandling", tid: "4–7 mån", kommentar: "LOU, avtalsspärr · överprövning: +3–6 mån" },
+            { namn: "Bygghandling, bygglov och startbesked", fas: "evakuering", tid: "3–5 mån", kommentar: "Entreprenören detaljprojekterar medan lovet prövas" },
+            { namn: "Byggnation i etapper med verksamheten i drift", fas: "byggnation", tid: "10–20 mån", kommentar: "Etappindelning förlänger" },
+            { namn: "Slutbesiktning, slutbesked och inflyttning", fas: "byggnation", tid: "2–3 mån", kommentar: "" },
           ]
         },
         {
           namn: "Kräver ny/ändrad detaljplan",
           totalText: "4–7 år",
-          kalla_ids: ["ledtid-spar-c", "ledtid-detaljplan-snitt-2025"],
+          kalla_ids: ["ledtid-spar-c", "planledtid-kommunmedian-antagande"],
           huvudfarg: "#b8650f",
           faser: [
-            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "+1–4 år",  kommentar: "Krävs om tillbyggnaden bryter mot e-tal, höjd eller planändamål" },
+            { namn: "Planbesked eller planuppdrag",         fas: "plan",        tid: "2–4 mån",  kommentar: "Lokalförsörjningsbehov har förtur i nämndens prioriteringsprinciper" },
+            { namn: "Detaljplaneprocess: planuppdrag → antagande", fas: "plan",   tid: "18–48 mån",kommentar: "Kommunmedian 29 mån (Kolada 2025), Linköping 44 månader · prövning av markens lämplighet, se Planprocessen" },
+            { namn: "Laga kraft",                      fas: "plan",        tid: "1–2 mån",  kommentar: "Var fjärde plan överklagas: +14 mån i snitt" },
             { namn: "Resterande steg",                 fas: "byggnation",  tid: "Som ovan", kommentar: "Samtliga skeden i C (inom DP) tillkommer" },
           ]
         }
@@ -2515,7 +2519,7 @@ const DATA = {
       namn: "Nybyggnad",
       subtitle: "Ny byggnad på befintlig eller ny mark",
       farg: "#C0392B",
-      minManader: 30,
+      minManader: 36,
       maxManader: 96,
       passar: "Permanent nytt lokalbehov",
       varning: "5–8 år med ny detaljplan — planering måste starta omedelbart",
@@ -2525,17 +2529,17 @@ const DATA = {
       scenarios: [
         {
           namn: "Befintlig DP medger byggnation",
-          totalText: "2,5–4 år",
+          totalText: "3–5 år",
           kalla_ids: ["ledtid-spar-d-bdp"],
           huvudfarg: "#C0392B",
           faser: [
-            { namn: "Förstudie & program",             fas: "beslut",      tid: "2–6 mån",  kommentar: "" },
-            { namn: "Politiska beslut",                fas: "beslut",      tid: "2–4 mån",  kommentar: "Nämnd → KS → KF, investeringsbeslut" },
-            { namn: "Upphandling projektering",        fas: "upphandling", tid: "2–5 mån",  kommentar: "Ramavtal: dagar–veckor" },
-            { namn: "Projektering",                    fas: "projektering",tid: "6–18 mån", kommentar: "" },
-            { namn: "Bygglov + startbesked",           fas: "evakuering",  tid: "3–7 mån",  kommentar: "Max 20 v lagstadgat + tekniskt samråd" },
-            { namn: "Upphandling entreprenad",         fas: "upphandling", tid: "3–6 mån",  kommentar: "Totalentreprenad sparar 6–12 mån vs. utförandeentreprenad" },
-            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–30 mån",kommentar: "Förskola 12–24 mån · Skola 18–36 mån · Äldreboende 12–24 mån" },
+            { namn: "Förstudie och program",           fas: "beslut",      tid: "5–9 mån",  kommentar: "Behov, lokalisering, geoteknik och rumsfunktionsprogram med verksamheten" },
+            { namn: "Inriktningsbeslut",               fas: "beslut",      tid: "2–3 mån",  kommentar: "Beställande nämnd → LF:s styrelse → KS/KF vid principiell beskaffenhet" },
+            { namn: "Systemhandling och förfrågningsunderlag", fas: "projektering", tid: "5–8 mån", kommentar: "Här låses 70–80 % av kostnaden · fastighetsbildning och anslutningsavtal el/VA löper parallellt och kan bli kritisk linje" },
+            { namn: "Upphandling av totalentreprenad och genomförandebeslut", fas: "upphandling", tid: "4–7 mån", kommentar: "LOU, avtalsspärr · överprövning: +3–6 mån · efter kontrakt är varje programändring en ÄTA" },
+            { namn: "Bygghandling, bygglov och startbesked", fas: "evakuering", tid: "3–6 mån", kommentar: "Entreprenören detaljprojekterar medan lovet prövas · 10 v från komplett ansökan, kan förlängas en gång" },
+            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–30 mån",kommentar: "Förskola 12–18 · LSS 10–15 · idrottshall 12–18 · vårdboende 18–30 · skola 24–36" },
+            { namn: "Slutbesiktning, slutbesked och verksamhetsstart", fas: "byggnation", tid: "2–4 mån", kommentar: "Skola och förskola styrs av terminsstart — kan lägga till upp till 6 mån" },
           ]
         },
         {
@@ -2544,12 +2548,15 @@ const DATA = {
           kalla_ids: ["ledtid-spar-d-nydp", "planledtid-kommunmedian-antagande", "pbl-2010-900"],
           huvudfarg: "#922b21",
           faser: [
-            { namn: "Planbesked",                      fas: "plan",        tid: "4 mån",    kommentar: "Lagstadgat; faktisk tid kan vara längre" },
-            { namn: "Detaljplaneprocess",              fas: "plan",        tid: "12–48 mån",kommentar: "Kommunmedian Sverige: planuppdrag → antagande 29 mån (Kolada 2025) · 25 % överklagas (+14 mån)" },
-            { namn: "Laga kraft (om ej överklagad)",   fas: "plan",        tid: "3 veckor", kommentar: "" },
-            { namn: "Förstudie & politiska beslut",    fas: "beslut",      tid: "4–8 mån",  kommentar: "Kan delvis parallelliseras med planprocessen" },
-            { namn: "Projektering + upphandling",      fas: "projektering",tid: "8–18 mån", kommentar: "" },
-            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–30 mån",kommentar: "" },
+            { namn: "Behovsanalys och beställning av detaljplan", fas: "beslut", tid: "4–8 mån", kommentar: "Behov, volym och lokalisering ska vara klara när planen startar — se Planprocessen" },
+            { namn: "Planbesked eller planuppdrag",         fas: "plan",        tid: "2–4 mån",  kommentar: "Lokalförsörjningsbehov har förtur i nämndens prioriteringsprinciper" },
+            { namn: "Detaljplaneprocess: planuppdrag → antagande", fas: "plan",   tid: "18–48 mån",kommentar: "Kommunmedian 29 mån (Kolada 2025), Linköping 44 månader · prövning av markens lämplighet, se Planprocessen" },
+            { namn: "Laga kraft",                      fas: "plan",        tid: "1–2 mån",  kommentar: "Var fjärde plan överklagas: +14 mån i snitt" },
+            { namn: "Program, systemhandling och förfrågningsunderlag", fas: "projektering", tid: "8–14 mån", kommentar: "Kan starta under planens granskning om planinriktningen är stabil" },
+            { namn: "Upphandling av totalentreprenad och genomförandebeslut", fas: "upphandling", tid: "4–7 mån", kommentar: "LOU, avtalsspärr · överprövning: +3–6 mån" },
+            { namn: "Bygghandling, bygglov och startbesked", fas: "evakuering", tid: "3–6 mån", kommentar: "Fastighetsbildning och utbyggnad av gata/VA efter laga kraft kan bli kritisk linje" },
+            { namn: "Byggnation",                      fas: "byggnation",  tid: "12–30 mån",kommentar: "Som ovan per lokaltyp" },
+            { namn: "Slutbesiktning, slutbesked och verksamhetsstart", fas: "byggnation", tid: "2–4 mån", kommentar: "" },
           ]
         }
       ],
@@ -2571,86 +2578,88 @@ const DATA = {
   ],
 
   gantt: [
-    // Normalfall per rad, härlett ur respektive scenarios skeden i DATA.spar:
-    // mittvärde per skede, "ev."-steg utelämnade, skeden som i praktiken
-    // överlappar (upphandling, bygglov) något komprimerade så att raden
-    // håller sig inom scenariots totalspann. Byggnation för nybyggnad är
-    // 18 mån på alla rader (inom 12–30 mån; kommentar på sidan 2026-09-04).
-    // Projektering är 8 mån på alla rader med projektering. andel = mån/total.
+    // Normalfall per rad, härlett ur respektive scenarios skeden i DATA.spar
+    // (totalentreprenad): mittvärde per skede, "ev."-steg utelämnade, skeden
+    // som överlappar (bygglov mot bygghandling, evakuering mot upphandling)
+    // räknade en gång. Byggnationssegmentet inkluderar slutbesiktning,
+    // slutbesked och inflyttning. Projektering = LF:s systemhandling och FFU;
+    // entreprenörens bygghandling ligger i lov-/byggnationssegmenten.
+    // andel = mån/total.
     {
       label: "A1. Hyra in",
       sublabel: "Befintlig lokal",
       forskedeMan: 6,
-      totalManader: 6,   // söka 1 + beslut 1 · avtal 1 · hyresgästanpassning 3
+      totalManader: 8,   // söka + pröva 2 · förhandling + avtal 2 · anpassning + slutbesked 4
       segment: [
-        { fas: "beslut",      andel: 0.333 },
-        { fas: "upphandling", andel: 0.167 },
+        { fas: "beslut",      andel: 0.250 },
+        { fas: "upphandling", andel: 0.250 },
         { fas: "anpassning",  andel: 0.500 },
       ]
     },
     {
       label: "A2. Hyresvärdsupphandling",
-      sublabel: "Rätt DP finns — annars +1–4 år",
+      sublabel: "Rätt DP finns — annars +2–4,5 år",
       forskedeMan: 12,
-      totalManader: 42,  // kravställning + beslut 6 · LOU 9 · projektering 8 · byggnation 18 · inflyttning 1
+      totalManader: 46,  // kravställning + inriktningsbeslut 7 · LOU + avtal 10 · hyresvärdens projektering och lov 9 · byggnation 18 · slutbesked + start 2
       segment: [
-        { fas: "beslut",      andel: 0.143 },
-        { fas: "upphandling", andel: 0.214 },
-        { fas: "projektering",andel: 0.190 },
-        { fas: "byggnation",  andel: 0.429 },
-        { fas: "anpassning",  andel: 0.024 },
+        { fas: "beslut",      andel: 0.152 },
+        { fas: "upphandling", andel: 0.217 },
+        { fas: "projektering",andel: 0.196 },
+        { fas: "byggnation",  andel: 0.391 },
+        { fas: "anpassning",  andel: 0.043 },
       ]
     },
     {
       label: "B. Bygga om",
       sublabel: "Utan ny detaljplan",
       forskedeMan: 12,
-      totalManader: 42,  // förstudie/program/beslut 7 · upphandling 5 · projektering 8 · evakuering + bygglov 5 · byggnation 17
+      totalManader: 44,  // förstudie + program + beslut 9 · systemhandling/FFU 8 · upphandling + genomförandebeslut 5 · evakuering + lov 4 · byggnation inkl. slutskede 18
       segment: [
-        { fas: "beslut",      andel: 0.167 },
-        { fas: "upphandling", andel: 0.119 },
-        { fas: "projektering",andel: 0.190 },
-        { fas: "evakuering",  andel: 0.119 },
-        { fas: "byggnation",  andel: 0.405 },
+        { fas: "beslut",      andel: 0.205 },
+        { fas: "projektering",andel: 0.182 },
+        { fas: "upphandling", andel: 0.114 },
+        { fas: "evakuering",  andel: 0.091 },
+        { fas: "byggnation",  andel: 0.409 },
       ]
     },
     {
       label: "C. Tillbyggnad",
       sublabel: "Inom befintlig detaljplan",
       forskedeMan: 12,
-      totalManader: 36,  // förstudie + beslut 5 · upphandling 5 · projektering 8 · bygglov 3 · byggnation 15
+      totalManader: 37,  // förstudie + program + beslut 7 · systemhandling/FFU 6 · upphandling 5 · bygghandling + lov 4 · byggnation inkl. slutskede 15
       segment: [
-        { fas: "beslut",      andel: 0.139 },
-        { fas: "upphandling", andel: 0.139 },
-        { fas: "projektering",andel: 0.222 },
-        { fas: "evakuering",  andel: 0.083 },
-        { fas: "byggnation",  andel: 0.417 },
+        { fas: "beslut",      andel: 0.189 },
+        { fas: "projektering",andel: 0.162 },
+        { fas: "upphandling", andel: 0.135 },
+        { fas: "evakuering",  andel: 0.108 },
+        { fas: "byggnation",  andel: 0.405 },
       ]
     },
     {
       label: "D. Nybyggnad",
       sublabel: "Befintlig DP medger byggnation",
-      forskedeMan: 18,
-      totalManader: 40,  // förstudie + beslut 6 · upphandling 5 · projektering 8 · bygglov 3 · byggnation 18
+      forskedeMan: 15,
+      totalManader: 47,  // förstudie + program + beslut 10 · systemhandling/FFU 7 · upphandling + genomförandebeslut 5 · bygghandling + lov 4 · byggnation inkl. slutskede 21
       segment: [
-        { fas: "beslut",      andel: 0.150 },
-        { fas: "upphandling", andel: 0.125 },
-        { fas: "projektering",andel: 0.200 },
-        { fas: "evakuering",  andel: 0.075 },
-        { fas: "byggnation",  andel: 0.450 },
+        { fas: "beslut",      andel: 0.213 },
+        { fas: "projektering",andel: 0.149 },
+        { fas: "upphandling", andel: 0.106 },
+        { fas: "evakuering",  andel: 0.085 },
+        { fas: "byggnation",  andel: 0.447 },
       ]
     },
     {
       label: "D. Nybyggnad",
       sublabel: "Med ny detaljplan (normalfall)",
       forskedeMan: 24,
-      totalManader: 72,  // planbesked + detaljplan + laga kraft 35 · sedan som raden ovan: beslut 6 · upphandling 5 · projektering 8 · byggnation 18
+      totalManader: 75,  // behovsanalys 6 · planbesked 3 + planprocess 29 + laga kraft 2 = 34 · systemhandling/FFU 5 (delvis under granskning) · upphandling 5 · bygghandling + lov 4 · byggnation inkl. slutskede 21
       segment: [
-        { fas: "plan",        andel: 0.486 },
-        { fas: "beslut",      andel: 0.083 },
-        { fas: "upphandling", andel: 0.069 },
-        { fas: "projektering",andel: 0.111 },
-        { fas: "byggnation",  andel: 0.250 },
+        { fas: "beslut",      andel: 0.080 },
+        { fas: "plan",        andel: 0.453 },
+        { fas: "projektering",andel: 0.067 },
+        { fas: "upphandling", andel: 0.067 },
+        { fas: "evakuering",  andel: 0.053 },
+        { fas: "byggnation",  andel: 0.280 },
       ]
     },
   ],
@@ -2661,12 +2670,12 @@ const DATA = {
     { kriterium: "Kommunal rådighet",            a: "Låg",      b: "Hög",      c: "Hög",       d: "Hög" },
     { kriterium: "Ekonomi lång sikt",            a: "Beror på avtalet", b: "Överskott i koncernen", c: "Överskott i koncernen", d: "Överskott i koncernen" },
     { kriterium: "Risk för fördyrning",          a: "Låg",      b: "Hög",      c: "Medium",    d: "Medium" },
-    { kriterium: "Evakuering kan behövas",       a: "Nej",      b: "Ja",       c: "Delvis",    d: "Nej" },
+    { kriterium: "Evakuering kan behövas",       a: "Nej",      b: "Ja",       c: "Delvis",    d: "Ibland" },
   ],
 
   tidGuide: [
-    { tid: "< 6 månader",  rek: "A. Hyra in (eller modul)", text: "Inget annat spår är realistiskt. Acceptera begränsningarna — planera permanent lösning parallellt." },
-    { tid: "1–3 år",       rek: "B. Bygga om",              text: "Om lämplig byggnad finns i beståndet och ingen ny detaljplan krävs. Annars modul som interimslösning." },
+    { tid: "< 2 år",       rek: "A. Hyra in (eller modul)", text: "Inget annat spår är realistiskt inom två år. Acceptera begränsningarna — planera permanent lösning parallellt." },
+    { tid: "2–4 år",       rek: "B. Bygga om",              text: "Om lämplig byggnad finns i beståndet och ingen ny detaljplan krävs. Annars modul som interimslösning." },
     { tid: "3–5 år",       rek: "C eller D (utan ny detaljplan)",        text: "Tillbyggnad om befintlig byggnad finns. Nybyggnad om mark och plan redan är på plats." },
     { tid: "5 år eller mer", rek: "D. Nybyggnad",           text: "Starta detaljplaneprocess och säkra budget nu. Ett behov som finns 2031 kräver beslut 2026." },
   ],

@@ -70,16 +70,16 @@
       "id": "ledtid-spar-a2",
       "kategori": "ledtider",
       "etikett": "Spår A2 — Hyresvärds-upphandling (LOU)",
-      "varde": "2–4 år",
+      "varde": "2,5–5 år",
       "kalla_ids": [
         "skr-hyra-lokal-lou"
       ],
       "verifiering": "ej-verifierbar",
       "datum": "2021-12",
-      "not": "Behåll 2–4 år som branschbedömning. Not: 'Erfarenhetsvärde — LOU-process (annonsering, anbudstid, ev. överprövning) plus hyresvärdens projektering/byggnation; SKR:s vägledning beskriver processen som tidskrävande utan att kvantifiera.'",
+      "not": "Från uppdrag till LF, rätt planändamål förutsatt: kravställning, LOU-upphandling med avtalsspärr, hyresvärdens projektering och lov, byggnation 12–24 mån, slutbesked. Tidigare 2–4 år rymde inte skedena. Erfarenhetsvärde — SKR:s vägledning beskriver processen som tidskrävande utan att kvantifiera.",
       "hardkontroll": {
-        "datum": "2026-08-26",
-        "not": "Uppföljningsrunda 2026-08-26: Behåll 2–4 år som branschbedömning. Not: 'Erfarenhetsvärde — LOU-process (annonsering, anbudstid, ev. överprövning) plus hyresvärdens projektering/byggnation; S"
+        "datum": "2026-09-07",
+        "not": "Spann omräknat efter extern granskning av skedena (docs/granskning-skeden-2026-09-07.md). Ingen ny primärkälla."
       }
     },
     {
@@ -120,17 +120,17 @@
       "id": "ledtid-spar-d-bdp",
       "kategori": "ledtider",
       "etikett": "Spår D — Nybyggnad (befintlig DP)",
-      "varde": "2,5–4 år",
+      "varde": "3–5 år",
       "kalla_ids": [
         "lekeberg-lfp-2021-2031",
         "sisab-bifrostvagen"
       ],
       "verifiering": "preliminar",
       "datum": "löpande",
-      "not": "Momentsumma utan planprocess ca 2–4 år (Lekebergs LFP, Tabell 1); SISAB:s förskola Bifrostvägen: genomförandebeslut sep 2020 → godkänd entreprenad okt 2023, ca 3 år.",
+      "not": "Från uppdrag till LF med totalentreprenad: förstudie och program, inriktningsbeslut, systemhandling/FFU, upphandling och genomförandebeslut, bygghandling och lov, byggnation 12–30 mån, slutbesked. Från genomförandebeslut ca 2–3,5 år, vilket motsvarar SISAB:s Bifrostvägen (GB sep 2020 → godkänd entreprenad okt 2023) och Lekebergs momentsumma utan planprocess.",
       "hardkontroll": {
-        "datum": "2026-08-26",
-        "not": "Uppföljningsrunda 2026-08-26: Momentsumma utan planprocess ca 2–4 år (Lekebergs LFP, Tabell 1); SISAB:s förskola Bifrostvägen: genomförandebeslut sep 2020 → godkänd entreprenad okt 2023, ca "
+        "datum": "2026-09-07",
+        "not": "Nollpunkt flyttad till uppdrag efter extern granskning av skedena (docs/granskning-skeden-2026-09-07.md); källorna mäter från genomförandebeslut."
       }
     },
     {
