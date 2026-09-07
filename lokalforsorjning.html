@@ -2571,77 +2571,86 @@ const DATA = {
   ],
 
   gantt: [
+    // Normalfall per rad, härlett ur respektive scenarios skeden i DATA.spar:
+    // mittvärde per skede, "ev."-steg utelämnade, skeden som i praktiken
+    // överlappar (upphandling, bygglov) något komprimerade så att raden
+    // håller sig inom scenariots totalspann. Byggnation för nybyggnad är
+    // 18 mån på alla rader (inom 12–30 mån; kommentar på sidan 2026-09-04).
+    // Projektering är 8 mån på alla rader med projektering. andel = mån/total.
     {
       label: "A1. Hyra in",
       sublabel: "Befintlig lokal",
       forskedeMan: 6,
-      totalManader: 6,
+      totalManader: 6,   // söka 1 + beslut 1 · avtal 1 · hyresgästanpassning 3
       segment: [
-        { fas: "beslut",      andel: 0.40 },
-        { fas: "anpassning",  andel: 0.60 },
+        { fas: "beslut",      andel: 0.333 },
+        { fas: "upphandling", andel: 0.167 },
+        { fas: "anpassning",  andel: 0.500 },
       ]
     },
     {
       label: "A2. Hyresvärdsupphandling",
       sublabel: "Rätt DP finns — annars +1–4 år",
       forskedeMan: 12,
-      totalManader: 30,
+      totalManader: 42,  // kravställning + beslut 6 · LOU 9 · projektering 8 · byggnation 18 · inflyttning 1
       segment: [
-        { fas: "beslut",      andel: 0.22 },
-        { fas: "upphandling", andel: 0.28 },
-        { fas: "projektering",andel: 0.22 },
-        { fas: "byggnation",  andel: 0.28 },
+        { fas: "beslut",      andel: 0.143 },
+        { fas: "upphandling", andel: 0.214 },
+        { fas: "projektering",andel: 0.190 },
+        { fas: "byggnation",  andel: 0.429 },
+        { fas: "anpassning",  andel: 0.024 },
       ]
     },
     {
       label: "B. Bygga om",
       sublabel: "Utan ny detaljplan",
       forskedeMan: 12,
-      totalManader: 36,
+      totalManader: 42,  // förstudie/program/beslut 7 · upphandling 5 · projektering 8 · evakuering + bygglov 5 · byggnation 17
       segment: [
-        { fas: "beslut",      andel: 0.22 },
-        { fas: "projektering",andel: 0.28 },
-        { fas: "evakuering",  andel: 0.12 },
-        { fas: "upphandling", andel: 0.10 },
-        { fas: "byggnation",  andel: 0.28 },
+        { fas: "beslut",      andel: 0.167 },
+        { fas: "upphandling", andel: 0.119 },
+        { fas: "projektering",andel: 0.190 },
+        { fas: "evakuering",  andel: 0.119 },
+        { fas: "byggnation",  andel: 0.405 },
       ]
     },
     {
       label: "C. Tillbyggnad",
       sublabel: "Inom befintlig detaljplan",
       forskedeMan: 12,
-      totalManader: 30,
+      totalManader: 36,  // förstudie + beslut 5 · upphandling 5 · projektering 8 · bygglov 3 · byggnation 15
       segment: [
-        { fas: "beslut",      andel: 0.20 },
-        { fas: "projektering",andel: 0.27 },
-        { fas: "evakuering",  andel: 0.10 },
-        { fas: "byggnation",  andel: 0.43 },
+        { fas: "beslut",      andel: 0.139 },
+        { fas: "upphandling", andel: 0.139 },
+        { fas: "projektering",andel: 0.222 },
+        { fas: "evakuering",  andel: 0.083 },
+        { fas: "byggnation",  andel: 0.417 },
       ]
     },
     {
       label: "D. Nybyggnad",
       sublabel: "Befintlig DP medger byggnation",
       forskedeMan: 18,
-      totalManader: 40,
+      totalManader: 40,  // förstudie + beslut 6 · upphandling 5 · projektering 8 · bygglov 3 · byggnation 18
       segment: [
-        { fas: "beslut",      andel: 0.15 },
-        { fas: "projektering",andel: 0.225 },
-        { fas: "upphandling", andel: 0.10 },
+        { fas: "beslut",      andel: 0.150 },
+        { fas: "upphandling", andel: 0.125 },
+        { fas: "projektering",andel: 0.200 },
         { fas: "evakuering",  andel: 0.075 },
-        { fas: "byggnation",  andel: 0.45 },
+        { fas: "byggnation",  andel: 0.450 },
       ]
     },
     {
       label: "D. Nybyggnad",
       sublabel: "Med ny detaljplan (normalfall)",
       forskedeMan: 24,
-      totalManader: 72,
+      totalManader: 72,  // planbesked + detaljplan + laga kraft 35 · sedan som raden ovan: beslut 6 · upphandling 5 · projektering 8 · byggnation 18
       segment: [
-        { fas: "plan",        andel: 0.55 },
-        { fas: "beslut",      andel: 0.06 },
-        { fas: "projektering",andel: 0.10 },
-        { fas: "upphandling", andel: 0.04 },
-        { fas: "byggnation",  andel: 0.25 },
+        { fas: "plan",        andel: 0.486 },
+        { fas: "beslut",      andel: 0.083 },
+        { fas: "upphandling", andel: 0.069 },
+        { fas: "projektering",andel: 0.111 },
+        { fas: "byggnation",  andel: 0.250 },
       ]
     },
   ],
