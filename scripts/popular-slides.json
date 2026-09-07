@@ -405,7 +405,7 @@
           "namn": "Hyra in",
           "subtitle": "Befintlig lokal eller ny lokal uppförd av extern part",
           "tid": "3 mån–4 år",
-          "varning": "Oftast dyrare över avtalstiden"
+          "varning": "Kalkylen avgörs av avtalet"
         },
         {
           "bokstav": "B",
@@ -508,7 +508,7 @@
       "punkter": [
         "Snabbaste spåret — enda realistiska alternativet vid behov inom 6 månader.",
         "Hyresundantaget i LOU gäller befintliga lokaler — bygger värden för kommunens räkning blir det byggentreprenad.",
-        "Oftast dyrare över lång tid: i Kommuninvests kalkylexempel 23–28 % mer än att äga över 25 år vid lika bygg- och driftkostnad — utfallet vänder om hyresvärden bygger väsentligt billigare.",
+        "Kostnaden över tid är inte given: hyran bär en avkastning som lämnar kommunkoncernen och restvärdet tillfaller hyresvärden — men byggkostnad, förlängningsvillkor och köpoption kan väga upp det.",
         "Skola, förskola och omsorg har tekniska krav som utesluter de flesta kontorslokaler."
       ],
       "kalla": "SKR, Kommuninvest 2021, LOU 3 kap. 19 §",
