@@ -639,6 +639,23 @@
       }
     },
     {
+      "id": "kommuninvest-aga-hyra-2021",
+      "omrade": "fastighet-demografi",
+      "typ": "finansiering",
+      "titel": "Att äga eller hyra sina verksamhetslokaler — hur ser kalkylerna ut i kommunsektorn? (Fokusrapport 2021-04-14)",
+      "kort": "Kommuninvest äga/hyra 2021",
+      "organisation": "Kommuninvest (Emelie Värja)",
+      "datum": "2021-04",
+      "url": "https://kommuninvest.se/download/18.e6f1d6318fa4a7c94dbc3a/1716884953881/Att%20%C3%A4ga%20eller%20hyra%20sina%20verksamhetslokaler%20-%20hur%20ser%20kalkylerna%20ut%20i%20kommunsektorn.pdf",
+      "sammandrag": "Kalkylexempel äga mot hyra för en verksamhetslokal: investering 300 mnkr, 25-årigt hyresavtal, ränta 1,75 %, avkastningskrav 4,6 %, avskrivning 33 år, restvärde lika med bokfört värde, samma bygg- och driftkostnad i båda alternativen. Utfall: äga 354 mnkr, hyra 434 mnkr — hyra 80 mnkr (23 %) dyrare. Med ränta 3 % och avkastningskrav 5,85 %: 98 mnkr (28 %). Vid 20 % lägre byggkostnad hos hyresvärden är äga fortfarande billigast; vid 40 % lägre blir hyra 13–15 % billigare. Lägre driftkostnad ensam vänder inte utfallet. Rapporten avstår från generella slutsatser för kortsiktiga behov (3–8 år) och pekar på kapacitetsstöd, konkurrens och balansräkning som icke-kalkylmässiga skäl att hyra.",
+      "hardkontroll": {
+        "status": "godkand",
+        "datum": "2026-09-07",
+        "metod": "pdf-nedladdning",
+        "not": "PDF hämtad 2026-09-07 från kommuninvest.se, 16 sidor. Siffrorna ovan står i avsnitt 3.2–3.3 (tabell 2 och känslighetsanalysen). Ersätter det tidigare obelagda påståendet '135–500 MSEK över 33 år', som inte återfinns i någon av Kommuninvests rapporter — 33 år är avskrivningstiden i kalkylen."
+      }
+    },
+    {
       "id": "kommuninvest-finanspolicy",
       "omrade": "fastighet-demografi",
       "typ": "finansiering",

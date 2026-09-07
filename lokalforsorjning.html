@@ -2349,7 +2349,7 @@ const DATA = {
       minManader: 3,
       maxManader: 48,
       passar: "Akuta eller tillfälliga behov — samt när mark saknas",
-      varning: "Strukturellt dyrare långsiktigt",
+      varning: "Oftast dyrare över avtalstiden — utfallet styrs av ränta, avkastningskrav och byggkostnad",
       niva: 1,
       forutsattning: "Lämplig lokal måste finnas på marknaden. Skola/förskola och vård- och omsorgslokaler har stränga tekniska krav (ventilation, brand, utomhusyta) som utesluter de flesta kontorslokaler.",
 
@@ -2383,12 +2383,12 @@ const DATA = {
           ]
         }
       ],
-      kalla_ids: ["ver-lou-hyresundantag", "skr-hyra-lokal-lou"],
+      kalla_ids: ["ver-lou-hyresundantag", "skr-hyra-lokal-lou", "kommuninvest-aga-hyra-2021"],
       begransningar: [
         "Skola/förskola: kräver pedagogisk yta, utomhusyta, ventilation ≥ 7 l/s/person — utesluter de flesta kontorslokaler",
         "Vård och omsorg: verksamhetsklass 5B (begränsad förmåga att sätta sig i säkerhet) — höga brandskyddskrav",
         "Kommunen mister långsiktig rådighet och anpassningsflexibilitet",
-        "Strukturellt dyrare: 135–500 MSEK mer än ägande över 33 år (Kommuninvest 2021)",
+        "Kostnad över tid: hyran bär hyresvärdens avkastningskrav utöver finansieringen. I Kommuninvests kalkylexempel (300 mnkr, 25-årigt avtal) blir hyra 23–28 % dyrare än att äga vid lika bygg- och driftkostnad; bygger hyresvärden 40 % billigare vänder utfallet. För behov på 3–8 år går det inte att dra generella slutsatser",
         "Hyresvärdsupphandling (A2): när hyresvärden bygger för kommunens räkning blir det byggentreprenad enligt LOU — inte ett hyresundantag. Avtalets utformning avgör"
       ],
       narPassar: [
@@ -2892,7 +2892,8 @@ const DATA = {
     {
       grupp: "Ekonomi och strategi",
       kidor: [
-        { titel: "Samhällsfastigheter — vem hyr vad ifrån vem?", meta: "Kommuninvest, 2021 — äga vs. hyra: 135–500 MSEK skillnad över 33 år", url: "https://kommuninvest.se/download/18.deb161418f3840cef43b04d/1716410962851/Samhallsfastigheter-vem-hyr-vad-ifran-vem.pdf" },
+        { titel: "Att äga eller hyra sina verksamhetslokaler — hur ser kalkylerna ut i kommunsektorn?", meta: "Kommuninvest, 2021 — kalkylexempel: hyra 23–28 % dyrare än äga över 25 år vid lika bygg- och driftkostnad; känslighetsanalys för ränta, avkastningskrav och byggkostnad", url: "https://kommuninvest.se/download/18.e6f1d6318fa4a7c94dbc3a/1716884953881/Att%20%C3%A4ga%20eller%20hyra%20sina%20verksamhetslokaler%20-%20hur%20ser%20kalkylerna%20ut%20i%20kommunsektorn.pdf" },
+        { titel: "Samhällsfastigheter — vem hyr vad ifrån vem?", meta: "Kommuninvest, 2021 — kartläggning av hur mycket kommuner, regioner och stat hyr av privata samhällsfastighetsägare", url: "https://kommuninvest.se/download/18.deb161418f3840cef43b04d/1716410962851/Samhallsfastigheter-vem-hyr-vad-ifran-vem.pdf" },
         { titel: "Ramavtal för förskolebyggnader", meta: "SKR / Adda Inköpscentral", url: "https://skr.se/skr/samhallsplaneringinfrastruktur/fastighetlokalforsorjning/lokalresursplanering/pedagogiskalokaler/ramavtalforforskolebyggnader.31878.html" },
         { titel: "Totalrenovering av skola — cirkulärt exempel", meta: "Boverket — Maja Beskowskolan, Umeå", url: "https://www.boverket.se/sv/byggande/cirkular-ekonomi/exempel/renoverad_skola/" },
       ]
