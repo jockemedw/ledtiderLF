@@ -1964,7 +1964,7 @@ footer strong { color: rgba(255,255,255,0.8); }
       <a class="gantt-bench-link" href="/detaljplan">Fördjupning: detaljplaners ledtider nationellt →</a>
     </div>
 
-    <p class="gantt-note" data-kalla="planledtid-kommunmedian-antagande lkpg-planledtid-antagande ledtid-overklagande">Staplarna är normalfall för totalentreprenad, där entreprenören detaljprojekterar efter kontrakt. Bygglov, evakuering och fastighetsbildning löper parallellt med projektering och upphandling och syns därför inte som egna segment. Byggnationssegmentet är ett medelvärde över lokaltyper och inkluderar slutbesked och inflyttning; en stor F–9-skola tar snarare 24–36 månader. Planskedet bygger på kommunmedianen 29 månader från planuppdrag till antagande (Kolada 2025) — Linköpings egen median är 44 månader, vilket skulle förlänga stapeln med drygt ett år. Överklaganden (+14 mån i snitt) och överprövade upphandlingar (+3–6 mån) är <em>inte</em> inräknade.</p>
+    <p class="gantt-note" data-kalla="planledtid-kommunmedian-antagande lkpg-planledtid-antagande ledtid-overklagande um-overprovning-2024 um-handlaggningstid-2024 boverket-bygglovsfrist-9-27">Staplarna är normalfall för totalentreprenad, där entreprenören detaljprojekterar efter kontrakt. Bygglov, evakuering och fastighetsbildning löper parallellt med projektering och upphandling och syns därför inte som egna segment. Byggnationssegmentet är ett medelvärde över lokaltyper och inkluderar slutbesked och inflyttning; en stor F–9-skola tar snarare 24–36 månader. Planskedet bygger på kommunmedianen 29 månader från planuppdrag till antagande (Kolada 2025) — Linköpings egen median är 44 månader, vilket skulle förlänga stapeln med drygt ett år. Överklaganden (+14 mån i snitt) och överprövade upphandlingar (+3–6 mån) är <em>inte</em> inräknade.</p>
   </div>
 </section>
 
@@ -2372,7 +2372,7 @@ const DATA = {
           huvudfarg: "#0e6b85",
           faser: [
             { namn: "Förstudie",                       fas: "forstudie",      tid: "3–6 mån",  kommentar: "Behov, marknad och inriktningsbeslut · rätt planändamål på hyresvärdens mark är normalt ett kvalificeringskrav, annars +2–4,5 år" },
-            { namn: "Program: funktionsprogram = förfrågningsunderlag", fas: "program", tid: "2–4 mån", kommentar: "Det tyngsta arbetet kommunen gör i spåret — kraven kan inte förhandlas fram i efterhand" },
+            { namn: "Program: funktionsprogram = förfrågningsunderlag", fas: "program", tid: "2–6 mån", kommentar: "Det tyngsta arbetet kommunen gör i spåret — kraven kan inte förhandlas fram i efterhand" },
             { namn: "Upphandling enligt LOU",          fas: "upphandling", tid: "7–15 mån", kommentar: "Byggentreprenad — hyresundantaget gäller inte · avtalsspärr, överprövning +3–6 mån · beslut om hyresavtal, ofta i KF" },
             { namn: "Hyresvärdens projektering och byggnation", fas: "byggnation", tid: "20–38 mån", kommentar: "Bygglov parallellt · kommunen granskar handlingarna mot kravspecifikationen — avvikelser som upptäcks vid inflyttning är svåra att få rättade" },
             { namn: "Inflyttning",                     fas: "anpassning",  tid: "2–3 mån",  kommentar: "Besiktning, slutbesked och verksamhetsstart" },
@@ -2417,7 +2417,7 @@ const DATA = {
           huvudfarg: "#059669",
           faser: [
             { namn: "Förstudie",                       fas: "forstudie",      tid: "3–5 mån",  kommentar: "Statusbesiktning och inventering av farliga ämnen: asbest trolig 1940–1982, PCB 1956–1973" },
-            { namn: "Program",                         fas: "program",      tid: "4–7 mån",  kommentar: "Rumsfunktionsprogram med verksamheten · inriktningsbeslut i beställande nämnd och LF:s styrelse" },
+            { namn: "Program",                         fas: "program",      tid: "4–10 mån", kommentar: "Rumsfunktionsprogram med verksamheten · inriktningsbeslut i beställande nämnd och LF:s styrelse" },
             { namn: "Projektering och upphandling",    fas: "projektering",tid: "10–17 mån",kommentar: "Systemhandling och förfrågningsunderlag, upphandling av totalentreprenad, genomförandebeslut · entreprenören detaljprojekterar · bygglov och evakuering löper parallellt — evakueringen är politiskt känslig och kan överklagas" },
             { namn: "Byggnation",                      fas: "byggnation",  tid: "14–27 mån",kommentar: "Utfallet avgörs av vad som upptäcks när byggnaden öppnas · slutbesiktning, slutbesked och återflytt ingår" },
           ]
@@ -2469,7 +2469,7 @@ const DATA = {
           huvudfarg: "#D97706",
           faser: [
             { namn: "Förstudie",                       fas: "forstudie",      tid: "3–6 mån",  kommentar: "Kontrollera e-tal, byggrätt, höjd och BTA i gällande plan tidigt" },
-            { namn: "Program",                         fas: "program",      tid: "3–5 mån",  kommentar: "Rumsfunktionsprogram med verksamheten · inriktningsbeslut" },
+            { namn: "Program",                         fas: "program",      tid: "4–9 mån",  kommentar: "Rumsfunktionsprogram med verksamheten · inriktningsbeslut" },
             { namn: "Projektering och upphandling",    fas: "projektering",tid: "9–15 mån", kommentar: "Systemhandling och förfrågningsunderlag, upphandling av totalentreprenad, genomförandebeslut · bygglov parallellt" },
             { namn: "Byggnation",                      fas: "byggnation",  tid: "12–23 mån",kommentar: "I etapper med verksamheten i drift · slutbesiktning, slutbesked och inflyttning ingår" },
           ]
@@ -2520,7 +2520,7 @@ const DATA = {
           huvudfarg: "#C0392B",
           faser: [
             { namn: "Förstudie",                       fas: "forstudie",      tid: "3–6 mån",  kommentar: "Behov, lokalisering och geoteknik" },
-            { namn: "Program",                         fas: "program",      tid: "4–7 mån",  kommentar: "Rumsfunktionsprogram med verksamheten · inriktningsbeslut: beställande nämnd → LF:s styrelse → KS/KF vid principiell beskaffenhet" },
+            { namn: "Program",                         fas: "program",      tid: "4–10 mån", kommentar: "Rumsfunktionsprogram med verksamheten · inriktningsbeslut: beställande nämnd → LF:s styrelse → KS/KF vid principiell beskaffenhet" },
             { namn: "Projektering och upphandling",    fas: "projektering",tid: "10–16 mån",kommentar: "Systemhandling och förfrågningsunderlag — här låses 70–80 % av kostnaden · upphandling av totalentreprenad och genomförandebeslut · entreprenören detaljprojekterar · bygglov, fastighetsbildning och anslutningar löper parallellt" },
             { namn: "Byggnation",                      fas: "byggnation",  tid: "14–34 mån",kommentar: "Förskola 12–18 · LSS 10–15 · idrottshall 12–18 · vårdboende 18–30 · skola 24–36 · slutbesiktning, slutbesked och inflyttning ingår — skola och förskola styrs av terminsstart" },
           ]
@@ -2533,7 +2533,7 @@ const DATA = {
           faser: [
             { namn: "Förstudie",                       fas: "forstudie",      tid: "4–8 mån",  kommentar: "Behov, volym och lokalisering ska vara klara när planen beställs — se Planprocessen" },
             { namn: "Detaljplan",                      fas: "plan",        tid: "24–54 mån",kommentar: "Planbesked eller planuppdrag, planprocess och laga kraft · kommunmedian 29 mån planuppdrag → antagande (Kolada 2025), Linköping 44 månader · var fjärde plan överklagas: +14 mån" },
-            { namn: "Program",                         fas: "program",      tid: "4–7 mån",  kommentar: "Kan starta under planens granskning om planinriktningen är stabil" },
+            { namn: "Program",                         fas: "program",      tid: "4–10 mån", kommentar: "Kan starta under planens granskning om planinriktningen är stabil" },
             { namn: "Projektering och upphandling",    fas: "projektering",tid: "10–16 mån",kommentar: "Som ovan · fastighetsbildning och utbyggnad av gata/VA efter laga kraft kan bli kritisk linje" },
             { namn: "Byggnation",                      fas: "byggnation",  tid: "14–34 mån",kommentar: "Som ovan per lokaltyp" },
           ]
