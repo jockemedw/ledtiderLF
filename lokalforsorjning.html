@@ -3171,8 +3171,10 @@ function renderLokaltyper() {
 
 
 // ── INIT
-document.addEventListener("DOMContentLoaded", () => {
-  setupMobileMenu();
+// Samlad omritning av alla DATA-drivna sektioner. Exponeras på window så att
+// overlay-lagret (components/ContentEditor.jsx) kan applicera tidsjusteringar
+// och rita om för alla besökare i runtime.
+function __ledtiderRenderData() {
   renderSparGrid();
   renderGantt();
   renderKontext();
@@ -3181,6 +3183,13 @@ document.addEventListener("DOMContentLoaded", () => {
   renderModuler();
   renderBeslut();
   renderKallor();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupMobileMenu();
+  window.__ledtiderDATA = DATA;
+  window.__ledtiderRenderData = __ledtiderRenderData;
+  __ledtiderRenderData();
   setupVerifieringToggle();
   setupReveal();
   setupScrollUI();

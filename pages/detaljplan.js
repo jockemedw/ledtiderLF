@@ -6,6 +6,7 @@ import Kallhanvisningar from '../components/Kallhanvisningar.jsx';
 import { byggKallindex } from '../lib/kallhanvisning.js';
 
 const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
+const ContentEditor = dynamic(() => import('../components/ContentEditor.jsx'), { ssr: false });
 
 export async function getStaticProps() {
   const root = process.cwd();
@@ -44,6 +45,7 @@ export default function Detaljplan({ sharedCss, body, kallindex }) {
       <div dangerouslySetInnerHTML={{ __html: body }} />
       <Kallhanvisningar index={kallindex} />
       <CommentLayer page="detaljplan" />
+      <ContentEditor page="detaljplan" />
     </>
   );
 }
