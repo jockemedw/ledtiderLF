@@ -8,6 +8,7 @@ import { byggKallindex } from '../lib/kallhanvisning.js';
 
 const CommentLayer = dynamic(() => import('../components/CommentLayer.jsx'), { ssr: false });
 const PickMode = dynamic(() => import('../components/PickMode.jsx'), { ssr: false });
+const ContentEditor = dynamic(() => import('../components/ContentEditor.jsx'), { ssr: false });
 
 export async function getStaticProps() {
   const root = process.cwd();
@@ -63,6 +64,7 @@ export default function Home({ css, bodyInnehall, scriptInnehall, kallindex }) {
 
       <Kallhanvisningar index={kallindex} />
       <CommentLayer />
+      <ContentEditor page="lokal" dataEditable />
       <PickMode />
     </>
   );
