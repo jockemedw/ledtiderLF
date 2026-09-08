@@ -1163,6 +1163,13 @@ body.show-verifiering .verifiering-toggle::before {
   z-index: 3;
   padding-left: 8px;
 }
+/* Långa staplar slutar nära högerkanten — lägg etiketten inne i stapeln,
+   högerställd med vit text, så den inte klipps av wrappens overflow. */
+.gantt-range-label--inne {
+  transform: translate(-100%, -50%);
+  padding-left: 0; padding-right: 8px;
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
 
 .gantt-legend {
   display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem;
@@ -3008,6 +3015,10 @@ function renderGantt() {
     const nollLine = `<div class="gantt-noll-line" style="left:${NOLL_PCT}%"></div>`;
 
     const manText = ganttSpann(rad.totalManader);
+    // Slutar stapeln nära högerkanten läggs etiketten inne i stapeln så den
+    // inte klipps av wrappens overflow.
+    const barEndPct = barLeftPct + barWidthPct;
+    const inne = barEndPct > 85;
 
     return `
       <div class="gantt-row">
@@ -3017,7 +3028,7 @@ function renderGantt() {
           ${nollLine}
           ${forskedeBar}
           <div class="gantt-bar" style="left:${barLeftPct}%;width:${barWidthPct}%">${segments}</div>
-          <span class="gantt-range-label" style="left:${barLeftPct + barWidthPct}%">${manText}</span>
+          <span class="gantt-range-label${inne ? ' gantt-range-label--inne' : ''}" style="left:${barEndPct}%">${manText}</span>
         </div>
       </div>`;
   }).join("");
