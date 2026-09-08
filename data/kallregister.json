@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-07",
+  "uppdaterad": "2026-09-08",
   "omraden": [
     {
       "id": "detaljplan",
@@ -2300,6 +2300,74 @@
         "status": "godkand",
         "datum": "2026-09-04",
         "metod": "webfetch"
+      }
+    },
+    {
+      "id": "um-overprovning-2024",
+      "omrade": "skolor-forskolor",
+      "typ": "statistik",
+      "titel": "Andelen överprövningar minskar 2024",
+      "kort": "UM överprövning 2024",
+      "organisation": "Upphandlingsmyndigheten",
+      "datum": "2025",
+      "url": "https://www.upphandlingsmyndigheten.se/statistik/rattsfallsstatistik/andelen-overprovningar-minskar-2024/",
+      "sammandrag": "Rättsfallsstatistik för 2024. Byggentreprenader överprövas i 5,5 procent av de annonserade upphandlingarna (244 av 4 417) och utgör 28 procent av samtliga överprövade upphandlingar. Andelen överprövningar stiger med kontraktsvärdet, vilket är relevant för stora skol- och samhällsfastighetsentreprenader. Avtalsspärren är tio dagar från tilldelningsbeslut. Underbygger materialets antagande om ett påslag på 3–6 månader vid överprövning, men bara i en minoritet av projekten.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-09-08",
+        "metod": "manuell",
+        "not": "Införd från research-ledtider-2026-09-07. Siffror och paragrafer verifierade mot primärkälla i den researchen men inte omkörda genom hårdkontrollens webfetch — bör webfetch-verifieras vid nästa hårdkontroll. Frekvenssiffran (5,5 %, 244 av 4 417) läses direkt ur Upphandlingsmyndighetens rättsfallsstatistik för 2024."
+      }
+    },
+    {
+      "id": "um-handlaggningstid-2024",
+      "omrade": "skolor-forskolor",
+      "typ": "statistik",
+      "titel": "Handläggningstiden för upphandlingsmål minskar 2024",
+      "kort": "UM handläggningstid 2024",
+      "organisation": "Upphandlingsmyndigheten",
+      "datum": "2025",
+      "url": "https://www.upphandlingsmyndigheten.se/statistik/rattsfallsstatistik/handlaggningstiden-for-upphandlingsmal-minskar-2024/",
+      "sammandrag": "Rättsfallsstatistik för 2024. För sakprövade mål i förvaltningsrätt är mediantiden 2,1 månader och i kammarrätt 8,5 månader. Tillsammans med avtalsspärren ger detta materialets antagande att en överprövning typiskt lägger 3–6 månader till upphandlingsskedet.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-09-08",
+        "metod": "manuell",
+        "not": "Införd från research-ledtider-2026-09-07. Siffror och paragrafer verifierade mot primärkälla i den researchen men inte omkörda genom hårdkontrollens webfetch — bör webfetch-verifieras vid nästa hårdkontroll. Mediantiderna (förvaltningsrätt 2,1 mån, kammarrätt 8,5 mån) läses direkt ur Upphandlingsmyndighetens statistik för 2024."
+      }
+    },
+    {
+      "id": "skr-ideskrift-verksamhetslokaler",
+      "omrade": "skolor-forskolor",
+      "typ": "vagledning",
+      "titel": "Kommunala verksamhetslokaler — idéskrift",
+      "kort": "SKR idéskrift lokaler",
+      "organisation": "SKR / FoU-fonden för kommunernas fastighetsfrågor",
+      "datum": "u.å.",
+      "url": "https://rka.nu/download/18.5627773817e39e979ef5d4f7/1644999903535/7585-855-5.pdf",
+      "sammandrag": "Idéskrift om planering och byggande av kommunala verksamhetslokaler (ISBN 7585-855-5). Anger som framförhållning från idé till inbruktagande cirka fem år för en förskola och sex till åtta år för en skola (s. 13). Används i materialet som uppifrån-ankare för att de tidiga skedena (förstudie och program) tillsammans måste räknas i år, inte månader.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-09-08",
+        "metod": "manuell",
+        "not": "Införd från research-ledtider-2026-09-07. Siffror och paragrafer verifierade mot primärkälla i den researchen men inte omkörda genom hårdkontrollens webfetch — bör webfetch-verifieras vid nästa hårdkontroll. Framförhållningen (5 år förskola, 6–8 år skola, s. 13) är citerad ur idéskriftens primärtext i researchen."
+      }
+    },
+    {
+      "id": "boverket-bygglovsfrist-9-27",
+      "omrade": "skolor-forskolor",
+      "typ": "vagledning",
+      "titel": "Tidsfrister för handläggning av bygglov (PBL 9 kap. 27 §)",
+      "kort": "Boverket bygglovsfrist",
+      "organisation": "Boverket (PBL kunskapsbanken)",
+      "datum": "löpande",
+      "url": "https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/handlaggning/tidsfrister-for-handlaggning/",
+      "sammandrag": "Byggnadsnämnden ska handlägga ett bygglov inom tio veckor från det att en fullständig ansökan kommit in, med möjlighet till en förlängning om högst ytterligare tio veckor (PBL 9 kap. 27 §). Fristen gäller även skolor och andra lokaler. Ingen uppmätt handläggningstidsstatistik för lokaler finns i öppen statistik — Koladas bygglovsmått avser bara en- och tvåbostadshus. I materialet motiverar detta att bygglovet normalt löper parallellt med bygghandling och sällan är ensam kritisk linje.",
+      "hardkontroll": {
+        "status": "anmarkning",
+        "datum": "2026-09-08",
+        "metod": "manuell",
+        "not": "Införd från research-ledtider-2026-09-07. Siffror och paragrafer verifierade mot primärkälla i den researchen men inte omkörda genom hårdkontrollens webfetch — bör webfetch-verifieras vid nästa hårdkontroll. Fristen 10+10 veckor följer av PBL 9 kap. 27 § och Boverkets vägledning."
       }
     }
   ]
