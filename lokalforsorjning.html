@@ -2938,6 +2938,18 @@ function renderSparGrid() {
 }
 
 // ── Gantt-diagram
+// Avrundat årsspann i stället för en falsk decimal. Normalfallet kan diffa
+// ~30 %, så "3,8 år" ljuger om precisionen — "3–5 år" är ärligare och mer
+// pedagogiskt. Spannet är ±20/25 % runt punktvärdet, avrundat till hela år.
+function ganttSpann(m) {
+  if (m < 18) return `${m} mån`;
+  const y = m / 12;
+  let lo = Math.round(y * 0.8);
+  let hi = Math.round(y * 1.25);
+  if (hi - lo < 1) hi = lo + 1;
+  return `${lo}–${hi} år`;
+}
+
 function renderGantt() {
   const FORE = 24;  // 24 mån (2 år) före nollpunkt = verksamhetens förskede
   const EFTER = 84; // 84 mån (7 år) efter = fastighetsägarens scope
@@ -2995,9 +3007,7 @@ function renderGantt() {
     // Tydlig nollpunkt-linje
     const nollLine = `<div class="gantt-noll-line" style="left:${NOLL_PCT}%"></div>`;
 
-    const manText = rad.totalManader >= 12
-      ? `${Math.round(rad.totalManader / 12 * 10) / 10} år`
-      : `${rad.totalManader} mån`;
+    const manText = ganttSpann(rad.totalManader);
 
     return `
       <div class="gantt-row">
